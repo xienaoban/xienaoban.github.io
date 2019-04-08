@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Ubuntu一些装机用到的指令修改分辨率：1sudo gedit /etc/default/grub 找到以下行：1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see them">
+<meta name="description" content="Ubuntu一些装机用到的指令 修改分辨率： 1sudo gedit /etc/default/grub 找到以下行： 1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu一些装机用到的指令">
 <meta property="og:url" content="http://yoursite.com/posts/30914.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="Ubuntu一些装机用到的指令修改分辨率：1sudo gedit /etc/default/grub 找到以下行：1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see them">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="Ubuntu一些装机用到的指令 修改分辨率： 1sudo gedit /etc/default/grub 找到以下行： 1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu一些装机用到的指令">
-<meta name="twitter:description" content="Ubuntu一些装机用到的指令修改分辨率：1sudo gedit /etc/default/grub 找到以下行：1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see them">
+<meta name="twitter:description" content="Ubuntu一些装机用到的指令 修改分辨率： 1sudo gedit /etc/default/grub 找到以下行： 1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Ubuntu一些装机用到的指令 | XieNaoban</title>
+  <title>Ubuntu一些装机用到的指令 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,33 +329,48 @@
       
 
       
-        <h1 id="Ubuntu一些装机用到的指令"><a href="#Ubuntu一些装机用到的指令" class="headerlink" title="Ubuntu一些装机用到的指令"></a>Ubuntu一些装机用到的指令</h1><h2 id="修改分辨率："><a href="#修改分辨率：" class="headerlink" title="修改分辨率："></a>修改分辨率：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p>找到以下行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># The resolution used on graphical terminal </span><br><span class="line"># note that you can use only modes which your graphic card supports via VBE </span><br><span class="line"># you can see them in real GRUB with the command &apos;vbeinfo&apos; </span><br><span class="line"># GRUB_GFXMODE=640×480</span><br></pre></td></tr></table></figure></p>
-<p>下面添加一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_GFXMODE=1920×1080 #这里分辨率自行设置</span><br></pre></td></tr></table></figure></p>
-<p>然后保存返回终端：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure></p>
-<p>重新启动ubuntu使之生效。</p>
-<h2 id="固件刷入"><a href="#固件刷入" class="headerlink" title="固件刷入"></a>固件刷入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i linux-xxx.deb 重启</span><br></pre></td></tr></table></figure>
-<h2 id="修改更新源"><a href="#修改更新源" class="headerlink" title="修改更新源"></a>修改更新源</h2><p>在系统设置里，清华的源速度蛮快的。</p>
-<h2 id="小键盘开机启动"><a href="#小键盘开机启动" class="headerlink" title="小键盘开机启动"></a>小键盘开机启动</h2><p>安装numlockx：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install numlockx</span><br></pre></td></tr></table></figure></p>
-<p>编辑：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf</span><br></pre></td></tr></table></figure></p>
-<p>在最后添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greeter-setup-script=/usr/bin/numlockx on</span><br></pre></td></tr></table></figure></p>
-<h2 id="设置root密码并进入root"><a href="#设置root密码并进入root" class="headerlink" title="设置root密码并进入root"></a>设置root密码并进入root</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line">su</span><br></pre></td></tr></table></figure>
-<h2 id="安装SSR-Python"><a href="#安装SSR-Python" class="headerlink" title="安装SSR(Python)"></a>安装SSR(Python)</h2><p>打开一键安装脚本，按照里面的步骤来。在<code>ssr start</code>的时候会缺少chacha20的库，使用root安装即可。（提前把它指定的vi改为gedit）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ssr /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chmod a=rwx /usr/<span class="built_in">local</span>/bin/ssr</span><br></pre></td></tr></table></figure></p>
-<p>安装git：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
-<p>安装tsocks：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tsocks</span><br><span class="line">sudo gedit /etc/tsocks.conf</span><br></pre></td></tr></table></figure></p>
-<p>添加:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server = 127.0.0.1</span><br><span class="line">server_type = 5</span><br><span class="line">server_port = 1080</span><br></pre></td></tr></table></figure></p>
-<p>安装libsodium获得chacha20：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用root运行</span></span><br><span class="line"><span class="comment"># 先cd到一个临时目录</span></span><br><span class="line">sudo apt-get install build-essential</span><br><span class="line">wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz</span><br><span class="line">tar xf libsodium-1.0.16.tar.gz &amp;&amp; <span class="built_in">cd</span> libsodium-1.0.16</span><br><span class="line">./configure &amp;&amp; make -j4 &amp;&amp; make install</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
-<p>然后<code>sudo ssr install</code>。<br>然后<code>ssr config</code>编辑配置文件。<br>最后<code>ssr start</code>。</p>
-<h2 id="运行-apt-get-update-报错"><a href="#运行-apt-get-update-报错" class="headerlink" title="运行 apt-get update 报错"></a>运行 apt-get update 报错</h2><p>错误信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Problem executing scripts APT::Update::Post-Invoke-Success &apos;if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then appstreamcli refresh &gt; /dev/null; fi&apos;</span><br><span class="line">E: Sub-process returned an error code</span><br></pre></td></tr></table></figure></p>
-<p>解决方案：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pkill -KILL appstreamcli</span><br><span class="line"></span><br><span class="line">wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubuntu1_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br><span class="line"></span><br><span class="line">sudo dpkg -i /tmp/appstream_0.9.4-1ubuntu1_amd64.deb /tmp/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br></pre></td></tr></table></figure></p>
-<h2 id="卸载Amazon等Web-Apps"><a href="#卸载Amazon等Web-Apps" class="headerlink" title="卸载Amazon等Web Apps"></a>卸载Amazon等Web Apps</h2><p>要卸载干净，不然装Unity Tweak Tool的时候又会回来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge unity-webapps-common</span><br><span class="line">sudo apt-get autoremove</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装deb软件时被替换成Amazon"><a href="#安装deb软件时被替换成Amazon" class="headerlink" title="安装deb软件时被替换成Amazon"></a>安装deb软件时被替换成Amazon</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f</span><br></pre></td></tr></table></figure>
-<h2 id="安装Unity-Tweak-Tool"><a href="#安装Unity-Tweak-Tool" class="headerlink" title="安装Unity Tweak Tool"></a>安装Unity Tweak Tool</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure>
-<h2 id="切换Python版本"><a href="#切换Python版本" class="headerlink" title="切换Python版本"></a>切换Python版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --config python</span><br></pre></td></tr></table></figure>
-<h2 id="Flatabulous主题与Numix图标"><a href="#Flatabulous主题与Numix图标" class="headerlink" title="Flatabulous主题与Numix图标"></a>Flatabulous主题与Numix图标</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br></pre></td></tr></table></figure>
+        <h1 id="ubuntu一些装机用到的指令">Ubuntu一些装机用到的指令</h1>
+<h2 id="修改分辨率">修改分辨率：</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>找到以下行： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># The resolution used on graphical terminal </span><br><span class="line"># note that you can use only modes which your graphic card supports via VBE </span><br><span class="line"># you can see them in real GRUB with the command &apos;vbeinfo&apos; </span><br><span class="line"># GRUB_GFXMODE=640×480</span><br></pre></td></tr></table></figure></p>
+<p>下面添加一行： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_GFXMODE=1920×1080 #这里分辨率自行设置</span><br></pre></td></tr></table></figure></p>
+<p>然后保存返回终端： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure></p>
+<p>  重新启动ubuntu使之生效。</p>
+<h2 id="固件刷入">固件刷入</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i linux-xxx.deb 重启</span><br></pre></td></tr></table></figure>
+<h2 id="修改更新源">修改更新源</h2>
+<p>在系统设置里，清华的源速度蛮快的。</p>
+<h2 id="小键盘开机启动">小键盘开机启动</h2>
+<p>安装numlockx： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install numlockx</span><br></pre></td></tr></table></figure></p>
+<p>编辑： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/lightdm/lightdm.conf.d/50-unity-greeter.conf</span><br></pre></td></tr></table></figure></p>
+<p>在最后添加： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">greeter-setup-script=/usr/bin/numlockx on</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置root密码并进入root">设置root密码并进入root</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line">su</span><br></pre></td></tr></table></figure>
+<h2 id="安装ssrpython">安装SSR(Python)</h2>
+<p>打开一键安装脚本，按照里面的步骤来。在<code>ssr start</code>的时候会缺少chacha20的库，使用root安装即可。（提前把它指定的vi改为gedit） <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ssr /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chmod a=rwx /usr/<span class="built_in">local</span>/bin/ssr</span><br></pre></td></tr></table></figure></p>
+<p>安装git： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
+<p>安装tsocks： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install tsocks</span><br><span class="line">sudo gedit /etc/tsocks.conf</span><br></pre></td></tr></table></figure></p>
+<p>添加: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server = 127.0.0.1</span><br><span class="line">server_type = 5</span><br><span class="line">server_port = 1080</span><br></pre></td></tr></table></figure></p>
+<p>安装libsodium获得chacha20： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用root运行</span></span><br><span class="line"><span class="comment"># 先cd到一个临时目录</span></span><br><span class="line">sudo apt-get install build-essential</span><br><span class="line">wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz</span><br><span class="line">tar xf libsodium-1.0.16.tar.gz &amp;&amp; <span class="built_in">cd</span> libsodium-1.0.16</span><br><span class="line">./configure &amp;&amp; make -j4 &amp;&amp; make install</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
+<p>然后<code>sudo ssr install</code>。 然后<code>ssr config</code>编辑配置文件。 最后<code>ssr start</code>。</p>
+<h2 id="运行-apt-get-update-报错">运行 apt-get update 报错</h2>
+<p>错误信息： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Problem executing scripts APT::Update::Post-Invoke-Success &apos;if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then appstreamcli refresh &gt; /dev/null; fi&apos;</span><br><span class="line">E: Sub-process returned an error code</span><br></pre></td></tr></table></figure></p>
+<p>解决方案： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo pkill -KILL appstreamcli</span><br><span class="line"></span><br><span class="line">wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubuntu1_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br><span class="line"></span><br><span class="line">sudo dpkg -i /tmp/appstream_0.9.4-1ubuntu1_amd64.deb /tmp/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br></pre></td></tr></table></figure></p>
+<h2 id="卸载amazon等web-apps">卸载Amazon等Web Apps</h2>
+<p>要卸载干净，不然装Unity Tweak Tool的时候又会回来 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge unity-webapps-common</span><br><span class="line">sudo apt-get autoremove</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装deb软件时被替换成amazon">安装deb软件时被替换成Amazon</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -f</span><br></pre></td></tr></table></figure>
+<h2 id="安装unity-tweak-tool">安装Unity Tweak Tool</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:freyja-dev/unity-tweak-tool-daily</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install unity-tweak-tool</span><br></pre></td></tr></table></figure>
+<h2 id="切换python版本">切换Python版本</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --config python</span><br></pre></td></tr></table></figure>
+<h2 id="flatabulous主题与numix图标">Flatabulous主题与Numix图标</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:noobslab/themes</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install flatabulous-theme</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:numix/ppa</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install numix-icon-theme numix-icon-theme-circle</span><br></pre></td></tr></table></figure>
-<h2 id="Java配置"><a href="#Java配置" class="headerlink" title="Java配置"></a>Java配置</h2><p><code>sudo gedit /etc/profile</code>里添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jdk/jdk1.8.0_161</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line"></span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<h2 id="java配置">Java配置</h2>
+<p><code>sudo gedit /etc/profile</code>里添加： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jdk/jdk1.8.0_161</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line"></span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/java java /usr/lib/jdk/jdk1.8.0_161/bin/java 300</span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jdk/jdk1.8.0_161/bin/javac 300</span><br><span class="line"></span><br><span class="line">sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jdk/jdk1.8.0_161/bin/jar 300   </span><br><span class="line">sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jdk/jdk1.8.0_161/bin/javah 300   </span><br><span class="line">sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jdk/jdk1.8.0_161/bin/javap 300</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -468,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +520,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu一些装机用到的指令"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu一些装机用到的指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改分辨率："><span class="nav-number">1.1.</span> <span class="nav-text">修改分辨率：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固件刷入"><span class="nav-number">1.2.</span> <span class="nav-text">固件刷入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改更新源"><span class="nav-number">1.3.</span> <span class="nav-text">修改更新源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小键盘开机启动"><span class="nav-number">1.4.</span> <span class="nav-text">小键盘开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置root密码并进入root"><span class="nav-number">1.5.</span> <span class="nav-text">设置root密码并进入root</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装SSR-Python"><span class="nav-number">1.6.</span> <span class="nav-text">安装SSR(Python)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行-apt-get-update-报错"><span class="nav-number">1.7.</span> <span class="nav-text">运行 apt-get update 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载Amazon等Web-Apps"><span class="nav-number">1.8.</span> <span class="nav-text">卸载Amazon等Web Apps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装deb软件时被替换成Amazon"><span class="nav-number">1.9.</span> <span class="nav-text">安装deb软件时被替换成Amazon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Unity-Tweak-Tool"><span class="nav-number">1.10.</span> <span class="nav-text">安装Unity Tweak Tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换Python版本"><span class="nav-number">1.11.</span> <span class="nav-text">切换Python版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flatabulous主题与Numix图标"><span class="nav-number">1.12.</span> <span class="nav-text">Flatabulous主题与Numix图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java配置"><span class="nav-number">1.13.</span> <span class="nav-text">Java配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu一些装机用到的指令"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu一些装机用到的指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改分辨率"><span class="nav-number">1.1.</span> <span class="nav-text">修改分辨率：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#固件刷入"><span class="nav-number">1.2.</span> <span class="nav-text">固件刷入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改更新源"><span class="nav-number">1.3.</span> <span class="nav-text">修改更新源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小键盘开机启动"><span class="nav-number">1.4.</span> <span class="nav-text">小键盘开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置root密码并进入root"><span class="nav-number">1.5.</span> <span class="nav-text">设置root密码并进入root</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ssrpython"><span class="nav-number">1.6.</span> <span class="nav-text">安装SSR(Python)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行-apt-get-update-报错"><span class="nav-number">1.7.</span> <span class="nav-text">运行 apt-get update 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载amazon等web-apps"><span class="nav-number">1.8.</span> <span class="nav-text">卸载Amazon等Web Apps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装deb软件时被替换成amazon"><span class="nav-number">1.9.</span> <span class="nav-text">安装deb软件时被替换成Amazon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装unity-tweak-tool"><span class="nav-number">1.10.</span> <span class="nav-text">安装Unity Tweak Tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换python版本"><span class="nav-number">1.11.</span> <span class="nav-text">切换Python版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flatabulous主题与numix图标"><span class="nav-number">1.12.</span> <span class="nav-text">Flatabulous主题与Numix图标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java配置"><span class="nav-number">1.13.</span> <span class="nav-text">Java配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -543,7 +558,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -642,6 +657,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Mini-batch 梯度下降将 $X = [x^{(1)}, x^{(2)}, x^{(3)}, …, x^{(m)}]$ 矩阵所有 $m$ 个样本划分为 $t$ 个子训练集, 每个子训练集称为 $x^$, 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 $x^1 = [x^{(1)}, x^{(2)}, …, x^{(1000)}]$, 维度 $(n_x,1000)$).">
+<meta name="description" content="Mini-batch 梯度下降 将 \(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\) 矩阵所有 \(m\) 个样本划分为 \(t\) 个子训练集, 每个子训练集称为 \(x^{\{i\}}\), 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 \(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Deep Learning笔记 优化算法">
 <meta property="og:url" content="http://yoursite.com/posts/58457.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="Mini-batch 梯度下降将 $X = [x^{(1)}, x^{(2)}, x^{(3)}, …, x^{(m)}]$ 矩阵所有 $m$ 个样本划分为 $t$ 个子训练集, 每个子训练集称为 $x^$, 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 $x^1 = [x^{(1)}, x^{(2)}, …, x^{(1000)}]$, 维度 $(n_x,1000)$).">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="Mini-batch 梯度下降 将 \(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\) 矩阵所有 \(m\) 个样本划分为 \(t\) 个子训练集, 每个子训练集称为 \(x^{\{i\}}\), 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 \(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/58457/1.png">
-<meta property="og:updated_time" content="2019-04-08T13:35:57.940Z">
+<meta property="og:updated_time" content="2019-04-08T14:50:38.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Deep Learning笔记 优化算法">
-<meta name="twitter:description" content="Mini-batch 梯度下降将 $X = [x^{(1)}, x^{(2)}, x^{(3)}, …, x^{(m)}]$ 矩阵所有 $m$ 个样本划分为 $t$ 个子训练集, 每个子训练集称为 $x^$, 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 $x^1 = [x^{(1)}, x^{(2)}, …, x^{(1000)}]$, 维度 $(n_x,1000)$).">
+<meta name="twitter:description" content="Mini-batch 梯度下降 将 \(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\) 矩阵所有 \(m\) 个样本划分为 \(t\) 个子训练集, 每个子训练集称为 \(x^{\{i\}}\), 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 \(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(">
 <meta name="twitter:image" content="http://yoursite.com/posts/58457/1.png">
 
 
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,7 +127,7 @@
 
 
 
-  <title>Coursera Deep Learning笔记 优化算法 | XieNaoban</title>
+  <title>Coursera Deep Learning笔记 优化算法 | XieNaoban's Blog</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -273,7 +273,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,42 +331,95 @@
       
 
       
-        <h1 id="Mini-batch-梯度下降"><a href="#Mini-batch-梯度下降" class="headerlink" title="Mini-batch 梯度下降"></a>Mini-batch 梯度下降</h1><p>将 $X = [x^{(1)}, x^{(2)}, x^{(3)}, …, x^{(m)}]$ 矩阵所有 $m$ 个样本划分为 $t$ 个子训练集, 每个子训练集称为 $x^$, 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 $x^1 = [x^{(1)}, x^{(2)}, …, x^{(1000)}]$, 维度 $(n_x,1000)$). 若m不能被子训练集样本数整除, 则最后一个子训练集样本可以小于其他子训练集样本数. $Y$ 亦然.</p>
-<p>训练时, 每次迭代仅对一个子训练集进行梯度下降: </p>
-<p>$$<br>\begin{aligned}<br>&amp; \text{Repeat} :\<br>&amp; \qquad \text{For } i = 1, 2, …, t: \<br>&amp; \qquad \qquad \text{Forward Prop On } X^ \<br>&amp; \qquad \qquad \text{Compute Cost } J^ \<br>&amp; \qquad \qquad \text{Back Prop using } X^, Y^\<br>&amp; \qquad \qquad \text{Update } w, b<br>\end{aligned}<br>$$</p>
+        <h1 id="mini-batch-梯度下降">Mini-batch 梯度下降</h1>
+<p>将 <span class="math inline">\(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\)</span> 矩阵所有 <span class="math inline">\(m\)</span> 个样本划分为 <span class="math inline">\(t\)</span> 个子训练集, 每个子训练集称为 <span class="math inline">\(x^{\{i\}}\)</span>, 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 <span class="math inline">\(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(1000)}]\)</span>, 维度 <span class="math inline">\((n_x,1000)\)</span>). 若m不能被子训练集样本数整除, 则最后一个子训练集样本可以小于其他子训练集样本数. <span class="math inline">\(Y\)</span> 亦然.</p>
+<p>训练时, 每次迭代仅对一个子训练集进行梯度下降:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \text{Repeat} :\\
+&amp; \qquad \text{For } i = 1, 2, ..., t: \\
+&amp; \qquad \qquad \text{Forward Prop On } X^{\{i\}} \\
+&amp; \qquad \qquad \text{Compute Cost } J^{\{i\}} \\
+&amp; \qquad \qquad \text{Back Prop using } X^{\{i\}}, Y^{\{i\}}\\
+&amp; \qquad \qquad \text{Update } w, b 
+\end{aligned}
+\]</span></p>
 <p>使用 batch 梯度下降法时, 每次迭代都遍历整个训练集, 预期每次迭代成本都会下降, 但若使用 mini-batch 梯度下降法, 若对成本函数作图, 并不是每次迭代都下降, 噪声较大, 但整体上走势还是朝下的.</p>
 <p>若样本集较小(小于2000), 无需使用 mini-batch; 否则一般的 mini-batch 大小为 64~512, 通常为 2 的整数次方.</p>
-<h1 id="指数加权平均数-Exponentially-Weighted-Averages"><a href="#指数加权平均数-Exponentially-Weighted-Averages" class="headerlink" title="指数加权平均数(Exponentially Weighted Averages)"></a>指数加权平均数(Exponentially Weighted Averages)</h1><p>不是个具体的优化方法, 但是是下面的优化方法的数学基础.<br><img src="/posts/58457/1.png" alt></p>
-<p>$$<br>v_t = \beta v_{t-1} + (1 - \beta)\theta_t, \qquad \beta \isin[0,1)<br>$$</p>
-<p>$\beta$ 越大, 画得曲线越平滑, 但画得图像会更为偏右.</p>
-<p>为了让加权平均数运算更准确, 我们还需要偏差修正(Bias Correction). 由于我们默认 $v_0 = 0$, 因此当t较小时, $v_t$ 会比 $\theta_t$ 小很多. 为解决这一问题, 得到更准确的估测, 我们不使用 $v_t$, 而使用 $\frac{v_t}{1-\beta^t}$.</p>
-<h1 id="动量梯度下降法-Gradient-Descent-With-Momentum"><a href="#动量梯度下降法-Gradient-Descent-With-Momentum" class="headerlink" title="动量梯度下降法(Gradient Descent With Momentum)"></a>动量梯度下降法(Gradient Descent With Momentum)</h1><p>当你的成本函数图像不够圆润, 例如是个很扁的椭圆, 使得梯度下降在y轴很快而在x轴很慢, 此时增加学习率也不是,减少学习率也不是. 动量梯度下降法使用指数加权平均数:</p>
-<p>$$<br>\begin{aligned}<br>v_{dW} &amp; = \beta v_{dW} + (1 - \beta)dW \<br>v_{db} &amp; = \beta v_{db} + (1 - \beta)db \<br>W &amp; = W - \alpha v_{dW} \<br>b &amp; = b - \alpha v_{db}<br>\end{aligned}<br>$$</p>
+<h1 id="指数加权平均数exponentially-weighted-averages">指数加权平均数(Exponentially Weighted Averages)</h1>
+<p>不是个具体的优化方法, 但是是下面的优化方法的数学基础. <img src="/posts/58457/1.png"></p>
+<p><span class="math display">\[
+v_t = \beta v_{t-1} + (1 - \beta)\theta_t, \qquad \beta \isin[0,1)
+\]</span></p>
+<p><span class="math inline">\(\beta\)</span> 越大, 画得曲线越平滑, 但画得图像会更为偏右.</p>
+<p>为了让加权平均数运算更准确, 我们还需要偏差修正(Bias Correction). 由于我们默认 <span class="math inline">\(v_0 = 0\)</span>, 因此当t较小时, <span class="math inline">\(v_t\)</span> 会比 <span class="math inline">\(\theta_t\)</span> 小很多. 为解决这一问题, 得到更准确的估测, 我们不使用 <span class="math inline">\(v_t\)</span>, 而使用 <span class="math inline">\(\frac{v_t}{1-\beta^t}\)</span>.</p>
+<h1 id="动量梯度下降法gradient-descent-with-momentum">动量梯度下降法(Gradient Descent With Momentum)</h1>
+<p>当你的成本函数图像不够圆润, 例如是个很扁的椭圆, 使得梯度下降在y轴很快而在x轴很慢, 此时增加学习率也不是,减少学习率也不是. 动量梯度下降法使用指数加权平均数:</p>
+<p><span class="math display">\[
+\begin{aligned}
+v_{dW} &amp; = \beta v_{dW} + (1 - \beta)dW \\
+v_{db} &amp; = \beta v_{db} + (1 - \beta)db \\
+W &amp; = W - \alpha v_{dW} \\
+b &amp; = b - \alpha v_{db}
+\end{aligned}
+\]</span></p>
 <p>以此减缓梯度下降摆动幅度.</p>
-<h1 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h1><p>同 Momentum, 能够很好的消除摆动.</p>
-<p>$$<br>\begin{aligned}<br>S_{dW} &amp; = \beta S_{dW} + (1 - \beta)(dW)^2 \<br>S_{db} &amp; = \beta S_{db} + (1 - \beta)(db)^2 \<br>W &amp; = W - \alpha \frac{dW}{\sqrt{S_{dW}}} \<br>b &amp; = b - \alpha \frac{db}{\sqrt{S_{db}}}<br>\end{aligned}<br>$$</p>
-<h1 id="Adam-优化算法"><a href="#Adam-优化算法" class="headerlink" title="Adam 优化算法"></a>Adam 优化算法</h1><p>RMSprop 与 Adam 是少有的经受住人们考验的两种算法.</p>
+<h1 id="rmsprop">RMSprop</h1>
+<p>同 Momentum, 能够很好的消除摆动.</p>
+<p><span class="math display">\[
+\begin{aligned}
+S_{dW} &amp; = \beta S_{dW} + (1 - \beta)(dW)^2 \\
+S_{db} &amp; = \beta S_{db} + (1 - \beta)(db)^2 \\
+W &amp; = W - \alpha \frac{dW}{\sqrt{S_{dW}}} \\
+b &amp; = b - \alpha \frac{db}{\sqrt{S_{db}}}
+\end{aligned}
+\]</span></p>
+<h1 id="adam-优化算法">Adam 优化算法</h1>
+<p>RMSprop 与 Adam 是少有的经受住人们考验的两种算法.</p>
 <p>Adam 的本质就是将 Momentum 和 RMSprop 结合在一起. 使用该算法首先需要初始化:</p>
-<p>$$<br>v_{dW} = 0, S_{dW} = 0, v_{db} = 0, S_{db} = 0.<br>$$</p>
+<p><span class="math display">\[
+v_{dW} = 0, S_{dW} = 0, v_{db} = 0, S_{db} = 0.
+\]</span></p>
 <p>在第t次迭代中,梯度下降后:</p>
-<p>$$<br>\begin{aligned}<br>v_{dW} &amp; = \beta_1 v_{dW} + (1 - \beta_1)dW \<br>v_{db} &amp; = \beta_1 v_{db} + (1 - \beta_1)db \<br>S_{dW} &amp; = \beta_2 S_{dW} + (1 - \beta_2)(dW)^2 \<br>S_{db} &amp; = \beta_2 S_{db} + (1 - \beta_2)(db)^2 \<br>v_{dW}^{\text{corrected}} &amp; = \frac{v_{dW}}{1-\beta_1^t}, \quad<br>v_{db}^{\text{corrected}} = \frac{v_{db}}{1-\beta_1^t} \<br>S_{dW}^{\text{corrected}} &amp; = \frac{S_{dW}}{1-\beta_2^t}, \quad<br>S_{db}^{\text{corrected}} = \frac{S_{db}}{1-\beta_2^t} \<br>W &amp; = W - \alpha\frac{v_{dW}^{\text{corrected}}}{\sqrt{S_{dW}^{\text{corrected}}}+\varepsilon} \<br>b &amp; = b - \alpha\frac{v_{db}^{\text{corrected}}}{\sqrt{S_{db}^{\text{corrected}}}+\varepsilon}<br>\end{aligned}<br>$$</p>
-<p>最后两个式子的 $+ \varepsilon$ 是为了防止分母为0, 上面 RMSprop 的分母实践中一般也加上, $\varepsilon$ 通常取 $10^{-8}$.</p>
+<p><span class="math display">\[
+\begin{aligned}
+v_{dW} &amp; = \beta_1 v_{dW} + (1 - \beta_1)dW \\
+v_{db} &amp; = \beta_1 v_{db} + (1 - \beta_1)db \\
+S_{dW} &amp; = \beta_2 S_{dW} + (1 - \beta_2)(dW)^2 \\
+S_{db} &amp; = \beta_2 S_{db} + (1 - \beta_2)(db)^2 \\
+v_{dW}^{\text{corrected}} &amp; = \frac{v_{dW}}{1-\beta_1^t}, \quad
+v_{db}^{\text{corrected}} = \frac{v_{db}}{1-\beta_1^t} \\
+S_{dW}^{\text{corrected}} &amp; = \frac{S_{dW}}{1-\beta_2^t}, \quad
+S_{db}^{\text{corrected}} = \frac{S_{db}}{1-\beta_2^t} \\
+W &amp; = W - \alpha\frac{v_{dW}^{\text{corrected}}}{\sqrt{S_{dW}^{\text{corrected}}}+\varepsilon} \\
+b &amp; = b - \alpha\frac{v_{db}^{\text{corrected}}}{\sqrt{S_{db}^{\text{corrected}}}+\varepsilon}
+\end{aligned}
+\]</span></p>
+<p>最后两个式子的 <span class="math inline">\(+ \varepsilon\)</span> 是为了防止分母为0, 上面 RMSprop 的分母实践中一般也加上, <span class="math inline">\(\varepsilon\)</span> 通常取 <span class="math inline">\(10^{-8}\)</span>.</p>
 <p>Adam 算法结合了 Momentum 和 RMSprop 梯度下降法, 并且是一种极其常用的学习算法, 被证明能有效适用于不同神经网络. 适用于广泛的结构.</p>
-<h1 id="学习率衰减-Learning-Rate-Decay"><a href="#学习率衰减-Learning-Rate-Decay" class="headerlink" title="学习率衰减(Learning Rate Decay)"></a>学习率衰减(Learning Rate Decay)</h1><p>如果使用固定的学习率 $\alpha$, 在使用 mini-batch 时在最后的迭代过程中会有噪音, 不会精确收敛, 最终一直在附近摆动. 因此我们希望在训练后期 $\alpha$ 不断减小.</p>
+<h1 id="学习率衰减learning-rate-decay">学习率衰减(Learning Rate Decay)</h1>
+<p>如果使用固定的学习率 <span class="math inline">\(\alpha\)</span>, 在使用 mini-batch 时在最后的迭代过程中会有噪音, 不会精确收敛, 最终一直在附近摆动. 因此我们希望在训练后期 <span class="math inline">\(\alpha\)</span> 不断减小.</p>
 <p>以下为几个常见的方法:</p>
 <p>法一:</p>
-<p>$$<br>\alpha = \frac{1}{1+decay_rate*\text{epoch_num}} \alpha_0<br>$$</p>
-<p>其中 $\alpha_0$ 为初始学习率; $\text{epoch_num}$ 为当前迭代的代数; $decay_rate$ 是衰减率, 一个需要调整的超参数.</p>
+<p><span class="math display">\[
+\alpha = \frac{1}{1+decay\_rate*\text{epoch\_num}} \alpha_0
+\]</span></p>
+<p>其中 <span class="math inline">\(\alpha_0\)</span> 为初始学习率; <span class="math inline">\(\text{epoch\_num}\)</span> 为当前迭代的代数; <span class="math inline">\(decay\_rate\)</span> 是衰减率, 一个需要调整的超参数.</p>
 <p>法二:</p>
-<p>$$<br>\alpha = 0.95^{\text{epoch_num}} \alpha_0<br>$$</p>
+<p><span class="math display">\[
+\alpha = 0.95^{\text{epoch\_num}} \alpha_0
+\]</span></p>
 <p>其中 0.95 自然也能是一些其他的小于 1 的数字.</p>
 <p>法三:</p>
-<p>$$<br>\alpha = \frac{k}{\sqrt{\text{epoch_num}}} \alpha_0<br>$$</p>
+<p><span class="math display">\[
+\alpha = \frac{k}{\sqrt{\text{epoch\_num}}} \alpha_0
+\]</span></p>
 <p>法四:</p>
 <p>离散下降(discrete stair cease), 过一阵子学习率减半, 过一会又减半.</p>
 <p>法五:</p>
 <p>手动衰减, 感觉慢了就调快点, 感觉快了就调慢点.</p>
-<h1 id="局部最优问题-Local-Optima"><a href="#局部最优问题-Local-Optima" class="headerlink" title="局部最优问题(Local Optima)"></a>局部最优问题(Local Optima)</h1><p>人们经常担心算法困在局部最优点, 而事实上算法更经常被困在鞍点, 尤其是在高维空间中. 成熟的优化算法如 Adam 算法，能够加快速度，让你尽早往下走出平稳段.</p>
+<h1 id="局部最优问题local-optima">局部最优问题(Local Optima)</h1>
+<p>人们经常担心算法困在局部最优点, 而事实上算法更经常被困在鞍点, 尤其是在高维空间中. 成熟的优化算法如 Adam 算法，能够加快速度，让你尽早往下走出平稳段.</p>
 
       
     </div>
@@ -480,7 +533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -517,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mini-batch-梯度下降"><span class="nav-number">1.</span> <span class="nav-text">Mini-batch 梯度下降</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指数加权平均数-Exponentially-Weighted-Averages"><span class="nav-number">2.</span> <span class="nav-text">指数加权平均数(Exponentially Weighted Averages)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动量梯度下降法-Gradient-Descent-With-Momentum"><span class="nav-number">3.</span> <span class="nav-text">动量梯度下降法(Gradient Descent With Momentum)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RMSprop"><span class="nav-number">4.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adam-优化算法"><span class="nav-number">5.</span> <span class="nav-text">Adam 优化算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习率衰减-Learning-Rate-Decay"><span class="nav-number">6.</span> <span class="nav-text">学习率衰减(Learning Rate Decay)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部最优问题-Local-Optima"><span class="nav-number">7.</span> <span class="nav-text">局部最优问题(Local Optima)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mini-batch-梯度下降"><span class="nav-number">1.</span> <span class="nav-text">Mini-batch 梯度下降</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指数加权平均数exponentially-weighted-averages"><span class="nav-number">2.</span> <span class="nav-text">指数加权平均数(Exponentially Weighted Averages)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动量梯度下降法gradient-descent-with-momentum"><span class="nav-number">3.</span> <span class="nav-text">动量梯度下降法(Gradient Descent With Momentum)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#rmsprop"><span class="nav-number">4.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#adam-优化算法"><span class="nav-number">5.</span> <span class="nav-text">Adam 优化算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#学习率衰减learning-rate-decay"><span class="nav-number">6.</span> <span class="nav-text">学习率衰减(Learning Rate Decay)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部最优问题local-optima"><span class="nav-number">7.</span> <span class="nav-text">局部最优问题(Local Optima)</span></a></li></ol></div>
             
 
           </div>
@@ -555,7 +608,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -654,6 +707,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

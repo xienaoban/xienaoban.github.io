@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="#DescriptionTo stay woke and attentive during classes, Karen needs some coffee!Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she has">
+<meta name="description" content="#Description To stay woke and attentive during classes, Karen needs some coffee!  Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 816B - Karen and Coffee">
 <meta property="og:url" content="http://yoursite.com/posts/59704.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#DescriptionTo stay woke and attentive during classes, Karen needs some coffee!Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she has">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Description To stay woke and attentive during classes, Karen needs some coffee!  Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she h">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://codeforces.com/predownloaded/02/15/02159e70847762eaf87fdca280025a766c8a564b.png">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 816B - Karen and Coffee">
-<meta name="twitter:description" content="#DescriptionTo stay woke and attentive during classes, Karen needs some coffee!Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she has">
+<meta name="twitter:description" content="#Description To stay woke and attentive during classes, Karen needs some coffee!  Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she h">
 <meta name="twitter:image" content="http://codeforces.com/predownloaded/02/15/02159e70847762eaf87fdca280025a766c8a564b.png">
 
 
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,7 +127,7 @@
 
 
 
-  <title>Codeforces 816B - Karen and Coffee | XieNaoban</title>
+  <title>Codeforces 816B - Karen and Coffee | XieNaoban's Blog</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -273,7 +273,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,28 +331,28 @@
       
 
       
-        <p>#Description<br>To stay woke and attentive during classes, Karen needs some coffee!<br><img src="http://codeforces.com/predownloaded/02/15/02159e70847762eaf87fdca280025a766c8a564b.png" alt="emmmmm.."><br>Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she has spent some time reading several recipe books, including the universally acclaimed “The Art of the Covfefe”.</p>
+        <p>#Description To stay woke and attentive during classes, Karen needs some coffee! <img src="http://codeforces.com/predownloaded/02/15/02159e70847762eaf87fdca280025a766c8a564b.png" alt="emmmmm.."> Karen, a coffee aficionado, wants to know the optimal temperature for brewing the perfect cup of coffee. Indeed, she has spent some time reading several recipe books, including the universally acclaimed "The Art of the Covfefe".</p>
 <p>She knows n coffee recipes. The i-th recipe suggests that coffee should be brewed between li and ri degrees, inclusive, to achieve the optimal taste.</p>
 <p>Karen thinks that a temperature is admissible if at least k recipes recommend it.</p>
 <p>Karen has a rather fickle mind, and so she asks q questions. In each question, given that she only wants to prepare coffee with a temperature between a and b, inclusive, can you tell her how many admissible integer temperatures fall within the range?</p>
-<p>#Input<br>The first line of input contains three integers, n, k (1 ≤ k ≤ n ≤ 200000), and q (1 ≤ q ≤ 200000), the number of recipes, the minimum number of recipes a certain temperature must be recommended by to be admissible, and the number of questions Karen has, respectively.</p>
+<p>#Input The first line of input contains three integers, n, k (1 ≤ k ≤ n ≤ 200000), and q (1 ≤ q ≤ 200000), the number of recipes, the minimum number of recipes a certain temperature must be recommended by to be admissible, and the number of questions Karen has, respectively.</p>
 <p>The next n lines describe the recipes. Specifically, the i-th line among these contains two integers li and ri (1 ≤ li ≤ ri ≤ 200000), describing that the i-th recipe suggests that the coffee be brewed between li and ri degrees, inclusive.</p>
 <p>The next q lines describe the questions. Each of these lines contains a and b, (1 ≤ a ≤ b ≤ 200000), describing that she wants to know the number of admissible integer temperatures between a and b degrees, inclusive.</p>
-<p>#Output<br>For each question, output a single integer on a line by itself, the number of admissible integer temperatures between a and b degrees, inclusive.</p>
-<p>#Examples<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">3 2 4</span><br><span class="line">91 94</span><br><span class="line">92 97</span><br><span class="line">97 99</span><br><span class="line">92 94</span><br><span class="line">93 97</span><br><span class="line">95 96</span><br><span class="line">90 100</span><br><span class="line">output</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">0</span><br><span class="line">4</span><br><span class="line">input</span><br><span class="line">2 1 1</span><br><span class="line">1 1</span><br><span class="line">200000 200000</span><br><span class="line">90 100</span><br><span class="line">output</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
-<p>#Note<br>In the first test case, Karen knows 3 recipes.</p>
-<p>The first one recommends brewing the coffee between 91 and 94 degrees, inclusive.<br>The second one recommends brewing the coffee between 92 and 97 degrees, inclusive.<br>The third one recommends brewing the coffee between 97 and 99 degrees, inclusive.<br>A temperature is admissible if at least 2 recipes recommend it.</p>
+<p>#Output For each question, output a single integer on a line by itself, the number of admissible integer temperatures between a and b degrees, inclusive.</p>
+<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">3 2 4</span><br><span class="line">91 94</span><br><span class="line">92 97</span><br><span class="line">97 99</span><br><span class="line">92 94</span><br><span class="line">93 97</span><br><span class="line">95 96</span><br><span class="line">90 100</span><br><span class="line">output</span><br><span class="line">3</span><br><span class="line">3</span><br><span class="line">0</span><br><span class="line">4</span><br><span class="line">input</span><br><span class="line">2 1 1</span><br><span class="line">1 1</span><br><span class="line">200000 200000</span><br><span class="line">90 100</span><br><span class="line">output</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
+<p>#Note In the first test case, Karen knows 3 recipes.</p>
+<p>The first one recommends brewing the coffee between 91 and 94 degrees, inclusive. The second one recommends brewing the coffee between 92 and 97 degrees, inclusive. The third one recommends brewing the coffee between 97 and 99 degrees, inclusive. A temperature is admissible if at least 2 recipes recommend it.</p>
 <p>She asks 4 questions.</p>
 <p>In her first question, she wants to know the number of admissible integer temperatures between 92 and 94 degrees, inclusive. There are 3: 92, 93 and 94 degrees are all admissible.</p>
 <p>In her second question, she wants to know the number of admissible integer temperatures between 93 and 97 degrees, inclusive. There are 3: 93, 94 and 97 degrees are all admissible.</p>
 <p>In her third question, she wants to know the number of admissible integer temperatures between 95 and 96 degrees, inclusive. There are none.</p>
 <p>In her final question, she wants to know the number of admissible integer temperatures between 90 and 100 degrees, inclusive. There are 4: 92, 93, 94 and 97 degrees are all admissible.</p>
 <p>In the second test case, Karen knows 2 recipes.</p>
-<p>The first one, “wikiHow to make Cold Brew Coffee”, recommends brewing the coffee at exactly 1 degree.<br>The second one, “What good is coffee that isn’t brewed at at least 36.3306 times the temperature of the surface of the sun?”, recommends brewing the coffee at exactly 200000 degrees.<br>A temperature is admissible if at least 1 recipe recommends it.</p>
+<p>The first one, "wikiHow to make Cold Brew Coffee", recommends brewing the coffee at exactly 1 degree. The second one, "What good is coffee that isn't brewed at at least 36.3306 times the temperature of the surface of the sun?", recommends brewing the coffee at exactly 200000 degrees. A temperature is admissible if at least 1 recipe recommends it.</p>
 <p>In her first and only question, she wants to know the number of admissible integer temperatures that are actually reasonable. There are none.</p>
-<p>#Key<br>输入若干闭区间，闭区间内每个整数点的Value+1。输入若干查询，查询在某个区间内的所有整数点Value&gt;=k的个数。</p>
+<p>#Key 输入若干闭区间，闭区间内每个整数点的Value+1。输入若干查询，查询在某个区间内的所有整数点Value&gt;=k的个数。</p>
 <p>一开始预处理的时候比较傻。。。由于预处理的原因TLE了两次。开始我用了树状树组，基友们也是有用线段树的、有用差分数组的、前缀和的。超时了两次后最后我也换回了用前缀和（但是又超时了一次。。。预处理部分写的太无脑了。没有想到数据量这么大）。</p>
-<p>#Code<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 200000;</span><br><span class="line">int n, k, q;</span><br><span class="line">int A[maxn + 233];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ios::sync_with_stdio(false);</span><br><span class="line">	memset(A, 0, sizeof(A));</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; k &gt;&gt; q;</span><br><span class="line">	int in1, in2;</span><br><span class="line">	for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">		cin &gt;&gt; in1 &gt;&gt; in2;</span><br><span class="line">		++A[in1]; --A[in2 + 1];</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt;= maxn; ++i) A[i] += A[i - 1];</span><br><span class="line">	for (int i = 1; i &lt;= maxn; ++i) A[i] = A[i - 1] + (A[i] &gt;= k ? 1 : 0);</span><br><span class="line">	while (q--) &#123;</span><br><span class="line">		cin &gt;&gt; in1 &gt;&gt; in2;</span><br><span class="line">		cout &lt;&lt; A[in2] - A[in1 - 1] &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Code <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 200000;</span><br><span class="line">int n, k, q;</span><br><span class="line">int A[maxn + 233];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ios::sync_with_stdio(false);</span><br><span class="line">	memset(A, 0, sizeof(A));</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; k &gt;&gt; q;</span><br><span class="line">	int in1, in2;</span><br><span class="line">	for (int i = 0; i &lt; n; ++i) &#123;</span><br><span class="line">		cin &gt;&gt; in1 &gt;&gt; in2;</span><br><span class="line">		++A[in1]; --A[in2 + 1];</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1; i &lt;= maxn; ++i) A[i] += A[i - 1];</span><br><span class="line">	for (int i = 1; i &lt;= maxn; ++i) A[i] = A[i - 1] + (A[i] &gt;= k ? 1 : 0);</span><br><span class="line">	while (q--) &#123;</span><br><span class="line">		cin &gt;&gt; in1 &gt;&gt; in2;</span><br><span class="line">		cout &lt;&lt; A[in2] - A[in1 - 1] &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -457,7 +457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +516,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -615,6 +615,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="训练集、验证集、测试集(Train,  Dev, Test Sets)当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器.  确保验证集和测试集的数据来自同一分布.  如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.  偏差、方">
+<meta name="description" content="训练集、验证集、测试集(Train, Dev, Test Sets) 当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器. 确保验证集和测试集的数据来自同一分布. 如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集. 偏差、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Deep Learning笔记 正则化与梯度相关">
 <meta property="og:url" content="http://yoursite.com/posts/41302.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="训练集、验证集、测试集(Train,  Dev, Test Sets)当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器.  确保验证集和测试集的数据来自同一分布.  如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.  偏差、方">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="训练集、验证集、测试集(Train, Dev, Test Sets) 当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器. 确保验证集和测试集的数据来自同一分布. 如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集. 偏差、">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Deep Learning笔记 正则化与梯度相关">
-<meta name="twitter:description" content="训练集、验证集、测试集(Train,  Dev, Test Sets)当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器.  确保验证集和测试集的数据来自同一分布.  如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.  偏差、方">
+<meta name="twitter:description" content="训练集、验证集、测试集(Train, Dev, Test Sets) 当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器. 确保验证集和测试集的数据来自同一分布. 如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集. 偏差、">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Coursera Deep Learning笔记 正则化与梯度相关 | XieNaoban</title>
+  <title>Coursera Deep Learning笔记 正则化与梯度相关 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,36 +329,72 @@
       
 
       
-        <h1 id="训练集、验证集、测试集-Train-Dev-Test-Sets"><a href="#训练集、验证集、测试集-Train-Dev-Test-Sets" class="headerlink" title="训练集、验证集、测试集(Train,  Dev, Test Sets)"></a>训练集、验证集、测试集(Train,  Dev, Test Sets)</h1><p>当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器. </p>
-<p>确保验证集和测试集的数据来自同一分布. </p>
-<p>如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集. </p>
-<h1 id="偏差、方差-Bias-Variance"><a href="#偏差、方差-Bias-Variance" class="headerlink" title="偏差、方差(Bias, Variance)"></a>偏差、方差(Bias, Variance)</h1><p>高偏差(high bias)称为”欠拟合”(underfitting), 练集误差与验证集误差都高.<br>高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集误差很高. 解决方法是正则化或准备更多的数据. </p>
-<h1 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化(Regularization)"></a>正则化(Regularization)</h1><h2 id="逻辑回归中的L1正则化-L2正则化"><a href="#逻辑回归中的L1正则化-L2正则化" class="headerlink" title="逻辑回归中的L1正则化, L2正则化"></a>逻辑回归中的L1正则化, L2正则化</h2><p>对于L1正则化, 为代价函数添加L1范数:<br>$$<br>J(w, b) = \frac{1}{m} \sum^{m}_{i=1} \mathcal{L}(a^{(i)}, y^{(i)}) + \frac{\lambda}{2m} ||w||_1<br>$$</p>
-<p>其中<br>$$<br>||w||_1 = \sum^{n_x}_{j=1} |w_j|<br>$$</p>
-<p>使用L1正则化, w最终会是稀疏的(w中含很多0), 有利于压缩模型, 但也没有降低太多内存, 所以不能将压缩作为L1正则化的目的. 通常我们使用L2正则化. </p>
-<p>对于L2正则化, 为代价函数添加L2范数:<br>$$<br>J(w, b) = \frac{1}{m} \sum^{m}_{i=1} \mathcal{L}(a^{(i)}, y^{(i)}) + \frac{\lambda}{2m} ||w||_2^2<br>$$</p>
-<p>其中<br>$$<br>||w||^2_2 = \sum^{n_x}_{j=1} w_j^2 = w^Tw<br>$$</p>
-<p>尽管 $b$ 也是参数, 但我们没有必要添加 $\frac{\lambda}{2m}b^2$ 项, 因为 $w$ 几乎涵盖了所有参数, 而 $b$ 只是众多参数中的一个, 可以忽略不计(当然加上也没问题). </p>
-<h2 id="神经网络中的L2正则化"><a href="#神经网络中的L2正则化" class="headerlink" title="神经网络中的L2正则化"></a>神经网络中的L2正则化</h2><p>弗罗贝尼乌斯范数(相当于矩阵的L2范数):<br>$$<br>||w^{[l]}||<em>F^2 = \sum</em>{i=1}^{n^{[l-1]}} \sum_{j=1}^{n^{[l]}} (w_{ij}^{[l]})^2<br>$$</p>
+        <h1 id="训练集验证集测试集train-dev-test-sets">训练集、验证集、测试集(Train, Dev, Test Sets)</h1>
+<p>当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器.</p>
+<p>确保验证集和测试集的数据来自同一分布.</p>
+<p>如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.</p>
+<h1 id="偏差方差bias-variance">偏差、方差(Bias, Variance)</h1>
+<p>高偏差(high bias)称为"欠拟合"(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集误差很高. 解决方法是正则化或准备更多的数据.</p>
+<h1 id="正则化regularization">正则化(Regularization)</h1>
+<h2 id="逻辑回归中的l1正则化-l2正则化">逻辑回归中的L1正则化, L2正则化</h2>
+<p>对于L1正则化, 为代价函数添加L1范数: <span class="math display">\[
+J(w, b) = \frac{1}{m} \sum^{m}_{i=1} \mathcal{L}(a^{(i)}, y^{(i)}) + \frac{\lambda}{2m} ||w||_1
+\]</span></p>
+<p>其中 <span class="math display">\[
+||w||_1 = \sum^{n_x}_{j=1} |w_j|
+\]</span></p>
+<p>使用L1正则化, w最终会是稀疏的(w中含很多0), 有利于压缩模型, 但也没有降低太多内存, 所以不能将压缩作为L1正则化的目的. 通常我们使用L2正则化.</p>
+<p>对于L2正则化, 为代价函数添加L2范数: <span class="math display">\[
+J(w, b) = \frac{1}{m} \sum^{m}_{i=1} \mathcal{L}(a^{(i)}, y^{(i)}) + \frac{\lambda}{2m} ||w||_2^2
+\]</span></p>
+<p>其中 <span class="math display">\[
+||w||^2_2 = \sum^{n_x}_{j=1} w_j^2 = w^Tw
+\]</span></p>
+<p>尽管 <span class="math inline">\(b\)</span> 也是参数, 但我们没有必要添加 <span class="math inline">\(\frac{\lambda}{2m}b^2\)</span> 项, 因为 <span class="math inline">\(w\)</span> 几乎涵盖了所有参数, 而 <span class="math inline">\(b\)</span> 只是众多参数中的一个, 可以忽略不计(当然加上也没问题).</p>
+<h2 id="神经网络中的l2正则化">神经网络中的L2正则化</h2>
+<p>弗罗贝尼乌斯范数(相当于矩阵的L2范数): <span class="math display">\[
+||w^{[l]}||_F^2 = \sum_{i=1}^{n^{[l-1]}} \sum_{j=1}^{n^{[l]}} (w_{ij}^{[l]})^2
+\]</span></p>
 <p>则</p>
-<p>$$<br>J(w, b) = \frac{1}{m} \sum^{m}<em>{i=1} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} \sum</em>{l=1}^{L}||w||_F^2<br>$$</p>
-<p>则在反向传播时,<br>$$<br>\begin{aligned}<br>dw^{[l]} &amp; = (\text{from backprop}) + \frac{\lambda}{m}w^{[l]} \<br>w^{[l]} &amp; = w^{[l]} -\alpha dw^{[l]} \<br>\end{aligned}<br>$$</p>
-<p>正则项说明, 无论 $w^{[l]}$ 是什么, 我们都试图使之更小(趋于0). 则计算得的 $z^{[l]} = w^{[l]}a^{[l-1]} + b^{[l]}$此时也更小, $z^{[l]}$ 更容易(以tanh例)落在激活函数 $g(z^{[l]})$ 中间那一段接近线性的部分, 以达到简化网络的目的(线性的激活函数使得无论多少层的网络, 效果都和一层一样). </p>
-<h2 id="随机失活-Dropout-正则化"><a href="#随机失活-Dropout-正则化" class="headerlink" title="随机失活(Dropout)正则化"></a>随机失活(Dropout)正则化</h2><p>对每一轮的训练, Dropout 遍历网络的每一层, 设置神经网络中每一层每个节点的失活概率, 被随机选中失活的节点临时被消除, 不参与本轮的训练, 于是得到一个更小的网络. </p>
-<p>最常用的为反向随机失活(Inverted Dropout). </p>
-<p>该方法在向前传播时, 根据随机失活的概率 (例如0.2), 将每一层(例如 $l$ 层)的 $a^{[l]}$ 矩阵(a=g(z))中被选中失活的元素置为0. 则该层的 $a^{[l]}$ 相当于少了 20% 的元素. 为了不影响下一层 $z^{[l+1]}$ 的期望值, 我们需要 $a^{[l]}$ /= 0.8 以修正权重. </p>
-<p>由于训练时的 “$a^{[l]}$ /= 0.8” 修复了权重, 在测试阶段无需使用 Dropout. </p>
-<p>Dropout 不能与梯度检验同时使用, 因为 Dropout 在梯度下降上的代价函数J难以计算. </p>
-<h2 id="其他正则化"><a href="#其他正则化" class="headerlink" title="其他正则化"></a>其他正则化</h2><p>数据扩增: 比如训练分类猫咪的图片, 将图片左右翻转、旋转一个小角度、稍微变形处理等, 可以人工合成数据. </p>
-<p>Early Stopping: 运行梯度下降时, 我们可以绘制训练误差, 当验证集误差不降反增的时候, 停止训练. 缺点是可能导致代价J值不够小, 却又没解决继续训练可能导致的过拟合问题. </p>
-<h1 id="归一化-Normalizing"><a href="#归一化-Normalizing" class="headerlink" title="归一化(Normalizing)"></a>归一化(Normalizing)</h1><p>输入的归一化有两个步骤: 均值调整为0, 方差归一化. 归一化直观的理解就是使得代价函数更圆, 更容易优化代价函数. </p>
-<h1 id="梯度消失-爆炸-Vanishing-Exploding-Gradients"><a href="#梯度消失-爆炸-Vanishing-Exploding-Gradients" class="headerlink" title="梯度消失/爆炸(Vanishing / Exploding Gradients)"></a>梯度消失/爆炸(Vanishing / Exploding Gradients)</h1><p>为了方便理解，假设使用了线性激活函数 g(z)=z , 且<br>$$<br>W=W^{[L-1]}=…=W^{[2]}=W^{[1]}<br>$$</p>
-<p>则<br>$$<br>\begin{aligned}<br>\hat{y} &amp; = W^{[L]}W^{[L-1]}…W^{[2]}W^{[1]}x \<br>&amp; = W^{[L]}W^{L-1}x<br>\end{aligned}<br>$$</p>
-<p>可知若 $W$ 中有元素权重为 1.5 , 则最终得到 $1.5^{L-1}$ , 若层数很深, 计算得 $\hat{y}$ 也很大; 同理若权重为 0.5 , 进行 $L-1$ 次幂运算后值会很小. 这便是梯度爆炸与梯度消失. </p>
-<p>有效的解决方案: 由于 $z=w_1x_1+w_2x_2+…+w_nx_n$ (忽略 $b$ ), 为了预防 $z$ 太大或太小, 则$n$ 越大时, 期望 $w_i$ 越小, 则在随机(0~1)初始化 $W$ 时, 我们对其乘上一个小于1的倍数, 使之更小. </p>
-<p>对于Tanh, 权重乘上 $\sqrt{\frac{1}{n^{[l-1]}}}$, 或者 $\sqrt{\frac{2}{n^{[l-1]}+n^{[l]}}}$</p>
-<p>对于Relu, 权重乘上 $\sqrt{\frac{2}{n^{[l-1]}}}$</p>
-<h1 id="梯度检验"><a href="#梯度检验" class="headerlink" title="梯度检验"></a>梯度检验</h1><p>在反向传播的时候, 如果怕自己 $d\theta[i] = \frac{\partial J}{\partial \theta_i}$ 等算错, 可以用导数的定义, 计算<br>$$<br>d\theta_{approx}[i] = \frac{J(\theta_1, \theta_2, …, \theta_i + \varepsilon, …) - J(\theta_1, \theta_2, …, \theta_i - \varepsilon, …)}{2\varepsilon}<br>$$</p>
+<p><span class="math display">\[
+J(w, b) = \frac{1}{m} \sum^{m}_{i=1} \mathcal{L}(\hat{y}^{(i)}, y^{(i)}) + \frac{\lambda}{2m} \sum_{l=1}^{L}||w||_F^2
+\]</span></p>
+<p>则在反向传播时, <span class="math display">\[
+\begin{aligned}
+dw^{[l]} &amp; = (\text{from backprop}) + \frac{\lambda}{m}w^{[l]} \\
+w^{[l]} &amp; = w^{[l]} -\alpha dw^{[l]} \\
+\end{aligned}
+\]</span></p>
+<p>正则项说明, 无论 <span class="math inline">\(w^{[l]}\)</span> 是什么, 我们都试图使之更小(趋于0). 则计算得的 <span class="math inline">\(z^{[l]} = w^{[l]}a^{[l-1]} + b^{[l]}\)</span>此时也更小, <span class="math inline">\(z^{[l]}\)</span> 更容易(以tanh例)落在激活函数 <span class="math inline">\(g(z^{[l]})\)</span> 中间那一段接近线性的部分, 以达到简化网络的目的(线性的激活函数使得无论多少层的网络, 效果都和一层一样).</p>
+<h2 id="随机失活dropout正则化">随机失活(Dropout)正则化</h2>
+<p>对每一轮的训练, Dropout 遍历网络的每一层, 设置神经网络中每一层每个节点的失活概率, 被随机选中失活的节点临时被消除, 不参与本轮的训练, 于是得到一个更小的网络.</p>
+<p>最常用的为反向随机失活(Inverted Dropout).</p>
+<p>该方法在向前传播时, 根据随机失活的概率 (例如0.2), 将每一层(例如 <span class="math inline">\(l\)</span> 层)的 <span class="math inline">\(a^{[l]}\)</span> 矩阵(a=g(z))中被选中失活的元素置为0. 则该层的 <span class="math inline">\(a^{[l]}\)</span> 相当于少了 20% 的元素. 为了不影响下一层 <span class="math inline">\(z^{[l+1]}\)</span> 的期望值, 我们需要 <span class="math inline">\(a^{[l]}\)</span> /= 0.8 以修正权重.</p>
+<p>由于训练时的 "<span class="math inline">\(a^{[l]}\)</span> /= 0.8" 修复了权重, 在测试阶段无需使用 Dropout.</p>
+<p>Dropout 不能与梯度检验同时使用, 因为 Dropout 在梯度下降上的代价函数J难以计算.</p>
+<h2 id="其他正则化">其他正则化</h2>
+<p>数据扩增: 比如训练分类猫咪的图片, 将图片左右翻转、旋转一个小角度、稍微变形处理等, 可以人工合成数据.</p>
+<p>Early Stopping: 运行梯度下降时, 我们可以绘制训练误差, 当验证集误差不降反增的时候, 停止训练. 缺点是可能导致代价J值不够小, 却又没解决继续训练可能导致的过拟合问题.</p>
+<h1 id="归一化normalizing">归一化(Normalizing)</h1>
+<p>输入的归一化有两个步骤: 均值调整为0, 方差归一化. 归一化直观的理解就是使得代价函数更圆, 更容易优化代价函数.</p>
+<h1 id="梯度消失爆炸vanishing-exploding-gradients">梯度消失/爆炸(Vanishing / Exploding Gradients)</h1>
+<p>为了方便理解，假设使用了线性激活函数 g(z)=z , 且 <span class="math display">\[
+W=W^{[L-1]}=...=W^{[2]}=W^{[1]}
+\]</span></p>
+<p>则 <span class="math display">\[
+\begin{aligned}
+\hat{y} &amp; = W^{[L]}W^{[L-1]}...W^{[2]}W^{[1]}x \\
+&amp; = W^{[L]}W^{L-1}x
+\end{aligned}
+\]</span></p>
+<p>可知若 <span class="math inline">\(W\)</span> 中有元素权重为 1.5 , 则最终得到 <span class="math inline">\(1.5^{L-1}\)</span> , 若层数很深, 计算得 <span class="math inline">\(\hat{y}\)</span> 也很大; 同理若权重为 0.5 , 进行 <span class="math inline">\(L-1\)</span> 次幂运算后值会很小. 这便是梯度爆炸与梯度消失.</p>
+<p>有效的解决方案: 由于 <span class="math inline">\(z=w_1x_1+w_2x_2+...+w_nx_n\)</span> (忽略 <span class="math inline">\(b\)</span> ), 为了预防 <span class="math inline">\(z\)</span> 太大或太小, 则<span class="math inline">\(n\)</span> 越大时, 期望 <span class="math inline">\(w_i\)</span> 越小, 则在随机(0~1)初始化 <span class="math inline">\(W\)</span> 时, 我们对其乘上一个小于1的倍数, 使之更小.</p>
+<p>对于Tanh, 权重乘上 <span class="math inline">\(\sqrt{\frac{1}{n^{[l-1]}}}\)</span>, 或者 <span class="math inline">\(\sqrt{\frac{2}{n^{[l-1]}+n^{[l]}}}\)</span></p>
+<p>对于Relu, 权重乘上 <span class="math inline">\(\sqrt{\frac{2}{n^{[l-1]}}}\)</span></p>
+<h1 id="梯度检验">梯度检验</h1>
+<p>在反向传播的时候, 如果怕自己 <span class="math inline">\(d\theta[i] = \frac{\partial J}{\partial \theta_i}\)</span> 等算错, 可以用导数的定义, 计算 <span class="math display">\[
+d\theta_{approx}[i] = \frac{J(\theta_1, \theta_2, ..., \theta_i + \varepsilon, ...) - J(\theta_1, \theta_2, ..., \theta_i - \varepsilon, ...)}{2\varepsilon}
+\]</span></p>
 <p>然后根据两者误差估计自己是否算错. 该方法仅用来调试, 且不能同 Dropout 同时使用.</p>
 
       
@@ -473,7 +509,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -510,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#训练集、验证集、测试集-Train-Dev-Test-Sets"><span class="nav-number">1.</span> <span class="nav-text">训练集、验证集、测试集(Train,  Dev, Test Sets)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偏差、方差-Bias-Variance"><span class="nav-number">2.</span> <span class="nav-text">偏差、方差(Bias, Variance)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化-Regularization"><span class="nav-number">3.</span> <span class="nav-text">正则化(Regularization)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归中的L1正则化-L2正则化"><span class="nav-number">3.1.</span> <span class="nav-text">逻辑回归中的L1正则化, L2正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络中的L2正则化"><span class="nav-number">3.2.</span> <span class="nav-text">神经网络中的L2正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机失活-Dropout-正则化"><span class="nav-number">3.3.</span> <span class="nav-text">随机失活(Dropout)正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他正则化"><span class="nav-number">3.4.</span> <span class="nav-text">其他正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归一化-Normalizing"><span class="nav-number">4.</span> <span class="nav-text">归一化(Normalizing)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度消失-爆炸-Vanishing-Exploding-Gradients"><span class="nav-number">5.</span> <span class="nav-text">梯度消失/爆炸(Vanishing / Exploding Gradients)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度检验"><span class="nav-number">6.</span> <span class="nav-text">梯度检验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#训练集验证集测试集train-dev-test-sets"><span class="nav-number">1.</span> <span class="nav-text">训练集、验证集、测试集(Train, Dev, Test Sets)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#偏差方差bias-variance"><span class="nav-number">2.</span> <span class="nav-text">偏差、方差(Bias, Variance)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化regularization"><span class="nav-number">3.</span> <span class="nav-text">正则化(Regularization)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归中的l1正则化-l2正则化"><span class="nav-number">3.1.</span> <span class="nav-text">逻辑回归中的L1正则化, L2正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络中的l2正则化"><span class="nav-number">3.2.</span> <span class="nav-text">神经网络中的L2正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机失活dropout正则化"><span class="nav-number">3.3.</span> <span class="nav-text">随机失活(Dropout)正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他正则化"><span class="nav-number">3.4.</span> <span class="nav-text">其他正则化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归一化normalizing"><span class="nav-number">4.</span> <span class="nav-text">归一化(Normalizing)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度消失爆炸vanishing-exploding-gradients"><span class="nav-number">5.</span> <span class="nav-text">梯度消失/爆炸(Vanishing / Exploding Gradients)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度检验"><span class="nav-number">6.</span> <span class="nav-text">梯度检验</span></a></li></ol></div>
             
 
           </div>
@@ -548,7 +584,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -647,6 +683,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

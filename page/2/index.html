@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="XieNaoban">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
 
 
 
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +121,7 @@
 
 
 
-  <title>XieNaoban</title>
+  <title>XieNaoban's Blog</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -259,6 +259,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/30914.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/30914.html" itemprop="url">Ubuntu一些装机用到的指令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T20:40:11+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Ubuntu一些装机用到的指令
+修改分辨率：
+1sudo gedit /etc/default/grub
+找到以下行： 1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see them in real GRUB with the command &apos;vbeinfo&apos; # GRUB_GFXMODE=640×480
+下面添加一行： 1GRUB_GFXMODE=1920×1080 #这里分辨率自行设置
+然后保存返回终端： 1sudo update-grub
+  重新启动ubuntu使之生效。
+固件刷入
+1sudo dpkg -i linux-xx
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/30914.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/1115.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +402,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -330,10 +464,27 @@
       
         
           
-          概念与表述线性回归与逻辑回归的缺点：特征太多的时候计算负荷太大。
-神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下一层的输入变量。
-直观理解神经网络的单层神经元的计算可以用来表示逻辑运算，比如AND、OR。
+          概念与表述
+线性回归与逻辑回归的缺点：特征太多的时候计算负荷太大。
+神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下一层的输入变量。 
+直观理解
+神经网络的单层神经元的计算可以用来表示逻辑运算，比如AND、OR。
   
+如果用多层的话就可以组成功能复杂的神经网络。
+
+多类分类
+ 
+代价函数
+逻辑回归的代价函数：
+
+神经网络代价函数：（\(h_{\theta}(x)\)为K维度的向量，因为神经网络中可以输出很多变量。训练集中的因变量也是K维度）
+
+反向传播算法
+预测结果时我们正向传播：从第一层正向一层层传播，直到最后一层\(h_{\theta}(x)\) 。
+
+
+计算代价函数的偏导数时，从最后一层的误差算起，一层层反向求出各层误差，直到倒数第二层。设误差为\(\delta\) ：
+\(\delta^{(n)}=a^{(n)}
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -397,7 +548,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -460,7 +611,9 @@
         
           
           ACM忙完啦，最近想给自己的xienaoban.github.io做个博客网页，刚好没学过html之类的东西，就从零开始一边学一边做。之前一直对html5做的各种特效很感兴趣，就从网页背景开始写起吧。
-曾经看到过别人的博客的背景有种特效，就
+曾经看到过别人的博客的背景有种特效，就是背景随机散布若干点不停移动，当两个点足够近的时候就会产生一条线连接两点，就像星座的连线一样；当点离鼠标很近的时候还会被吸引。于是自己也来实现个。
+感觉js真的是个很神奇的语言，没有类，就把函数“假装”为类，并作为类似构造函数而存在，然后用prototype添加成员函数。看上去还真像那么回事，哈哈。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -524,7 +677,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -586,7 +739,7 @@
       
         
           
-          #Problem Description众所周知，HDU的考研教室是没有空调的，于是就苦了不少不去图书馆的考研仔们。Lele也是其中一个。而某教室旁边又摆着两个未装上的空调，更是引起人们无限YY。一个炎热的下午，Lele照例在教室睡觉的时候
+          #Problem Description 众所周知，HDU的考研教室是没有空调的，于是就苦了不少不去图书馆的考研仔们。Lele也是其中一个。而某教室旁边又摆着两个未装上的空调，更是引起人们无限YY。 一个炎热的下午，Lele照例在教室睡觉的时候，竟然做起了空调教室的美梦。 Lele梦到学校某天终于大发慈悲给某个教室安上了一个空调。而且建造了了M条通气管道，让整个教学楼的全部教室都直接或间接和空调教室连通上，构成了教室群，于是，全部教室都能吹到空调了。 不仅仅这样，学校发现教室人数越来越多，单单一个空调已经不能满足大家的需求。于是，学校决定封闭掉一条通气管道，把全部教室分成两个连通的教室群，再在那个没有空调的教室群里添置一个空调。 当然，为了让效果更好，学校想让这两个教室群里的学生人数尽量平衡。于是学校找到了你，问你封闭哪条通气管道，使得两个教室群的人数尽量平衡，并且输出人数差值的绝对值。
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -650,7 +803,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -712,11 +865,8 @@
       
         
           
-          两道有上下界有源汇最小流。步骤之前写的笔记里有。但是原理。。。确实不太懂。步骤：
-
-按照无源汇有上下界的最大流的做法找出可行流（但不要建立t-&gt;s）；
-添加t-&gt;s，流量上界INF；
-再次运行最大流，找出ss-&gt;st可行流
+          两道有上下界有源汇最小流。 步骤之前写的笔记里有。但是原理。。。确实不太懂。 步骤： 1. 按照无源汇有上下界的最大流的做法找出可行流（但不要建立t-&gt;s）； 2. 添加t-&gt;s，流量上界INF； 3. 再次运行最大流，找出ss-&gt;st可行流； 4. 若ss不满载，则无可行流。反之，最小流为t-&gt;s的流量，每条边的流量为逆向边的流量（加上下界b）。
+SGU176 - Flow construction 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -780,7 +930,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -842,8 +992,11 @@
       
         
           
-          #Descriptionuva的pdf格式题目复制有问题，直接贴原题链接了。UVA11248 - Frequency Hopping
-#Key给一个N点E条边的网络流，问能否找出1-&gt;N的一条流量等于C的流。若不能，若修改一条弧的上界
+          #Description uva的pdf格式题目复制有问题，直接贴原题链接了。 UVA11248 - Frequency Hopping
+#Key 给一个N点E条边的网络流，问能否找出1-&gt;N的一条流量等于C的流。若不能，若修改一条弧的上界，可否找到？列出所有可修改的弧。
+先求出最大流，若大于C，输出“possible”。 若小于C，枚举修改每一条弧再次运行最大流（记得记录每条修改过的弧，本次最大流运行过后再重新把每条弧的流量恢复。不能每次都从头开始计算最大流，会超时）。
+可以如下优化，不需要求最大流，只需流量大于等于C时就可以停止。不过既然已经AC了就不管了。
+#Code 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -907,7 +1060,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -970,12 +1123,9 @@
         
           
           从大佬的博客里学到了很多东西，以下是自己的小总结。
-#无源汇有上下界可行流
-####步骤
-
-建立超级源点ss与汇点st；
-像普通网络流一样建图，但其中边的上界为c-b（上界-下界）；
-计算所有点的Dif（流入下界之和 - 流出下界之和）。如
+#无源汇有上下界可行流 ####步骤 1. 建立超级源点ss与汇点st； 2. 像普通网络流一样建图，但其中边的上界为c-b（上界-下界）； 3. 计算所有点的Dif（流入下界之和 - 流出下界之和）。 如果Dif[u]大于0，建立ss到u的上界为Dif的附加边； 如果Dif[u]小于0，建立u到st的上界为-Dif的附加边； 4. 计算从ss到st的最大流； 5. 计算每条附加边的流量。若每条附加边u的流量均为Dif[u]（即每条附加边都满载），则说明找到了可行流。
+算竞训练指南上说还要建立一条st到ss的流量上界INF的边，翻了很多资料博客，其实应该不可以添加。应该是书上错了？
+####模板题 SGU194 - Reactor Cooling 1234567891011121314151617181920212223242526
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1039,7 +1189,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1101,7 +1251,8 @@
       
         
           
-          #DescriptionUVA11082 - Matrix DecompressingSome RxC matrix of positive integers is encoded and represented by its R cumu
+          #Description UVA11082 - Matrix Decompressing Some RxC matrix of positive integers is encoded and represented by its R cumulative row sum and C column sum entries. Given, R, C and those R+C cumulative row sum and column sums, you want to decode the matrix (i.e., find all the individual R * C entries).
+In other words, the i-th row sum is the sum of all the entries in row i. And the cumulative i-th 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1165,7 +1316,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1227,7 +1378,8 @@
       
         
           
-          #DescriptionRecently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Thei
+          #Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things in order, that is why he wants his coins to be arranged in a row in such a way that firstly come coins out of circulation, and then come coins still in circulation.
+For arranging coins Dima uses th
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1291,7 +1443,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1354,139 +1506,12 @@
         
           
           2017 ACM-ICPC Asia Regional Qingdao Online - 1010 - Brute Force Sorting（HDU6215）
-Time Limit: 1000/1000 MS (Java/Others) 
+Time Limit: 1000/1000 MS (Java/Others) Memory Limit: 65535/32768 K (Java/Others)Total Submission(s): 1195 Accepted Submission(s): 309
+#Problem Description Beerus needs to sort an array of N integers. Algorithms are not Beerus's strength. Destruction is what he excels. He can destroy all unsorted numbers in the array
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/63088.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/12203.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/12203.html" itemprop="url">Python实现备份CSDN博客(未完成)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T18:34:54+08:00">
-                2017-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          想着把我CSDN上所有博客的markdown源文件备份一遍，但其实没学过这方面的东西，就做了个半成品。。。以后完善吧（应该）
-实现了提取所有文章的名字与其对应文章ID和发布时间，并找到编辑文档的网页。
-上面这些信息提取很方便，网页源码里翻就
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/12203.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1574,7 +1599,7 @@ Time Limit: 1000/1000 MS (Java/Others)
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1633,7 +1658,7 @@ Time Limit: 1000/1000 MS (Java/Others)
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1732,6 +1757,13 @@ Time Limit: 1000/1000 MS (Java/Others)
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

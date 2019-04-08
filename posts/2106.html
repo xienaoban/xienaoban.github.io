@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="调试(Tuning)深度学习要处理很多参数, 从学习速率 $\alpha$ 到 Momentum 的参数 $\beta$, 若使用 Adam 优化算法,还得处理 $\beta_1$, $\beta_2$ 和 $\varepsilon$. 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 $\alpha$ 是最优先调试的超参数. m">
+<meta name="description" content="调试(Tuning) 深度学习要处理很多参数, 从学习速率 \(\alpha\) 到 Momentum 的参数 \(\beta\), 若使用 Adam 优化算法,还得处理 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\). 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 \(\alpha\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Deep Learning笔记 超参数调试 Batch归一化 Softmax">
 <meta property="og:url" content="http://yoursite.com/posts/2106.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="调试(Tuning)深度学习要处理很多参数, 从学习速率 $\alpha$ 到 Momentum 的参数 $\beta$, 若使用 Adam 优化算法,还得处理 $\beta_1$, $\beta_2$ 和 $\varepsilon$. 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 $\alpha$ 是最优先调试的超参数. m">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="调试(Tuning) 深度学习要处理很多参数, 从学习速率 \(\alpha\) 到 Momentum 的参数 \(\beta\), 若使用 Adam 优化算法,还得处理 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\). 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 \(\alpha\">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Deep Learning笔记 超参数调试 Batch归一化 Softmax">
-<meta name="twitter:description" content="调试(Tuning)深度学习要处理很多参数, 从学习速率 $\alpha$ 到 Momentum 的参数 $\beta$, 若使用 Adam 优化算法,还得处理 $\beta_1$, $\beta_2$ 和 $\varepsilon$. 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 $\alpha$ 是最优先调试的超参数. m">
+<meta name="twitter:description" content="调试(Tuning) 深度学习要处理很多参数, 从学习速率 \(\alpha\) 到 Momentum 的参数 \(\beta\), 若使用 Adam 优化算法,还得处理 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\). 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减. 其中学习速率 \(\alpha\">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Coursera Deep Learning笔记 超参数调试 Batch归一化 Softmax | XieNaoban</title>
+  <title>Coursera Deep Learning笔记 超参数调试 Batch归一化 Softmax | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,32 +329,42 @@
       
 
       
-        <h1 id="调试-Tuning"><a href="#调试-Tuning" class="headerlink" title="调试(Tuning)"></a>调试(Tuning)</h1><p>深度学习要处理很多参数, 从学习速率 $\alpha$ 到 Momentum 的参数 $\beta$, 若使用 Adam 优化算法,还得处理 $\beta_1$, $\beta_2$ 和 $\varepsilon$. 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减.</p>
-<p>其中学习速率 $\alpha$ 是最优先调试的超参数. mini-batch 大小与隐藏单元次之. 而 Momentum 的参数 $\beta$ 通常使用默认值 0.9, Adam 的参数 $\beta_1$, $\beta_2$ 和 $\varepsilon$ 通常不进行调试, 使用默认的 0.9, 0.999 和 $10^{-8}$.</p>
-<p>参数选择有以下一些方法:</p>
-<ol>
-<li><p>随机选择点. 例如现在有 $\alpha$ 与 Adam 的 $\varepsilon$ 两个超参数要调试. 在更早的机器学习算法中, 常见的是在网格中等距离取样. 现在更推荐随机选择. 在参数取值范围内随机选择若干点, 可以发现哪个超参数更重要, 影响更大.</p>
-</li>
-<li><p>由粗糙到精细的策略. 由1, 发现在某个点效果最好, 可以预测在该点附近效果也很好, 于是放大这块区域, 更密集地取值.</p>
-</li>
-<li><p>随机选择点时, 有些参数不适合均匀(在线性轴上)的随机选择. 例如 $\alpha$, 我们希望其在对数轴上随机取点(0.0001, 0.001, 0.01, 0.1, 1), 我们可以 <code>a = 10**(-4*np.random.rand())</code>, 即可得到 $a \isin [10^{-4}, 10^0]$.</p>
-</li>
+        <h1 id="调试tuning">调试(Tuning)</h1>
+<p>深度学习要处理很多参数, 从学习速率 <span class="math inline">\(\alpha\)</span> 到 Momentum 的参数 <span class="math inline">\(\beta\)</span>, 若使用 Adam 优化算法,还得处理 <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span> 和 <span class="math inline">\(\varepsilon\)</span>. 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减.</p>
+<p>其中学习速率 <span class="math inline">\(\alpha\)</span> 是最优先调试的超参数. mini-batch 大小与隐藏单元次之. 而 Momentum 的参数 <span class="math inline">\(\beta\)</span> 通常使用默认值 0.9, Adam 的参数 <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span> 和 <span class="math inline">\(\varepsilon\)</span> 通常不进行调试, 使用默认的 0.9, 0.999 和 <span class="math inline">\(10^{-8}\)</span>.</p>
+<p>参数选择有以下一些方法: 1. 随机选择点. 例如现在有 <span class="math inline">\(\alpha\)</span> 与 Adam 的 <span class="math inline">\(\varepsilon\)</span> 两个超参数要调试. 在更早的机器学习算法中, 常见的是在网格中等距离取样. 现在更推荐随机选择. 在参数取值范围内随机选择若干点, 可以发现哪个超参数更重要, 影响更大.</p>
+<ol start="2" type="1">
+<li><p>由粗糙到精细的策略. 由1, 发现在某个点效果最好, 可以预测在该点附近效果也很好, 于是放大这块区域, 更密集地取值.</p></li>
+<li><p>随机选择点时, 有些参数不适合均匀(在线性轴上)的随机选择. 例如 <span class="math inline">\(\alpha\)</span>, 我们希望其在对数轴上随机取点(0.0001, 0.001, 0.01, 0.1, 1), 我们可以 <code>a = 10**(-4*np.random.rand())</code>, 即可得到 <span class="math inline">\(a \isin [10^{-4}, 10^0]\)</span>.</p></li>
 </ol>
-<h1 id="Batch-归一化-Batch-Norm"><a href="#Batch-归一化-Batch-Norm" class="headerlink" title="Batch 归一化(Batch Norm)"></a>Batch 归一化(Batch Norm)</h1><p>训练 Logistic 回归时, 归一化 X 可以加快学习过程. 现在我们希望对隐藏层的 A 行归一化. 吴恩达老师介绍的版本是归一化 Z, 也有学者认为应该归一化 A.</p>
+<h1 id="batch-归一化batch-norm">Batch 归一化(Batch Norm)</h1>
+<p>训练 Logistic 回归时, 归一化 X 可以加快学习过程. 现在我们希望对隐藏层的 A 行归一化. 吴恩达老师介绍的版本是归一化 Z, 也有学者认为应该归一化 A.</p>
 <p>我们对每一层的z, a 做如下操作:</p>
-<p>$$<br>\mu = \frac{1}{m} \sum_i z^{(i)} \<br>\sigma^2 = \frac{1}{m} \sum_i (z^{(i)} - \mu)^2 \<br>z_{\text{norm}}^{(i)} = \frac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \varepsilon}} \<br>\widetilde{z}^{(i)} = \gamma z_{\text{norm}}^{(i)} + \beta<br>$$</p>
-<p>($\varepsilon$是为了防止分母为0.)</p>
-<p>$z_{\text{norm}}$ 就是标准化的 $z$, 平均值为0, 方差为1. 当希望均值, 方差不是0和1时, 计算 $\widetilde{z}$.</p>
-<p>$\gamma$ 与 $\beta$ 的作用是随意设置 $\widetilde{z}^{(i)}$ 的平均值. 当$A = \sqrt{\sigma^2+\varepsilon}$ 且 $B = \mu$ 时, $\widetilde{z}^{(i)} = z^{(i)}$. $\gamma$ 与 $\beta$是模型的学习参数, 梯度下降时会像更新神经网络的权重一样更新 $\gamma$ 和 $\beta$.</p>
-<p>使用该方法时, 参数 w 和 b 中的 b 可以不设立, 毕竟 b 总是会被归一化减去. 于是参数只剩下了 $w$, $\beta$, $\gamma$.</p>
-<p>Batch 归一化减少了输入值改变的问题, 它的确使这些值变得更稳定, 它减弱了前层参数的作用与后层参数的作用之间的联系, 它使得网络每层都可以自己学习, 稍稍独立于其它层, 有助于加速整个网络的学习. </p>
-<p>另外, 每个 mini-batch 子数据集的均值和方差均有一些噪音, 而 Batch 归一化将 $z$ 缩放到 $\widetilde{z}$ 的过程也有噪音, 因此有轻微的正则化效果.</p>
-<p>在测试时, 我们很可能只想测一个样本, 此时均值 $\mu$ 和方差 $\sigma$ 没有意义. 因此我们要使用估算的 $\mu$ 和 $\sigma$ 进行测试. 估算方法很多, 通常运用指数加权平均来追踪在训练过程中的 $\mu$ 和 $\sigma$. 还可以用指数加权平均. </p>
-<h1 id="Softmax-回归"><a href="#Softmax-回归" class="headerlink" title="Softmax 回归"></a>Softmax 回归</h1><p>类似 Logistic 回归, 但 Softmax 回归能识别多个分类. 因此 $\hat{y}$ 是 C×1 维的向量, 给出 C 个分类的概率,所有概率加起来应该为1.</p>
-<p>在神经网络的最后一层, 我们像往常一样计算各层的线性部分, 当计算了 $z^{[L]} = W^{[L]}a^{[L-1]}+b^{[L]}$ 之后, 使用 Softmax 激活函数.</p>
-<p>$$<br>a^{[L]}_i = \frac{e^{z^{[L]}<em>i}}{\sum</em>{j=1}^{4} e^{z^{[L]}_i}}<br>$$</p>
+<p><span class="math display">\[
+\mu = \frac{1}{m} \sum_i z^{(i)} \\
+\sigma^2 = \frac{1}{m} \sum_i (z^{(i)} - \mu)^2 \\
+z_{\text{norm}}^{(i)} = \frac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \varepsilon}} \\
+\widetilde{z}^{(i)} = \gamma z_{\text{norm}}^{(i)} + \beta
+\]</span></p>
+<p>(<span class="math inline">\(\varepsilon\)</span>是为了防止分母为0.)</p>
+<p><span class="math inline">\(z_{\text{norm}}\)</span> 就是标准化的 <span class="math inline">\(z\)</span>, 平均值为0, 方差为1. 当希望均值, 方差不是0和1时, 计算 <span class="math inline">\(\widetilde{z}\)</span>.</p>
+<p><span class="math inline">\(\gamma\)</span> 与 <span class="math inline">\(\beta\)</span> 的作用是随意设置 <span class="math inline">\(\widetilde{z}^{(i)}\)</span> 的平均值. 当<span class="math inline">\(A = \sqrt{\sigma^2+\varepsilon}\)</span> 且 <span class="math inline">\(B = \mu\)</span> 时, <span class="math inline">\(\widetilde{z}^{(i)} = z^{(i)}\)</span>. <span class="math inline">\(\gamma\)</span> 与 <span class="math inline">\(\beta\)</span>是模型的学习参数, 梯度下降时会像更新神经网络的权重一样更新 <span class="math inline">\(\gamma\)</span> 和 <span class="math inline">\(\beta\)</span>.</p>
+<p>使用该方法时, 参数 w 和 b 中的 b 可以不设立, 毕竟 b 总是会被归一化减去. 于是参数只剩下了 <span class="math inline">\(w\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span>.</p>
+<p>Batch 归一化减少了输入值改变的问题, 它的确使这些值变得更稳定, 它减弱了前层参数的作用与后层参数的作用之间的联系, 它使得网络每层都可以自己学习, 稍稍独立于其它层, 有助于加速整个网络的学习.</p>
+<p>另外, 每个 mini-batch 子数据集的均值和方差均有一些噪音, 而 Batch 归一化将 <span class="math inline">\(z\)</span> 缩放到 <span class="math inline">\(\widetilde{z}\)</span> 的过程也有噪音, 因此有轻微的正则化效果.</p>
+<p>在测试时, 我们很可能只想测一个样本, 此时均值 <span class="math inline">\(\mu\)</span> 和方差 <span class="math inline">\(\sigma\)</span> 没有意义. 因此我们要使用估算的 <span class="math inline">\(\mu\)</span> 和 <span class="math inline">\(\sigma\)</span> 进行测试. 估算方法很多, 通常运用指数加权平均来追踪在训练过程中的 <span class="math inline">\(\mu\)</span> 和 <span class="math inline">\(\sigma\)</span>. 还可以用指数加权平均.</p>
+<h1 id="softmax-回归">Softmax 回归</h1>
+<p>类似 Logistic 回归, 但 Softmax 回归能识别多个分类. 因此 <span class="math inline">\(\hat{y}\)</span> 是 C×1 维的向量, 给出 C 个分类的概率,所有概率加起来应该为1.</p>
+<p>在神经网络的最后一层, 我们像往常一样计算各层的线性部分, 当计算了 <span class="math inline">\(z^{[L]} = W^{[L]}a^{[L-1]}+b^{[L]}\)</span> 之后, 使用 Softmax 激活函数.</p>
+<p><span class="math display">\[
+a^{[L]}_i = \frac{e^{z^{[L]}_i}}{\sum_{j=1}^{4} e^{z^{[L]}_i}}
+\]</span></p>
 <p>Softmax 分类中, 一般使用的损失函数及反向传播的导数是</p>
-<p>$$<br>L(\hat{y}, y) = -\sum_{j=1}^{n}y_j \text{log } \hat{y}<em>j \<br>J(w^{[1]}, b^{[1]}, …) = \frac{1}{m} \sum</em>{i=1}^m L(\hat{y}^{(i)}, y^{(i)}) \<br>\frac{\partial J}{\partial z^{[L]}} = \hat{y} - y<br>$$</p>
+<p><span class="math display">\[
+L(\hat{y}, y) = -\sum_{j=1}^{n}y_j \text{log } \hat{y}_j \\
+J(w^{[1]}, b^{[1]}, ...) = \frac{1}{m} \sum_{i=1}^m L(\hat{y}^{(i)}, y^{(i)}) \\
+\frac{\partial J}{\partial z^{[L]}} = \hat{y} - y
+\]</span></p>
 <p>Softmax 给出的是每个分类的概率. 而对应的 Hardmax 则是将最大的元素输出为 1, 其余元素置 0.</p>
 
       
@@ -469,7 +479,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -506,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#调试-Tuning"><span class="nav-number">1.</span> <span class="nav-text">调试(Tuning)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Batch-归一化-Batch-Norm"><span class="nav-number">2.</span> <span class="nav-text">Batch 归一化(Batch Norm)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Softmax-回归"><span class="nav-number">3.</span> <span class="nav-text">Softmax 回归</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#调试tuning"><span class="nav-number">1.</span> <span class="nav-text">调试(Tuning)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#batch-归一化batch-norm"><span class="nav-number">2.</span> <span class="nav-text">Batch 归一化(Batch Norm)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#softmax-回归"><span class="nav-number">3.</span> <span class="nav-text">Softmax 回归</span></a></li></ol></div>
             
 
           </div>
@@ -544,7 +554,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -643,6 +653,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

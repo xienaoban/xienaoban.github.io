@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+<meta name="description" content="#Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组\(\{1,3,6,5,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM笔记 - 排序小技巧">
 <meta property="og:url" content="http://yoursite.com/posts/3607.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组\(\{1,3,6,5,">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM笔记 - 排序小技巧">
-<meta name="twitter:description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+<meta name="twitter:description" content="#Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组\(\{1,3,6,5,">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>ACM笔记 - 排序小技巧 | XieNaoban</title>
+  <title>ACM笔记 - 排序小技巧 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,12 +329,12 @@
       
 
       
-        <p>#Description<br>一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。</p>
-<p>例如一个数组${1,3,6,5,2,4,1,9,0}$，一共9个数字，下标0~8。要求：<br>每次取一个区间，计算区间内$(最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+…$的值。很容易想到对区间排个序，即可方便获得最大、次大值等。<br>对1~5排序：${2,3,4,5,6}$<br>对1~6排序：${1,2,3,4,5,6}$<br>对2~5排序：${2,4,5,6}$<br>可以看出2、5、6始终在范围内，但每次都要针对所选区间重新排序，很麻烦。<br>既然大部分数据一直出现在范围内，现在就希望能够一次排序，应对所有情况。</p>
-<p>#Key<br>继续使用上述的例子：$Array = {1,3,6,5,2,4,1,9,0}$<br>开个新数组作其索引：$Index = {0,1,2,3,4,5,6,7,8}$<br>令索引数组按照$Array$的大小关系排序，得$Index = {8,0,6,4,1,5,3,2,7}$</p>
-<p>对于区间[1, 5]：从左向右找出第一个在[1, 5]的下标即为最小值：8不符合、0不符合、6不符合，4符合，那么最小值就是$Array[4] = 2$，次大值就是$Array[1] = 3$ …</p>
+        <p>#Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。</p>
+<p>例如一个数组<span class="math inline">\(\{1,3,6,5,2,4,1,9,0\}\)</span>，一共9个数字，下标0<sub>8。要求： 每次取一个区间，计算区间内<span class="math inline">\((最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+...\)</span>的值。很容易想到对区间排个序，即可方便获得最大、次大值等。 对1</sub>5排序：<span class="math inline">\(\{2,3,4,5,6\}\)</span> 对1<sub>6排序：<span class="math inline">\(\{1,2,3,4,5,6\}\)</span> 对2</sub>5排序：<span class="math inline">\(\{2,4,5,6\}\)</span> 可以看出2、5、6始终在范围内，但每次都要针对所选区间重新排序，很麻烦。 既然大部分数据一直出现在范围内，现在就希望能够一次排序，应对所有情况。</p>
+<p>#Key 继续使用上述的例子：<span class="math inline">\(Array = \{1,3,6,5,2,4,1,9,0\}\)</span> 开个新数组作其索引：<span class="math inline">\(Index = \{0,1,2,3,4,5,6,7,8\}\)</span> 令索引数组按照<span class="math inline">\(Array\)</span>的大小关系排序，得<span class="math inline">\(Index = \{8,0,6,4,1,5,3,2,7\}\)</span></p>
+<p>对于区间[1, 5]：从左向右找出第一个在[1, 5]的下标即为最小值：8不符合、0不符合、6不符合，4符合，那么最小值就是<span class="math inline">\(Array[4] = 2\)</span>，次大值就是<span class="math inline">\(Array[1] = 3\)</span> ...</p>
 <p>即每次只需检测排序后当前位的数字的下标是否在该区间内即可。</p>
-<p>#Sample<br>题目：<a href="https://hihocoder.com/problemset/problem/1384" target="_blank" rel="noopener">https://hihocoder.com/problemset/problem/1384</a><br>一道贪心的题，期间需要对下标i到j、i到j+k之间的数字分别排序。是别人家的代码（<a href="http://www.bubuko.com/infodetail-1772326.html" target="_blank" rel="noopener">他的原文链接，虽然我也不知道他是不是转别人的</a>），就是在这学到的技巧。注意观察judge函数与judge2函数的差异，judge2函数即实现了上述排序思想。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">#include &lt;cstdio&gt;  </span><br><span class="line">#include &lt;cstring&gt;  </span><br><span class="line">#include &lt;algorithm&gt;  </span><br><span class="line">#include &lt;cmath&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">typedef long long int ll;  </span><br><span class="line">ll m,n,k;  </span><br><span class="line">ll a[500050];  </span><br><span class="line">ll b[500050];  </span><br><span class="line">int cnt=0;  </span><br><span class="line">inline bool cmp(int x,int y)  </span><br><span class="line">&#123;  </span><br><span class="line">    return a[x]&lt;a[y];  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int pos=0;  </span><br><span class="line">    while(l+pos&lt;=r)b[pos]=a[l+pos],pos++;  </span><br><span class="line">    sort(b,b+pos);  </span><br><span class="line">    pos--;  </span><br><span class="line">    int mid=(pos-1)/2;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(int i=0; i&lt;=mid&amp;&amp;i&lt;m; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        res+=(b[i]-b[pos-i])*(b[i]-b[pos-i]);  </span><br><span class="line">        if(res&gt;k)  </span><br><span class="line">            return false;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">void init(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    cnt=0;  </span><br><span class="line">    for(int i=l; i&lt;=r; i++)b[cnt++]=i;  </span><br><span class="line">    sort(b,b+cnt,cmp);  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge2(int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int i,j,kk;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(i=0,j=cnt-1,kk=m; kk; i++,j--,kk--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[i]&gt;r)i++;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[j]&gt;r)j--;  </span><br><span class="line">        if(i&gt;=j)break;  </span><br><span class="line">        res+=(a[b[i]]-a[b[j]])*(a[b[i]]-a[b[j]]);  </span><br><span class="line">        if(res&gt;k)break;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    int T;  </span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);  </span><br><span class="line">    while(T--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;k);  </span><br><span class="line">        for(int i=0; i&lt;n; i++)  </span><br><span class="line">            scanf(&quot;%lld&quot;,&amp;a[i]);  </span><br><span class="line">        int ans=0;  </span><br><span class="line">        int l=0;  </span><br><span class="line">        while(l&lt;n)  </span><br><span class="line">        &#123;  </span><br><span class="line">            int kk=1;  </span><br><span class="line">            while(kk+l&lt;n&amp;&amp;judge(l,l+kk))  </span><br><span class="line">                kk*=2;  </span><br><span class="line">            int first=l+kk/2,last=l+kk-1&lt;n?l+kk-1:n-1;  </span><br><span class="line">            init(l,last);  </span><br><span class="line">            int mid;  </span><br><span class="line">            int pos=l;  </span><br><span class="line">            while(first&lt;=last)  </span><br><span class="line">            &#123;  </span><br><span class="line">                if(judge2(mid=(first+last)/2))  </span><br><span class="line">                &#123;  </span><br><span class="line">                    first=mid+1;  </span><br><span class="line">                    pos=mid;  </span><br><span class="line">                &#125;  </span><br><span class="line">                else  </span><br><span class="line">                    last=mid-1;  </span><br><span class="line">            &#125;  </span><br><span class="line">            l=pos+1;  </span><br><span class="line">            ans++;  </span><br><span class="line">        &#125;  </span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Sample 题目：https://hihocoder.com/problemset/problem/1384 一道贪心的题，期间需要对下标i到j、i到j+k之间的数字分别排序。是别人家的代码（<a href="http://www.bubuko.com/infodetail-1772326.html" target="_blank" rel="noopener">他的原文链接，虽然我也不知道他是不是转别人的</a>），就是在这学到的技巧。注意观察judge函数与judge2函数的差异，judge2函数即实现了上述排序思想。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">#include &lt;cstdio&gt;  </span><br><span class="line">#include &lt;cstring&gt;  </span><br><span class="line">#include &lt;algorithm&gt;  </span><br><span class="line">#include &lt;cmath&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">typedef long long int ll;  </span><br><span class="line">ll m,n,k;  </span><br><span class="line">ll a[500050];  </span><br><span class="line">ll b[500050];  </span><br><span class="line">int cnt=0;  </span><br><span class="line">inline bool cmp(int x,int y)  </span><br><span class="line">&#123;  </span><br><span class="line">    return a[x]&lt;a[y];  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int pos=0;  </span><br><span class="line">    while(l+pos&lt;=r)b[pos]=a[l+pos],pos++;  </span><br><span class="line">    sort(b,b+pos);  </span><br><span class="line">    pos--;  </span><br><span class="line">    int mid=(pos-1)/2;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(int i=0; i&lt;=mid&amp;&amp;i&lt;m; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        res+=(b[i]-b[pos-i])*(b[i]-b[pos-i]);  </span><br><span class="line">        if(res&gt;k)  </span><br><span class="line">            return false;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">void init(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    cnt=0;  </span><br><span class="line">    for(int i=l; i&lt;=r; i++)b[cnt++]=i;  </span><br><span class="line">    sort(b,b+cnt,cmp);  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge2(int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int i,j,kk;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(i=0,j=cnt-1,kk=m; kk; i++,j--,kk--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[i]&gt;r)i++;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[j]&gt;r)j--;  </span><br><span class="line">        if(i&gt;=j)break;  </span><br><span class="line">        res+=(a[b[i]]-a[b[j]])*(a[b[i]]-a[b[j]]);  </span><br><span class="line">        if(res&gt;k)break;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    int T;  </span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);  </span><br><span class="line">    while(T--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;k);  </span><br><span class="line">        for(int i=0; i&lt;n; i++)  </span><br><span class="line">            scanf(&quot;%lld&quot;,&amp;a[i]);  </span><br><span class="line">        int ans=0;  </span><br><span class="line">        int l=0;  </span><br><span class="line">        while(l&lt;n)  </span><br><span class="line">        &#123;  </span><br><span class="line">            int kk=1;  </span><br><span class="line">            while(kk+l&lt;n&amp;&amp;judge(l,l+kk))  </span><br><span class="line">                kk*=2;  </span><br><span class="line">            int first=l+kk/2,last=l+kk-1&lt;n?l+kk-1:n-1;  </span><br><span class="line">            init(l,last);  </span><br><span class="line">            int mid;  </span><br><span class="line">            int pos=l;  </span><br><span class="line">            while(first&lt;=last)  </span><br><span class="line">            &#123;  </span><br><span class="line">                if(judge2(mid=(first+last)/2))  </span><br><span class="line">                &#123;  </span><br><span class="line">                    first=mid+1;  </span><br><span class="line">                    pos=mid;  </span><br><span class="line">                &#125;  </span><br><span class="line">                else  </span><br><span class="line">                    last=mid-1;  </span><br><span class="line">            &#125;  </span><br><span class="line">            l=pos+1;  </span><br><span class="line">            ans++;  </span><br><span class="line">        &#125;  </span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -439,7 +439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +498,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -597,6 +597,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

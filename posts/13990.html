@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="欠拟合（Underfitting）与过拟合（Overfitting）上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。对于欠拟合，我们可以适当增加特征">
+<meta name="description" content="欠拟合（Underfitting）与过拟合（Overfitting）   上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Machine Learning Week3 - 正则化(Regularization)">
 <meta property="og:url" content="http://yoursite.com/posts/13990.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="欠拟合（Underfitting）与过拟合（Overfitting）上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。对于欠拟合，我们可以适当增加特征">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="欠拟合（Underfitting）与过拟合（Overfitting）   上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/13990/20170217151730329.png">
 <meta property="og:image" content="http://yoursite.com/posts/13990/20170217151750751.png">
@@ -99,7 +99,7 @@
 <meta property="og:updated_time" content="2019-04-08T13:35:57.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Machine Learning Week3 - 正则化(Regularization)">
-<meta name="twitter:description" content="欠拟合（Underfitting）与过拟合（Overfitting）上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。对于欠拟合，我们可以适当增加特征">
+<meta name="twitter:description" content="欠拟合（Underfitting）与过拟合（Overfitting）   上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适">
 <meta name="twitter:image" content="http://yoursite.com/posts/13990/20170217151730329.png">
 
 
@@ -108,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -136,7 +136,7 @@
 
 
 
-  <title>Coursera Machine Learning Week3 - 正则化(Regularization) | XieNaoban</title>
+  <title>Coursera Machine Learning Week3 - 正则化(Regularization) | XieNaoban's Blog</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -282,7 +282,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -340,25 +340,26 @@
       
 
       
-        <h1 id="欠拟合（Underfitting）与过拟合（Overfitting）"><a href="#欠拟合（Underfitting）与过拟合（Overfitting）" class="headerlink" title="欠拟合（Underfitting）与过拟合（Overfitting）"></a>欠拟合（Underfitting）与过拟合（Overfitting）</h1><p><img src="/posts/13990/20170217151730329.png" alt="这里写图片描述"><br><img src="/posts/13990/20170217151750751.png" alt="这里写图片描述"><br>上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。<br>对于欠拟合，我们可以适当增加特征，比如加入x的多次方。通常这很少发生，发生的多的都是过拟合。那么如何处理过度拟合呢？</p>
-<ol>
-<li>丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙（例如 PCA）。</li>
-<li><strong>正则化</strong>。 保留所有的特征，但是减少参数的大小(magnitude)。</li>
-</ol>
-<h1 id="加入正则化的代价函数"><a href="#加入正则化的代价函数" class="headerlink" title="加入正则化的代价函数"></a>加入正则化的代价函数</h1><p>假设上面的线性回归过拟合例子使用使用的模型是：<br><img src="/posts/13990/20170217151913275.png" alt="这里写图片描述"></p>
-<p>我们可以看出这些高次项（3次方、4次方）导致了过拟合，高次项参数大了，从图像来看就是会变得非常曲折，高次项参数小了图像就会较为平整。所以这里我们要做的就是一定程度上减小高次项参数，削弱高次项的影响力。我们的做法是修改代价函数，给theta3、theta4一些惩罚，使得最终选出来的theta3、theta4比较小：<br>J(theta)=<img src="/posts/13990/20170217153353687.png" alt="这里写图片描述"></p>
-<p>通过这样的代价函数选择出的theta3 和theta4 对预测结果的影响就比之前要小许多，因为theta3、4一试图变大，代价就会变大很多，那么在使用梯度下降最小化J(theta)时，theta3、4就会变得比较小。<br>假如我们有非常多的特征，我们并不知道其中哪些特征我们要惩罚，我们将对所有的特征进行惩罚，并且让代价函数最优化的软件来选择这些惩罚的程度。这样的结果是得到了一个较为简单的能防止过拟合问题的假设:<br><img src="/posts/13990/20170217153642074.png" alt="这里写图片描述"></p>
+        <h1 id="欠拟合underfitting与过拟合overfitting">欠拟合（Underfitting）与过拟合（Overfitting）</h1>
+<p><img src="/posts/13990/20170217151730329.png" alt="这里写图片描述"> <img src="/posts/13990/20170217151750751.png" alt="这里写图片描述"> 上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适当增加特征，比如加入x的多次方。通常这很少发生，发生的多的都是过拟合。那么如何处理过度拟合呢？ 1. 丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙（例如 PCA）。 2. <strong>正则化</strong>。 保留所有的特征，但是减少参数的大小(magnitude)。</p>
+<h1 id="加入正则化的代价函数">加入正则化的代价函数</h1>
+<p>假设上面的线性回归过拟合例子使用使用的模型是： <img src="/posts/13990/20170217151913275.png" alt="这里写图片描述"></p>
+<p>我们可以看出这些高次项（3次方、4次方）导致了过拟合，高次项参数大了，从图像来看就是会变得非常曲折，高次项参数小了图像就会较为平整。所以这里我们要做的就是一定程度上减小高次项参数，削弱高次项的影响力。我们的做法是修改代价函数，给theta3、theta4一些惩罚，使得最终选出来的theta3、theta4比较小： J(theta)=<img src="/posts/13990/20170217153353687.png" alt="这里写图片描述"></p>
+<p>通过这样的代价函数选择出的theta3 和theta4 对预测结果的影响就比之前要小许多，因为theta3、4一试图变大，代价就会变大很多，那么在使用梯度下降最小化J(theta)时，theta3、4就会变得比较小。 假如我们有非常多的特征，我们并不知道其中哪些特征我们要惩罚，我们将对所有的特征进行惩罚，并且让代价函数最优化的软件来选择这些惩罚的程度。这样的结果是得到了一个较为简单的能防止过拟合问题的假设: <img src="/posts/13990/20170217153642074.png" alt="这里写图片描述"></p>
 <ul>
-<li>其中 lambda 又称为正则化参数（Regularization Parameter）。 </li>
-<li>根据惯例,我们不对theta0进<br>行惩罚。否则得到的图像比较靠近x轴，那整个模型就偏离数据了。</li>
+<li>其中 lambda 又称为正则化参数（Regularization Parameter）。</li>
+<li>根据惯例,我们不对theta0进 行惩罚。否则得到的图像比较靠近x轴，那整个模型就偏离数据了。</li>
 </ul>
-<p>经过正则化处理的模型与原模型的可能对比如下图所示:<br><img src="/posts/13990/20170217154024000.png" alt="这里写图片描述"></p>
+<p>经过正则化处理的模型与原模型的可能对比如下图所示: <img src="/posts/13990/20170217154024000.png" alt="这里写图片描述"></p>
 <p>这里的lambda的选择也是较为关键的一点，如上图，theta太小甚至为0，那可能导致过拟合，而lambda太大，图像就会得到一条类似与平行于x轴的直线。</p>
-<h1 id="正则化后的线性回归、逻辑回归模型"><a href="#正则化后的线性回归、逻辑回归模型" class="headerlink" title="正则化后的线性回归、逻辑回归模型"></a>正则化后的线性回归、逻辑回归模型</h1><h2 id="正则化线性回归"><a href="#正则化线性回归" class="headerlink" title="正则化线性回归"></a>正则化线性回归</h2><p>重新将新的代价函数带入梯度下降算法，经过求导、化简后，得到的梯度下降如下：<br><img src="/posts/13990/20170217160238498.png" alt="这里写图片描述"></p>
-<p>对于j=1,2,…,n，thetaj的更新式子可以化简为：<br><img src="/posts/13990/20170217154905340.png" alt="这里写图片描述"></p>
+<h1 id="正则化后的线性回归逻辑回归模型">正则化后的线性回归、逻辑回归模型</h1>
+<h2 id="正则化线性回归">正则化线性回归</h2>
+<p>重新将新的代价函数带入梯度下降算法，经过求导、化简后，得到的梯度下降如下： <img src="/posts/13990/20170217160238498.png" alt="这里写图片描述"></p>
+<p>对于j=1,2,...,n，thetaj的更新式子可以化简为： <img src="/posts/13990/20170217154905340.png" alt="这里写图片描述"></p>
 <p>可以看到（不看theta0），算法的变化就在于theta每次减少了一个额外的<code>alpha*lambda/m</code>。</p>
-<p>同样的，可以在正规方程使用正则化：<br><img src="/posts/13990/20170217155832918.png" alt="这里写图片描述"></p>
-<h2 id="正则化逻辑回归"><a href="#正则化逻辑回归" class="headerlink" title="正则化逻辑回归"></a>正则化逻辑回归</h2><p>同样带入化简，得：<br><img src="/posts/13990/20170217160238498.png" alt="这里写图片描述"></p>
+<p>同样的，可以在正规方程使用正则化： <img src="/posts/13990/20170217155832918.png" alt="这里写图片描述"></p>
+<h2 id="正则化逻辑回归">正则化逻辑回归</h2>
+<p>同样带入化简，得： <img src="/posts/13990/20170217160238498.png" alt="这里写图片描述"></p>
 <p>发现得到的式子和线性回归一样，当然，两者的区别之前已经分析过，h(x)不同。</p>
 
       
@@ -473,7 +474,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -510,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#欠拟合（Underfitting）与过拟合（Overfitting）"><span class="nav-number">1.</span> <span class="nav-text">欠拟合（Underfitting）与过拟合（Overfitting）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加入正则化的代价函数"><span class="nav-number">2.</span> <span class="nav-text">加入正则化的代价函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化后的线性回归、逻辑回归模型"><span class="nav-number">3.</span> <span class="nav-text">正则化后的线性回归、逻辑回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化线性回归"><span class="nav-number">3.1.</span> <span class="nav-text">正则化线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化逻辑回归"><span class="nav-number">3.2.</span> <span class="nav-text">正则化逻辑回归</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#欠拟合underfitting与过拟合overfitting"><span class="nav-number">1.</span> <span class="nav-text">欠拟合（Underfitting）与过拟合（Overfitting）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加入正则化的代价函数"><span class="nav-number">2.</span> <span class="nav-text">加入正则化的代价函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化后的线性回归逻辑回归模型"><span class="nav-number">3.</span> <span class="nav-text">正则化后的线性回归、逻辑回归模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化线性回归"><span class="nav-number">3.1.</span> <span class="nav-text">正则化线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化逻辑回归"><span class="nav-number">3.2.</span> <span class="nav-text">正则化逻辑回归</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -548,7 +549,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -647,6 +648,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

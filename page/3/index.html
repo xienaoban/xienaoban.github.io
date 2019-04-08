@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="XieNaoban">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
 
 
 
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +121,7 @@
 
 
 
-  <title>XieNaoban</title>
+  <title>XieNaoban's Blog</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -259,6 +259,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/12203.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/12203.html" itemprop="url">Python实现备份CSDN博客(未完成)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T18:34:54+08:00">
+                2017-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          想着把我CSDN上所有博客的markdown源文件备份一遍，但其实没学过这方面的东西，就做了个半成品。。。以后完善吧（应该）
+实现了提取所有文章的名字与其对应文章ID和发布时间，并找到编辑文档的网页。 
+上面这些信息提取很方便，网页源码里翻就找得到。 然后按照文件名与日期给每一篇文章建立每一个空文件夹。 
+但是最关键的一步是，我不知道怎么提取每一篇.md文件。。。 渲染好的已经发布的文本我不要，我要.md源文件。只有编辑文本的时候遇得到md文件，所以就得实现模拟浏览器登陆。。。然而并不会做。。。 http://write.blog.csdn.net/postedit/xxxxxxxx是文章的编辑页面，（打开来可以是markdown编辑器也可以是传统的那个），传统的编辑器的源码里倒是可以看到带样式的每个字，但是md编辑器的源码里面就没有。。。
+md编辑器有个功能叫导出到本地，可以直接
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/12203.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/21829.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +398,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -330,7 +460,7 @@
       
         
           
-          #Problem DescriptionGiven a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if
+          #Problem Description Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&lt;b2&lt;…&lt;bk. LY has just learned how to find the longest increasing subsequence (LIS). Now that he has to select L consecutive numbers and remove them from A for some mysterious reasons. He can choose arbitrary starting position of the selected interval so that the leng
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -394,7 +524,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -456,7 +586,8 @@
       
         
           
-          #Problem Description度度熊为了拯救可爱的公主，于是与邪恶大魔王战斗起来。邪恶大魔王的麾下有n个怪兽，每个怪兽有a[i]的生命值，以及b[i]的防御力。度度熊一共拥有m种攻击方式，第i种攻击方式，需要消耗k[i]的晶石，造
+          #Problem Description 度度熊为了拯救可爱的公主，于是与邪恶大魔王战斗起来。 邪恶大魔王的麾下有n个怪兽，每个怪兽有a[i]的生命值，以及b[i]的防御力。 度度熊一共拥有m种攻击方式，第i种攻击方式，需要消耗k[i]的晶石，造成p[i]点伤害。 当然，如果度度熊使用第i个技能打在第j个怪兽上面的话，会使得第j个怪兽的生命值减少p[i]-b[j]，当然如果伤害小于防御，那么攻击就不会奏效。 如果怪兽的生命值降为0或以下，那么怪兽就会被消灭。 当然每个技能都可以使用无限次。 请问度度熊最少携带多少晶石，就可以消灭所有的怪兽。
+#Input 本题包含若干组测试数据。 第一行两个整数n，m,表示有n个怪兽，m种技能。 接下来n行，每行两个整数，a[i],b[i]，分别表示怪兽的生命值和防御力。 再接下来m行，每行两个整数k[i]和p[i]，分别表示技能的消耗晶石数目和技能的伤
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -520,7 +651,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -583,11 +714,8 @@
         
           
           辣鸡Win10要折腾死我啊。一开始还以为硬件烧坏了。写下来方自己以后使用。
-#条件：
-
-win10一周年更新；
-SSD、HDD混合，SSD作为系统盘
-BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏碁VN
+#条件： 1. win10一周年更新； 2. SSD、HDD混合，SSD作为系统盘 3. BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏碁VN7的笔记本，BIOS里面选项很少，仿佛很老旧的感觉。。。 4. 设备管理器-&gt;IDE ATA/ATAPI 控制器驱动：标准 SATA AHCI 控制器。
+#症状： 长时间挂机导致冻屏：比如启动了电脑而没有登陆，过一会回来登录界面就卡住了；又比如开着电脑出去了一趟，回来就卡住了。 卡住的症状：鼠标可以灵活的移动，鼠标移动到任务栏的图标有高亮显示，但是点击、右击无反应；开始菜单第一次点击可以弹出，关了重按就卡住；前台软件无响应且无法弹出”程序无响应，等待还是强制关闭？“的弹窗；前台软件按关闭无响应，但拖动窗口很流畅；ctrl+alt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +779,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -713,7 +841,8 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          #DescriptionMisha and Grisha are funny boys, so they like to use new underground. The underground has n stations connect
+          #Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possible to reach every station from any other.
+The boys decided to have fun and came up with a plan. Namely, in some day in the morning Misha will ride the underground from station sto station f by the sh
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -777,7 +906,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -839,7 +968,8 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          #DescriptionOkabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn’t get beat
+          #Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn't get beaten up by schoolchildren.
+Okabe's city is represented by a 2D grid of cells. Rows are numbered from 1 to n from top to bottom, and columns are numbered 1 to mfrom left to right. Exactly k cells in the city are lit by a street lamp. It's guaranteed that the top-left cell is lit.
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -903,7 +1033,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -965,7 +1095,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          #DescriptionOkabe likes to take walks but knows that spies from the Organization could be anywhere; that’s why he wants 
+          #Description Okabe likes to take walks but knows that spies from the Organization could be anywhere; that's why he wants to know how many different walks he can take in his city safely. Okabe's city can be represented as all points (x, y) such that x and y are non-negative. Okabe starts at the origin (point (0, 0)), and needs to reach the point (k, 0). If Okabe is currently at the point (x, y), in
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1029,7 +1159,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1091,7 +1221,8 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          DesicriptionIn a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of c
+          Desicription
+In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either direction) and to check if everything is in order. Now, a road-inspector has a list of highways he must inspect. However, it might not be possible for him to travel through all the highways on his list 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1155,7 +1286,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1217,7 +1348,11 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          #DescriptionPetr wants to make a calendar for current month. For this purpose he draws a table in which columns correspo
+          #Description Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows correspond to weekdays, and cells contain dates. For example, a calendar for January 2017 should look like on the picture:
+
+img
+
+Petr wants to know how many columns his table should have given the mont
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1281,7 +1416,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1343,138 +1478,12 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
       
         
           
-          #DescriptionSanta Claus likes palindromes very much. There was his birthday recently. k of his friends came to him to co
+          #Description Santa Claus likes palindromes very much. There was his birthday recently. k of his friends came to him to congratulate him, and each of them presented to him a string si having the same length n. We denote the beauty of the i-th string by ai. It can happen that ai is negative — that means that Santa doesn't find this string beautiful at all.
+Santa Claus is crazy about palindromes. He
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/39924.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/39926.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/39926.html" itemprop="url">Codeforces Round</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T12:59:20+08:00">
-                2017-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          PROBLEMSET里面神tm搜不到这题，很迷。所以标题就只好注明比赛出处而没法标明题号了。
-#DescriptionYou are an experienced Codeforces user. Today you found out t
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/39926.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1562,7 +1571,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1621,7 +1630,7 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1720,6 +1729,13 @@ BIOS的：AHCI、SATA、IDE模式：BIOS里面没找到这玩意。。。Acer宏
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

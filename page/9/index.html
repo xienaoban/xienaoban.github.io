@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/page/9/index.html">
-<meta property="og:site_name" content="XieNaoban">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
 
 
 
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +121,7 @@
 
 
 
-  <title>XieNaoban</title>
+  <title>XieNaoban's Blog</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -259,6 +259,134 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3706.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/3706.html" itemprop="url">算法竞赛入门经典(第2版) 5-2UVa1594 - Ducci Sequence</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-18T14:41:26+08:00">
+                2016-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
+
+代码：（Accepted，20 ms） 123456789101112131415161718192021222324252627282930313233//UVa1594 - Ducci Sequence#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;vector&gt;using namespace std;int T,N;bool is_zero(vector&lt;int&gt; &amp;d) &#123;	for (const auto &amp;i : d)		if (i) return false;	return true;&#125;int main()&#123;	//
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/3706.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/27312.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +396,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -332,7 +460,7 @@
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
-代码：（Accepted，0 ms）123456789101112131415161718192021222324252627282930313233343
+代码：（Accepted，0 ms） 123456789101112131415161718192021222324252627282930313233343536//UVa1593 - Alignment of Code#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;#include&lt;string&gt;#include&lt;sstream&gt;#include&lt;iterator&gt;#include&lt;iomanip&gt;using namespace std;vector&lt;string&gt; text[1009];int num[100] = &#123; 0 &#125;
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -396,7 +524,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -458,7 +586,7 @@
       
         
           
-          之前上传UVa227 puzzle时，好不容易AC了，但发现自己用时50(ms)，而在VJ上看到人家都是40ms、20ms，于是打开一个20ms的代码查看人家强在哪里。但结果研究了半天感觉差不多，于是想着应该不是算法的问题。然后又想到，网上
+          之前上传UVa227 puzzle时，好不容易AC了，但发现自己用时50(ms)，而在VJ上看到人家都是40ms、20ms，于是打开一个20ms的代码查看人家强在哪里。但结果研究了半天感觉差不多，于是想着应该不是算法的问题。然后又想到，网上提交的答案，大家都是用scanf和printf写的，而我用的cin cout，而这题的确需要大量的输入输出，于是就想着把所有cin cout改成scanf printf。结果 —。—  上面c++版，下面c版。 于是我很好奇C的输入输出方法和C++提倡的方法为什么差距那么大。经过一番研究和查询，结果如下： 首先是scanf和cin： cin之所以慢，主要是因为要与scanf同步的关系，即允许scanf与cin混用。但是如果你的代码里没用到scanf，那么想关闭同步也可以。 只要使用这行代码，就可关闭同步：std::ios::sync_with_stdio
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -522,7 +650,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -587,7 +715,7 @@
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
 代码：（Accepted，0 ms）
-123456789101112131415161718192021222324//UVa815 - Flooded!#
+123456789101112131415161718192021222324//UVa815 - Flooded!#include&lt;iostream&gt;#include&lt;algorithm&gt;int M, N, W, S[1000], T = 0;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%d%d&quot;, &amp;M, &amp;N) != -1 &amp;&amp; M != 0 &amp;&amp; N != 0) &#123;		for (int i = 0, *p = S;i &lt; M*N
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -651,7 +779,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -713,9 +841,9 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
-代码：（Accepted，0 ms）1234567891011121314151617#include&lt;iostream&gt;unsigned N
+代码：（Accepted，0 ms） 1234567891011121314151617#include&lt;iostream&gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%u%u%u&quot;, &amp;N, &amp;Sp, &amp;Sq) != -1) &#123;		K = 0xffffffffffffffff;		for (A = 0;A &lt; 32;++A) for (B = 0;B &lt; 32;++
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -779,7 +907,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -841,8 +969,8 @@
       
         
           
-          ﻿书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-123456789101112131415161718192021222324252627282930313233343
+          ﻿书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+1234567891011121314151617181920212223242526272829303132333435//UVa12108 - Extraordinarily Tired Students#include&lt;iostream&gt;struct how_cute_my_sleepy_boys_are &#123;	int a,//awaken period :		a&gt;=1;		b,//sleeping period :	b&lt;=5;		s,//state :				0醒着,1睡觉;		t;//time :				睡/醒到什么时候;&#125;g[12];int n, c, mi, cnt, T = 0;//cnt:统计睡着的人;mi:
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -906,7 +1034,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -968,8 +1096,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152//UVa509 - RAID!#include&lt;iostream&gt;int d, s, b, t, times = 0;char disk_data[7][6666], type;inline char* disk(int x, int y, int z) &#123;//二维数组当作三维数组使,方便运算	return *(disk_data + x - 1) + (y - 1)*s + z - 1;&#125;inline char* parity(int y, int
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1033,7 +1161,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1095,8 +1223,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，10 ms）
-123456789101112131415161718192021222324252627282930313233343
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，10 ms）
+123456789101112131415161718192021222324252627282930313233343536373839404142434445//UVa508 - Morse Mismatches#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;using namespace std;map&lt;char, string&gt; morse;map&lt;string, string&gt; word;string wo, tran, result;char c;int cmp(string a, string b) &#123;	if (a == b) return
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1160,7 +1288,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1222,8 +1350,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+12345678910111213141516171819202122232425262728293031323334353637383940//UVa1590 - IP Networks#include&lt;iostream&gt;unsigned i, m, num, ip[4], ipmax[4], ipmin[4], mask[4];int cmp(unsigned *a, unsigned *b) &#123;//compare	for (int i = 0;i &lt; 4;++i) &#123;		if (a[i] &lt; b[i]) return -1;		if (a[i] &gt; b[i]) return 1;	&#125;	return 0;&
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1287,7 +1415,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1349,138 +1477,12 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+123456789101112131415161718192021222324252627282930313233343536#include&lt;iostream&gt;char str[15];void change(int b) &#123;//更换顶上的面	char t;	if(b) t = str[0], str[0] = str[1], str[1] = str[5], str[5] = str[3], str[3] = t;	else t = str[0], str[0] = str[4], str[4] = str[5], str[5] = str[2], str[2] = t;&#125;bool compare() &#123;	if (str[0
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/24045.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/5943.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/5943.html" itemprop="url">scanf的使用(主要是针对char)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-31T16:00:05+08:00">
-                2016-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&lt;&lt;”与“&gt;&gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf prin
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/5943.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1568,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1627,7 +1629,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1726,6 +1728,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

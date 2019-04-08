@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.000s/">
+<meta name="description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.00">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600">
 <meta property="og:url" content="http://yoursite.com/posts/50450.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.000s/">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.00">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600">
-<meta name="twitter:description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.000s/">
+<meta name="twitter:description" content="比较忙比较累，只贴代码了。  题目：6-4 UVa439 - Knight Moves 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.00">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600 | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -334,7 +334,7 @@
 <p>题目：6-4 UVa439 - Knight Moves</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">//UVa439 - Knight Moves</span><br><span class="line">//Accepted 0.000s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#define M(po) Map[po.x][po.y]</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct poi &#123;</span><br><span class="line">	int x, y, weight;</span><br><span class="line">	poi operator +(const poi &amp;that) const &#123;</span><br><span class="line">		return poi&#123; x + that.x, y + that.y, weight&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	bool operator ==(const poi &amp;that) const &#123;</span><br><span class="line">		return (x == that.x) &amp;&amp; (y == that.y);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; op, ed;</span><br><span class="line"></span><br><span class="line">const poi dir[8] = &#123; &#123; 2,1 &#125;,&#123; -2,1 &#125;,&#123; 2,-1 &#125;,&#123; -2,-1 &#125;,&#123; 1,2 &#125;,&#123; -1,2 &#125;,&#123; 1,-2 &#125;,&#123; -1,-2 &#125; &#125;;</span><br><span class="line">bool Map[10][10];</span><br><span class="line">char xstart, ystart, xend, yend;</span><br><span class="line">int xs, ys, xe, ye;</span><br><span class="line"></span><br><span class="line">int BFS()&#123;</span><br><span class="line">	if (op == ed) return 0;</span><br><span class="line">	queue&lt;poi&gt; Q;</span><br><span class="line">	Q.push(op);</span><br><span class="line">	M(op) = true;</span><br><span class="line">	while (!Q.empty()) &#123;</span><br><span class="line">		for (int i(0);i &lt; 8;++i)&#123;</span><br><span class="line">			poi nxt(Q.front() + dir[i]);</span><br><span class="line">			if (nxt.x &gt; 0 &amp;&amp; nxt.y &gt; 0 &amp;&amp; nxt.x &lt; 9 &amp;&amp; nxt.y &lt; 9 &amp;&amp; !M(nxt)) &#123;</span><br><span class="line">				++nxt.weight;</span><br><span class="line">				if (nxt == ed) return nxt.weight;</span><br><span class="line">				M(nxt) = true;</span><br><span class="line">				Q.push(nxt);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		Q.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 129)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	//freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	while (scanf(&quot;%c%c %c%c&quot;, &amp;xstart, &amp;ystart, &amp;xend, &amp;yend) == 4) &#123;</span><br><span class="line">		memset(Map, 0, sizeof(Map));</span><br><span class="line">		op.x = xstart - 96, op.y = ystart - 48, op.weight = 0;</span><br><span class="line">		ed.x = xend - 96, ed.y = yend - 48, ed.weight = 0;</span><br><span class="line">		printf(&quot;To get from %c%c to %c%c takes %d knight moves.\n&quot;, xstart, ystart, xend, yend, BFS());</span><br><span class="line">		while (getchar() != &apos;\n&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>题目：6-5 UVa1600 - Patrol Robot<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">//UVa1600 - Patrol Robot</span><br><span class="line">//Accepted 0.000s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#define DONE 2333333</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct step &#123; int x, y, k, mov; &#125;;</span><br><span class="line">int T, m, n, k;</span><br><span class="line">int Map[24][24],Obst[24][24];</span><br><span class="line"></span><br><span class="line">void judge(queue&lt;step&gt; &amp;Q, step &amp;now, int x, int y) &#123;</span><br><span class="line">	if (Obst[x += now.x][y += now.y] == DONE) return;</span><br><span class="line">	int _k = (Obst[x][y] ? now.k + 1 : 0);</span><br><span class="line">	if (_k &lt;= k) &#123;</span><br><span class="line">		if (_k) &#123;</span><br><span class="line">			if (Map[x][y] &amp;&amp; Map[x][y] &lt;= _k) return;</span><br><span class="line">			Map[x][y] = _k;</span><br><span class="line">		&#125;</span><br><span class="line">		else Obst[x][y] = DONE;</span><br><span class="line">		Q.push(step&#123; x, y, _k, now.mov + 1 &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 129)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	scanf(&quot;%d&quot;, &amp;T);</span><br><span class="line">	while (T--) &#123;</span><br><span class="line">		scanf(&quot;%d%d%d&quot;, &amp;m, &amp;n, &amp;k);</span><br><span class="line">		for (int i(1);i &lt;= m;++i) for (int j(1);j &lt;= n;++j)</span><br><span class="line">			scanf(&quot;%d&quot;, &amp;Obst[i][j]);</span><br><span class="line">		memset(Map, 0, sizeof(Map));</span><br><span class="line">		queue&lt;step&gt; Q;</span><br><span class="line">		Q.push(step&#123; 1,1,0,0 &#125;);</span><br><span class="line">		Obst[1][1] = DONE;</span><br><span class="line">		while (!Q.empty()) &#123;</span><br><span class="line">			step &amp;now(Q.front());</span><br><span class="line">			if (now.x == m &amp;&amp; now.y == n) break;</span><br><span class="line">			if (now.x + 1 &lt;= m) judge(Q, now, 1, 0);</span><br><span class="line">			if (now.y + 1 &lt;= n) judge(Q, now, 0, 1);</span><br><span class="line">			if (now.x - 1 &gt;= 1) judge(Q, now, -1, 0);</span><br><span class="line">			if (now.y - 1 &gt;= 1) judge(Q, now, 0, -1);</span><br><span class="line">			Q.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		if (Q.empty()) printf(&quot;-1\n&quot;);</span><br><span class="line">		else printf(&quot;%d\n&quot;, Q.front().mov);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>题目：6-5 UVa1600 - Patrol Robot <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">//UVa1600 - Patrol Robot</span><br><span class="line">//Accepted 0.000s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#define DONE 2333333</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct step &#123; int x, y, k, mov; &#125;;</span><br><span class="line">int T, m, n, k;</span><br><span class="line">int Map[24][24],Obst[24][24];</span><br><span class="line"></span><br><span class="line">void judge(queue&lt;step&gt; &amp;Q, step &amp;now, int x, int y) &#123;</span><br><span class="line">	if (Obst[x += now.x][y += now.y] == DONE) return;</span><br><span class="line">	int _k = (Obst[x][y] ? now.k + 1 : 0);</span><br><span class="line">	if (_k &lt;= k) &#123;</span><br><span class="line">		if (_k) &#123;</span><br><span class="line">			if (Map[x][y] &amp;&amp; Map[x][y] &lt;= _k) return;</span><br><span class="line">			Map[x][y] = _k;</span><br><span class="line">		&#125;</span><br><span class="line">		else Obst[x][y] = DONE;</span><br><span class="line">		Q.push(step&#123; x, y, _k, now.mov + 1 &#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 129)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	scanf(&quot;%d&quot;, &amp;T);</span><br><span class="line">	while (T--) &#123;</span><br><span class="line">		scanf(&quot;%d%d%d&quot;, &amp;m, &amp;n, &amp;k);</span><br><span class="line">		for (int i(1);i &lt;= m;++i) for (int j(1);j &lt;= n;++j)</span><br><span class="line">			scanf(&quot;%d&quot;, &amp;Obst[i][j]);</span><br><span class="line">		memset(Map, 0, sizeof(Map));</span><br><span class="line">		queue&lt;step&gt; Q;</span><br><span class="line">		Q.push(step&#123; 1,1,0,0 &#125;);</span><br><span class="line">		Obst[1][1] = DONE;</span><br><span class="line">		while (!Q.empty()) &#123;</span><br><span class="line">			step &amp;now(Q.front());</span><br><span class="line">			if (now.x == m &amp;&amp; now.y == n) break;</span><br><span class="line">			if (now.x + 1 &lt;= m) judge(Q, now, 1, 0);</span><br><span class="line">			if (now.y + 1 &lt;= n) judge(Q, now, 0, 1);</span><br><span class="line">			if (now.x - 1 &gt;= 1) judge(Q, now, -1, 0);</span><br><span class="line">			if (now.y - 1 &gt;= 1) judge(Q, now, 0, -1);</span><br><span class="line">			Q.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		if (Q.empty()) printf(&quot;-1\n&quot;);</span><br><span class="line">		else printf(&quot;%d\n&quot;, Q.front().mov);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -439,7 +439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +498,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -597,6 +597,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="#DescriptionPetr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corres">
+<meta name="description" content="#Description Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round">
 <meta property="og:url" content="http://yoursite.com/posts/39925.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#DescriptionPetr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corres">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Description Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corre">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://codeforces.com/predownloaded/ca/26/ca26abffc774467d105ce266640bda655e2dd61f.png">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round">
-<meta name="twitter:description" content="#DescriptionPetr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corres">
+<meta name="twitter:description" content="#Description Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows corre">
 <meta name="twitter:image" content="http://codeforces.com/predownloaded/ca/26/ca26abffc774467d105ce266640bda655e2dd61f.png">
 
 
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,7 +127,7 @@
 
 
 
-  <title>Codeforces Round | XieNaoban</title>
+  <title>Codeforces Round | XieNaoban's Blog</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -273,7 +273,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,17 +331,19 @@
       
 
       
-        <p>#Description<br>Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows correspond to weekdays, and cells contain dates. For example, a calendar for January 2017 should look like on the picture:</p>
-<p><img src="http://codeforces.com/predownloaded/ca/26/ca26abffc774467d105ce266640bda655e2dd61f.png" alt="img"></p>
+        <p>#Description Petr wants to make a calendar for current month. For this purpose he draws a table in which columns correspond to weeks (a week is seven consequent days from Monday to Sunday), rows correspond to weekdays, and cells contain dates. For example, a calendar for January 2017 should look like on the picture:</p>
+<figure>
+<img src="http://codeforces.com/predownloaded/ca/26/ca26abffc774467d105ce266640bda655e2dd61f.png" alt="img"><figcaption>img</figcaption>
+</figure>
 <p>Petr wants to know how many columns his table should have given the month and the weekday of the first date of that month? Assume that the year is non-leap.</p>
-<p>#Input<br>The only line contain two integers <em>m</em> and <em>d</em> (1 ≤ <em>m</em> ≤ 12, 1 ≤ <em>d</em> ≤ 7) — the number of month (January is the first month, December is the twelfth) and the weekday of the first date of this month (1 is Monday, 7 is Sunday).</p>
-<p>#Output<br>Print single integer: the number of columns the table should have.</p>
-<p>#Examples<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">1 7</span><br><span class="line">output</span><br><span class="line">6</span><br><span class="line">input</span><br><span class="line">1 1</span><br><span class="line">output</span><br><span class="line">5</span><br><span class="line">input</span><br><span class="line">11 6</span><br><span class="line">output</span><br><span class="line">5</span><br></pre></td></tr></table></figure></p>
-<p>#Note<br>The first example corresponds to the January 2017 shown on the picture in the statements.</p>
+<p>#Input The only line contain two integers <em>m</em> and <em>d</em> (1 ≤ <em>m</em> ≤ 12, 1 ≤ <em>d</em> ≤ 7) — the number of month (January is the first month, December is the twelfth) and the weekday of the first date of this month (1 is Monday, 7 is Sunday).</p>
+<p>#Output Print single integer: the number of columns the table should have.</p>
+<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">1 7</span><br><span class="line">output</span><br><span class="line">6</span><br><span class="line">input</span><br><span class="line">1 1</span><br><span class="line">output</span><br><span class="line">5</span><br><span class="line">input</span><br><span class="line">11 6</span><br><span class="line">output</span><br><span class="line">5</span><br></pre></td></tr></table></figure></p>
+<p>#Note The first example corresponds to the January 2017 shown on the picture in the statements.</p>
 <p>In the second example 1-st January is Monday, so the whole month fits into 5 columns.</p>
 <p>In the third example 1-st November is Saturday and 5 columns is enough.</p>
-<p>#Key<br>写过的最短的题哈哈哈，贴上来以表纪念。其中用到了老司机教我的除法向上取整的方法。</p>
-<p>#Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> m, d;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> D[] = &#123; <span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; d;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; (D[m] + (d - <span class="number">1</span>) - <span class="number">1</span>) / <span class="number">7</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Key 写过的最短的题哈哈哈，贴上来以表纪念。其中用到了老司机教我的除法向上取整的方法。</p>
+<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> m, d;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> D[] = &#123; <span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; d;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; (D[m] + (d - <span class="number">1</span>) - <span class="number">1</span>) / <span class="number">7</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -446,7 +448,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +507,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -604,6 +606,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

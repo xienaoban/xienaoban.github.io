@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="http://codeforces.com/problemset/problem/786/A #DescriptionRick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge sp">
+<meta name="description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 786A - Berzerk">
 <meta property="og:url" content="http://yoursite.com/posts/31985.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="http://codeforces.com/problemset/problem/786/A #DescriptionRick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge sp">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 786A - Berzerk">
-<meta name="twitter:description" content="http://codeforces.com/problemset/problem/786/A #DescriptionRick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge sp">
+<meta name="twitter:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Codeforces 786A - Berzerk | XieNaoban</title>
+  <title>Codeforces 786A - Berzerk | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,21 +329,21 @@
       
 
       
-        <p><a href="http://codeforces.com/problemset/problem/786/A" target="_blank" rel="noopener">http://codeforces.com/problemset/problem/786/A</a></p>
-<p>#Description<br>Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge space, so they play it with a computer.</p>
-<p>In this game there are n objects numbered from 1 to n arranged in a circle (in clockwise order). Object number 1 is a black hole and the others are planets. There’s a monster in one of the planet. Rick and Morty don’t know on which one yet, only that he’s not initially in the black hole, but Unity will inform them before the game starts. But for now, they want to be prepared for every possible scenario.</p>
-<p>Each one of them has a set of numbers between 1 and n - 1 (inclusive). Rick’s set is s1 with k1 elements and Morty’s is s2 with k2 elements. One of them goes first and the player changes alternatively. In each player’s turn, he should choose an arbitrary number like x from his set and the monster will move to his x-th next object from its current position (clockwise). If after his move the monster gets to the black hole he wins.</p>
-<p>Your task is that for each of monster’s initial positions and who plays first determine if the starter wins, loses, or the game will stuck in an infinite loop. In case when player can lose or make game infinity, it more profitable to choose infinity game.</p>
-<p>#Input<br>The first line of input contains a single integer n (2 ≤ n ≤ 7000) — number of objects in game.</p>
-<p>The second line contains integer k1 followed by k1 distinct integers s1, 1, s1, 2, …, s1, k1 — Rick’s set.</p>
-<p>The third line contains integer k2 followed by k2 distinct integers s2, 1, s2, 2, …, s2, k2 — Morty’s set</p>
-<p>1 ≤ ki ≤ n - 1 and 1 ≤ si, 1, si, 2, …, si, ki ≤ n - 1 for 1 ≤ i ≤ 2.</p>
-<p>#Output<br>In the first line print n - 1 words separated by spaces where i-th word is “Win” (without quotations) if in the scenario that Rick plays first and monster is initially in object number i + 1 he wins, “Lose” if he loses and “Loop” if the game will never end.</p>
-<p>Similarly, in the second line print n - 1 words separated by spaces where i-th word is “Win” (without quotations) if in the scenario that Morty plays first and monster is initially in object number i + 1 he wins, “Lose” if he loses and “Loop” if the game will never end.</p>
-<p>#Examples<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">5</span><br><span class="line">2 3 2</span><br><span class="line">3 1 2 3</span><br><span class="line">output</span><br><span class="line">Lose Win Win Loop</span><br><span class="line">Loop Win Win Win</span><br><span class="line">input</span><br><span class="line">8</span><br><span class="line">4 6 2 3 4</span><br><span class="line">2 3 6</span><br><span class="line">output</span><br><span class="line">Win Win Win Win Win Win Win</span><br><span class="line">Lose Win Lose Lose Win Lose Lose</span><br></pre></td></tr></table></figure></p>
-<p>#Key<br><strong>题意</strong>：一个有n个结点的环，第一个结点上是黑洞，其他为行星。现在有一个怪物可能在任意的行星上。甲乙两人可以顺时针驱赶怪物。甲每次可驱赶$s1_1, s1_2,s1_3…$个格子，共k1个可能。乙每次可驱赶$s2_1, s2_2,s2_3…$个格子，共k2种可能。谁把怪物刚好驱逐到黑洞里就赢。现在求：当怪物在第i个行星，甲（或乙）第一个驱赶时，甲（或乙）一定赢、一定输还是平局？</p>
-<p><strong>思路</strong>：DFS+动态规划。（这里只考虑甲开局的情况，乙一样求）从黑洞开始反向逆推，即分别倒退$s1_1, s1_2,s1_3…$个格子，只要从这些点驱逐，甲是必赢的；换句话说，乙如果把怪物驱逐到了这些点，乙就输了，所以当乙能驱赶的点都是必输点时，当前点也是乙的必输点。<br>那么对于当前点：若能够将怪物驱逐到对手的必输点，该点必赢，对当前点DFS；若能够将怪物驱逐到对手的必赢点，为当前点计数，当当前点到所有可驱逐的点都会导致失败时，当前点即为必输点。<br>使用sch数组保存点是否访问过，即DP的记忆化搜索的思想。</p>
-<p>#Code<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#define N 7008</span><br><span class="line">int n, k[2], s[2][N];</span><br><span class="line">int win[2][N], sch[2][N], cnt[2][N];</span><br><span class="line"></span><br><span class="line">void init(int who) &#123;</span><br><span class="line">	memset(win[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(sch[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(cnt[who], 0, sizeof(int)*n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void dp(int now, int who) &#123;</span><br><span class="line">	sch[!who][now] = 1; // 能够允许dp递归下来的now都是已经确定输和赢的</span><br><span class="line">	/*</span><br><span class="line">	for (int i = 0;i != n;++i) &#123;</span><br><span class="line">		printf(&quot;win&#123;%d %d&#125; sch&#123;%d %d&#125; cnt&#123;%d %d&#125;\n&quot;,</span><br><span class="line">			win[0][i], win[1][i],</span><br><span class="line">			sch[0][i], sch[1][i],</span><br><span class="line">			cnt[0][i], cnt[1][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	puts(&quot;-----&quot;);</span><br><span class="line">	*/</span><br><span class="line">	for (int i = 0;i != k[who];++i) &#123;</span><br><span class="line">		int pre = (now - s[who][i] + n) % n; // who让怪物从pre跳到now</span><br><span class="line">		if (!pre) continue; // 不可能</span><br><span class="line">		if (sch[who][pre]) continue; // 记忆搜索</span><br><span class="line">		if (!win[!who][now]) &#123; // 若从pre到now对面必输. (输的条件是sch[who][i]==1且win[who][i]==0)</span><br><span class="line">			win[who][pre] = 1; // 这一步一定赢</span><br><span class="line">			dp(pre, !who);</span><br><span class="line">		&#125;</span><br><span class="line">		else if (win[!who][now]) &#123; // 若从pre到now对面必赢</span><br><span class="line">			if (++cnt[who][pre] == k[who]) &#123; // 当这一步怎么走都会导致对面赢</span><br><span class="line">				dp(pre, !who);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		scanf(&quot;%d&quot;, k + who);</span><br><span class="line">		for (int i = 0;i != k[who];++i)</span><br><span class="line">			scanf(&quot;%d&quot;, s[who] + i);</span><br><span class="line">	&#125;</span><br><span class="line">	init(0), init(1);</span><br><span class="line">	dp(0, 0),dp(0, 1);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		for (int i = 1;i != n;++i) &#123;</span><br><span class="line">			if (win[who][i]) printf(&quot;Win&quot;);</span><br><span class="line">			else if (sch[who][i]) printf(&quot;Lose&quot;);</span><br><span class="line">			else printf(&quot;Loop&quot;);</span><br><span class="line">			printf(&quot;%c&quot;, &quot; \n&quot;[i == n - 1]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>http://codeforces.com/problemset/problem/786/A</p>
+<p>#Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge space, so they play it with a computer.</p>
+<p>In this game there are n objects numbered from 1 to n arranged in a circle (in clockwise order). Object number 1 is a black hole and the others are planets. There's a monster in one of the planet. Rick and Morty don't know on which one yet, only that he's not initially in the black hole, but Unity will inform them before the game starts. But for now, they want to be prepared for every possible scenario.</p>
+<p>Each one of them has a set of numbers between 1 and n - 1 (inclusive). Rick's set is s1 with k1 elements and Morty's is s2 with k2 elements. One of them goes first and the player changes alternatively. In each player's turn, he should choose an arbitrary number like x from his set and the monster will move to his x-th next object from its current position (clockwise). If after his move the monster gets to the black hole he wins.</p>
+<p>Your task is that for each of monster's initial positions and who plays first determine if the starter wins, loses, or the game will stuck in an infinite loop. In case when player can lose or make game infinity, it more profitable to choose infinity game.</p>
+<p>#Input The first line of input contains a single integer n (2 ≤ n ≤ 7000) — number of objects in game.</p>
+<p>The second line contains integer k1 followed by k1 distinct integers s1, 1, s1, 2, ..., s1, k1 — Rick's set.</p>
+<p>The third line contains integer k2 followed by k2 distinct integers s2, 1, s2, 2, ..., s2, k2 — Morty's set</p>
+<p>1 ≤ ki ≤ n - 1 and 1 ≤ si, 1, si, 2, ..., si, ki ≤ n - 1 for 1 ≤ i ≤ 2.</p>
+<p>#Output In the first line print n - 1 words separated by spaces where i-th word is "Win" (without quotations) if in the scenario that Rick plays first and monster is initially in object number i + 1 he wins, "Lose" if he loses and "Loop" if the game will never end.</p>
+<p>Similarly, in the second line print n - 1 words separated by spaces where i-th word is "Win" (without quotations) if in the scenario that Morty plays first and monster is initially in object number i + 1 he wins, "Lose" if he loses and "Loop" if the game will never end.</p>
+<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">5</span><br><span class="line">2 3 2</span><br><span class="line">3 1 2 3</span><br><span class="line">output</span><br><span class="line">Lose Win Win Loop</span><br><span class="line">Loop Win Win Win</span><br><span class="line">input</span><br><span class="line">8</span><br><span class="line">4 6 2 3 4</span><br><span class="line">2 3 6</span><br><span class="line">output</span><br><span class="line">Win Win Win Win Win Win Win</span><br><span class="line">Lose Win Lose Lose Win Lose Lose</span><br></pre></td></tr></table></figure></p>
+<p>#Key <strong>题意</strong>：一个有n个结点的环，第一个结点上是黑洞，其他为行星。现在有一个怪物可能在任意的行星上。甲乙两人可以顺时针驱赶怪物。甲每次可驱赶<span class="math inline">\(s1_1, s1_2,s1_3...\)</span>个格子，共k1个可能。乙每次可驱赶<span class="math inline">\(s2_1, s2_2,s2_3...\)</span>个格子，共k2种可能。谁把怪物刚好驱逐到黑洞里就赢。现在求：当怪物在第i个行星，甲（或乙）第一个驱赶时，甲（或乙）一定赢、一定输还是平局？</p>
+<p><strong>思路</strong>：DFS+动态规划。（这里只考虑甲开局的情况，乙一样求）从黑洞开始反向逆推，即分别倒退<span class="math inline">\(s1_1, s1_2,s1_3...\)</span>个格子，只要从这些点驱逐，甲是必赢的；换句话说，乙如果把怪物驱逐到了这些点，乙就输了，所以当乙能驱赶的点都是必输点时，当前点也是乙的必输点。 那么对于当前点：若能够将怪物驱逐到对手的必输点，该点必赢，对当前点DFS；若能够将怪物驱逐到对手的必赢点，为当前点计数，当当前点到所有可驱逐的点都会导致失败时，当前点即为必输点。 使用sch数组保存点是否访问过，即DP的记忆化搜索的思想。</p>
+<p>#Code <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#define N 7008</span><br><span class="line">int n, k[2], s[2][N];</span><br><span class="line">int win[2][N], sch[2][N], cnt[2][N];</span><br><span class="line"></span><br><span class="line">void init(int who) &#123;</span><br><span class="line">	memset(win[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(sch[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(cnt[who], 0, sizeof(int)*n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void dp(int now, int who) &#123;</span><br><span class="line">	sch[!who][now] = 1; // 能够允许dp递归下来的now都是已经确定输和赢的</span><br><span class="line">	/*</span><br><span class="line">	for (int i = 0;i != n;++i) &#123;</span><br><span class="line">		printf(&quot;win&#123;%d %d&#125; sch&#123;%d %d&#125; cnt&#123;%d %d&#125;\n&quot;,</span><br><span class="line">			win[0][i], win[1][i],</span><br><span class="line">			sch[0][i], sch[1][i],</span><br><span class="line">			cnt[0][i], cnt[1][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	puts(&quot;-----&quot;);</span><br><span class="line">	*/</span><br><span class="line">	for (int i = 0;i != k[who];++i) &#123;</span><br><span class="line">		int pre = (now - s[who][i] + n) % n; // who让怪物从pre跳到now</span><br><span class="line">		if (!pre) continue; // 不可能</span><br><span class="line">		if (sch[who][pre]) continue; // 记忆搜索</span><br><span class="line">		if (!win[!who][now]) &#123; // 若从pre到now对面必输. (输的条件是sch[who][i]==1且win[who][i]==0)</span><br><span class="line">			win[who][pre] = 1; // 这一步一定赢</span><br><span class="line">			dp(pre, !who);</span><br><span class="line">		&#125;</span><br><span class="line">		else if (win[!who][now]) &#123; // 若从pre到now对面必赢</span><br><span class="line">			if (++cnt[who][pre] == k[who]) &#123; // 当这一步怎么走都会导致对面赢</span><br><span class="line">				dp(pre, !who);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		scanf(&quot;%d&quot;, k + who);</span><br><span class="line">		for (int i = 0;i != k[who];++i)</span><br><span class="line">			scanf(&quot;%d&quot;, s[who] + i);</span><br><span class="line">	&#125;</span><br><span class="line">	init(0), init(1);</span><br><span class="line">	dp(0, 0),dp(0, 1);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		for (int i = 1;i != n;++i) &#123;</span><br><span class="line">			if (win[who][i]) printf(&quot;Win&quot;);</span><br><span class="line">			else if (sch[who][i]) printf(&quot;Lose&quot;);</span><br><span class="line">			else printf(&quot;Loop&quot;);</span><br><span class="line">			printf(&quot;%c&quot;, &quot; \n&quot;[i == n - 1]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -448,7 +448,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -507,7 +507,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -606,6 +606,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

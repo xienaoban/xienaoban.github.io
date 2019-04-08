@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="[TOC] 增强代码提示功能 找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist.  将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFGHIJK">
+<meta name="description" content="[TOC] 增强代码提示功能  找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist. 将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFG">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eclipse开启代码提示与关闭变量命名补全">
 <meta property="og:url" content="http://yoursite.com/posts/32764.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="[TOC] 增强代码提示功能 找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist.  将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFGHIJK">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="[TOC] 增强代码提示功能  找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist. 将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFG">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/32764/1.png">
 <meta property="og:image" content="http://yoursite.com/posts/32764/2.png">
@@ -100,7 +100,7 @@
 <meta property="og:updated_time" content="2019-04-08T13:35:57.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse开启代码提示与关闭变量命名补全">
-<meta name="twitter:description" content="[TOC] 增强代码提示功能 找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist.  将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFGHIJK">
+<meta name="twitter:description" content="[TOC] 增强代码提示功能  找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist. 将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFG">
 <meta name="twitter:image" content="http://yoursite.com/posts/32764/1.png">
 
 
@@ -109,7 +109,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -137,7 +137,7 @@
 
 
 
-  <title>Eclipse开启代码提示与关闭变量命名补全 | XieNaoban</title>
+  <title>Eclipse开启代码提示与关闭变量命名补全 | XieNaoban's Blog</title>
   
 
 
@@ -167,7 +167,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -283,7 +283,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -342,63 +342,64 @@
 
       
         <p>[TOC]</p>
-<h1 id="增强代码提示功能"><a href="#增强代码提示功能" class="headerlink" title="增强代码提示功能"></a>增强代码提示功能</h1><ol>
-<li><p>找到设置位置: <code>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist</code>.</p>
-</li>
-<li><p>将 <code>Auto Activation</code> 下的 <code>Auto activation triggers for Java</code> (默认为 <code>.</code>) 改为 <code>._abcdefghijklmnopqrstuvwsyzABCDEFGHIJKLMNOPQRSTUVWSYZ</code>.<br><img src="/posts/32764/1.png" alt><br>(若此时发现, 输入一个字符时依然没有弹出自动提示的框框, 则继续执行下一步)</p>
-</li>
-<li><p>转到: <code>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist -&gt; Advanced</code>.</p>
-</li>
-<li><p>在上边那个大框中, 将 <code>Java Proposals</code> 与 <code>Java Proposals (Task-Focused)</code> 勾选上.<br><img src="/posts/32764/2.png" alt></p>
-</li>
+<h1 id="增强代码提示功能">增强代码提示功能</h1>
+<ol type="1">
+<li><p>找到设置位置: <code>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist</code>.</p></li>
+<li><p>将 <code>Auto Activation</code> 下的 <code>Auto activation triggers for Java</code> (默认为 <code>.</code>) 改为 <code>._abcdefghijklmnopqrstuvwsyzABCDEFGHIJKLMNOPQRSTUVWSYZ</code>. <img src="/posts/32764/1.png"> (若此时发现, 输入一个字符时依然没有弹出自动提示的框框, 则继续执行下一步)</p></li>
+<li><p>转到: <code>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist -&gt; Advanced</code>.</p></li>
+<li><p>在上边那个大框中, 将 <code>Java Proposals</code> 与 <code>Java Proposals (Task-Focused)</code> 勾选上. <img src="/posts/32764/2.png"></p></li>
 </ol>
 <p>PS: 介绍一下 <code>Java Proposals</code> 这些选项的含义:</p>
 <table>
 <thead>
-<tr>
-<th style="text-align:left">选项</th>
-<th style="text-align:left">含义</th>
+<tr class="header">
+<th style="text-align: left;">选项</th>
+<th style="text-align: left;">含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left"><code>Java Type Proposals</code></td>
-<td style="text-align:left">类名, 关键字的提示</td>
+<tr class="odd">
+<td style="text-align: left;"><code>Java Type Proposals</code></td>
+<td style="text-align: left;">类名, 关键字的提示</td>
 </tr>
-<tr>
-<td style="text-align:left"><code>Java Non-Type Proposals</code></td>
-<td style="text-align:left">其实就是变量名的提示</td>
+<tr class="even">
+<td style="text-align: left;"><code>Java Non-Type Proposals</code></td>
+<td style="text-align: left;">其实就是变量名的提示</td>
 </tr>
-<tr>
-<td style="text-align:left"><code>Java Proposals</code></td>
-<td style="text-align:left"><code>Java Non-Type Proposals</code> 与 <code>Java Type Proposals</code> 的并集</td>
+<tr class="odd">
+<td style="text-align: left;"><code>Java Proposals</code></td>
+<td style="text-align: left;"><code>Java Non-Type Proposals</code> 与 <code>Java Type Proposals</code> 的并集</td>
 </tr>
-<tr>
-<td style="text-align:left"><code>Java Proposals (Task-Focused)</code></td>
-<td style="text-align:left">不太清楚, 感觉和 <code>Java Proposals</code> 差不多</td>
+<tr class="even">
+<td style="text-align: left;"><code>Java Proposals (Task-Focused)</code></td>
+<td style="text-align: left;">不太清楚, 感觉和 <code>Java Proposals</code> 差不多</td>
 </tr>
 </tbody>
 </table>
 <p>(当同时勾选<code>Java Type Proposals</code> <code>Java Non-Type Proposals</code> <code>Java Proposals</code>时, 重启 Eclipse 会发现 <code>Java Non-Type Proposals</code> 与 <code>Java Type Proposals</code> 被取消勾选, 验证了三者关系)</p>
-<p>此时代码补全提示应该如下图正常显示:<br><img src="/posts/32764/3.png" alt></p>
-<h1 id="解决自动变量命名问题"><a href="#解决自动变量命名问题" class="headerlink" title="解决自动变量命名问题"></a>解决自动变量命名问题</h1><p>增强代码提示后有个 bug, 即给变量命名时亦会自动补全, 就很蠢. 如下图:<br><img src="/posts/32764/4.png" alt></p>
+<p>此时代码补全提示应该如下图正常显示: <img src="/posts/32764/3.png"></p>
+<h1 id="解决自动变量命名问题">解决自动变量命名问题</h1>
+<p>增强代码提示后有个 bug, 即给变量命名时亦会自动补全, 就很蠢. 如下图: <img src="/posts/32764/4.png"></p>
 <p>此时不论按 <code>=</code> 还是 <code>;</code>, 变量都会自动补全, 被命名为 <code>abcdBigInteger</code>.</p>
 <p><strong>解决方案</strong>:</p>
-<p>这个 bug 产生于 Eclipse 自带的 <code>org.eclipse.jface.text</code> 插件. 我们可以在 <code>Window -&gt; Show View -&gt; Other... -&gt; Plug-in Development -&gt; Plug-ins</code> 视图下找到这个插件.<br><img src="/posts/32764/5.png" alt></p>
+<p>这个 bug 产生于 Eclipse 自带的 <code>org.eclipse.jface.text</code> 插件. 我们可以在 <code>Window -&gt; Show View -&gt; Other... -&gt; Plug-in Development -&gt; Plug-ins</code> 视图下找到这个插件. <img src="/posts/32764/5.png"></p>
 <p>网上有的教程的做法是, 在 <code>Plug-ins</code> 视图下右键该插件然后 <code>Import As -&gt; Source Project</code>. 但该方法已经无法使用, 因为导入的工程现在没有源码只有 <code>.jar</code> 文件.</p>
-<h5 id="1-获取工程"><a href="#1-获取工程" class="headerlink" title="1. 获取工程"></a>1. 获取工程</h5><p>所以我们要去官网下载插件源码. <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/tree/org.eclipse.jface.text" target="_blank" rel="noopener">插件官网</a>, <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/snapshot/eclipse.platform.text-I20190325-1800.zip" target="_blank" rel="noopener">插件下载(eclipse.platform.text-I20190325-1800.zip)</a>.</p>
+<h5 id="获取工程">1. 获取工程</h5>
+<p>所以我们要去官网下载插件源码. <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/tree/org.eclipse.jface.text" target="_blank" rel="noopener">插件官网</a>, <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/snapshot/eclipse.platform.text-I20190325-1800.zip" target="_blank" rel="noopener">插件下载(eclipse.platform.text-I20190325-1800.zip)</a>.</p>
 <p>在下载的压缩包中找到 <code>org.eclipse.jface.text</code> 工程文件夹, 解压到工作区并打开.</p>
-<h5 id="2-修改代码"><a href="#2-修改代码" class="headerlink" title="2. 修改代码"></a>2. 修改代码</h5><p>在 <code>src</code> 下找到 <code>CompletionProposalPopup.java</code> (如图)并打开.<br><img src="/posts/32764/6.png" alt></p>
-<p><code>Ctrl+F</code> 搜索 <code>if (contains(triggers, key)) {</code>, 并将其修改:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将</span><br><span class="line"><span class="keyword">if</span> (contains(triggers, key)) &#123;</span><br><span class="line">修改为</span><br><span class="line"><span class="keyword">if</span> (key != <span class="string">'='</span> &amp;&amp; key != <span class="string">' '</span> &amp;&amp; key != <span class="string">';'</span> &amp;&amp; contains(triggers, key)) &#123;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/posts/32764/7.png" alt></p>
-<p>目的很明显, 当我们输入 <code>=</code> <code></code> <code>;</code> 时不再自动补全. 以此曲线救国达到命名变量时不补全的目的…</p>
-<h5 id="4-导出插件"><a href="#4-导出插件" class="headerlink" title="4. 导出插件"></a>4. 导出插件</h5><p><code>File -&gt; Export -&gt; Deployable plug-ins and fragments</code></p>
-<p><img src="/posts/32764/8.png" alt></p>
-<p><img src="/posts/32764/9.png" alt></p>
+<h5 id="修改代码">2. 修改代码</h5>
+<p>在 <code>src</code> 下找到 <code>CompletionProposalPopup.java</code> (如图)并打开. <img src="/posts/32764/6.png"></p>
+<p><code>Ctrl+F</code> 搜索 <code>if (contains(triggers, key)) {</code>, 并将其修改: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将</span><br><span class="line"><span class="keyword">if</span> (contains(triggers, key)) &#123;</span><br><span class="line">修改为</span><br><span class="line"><span class="keyword">if</span> (key != <span class="string">'='</span> &amp;&amp; key != <span class="string">' '</span> &amp;&amp; key != <span class="string">';'</span> &amp;&amp; contains(triggers, key)) &#123;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/posts/32764/7.png"></p>
+<p>目的很明显, 当我们输入 <code>=</code> <code></code> <code>;</code> 时不再自动补全. 以此曲线救国达到命名变量时不补全的目的...</p>
+<h5 id="导出插件">4. 导出插件</h5>
+<p><code>File -&gt; Export -&gt; Deployable plug-ins and fragments</code></p>
+<p><img src="/posts/32764/8.png"></p>
+<p><img src="/posts/32764/9.png"></p>
 <p>桌面上产生了一个 <code>plugins</code> 文件夹. 打开该文件夹, 即是插件文件.</p>
-<p><img src="/posts/32764/10.png" alt></p>
+<p><img src="/posts/32764/10.png"></p>
 <p>打开 Eclipse 安装目录下的 <code>plugins</code> 文件夹. 搜索 <code>org.eclipse.jface.text</code>, 把搜索得的老插件删了, 把刚导出的修改版插件放进去.</p>
-<p><img src="/posts/32764/11.png" alt></p>
+<p><img src="/posts/32764/11.png"></p>
 <p>重启 Eclipse 即可.</p>
 
       
@@ -513,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -550,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#增强代码提示功能"><span class="nav-number">1.</span> <span class="nav-text">增强代码提示功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决自动变量命名问题"><span class="nav-number">2.</span> <span class="nav-text">解决自动变量命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-获取工程"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">1. 获取工程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-修改代码"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">2. 修改代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-导出插件"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">4. 导出插件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#增强代码提示功能"><span class="nav-number">1.</span> <span class="nav-text">增强代码提示功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决自动变量命名问题"><span class="nav-number">2.</span> <span class="nav-text">解决自动变量命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取工程"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">1. 获取工程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改代码"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">2. 修改代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导出插件"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">4. 导出插件</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -588,7 +589,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -687,6 +688,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

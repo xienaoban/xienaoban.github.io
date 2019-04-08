@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#DescriptionAs you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consi">
+<meta name="description" content="#Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that cons">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 785D - Anton and School - 2">
 <meta property="og:url" content="http://yoursite.com/posts/64.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#DescriptionAs you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consi">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that cons">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 785D - Anton and School - 2">
-<meta name="twitter:description" content="#DescriptionAs you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consi">
+<meta name="twitter:description" content="#Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that cons">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Codeforces 785D - Anton and School - 2 | XieNaoban</title>
+  <title>Codeforces 785D - Anton and School - 2 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,19 +329,25 @@
       
 
       
-        <p>#Description<br>As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consist of round brackets (characters “(“ and “)” (without quotes)).</p>
+        <p>#Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consist of round brackets (characters "(" and ")" (without quotes)).</p>
 <p>On the last lesson Anton learned about the regular simple bracket sequences (RSBS). A bracket sequence s of length n is an RSBS if the following conditions are met:</p>
-<p>It is not empty (that is n ≠ 0).<br>The length of the sequence is even.<br>First  charactes of the sequence are equal to “(“.<br>Last  charactes of the sequence are equal to “)”.<br>For example, the sequence “((()))” is an RSBS but the sequences “((())” and “(()())” are not RSBS.</p>
-<p>Elena Ivanovna, Anton’s teacher, gave him the following task as a homework. Given a bracket sequence s. Find the number of its distinct subsequences such that they are RSBS. Note that a subsequence of s is a string that can be obtained from s by deleting some of its elements. Two subsequences are considered distinct if distinct sets of positions are deleted.</p>
-<p>Because the answer can be very big and Anton’s teacher doesn’t like big numbers, she asks Anton to find the answer modulo 109 + 7.</p>
-<p>Anton thought of this task for a very long time, but he still doesn’t know how to solve it. Help Anton to solve this task and write a program that finds the answer for it!</p>
-<p>#Input<br>The only line of the input contains a string s — the bracket sequence given in Anton’s homework. The string consists only of characters “(“ and “)” (without quotes). It’s guaranteed that the string is not empty and its length doesn’t exceed 200 000.</p>
-<p>#Output<br>Output one number — the answer for the task modulo 109 + 7.</p>
-<p>#Examples<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">)(()()</span><br><span class="line">output</span><br><span class="line">6</span><br><span class="line"></span><br><span class="line">input</span><br><span class="line">()()()</span><br><span class="line">output</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">input</span><br><span class="line">)))</span><br><span class="line">output</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
-<p>#Note<br>In the first sample the following subsequences are possible:</p>
-<p>If we delete characters at the positions 1 and 5 (numbering starts with one), we will get the subsequence “(())”.<br>If we delete characters at the positions 1, 2, 3 and 4, we will get the subsequence “()”.<br>If we delete characters at the positions 1, 2, 4 and 5, we will get the subsequence “()”.<br>If we delete characters at the positions 1, 2, 5 and 6, we will get the subsequence “()”.<br>If we delete characters at the positions 1, 3, 4 and 5, we will get the subsequence “()”.<br>If we delete characters at the positions 1, 3, 5 and 6, we will get the subsequence “()”.<br>The rest of the subsequnces are not RSBS. So we got 6 distinct subsequences that are RSBS, so the answer is 6.</p>
-<p>#Key<br>题意：给一大串前后括号组成的字符串，长度为n，从中任取若干括号、按原顺序排列，要求取出的括号前一半都是“<code>(</code>”，后一半都是”<code>)</code>“，问有多少种组合（即组成如<code>((((()))))</code>）。如<code>)(()()</code> （没个括号分别编号1~6），有<code>2 4</code>、<code>2 6</code>、<code>3 4</code>、<code>3 6</code>、<code>5 6</code>、<code>2 3 4 6</code> 6种。<br>事后看了<a href="http://blog.csdn.net/zengaming/article/details/63684635" target="_blank" rel="noopener">题解</a>才AC。很容易想到的是，读取时只存储每一个后括号之前一共有多少个前括号，例如<code>)(()()</code>，有三个后括号，只需存储<code>0 2 3</code>即可（对该数组命名为sum，并假设一共m个后括号）。然后遍历这个sum数组：对于第i个后括号，左侧有<code>sum[i]</code>个前括号，右侧有<code>m-i</code>个后括号（方便起见令<code>ai=sum[i]</code>，<code>bi=m-i</code>），以当前后括号为第一个符合符合“<code>((((()))))</code>”的后括号，则当前后括号左侧的后括号都不可能满足，当前后括号右侧的前括号也不满足。则“以当前后括号为第一个符合的后括号”一共有<br>$$<br>C^{1}_{a_i}<em>C^{0}_{b_i} + C^{2}_{a_i}</em>C^{1}_{b_i} + C^{3}_{a_i}<em>C^{2}_{b_i} + … + C^{min(a_i,b_i+1)}_{a_i}</em>C^{min(a_i,b_i+1)-1}_{b_i} = \sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{i}<em>C_{b_i}^{i-1} = \sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{a_i-i}</em>C_{b_i}^{i-1} = \sum_{i=0}^{min(a_i-1,b_i)} C_{a_i}^{a_i-i-1}<em>C_{b_i}^{i}<br>$$<br>注意a指的是当前后括号左侧的前括号个数，b为当前的后括号右侧后括号个数，故b不包括当前后括号。<br>最后根据范德蒙恒等式推倒：<br>若$min(a_i-1,b_i) = a_i-1$：<br>$$<br>\sum_{i=0}^{min(a_i-1,b_i)} C_{a_i}^{a_i-i-1}</em>C_{b_i}^{i} = \sum_{i=0}^{a_i-1} C_{a_i}^{a_i-i-1}<em>C_{b_i}^{i} = C_{a_i+b_i}^{a_i-1}<br>$$<br>若$min(a_i,b_i+1) = b_i+1$：<br>$$<br>\sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{i}</em>C_{b_i}^{i-1} = \sum_{i=1}^{b_i+1} C_{a_i}^{i}*C_{b_i}^{b_i+1-i} = C_{a_i+b_i}^{b_i+1}<br>$$<br>合起来还是$C_{a_i+b_i}^{min(a_i,b_i)}$<br>那么最终要做的就是把m个组合数求和。因而求组合数也是个难点。这里直接盗用了上面链接的大神的模板。自己写了个求组合数的<a href="http://blog.csdn.net/xienaoban/article/details/65448521" target="_blank" rel="noopener">博客</a>。这里还是预先打表了，这样快很多。</p>
-<p>#Code<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define MX 200005</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line"></span><br><span class="line">const int p = 1e9 + 7;</span><br><span class="line">int sum[MX] = &#123; 0 &#125;; // store the sum of all the &apos;(&apos; before the last &apos;)&apos;</span><br><span class="line">LL ans = 0;</span><br><span class="line"></span><br><span class="line">LL fac[200005], fac_exp[200005];</span><br><span class="line">LL ModExp(LL a, LL b, LL p)</span><br><span class="line">&#123;</span><br><span class="line">	LL ans = 1;</span><br><span class="line">	while (b)</span><br><span class="line">	&#123;</span><br><span class="line">		if (b &amp; 1)</span><br><span class="line">			ans = ans*a%p;</span><br><span class="line">		a = a*a%p;</span><br><span class="line">		b &gt;&gt;= 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br><span class="line">LL C(int n, int m)</span><br><span class="line">&#123;</span><br><span class="line">	return fac[n] % p * fac_exp[n - m] % p * fac_exp[m] % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	fac[0] = fac_exp[0] = 1;</span><br><span class="line">	for (int i = 1;i &lt;= 200000;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		fac[i] = (fac[i - 1] * i) % p;</span><br><span class="line">		fac_exp[i] = ModExp(fac[i], p - 2, p);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	string s;</span><br><span class="line">	getline(cin, s);</span><br><span class="line">	int num_left = 0, num_right = 0;</span><br><span class="line">	for (char c : s) &#123;</span><br><span class="line">		if (c == &apos;(&apos;) ++num_left;</span><br><span class="line">		else &#123;</span><br><span class="line">			sum[num_right + 1] = sum[num_right] + num_left;</span><br><span class="line">			++num_right;</span><br><span class="line">			num_left = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1;i &lt;= num_right;++i) &#123;</span><br><span class="line">		int right = num_right - i + 1;</span><br><span class="line">		int left = sum[i];</span><br><span class="line">		ans += C(right - 1 + left, right);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; (int)(ans%p);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>It is not empty (that is n ≠ 0). The length of the sequence is even. First charactes of the sequence are equal to "(". Last charactes of the sequence are equal to ")". For example, the sequence "((()))" is an RSBS but the sequences "((())" and "(()())" are not RSBS.</p>
+<p>Elena Ivanovna, Anton's teacher, gave him the following task as a homework. Given a bracket sequence s. Find the number of its distinct subsequences such that they are RSBS. Note that a subsequence of s is a string that can be obtained from s by deleting some of its elements. Two subsequences are considered distinct if distinct sets of positions are deleted.</p>
+<p>Because the answer can be very big and Anton's teacher doesn't like big numbers, she asks Anton to find the answer modulo 109 + 7.</p>
+<p>Anton thought of this task for a very long time, but he still doesn't know how to solve it. Help Anton to solve this task and write a program that finds the answer for it!</p>
+<p>#Input The only line of the input contains a string s — the bracket sequence given in Anton's homework. The string consists only of characters "(" and ")" (without quotes). It's guaranteed that the string is not empty and its length doesn't exceed 200 000.</p>
+<p>#Output Output one number — the answer for the task modulo 109 + 7.</p>
+<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">)(()()</span><br><span class="line">output</span><br><span class="line">6</span><br><span class="line"></span><br><span class="line">input</span><br><span class="line">()()()</span><br><span class="line">output</span><br><span class="line">7</span><br><span class="line"></span><br><span class="line">input</span><br><span class="line">)))</span><br><span class="line">output</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
+<p>#Note In the first sample the following subsequences are possible:</p>
+<p>If we delete characters at the positions 1 and 5 (numbering starts with one), we will get the subsequence "(())". If we delete characters at the positions 1, 2, 3 and 4, we will get the subsequence "()". If we delete characters at the positions 1, 2, 4 and 5, we will get the subsequence "()". If we delete characters at the positions 1, 2, 5 and 6, we will get the subsequence "()". If we delete characters at the positions 1, 3, 4 and 5, we will get the subsequence "()". If we delete characters at the positions 1, 3, 5 and 6, we will get the subsequence "()". The rest of the subsequnces are not RSBS. So we got 6 distinct subsequences that are RSBS, so the answer is 6.</p>
+<p>#Key 题意：给一大串前后括号组成的字符串，长度为n，从中任取若干括号、按原顺序排列，要求取出的括号前一半都是“<code>(</code>”，后一半都是"<code>)</code>"，问有多少种组合（即组成如<code>((((()))))</code>）。如<code>)(()()</code> （没个括号分别编号1~6），有<code>2 4</code>、<code>2 6</code>、<code>3 4</code>、<code>3 6</code>、<code>5 6</code>、<code>2 3 4 6</code> 6种。 事后看了<a href="http://blog.csdn.net/zengaming/article/details/63684635" target="_blank" rel="noopener">题解</a>才AC。很容易想到的是，读取时只存储每一个后括号之前一共有多少个前括号，例如<code>)(()()</code>，有三个后括号，只需存储<code>0 2 3</code>即可（对该数组命名为sum，并假设一共m个后括号）。然后遍历这个sum数组：对于第i个后括号，左侧有<code>sum[i]</code>个前括号，右侧有<code>m-i</code>个后括号（方便起见令<code>ai=sum[i]</code>，<code>bi=m-i</code>），以当前后括号为第一个符合符合“<code>((((()))))</code>”的后括号，则当前后括号左侧的后括号都不可能满足，当前后括号右侧的前括号也不满足。则“以当前后括号为第一个符合的后括号”一共有 <span class="math display">\[
+C^{1}_{a_i}*C^{0}_{b_i} + C^{2}_{a_i}*C^{1}_{b_i} + C^{3}_{a_i}*C^{2}_{b_i} + ... + C^{min(a_i,b_i+1)}_{a_i}*C^{min(a_i,b_i+1)-1}_{b_i} = \sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{i}*C_{b_i}^{i-1} = \sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{a_i-i}*C_{b_i}^{i-1} = \sum_{i=0}^{min(a_i-1,b_i)} C_{a_i}^{a_i-i-1}*C_{b_i}^{i}
+\]</span> 注意a指的是当前后括号左侧的前括号个数，b为当前的后括号右侧后括号个数，故b不包括当前后括号。 最后根据范德蒙恒等式推倒： 若<span class="math inline">\(min(a_i-1,b_i) = a_i-1\)</span>： <span class="math display">\[
+\sum_{i=0}^{min(a_i-1,b_i)} C_{a_i}^{a_i-i-1}*C_{b_i}^{i} = \sum_{i=0}^{a_i-1} C_{a_i}^{a_i-i-1}*C_{b_i}^{i} = C_{a_i+b_i}^{a_i-1}
+\]</span> 若<span class="math inline">\(min(a_i,b_i+1) = b_i+1\)</span>： <span class="math display">\[
+\sum_{i=1}^{min(a_i,b_i+1)} C_{a_i}^{i}*C_{b_i}^{i-1} = \sum_{i=1}^{b_i+1} C_{a_i}^{i}*C_{b_i}^{b_i+1-i} = C_{a_i+b_i}^{b_i+1}
+\]</span> 合起来还是<span class="math inline">\(C_{a_i+b_i}^{min(a_i,b_i)}\)</span> 那么最终要做的就是把m个组合数求和。因而求组合数也是个难点。这里直接盗用了上面链接的大神的模板。自己写了个求组合数的<a href="http://blog.csdn.net/xienaoban/article/details/65448521" target="_blank" rel="noopener">博客</a>。这里还是预先打表了，这样快很多。</p>
+<p>#Code <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#define MX 200005</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line"></span><br><span class="line">const int p = 1e9 + 7;</span><br><span class="line">int sum[MX] = &#123; 0 &#125;; // store the sum of all the &apos;(&apos; before the last &apos;)&apos;</span><br><span class="line">LL ans = 0;</span><br><span class="line"></span><br><span class="line">LL fac[200005], fac_exp[200005];</span><br><span class="line">LL ModExp(LL a, LL b, LL p)</span><br><span class="line">&#123;</span><br><span class="line">	LL ans = 1;</span><br><span class="line">	while (b)</span><br><span class="line">	&#123;</span><br><span class="line">		if (b &amp; 1)</span><br><span class="line">			ans = ans*a%p;</span><br><span class="line">		a = a*a%p;</span><br><span class="line">		b &gt;&gt;= 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return ans;</span><br><span class="line">&#125;</span><br><span class="line">LL C(int n, int m)</span><br><span class="line">&#123;</span><br><span class="line">	return fac[n] % p * fac_exp[n - m] % p * fac_exp[m] % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	fac[0] = fac_exp[0] = 1;</span><br><span class="line">	for (int i = 1;i &lt;= 200000;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		fac[i] = (fac[i - 1] * i) % p;</span><br><span class="line">		fac_exp[i] = ModExp(fac[i], p - 2, p);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	string s;</span><br><span class="line">	getline(cin, s);</span><br><span class="line">	int num_left = 0, num_right = 0;</span><br><span class="line">	for (char c : s) &#123;</span><br><span class="line">		if (c == &apos;(&apos;) ++num_left;</span><br><span class="line">		else &#123;</span><br><span class="line">			sum[num_right + 1] = sum[num_right] + num_left;</span><br><span class="line">			++num_right;</span><br><span class="line">			num_left = 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	for (int i = 1;i &lt;= num_right;++i) &#123;</span><br><span class="line">		int right = num_right - i + 1;</span><br><span class="line">		int left = sum[i];</span><br><span class="line">		ans += C(right - 1 + left, right);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; (int)(ans%p);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -446,7 +452,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -505,7 +511,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -604,6 +610,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

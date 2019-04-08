@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="线性回归属于回归问题。对于回归问题，解决流程为：给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归：形如h(x)=theta0">
+<meta name="description" content="线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归： 形如h(x)=the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression)">
 <meta property="og:url" content="http://yoursite.com/posts/42401.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="线性回归属于回归问题。对于回归问题，解决流程为：给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归：形如h(x)=theta0">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归： 形如h(x)=the">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/42401/20170212155723091.png">
 <meta property="og:image" content="http://yoursite.com/posts/42401/20170212160638907.png">
@@ -103,7 +103,7 @@
 <meta property="og:updated_time" content="2019-04-08T13:35:57.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression)">
-<meta name="twitter:description" content="线性回归属于回归问题。对于回归问题，解决流程为：给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归：形如h(x)=theta0">
+<meta name="twitter:description" content="线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型： 最基本的单变量线性回归： 形如h(x)=the">
 <meta name="twitter:image" content="http://yoursite.com/posts/42401/20170212155723091.png">
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -140,7 +140,7 @@
 
 
 
-  <title>Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression) | XieNaoban</title>
+  <title>Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression) | XieNaoban's Blog</title>
   
 
 
@@ -170,7 +170,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -286,7 +286,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -344,69 +344,79 @@
       
 
       
-        <p>线性回归属于回归问题。对于回归问题，解决流程为：<br>给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型：</p>
-<p>最基本的单变量线性回归：<br>形如h(x)=theta0+theta1*x1</p>
-<p>多变量线性回归：<br>形如h(x)=theta0+theta1<em>x1+theta2</em>x2+theta3*x3</p>
-<p>多项式回归（Polynomial Regression）：<br>形如h(x)=theta0+theta1<em>x1+theta2</em>(x2^2)+theta3<em>(x3^3)<br>或者h(x)=ttheta0+theta1</em>x1+theta2*sqr(x2)<br>但是我们可以令x2=x2^2，x3=x3^3，于是又将其转化为了线性回归模型。虽然不能说多项式回归问题属于线性回归问题，但是一般我们就是这么做的。</p>
-<p>所以最终通用表达式就是：<br><img src="/posts/42401/20170212155723091.png" alt="这里写图片描述"><br>不用在意图片h(x)中间夹的theta字符，只是一个习惯而已，不写theta也可以的。还有我不知道怎么在博客里输入theta那些字符，凑合着看。</p>
-<h1 id="1-代价函数（Cost-Function）"><a href="#1-代价函数（Cost-Function）" class="headerlink" title="1.代价函数（Cost Function）"></a>1.代价函数（Cost Function）</h1><p>计算建立的模型对真实数据的误差，叫建模误差（Modeling Error）。误差越低，模型对数据拟合度越高。例如给出：<br>m：训练集的样本个数<br>n：训练集的特征个数（通常每行数据为一个x(0)=1与n个x(i) (i from 1 to n)构成，所以一般都会将x最左侧加一列“1”，变成n+1个特征）<br>x：训练集（可含有任意多个特征，二维矩阵，行数m，列数n+1，即x0=1与原训练集结合）<br>y：训练集对应的正确答案（m维向量，也就是长度为m的一维数组）<br>h(x)：我们确定的模型对应的函数（返回m维向量）<br>theta：h的初始参数（常为随机生成。n+1维向量）</p>
-<p>得代价函数J(theta)：<br><img src="/posts/42401/20170212160638907.png" alt="这里写图片描述"><br>（图中等号左侧的theta0,theta1…thetan以后直接用向量theta表示。）</p>
+        <p>线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型：</p>
+<p>最基本的单变量线性回归： 形如h(x)=theta0+theta1*x1</p>
+<p>多变量线性回归： 形如h(x)=theta0+theta1<em>x1+theta2</em>x2+theta3*x3</p>
+<p>多项式回归（Polynomial Regression）： 形如h(x)=theta0+theta1<em>x1+theta2</em>(x2^2)+theta3*(x3<sup>3) 或者h(x)=ttheta0+theta1<em>x1+theta2</em>sqr(x2) 但是我们可以令x2=x2</sup>2，x3=x3^3，于是又将其转化为了线性回归模型。虽然不能说多项式回归问题属于线性回归问题，但是一般我们就是这么做的。</p>
+<p>所以最终通用表达式就是： <img src="/posts/42401/20170212155723091.png" alt="这里写图片描述"> 不用在意图片h(x)中间夹的theta字符，只是一个习惯而已，不写theta也可以的。还有我不知道怎么在博客里输入theta那些字符，凑合着看。</p>
+<h1 id="代价函数cost-function">1.代价函数（Cost Function）</h1>
+<p>计算建立的模型对真实数据的误差，叫建模误差（Modeling Error）。误差越低，模型对数据拟合度越高。例如给出： m：训练集的样本个数 n：训练集的特征个数（通常每行数据为一个x(0)=1与n个x(i) (i from 1 to n)构成，所以一般都会将x最左侧加一列“1”，变成n+1个特征） x：训练集（可含有任意多个特征，二维矩阵，行数m，列数n+1，即x0=1与原训练集结合） y：训练集对应的正确答案（m维向量，也就是长度为m的一维数组） h(x)：我们确定的模型对应的函数（返回m维向量） theta：h的初始参数（常为随机生成。n+1维向量）</p>
+<p>得代价函数J(theta)： <img src="/posts/42401/20170212160638907.png" alt="这里写图片描述"> （图中等号左侧的theta0,theta1...thetan以后直接用向量theta表示。）</p>
 <p>有了代价函数，我们的目的就是找到一组参数theta使得代价最小，稍有常识的人就能知道，这个函数肯定是有最小值的，不会出现负无穷下面两个标题就是讲了最小化J(theta)的两个方法。</p>
-<h1 id="2-正规方程（Normal-Equation）"><a href="#2-正规方程（Normal-Equation）" class="headerlink" title="2.正规方程（Normal Equation）"></a>2.正规方程（Normal Equation）</h1><p>吴恩达老师这个是放在最后讲的，但是对于中国学生，我觉得其实这个先讲反而更好。<br>正规方程是针对某些线性回归问题的方案，例如对于我们熟知的<br><img src="/posts/42401/20170212161159174.png" alt="这里写图片描述"><br>要把上面的代价方程找出theta最小值，本质上就是二次函数嘛。我们直接求导计算导数为0处即为最小值。求解theta轻轻松松一步到位。同样对于多参数的线性回归，只要求偏导即可获得每个theta值到达全局最优解。。<br>那么现在在矩阵中，假设我们的训练集矩阵为X，“正确答案”为y，则theta可以如上面所说的各自求偏导数直接求出。但是直接这样做非常耗时，因此数学家由此推导出了更好的方法：<br><img src="/posts/42401/20170212161352926.png" alt="这里写图片描述"><br>这个公式本质就是从上面求导这一方法推导出来的。推导过程：<a href="https://zhuanlan.zhihu.com/p/22474562" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22474562</a></p>
+<h1 id="正规方程normal-equation">2.正规方程（Normal Equation）</h1>
+<p>吴恩达老师这个是放在最后讲的，但是对于中国学生，我觉得其实这个先讲反而更好。 正规方程是针对某些线性回归问题的方案，例如对于我们熟知的 <img src="/posts/42401/20170212161159174.png" alt="这里写图片描述"> 要把上面的代价方程找出theta最小值，本质上就是二次函数嘛。我们直接求导计算导数为0处即为最小值。求解theta轻轻松松一步到位。同样对于多参数的线性回归，只要求偏导即可获得每个theta值到达全局最优解。。 那么现在在矩阵中，假设我们的训练集矩阵为X，“正确答案”为y，则theta可以如上面所说的各自求偏导数直接求出。但是直接这样做非常耗时，因此数学家由此推导出了更好的方法： <img src="/posts/42401/20170212161352926.png" alt="这里写图片描述"> 这个公式本质就是从上面求导这一方法推导出来的。推导过程：https://zhuanlan.zhihu.com/p/22474562</p>
 <p>当然很显然的是，如果矩阵不可逆就不能用这个方案了（出现这个情况的原因可能是1.各个特征不独立、有关联，比如出现了重量和质量两个特征（至少在同一个地方两者完全成比例）；2.特征数量大于所给训练集样本个数）。</p>
-<h1 id="3-（批量）梯度下降算法（-Batch-Gradient-Descent）"><a href="#3-（批量）梯度下降算法（-Batch-Gradient-Descent）" class="headerlink" title="3.（批量）梯度下降算法（(Batch) Gradient Descent）"></a>3.（批量）梯度下降算法（(Batch) Gradient Descent）</h1><p>上述方法简单易使用但是局限高，而梯度下降算法使用更广泛更通用。当然这个算法放到现在也有人说它过时了，但还是很有必要学习个。<br>先定下一组预设参数，通常可以是随机生成的，不断微调h的参数直到达到代价J的局部最小值（Local Minimum）。因此此算法并不一定能找到全局最小值（Global Minimum）。根据初始theta选择的不同可能找到不同局部最小值、导致不同结果。下图很形象的表现了这一点。<br><img src="/posts/42401/20170212161951227.png" alt="这里写图片描述"></p>
-<p>具体实现：我们循环以下算法直到到达局部最小值。<br><img src="/posts/42401/20170212163327404.png" alt="这里写图片描述"></p>
+<h1 id="批量梯度下降算法batch-gradient-descent">3.（批量）梯度下降算法（(Batch) Gradient Descent）</h1>
+<p>上述方法简单易使用但是局限高，而梯度下降算法使用更广泛更通用。当然这个算法放到现在也有人说它过时了，但还是很有必要学习个。 先定下一组预设参数，通常可以是随机生成的，不断微调h的参数直到达到代价J的局部最小值（Local Minimum）。因此此算法并不一定能找到全局最小值（Global Minimum）。根据初始theta选择的不同可能找到不同局部最小值、导致不同结果。下图很形象的表现了这一点。 <img src="/posts/42401/20170212161951227.png" alt="这里写图片描述"></p>
+<p>具体实现：我们循环以下算法直到到达局部最小值。 <img src="/posts/42401/20170212163327404.png" alt="这里写图片描述"></p>
 <ul>
-<li>alpha是学习率(Learning Rate)，其大小决定了每次循环中theta改变的大小，决定了梯度下降步子迈多大。寻找alpha很关键。alpha小了，每次循环步子也迈的小，要很多步才能到达最低点，速度慢。alpha太大了，可能一下就迈过头了，越过了最低点，并不断一次次越过来越过去就是下不来，太大了甚至可能导致循环无法收敛、甚至发散。</li>
-<li><p>可以看出，随着算法越来越接近局部最小值，J’越小，下降速度越慢，因此alpha只需是个定值，无需在靠近最小值时一起减小alpha。</p>
-</li>
-<li><p>注意（FBI Warning），<strong>每个theta i必须是同步变换</strong>，即不能修改了theta1为新计算得的值后再计算要修改的theta2，这样计算出的theta2是基于是修改后的theta1而得到的。因此要计算出全部新theta后统一赋值。</p>
-</li>
-<li><p>该梯度下降算法有时也被称为<strong>批量梯度下降</strong>。“批量”指的是在梯度下降的每一步中,我们都用到了所有的训练样本。</p>
-</li>
+<li><p>alpha是学习率(Learning Rate)，其大小决定了每次循环中theta改变的大小，决定了梯度下降步子迈多大。寻找alpha很关键。alpha小了，每次循环步子也迈的小，要很多步才能到达最低点，速度慢。alpha太大了，可能一下就迈过头了，越过了最低点，并不断一次次越过来越过去就是下不来，太大了甚至可能导致循环无法收敛、甚至发散。</p></li>
+<li><p>可以看出，随着算法越来越接近局部最小值，J’越小，下降速度越慢，因此alpha只需是个定值，无需在靠近最小值时一起减小alpha。</p></li>
+<li><p>注意（FBI Warning），<strong>每个theta i必须是同步变换</strong>，即不能修改了theta1为新计算得的值后再计算要修改的theta2，这样计算出的theta2是基于是修改后的theta1而得到的。因此要计算出全部新theta后统一赋值。</p></li>
+<li><p>该梯度下降算法有时也被称为<strong>批量梯度下降</strong>。“批量”指的是在梯度下降的每一步中,我们都用到了所有的训练样本。</p></li>
 </ul>
-<h2 id="线性回归上运用梯度下降"><a href="#线性回归上运用梯度下降" class="headerlink" title="线性回归上运用梯度下降"></a>线性回归上运用梯度下降</h2><p>按照梯度下降要求求得代价方程J的导数J’（为了方便书写记J的导数为J’），而对于线性回归模型的J方程上面已经给出，所以将J求导带入，得到：<br><img src="/posts/42401/20170212163453581.png" alt="这里写图片描述"></p>
-<p>将求导部分求出来，即：<br><img src="/posts/42401/20170212163543436.png" alt="这里写图片描述"></p>
-<p>其中<br><img src="/posts/42401/20170212155723091.png" alt="这里写图片描述"></p>
-<h2 id="特征缩放（Feature-Scaling）"><a href="#特征缩放（Feature-Scaling）" class="headerlink" title="特征缩放（Feature Scaling）"></a>特征缩放（Feature Scaling）</h2><p>以房价为例子，现在假设房子价格只受房屋的尺寸（对应theta1）和房间的数量（theta2）影响，房子尺寸的值为 0-2000 平方英尺，而房间数量的值是 0-5，以两个参数为横纵坐标绘图，可以看出图像很扁，梯度下降算法需要非常多次迭代才能收敛。<br><img src="/posts/42401/20170212164150808.png" alt="这里写图片描述"></p>
+<h2 id="线性回归上运用梯度下降">线性回归上运用梯度下降</h2>
+<p>按照梯度下降要求求得代价方程J的导数J’（为了方便书写记J的导数为J’），而对于线性回归模型的J方程上面已经给出，所以将J求导带入，得到： <img src="/posts/42401/20170212163453581.png" alt="这里写图片描述"></p>
+<p>将求导部分求出来，即： <img src="/posts/42401/20170212163543436.png" alt="这里写图片描述"></p>
+<p>其中 <img src="/posts/42401/20170212155723091.png" alt="这里写图片描述"></p>
+<h2 id="特征缩放feature-scaling">特征缩放（Feature Scaling）</h2>
+<p>以房价为例子，现在假设房子价格只受房屋的尺寸（对应theta1）和房间的数量（theta2）影响，房子尺寸的值为 0-2000 平方英尺，而房间数量的值是 0-5，以两个参数为横纵坐标绘图，可以看出图像很扁，梯度下降算法需要非常多次迭代才能收敛。 <img src="/posts/42401/20170212164150808.png" alt="这里写图片描述"></p>
 <p>具体为什么会导致迭代很多次，老师的解释是根据图来的，虽然很直观但是根本原因他没说清楚，现在分析下来我认为原因在于，梯度下降时，alpha对于每个参数都是一样的（现在假定alpha为1），则根据最终得到的算法（“Repeat”里面那行），alpha、1/m、h(xi)-y(i)都是一样的，不一样的只有xj(i)（上标下标不会打，凑合着看），那么对于房屋尺寸，尺寸都上千了，数值很大，则theta1的变化也很大，因此对于theta1，alpha太大了，看那张草图，已经导致了越过最小值的情况。而对于theta2呢，房间一共不会超过5，因此对于theta2，alpha太小了，每次就靠近最小值一点点。</p>
-<p>这时候我们就需要特征缩放，把所有参数缩放到-1～1的范围，让alpha适应每个参数，每个参数每次的变化都相当。<br><img src="/posts/42401/20170212164501171.png" alt="这里写图片描述"></p>
-<p>具体实施就是令<img src="/posts/42401/20170212164609457.png" alt="这里写图片描述"><br>其中u是平均值，s是标准差。把每个数据都如上修改范围，相当于预处理，这样可以对后面线性回归有帮助。而对于多项式回归模型，在运行梯度下降算法前,特征缩放就显得更有必要了。</p>
+<p>这时候我们就需要特征缩放，把所有参数缩放到-1～1的范围，让alpha适应每个参数，每个参数每次的变化都相当。 <img src="/posts/42401/20170212164501171.png" alt="这里写图片描述"></p>
+<p>具体实施就是令<img src="/posts/42401/20170212164609457.png" alt="这里写图片描述"> 其中u是平均值，s是标准差。把每个数据都如上修改范围，相当于预处理，这样可以对后面线性回归有帮助。而对于多项式回归模型，在运行梯度下降算法前,特征缩放就显得更有必要了。</p>
 <p>其实我个人觉得给每个参数分配一个alpha也是可行的一种方案，不过仔细想想，这样的确实麻烦了点，因为找出合适的alpha不是那么容易的事情。</p>
-<h2 id="学习率alpha的选择"><a href="#学习率alpha的选择" class="headerlink" title="学习率alpha的选择"></a>学习率alpha的选择</h2><p>上面说到了，alpha太大，步子大了容易扯到蛋，可能导致越过最小值甚至无法收敛；alpha小了又显得娘炮，太慢了。<br>通常可以考虑尝试这些学习率：α=0.01,0.03,0.1,0.3,1,3,10，多试一试找出比较好的。</p>
-<h2 id="局部最优解还是全局最优解"><a href="#局部最优解还是全局最优解" class="headerlink" title="局部最优解还是全局最优解"></a>局部最优解还是全局最优解</h2><p> 之前也明确说了，梯度下降不一定能获得全局最优解，但是网上那么多教程、博客还是写的很混乱，或者说非常不严谨，都说“到达全局最小值”；包括在吴恩达老师的视频里，也不是描述的很清爽。搞得我很懵。所以问题是，梯度下降用来求最优解，哪些问题可以求得全局最优？哪些问题可能获得局部最优解？<br>如果函数图像只有一个凹坑，像吴大大视频里的例子全都是一个峰的，那梯度下降最终求得的肯定是全局最优解，应该说获得的局部最优解就是全局最优解。然而对于有多个凹坑的问题，梯度下降获得的局部最优解很有可能的最终结果不是全局最优。对于线性回归问题这也是一样的，网上看到有人说线性回归问题只有一个全局最小值没有局部最小值，感觉这不对，我记得吴恩达老师有说过线性回归也可以有极小值存在的。先mark，等我验证后更新。<br>但是正规方程呢？当有多个极小值时他一定会返回最小值吗？这点我也不清楚，但是按照周志华老师的机器学习的书上说，当特征数量大于所给训练集样本个数时使用正规方程，会得到多个解，而具体返回哪个解就看算法的选择了。</p>
-<h1 id="4-正规方程、梯度下降的选择、比较"><a href="#4-正规方程、梯度下降的选择、比较" class="headerlink" title="4.正规方程、梯度下降的选择、比较"></a>4.正规方程、梯度下降的选择、比较</h1><table>
+<h2 id="学习率alpha的选择">学习率alpha的选择</h2>
+<p>上面说到了，alpha太大，步子大了容易扯到蛋，可能导致越过最小值甚至无法收敛；alpha小了又显得娘炮，太慢了。 通常可以考虑尝试这些学习率：α=0.01,0.03,0.1,0.3,1,3,10，多试一试找出比较好的。</p>
+<h2 id="局部最优解还是全局最优解">局部最优解还是全局最优解</h2>
+<p>之前也明确说了，梯度下降不一定能获得全局最优解，但是网上那么多教程、博客还是写的很混乱，或者说非常不严谨，都说“到达全局最小值”；包括在吴恩达老师的视频里，也不是描述的很清爽。搞得我很懵。所以问题是，梯度下降用来求最优解，哪些问题可以求得全局最优？哪些问题可能获得局部最优解？ 如果函数图像只有一个凹坑，像吴大大视频里的例子全都是一个峰的，那梯度下降最终求得的肯定是全局最优解，应该说获得的局部最优解就是全局最优解。然而对于有多个凹坑的问题，梯度下降获得的局部最优解很有可能的最终结果不是全局最优。对于线性回归问题这也是一样的，网上看到有人说线性回归问题只有一个全局最小值没有局部最小值，感觉这不对，我记得吴恩达老师有说过线性回归也可以有极小值存在的。先mark，等我验证后更新。 但是正规方程呢？当有多个极小值时他一定会返回最小值吗？这点我也不清楚，但是按照周志华老师的机器学习的书上说，当特征数量大于所给训练集样本个数时使用正规方程，会得到多个解，而具体返回哪个解就看算法的选择了。</p>
+<h1 id="正规方程梯度下降的选择比较">4.正规方程、梯度下降的选择、比较</h1>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>梯度下降</th>
 <th>正规方程</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>需要选择学习率 α</td>
 <td>不需要</td>
 </tr>
-<tr>
+<tr class="even">
 <td>需要多次迭代</td>
 <td>一次运算得出</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>当特征数量 n 大时也能较好适用</td>
 <td>需要计算(X.T X)^-1。如果特征数量 n 较大则运算代价大,因为矩阵逆的计算时间复杂度为 O(n 3 ),通常来说当 n 小于 10000 时还是可以接受的</td>
 </tr>
-<tr>
+<tr class="even">
 <td>适用于各种类型的模型</td>
 <td>只适用于线性模型,不适合逻辑回归模型等其他模型</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
+<p>总结一下,只要特征变量的数目并不大,标准方程是一个很好的计算参数 θ 的替代方法。具体地说,只要特征变量数量小于一万,我通常使用标准方程法,而不使用梯度下降法。 随着我们要讲的学习算法越来越复杂,例如,当我们讲到分类算法,像逻辑回归算法,我们会看到, 实际上对于那些算法,并不能使用标准方程法。对于那些更复杂的学习算法,我们将不得不仍然使用梯度下降法。因此,梯度下降法是一个非常有用的算法,可以用在有大量特征变量的线性回归问题。或者我们以后在课程中,会讲到的一些其他的算法,因为标准方程法不适合或者不能用在它们上。但对于这个特定的线性回归模型,标准方程法是一个比梯度下降法更快的替代算法。所以,根据具体的问题,以及你的特征变量的数量,这两种算法都是值得学习的。</p>
 </blockquote>
-<p>总结一下,只要特征变量的数目并不大,标准方程是一个很好的计算参数 θ 的替代方法。具体地说,只要特征变量数量小于一万,我通常使用标准方程法,而不使用梯度下降法。<br>随着我们要讲的学习算法越来越复杂,例如,当我们讲到分类算法,像逻辑回归算法,我们会看到, 实际上对于那些算法,并不能使用标准方程法。对于那些更复杂的学习算法,我们将不得不仍然使用梯度下降法。因此,梯度下降法是一个非常有用的算法,可以用在有大量特征变量的线性回归问题。或者我们以后在课程中,会讲到的一些其他的算法,因为标准方程法不适合或者不能用在它们上。但对于这个特定的线性回归模型,标准方程法是一个比梯度下降法更快的替代算法。所以,根据具体的问题,以及你的特征变量的数量,这两种算法都是值得学习的。</p>
 <hr>
 <p>补充：</p>
-<h1 id="5-随机梯度下降算法（Stochastic-Gradient-Descent）"><a href="#5-随机梯度下降算法（Stochastic-Gradient-Descent）" class="headerlink" title="5.随机梯度下降算法（Stochastic Gradient Descent）"></a>5.随机梯度下降算法（Stochastic Gradient Descent）</h1><p>普通的梯度下降算法更新一次theta需要载入所有样本，也就是说一次更新的计算量为m*n^2（m为样本数量，n为参数数量）。这样如果m 非常大，我们需要把所有样本都载入，才能更新一次参数theta，更新一次theta的时间太久了。<br>而随机梯度下降算法是每次只取一个样本，马上就更新theta。<br><img src="/posts/42401/6bb07f83gccf29f0eb9c1&amp;690.png" alt="这里写图片描述"><br>也就是说，每次更新theta的计算量为n^2，当m很大的时候，随机梯度下降迭代一次的速度要远高于梯度下降。<br>当然有弊有利，利就是更新速度很快，弊就是梯度下降的方向不稳。虽然大致方向上还是向着最低点的，但是一路上都在来回移动。要知道毕竟一套参数不能完全满足所有样本，而每个样本都试图将参数向自己方向靠。（说起来这样不应该很可能没法收敛吗？最后会不会一直在最优解附近游荡。）<br><img src="/posts/42401/132035089105720.jpg" alt="这里写图片描述"></p>
+<h1 id="随机梯度下降算法stochastic-gradient-descent">5.随机梯度下降算法（Stochastic Gradient Descent）</h1>
+<p>普通的梯度下降算法更新一次theta需要载入所有样本，也就是说一次更新的计算量为m*n^2（m为样本数量，n为参数数量）。这样如果m 非常大，我们需要把所有样本都载入，才能更新一次参数theta，更新一次theta的时间太久了。 而随机梯度下降算法是每次只取一个样本，马上就更新theta。 <img src="/posts/42401/6bb07f83gccf29f0eb9c1&amp;690.png" alt="这里写图片描述"> 也就是说，每次更新theta的计算量为n^2，当m很大的时候，随机梯度下降迭代一次的速度要远高于梯度下降。 当然有弊有利，利就是更新速度很快，弊就是梯度下降的方向不稳。虽然大致方向上还是向着最低点的，但是一路上都在来回移动。要知道毕竟一套参数不能完全满足所有样本，而每个样本都试图将参数向自己方向靠。（说起来这样不应该很可能没法收敛吗？最后会不会一直在最优解附近游荡。） <img src="/posts/42401/132035089105720.jpg" alt="这里写图片描述"></p>
 
       
     </div>
@@ -520,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -557,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-代价函数（Cost-Function）"><span class="nav-number">1.</span> <span class="nav-text">1.代价函数（Cost Function）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-正规方程（Normal-Equation）"><span class="nav-number">2.</span> <span class="nav-text">2.正规方程（Normal Equation）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-（批量）梯度下降算法（-Batch-Gradient-Descent）"><span class="nav-number">3.</span> <span class="nav-text">3.（批量）梯度下降算法（(Batch) Gradient Descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归上运用梯度下降"><span class="nav-number">3.1.</span> <span class="nav-text">线性回归上运用梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">3.2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习率alpha的选择"><span class="nav-number">3.3.</span> <span class="nav-text">学习率alpha的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部最优解还是全局最优解"><span class="nav-number">3.4.</span> <span class="nav-text">局部最优解还是全局最优解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-正规方程、梯度下降的选择、比较"><span class="nav-number">4.</span> <span class="nav-text">4.正规方程、梯度下降的选择、比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-随机梯度下降算法（Stochastic-Gradient-Descent）"><span class="nav-number">5.</span> <span class="nav-text">5.随机梯度下降算法（Stochastic Gradient Descent）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代价函数cost-function"><span class="nav-number">1.</span> <span class="nav-text">1.代价函数（Cost Function）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正规方程normal-equation"><span class="nav-number">2.</span> <span class="nav-text">2.正规方程（Normal Equation）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#批量梯度下降算法batch-gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">3.（批量）梯度下降算法（(Batch) Gradient Descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归上运用梯度下降"><span class="nav-number">3.1.</span> <span class="nav-text">线性回归上运用梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征缩放feature-scaling"><span class="nav-number">3.2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习率alpha的选择"><span class="nav-number">3.3.</span> <span class="nav-text">学习率alpha的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部最优解还是全局最优解"><span class="nav-number">3.4.</span> <span class="nav-text">局部最优解还是全局最优解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正规方程梯度下降的选择比较"><span class="nav-number">4.</span> <span class="nav-text">4.正规方程、梯度下降的选择、比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#随机梯度下降算法stochastic-gradient-descent"><span class="nav-number">5.</span> <span class="nav-text">5.随机梯度下降算法（Stochastic Gradient Descent）</span></a></li></ol></div>
             
 
           </div>
@@ -595,7 +605,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -694,6 +704,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

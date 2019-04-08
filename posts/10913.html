@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737">
+<meta name="description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 6-7UVa804 - Petri Net Simulation">
 <meta property="og:url" content="http://yoursite.com/posts/10913.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 6-7UVa804 - Petri Net Simulation">
-<meta name="twitter:description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737">
+<meta name="twitter:description" content="题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。  代码：（Accepted，0.210s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 6-7UVa804 - Petri Net Simulation | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 6-7UVa804 - Petri Net Simulation | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -334,7 +334,7 @@
 <p>代码：（Accepted，0.210s）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">//UVa804 - Petri Net Simulation</span><br><span class="line">//Accepted 0.210s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct &#123;</span><br><span class="line">	map&lt;int, int&gt; ipt, opt;</span><br><span class="line">&#125; Trans[111];</span><br><span class="line"></span><br><span class="line">int NP, NT, NF, Cnt, T(0);</span><br><span class="line">int Token[111];</span><br><span class="line"></span><br><span class="line">void IniAndInput() &#123;</span><br><span class="line">	Cnt = 0;</span><br><span class="line">	for (int i(1);i &lt;= NP;++i)</span><br><span class="line">		scanf(&quot;%d&quot;, Token + i);</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;NT);</span><br><span class="line">	for (int i(1);i &lt;= NT;++i) &#123;</span><br><span class="line">		Trans[i].ipt.clear();</span><br><span class="line">		Trans[i].opt.clear();</span><br><span class="line">		int n;</span><br><span class="line">		while (scanf(&quot;%d&quot;, &amp;n) != EOF &amp;&amp; n) &#123;</span><br><span class="line">			if (n &lt; 0) ++Trans[i].ipt[-n];</span><br><span class="line">			else ++Trans[i].opt[n];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;NF);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool JudgeTrans(int i) &#123;</span><br><span class="line">	for (auto&amp; t : Trans[i].ipt)</span><br><span class="line">		if (Token[t.first] &lt; t.second)</span><br><span class="line">			return false;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool TryTrans() &#123;</span><br><span class="line">	for (int i(1);i &lt;= NT;++i) &#123;</span><br><span class="line">		if (!JudgeTrans(i)) continue;</span><br><span class="line">		for (auto&amp; t : Trans[i].ipt)</span><br><span class="line">			Token[t.first] -= t.second;</span><br><span class="line">		for (auto&amp; t : Trans[i].opt)</span><br><span class="line">			Token[t.first] += t.second;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Output() &#123;</span><br><span class="line">	printf(&quot;Case %d: &quot;, ++T);</span><br><span class="line">	if (Cnt &lt; NF)</span><br><span class="line">		printf(&quot;dead after %d transitions\n&quot;, Cnt);</span><br><span class="line">	else printf(&quot;still live after %d transitions\n&quot;, NF);</span><br><span class="line">	printf(&quot;Places with tokens:&quot;);</span><br><span class="line">	for (int i(1);i &lt;= NP;++i) if (Token[i])</span><br><span class="line">		printf(&quot; %d (%d)&quot;, i, Token[i]);</span><br><span class="line">	printf(&quot;\n\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Debug() &#123;</span><br><span class="line">	cerr &lt;&lt; &quot;\nToken:\n&quot;;</span><br><span class="line">	for (int i(1);i &lt;= NP;++i) cerr &lt;&lt; Token[i] &lt;&lt; &apos; &apos;;</span><br><span class="line">	cerr &lt;&lt; &quot;\nTrans:\n&quot;;</span><br><span class="line">	for (int i(1);i &lt;= NT;++i) &#123;</span><br><span class="line">		for (const auto&amp; t : Trans[i].ipt) cerr &lt;&lt; t.first &lt;&lt; &quot; - &quot; &lt;&lt; t.second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">		for (const auto&amp; t : Trans[i].opt) cerr &lt;&lt; t.first &lt;&lt; &quot; + &quot; &lt;&lt; t.second &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 129)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	while (scanf(&quot;%d&quot;, &amp;NP) != EOF &amp;&amp; NP) &#123;</span><br><span class="line">		IniAndInput();</span><br><span class="line">		//Debug();//</span><br><span class="line">		for (;Cnt &lt; NF;++Cnt) &#123;</span><br><span class="line">			if (!TryTrans()) break;</span><br><span class="line">			//Debug();//</span><br><span class="line">		&#125;</span><br><span class="line">		Output();</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>分析：其实就是无脑模拟。比前一题简单好多，有些意外。一遍通过，好久没一遍过了，好爽。题目描述的很清晰，看紫书的中文简述反而看不懂。这次尽量给不同部分分了个块，分到不同函数里去了，看着清晰点。210ms好像有点长，看网上别人的做法也基本类似，也不优化了。<br>说起来我一开始对每一个Case进行初始化Trans数组时，一开始选择的对整个数组的ipt、opt进行clear，用时190ms。后来改成只对要用的部分进行clear初始化，反而用时更长了（210ms）。这应该是处理器的优化的结果吧。就是让处理器反复干一件事时它会预测下一步还是这个同样的计算，就会处理的特别快。也算是硬件因素吧？</p>
+<p>分析：其实就是无脑模拟。比前一题简单好多，有些意外。一遍通过，好久没一遍过了，好爽。题目描述的很清晰，看紫书的中文简述反而看不懂。这次尽量给不同部分分了个块，分到不同函数里去了，看着清晰点。210ms好像有点长，看网上别人的做法也基本类似，也不优化了。 说起来我一开始对每一个Case进行初始化Trans数组时，一开始选择的对整个数组的ipt、opt进行clear，用时190ms。后来改成只对要用的部分进行clear初始化，反而用时更长了（210ms）。这应该是处理器的优化的结果吧。就是让处理器反复干一件事时它会预测下一步还是这个同样的计算，就会处理的特别快。也算是硬件因素吧？</p>
 
       
     </div>
@@ -439,7 +439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +498,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -597,6 +597,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

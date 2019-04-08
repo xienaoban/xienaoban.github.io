@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#Problem DescriptionGiven a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing sub">
+<meta name="description" content="#Problem Description Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing su">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ACM ICPC 2015合肥网络赛 - Removed Interval">
 <meta property="og:url" content="http://yoursite.com/posts/21829.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#Problem DescriptionGiven a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing sub">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Problem Description Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing su">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ACM ICPC 2015合肥网络赛 - Removed Interval">
-<meta name="twitter:description" content="#Problem DescriptionGiven a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing sub">
+<meta name="twitter:description" content="#Problem Description Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&amp;lt;b2&amp;lt;…&amp;lt;bk. LY has just learned how to find the longest increasing su">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>ACM ICPC 2015合肥网络赛 - Removed Interval | XieNaoban</title>
+  <title>ACM ICPC 2015合肥网络赛 - Removed Interval | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,17 +329,17 @@
       
 
       
-        <p>#Problem Description<br>Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&lt;b2&lt;…&lt;bk. LY has just learned how to find the longest increasing subsequence (LIS).<br>Now that he has to select L consecutive numbers and remove them from A for some mysterious reasons. He can choose arbitrary starting position of the selected interval so that the length of the LIS of the remaining numbers is maximized. Can you help him with this problem?</p>
-<p>#Input<br>The first line of input contains a number T indicating the number of test cases (T≤100).<br>For each test case, the first line consists of two numbers N and L as described above (1≤N≤100000,0≤L≤N). The second line consists of N integers indicating the sequence. The absolute value of the numbers is no greater than $10^9$.<br>The sum of N over all test cases will not exceed 500000.</p>
-<p>#Output<br>For each test case, output a single line consisting of “Case #X: Y”. X is the test case number starting from 1. Y is the maximum length of LIS after removing the interval.</p>
-<p>#Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5 2</span><br><span class="line">1 2 3 4 5</span><br><span class="line">5 3</span><br><span class="line">5 4 3 2 1</span><br></pre></td></tr></table></figure></p>
-<p>#Sample Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 3</span><br><span class="line">Case #2: 1</span><br></pre></td></tr></table></figure></p>
-<p>#Source<br><a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2015+ACM%2FICPC+Asia+Regional+Hefei+Online&amp;source=1&amp;searchmode=source" target="_blank" rel="noopener">2015 ACM/ICPC Asia Regional Hefei Online</a></p>
-<p>#Key<br>啊被这题折磨了两天。最后发现是我数据范围错了。。题目说“The absolute value of the numbers is no greater than $10^9$”，我理解成$[1,1^9)$了。。。</p>
-<p>LIS题的一个变种。用$O(n^2)$的DP做是没法做的，$O(n^2)$本身就超时了，更别说别的处理。得用$O(n \log n)$的那个算法。</p>
-<p>基本思路是，先计算出以每个$A[i]$为开头的LIS（即从右向左找以$A[i]$结尾的最大降序子序列）。<br>然后枚举所有挖掉的连续字串的位置：对于挖掉的$[i-L, i-1]$ $(i&gt;L)$，LIS最大值为右侧以$A[i]$打头时的LIS加上左侧以比$A[i]$小的值结尾的最大LIS。</p>
-<p>于是关键是怎么在左侧找出一个以$A[i-L-1]$结尾的LIS，要求LIS尽量大且$A[i-L-1]&lt;A[i]$。查了题解，才知道可以利用那个$O(n \log n)$算法，二分找出在左侧x个值中小于A[i]的最大LIS。真是太强了。</p>
-<p>#Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">100000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, L;</span><br><span class="line"><span class="keyword">int</span> A[Maxn], LIS[Maxn], BG[Maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//freopen("F:\\Projects\\ConsoleApplication2\\ConsoleApplication2\\in.txt", "r", stdin);</span></span><br><span class="line">	<span class="comment">//freopen("F:\\Projects\\Debug Tools\\Comparison1.txt", "w", stdout);</span></span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> Case = <span class="number">1</span>; Case &lt;= T; ++Case) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; A[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> len, idx;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">		LIS[<span class="number">0</span>] = <span class="number">0x7fffffff</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i], greater&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			<span class="keyword">if</span> (idx == len) ++len;</span><br><span class="line">			LIS[idx] = A[i];</span><br><span class="line">			BG[i] = idx;</span><br><span class="line">			<span class="keyword">if</span> (i &gt;= L) res = max(res, idx);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">		LIS[<span class="number">0</span>] = <span class="number">0x80000000</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = L; i &lt; N; ++i) &#123;</span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i], less&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			res = max(res, BG[i] + idx - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i - L], less&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			<span class="keyword">if</span> (idx == len) ++len;</span><br><span class="line">			LIS[idx] = A[i - L];</span><br><span class="line">			res = max(res, idx);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case #%d: %d\n"</span>, Case, res);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>#Problem Description Given a sequence of numbers A=a1,a2,…,aN, a subsequence b1,b2,…,bk of A is referred as increasing if b1&lt;b2&lt;…&lt;bk. LY has just learned how to find the longest increasing subsequence (LIS). Now that he has to select L consecutive numbers and remove them from A for some mysterious reasons. He can choose arbitrary starting position of the selected interval so that the length of the LIS of the remaining numbers is maximized. Can you help him with this problem?</p>
+<p>#Input The first line of input contains a number T indicating the number of test cases (T≤100). For each test case, the first line consists of two numbers N and L as described above (1≤N≤100000,0≤L≤N). The second line consists of N integers indicating the sequence. The absolute value of the numbers is no greater than <span class="math inline">\(10^9\)</span>. The sum of N over all test cases will not exceed 500000.</p>
+<p>#Output For each test case, output a single line consisting of “Case #X: Y”. X is the test case number starting from 1. Y is the maximum length of LIS after removing the interval.</p>
+<p>#Sample Input <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5 2</span><br><span class="line">1 2 3 4 5</span><br><span class="line">5 3</span><br><span class="line">5 4 3 2 1</span><br></pre></td></tr></table></figure></p>
+<p>#Sample Output <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 3</span><br><span class="line">Case #2: 1</span><br></pre></td></tr></table></figure></p>
+<p>#Source <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=2015+ACM%2FICPC+Asia+Regional+Hefei+Online&amp;source=1&amp;searchmode=source" target="_blank" rel="noopener">2015 ACM/ICPC Asia Regional Hefei Online</a></p>
+<p>#Key 啊被这题折磨了两天。最后发现是我数据范围错了。。题目说“The absolute value of the numbers is no greater than <span class="math inline">\(10^9\)</span>”，我理解成<span class="math inline">\([1,1^9)\)</span>了。。。</p>
+<p>LIS题的一个变种。用<span class="math inline">\(O(n^2)\)</span>的DP做是没法做的，<span class="math inline">\(O(n^2)\)</span>本身就超时了，更别说别的处理。得用<span class="math inline">\(O(n \log n)\)</span>的那个算法。</p>
+<p>基本思路是，先计算出以每个<span class="math inline">\(A[i]\)</span>为开头的LIS（即从右向左找以<span class="math inline">\(A[i]\)</span>结尾的最大降序子序列）。 然后枚举所有挖掉的连续字串的位置：对于挖掉的<span class="math inline">\([i-L, i-1]\)</span> <span class="math inline">\((i&gt;L)\)</span>，LIS最大值为右侧以<span class="math inline">\(A[i]\)</span>打头时的LIS加上左侧以比<span class="math inline">\(A[i]\)</span>小的值结尾的最大LIS。</p>
+<p>于是关键是怎么在左侧找出一个以<span class="math inline">\(A[i-L-1]\)</span>结尾的LIS，要求LIS尽量大且<span class="math inline">\(A[i-L-1]&lt;A[i]\)</span>。查了题解，才知道可以利用那个<span class="math inline">\(O(n \log n)\)</span>算法，二分找出在左侧x个值中小于A[i]的最大LIS。真是太强了。</p>
+<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Maxn = <span class="number">100000</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, N, L;</span><br><span class="line"><span class="keyword">int</span> A[Maxn], LIS[Maxn], BG[Maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//freopen("F:\\Projects\\ConsoleApplication2\\ConsoleApplication2\\in.txt", "r", stdin);</span></span><br><span class="line">	<span class="comment">//freopen("F:\\Projects\\Debug Tools\\Comparison1.txt", "w", stdout);</span></span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> Case = <span class="number">1</span>; Case &lt;= T; ++Case) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; N &gt;&gt; L;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; A[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> len, idx;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">		LIS[<span class="number">0</span>] = <span class="number">0x7fffffff</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = N - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i], greater&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			<span class="keyword">if</span> (idx == len) ++len;</span><br><span class="line">			LIS[idx] = A[i];</span><br><span class="line">			BG[i] = idx;</span><br><span class="line">			<span class="keyword">if</span> (i &gt;= L) res = max(res, idx);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">		LIS[<span class="number">0</span>] = <span class="number">0x80000000</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = L; i &lt; N; ++i) &#123;</span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i], less&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			res = max(res, BG[i] + idx - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">			idx = lower_bound(LIS, LIS + len, A[i - L], less&lt;<span class="keyword">int</span>&gt;()) - LIS;</span><br><span class="line">			<span class="keyword">if</span> (idx == len) ++len;</span><br><span class="line">			LIS[idx] = A[i - L];</span><br><span class="line">			res = max(res, idx);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case #%d: %d\n"</span>, Case, res);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -444,7 +444,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -503,7 +503,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -602,6 +602,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

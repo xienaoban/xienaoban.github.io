@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， –ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt">
+<meta name="description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， --ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vecto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 5-6UVa1595 - Symmetry">
 <meta property="og:url" content="http://yoursite.com/posts/37527.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， –ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， --ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vecto">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-6UVa1595 - Symmetry">
-<meta name="twitter:description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， –ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vector&amp;gt">
+<meta name="twitter:description" content="题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。  代码：（Wrong Answer， --ms） 1234567891011121314151617181920212223242526272829303132333435363738394041424344//UVa1595 - Symmetry#include&amp;lt;iostream&amp;gt;#include&amp;lt;vecto">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 5-6UVa1595 - Symmetry | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 5-6UVa1595 - Symmetry | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,11 +331,12 @@
       
         <p>题意：平面上给若干点，问它们是不是关于某垂直于x轴的直线对称。</p>
 <hr>
-<p>代码：（<strong>Wrong Answer</strong>， –ms）</p>
+<p>代码：（<strong>Wrong Answer</strong>， --ms）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//UVa1595 - Symmetry</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct point &#123;</span><br><span class="line">	int x, y;</span><br><span class="line">	bool operator &lt;(point&amp; that)const &#123;</span><br><span class="line">		if (y == that.y) return x &lt; that.x;</span><br><span class="line">		return y &lt; that.y;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int T, N;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;T);</span><br><span class="line">	while (T--) &#123;</span><br><span class="line">		scanf(&quot;%d&quot;, &amp;N);</span><br><span class="line">		vector&lt;point&gt; all(N);</span><br><span class="line">		int sym(0);//2倍的对称轴</span><br><span class="line">		for (auto &amp;r : all) &#123;</span><br><span class="line">			scanf(&quot;%d%d&quot;, &amp;r.x, &amp;r.y);</span><br><span class="line">			sym += r.x;</span><br><span class="line">		&#125;</span><br><span class="line">		sym = sym * 2 / N;</span><br><span class="line">		sort(all.rbegin(), all.rend());</span><br><span class="line">		//printf(&quot;sym:%d\n&quot;, sym);for (int i = 0;i &lt; N;++i) printf(&quot;%d&amp;%d  &quot;, all[i].y, all[i].x);printf(&quot;\n&quot;);//------------</span><br><span class="line">		int i = 0;</span><br><span class="line">		while (i &lt; N) &#123;</span><br><span class="line">			int k, ij, j = i;</span><br><span class="line">			while (++j != N &amp;&amp; all[j].y == all[i].y);</span><br><span class="line">			ij = (--j - i) / 2;</span><br><span class="line">			//printf(&quot;i:%d\t&quot;, i);printf(&quot;j:%d\t&quot;, j);printf(&quot;ij:%d\n&quot;, ij);//----------</span><br><span class="line">			for (k = 0;k &lt;= ij;++k) &#123;</span><br><span class="line">				if (all[i + k].x + all[j - k].x != sym) break;</span><br><span class="line">			&#125;</span><br><span class="line">			if (k &lt;= ij) break;</span><br><span class="line">			i = j + 1;</span><br><span class="line">		&#125;</span><br><span class="line">		printf((i &lt; N ? &quot;NO\n&quot; : &quot;YES\n&quot;));</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>分析：好气呀，这么简单的题目，做了一下午+一上午，无限WA，至今找不到错误。不玩了，学会放弃，以后有心情再看。<br>我的想法是：定义一个结构体存每个点的x、y，读取每个数据后排序，优先y从小到大，其次x从小到大（目的是方便找出每个点对应的点。例如相同的y里面，最小的x与最大的x对应）。随便找出一个可能的对称轴（可以是找最大、最小的x，相加除以二；也可以所有的x相加再除以N。我选的后者）。然后取每对对应的两个点看相加的结果是不是对称轴两倍。<br>然而自己的测试数据都对，到了提交就总是WA。换成网上都用的set的方法重新做一遍，还是WA，开始怀疑人生。以下是我的测试数据，我实在是找不到其他的特殊情况了。</p>
+<p>分析：好气呀，这么简单的题目，做了一下午+一上午，无限WA，至今找不到错误。不玩了，学会放弃，以后有心情再看。 我的想法是：定义一个结构体存每个点的x、y，读取每个数据后排序，优先y从小到大，其次x从小到大（目的是方便找出每个点对应的点。例如相同的y里面，最小的x与最大的x对应）。随便找出一个可能的对称轴（可以是找最大、最小的x，相加除以二；也可以所有的x相加再除以N。我选的后者）。然后取每对对应的两个点看相加的结果是不是对称轴两倍。 然而自己的测试数据都对，到了提交就总是WA。换成网上都用的set的方法重新做一遍，还是WA，开始怀疑人生。以下是我的测试数据，我实在是找不到其他的特殊情况了。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line"></span><br><span class="line">5 </span><br><span class="line">-2 5 </span><br><span class="line">0 0 </span><br><span class="line">6 5 </span><br><span class="line">4 0 </span><br><span class="line">2 3 </span><br><span class="line"></span><br><span class="line">4 </span><br><span class="line">2 3 </span><br><span class="line">0 4 </span><br><span class="line">4 0 </span><br><span class="line">0 0 </span><br><span class="line"></span><br><span class="line">4 </span><br><span class="line">5 14 </span><br><span class="line">6 10</span><br><span class="line">5 10 </span><br><span class="line">6 14</span><br><span class="line"></span><br><span class="line">10</span><br><span class="line">7 -666</span><br><span class="line">0 5</span><br><span class="line">-1 -666</span><br><span class="line">7 5</span><br><span class="line">3 4</span><br><span class="line">0 -666</span><br><span class="line">4 4</span><br><span class="line">4 -666</span><br><span class="line">3 -666</span><br><span class="line">8 -666</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">233 322</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">-10000 999</span><br><span class="line">9999 998</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">-999 999</span><br><span class="line">0 999</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line">1 1</span><br><span class="line">2 1</span><br><span class="line">4 1</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line">1 1</span><br><span class="line">2 1</span><br><span class="line">3 1</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line">1 1</span><br><span class="line">2 2</span><br><span class="line">3 1</span><br><span class="line"></span><br><span class="line">4</span><br><span class="line">0 1</span><br><span class="line">2 1</span><br><span class="line">3 1</span><br><span class="line">5 1</span><br><span class="line"></span><br><span class="line">37</span><br><span class="line">1 1</span><br><span class="line">2 2</span><br><span class="line">3 3</span><br><span class="line">4 4</span><br><span class="line">5 5</span><br><span class="line">6 6</span><br><span class="line">7 7</span><br><span class="line">8 8</span><br><span class="line">9 9</span><br><span class="line">1 9</span><br><span class="line">2 8</span><br><span class="line">3 7</span><br><span class="line">4 6</span><br><span class="line">6 4</span><br><span class="line">7 3</span><br><span class="line">8 2</span><br><span class="line">9 1</span><br><span class="line">5 6</span><br><span class="line">5 7</span><br><span class="line">5 55</span><br><span class="line">5 4</span><br><span class="line">5 3</span><br><span class="line">5 -45</span><br><span class="line">6 5</span><br><span class="line">7 5</span><br><span class="line">8 5</span><br><span class="line">10 5</span><br><span class="line">55 5</span><br><span class="line">4 5</span><br><span class="line">3 5</span><br><span class="line">2 5</span><br><span class="line">0 5</span><br><span class="line">-45 5</span><br><span class="line">8 100</span><br><span class="line">7 100</span><br><span class="line">3 100</span><br><span class="line">2 100</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -439,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -498,7 +499,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -597,6 +598,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

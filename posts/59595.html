@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+<meta name="description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据 1.1. 向量化(Vectorization) 将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization) 对于一般数据，使用标准化(S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Coursera Deep Learning笔记 逻辑回归典型的训练过程">
 <meta property="og:url" content="http://yoursite.com/posts/59595.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据 1.1. 向量化(Vectorization) 将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization) 对于一般数据，使用标准化(S">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Coursera Deep Learning笔记 逻辑回归典型的训练过程">
-<meta name="twitter:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+<meta name="twitter:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据 1.1. 向量化(Vectorization) 将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization) 对于一般数据，使用标准化(S">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Coursera Deep Learning笔记 逻辑回归典型的训练过程 | XieNaoban</title>
+  <title>Coursera Deep Learning笔记 逻辑回归典型的训练过程 | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -330,34 +330,80 @@
 
       
         <p>Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记.</p>
-<h1 id="1-处理数据"><a href="#1-处理数据" class="headerlink" title="1. 处理数据"></a>1. 处理数据</h1><h2 id="1-1-向量化-Vectorization"><a href="#1-1-向量化-Vectorization" class="headerlink" title="1.1. 向量化(Vectorization)"></a>1.1. 向量化(Vectorization)</h2><p>将每张图片的高和宽和RGB展为向量, 最终X的shape为 <code>(height*width*3, m)</code> .</p>
-<h2 id="1-2-特征归一化-Normalization"><a href="#1-2-特征归一化-Normalization" class="headerlink" title="1.2. 特征归一化(Normalization)"></a>1.2. 特征归一化(Normalization)</h2><p>对于一般数据，使用标准化(Standardization), <code>z_i = (x_i - mean) / delta</code> , <code>mean</code> 与 <code>delta</code> 代表X的均值和标准差. 最终特征处于[-1, 1]区间.</p>
+<h1 id="处理数据">1. 处理数据</h1>
+<h2 id="向量化vectorization">1.1. 向量化(Vectorization)</h2>
+<p>将每张图片的高和宽和RGB展为向量, 最终X的shape为 <code>(height*width*3, m)</code> .</p>
+<h2 id="特征归一化normalization">1.2. 特征归一化(Normalization)</h2>
+<p>对于一般数据，使用标准化(Standardization), <code>z_i = (x_i - mean) / delta</code> , <code>mean</code> 与 <code>delta</code> 代表X的均值和标准差. 最终特征处于[-1, 1]区间.</p>
 <p>对于图片, 可直接使用Min-Max Scaling, 即将每个特征除以255(每个像素分为R, G, B, 范围在0~255)使得值处于[0, 1].</p>
-<h1 id="2-初始化参数"><a href="#2-初始化参数" class="headerlink" title="2. 初始化参数"></a>2. 初始化参数</h1><p>一般将 <code>w</code> 和 <code>b</code> 随机选择. 作业为了方便设为0了.</p>
-<h1 id="3-梯度下降-Gradient-descent"><a href="#3-梯度下降-Gradient-descent" class="headerlink" title="3. 梯度下降(Gradient descent)"></a>3. 梯度下降(Gradient descent)</h1><p>根据 <code>w</code> , <code>b</code> 和训练集，来训练数据. 需要设定迭代次数与学习率.</p>
+<h1 id="初始化参数">2. 初始化参数</h1>
+<p>一般将 <code>w</code> 和 <code>b</code> 随机选择. 作业为了方便设为0了.</p>
+<h1 id="梯度下降gradient-descent">3. 梯度下降(Gradient descent)</h1>
+<p>根据 <code>w</code> , <code>b</code> 和训练集，来训练数据. 需要设定迭代次数与学习率.</p>
 <p>以下为大循环(迭代次数)中内容:</p>
-<h2 id="3-1-计算代价函数"><a href="#3-1-计算代价函数" class="headerlink" title="3.1. 计算代价函数"></a>3.1. 计算代价函数</h2><p>对于$x^{(i)} \in X$, 有</p>
-<p>$$z^{(i)} = w^T x^{(i)} + b$$</p>
-<p>$$<br>a^{(i)} = \hat{y}^{(i)}<br>        = sigmoid(z^{(i)})<br>        = \sigma (z^{(i)})<br>        = \frac{1}{1 + e^{-z^{(i)}}}<br>$$ </p>
-<p>$$\mathcal{L}(a^{(i)}, y^{(i)}) =  - y^{(i)}  \log(a^{(i)}) - (1-y^{(i)} )  \log(1-a^{(i)})$$</p>
-<p>$$<br>A = (a^{(1)}, a^{(2)}, … , a^{(m-1)}, a^{(m)})<br>  = \sigma(w^TX+b)<br>  = \dfrac{1}{1+e^{-(w^TX+b)}}<br>$$</p>
-<p>$$<br>J = -\dfrac{1}{m} \sum^{m}<em>{i=1} \mathcal{L}(a^{(i)}, y^{(i)})<br>  = -\dfrac{1}{m} \sum^{m}</em>{i=1} (y^{(i)} log(a^{(i)}) + (1-y^{(i)}) log(1-a^{(i)}))<br>$$</p>
+<h2 id="计算代价函数">3.1. 计算代价函数</h2>
+<p>对于<span class="math inline">\(x^{(i)} \in X\)</span>, 有</p>
+<p><span class="math display">\[z^{(i)} = w^T x^{(i)} + b\]</span></p>
+<p><span class="math display">\[
+a^{(i)} = \hat{y}^{(i)}
+        = sigmoid(z^{(i)})
+        = \sigma (z^{(i)})
+        = \frac{1}{1 + e^{-z^{(i)}}}
+\]</span></p>
+<p><span class="math display">\[\mathcal{L}(a^{(i)}, y^{(i)}) =  - y^{(i)}  \log(a^{(i)}) - (1-y^{(i)} )  \log(1-a^{(i)})\]</span></p>
+<p><span class="math display">\[
+A = (a^{(1)}, a^{(2)}, ... , a^{(m-1)}, a^{(m)}) 
+  = \sigma(w^TX+b) 
+  = \dfrac{1}{1+e^{-(w^TX+b)}} 
+\]</span></p>
+<p><span class="math display">\[
+J = -\dfrac{1}{m} \sum^{m}_{i=1} \mathcal{L}(a^{(i)}, y^{(i)}) 
+  = -\dfrac{1}{m} \sum^{m}_{i=1} (y^{(i)} log(a^{(i)}) + (1-y^{(i)}) log(1-a^{(i)}))
+\]</span></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 激活函数</span><br><span class="line">A = sigmoid(w.T.dot(X) + b)</span><br><span class="line"># 代价函数</span><br><span class="line">cost = -np.sum(Y * np.log(A) + (1-Y) * np.log(1 - A)) / m</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-计算反向传播的梯度"><a href="#3-2-计算反向传播的梯度" class="headerlink" title="3.2. 计算反向传播的梯度"></a>3.2. 计算反向传播的梯度</h2><p>即计算导数. </p>
-<blockquote>
-<p>注:<br>此处 $L(a, y)$ 即上面公式的 $\mathcal{L}(a^{(i)}, y^{(i)})$ .<br>即 $L(a, y) = -y \log (a) -(1-y) \log (1-a)$ .<br>以下公式都省略了上标.</p>
-</blockquote>
-<p>$$<br>  \dfrac{\partial L}{\partial a}<br>= \dfrac{\partial L(a, y)}{\partial a}<br>= -\frac{y}{a} + \frac{1-y}{1-a}<br>$$</p>
-<p>$$<br>  \dfrac{da}{dz}<br>= (\frac{1}{1 + e^{-z}})’<br>= \dfrac{e^{-z}}{(1+e^{-z})^2}<br>= \dfrac{1}{1+e^{-z}} - \dfrac{1}{(1+e^{-z})^2}<br>= a-a^2<br>= a · (1-a)<br>$$</p>
-<p>$$<br>  \dfrac{\partial L}{\partial z}<br>= \dfrac{\partial L}{\partial a} \dfrac{da}{dz}<br>= (-\dfrac{y}{a} + \dfrac{1-y}{1-a}) · a · (1-a)<br>= a - y<br>$$</p>
-<p>$$<br>  \dfrac{\partial L}{\partial w}<br>= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial w}<br>= (a-y) · x<br>$$</p>
-<p>$$<br>  \dfrac{\partial L}{\partial b}<br>= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial b}<br>= a-y<br>$$</p>
-<p>根据 $J = -\dfrac{1}{m} \sum L(a, y)$ 最终可得：</p>
-<p>$$<br>  \dfrac{\partial J}{\partial w}<br>= \dfrac{\partial J}{\partial a} \dfrac{\partial a}{\partial w}<br>= \dfrac{1}{m} X(A-Y)^T<br>$$</p>
-<p>$$\dfrac{\partial J}{\partial b} = \dfrac{1}{m} \sum^{m}_{i=1} (a^{(i)} - y^{(i)})$$</p>
+<h2 id="计算反向传播的梯度">3.2. 计算反向传播的梯度</h2>
+<p>即计算导数. &gt; 注: 此处 <span class="math inline">\(L(a, y)\)</span> 即上面公式的 <span class="math inline">\(\mathcal{L}(a^{(i)}, y^{(i)})\)</span> . 即 <span class="math inline">\(L(a, y) = -y \log (a) -(1-y) \log (1-a)\)</span> . 以下公式都省略了上标.</p>
+<p><span class="math display">\[
+  \dfrac{\partial L}{\partial a}
+= \dfrac{\partial L(a, y)}{\partial a}
+= -\frac{y}{a} + \frac{1-y}{1-a}
+\]</span></p>
+<p><span class="math display">\[
+  \dfrac{da}{dz}
+= (\frac{1}{1 + e^{-z}})&#39;
+= \dfrac{e^{-z}}{(1+e^{-z})^2}
+= \dfrac{1}{1+e^{-z}} - \dfrac{1}{(1+e^{-z})^2}
+= a-a^2
+= a · (1-a)
+\]</span></p>
+<p><span class="math display">\[
+  \dfrac{\partial L}{\partial z}
+= \dfrac{\partial L}{\partial a} \dfrac{da}{dz}
+= (-\dfrac{y}{a} + \dfrac{1-y}{1-a}) · a · (1-a)
+= a - y
+\]</span></p>
+<p><span class="math display">\[
+  \dfrac{\partial L}{\partial w}
+= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial w}
+= (a-y) · x
+\]</span></p>
+<p><span class="math display">\[
+  \dfrac{\partial L}{\partial b}
+= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial b}
+= a-y
+\]</span></p>
+<p>根据 <span class="math inline">\(J = -\dfrac{1}{m} \sum L(a, y)\)</span> 最终可得：</p>
+<p><span class="math display">\[
+  \dfrac{\partial J}{\partial w}
+= \dfrac{\partial J}{\partial a} \dfrac{\partial a}{\partial w}
+= \dfrac{1}{m} X(A-Y)^T
+\]</span></p>
+<p><span class="math display">\[\dfrac{\partial J}{\partial b} = \dfrac{1}{m} \sum^{m}_{i=1} (a^{(i)} - y^{(i)})\]</span></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dw = X.dot((A - Y).T) / m</span><br><span class="line">db = np.sum(A - Y) / m</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-更新-w-b"><a href="#3-3-更新-w-b" class="headerlink" title="3.3. 更新 w , b"></a>3.3. 更新 <code>w</code> , <code>b</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = w - learning_rate * dw</span><br><span class="line">b = b - learning_rate * db</span><br></pre></td></tr></table></figure>
-<h1 id="4-预测测试集"><a href="#4-预测测试集" class="headerlink" title="4. 预测测试集"></a>4. 预测测试集</h1><p>使用训练出来的 <code>w</code> , <code>b</code> , 对测试集使用 <code>y_pred = sigmoid(wx+b)</code> , 计算得预测的概率, 对其取整, 例如大于0.7则判定为’是’, 否则为’否’. Coursera作业是0.5就判定为’是’, 那么使用内建函数四舍五入即可.</p>
+<h2 id="更新-w-b">3.3. 更新 <code>w</code> , <code>b</code></h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = w - learning_rate * dw</span><br><span class="line">b = b - learning_rate * db</span><br></pre></td></tr></table></figure>
+<h1 id="预测测试集">4. 预测测试集</h1>
+<p>使用训练出来的 <code>w</code> , <code>b</code> , 对测试集使用 <code>y_pred = sigmoid(wx+b)</code> , 计算得预测的概率, 对其取整, 例如大于0.7则判定为'是', 否则为'否'. Coursera作业是0.5就判定为'是', 那么使用内建函数四舍五入即可.</p>
 
       
     </div>
@@ -471,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -508,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-处理数据"><span class="nav-number">1.</span> <span class="nav-text">1. 处理数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-向量化-Vectorization"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 向量化(Vectorization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-特征归一化-Normalization"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 特征归一化(Normalization)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-初始化参数"><span class="nav-number">2.</span> <span class="nav-text">2. 初始化参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-梯度下降-Gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">3. 梯度下降(Gradient descent)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-计算代价函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 计算代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-计算反向传播的梯度"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 计算反向传播的梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-更新-w-b"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 更新 w , b</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预测测试集"><span class="nav-number">4.</span> <span class="nav-text">4. 预测测试集</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#处理数据"><span class="nav-number">1.</span> <span class="nav-text">1. 处理数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量化vectorization"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 向量化(Vectorization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征归一化normalization"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 特征归一化(Normalization)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化参数"><span class="nav-number">2.</span> <span class="nav-text">2. 初始化参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度下降gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">3. 梯度下降(Gradient descent)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算代价函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 计算代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算反向传播的梯度"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 计算反向传播的梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-w-b"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 更新 w , b</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预测测试集"><span class="nav-number">4.</span> <span class="nav-text">4. 预测测试集</span></a></li></ol></div>
             
 
           </div>
@@ -546,7 +592,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -645,6 +691,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

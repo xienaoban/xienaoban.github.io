@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c… 看着真累啊.  把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了.  舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能.  鼠标跟随的原理是, 当粒子靠近鼠标">
+<meta name="description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c... 看着真累啊. 把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了. 舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能. 鼠标跟随的原理是, 当粒子靠近">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript几何星空连线(鼠标跟随)完善">
 <meta property="og:url" content="http://yoursite.com/posts/10178.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c… 看着真累啊.  把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了.  舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能.  鼠标跟随的原理是, 当粒子靠近鼠标">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c... 看着真累啊. 把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了. 舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能. 鼠标跟随的原理是, 当粒子靠近">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/10178/1.png">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript几何星空连线(鼠标跟随)完善">
-<meta name="twitter:description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c… 看着真累啊.  把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了.  舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能.  鼠标跟随的原理是, 当粒子靠近鼠标">
+<meta name="twitter:description" content="完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c... 看着真累啊. 把两次遍历改成了一次遍历, 把鼠标所在的点 p0 与 points 数组 concat 到一起处理了. 舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能. 鼠标跟随的原理是, 当粒子靠近">
 <meta name="twitter:image" content="http://yoursite.com/posts/10178/1.png">
 
 
@@ -99,7 +99,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,7 +127,7 @@
 
 
 
-  <title>JavaScript几何星空连线(鼠标跟随)完善 | XieNaoban</title>
+  <title>JavaScript几何星空连线(鼠标跟随)完善 | XieNaoban's Blog</title>
   
 
 
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -273,7 +273,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,15 +331,18 @@
       
 
       
-        <p>完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c… 看着真累啊. </p>
-<p>把两次遍历改成了一次遍历, 把鼠标所在的点 <code>p0</code> 与 <code>points</code> 数组 <code>concat</code> 到一起处理了. </p>
-<p>舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能. </p>
-<p>鼠标跟随的原理是, 当粒子靠近鼠标指针到一定距离区间内, 就每帧向鼠标靠近对应距离. 所以当粒子一边远离一边被吸引时在边界会有些许鬼畜. </p>
+        <p>完善了一下星空连线背景效果. 添加了粒子的鼠标跟随的效果. 参考的类似功能的JS源码都处理压缩过, 没有换行缩进, 变量名都是a, b, c... 看着真累啊.</p>
+<p>把两次遍历改成了一次遍历, 把鼠标所在的点 <code>p0</code> 与 <code>points</code> 数组 <code>concat</code> 到一起处理了.</p>
+<p>舍弃了原来按时间间隔计算移动距离的方法, 直接每一帧移动一定距离. 优化了代码, 提高了些性能.</p>
+<p>鼠标跟随的原理是, 当粒子靠近鼠标指针到一定距离区间内, 就每帧向鼠标靠近对应距离. 所以当粒子一边远离一边被吸引时在边界会有些许鬼畜.</p>
 <p><a href="https://xienaoban.github.io/demo/DEMO_%E6%98%9F%E7%A9%BA%E8%BF%9E%E7%BA%BF.html" target="_blank" rel="noopener">点此访问演示DEMO</a></p>
-<p>截图: </p>
-<p><img src="/posts/10178/1.png" alt="演示图片"></p>
-<p>源码: </p>
+<p>截图:</p>
+<figure>
+<img src="/posts/10178/1.png" alt="演示图片"><figcaption>演示图片</figcaption>
+</figure>
+<p>源码:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//==========================================</span></span><br><span class="line"><span class="comment">// File:    background.js</span></span><br><span class="line"><span class="comment">// Title:   星空连线(鼠标跟随)</span></span><br><span class="line"><span class="comment">// Auther:  XieNaoban</span></span><br><span class="line"><span class="comment">// Version: v1.1</span></span><br><span class="line"><span class="comment">// Note:    直接扔在&lt;body&gt;里</span></span><br><span class="line"><span class="comment">//==========================================</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可调参数</span></span><br><span class="line"><span class="keyword">var</span> BACKGROUND_COLOR = <span class="string">"rgba(0,43,54,1)"</span>;   <span class="comment">// 背景色</span></span><br><span class="line"><span class="keyword">var</span> POINT_NUM = <span class="number">99</span>;                         <span class="comment">// 屏幕上点的数目</span></span><br><span class="line"><span class="keyword">var</span> POINT_COLOR = <span class="string">"rgba(255,255,255,0.7)"</span>;  <span class="comment">// 点的颜色</span></span><br><span class="line"><span class="keyword">var</span> LINE_LENGTH = <span class="number">10000</span>;                    <span class="comment">// 点之间连线长度(的平方)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建背景画布</span></span><br><span class="line"><span class="keyword">var</span> cvs = <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>);</span><br><span class="line">cvs.width = <span class="built_in">window</span>.innerWidth;</span><br><span class="line">cvs.height = <span class="built_in">window</span>.innerHeight;</span><br><span class="line">cvs.style.cssText = <span class="string">"\</span></span><br><span class="line"><span class="string">    position:fixed;\</span></span><br><span class="line"><span class="string">    top:0px;\</span></span><br><span class="line"><span class="string">    left:0px;\</span></span><br><span class="line"><span class="string">    z-index:-1;\</span></span><br><span class="line"><span class="string">    opacity:1.0;\</span></span><br><span class="line"><span class="string">    "</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(cvs);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ctx = cvs.getContext(<span class="string">"2d"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> startTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line"></span><br><span class="line"><span class="comment">//随机数函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomInt</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor((max - min + <span class="number">1</span>) * <span class="built_in">Math</span>.random() + min);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomFloat</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (max - min) * <span class="built_in">Math</span>.random() + min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造点类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = randomFloat(<span class="number">0</span>, cvs.width);</span><br><span class="line">    <span class="keyword">this</span>.y = randomFloat(<span class="number">0</span>, cvs.height);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> speed = randomFloat(<span class="number">0.3</span>, <span class="number">1.4</span>);</span><br><span class="line">    <span class="keyword">var</span> angle = randomFloat(<span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.dx = <span class="built_in">Math</span>.sin(angle) * speed;</span><br><span class="line">    <span class="keyword">this</span>.dy = <span class="built_in">Math</span>.cos(angle) * speed;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.r = <span class="number">1.2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.color = POINT_COLOR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.move = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x += <span class="keyword">this</span>.dx;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.dx = -<span class="keyword">this</span>.dx;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.x &gt; cvs.width) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x = cvs.width;</span><br><span class="line">        <span class="keyword">this</span>.dx = -<span class="keyword">this</span>.dx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.y += <span class="keyword">this</span>.dy;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.y &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.dy = -<span class="keyword">this</span>.dy;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.y &gt; cvs.height) &#123;</span><br><span class="line">        <span class="keyword">this</span>.y = cvs.height;</span><br><span class="line">        <span class="keyword">this</span>.dy = -<span class="keyword">this</span>.dy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.draw = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    ctx.fillStyle = <span class="keyword">this</span>.color;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="keyword">this</span>.r, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    ctx.fill();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> points = [];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initPoints</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; num; ++i) &#123;</span><br><span class="line">        points.push(<span class="keyword">new</span> Point());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p0 = <span class="keyword">new</span> Point(); <span class="comment">//鼠标</span></span><br><span class="line">p0.dx = p0.dy = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> degree = <span class="number">2.5</span>;</span><br><span class="line"><span class="built_in">document</span>.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    p0.x = ev.clientX;</span><br><span class="line">    p0.y = ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.onmousedown = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    degree = <span class="number">5.0</span>;</span><br><span class="line">    p0.x = ev.clientX;</span><br><span class="line">    p0.y = ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">    degree = <span class="number">2.5</span>;</span><br><span class="line">    p0.x = ev.clientX;</span><br><span class="line">    p0.y = ev.clientY;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.onmouseout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    p0.x = <span class="literal">null</span>;</span><br><span class="line">    p0.y = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawLine</span>(<span class="params">p1, p2, deg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dx = p1.x - p2.x;</span><br><span class="line">    <span class="keyword">var</span> dy = p1.y - p2.y;</span><br><span class="line">    <span class="keyword">var</span> dis2 = dx * dx + dy * dy;</span><br><span class="line">    <span class="keyword">if</span> (dis2 &lt; <span class="number">2</span> * LINE_LENGTH) &#123;</span><br><span class="line">        <span class="keyword">if</span> (dis2 &gt; LINE_LENGTH) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p1 === p0) &#123;</span><br><span class="line">                p2.x += dx * <span class="number">0.03</span>;</span><br><span class="line">                p2.y += dy * <span class="number">0.03</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> t = (<span class="number">1.05</span> - dis2 / LINE_LENGTH) * <span class="number">0.2</span> * deg;</span><br><span class="line">        ctx.strokeStyle = <span class="string">"rgba(255,255,255,"</span> + t + <span class="string">")"</span>;</span><br><span class="line">        ctx.beginPath();</span><br><span class="line">        ctx.lineWidth = <span class="number">1.5</span>;</span><br><span class="line">        ctx.moveTo(p1.x, p1.y);</span><br><span class="line">        ctx.lineTo(p2.x, p2.y);</span><br><span class="line">        ctx.closePath();</span><br><span class="line">        ctx.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//绘制每一帧</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawFrame</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    cvs.width = <span class="built_in">window</span>.innerWidth;</span><br><span class="line">    cvs.height = <span class="built_in">window</span>.innerHeight;</span><br><span class="line">    ctx.fillStyle = BACKGROUND_COLOR;</span><br><span class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, cvs.width, cvs.height);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr = (p0.x == <span class="literal">null</span> ? points : [p0].concat(points));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; arr.length; ++j) &#123;</span><br><span class="line">            drawLine(arr[i], arr[j], <span class="number">1.0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        arr[i].draw();</span><br><span class="line">        arr[i].move();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.requestAnimationFrame(drawFrame);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">initPoints(POINT_NUM);</span><br><span class="line">drawFrame();</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -443,7 +446,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -502,7 +505,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -601,6 +604,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

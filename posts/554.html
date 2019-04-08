@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777">
+<meta name="description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
 <meta property="og:url" content="http://yoursite.com/posts/554.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
-<meta name="twitter:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777">
+<meta name="twitter:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -334,7 +334,7 @@
 <p>代码：（Accepted，0.330s）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">//UVa1598 - Exchange</span><br><span class="line">//Accepted 0.330s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;functional&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;utility&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct INFO &#123; char type; int size, price; &#125;for_push_back;</span><br><span class="line">int N, T(0);</span><br><span class="line">char type[20];</span><br><span class="line">vector&lt;INFO&gt; LIST;						//key: buy/ask id,	value: type, size</span><br><span class="line">map&lt;int, set&lt;int&gt;, greater&lt;int&gt; &gt; BUY;	//key: bid price,	value: id</span><br><span class="line">map&lt;int, set&lt;int&gt;, less&lt;int&gt; &gt; SELL;	//key: ask price,	value: id</span><br><span class="line">map&lt;int, int&gt; BUY_VAL;					//key: bid price,	value: size</span><br><span class="line">map&lt;int, int&gt; SELL_VAL;					//key: ask price,	value: size</span><br><span class="line"></span><br><span class="line">inline int sum(set&lt;int&gt;&amp; now) &#123;</span><br><span class="line">	int re(0);</span><br><span class="line">	for (const auto&amp; r : now) re += LIST[r].size;</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void trade(bool flag) &#123;</span><br><span class="line">	int bid_size, bid_price, ask_size, ask_price;</span><br><span class="line">	while (true) &#123;</span><br><span class="line">		auto bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line">		if (bid == BUY.end()) bid_size = 0, bid_price = 0;</span><br><span class="line">		else bid_size = BUY_VAL[bid-&gt;first], bid_price = bid-&gt;first;</span><br><span class="line">		if (ask == SELL.end()) ask_size = 0, ask_price = 999999;</span><br><span class="line">		else ask_size = SELL_VAL[ask-&gt;first], ask_price = ask-&gt;first;</span><br><span class="line">		if (bid_price &lt; ask_price) &#123;</span><br><span class="line">			printf(&quot;QUOTE %d %d - %d %d\n&quot;, bid_size, bid_price, ask_size, (ask_price == 999999 ? 99999 : ask_price));</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		auto sizeb(LIST[*bid-&gt;second.begin()].size), sizea(LIST[*ask-&gt;second.begin()].size);</span><br><span class="line">		const auto mini(min(sizeb, sizea));</span><br><span class="line">		printf(&quot;TRADE %d %d\n&quot;, mini, flag ? ask_price : bid_price);</span><br><span class="line"></span><br><span class="line">		auto&amp; b(bid-&gt;second), &amp;a(ask-&gt;second);</span><br><span class="line">		BUY_VAL[bid-&gt;first] -= mini;</span><br><span class="line">		if (!b.empty() &amp;&amp; (LIST[*b.begin()].size -= mini) == 0)</span><br><span class="line">			b.erase(b.begin());</span><br><span class="line">		if (b.empty()) BUY.erase(bid);</span><br><span class="line">		SELL_VAL[ask-&gt;first] -= mini;</span><br><span class="line">		if (!a.empty() &amp;&amp; (LIST[*a.begin()].size -= mini) == 0)</span><br><span class="line">			a.erase(a.begin());</span><br><span class="line">		if (a.empty()) SELL.erase(ask);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 66666)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	while (scanf(&quot;%d&quot;, &amp;N) != EOF) &#123;</span><br><span class="line">		if (T++) puts(&quot;&quot;);</span><br><span class="line">		LIST.clear(), BUY.clear(), SELL.clear(), BUY_VAL.clear(), SELL_VAL.clear();</span><br><span class="line">		LIST.push_back(for_push_back);</span><br><span class="line">		for (int n(1);n &lt;= N;++n) &#123;</span><br><span class="line">			INFO tmp;</span><br><span class="line">			scanf(&quot;%s&quot;, type);</span><br><span class="line">			if (*type == &apos;C&apos;) &#123;</span><br><span class="line">				int id;</span><br><span class="line">				scanf(&quot;%d&quot;, &amp;id);</span><br><span class="line">				auto&amp; csl(LIST[id]);</span><br><span class="line">				if (csl.type == &apos;B&apos;) &#123;</span><br><span class="line">					BUY_VAL[csl.price] -= csl.size;</span><br><span class="line">					LIST[id].size = 0;</span><br><span class="line">					auto&amp; now(BUY[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					if (now.empty()) BUY.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					SELL_VAL[csl.price] -= csl.size;</span><br><span class="line">					LIST[id].size = 0;</span><br><span class="line">					auto&amp; now(SELL[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					if (now.empty()) SELL.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				tmp.type = *type;</span><br><span class="line">				scanf(&quot;%d%d&quot;, &amp;tmp.size, &amp;tmp.price);</span><br><span class="line">				if (*type == &apos;B&apos;) BUY[tmp.price].insert(n), BUY_VAL[tmp.price] += tmp.size;</span><br><span class="line">				else SELL[tmp.price].insert(n), SELL_VAL[tmp.price] += tmp.size;</span><br><span class="line">			&#125;</span><br><span class="line">			LIST.push_back(std::move(tmp));</span><br><span class="line">			trade(*type == &apos;B&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<p>分析：书上推荐使用优先队列，然而并没有想出来怎么去用。想了想还是用了map，用它的begin()，效果一样的，还可以灵活差入数据。一开始老是在某组测试数据上出现Runtime error，搞得生无可恋。<em>（从一老司机学到的新技能：当提交OJ出现RE时（WA也行），在执行每组数据计算的代码末尾加一句“while(1);”再提交如果从RE变成TLE了则说明是某些特殊数据没照顾到。毕竟不是所有OJ都有udebug可以用，这招还是不错的）</em><br>然后过了一天还是心里放不下，又回来想了想，是题目中一个细节“If there is no active order to sell, then it is assumed that ask size is zero and ask price is 99 999. Note, that zero is not a legal price, but 99 999 is a legal price. Recipient of quote messages distinguishes actual 99 999 ask price from the special case of absent orders to sell by looking at its ask size.”出了问题。于是把不可交易价格改成999999，与交易最大价格加以99999区分，果然似乎没问题了。然而接下来就有新问题，Time limit exceeded。。。<br>又过了一天，心里还是放不下，于是去网上查了查别人的代码，他们不仅用两个map存买卖信息，还再单独开辟两个map来存放sell与buy的总size（就相当于我上面那两个<code>BUY_VAL</code> 和 <code>SELL_VAL</code>），而当时我只用了两个map（<code>BUY</code>和<code>SELL</code>）存买卖的所有信息，所以每次查询循环总的size时要经历一个比较烦的循环，就是以下这个循环：</p>
+<p>分析：书上推荐使用优先队列，然而并没有想出来怎么去用。想了想还是用了map，用它的begin()，效果一样的，还可以灵活差入数据。一开始老是在某组测试数据上出现Runtime error，搞得生无可恋。<em>（从一老司机学到的新技能：当提交OJ出现RE时（WA也行），在执行每组数据计算的代码末尾加一句“while(1);”再提交如果从RE变成TLE了则说明是某些特殊数据没照顾到。毕竟不是所有OJ都有udebug可以用，这招还是不错的）</em> 然后过了一天还是心里放不下，又回来想了想，是题目中一个细节“If there is no active order to sell, then it is assumed that ask size is zero and ask price is 99 999. Note, that zero is not a legal price, but 99 999 is a legal price. Recipient of quote messages distinguishes actual 99 999 ask price from the special case of absent orders to sell by looking at its ask size.”出了问题。于是把不可交易价格改成999999，与交易最大价格加以99999区分，果然似乎没问题了。然而接下来就有新问题，Time limit exceeded。。。 又过了一天，心里还是放不下，于是去网上查了查别人的代码，他们不仅用两个map存买卖信息，还再单独开辟两个map来存放sell与buy的总size（就相当于我上面那两个<code>BUY_VAL</code> 和 <code>SELL_VAL</code>），而当时我只用了两个map（<code>BUY</code>和<code>SELL</code>）存买卖的所有信息，所以每次查询循环总的size时要经历一个比较烦的循环，就是以下这个循环：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//求当前价格总的size函数</span><br><span class="line">int sum(set&lt;int&gt;&amp; now) &#123;</span><br><span class="line">	int re(0);</span><br><span class="line">	for (const auto&amp; r : now) re += LIST[r].size;</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//trade函数片段</span><br><span class="line">auto bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line">if (bid == BUY.end()) bid_size = 0, bid_price = 0;</span><br><span class="line">else bid_size = sum(bid-&gt;second), bid_price = bid-&gt;first;</span><br><span class="line">if (ask == SELL.end()) ask_size = 0, ask_price = 999999;</span><br><span class="line">else ask_size = sum(ask-&gt;second), ask_price = ask-&gt;first;</span><br></pre></td></tr></table></figure>
 <p>这就是超时的罪魁祸首。改进了下瞬间变成0.330s，还是有些出乎意料。</p>
@@ -442,7 +442,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -501,7 +501,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -600,6 +600,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

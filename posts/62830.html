@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="DesicriptionIn a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either dire">
+<meta name="description" content="Desicription In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either di">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 6-14UVa12118 - Inspector&#39;s Dilemma">
 <meta property="og:url" content="http://yoursite.com/posts/62830.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="DesicriptionIn a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either dire">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="Desicription In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either di">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 6-14UVa12118 - Inspector&#39;s Dilemma">
-<meta name="twitter:description" content="DesicriptionIn a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either dire">
+<meta name="twitter:description" content="Desicription In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either di">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 6-14UVa12118 - Inspector's Dilemma | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 6-14UVa12118 - Inspector's Dilemma | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,15 +329,16 @@
       
 
       
-        <h1 id="Desicription"><a href="#Desicription" class="headerlink" title="Desicription"></a>Desicription</h1><p>In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either direction) and to check if everything is in order. Now, a road-inspector has a list of highways he must inspect. However, it might not be possible for him to travel through all the highways on his list without using other highways. He needs a constant amount of time to traverse any single highway. As you can understand, the inspector is a busy fellow does not want to waste his precious time. He needs to know the minimum possible time to complete his task. He has the liberty to start from and end with any city he likes. Please help him out.</p>
-<p>#Input<br>The input file has several test cases. First line of each case has three integers: $V (1 &lt;= V &lt;= 1000)$, the number of cities, $E (0 &lt;= E &lt;= V * (V-1) / 2)$, the number of highways the inspector needs to check and$ T (1 &lt;= T &lt;= 10)$, time needed to pass a single highway. Each of the next E lines contains two integers a and b $(1 &lt;= a,b &lt;= V, a!=b)$ meaning the inspector has to check the highway between cities a and b. The input is terminated by a case with $V=E=T=0$. This case should not be processed.</p>
-<p>#Output<br>For each test case, print the serial of output followed by the minimum possible time the inspector needs to<br>inspect all the highways on his list. Look at the output for sample input for details.</p>
-<p>#Sample<br>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">5 3 1</span><br><span class="line">1 2</span><br><span class="line">1 3</span><br><span class="line">4 5</span><br><span class="line">4 4 1</span><br><span class="line">1 2</span><br><span class="line">1 4</span><br><span class="line">2 3</span><br><span class="line">3 4</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure></p>
-<p>Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case 1: 4</span><br><span class="line">Case 2: 4</span><br></pre></td></tr></table></figure></p>
-<p>#Key<br>题意：V个点每个点均可两两相连。现已连E条边，要求添加k条边使得E+k条边组成的图是个欧拉通路。求k。</p>
+        <h1 id="desicription">Desicription</h1>
+<p>In a country, there are a number of cities. Each pair of city is connected by a highway, bi-directional of course. A road-inspector s task is to travel through the highways (in either direction) and to check if everything is in order. Now, a road-inspector has a list of highways he must inspect. However, it might not be possible for him to travel through all the highways on his list without using other highways. He needs a constant amount of time to traverse any single highway. As you can understand, the inspector is a busy fellow does not want to waste his precious time. He needs to know the minimum possible time to complete his task. He has the liberty to start from and end with any city he likes. Please help him out.</p>
+<p>#Input The input file has several test cases. First line of each case has three integers: <span class="math inline">\(V (1 &lt;= V &lt;= 1000)\)</span>, the number of cities, <span class="math inline">\(E (0 &lt;= E &lt;= V * (V-1) / 2)\)</span>, the number of highways the inspector needs to check and$ T (1 &lt;= T &lt;= 10)$, time needed to pass a single highway. Each of the next E lines contains two integers a and b <span class="math inline">\((1 &lt;= a,b &lt;= V, a!=b)\)</span> meaning the inspector has to check the highway between cities a and b. The input is terminated by a case with <span class="math inline">\(V=E=T=0\)</span>. This case should not be processed.</p>
+<p>#Output For each test case, print the serial of output followed by the minimum possible time the inspector needs to inspect all the highways on his list. Look at the output for sample input for details.</p>
+<p>#Sample Input <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">5 3 1</span><br><span class="line">1 2</span><br><span class="line">1 3</span><br><span class="line">4 5</span><br><span class="line">4 4 1</span><br><span class="line">1 2</span><br><span class="line">1 4</span><br><span class="line">2 3</span><br><span class="line">3 4</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure></p>
+<p>Output <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case 1: 4</span><br><span class="line">Case 2: 4</span><br></pre></td></tr></table></figure></p>
+<p>#Key 题意：V个点每个点均可两两相连。现已连E条边，要求添加k条边使得E+k条边组成的图是个欧拉通路。求k。</p>
 <p>思路：讲道理V不告诉你都可以，没什么用的条件。在题意里也说的很明白了，要求一个欧拉通路。E条边可组成若干张子图，每张图可能是颗复杂的树、可能是个欧拉通路、可能是个欧拉回路、也可能只是一条孤立的边、一条链。搜索子图个数用DFS即可。</p>
-<p>我的思路是，首先把每个子图加边连成一个欧拉通路，然后把所有通路连接。<br>其中，若子图有大于2个奇数节点（奇数节点必为偶数）则需要额外的$(奇数节点/2-1)$条边；若子图无奇数节点或只有2个，则无需额外边。<br>另外，连接n个通路需要n-1条边。</p>
-<p>#Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UVa12118 - Inspector's Dilemma</span></span><br><span class="line"><span class="comment">//Accepted 0.070s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> V, E, T;</span><br><span class="line"><span class="keyword">int</span> Case = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; mp;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (vis[idx]) <span class="keyword">return</span>;</span><br><span class="line">	vis[idx] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (mp[idx].size() &amp; <span class="number">1</span>) ++num;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : mp[idx]) &#123;</span><br><span class="line">		DFS(e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">while</span> ((<span class="built_in">cin</span> &gt;&gt; V &gt;&gt; E &gt;&gt; T)&amp;&amp;(V+E+T)) &#123;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		mp.clear();</span><br><span class="line">		<span class="keyword">int</span> u, v;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; ++i) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">			mp[u].push_back(v);</span><br><span class="line">			mp[v].push_back(u);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : mp) &#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[e.first]) <span class="keyword">continue</span>;</span><br><span class="line">			num = <span class="number">0</span>;</span><br><span class="line">			DFS(e.first);</span><br><span class="line">			<span class="keyword">if</span> (num == <span class="number">0</span>) num = <span class="number">2</span>;</span><br><span class="line">			res += num/<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (res &lt; <span class="number">0</span>) res = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; ++Case &lt;&lt; <span class="string">": "</span> &lt;&lt; T*(res + E) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我的思路是，首先把每个子图加边连成一个欧拉通路，然后把所有通路连接。 其中，若子图有大于2个奇数节点（奇数节点必为偶数）则需要额外的<span class="math inline">\((奇数节点/2-1)\)</span>条边；若子图无奇数节点或只有2个，则无需额外边。 另外，连接n个通路需要n-1条边。</p>
+<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UVa12118 - Inspector's Dilemma</span></span><br><span class="line"><span class="comment">//Accepted 0.070s</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> V, E, T;</span><br><span class="line"><span class="keyword">int</span> Case = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; mp;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (vis[idx]) <span class="keyword">return</span>;</span><br><span class="line">	vis[idx] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span> (mp[idx].size() &amp; <span class="number">1</span>) ++num;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : mp[idx]) &#123;</span><br><span class="line">		DFS(e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">while</span> ((<span class="built_in">cin</span> &gt;&gt; V &gt;&gt; E &gt;&gt; T)&amp;&amp;(V+E+T)) &#123;</span><br><span class="line">		<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">		mp.clear();</span><br><span class="line">		<span class="keyword">int</span> u, v;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; E; ++i) &#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v;</span><br><span class="line">			mp[u].push_back(v);</span><br><span class="line">			mp[v].push_back(u);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> res = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : mp) &#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[e.first]) <span class="keyword">continue</span>;</span><br><span class="line">			num = <span class="number">0</span>;</span><br><span class="line">			DFS(e.first);</span><br><span class="line">			<span class="keyword">if</span> (num == <span class="number">0</span>) num = <span class="number">2</span>;</span><br><span class="line">			res += num/<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (res &lt; <span class="number">0</span>) res = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; ++Case &lt;&lt; <span class="string">": "</span> &lt;&lt; T*(res + E) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -451,7 +452,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +489,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Desicription"><span class="nav-number">1.</span> <span class="nav-text">Desicription</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#desicription"><span class="nav-number">1.</span> <span class="nav-text">Desicription</span></a></li></ol></div>
             
 
           </div>
@@ -526,7 +527,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -625,6 +626,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

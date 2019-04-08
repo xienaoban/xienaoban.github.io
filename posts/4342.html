@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms）12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using namespac">
+<meta name="description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms） 12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using names">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法竞赛入门经典(第2版) 5-5UVa10391 - Compound Words">
 <meta property="og:url" content="http://yoursite.com/posts/4342.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms）12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using namespac">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms） 12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using names">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-5UVa10391 - Compound Words">
-<meta name="twitter:description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms）12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using namespac">
+<meta name="twitter:description" content="题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。  渣渣代码：（Accepted， 30ms） 12345678910111213141516171819202122//UVa10391 - Compound Words#include&amp;lt;iostream&amp;gt;#include&amp;lt;string&amp;gt;#include&amp;lt;set&amp;gt;using names">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>算法竞赛入门经典(第2版) 5-5UVa10391 - Compound Words | XieNaoban</title>
+  <title>算法竞赛入门经典(第2版) 5-5UVa10391 - Compound Words | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -331,11 +331,11 @@
       
         <p>题意：问在一个词典里，那些单词是复合词，即哪些单词是由两个单词拼出来的。</p>
 <hr>
-<p>渣渣代码：（Accepted， 30ms）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//UVa10391 - Compound Words</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">set&lt;string&gt; dic;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	string w;</span><br><span class="line">	while (cin &gt;&gt; w) dic.insert(w);</span><br><span class="line">	for (const auto &amp;r : dic) &#123;</span><br><span class="line">		int s = r.size();</span><br><span class="line">		for (int i = 1;i &lt; s;++i) &#123;</span><br><span class="line">			if (dic.count(r.substr(0, i)) &amp;&amp; dic.count(r.substr(i, s - i))) &#123;</span><br><span class="line">				cout &lt;&lt; r &lt;&lt; &apos;\n&apos;;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>渣渣代码：（Accepted， 30ms） <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//UVa10391 - Compound Words</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">set&lt;string&gt; dic;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	string w;</span><br><span class="line">	while (cin &gt;&gt; w) dic.insert(w);</span><br><span class="line">	for (const auto &amp;r : dic) &#123;</span><br><span class="line">		int s = r.size();</span><br><span class="line">		for (int i = 1;i &lt; s;++i) &#123;</span><br><span class="line">			if (dic.count(r.substr(0, i)) &amp;&amp; dic.count(r.substr(i, s - i))) &#123;</span><br><span class="line">				cout &lt;&lt; r &lt;&lt; &apos;\n&apos;;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>分析：遍历两遍词典找出两个单词来找/判断复合词肯定不行，慢死了，肯定只能是拆当前单词拆成两部分，枚举所有可拆分的情况，看这两部分有没有找到两个独立的单词。于是用了如上面的超简单的方法，但是30ms。学习他们的0ms至10ms的做法，发现他们都用了hash。我不知道什么是hash，一下子看他们代码也看的一愣一愣的。看了一下午代码和hash资料了，累死了。。明天继续改进这题，今天我要歇息下了。明天再会更新此博客。</p>
 <p>更新：对hash还不熟，但是自己做了一下，但是总是Runtime error！我要哭了，自己做了N组不同的测试数据，没有任何异常，但是提交总是RE！为什么啊！！！！：</p>
-<p>垃圾代码：（Runtime Error， –）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//UVa10391 - Compound Words</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">const int mdic = 120200, d[] = &#123; 4616,177,7 &#125;;</span><br><span class="line">char dic[mdic][40];</span><br><span class="line"></span><br><span class="line">int hash(char* s) &#123;</span><br><span class="line">	int re = 0;</span><br><span class="line">	for (int i = 0;s[i] &amp;&amp; i &lt; 3;++i)</span><br><span class="line">		re = (s[i] - &apos;a&apos;)*d[i];</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br><span class="line">bool find(char* s) &#123;</span><br><span class="line">	int h = hash(s);</span><br><span class="line">	while (strcmp(s, dic[h]) &gt; 0) ++h;</span><br><span class="line">	if (strcmp(s, dic[h])) return 0;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	memset(*dic, 0, sizeof(*dic));</span><br><span class="line">	char w[40], (*p)[40] = dic;</span><br><span class="line">	while (scanf(&quot;%s&quot;, w) != -1) &#123;</span><br><span class="line">		int h = hash(w);</span><br><span class="line">		while (dic[h][0]) ++h;</span><br><span class="line">		strcpy(dic[h], w);</span><br><span class="line">	&#125;</span><br><span class="line">	for (int I = 0;I &lt; mdic;++I, ++p) &#123;</span><br><span class="line">		if (!*p) continue;</span><br><span class="line">		int len = strlen(*p);</span><br><span class="line">		for (int i = 1;i &lt; len;++i) &#123;</span><br><span class="line">			char a[40], b[40];</span><br><span class="line">			strncpy(a, *p, i);a[i] = 0;</span><br><span class="line">			strcpy(b, *p + i);</span><br><span class="line">			if (find(a) &amp;&amp; find(b)) printf(&quot;%s\n&quot;, *p);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>分析：尽量按照自己的想法做的。对于获得hash那个函数，我也是自己想的（4616=120010/26，177=120010/26/26，7=120010/26/26/26），不知道高人有什么看法。还有再次声明：这个代码是RE的！！我测试了好多数据都没问题，一到oj上就RE。。好歹来个WA啊啊啊（哇的一声就哭了）<br>就我自己的测试数据，上面的版本用时2136，下面的4726。。。。怎么还慢了。。不服。。以后学精了再说吧。</p>
+<p>垃圾代码：（Runtime Error， --） <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//UVa10391 - Compound Words</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">const int mdic = 120200, d[] = &#123; 4616,177,7 &#125;;</span><br><span class="line">char dic[mdic][40];</span><br><span class="line"></span><br><span class="line">int hash(char* s) &#123;</span><br><span class="line">	int re = 0;</span><br><span class="line">	for (int i = 0;s[i] &amp;&amp; i &lt; 3;++i)</span><br><span class="line">		re = (s[i] - &apos;a&apos;)*d[i];</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br><span class="line">bool find(char* s) &#123;</span><br><span class="line">	int h = hash(s);</span><br><span class="line">	while (strcmp(s, dic[h]) &gt; 0) ++h;</span><br><span class="line">	if (strcmp(s, dic[h])) return 0;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	memset(*dic, 0, sizeof(*dic));</span><br><span class="line">	char w[40], (*p)[40] = dic;</span><br><span class="line">	while (scanf(&quot;%s&quot;, w) != -1) &#123;</span><br><span class="line">		int h = hash(w);</span><br><span class="line">		while (dic[h][0]) ++h;</span><br><span class="line">		strcpy(dic[h], w);</span><br><span class="line">	&#125;</span><br><span class="line">	for (int I = 0;I &lt; mdic;++I, ++p) &#123;</span><br><span class="line">		if (!*p) continue;</span><br><span class="line">		int len = strlen(*p);</span><br><span class="line">		for (int i = 1;i &lt; len;++i) &#123;</span><br><span class="line">			char a[40], b[40];</span><br><span class="line">			strncpy(a, *p, i);a[i] = 0;</span><br><span class="line">			strcpy(b, *p + i);</span><br><span class="line">			if (find(a) &amp;&amp; find(b)) printf(&quot;%s\n&quot;, *p);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>分析：尽量按照自己的想法做的。对于获得hash那个函数，我也是自己想的（4616=120010/26，177=120010/26/26，7=120010/26/26/26），不知道高人有什么看法。还有再次声明：这个代码是RE的！！我测试了好多数据都没问题，一到oj上就RE。。好歹来个WA啊啊啊（哇的一声就哭了） 就我自己的测试数据，上面的版本用时2136，下面的4726。。。。怎么还慢了。。不服。。以后学精了再说吧。</p>
 
       
     </div>
@@ -440,7 +440,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -499,7 +499,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -598,6 +598,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

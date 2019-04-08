@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/page/10/index.html">
-<meta property="og:site_name" content="XieNaoban">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
 
 
 
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -121,7 +121,7 @@
 
 
 
-  <title>XieNaoban</title>
+  <title>XieNaoban's Blog</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -259,6 +259,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/5943.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/5943.html" itemprop="url">scanf的使用(主要是针对char)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-31T16:00:05+08:00">
+                2016-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&lt;&lt;”与“&gt;&gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf printf只要10ms、20ms，这个就差的太大了时间都花在输入输出上也是很郁闷。于是开始使用C的输入输出标准。输出很正常，也可以轻松更改double输出的精度，c++还要个iomanip头文件，还烦一点。格式化字符%u %d %ld %lld %f %lf %s %c等就这几个限死了，也就是只能输入输出这几个系统自带的格式，是没法将自己的类重载到里面的，，只能自己做个print函数。不过毕竟面向对象是c++的内容。 就是那个输入scanf有些异类。首先输入得取地址，输入int的a要&amp;a不能写a。这我总是忘记。先输入整形、long long、doubl
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/5943.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/25421.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,7 +394,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -330,8 +456,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182//UVa 220 - Othello#include&lt;iostream&gt;char Board[11][11], Current, Command[5];bool Flag, L_Refresh;//flag用于空格的输出,同时可以判断出本局是不是当前颜色的棋子无路可走int Times, Num[2];//Num:0白1黑int Rx[] = &#12
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -395,7 +521,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -457,8 +583,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，20 ms）
-123456789101112131415161718192021222324252627282930313233343
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，20 ms）
+1234567891011121314151617181920212223242526272829303132333435363738394041#include&lt;iostream&gt;#include&lt;cstring&gt;using namespace std;int N, M, x, y, CO[12], Times = 0;// 2 &lt;=n&lt;= 9,CO=Countchar SQ[12][12], ch;inline bool V(char a) &#123; return (a == &apos;B&apos; || a == &apos;V&apos; ? 1 : 0); &#125;inline bool H(char a) &
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -522,7 +648,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -584,8 +710,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293//UVa1589#include&lt;iostream&gt;#include&lt;cmath&gt;#define P(x,y) Pi[x].position[y]using namespace std;int N;//2&lt;=N&lt;=7bool A[4];//around,储存&quot;将&quot;周
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -649,7 +775,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -711,7 +837,8 @@
       
         
           
-          好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号
+          好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&lt; long long &gt;存储，long long最大储存9位数，也就是999999999，因为2个999999999相乘刚好不越界。不过后来发现好像没必要，用int就行了，但是写都写一半了，就没改。不过灵活性也蛮高的吧，可以很轻松地把数据类型从long long 改为int，同时只要把MAX改为int的最大值10000，把DIGIT改为4即可（没具体试过，应该没问题）。就是下面这几行：
+1234//longer类内定义typedef long lo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -775,7 +902,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -837,7 +964,8 @@
       
         
           
-          题目：算法竞赛入门经典 2-1 水仙花数代码：123456#include&lt;iostream&gt;void main()&#123;	for (int i = 100;i &lt; 999;++i)		if ((i % 10)*(i
+          题目：算法竞赛入门经典 2-1 水仙花数 代码： 123456#include&lt;iostream&gt;void main()&#123;	for (int i = 100;i &lt; 999;++i)		if ((i % 10)*(i % 10)*(i % 10) + (i % 100 / 10)*(i % 100 / 10)*(i % 100 / 10) + (i / 100)*(i / 100)*(i / 100) == i) std::cout &lt;&lt; i &lt;&lt; &apos;\n&apos;;&#125;
+题目：算法竞赛入门经典 2-2 韩信点兵 代码： 12345678910111213141516#include&lt;iostream&gt;using namespace std;void main()&#123;	int a,b,c,time
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -901,7 +1029,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -963,8 +1091,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO题目：算法竞赛入门经典 3-4/UVa11809：Floating-Point Numbers代码：
-12345678910111213141516171819
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 题目：算法竞赛入门经典 3-4/UVa11809：Floating-Point Numbers 代码：
+12345678910111213141516171819202122232425262728293031323334//UVa11809 - Floating-Point Numbers#include&lt;iostream&gt;#include&lt;sstream&gt;#include&lt;cmath&gt;long long E[12][33], e;double M[12][33], m, re;char str[25], *ps;int main()&#123;	for (int i = 0;i &lt;= 9;++i)//M		for (int j = 1;j &lt;= 30;++
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1028,7 +1156,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1090,8 +1218,8 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO题目：算法竞赛入门经典 3-10/UVa1587：Box代码：
-123456789101112131415161718192021222324252627282
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 题目：算法竞赛入门经典 3-10/UVa1587：Box 代码：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//UVa1587 - Box#include&lt;iostream&gt;unsigned rect[6];//每个面各有一个一样的对应面,故12个边只要定义6个,其中每偶奇两个代表一个长方形的两个边长bool flag, times[3];//每个面出现的次数（出现第二次时为true）unsigned tmpx, tmpy, now;int main()&#123;	while (scanf(&quot;%u%u&quot;, &amp;rect[0], &am
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1155,7 +1283,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1217,9 +1345,9 @@
       
         
           
-          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版）
-题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String代码：
-
+          书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版）
+题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String 代码：
+1234567891011121314151617181920212223242526272829303132333435363738394041//UVa1368 - DNA Consensus String#include&lt;iostream&gt;using namespace std;#define MAX_M 52#define MAX_N 1005char DNA[MAX_M][MAX_N];int main()&#123;	int T, m, n, err, num[4];//num用于存放ACGT个数	const int &a
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1283,7 +1411,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -1347,139 +1475,14 @@
           
           和贪吃蛇在同一时期写的，私以为比我在网上找到的那些其他的控制台版的俄罗斯方块更精致!
 成品地址：链接: http://pan.baidu.com/s/1jIo9Ovs 密码: 7k8j
-当时初学编程，废寝忘食地写着玩的，现在看看优化余地很大
+当时初学编程，废寝忘食地写着玩的，现在看看优化余地很大。
+与之前的贪吃蛇一样R键刷新界面显示，空格暂停，“暂停”两字写在游戏右侧。这次没做花哨的开始界面，也是Visual studio2015写的，一样会生成一个保存分数的文件
+上：翻转；下：瞬间下落；左右：就是左右 ESC：退出游戏（退出游戏时做了一个略花哨的动画）
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/11121.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/17402.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/17402.html" itemprop="url">贪吃蛇</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-19T14:21:41+08:00">
-                2016-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          很久以前自己写着玩的，已经是上个学期的事情了，优化可能不是很好。但至少运行着不卡。。
-用的Visual Studio2015，代码复制到别的编译器可能出问题。
-成品地址：链接: http://pan.baidu.com/s/1nvKrL6T
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/17402.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1567,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1626,7 +1629,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1725,6 +1728,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 

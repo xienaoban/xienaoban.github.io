@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#DescriptionRecently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things">
+<meta name="description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round">
 <meta property="og:url" content="http://yoursite.com/posts/39930.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="#DescriptionRecently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-04-08T13:35:57.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round">
-<meta name="twitter:description" content="#DescriptionRecently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things">
+<meta name="twitter:description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
 
 
 
@@ -97,7 +97,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -125,7 +125,7 @@
 
 
 
-  <title>Codeforces Round | XieNaoban</title>
+  <title>Codeforces Round | XieNaoban's Blog</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -329,27 +329,27 @@
       
 
       
-        <p>#Description<br>Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things in order, that is why he wants his coins to be arranged in a row in such a way that firstly come coins out of circulation, and then come coins still in circulation.</p>
+        <p>#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things in order, that is why he wants his coins to be arranged in a row in such a way that firstly come coins out of circulation, and then come coins still in circulation.</p>
 <p>For arranging coins Dima uses the following algorithm. One step of his algorithm looks like the following:</p>
-<p>He looks through all the coins from left to right;<br>If he sees that the i-th coin is still in circulation, and (i + 1)-th coin is already out of circulation, he exchanges these two coins and continues watching coins from (i + 1)-th.<br>Dima repeats the procedure above until it happens that no two coins were exchanged during this procedure. Dima calls hardness of ordering the number of steps required for him according to the algorithm above to sort the sequence, e.g. the number of times he looks through the coins from the very beginning. For example, for the ordered sequence hardness of ordering equals one.</p>
+<p>He looks through all the coins from left to right; If he sees that the i-th coin is still in circulation, and (i + 1)-th coin is already out of circulation, he exchanges these two coins and continues watching coins from (i + 1)-th. Dima repeats the procedure above until it happens that no two coins were exchanged during this procedure. Dima calls hardness of ordering the number of steps required for him according to the algorithm above to sort the sequence, e.g. the number of times he looks through the coins from the very beginning. For example, for the ordered sequence hardness of ordering equals one.</p>
 <p>Today Sasha invited Dima and proposed him a game. First he puts n coins in a row, all of them are out of circulation. Then Sasha chooses one of the coins out of circulation and replaces it with a coin in circulation for n times. During this process Sasha constantly asks Dima what is the hardness of ordering of the sequence.</p>
 <p>The task is more complicated because Dima should not touch the coins and he should determine hardness of ordering in his mind. Help Dima with this task.</p>
-<p>#Input<br>The first line contains single integer n (1 ≤ n ≤ 300 000) — number of coins that Sasha puts behind Dima.</p>
-<p>Second line contains n distinct integers p1, p2, …, pn (1 ≤ pi ≤ n) — positions that Sasha puts coins in circulation to. At first Sasha replaces coin located at position p1, then coin located at position p2 and so on. Coins are numbered from left to right.</p>
-<p>#Output<br>Print n + 1 numbers a0, a1, …, an, where a0 is a hardness of ordering at the beginning, a1 is a hardness of ordering after the first replacement and so on.</p>
-<p>#Examples<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">4</span><br><span class="line">1 3 4 2</span><br><span class="line">output</span><br><span class="line">1 2 3 2 1</span><br><span class="line">input</span><br><span class="line">8</span><br><span class="line">6 8 3 4 7 2 1 5</span><br><span class="line">output</span><br><span class="line">1 2 2 3 4 3 4 5 1</span><br></pre></td></tr></table></figure></p>
-<p>#Note<br>Let’s denote as O coin out of circulation, and as X — coin is circulation.</p>
-<p>At the first sample, initially in row there are coins that are not in circulation, so Dima will look through them from left to right and won’t make any exchanges.</p>
+<p>#Input The first line contains single integer n (1 ≤ n ≤ 300 000) — number of coins that Sasha puts behind Dima.</p>
+<p>Second line contains n distinct integers p1, p2, ..., pn (1 ≤ pi ≤ n) — positions that Sasha puts coins in circulation to. At first Sasha replaces coin located at position p1, then coin located at position p2 and so on. Coins are numbered from left to right.</p>
+<p>#Output Print n + 1 numbers a0, a1, ..., an, where a0 is a hardness of ordering at the beginning, a1 is a hardness of ordering after the first replacement and so on.</p>
+<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">4</span><br><span class="line">1 3 4 2</span><br><span class="line">output</span><br><span class="line">1 2 3 2 1</span><br><span class="line">input</span><br><span class="line">8</span><br><span class="line">6 8 3 4 7 2 1 5</span><br><span class="line">output</span><br><span class="line">1 2 2 3 4 3 4 5 1</span><br></pre></td></tr></table></figure></p>
+<p>#Note Let's denote as O coin out of circulation, and as X — coin is circulation.</p>
+<p>At the first sample, initially in row there are coins that are not in circulation, so Dima will look through them from left to right and won't make any exchanges.</p>
 <p>After replacement of the first coin with a coin in circulation, Dima will exchange this coin with next three times and after that he will finally look through the coins and finish the process.</p>
 <p>XOOO  →  OOOX</p>
-<p>After replacement of the third coin, Dima’s actions look this way:</p>
+<p>After replacement of the third coin, Dima's actions look this way:</p>
 <p>XOXO  →  OXOX  →  OOXX</p>
-<p>After replacement of the fourth coin, Dima’s actions look this way:</p>
+<p>After replacement of the fourth coin, Dima's actions look this way:</p>
 <p>XOXX  →  OXXX</p>
 <p>Finally, after replacement of the second coin, row becomes consisting of coins that are in circulation and Dima will look through coins from left to right without any exchanges.</p>
-<p>#Key<br>读题读了半天才懂。n个硬币O面朝上排成一个序列。游戏一共n轮，在每一轮的一开始，所有硬币O面朝上，然后把第p[1]~p[i]个硬币（共i个硬币）翻转为X面。然后进行如下操作：<br>从左往右遍历整个序列，如果第j个硬币为X且第j+1个硬币为O，交换两者，然后从j+1个硬币继续进行。<br>持续进行上述遍历，直至最后一遍遍历没有交换任何硬币。把第i轮进行的遍历次数记为a[i]。要求求出每一轮游戏的a[i]（以及初始状态下的遍历次数a[0]）。</p>
+<p>#Key 读题读了半天才懂。n个硬币O面朝上排成一个序列。游戏一共n轮，在每一轮的一开始，所有硬币O面朝上，然后把第p[1]~p[i]个硬币（共i个硬币）翻转为X面。然后进行如下操作： 从左往右遍历整个序列，如果第j个硬币为X且第j+1个硬币为O，交换两者，然后从j+1个硬币继续进行。 持续进行上述遍历，直至最后一遍遍历没有交换任何硬币。把第i轮进行的遍历次数记为a[i]。要求求出每一轮游戏的a[i]（以及初始状态下的遍历次数a[0]）。</p>
 <p>规律是，找出序列最右的O的下标idx（则其右侧为一个连续的X序列或为空），每一轮维护之。计算idx左边有多少X即可。实际计算时，只需判断当前轮翻转的硬币是否使得idx向左移动，若是，a[i]=a[i-1]+1-(new_idx-idx)。否则，a[i]=a[i-1]+1。</p>
-<p>#Code<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300000</span> + <span class="number">17</span>;</span><br><span class="line"><span class="keyword">int</span> n, p;</span><br><span class="line"><span class="keyword">bool</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> idx = n + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		s[p] = <span class="literal">true</span>;</span><br><span class="line">		++res;</span><br><span class="line">		<span class="keyword">if</span> (idx == p + <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> pre_idx = idx;</span><br><span class="line">			<span class="keyword">while</span> (s[--pre_idx]);</span><br><span class="line">			++pre_idx;</span><br><span class="line">			res -= idx - pre_idx;</span><br><span class="line">			idx = pre_idx;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300000</span> + <span class="number">17</span>;</span><br><span class="line"><span class="keyword">int</span> n, p;</span><br><span class="line"><span class="keyword">bool</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> idx = n + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		s[p] = <span class="literal">true</span>;</span><br><span class="line">		++res;</span><br><span class="line">		<span class="keyword">if</span> (idx == p + <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> pre_idx = idx;</span><br><span class="line">			<span class="keyword">while</span> (s[--pre_idx]);</span><br><span class="line">			++pre_idx;</span><br><span class="line">			res -= idx - pre_idx;</span><br><span class="line">			idx = pre_idx;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -454,7 +454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,7 +513,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -612,6 +612,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从win过渡过">
+<meta name="description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从wi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的Linux入门之路 - 02.Shadowsocks-Qt5配置">
 <meta property="og:url" content="http://yoursite.com/posts/41853.html">
-<meta property="og:site_name" content="XieNaoban">
-<meta property="og:description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从win过渡过">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从wi">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/posts/41853/20170129104109279.jpg">
 <meta property="og:image" content="http://yoursite.com/posts/41853/20170129105059364.png">
@@ -96,7 +96,7 @@
 <meta property="og:updated_time" content="2019-04-08T13:35:57.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的Linux入门之路 - 02.Shadowsocks-Qt5配置">
-<meta name="twitter:description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从win过渡过">
+<meta name="twitter:description" content="作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。 #一、SS版本# SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。 #二、安装# 这里我使用的是Qt5版本（Github链接）。毕竟是从wi">
 <meta name="twitter:image" content="http://yoursite.com/posts/41853/20170129104109279.jpg">
 
 
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -133,7 +133,7 @@
 
 
 
-  <title>我的Linux入门之路 - 02.Shadowsocks-Qt5配置 | XieNaoban</title>
+  <title>我的Linux入门之路 - 02.Shadowsocks-Qt5配置 | XieNaoban's Blog</title>
   
 
 
@@ -163,7 +163,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">XieNaoban</span>
+        <span class="site-title">XieNaoban's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -279,7 +279,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="name" content="XieNaoban's Blog">
     </span>
 
     
@@ -341,29 +341,29 @@
 <p>#一、SS版本#</p>
 <p>SS版本众多，而且自从你懂得之后又衍生出SSR。<a href="https://github.com/shadowsocks/shadowsocks/wiki/Ports-and-Clients#windows%20SS%E5%85%A8%E5%B9%B3%E5%8F%B0%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">SS全平台各个版本 - Github</a> ，<a href="https://github.com/breakwa11/shadowsocks-rss" target="_blank" rel="noopener">SSR各平台版本 - Github</a> 。</p>
 <p>#二、安装#</p>
-<p>这里我使用的是Qt5版本（<a href="https://github.com/shadowsocks/shadowsocks-qt5/wiki" target="_blank" rel="noopener">Github链接</a>）。毕竟是从win过渡过来的，一开始还是倾向GUI。<br>安装方法也异常简单，简单到我一开始不相信。（官方github上有安装文档。幸运的是，github可以直接访问）。三行代码即可解决，无需自己从github下载客户端。<br>首先打开终端（Ctrl+Alt+T）<br>然后分步运行以下三行命令。</p>
+<p>这里我使用的是Qt5版本（<a href="https://github.com/shadowsocks/shadowsocks-qt5/wiki" target="_blank" rel="noopener">Github链接</a>）。毕竟是从win过渡过来的，一开始还是倾向GUI。 安装方法也异常简单，简单到我一开始不相信。（官方github上有安装文档。幸运的是，github可以直接访问）。三行代码即可解决，无需自己从github下载客户端。 首先打开终端（Ctrl+Alt+T） 然后分步运行以下三行命令。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure>
-<p>注：sudo的意思是获得管理员权限，会要求你输入密码，即你的ubuntu登录密码。<br>它的提示如下面所示：<code>[sudo] password for xienaoban:</code><br>需要注意的是在终端输入密码不会有任何显示，包括’*’都不会显示，新手要注意。</p>
-<p>然后就安装完成了。从你的dash（左上角相当于win开始键的东西）上能找到他，拖到任务栏上创个快捷方式就好啦。打开后如下图（File菜单里有个import from gui-config.json，把你的文件导入就行了。比别的版本的ss好的是，它能导入多个服务器，而别的版本的ss的config文件貌似只能添加一个）：<br><img src="/posts/41853/20170129104109279.jpg" alt="这里写图片描述"></p>
+<p>注：sudo的意思是获得管理员权限，会要求你输入密码，即你的ubuntu登录密码。 它的提示如下面所示：<code>[sudo] password for xienaoban:</code> 需要注意的是在终端输入密码不会有任何显示，包括'*'都不会显示，新手要注意。</p>
+<p>然后就安装完成了。从你的dash（左上角相当于win开始键的东西）上能找到他，拖到任务栏上创个快捷方式就好啦。打开后如下图（File菜单里有个import from gui-config.json，把你的文件导入就行了。比别的版本的ss好的是，它能导入多个服务器，而别的版本的ss的config文件貌似只能添加一个）： <img src="/posts/41853/20170129104109279.jpg" alt="这里写图片描述"></p>
 <p>#三、配置全局代理（失败）#</p>
-<p>Linux上与win不同，得自己从ss代理的接口转发出去。不像win那样一步到位，也不支持PAC。。。<br>根据网上各大教程，都是说打开系统设置，选择网络（Network）- 网络代理（Network proxy）。接下来有两种方法。<br>[法一] （实现全局代理）选择手动，sock5里如下填写：<br><img src="/posts/41853/20170129105059364.png" alt="这里写图片描述"></p>
-<p>[法二] （实现PAC代理）选择自动，下载个pac文件（怎么合成或下载自己查吧）把你下载的文件的路径填进去。文件格式如图片（file:后面三个‘/’）<br><img src="/posts/41853/20170129105431610.png" alt="这里写图片描述"></p>
+<p>Linux上与win不同，得自己从ss代理的接口转发出去。不像win那样一步到位，也不支持PAC。。。 根据网上各大教程，都是说打开系统设置，选择网络（Network）- 网络代理（Network proxy）。接下来有两种方法。 [法一] （实现全局代理）选择手动，sock5里如下填写： <img src="/posts/41853/20170129105059364.png" alt="这里写图片描述"></p>
+<p>[法二] （实现PAC代理）选择自动，下载个pac文件（怎么合成或下载自己查吧）把你下载的文件的路径填进去。文件格式如图片（file:后面三个‘/’） <img src="/posts/41853/20170129105431610.png" alt="这里写图片描述"></p>
 <p>然而我失败了，怎么设置浏览器都不能访问（明明步骤一样，好气呀）。所以我放弃了。求大神告知。（听说是qt版本有问题？）</p>
 <p>#四、配置浏览器代理#</p>
-<p>虽然全局不行，但浏览器自顾自的代理还是可以的。<br>Firefox：下载FoxyProxy插件，然后根据插件的教程来（浏览器自带的代理设置没效果不知道为什么，求告知）最后设置如图：<br><img src="/posts/41853/20170129112226131.png" alt="这里写图片描述"></p>
-<p>Chrome：下载SwitchyOmega插件。根据以下教程来（插件下载地址都在里面） <a href="http://www.ihacksoft.com/chrome-switchyomega.html" target="_blank" rel="noopener">http://www.ihacksoft.com/chrome-switchyomega.html</a> 。这个插件教程很详细，我就不写了。<br>要注意的是Rule List Config部分下载gfwlist.txt可能会失败，因为此时你还不能上某些网。所以做此步骤时先切换到刚做好的ss全局代理。</p>
+<p>虽然全局不行，但浏览器自顾自的代理还是可以的。 Firefox：下载FoxyProxy插件，然后根据插件的教程来（浏览器自带的代理设置没效果不知道为什么，求告知）最后设置如图： <img src="/posts/41853/20170129112226131.png" alt="这里写图片描述"></p>
+<p>Chrome：下载SwitchyOmega插件。根据以下教程来（插件下载地址都在里面） http://www.ihacksoft.com/chrome-switchyomega.html 。这个插件教程很详细，我就不写了。 要注意的是Rule List Config部分下载gfwlist.txt可能会失败，因为此时你还不能上某些网。所以做此步骤时先切换到刚做好的ss全局代理。</p>
 <p>#五、配置终端代理#</p>
-<p>挂代理的东西不少，我使用的是Polipo，和shadowsocks的socks5搭配比较不错。<br>Polipo安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install polipo</span><br></pre></td></tr></table></figure></p>
-<p>打开配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/polipo/config</span><br></pre></td></tr></table></figure></p>
-<p>修改配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># This file only needs to list configuration variables that deviate</span><br><span class="line"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span><br><span class="line"># and &quot;polipo -v&quot; for variables you can tweak and further information.</span><br><span class="line"></span><br><span class="line">logSyslog = true</span><br><span class="line">logFile = /var/log/polipo/polipo.log</span><br><span class="line">socksParentProxy = &quot;localhost:1080&quot;</span><br><span class="line">socksProxyType = socks5</span><br><span class="line">logLevel=4</span><br></pre></td></tr></table></figure></p>
-<p>然后重启polipo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service polipo stop</span><br><span class="line">sudo service polipo start</span><br></pre></td></tr></table></figure></p>
-<p>Polipo默认的代理地址是 <code>http_proxy=http://localhost:8123</code><br>那么每次对于希望 番羽 土啬 的指令，只需在前面加一句<code>http_proxy=http://localhost:8123</code> 即可。当然每次输入这么一长串这比较麻烦，可以打开<code>～/.bashrc</code>，在最后面添加一句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias fanqiang=&quot;http_proxy=http://localhost:8123&quot;</span><br></pre></td></tr></table></figure></p>
-<p>这样以后只需在需要 番羽 土啬 的指令前面加一句fanqiang即可了。<br>先来测试下有没有成功，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fanqiang curl ip.gs</span><br></pre></td></tr></table></figure></p>
-<p>得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前 IP：104.238.149.195 来自：日本东京都东京 choopa.com</span><br></pre></td></tr></table></figure></p>
-<p>如果不想每条指令都输入fanqiang，可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://localhost:8123</span><br></pre></td></tr></table></figure></p>
+<p>挂代理的东西不少，我使用的是Polipo，和shadowsocks的socks5搭配比较不错。 Polipo安装： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install polipo</span><br></pre></td></tr></table></figure></p>
+<p>打开配置文件： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/polipo/config</span><br></pre></td></tr></table></figure></p>
+<p>修改配置文件： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># This file only needs to list configuration variables that deviate</span><br><span class="line"># from the default values.  See /usr/share/doc/polipo/examples/config.sample</span><br><span class="line"># and &quot;polipo -v&quot; for variables you can tweak and further information.</span><br><span class="line"></span><br><span class="line">logSyslog = true</span><br><span class="line">logFile = /var/log/polipo/polipo.log</span><br><span class="line">socksParentProxy = &quot;localhost:1080&quot;</span><br><span class="line">socksProxyType = socks5</span><br><span class="line">logLevel=4</span><br></pre></td></tr></table></figure></p>
+<p>然后重启polipo： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service polipo stop</span><br><span class="line">sudo service polipo start</span><br></pre></td></tr></table></figure></p>
+<p>Polipo默认的代理地址是 <code>http_proxy=http://localhost:8123</code> 那么每次对于希望 番羽 土啬 的指令，只需在前面加一句<code>http_proxy=http://localhost:8123</code> 即可。当然每次输入这么一长串这比较麻烦，可以打开<code>～/.bashrc</code>，在最后面添加一句 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias fanqiang=&quot;http_proxy=http://localhost:8123&quot;</span><br></pre></td></tr></table></figure></p>
+<p>这样以后只需在需要 番羽 土啬 的指令前面加一句fanqiang即可了。 先来测试下有没有成功，输入： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fanqiang curl ip.gs</span><br></pre></td></tr></table></figure></p>
+<p>得到： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前 IP：104.238.149.195 来自：日本东京都东京 choopa.com</span><br></pre></td></tr></table></figure></p>
+<p>如果不想每条指令都输入fanqiang，可以 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=http://localhost:8123</span><br></pre></td></tr></table></figure></p>
 <p>#六、开机启动#</p>
-<p>参考的这个<a href="http://www.afox.cc/archives/83" target="_blank" rel="noopener">http://www.afox.cc/archives/83</a><br>英文系统在dash里面搜索“start”，中文搜索“启动”，或者在终端里输入<code>gnome-session-properties</code>，总之就是打开这个<img src="/posts/41853/20170129113939433.png" alt="这里写图片描述"><br>打开后界面如下图。<br><img src="/posts/41853/2015-07-11-171133屏幕截图.png" alt="这里写图片描述"></p>
-<p>选择添加，如下填入即可。一个字都不需要改。<br><img src="/posts/41853/2015-07-11-171220屏幕截图.png" alt="这里写图片描述"></p>
+<p>参考的这个http://www.afox.cc/archives/83 英文系统在dash里面搜索“start”，中文搜索“启动”，或者在终端里输入<code>gnome-session-properties</code>，总之就是打开这个<img src="/posts/41853/20170129113939433.png" alt="这里写图片描述"> 打开后界面如下图。 <img src="/posts/41853/2015-07-11-171133屏幕截图.png" alt="这里写图片描述"></p>
+<p>选择添加，如下填入即可。一个字都不需要改。 <img src="/posts/41853/2015-07-11-171220屏幕截图.png" alt="这里写图片描述"></p>
 
       
     </div>
@@ -468,7 +468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">104</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,7 +527,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -626,6 +626,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

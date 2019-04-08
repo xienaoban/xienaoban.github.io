@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在开始之前最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的A 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是A 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。我本次的模拟比较简单，下面简述一下模拟环境：  地图是棋盘式的格子地图； 各个点没有权值，或者说">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A星寻路算法初探">
+<meta property="og:url" content="http://yoursite.com/posts/56919.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="写在开始之前最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的A 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是A 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。我本次的模拟比较简单，下面简述一下模拟环境：  地图是棋盘式的格子地图； 各个点没有权值，或者说">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/posts/56919/1.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/2.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/3.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/4.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/5.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/6.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/7.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/8.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/9.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/10.png">
+<meta property="og:image" content="http://yoursite.com/posts/56919/11.png">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.998Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A星寻路算法初探">
+<meta name="twitter:description" content="写在开始之前最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的A 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是A 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。我本次的模拟比较简单，下面简述一下模拟环境：  地图是棋盘式的格子地图； 各个点没有权值，或者说">
+<meta name="twitter:image" content="http://yoursite.com/posts/56919/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/56919.html">
+
+
+
+
+
+  <title>A星寻路算法初探 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/56919.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">A星寻路算法初探</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-08T20:38:43+08:00">
+                2016-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在开始之前"><a href="#写在开始之前" class="headerlink" title="写在开始之前"></a>写在开始之前</h2><p>最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的A<em> 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是A</em> 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。<br>我本次的模拟比较简单，下面简述一下模拟环境：</p>
+<ol>
+<li>地图是棋盘式的格子地图；</li>
+<li>各个点没有权值，或者说权值为1；</li>
+<li>只能上下左右走，不支持斜着走；</li>
+<li>未考虑终点被包住而到达不了的情况，发生此类情况时，算法会遍历所有可到达点无果后才证明目标无法到达。</li>
+</ol>
+<p>虽然模拟的比较简单，但是足以学习、说明问题。为了使算法更形象可视化，我给算法的过程做了小动画。成品存在了我的Github里：<a href="https://github.com/XieNaoban/Pathfinding" target="_blank" rel="noopener">https://github.com/XieNaoban/Pathfinding</a> 这里代码就不贴了。使用的java编写。由于是初学java，所以代码写的狗屎一样不要介意（讲道理我现在自己也看不下去了。不过做出来的GUI效果还挺满意。）另外一开始对这个寻路理解的比较混乱，体系没有建全，所以不同算法所在的函数也很不一样，函数分类也不合理（然而不高兴改了）。</p>
+<h2 id="寻路的基本思路"><a href="#寻路的基本思路" class="headerlink" title="寻路的基本思路"></a>寻路的基本思路</h2><p>首先总结一下寻路的最常见的两个思路， <strong>遍历</strong> 与 <strong>贪心算法</strong> 。</p>
+<h4 id="遍历：只考虑起点"><a href="#遍历：只考虑起点" class="headerlink" title="遍历：只考虑起点"></a>遍历：只考虑起点</h4><p>这里说的遍历其实用的是Dijkstra算法或BFS，也就从起点开始一扩散出去寻找最短路径。也就是遍历距离起点最短距离为1、2、3……n-1、n的点。对于地形复杂比如有山有沼泽（即有权值）的地图（图），使用Dijkstra算法，用优先队列存储遍历到地图的每一个点时的权值和。对于一张平滑的也就是无权值（权值相同）的地图，Dijkstra的表现与BFS相同，即只需退化使用队列进行BFS遍历即可，无需使用Dijkstra算法。这里我的模拟的地图没有权值，直接使用了BFS。<br><img src="/posts/56919/1.png" alt="图1. BFS无障碍寻路演示"></p>
+<p><img src="/posts/56919/2.png" alt="图1. BFS小障碍寻路演示"></p>
+<p><img src="/posts/56919/3.png" alt="图3. BFS略复杂障碍寻路演示"><br>黄色代表被搜索过，蓝色代表搜索完成后找到的路径（在这里显然也是最短路径）。格子中的值为从起点到本格子的最短距离。由图可知算法从起点向周围扩散，直到扩散到终点。<br>结论是，BFS（或带权图中用的Dijkstra）肯定找到最短路径，但是问题在于，它太耗时了，访问的点（黄色格子）太多了。想想就知道很多点完全没有必要遍历。<br>造成这一现象的原因是，这个算法只考虑了起点，一直找距离起点最短的路直到遇到终点。</p>
+<h4 id="贪心：只想着终点"><a href="#贪心：只想着终点" class="headerlink" title="贪心：只想着终点"></a>贪心：只想着终点</h4><p>试图不遍历，直接找到终点去，那基本就是使用贪心算法了吧。<br>以上的启发式函数仅仅考虑了起点，因而导致算法无目的地向四周扩散寻找。那既然是使用贪心算法，每次寻找目前为之的最优解，那么这次只要考虑终点在哪里就行了，一路向终点走，起点不用考虑。这使得算法疯狂试图向终点靠近。<br><img src="/posts/56919/4.png" alt="图4. 贪心算法无复杂障碍寻路演示"><br>结果发现无障碍情况下效果杠杠的，没有一块多余的白色。但是如果有障碍呢？<br><img src="/posts/56919/5.png" alt="图5. 贪心算法略复杂障碍寻路演示"><br>虽然一格都没有多搜索，但是游戏里AI要是这样走路那玩家肯定吃不消。而且还有一个问题，万一走到了死胡同里，算法就会判定无法到达终点，而事实却是是算法自己钻了牛角尖。所以必须允许算法倒退，从死胡同里后退一步或多步，换条路子走。可以使用栈即可实现。有时会发现换了路之后反而更快地到达了之前到过的一个点，于是有些点重复搜索了，重复搜索的话很有可能比无脑遍历都不划算。于是我关闭了重复搜索，效果好多了。<br><img src="/posts/56919/6.png" alt="图4. 贪心算法复杂障碍寻路演示"><br>可以看到算法产生了很多失败的搜索（黄格子）（都是被自己走过的路堵死的。。。创战记既视感）但是搜索的路比遍历少多了，但是说起来，允许倒退重新寻路，说到底这也还算是是进行遍历了。。。有时候还不及遍历。（其实我搜索完后画的路径不是完全根据算法来的，算法找的路还要更绕，我很多地方已经根据黄格子的梯度抄近路了。）<br>同时贪心算法只考虑了终点，永远只向着终点方向走，不考虑目前离起点已经走了多少格了。</p>
+<h2 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h2><p>A* 用的也是Dijkstra。每次找出当前期望值最高的点（即最可能最快速度通往终点的点），一步步搜索过去。Wiki上也说了，这是对Dijkstra’s Algorithm 的扩展，因为它使用了性能更好的<strong>启发</strong>式引导其搜索。</p>
+<h4 id="疑问：“最短”路径还是“最合理”路径"><a href="#疑问：“最短”路径还是“最合理”路径" class="headerlink" title="疑问：“最短”路径还是“最合理”路径"></a>疑问：“最短”路径还是“最合理”路径</h4><p>这是个令我困惑的问题。翻了些知乎或博客等，竟然众说纷纭。有人说“不是。因为‘启发’是不精确的。”。也有人说“尽管A<em> 基于无法保证最佳解的启发式方法，A</em> 却能保证找到一条最短路径。”这就很尴尬了。<br>看了这么多资料以及加上我以往的玩游戏经验，我认为A* 只是个比较宽的概念，它可以找到最佳路径，也可以找的只是合理路径。既然用了启发，那么它很可能找的不是“最短”而只是说根据这个启发找到的最“合理”路径。但是也可能你的启发式函数做的很好，找到的最合理路径就是最佳路径（就比如文章开头的说的遍历，下面说）。关键就在于你给他的“启发”是怎么样的。    小时候玩红警还是什么游戏时就遇到过单位走的路不是最短路径。</p>
+<h4 id="核心：寻找启发式函数h-n"><a href="#核心：寻找启发式函数h-n" class="headerlink" title="核心：寻找启发式函数h(n)"></a>核心：寻找启发式函数h(n)</h4><p>A<em> 既然用了Dijkstra，那它的基本过程就是：从优先队列里拉出期望最高的n点（在我的算法里表示为h(n)值最低），标记，并把它周围的未知点放进优先队列。所以关键就是这个h(n)。<br>h(n)怎么找？其实最简单的，上面讲的遍历说起来也是h(n)的一种。从起点进行遍历的<br><code>h(n) = n.t</code> （t为距离起点的距离），也就是说而对距离近的优先搜索。而这个算法其实就是最短路径的算法，这里“最合理路径”就是“最短路径”。<br>而对于上面讲的贪心算法，他的引导函数可以看作是<br> <code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> ，哪边离终点近就走哪里。之前这是用贪心实现的，但如果用做A</em>的h(n)实现呢？<br><img src="/posts/56919/7.png" alt="这里写图片描述"><br>效果很好，不过这只能用在仅支持上下左右行走的场景，找的路也比较“合理”（虽然明显不是最短路径）。现在只考虑还有什么可以试试呢？<br>想到起点终点都要考虑进去，首先想到了这个：<br><code>h(n) = sqrt((n.x - end.x) ^ 2 + (n.y - end.y) ^ 2) + sqrt((n.x - start.x) ^ 2 + (n.y - end.y) ^ 2)</code> 。即点n到起始点的距离加上n到终点的距离。也就是说，距离起点终点所在的直线越近，h(n)就越低。<br><img src="/posts/56919/8.png" alt="这里写图片描述"><br>效果还不错。但是问题在于sqrt计算成本太高。即时策略类游戏的话这不好。而且对于这次只有直着走的模拟有些大材小用了。而且还是有些部分是不需要搜索的。<br><img src="/posts/56919/9.png" alt="这里写图片描述"><br>还有几个可用的函数，一个和之前的<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 比较像：<br><code>h(n) = abs(x - end.x) + abs(y-end.y)</code> 找出x、y轴方向哪边离终点远，哪边远倾向于走哪边。还有一个和sqrt那个比较像：<br><code>h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y))</code> ，倾向与走与起点终点所在直线方向的平行线，这个个人觉得不错，比sqrt那个计算少，而且在棋盘式地图里效果也好。但是它也有一个问题：<br><img src="/posts/56919/10.png" alt="这里写图片描述"><br>他会搜索反向于终点的方向。所以可以考虑用多个函数组合：<br><code>h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y)) + (abs(x - end.x) + abs(y-end.y))*500;</code><br>效果比单一使用好很多。虽然实际效果其实不比<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 强，但也给我们提供一个寻找h(n)的思路，将来可以运用到任意方向的地图上。其中里面不同函数还有权重，比如第二个函数乘以了500。权重可以按照实战效果来定。<br><img src="/posts/56919/11.png" alt="这里写图片描述"><br>不过你可能也根据我放的截图发现了，这些算法都倾向于走起点与终点所在直线之上。即每当越过一个障碍物，就试图重新靠近起点终点所在连线上。尽管连线上或许还有障碍物。这也是我应该改进的地方。</p>
+<h4 id="总结：“精度”还是“速度”"><a href="#总结：“精度”还是“速度”" class="headerlink" title="总结：“精度”还是“速度”"></a>总结：“精度”还是“速度”</h4><p>显然，复杂些的启发式函数或是会造成更多搜索的方法往往能取得更好的效果，但是同时速度也更慢。因此如何选择将是本算法的一道难题。对于本次模拟的图，甚至BFS的表现都非常良好，但对于很大的地图、有很多NPC的游戏，就得权衡运行速度与寻路精度了。只要运行结果看似合理不会引起玩家破口大骂，A*算法的目的也算是达到了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/50450.html" rel="next" title="算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600">
+                <i class="fa fa-chevron-left"></i> 算法竞赛入门经典(第2版) 6-4UVa439 6-5UVa1600
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/23916.html" rel="prev" title="算法竞赛入门经典(第2版) 6-6UVa12166 - Equilibrium Mobile">
+                算法竞赛入门经典(第2版) 6-6UVa12166 - Equilibrium Mobile <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在开始之前"><span class="nav-number">1.</span> <span class="nav-text">写在开始之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻路的基本思路"><span class="nav-number">2.</span> <span class="nav-text">寻路的基本思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历：只考虑起点"><span class="nav-number">2.0.1.</span> <span class="nav-text">遍历：只考虑起点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贪心：只想着终点"><span class="nav-number">2.0.2.</span> <span class="nav-text">贪心：只想着终点</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#A-算法"><span class="nav-number">3.</span> <span class="nav-text">A*算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#疑问：“最短”路径还是“最合理”路径"><span class="nav-number">3.0.1.</span> <span class="nav-text">疑问：“最短”路径还是“最合理”路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心：寻找启发式函数h-n"><span class="nav-number">3.0.2.</span> <span class="nav-text">核心：寻找启发式函数h(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结：“精度”还是“速度”"><span class="nav-number">3.0.3.</span> <span class="nav-text">总结：“精度”还是“速度”</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

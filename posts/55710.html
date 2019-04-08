@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO   代码：（Accepted，0 ms）1234567891011121314151617#include&amp;lt;iostream&amp;gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&amp;#123;	//f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典(第2版) 4-9UVa1591 - Data Mining">
+<meta property="og:url" content="http://yoursite.com/posts/55710.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO   代码：（Accepted，0 ms）1234567891011121314151617#include&amp;lt;iostream&amp;gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&amp;#123;	//f">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/posts/55710/1.png">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典(第2版) 4-9UVa1591 - Data Mining">
+<meta name="twitter:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO   代码：（Accepted，0 ms）1234567891011121314151617#include&amp;lt;iostream&amp;gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&amp;#123;	//f">
+<meta name="twitter:image" content="http://yoursite.com/posts/55710/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/55710.html">
+
+
+
+
+
+  <title>算法竞赛入门经典(第2版) 4-9UVa1591 - Data Mining | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/55710.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 4-9UVa1591 - Data Mining</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-13T15:04:25+08:00">
+                2016-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书上具体所有题目：<a href="http://pan.baidu.com/s/1hssH0KO" target="_blank" rel="noopener">http://pan.baidu.com/s/1hssH0KO</a> </p>
+<hr>
+<p>代码：（Accepted，0 ms）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">unsigned N, A, B, Sp, Sq, ansA, ansB;</span><br><span class="line">unsigned long long Pofs, K, nowK;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	while (scanf(&quot;%u%u%u&quot;, &amp;N, &amp;Sp, &amp;Sq) != -1) &#123;</span><br><span class="line">		K = 0xffffffffffffffff;</span><br><span class="line">		for (A = 0;A &lt; 32;++A) for (B = 0;B &lt; 32;++B) &#123;</span><br><span class="line">			Pofs = (N - 1)*Sp;</span><br><span class="line">			nowK = (Pofs + (Pofs &lt;&lt; A) &gt;&gt; B) + Sq;</span><br><span class="line">			if (nowK &gt;= N*Sq &amp;&amp; nowK &lt; K) K = nowK, ansA = A, ansB = B;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;%llu %u %u\n&quot;, K, ansA, ansB);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>题意</strong>：看着好复杂的题目。看了半天不懂，看网上人家的解释也是一头雾水。于是花了好久把他翻译并理解。翻译只是大概翻翻，但和原意基本一致，括号内的内容是我最终理解的内容。<br>翻译如下：<br>        Tuple博士正在给ACM公司研究数据挖掘。其中一个子工程是关于P、Q两个数组的，两个数组各含N组数据（<em>这个“组”的单位是record，不知道怎么翻译好。论好好学习英语的重要性。</em>）。这N个record的数据从0到N-1命名。数组P包含含密钥的类似哈希的结构。P用来给程序定位要用哪个record，且这个数据的对应的Q里的record待会会从Q数组里恢复出来（<em>如紫书中文的理解就是知道P的第i个record的偏移量求Q第i个数据的偏移量</em>）。<br>        数组P中的每个record长度为Sp字节，Q的每个record长Sq字节。Tuple酱需要最最高效地执行这个程序，因为这是整个数据挖掘一直要用到的地方。但是坑爹的是Sp和Sq只在运行时知道其大小，没法在编译时进行优化（<em>哦就跟定义数组必须要用常量来定义的原因类似</em>）。<br>        找到P数组的第i个record的偏移量（<em>不懂偏移量是什么，差不多就是指：比如一个数组a[10]，那么a[3]的地址在首地址的右边地三个，偏移量就是(&amp;a[3]-a) ·  sizeof(int)，也就是3 · sizeof(int)。如果我没猜错应该就是了</em>）的最直接的方法是用以下函数：<br>Pods(i) = Sp <em> I              (1)<br>Q的也一样：<br>Qods(i) = Sq </em> I              (2)<br>        但是！乘法比加减法慢多了（<em>哦你好烦啊，直接说你最后用了什么就行了啊</em>）。Tuple酱拒绝使用乘法。那么他怎么做的？他保存了已经计算好的第i个record的偏移量Pofs(i)，而不是保存这个下标（索引）i（<em>哦就相当于一个数组a[10]，你已经计算得你要的数据是a[2]，现在别人要调用a[2]，你给他</em> p=&amp;a[2]比直接给他i=2让他自己找到a{2}更快。是这个意思吧<em>）。于是现在当他需要计算第i个record旁边的record的偏移量时，就用下面的方程：<br>Pofs(i + 1) = Pofs(i) + Sp<br>Pofs(i - 1) = Pofs(i) – Sp<br>（</em>好吧，原来就相当于我们遍历数组时用指针<em>p先指向首地址，然后不停p++指向下一个数据一样啊，比直接调用a[i++]快啊</em>）<br>        当一个P的record不管是用上面两个方法的哪个（用乘法扫描数组，及用其他数据的偏移量用加减法获得），Tuple酱需要从对应Q数组把数据恢复进去。要获取Q的record的偏移量Qofs(i)也要计算。当Pofs(i)已知时可以直接用(1)、(2)两个函数求得Qofs(i)。<br>Qofs(i) = Pofs(i)/SP <em>SQ          (3)（</em>就把(1)、(2)整合了一下<em>）<br>        然后又来了。“Unfortunately”，这个函数不仅有乘法，甚至还有除法！“我不管我不管，乘除就是比加减慢！我就是不允许乘除的出现！” Tuple酱傲娇地鼓起了腮帮。<br>        最后Tuple酱研究得出，可以这么求Qofs(i)：<br>Qofs’(i) = (Pofs(i) + Pofs(i) &lt; &lt; A) &gt; &gt; B      (4)<br>（</em>Qofs’(i)那个’不是求导的意思哦，我说一开始怎么没看懂。<em>）(</em>等一下让我查一下位移运算和加法运算的优先级。。。好的+比&lt;&lt;优先级高？？不对啊，那他要这个括号干嘛？看了下别人的代码，这里题目错了。应该是(Pofs(i) +（(Pofs(i) &lt; &lt; A)) &gt; &gt; B。但是还是没看懂怎么从(3)推出这个式子的??!!<em>）（</em>好的现在看懂了，这是一个新方法，和(3)无关，不是从(3)推导出来的。这个方法牺牲了些没用上的内存但是速度快了。详见分析<em>）<br>        A和B是无符号整形。这个函数跑的比(3)不知道快到哪里去了。但是不管A、B选何值，它一般不能总是产生和(3)一样的结果（</em>喵喵喵？？？为什么不一样？没看懂。根据紫书：“为了让(4)成立，在P数组连续存储的情况下Q可以不连续存储”我去？哪里说可以不连续存储了。好吧现在看懂了，最下面一起讲。<em>）。但是如果你愿意牺牲点内存，你还是可以用。<br>        传统的布局里，Q在内存里需要N</em>Sq字节去储存整个数组。Tuple发现总是可以找到一个K（K&lt;=N<em>Sq）（</em>题目反了吧？？！！K&gt;=N · Sq还差不多，看样例输入输出也明显是1119&gt;=1024 · 1*），如果分配K字节的内存给Q且小心地找A和B的值，(4)会给不重复的把存储地址给数组Q的N个record。<br>你的目标是写一个程序找出当(4)被用时最小的内存K去分配给Q，对应的A、B也要找出来。若多个A、B得到一样的最小的K，那么找出A最小的那组，还不行，那就找B最小的。<br>(这个CSDN-markdown编辑器好垃圾啊，为什么不能输出多个空格？导致不能每段首行缩进两个字？？！！狂按空格也没效果。。我按空格你也要管。。)</p>
+<hr>
+<p><strong>分析</strong>：好的那么就是说 （比如如图，P是上面那个，每个数据占3bit，Q占2bit）以P的某个数据的偏移量按照(4)快速求出Q对应数据的地址（算的快的结果是部分内存没用上）。所以原来(3)、(4)不是等价的，是Tuple酱另外想的方法。我说怎么死活看不懂、推不出来(4)这个公式。<img src="/posts/55710/1.png" alt="这里写图片描述"><br>所以简言之，已知A和B，P的每一个元素的偏移量Pofs（其实就是第i个元素首地址位置）通过含A和B的公式4计算得出Qofs（即求出Q的第i个元素的位置）后，即知道了Q的各个元素的位置。现在要求找出Q最少占用多少空间，即求Q的后一个元素的最后一个字节的地址与分配的第一个内存地址的距离即可。（本来我还想Q的各个元素的存储位置不能重叠，要不要判断，但是题目已经说了，用公式4保证不会出现存储重叠）<br>那么暴力枚举A，B即可。而还有个问题，A，B没说范围。那么因为</p>
+<blockquote>
+<p>1 ≤ N ≤ 2^20,1 ≤ SP ≤ 2^10,1 ≤ SQ ≤ 2^10</p>
+</blockquote>
+<p>因为Pofs最大为(N-1)<em>Sp，所以这里最大(2^20-1) · 2^10差不多2的30次方。而long long64位，也就30多位可以给你移的。而且参考了 <a href="http://blog.csdn.net/code4101/article/details/38540759" target="_blank" rel="noopener">http://blog.csdn.net/code4101/article/details/38540759</a>  这篇博文，那么30多次的枚举就行了。那么说到这里，这题其实是个超简单的题目。<br>/</em><br>本来我一开始看题目时觉得这都什么鬼，看不懂。<br>但是看到紫书上说“本题有一定实际意义，不过描述比较抽象。如果对本题兴趣不大，可以先跳过。”于是瞬间来了兴趣… （—。—） 哈哈我简直是个受虐狂。<br>*/</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/50108.html" rel="next" title="算法竞赛入门经典(第2版) 4-8UVa12108 - Extraordinarily Tired Students">
+                <i class="fa fa-chevron-left"></i> 算法竞赛入门经典(第2版) 4-8UVa12108 - Extraordinarily Tired Students
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/14458.html" rel="prev" title="算法竞赛入门经典(第2版) 4-10UVa815 - Flooded!">
+                算法竞赛入门经典(第2版) 4-10UVa815 - Flooded! <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&amp;lt;&amp;lt;”与“&amp;gt;&amp;gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf printf只要10ms、20ms，这个就差的太大了时间都花在输入输出上也是很郁闷。于是开始使用C的输入输出标准。输出很正常，也可以轻松更改double输出的精度，c+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scanf的使用(主要是针对char)">
+<meta property="og:url" content="http://yoursite.com/posts/5943.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&amp;lt;&amp;lt;”与“&amp;gt;&amp;gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf printf只要10ms、20ms，这个就差的太大了时间都花在输入输出上也是很郁闷。于是开始使用C的输入输出标准。输出很正常，也可以轻松更改double输出的精度，c+">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.955Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scanf的使用(主要是针对char)">
+<meta name="twitter:description" content="学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&amp;lt;&amp;lt;”与“&amp;gt;&amp;gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf printf只要10ms、20ms，这个就差的太大了时间都花在输入输出上也是很郁闷。于是开始使用C的输入输出标准。输出很正常，也可以轻松更改double输出的精度，c+">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/5943.html">
+
+
+
+
+
+  <title>scanf的使用(主要是针对char) | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/5943.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">scanf的使用(主要是针对char)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-31T16:00:05+08:00">
+                2016-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学的是C++，用cin cout也用的很顺溜，写自己的类时重载“&lt;&lt;”与“&gt;&gt;”运算符也很爽，但是发现在刷算法竞赛题时，cin cout很没优势，输入量大时一道题我用cin cout要50ms，用scanf printf只要10ms、20ms，这个就差的太大了时间都花在输入输出上也是很郁闷。于是开始使用C的输入输出标准。输出很正常，也可以轻松更改double输出的精度，c++还要个iomanip头文件，还烦一点。格式化字符%u %d %ld %lld %f %lf %s %c等就这几个限死了，也就是只能输入输出这几个系统自带的格式，是没法将自己的类重载到里面的，，只能自己做个print函数。不过毕竟面向对象是c++的内容。<br>就是那个输入scanf有些异类。首先输入得取地址，输入int的a要&amp;a不能写a。这我总是忘记。先输入整形、long long、double、字符串什么的都没问题，可以任意换行。scanf(“%d%d%d%d”, &amp;a, &amp;b, &amp;c, &amp;d);<br>像下面这样输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">123  2</span><br><span class="line"></span><br><span class="line">       23  </span><br><span class="line">6</span><br></pre></td></tr></table></figure></p>
+<p>有任意空格和回车都可以接收。<br>而对于字符串char sss[100]，不支持空格的读取，要读取空格得用gets()。<br>而scanf(“%s”,sss)还是scanf(“%s”,&amp;sss)都可以，论坛里上说前者还少取个地址更快一点。<br>而对于char型，char ch;scanf(“%c”,ch)；可以是可以，但是不能像int等一样随心所欲地加空格和回车，明明说好的scanf自带无视回车和空格。比如下一段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a, b, c, d;</span><br><span class="line">	char x, y, z,s1[10],s2[10],s3[10];</span><br><span class="line">	scanf(&quot;%d%d%d%d&quot;, &amp;a, &amp;b, &amp;c, &amp;d);</span><br><span class="line">	scanf(&quot;%s%s%s&quot;, s1, s2, s3);</span><br><span class="line">	scanf(&quot;%c%c%c&quot;, &amp;x, &amp;y, &amp;z);</span><br><span class="line">	printf(&quot;%c%c%c&quot;, x, y, z);</span><br><span class="line">	printf(&quot;%d%d%d%d\n&apos;%c&apos;\t&apos;%c&apos;\t&apos;%c&apos;\n%s\n%s\n%s&quot;, a, b, c, d, x, y, z,s1,s2,s3);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">111 222 333 444 555 666 777 8 9 0</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">111222333444</span><br><span class="line">&apos; &apos;     &apos;8&apos;     &apos; &apos;</span><br><span class="line">555</span><br><span class="line">666</span><br><span class="line">777请按任意键继续. . .</span><br></pre></td></tr></table></figure></p>
+<p>而输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">111</span><br><span class="line">222</span><br><span class="line">333</span><br><span class="line">444</span><br><span class="line">555</span><br><span class="line">666</span><br><span class="line">777</span><br><span class="line">890</span><br></pre></td></tr></table></figure></p>
+<p>则输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">111222333444</span><br><span class="line">&apos;</span><br><span class="line">&apos;       &apos;8&apos;     &apos;9&apos;</span><br><span class="line">555</span><br><span class="line">666</span><br><span class="line">777请按任意键继续. . .</span><br></pre></td></tr></table></figure></p>
+<p>char的什么回车啊空格啊都读进去了。<br>而如果先读入char，一旦char坏掉了，后面也全乱了。</p>
+<p>####我总结的规律是：<br>scanf读取int等内容时，读取完一个数据后后面的空格回车仅仅是表示这个数据输入完了，没有略过，它一直存在于输入缓冲区，而到了下一个数据，若也是int或字符串什么的，会自动把空格回车略过，直到找到应输入的内容，然后读取。而char不同，它不忽略本该读取的数据前面的空白，就把那空格或回车读进去了，如果是有多个空格回车，剩下那些空白就依然还存在与缓冲区，给下一个char读取了。</p>
+<p>####我现在找到了以下几种解决方案</p>
+<ol>
+<li>使用fflush(stdin)。scanf读取char之前，用fflush(stdin)空输入缓冲区，使其为空，然后输入char就不会有空白符阻碍了。</li>
+<li>scanf读取char之前使用getchar()把’\n’和’ ‘吃了，getchar()不跳过空格回车。当然getchar()几次，即吃几个字符也是个问题，所以本方法仅适用于比如竞赛题什么的，输入格式都很标准，不会出现不定多少的空格回车。不过现在想想好像scanf和getchar功能一样欸，都不跳空白的。那么这么说来直接用scanf吸收空格应该也是可以的，比如scanf(“%c%c”,&amp;ch,&amp;ch)但是好像没见人用过。</li>
+<li>VJ上看到这个写法scanf(“\n%c”,ch)，即在每个输入char的scanf里的%c前面，都加上\n。对于在scanf里不仅仅写%c还写其他的东西，就像输出一样，我没细研究，就知道比如scanf(“233%c666”,ch)我必须先输入233再输入char再输入666，想想好像也有道理，以此来忽略\n，但是我发现它也可以忽略空格。虽然不是很懂，空格和回车在编译器眼里一样吗？于是试了试scanf(“ %c”,ch)，也一样的效果！于是这就达到了与输入int、double一样的格式，任意输入多少空格和回车都没事了。现在也是这么在用，虽然其实我不是很懂其原理。</li>
+<li>CSDN论坛里看到有12级的大神说不要用scanf输入字符。。不是很懂，全用getchar()吗。。。还是输入字符转用cin。。。 0.0 [震惊哭]。</li>
+</ol>
+<p>附[方法三]实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a, b, c, d;</span><br><span class="line">	char x, y, z,s1[10],s2[10],s3[10];</span><br><span class="line">	scanf(&quot;%d%d%d%d&quot;, &amp;a, &amp;b, &amp;c, &amp;d);</span><br><span class="line">	scanf(&quot;%s%s%s&quot;, s1, s2, s3);</span><br><span class="line">	scanf(&quot; %c\n%c %c&quot;, &amp;x, &amp;y, &amp;z);</span><br><span class="line">	//x = getchar(), y = getchar(), z = getchar();</span><br><span class="line">	printf(&quot;%d%d%d%d\n&apos;%c&apos;\t&apos;%c&apos;\t&apos;%c&apos;\n%s\n%s\n%s&quot;, a, b, c, d, x, y, z,s1,s2,s3);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1   2  3   </span><br><span class="line">4   5  </span><br><span class="line">  6  </span><br><span class="line">     7  </span><br><span class="line">    8  </span><br><span class="line"> 9  </span><br><span class="line">       0</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1234</span><br><span class="line">&apos;8&apos;     &apos;9&apos;     &apos;0&apos;</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7请按任意键继续. . .</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/25421.html" rel="next" title="算法竞赛入门经典(第2版) 4-3UVa220 - Othello">
+                <i class="fa fa-chevron-left"></i> 算法竞赛入门经典(第2版) 4-3UVa220 - Othello
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/24045.html" rel="prev" title="算法竞赛入门经典(第2版) 4-4UVa253 - Cube painting">
+                算法竞赛入门经典(第2版) 4-4UVa253 - Cube painting <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

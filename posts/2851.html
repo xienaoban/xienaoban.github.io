@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版） 题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String代码： 1234567891011121314151617181920212223242526272829303132333435363738394041//UVa13">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典 3-7UVa1368 3-8UVa202 3-9UVa10340">
+<meta property="og:url" content="http://yoursite.com/posts/2851.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版） 题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String代码： 1234567891011121314151617181920212223242526272829303132333435363738394041//UVa13">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典 3-7UVa1368 3-8UVa202 3-9UVa10340">
+<meta name="twitter:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版） 题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String代码： 1234567891011121314151617181920212223242526272829303132333435363738394041//UVa13">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/2851.html">
+
+
+
+
+
+  <title>算法竞赛入门经典 3-7UVa1368 3-8UVa202 3-9UVa10340 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/2851.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典 3-7UVa1368 3-8UVa202 3-9UVa10340</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-19T22:45:02+08:00">
+                2016-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书上具体所有题目：<a href="http://pan.baidu.com/s/1hssH0KO" target="_blank" rel="noopener">http://pan.baidu.com/s/1hssH0KO</a><br>都是《算法竞赛入门经典（第二版）》的题目，标题上没写（第二版）</p>
+<p>题目：算法竞赛入门经典 3-7/UVa1368：DNA Consensus String<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//UVa1368 - DNA Consensus String</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define MAX_M 52</span><br><span class="line">#define MAX_N 1005</span><br><span class="line">char DNA[MAX_M][MAX_N];</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int T, m, n, err, num[4];//num用于存放ACGT个数</span><br><span class="line">	const int &amp;mm = m, &amp;nn = n;//防止自己代码书写错误</span><br><span class="line">	char consensus[MAX_N], ACGT[] = &quot;ACGT&quot;;//consensus为计算结果</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	while (T--) &#123;</span><br><span class="line">		err = 0;</span><br><span class="line">		cin &gt;&gt; m &gt;&gt; n;</span><br><span class="line">		cin.getline(DNA[51], 3);//吸收&apos;\n&apos;</span><br><span class="line">		for (int i = 0;i &lt; mm;++i)</span><br><span class="line">			cin.getline(DNA[i], MAX_N);</span><br><span class="line">		for (int i = 0;i &lt; nn;++i) &#123;</span><br><span class="line">			num[0] = num[1] = num[2] = num[3] = 0;//初始化或重置num</span><br><span class="line">			for (int j = 0;j &lt; mm;++j)</span><br><span class="line">				switch (DNA[j][i]) &#123;</span><br><span class="line">				case &apos;A&apos;: ++num[0];break;</span><br><span class="line">				case &apos;C&apos;: ++num[1];break;</span><br><span class="line">				case &apos;G&apos;: ++num[2];break;</span><br><span class="line">				case &apos;T&apos;: ++num[3];break;</span><br><span class="line">				default:cerr &lt;&lt; &quot;Error:1\n&quot;;exit(0);</span><br><span class="line">				&#125;</span><br><span class="line">			int max = 0;</span><br><span class="line">			for (int j = 1;j &lt; 4;++j)</span><br><span class="line">				if (num[j]&gt;num[max])max = j;</span><br><span class="line">			consensus[i] = ACGT[max];</span><br><span class="line">			err += mm - num[max];</span><br><span class="line">		&#125;</span><br><span class="line">		consensus[nn] = &apos;\0&apos;;</span><br><span class="line">		cout &lt;&lt; consensus &lt;&lt; &apos;\n&apos; &lt;&lt; err &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：找出每个DNA序列的第i个的碱基，找到出现最多的项，即为Consensus String的第i个碱基<br>在算法竞赛入门经典里看到使用常量数组的方法，可以有效减少switch与if的使用，感觉很好用（虽然记得学校教材上也讲到过，但是当时没那么印象深刻）。于是这次在ACGT[]=”ACGT”这里用到了，真心好用呀。</p>
+<p>题目：算法竞赛入门经典 3-8/UVa202：Repeating Decimals<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">//UVa202 - Repeating Decimals</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define MAX 502</span><br><span class="line">unsigned Decimal[MAX];//存放各个小数</span><br><span class="line">unsigned Remainder[MAX];//存放各位小数对应的余数</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	unsigned numerator, denominator;//分子、分母</span><br><span class="line">	const unsigned &amp;de = denominator;</span><br><span class="line">	int temp, digit;//由于分母可以正可以负,先输入temp至int再转为unsigned,digit记录位数(或者说是位数-1)</span><br><span class="line">	while (cin &gt;&gt; numerator) &#123;</span><br><span class="line">		cin &gt;&gt; temp;</span><br><span class="line">		digit = 0;</span><br><span class="line">		cout &lt;&lt; numerator &lt;&lt; &apos;/&apos; &lt;&lt; temp &lt;&lt; &quot; = &quot;;</span><br><span class="line">		if (temp &lt; 0)temp = -temp, cout &lt;&lt; &apos;-&apos;;</span><br><span class="line">		denominator = (unsigned)temp;</span><br><span class="line">		cout &lt;&lt; numerator / de &lt;&lt; &apos;.&apos;;</span><br><span class="line">		Decimal[0] = (numerator % de * 10) / de;</span><br><span class="line">		Remainder[0] = (numerator % de * 10) % de;</span><br><span class="line">		while (digit &lt; MAX) &#123;</span><br><span class="line">			unsigned di, t = Remainder[digit++] * 10;</span><br><span class="line">			Decimal[digit] = t / de;</span><br><span class="line">			Remainder[digit] = t % de;</span><br><span class="line">			for (di = 0;di &lt; digit;++di)</span><br><span class="line">				if (Decimal[di] == Decimal[digit] &amp;&amp; Remainder[di] == Remainder[digit])</span><br><span class="line">					break;</span><br><span class="line">			if (di &lt; digit) &#123;</span><br><span class="line">				for (int i = 0;i &lt; di;++i)</span><br><span class="line">					cout &lt;&lt; Decimal[i];</span><br><span class="line">				cout &lt;&lt; &apos;(&apos;;</span><br><span class="line">				if (digit - di &lt;= 50)</span><br><span class="line">					for (int i = di;i &lt; digit;++i)</span><br><span class="line">						cout &lt;&lt; Decimal[i];</span><br><span class="line">				else &#123;</span><br><span class="line">					for (int i = 0;i &lt; 50;++i)</span><br><span class="line">						cout &lt;&lt; Decimal[di+i];</span><br><span class="line">					cout &lt;&lt; &quot;...&quot;;</span><br><span class="line">				&#125;</span><br><span class="line">				cout &lt;&lt; &quot;)\n\t&quot; &lt;&lt; digit - di &lt;&lt; &quot; = number of digits in repeating cycle\n\n&quot;;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (digit == MAX) &#123; cerr &lt;&lt; &quot;Error:1\n&quot;;exit(0); &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：算出下一位小数b并与之前每一位小数比较，如果找到一位小数a，a的小数值与对应的余数均与b的小数与余数相等，则这两个数a—-b之间的就是循环部分。想不出好办法，不是所有小数都是像1/3一样从第一位开始洗脑循环。</p>
+<p>题目：算法竞赛入门经典 3-9/UVa10340：All in All<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//UVa10340 - All in All</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define M 101000</span><br><span class="line">char s[M], t[M], *ps, *pt;//s短t长</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while (std::cin&gt;&gt;s&gt;&gt;t) &#123;</span><br><span class="line">//为什么scanf按了crtl^z还是不停止，还得再按一下回车才能结束程序。。。</span><br><span class="line">//于是使用scanf导致提交总是超时，因为程序还在等着输入</span><br><span class="line">//而cin只要按一下crtl^z再回车，马上就结束了。不懂。。</span><br><span class="line">//好吧，于是虽然试图尽量少用cin cout，但是c的东西还是不大会用，不熟练</span><br><span class="line">		ps = s, pt = t;</span><br><span class="line">		while (*ps != &apos;\0&apos;) &#123;</span><br><span class="line">			while (*pt != *ps&amp;&amp;*pt != &apos;\0&apos;)++pt;</span><br><span class="line">			if (*pt == &apos;\0&apos;) break;</span><br><span class="line">			++ps,++pt;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(*ps == &apos;\0&apos; ? &quot;Yes\n&quot; : &quot;No\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：不难（上面用cin下面用printf是不是有点违和。。）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/11121.html" rel="next" title="俄罗斯方块">
+                <i class="fa fa-chevron-left"></i> 俄罗斯方块
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/21702.html" rel="prev" title="算法竞赛入门经典 3-10UVa1587 3-11UVa1588">
+                算法竞赛入门经典 3-10UVa1587 3-11UVa1588 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

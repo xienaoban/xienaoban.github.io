@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO（我也是在网上找到的pdf，但不记得是从哪里搜刮到的了，就重新上传了一遍） PS：第一次写博客分享我的代码，不知道我对csdn的使用姿势对不对。想不出来要说些什么哈o(^▽^)o，那就直接开工，先写一篇试试。 题目：算法竞赛入门经典 3-1/UVa1585：Score 代码： 123456789101112131415">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225">
+<meta property="og:url" content="http://yoursite.com/posts/45638.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO（我也是在网上找到的pdf，但不记得是从哪里搜刮到的了，就重新上传了一遍） PS：第一次写博客分享我的代码，不知道我对csdn的使用姿势对不对。想不出来要说些什么哈o(^▽^)o，那就直接开工，先写一篇试试。 题目：算法竞赛入门经典 3-1/UVa1585：Score 代码： 123456789101112131415">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/posts/45638/20160715212702306.jpg">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225">
+<meta name="twitter:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO（我也是在网上找到的pdf，但不记得是从哪里搜刮到的了，就重新上传了一遍） PS：第一次写博客分享我的代码，不知道我对csdn的使用姿势对不对。想不出来要说些什么哈o(^▽^)o，那就直接开工，先写一篇试试。 题目：算法竞赛入门经典 3-1/UVa1585：Score 代码： 123456789101112131415">
+<meta name="twitter:image" content="http://yoursite.com/posts/45638/20160715212702306.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/45638.html">
+
+
+
+
+
+  <title>算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/45638.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-15T20:54:40+08:00">
+                2016-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书上具体所有题目：<a href="http://pan.baidu.com/s/1hssH0KO（我也是在网上找到的pdf，但不记得是从哪里搜刮到的了，就重新上传了一遍）" target="_blank" rel="noopener">http://pan.baidu.com/s/1hssH0KO（我也是在网上找到的pdf，但不记得是从哪里搜刮到的了，就重新上传了一遍）</a></p>
+<p>PS：第一次写博客分享我的代码，不知道我对csdn的使用姿势对不对。想不出来要说些什么哈o(^▽^)o，那就直接开工，先写一篇试试。</p>
+<p>题目：算法竞赛入门经典 3-1/UVa1585：Score</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#define MAX 83</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int num;</span><br><span class="line">	std::cin &gt;&gt; num;</span><br><span class="line">	while (num--) &#123;</span><br><span class="line">		char str[MAX], *ch = str;</span><br><span class="line">		int score = 0, sum = 0;</span><br><span class="line">		std::cin &gt;&gt; str;</span><br><span class="line">		while (*ch != &apos;\0&apos;)</span><br><span class="line">			sum += (*(ch++) == &apos;X&apos; ? score = 0 : ++score);</span><br><span class="line">		std::cout &lt;&lt; sum &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：MAX定为83而不是题目限制的80是为了传说中的鲁棒性，其他好像没什么好说的。。。下一题。。</p>
+<p>题目：算法竞赛入门经典 3-2/UVa1586：Molar Mass<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;iomanip&gt;</span><br><span class="line"></span><br><span class="line">inline float f(char c)//得到分子量</span><br><span class="line">&#123;</span><br><span class="line">	switch (c) &#123;</span><br><span class="line">	case &apos;C&apos;:return 12.01;</span><br><span class="line">	case &apos;H&apos;:return 1.008;</span><br><span class="line">	case &apos;O&apos;:return 16.00;</span><br><span class="line">	case &apos;N&apos;:return 14.01;</span><br><span class="line">	default:std::cerr &lt;&lt; &quot;error!\n&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	std::cout &lt;&lt; &apos;\&apos;&apos; &lt;&lt; c &lt;&lt; &apos;\&apos;&apos;;</span><br><span class="line">	exit(0);</span><br><span class="line">&#125;</span><br><span class="line">inline bool g(char c)//判断char的内容是不是数字</span><br><span class="line">&#123;</span><br><span class="line">	if (c &gt;= &apos;0&apos;&amp;&amp;c &lt;= &apos;9&apos;) return 1;return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int num;//判断输入个数</span><br><span class="line">	std::cin &gt;&gt; num;</span><br><span class="line">	std::cout &lt;&lt; std::fixed &lt;&lt; std::setprecision(3);</span><br><span class="line">	while (num--) &#123;</span><br><span class="line">		float sum = 0;</span><br><span class="line">		char str[83], *ch = str;</span><br><span class="line">		std::cin&gt;&gt;str;</span><br><span class="line">		while (*ch != &apos;\0&apos;) &#123;//此情况下不是&apos;\0&apos;就是字母</span><br><span class="line">			int n = 0;</span><br><span class="line">			char c = *ch;</span><br><span class="line">			while (g(*++ch))//是数字</span><br><span class="line">				n = n * 10 + *ch - &apos;0&apos;;</span><br><span class="line">			if (!n) n = 1;</span><br><span class="line">			sum += f(c)*n;//若不是字母则报错结束程序</span><br><span class="line">		&#125;</span><br><span class="line">		std::cout &lt;&lt; sum &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：这次写了注释，好像也没什么好说的了。。不过对于inline，我知道编译器如果觉得这个函数不够小巧，会忽略inline，但我一直不知道要多小才能编译器不忽略inline。然后因为程序比较小，所以没有给两个函数取名字，直接叫f和g。</p>
+<p>题目：算法竞赛入门经典 3-3/UVa1225：Digit Counting<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int num;</span><br><span class="line">	std::cin &gt;&gt; num;</span><br><span class="line">	while (num--) &#123;</span><br><span class="line">		int n, n2,d=1, times[10] = &#123; 0 &#125;;//n:输入的数字,n2:备份n,times:保存各数字出现的次数</span><br><span class="line">		do std::cin &gt;&gt; n;while (n &gt;= 10000);</span><br><span class="line">		n2 = n;</span><br><span class="line">		while (n2 /= 10) ++d;//d为位数</span><br><span class="line">		n2 = n;</span><br><span class="line">		int t = 1, sum = 0;//t不断乘以10,sum代表所有数字一样多的部分</span><br><span class="line">		while (d--) &#123;//f代表某一位</span><br><span class="line">			int f = n2 % 10;</span><br><span class="line">			n2 /= 10;</span><br><span class="line">			sum += n2*t;</span><br><span class="line">			times[0] += (n2 - 1)*t;//0太奇葩，总比别人少一个，单独算</span><br><span class="line">			for (int i = 0;i &lt; f;++i) times[i] += t;</span><br><span class="line">			times[f] += 1 + n%t;//当前位最大数字分开算</span><br><span class="line">			t *= 10;</span><br><span class="line">		&#125;</span><br><span class="line">		std::cout &lt;&lt; times[0];</span><br><span class="line">		for (int i = 1;i &lt; 10;++i)</span><br><span class="line">			std::cout &lt;&lt; &apos; &apos; &lt;&lt; (times[i] += sum);</span><br><span class="line">		std::cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：这题我看过网上其他人的做法，他们竟然真的把这个长长的数字串写进了字符数组，然后再遍历数组数一遍。总感觉这字符数组长度得爆炸而且慢。</p>
+<p>这题的规律是：（划横线的是具体的那个数字）（以123为例）<img src="/posts/45638/20160715212702306.jpg" alt></p>
+<p>第一列也就是12<em>1的那列，代表（除了零）所有数共有的部分（就比如123的前100中每个数字出现的一样多），在代码里用sum表示，比如对于十位上的每个数字，都出现了123/(10^2)</em>10次</p>
+<p>第二列 也就是XXX各+1那列，代表特殊的那几个地方，就比如十位上数字是2，那么那超过100的23（准确说是20，个位上3不算在里面的原因在最后一列）就在此计算，但此计算不包括2</p>
+<p>而最后一列又是最特殊的，比如十位上的2的与别人不同的地方在此计算，十位2开头的数120、121、122、123，十位上的2出现（123%10+1）=4次</p>
+<p>零我是分开单独算的，因为它比较奇葩，就比如1、2、3而不是01、02、03，十位上的0是不写的，其实规律一样的。</p>
+<p>嗯、工科男表达能力太差了。。感觉我越说越复杂。。。果然多写写博客练练表达是有好处的。</p>
+<p>这次就上传这几题，看题目难度和代码长度来判断每次上传多少题目。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/24341.html" rel="prev" title="算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232">
+                算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

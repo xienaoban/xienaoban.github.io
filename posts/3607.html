@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM笔记 - 排序小技巧">
+<meta property="og:url" content="http://yoursite.com/posts/3607.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.923Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ACM笔记 - 排序小技巧">
+<meta name="twitter:description" content="#Description一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。 例如一个数组${1,3,6,5,2,4,1,">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/3607.html">
+
+
+
+
+
+  <title>ACM笔记 - 排序小技巧 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3607.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ACM笔记 - 排序小技巧</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T16:33:02+08:00">
+                2017-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Description<br>一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j … 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。</p>
+<p>例如一个数组${1,3,6,5,2,4,1,9,0}$，一共9个数字，下标0~8。要求：<br>每次取一个区间，计算区间内$(最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+…$的值。很容易想到对区间排个序，即可方便获得最大、次大值等。<br>对1~5排序：${2,3,4,5,6}$<br>对1~6排序：${1,2,3,4,5,6}$<br>对2~5排序：${2,4,5,6}$<br>可以看出2、5、6始终在范围内，但每次都要针对所选区间重新排序，很麻烦。<br>既然大部分数据一直出现在范围内，现在就希望能够一次排序，应对所有情况。</p>
+<p>#Key<br>继续使用上述的例子：$Array = {1,3,6,5,2,4,1,9,0}$<br>开个新数组作其索引：$Index = {0,1,2,3,4,5,6,7,8}$<br>令索引数组按照$Array$的大小关系排序，得$Index = {8,0,6,4,1,5,3,2,7}$</p>
+<p>对于区间[1, 5]：从左向右找出第一个在[1, 5]的下标即为最小值：8不符合、0不符合、6不符合，4符合，那么最小值就是$Array[4] = 2$，次大值就是$Array[1] = 3$ …</p>
+<p>即每次只需检测排序后当前位的数字的下标是否在该区间内即可。</p>
+<p>#Sample<br>题目：<a href="https://hihocoder.com/problemset/problem/1384" target="_blank" rel="noopener">https://hihocoder.com/problemset/problem/1384</a><br>一道贪心的题，期间需要对下标i到j、i到j+k之间的数字分别排序。是别人家的代码（<a href="http://www.bubuko.com/infodetail-1772326.html" target="_blank" rel="noopener">他的原文链接，虽然我也不知道他是不是转别人的</a>），就是在这学到的技巧。注意观察judge函数与judge2函数的差异，judge2函数即实现了上述排序思想。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">#include &lt;cstdio&gt;  </span><br><span class="line">#include &lt;cstring&gt;  </span><br><span class="line">#include &lt;algorithm&gt;  </span><br><span class="line">#include &lt;cmath&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">typedef long long int ll;  </span><br><span class="line">ll m,n,k;  </span><br><span class="line">ll a[500050];  </span><br><span class="line">ll b[500050];  </span><br><span class="line">int cnt=0;  </span><br><span class="line">inline bool cmp(int x,int y)  </span><br><span class="line">&#123;  </span><br><span class="line">    return a[x]&lt;a[y];  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int pos=0;  </span><br><span class="line">    while(l+pos&lt;=r)b[pos]=a[l+pos],pos++;  </span><br><span class="line">    sort(b,b+pos);  </span><br><span class="line">    pos--;  </span><br><span class="line">    int mid=(pos-1)/2;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(int i=0; i&lt;=mid&amp;&amp;i&lt;m; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        res+=(b[i]-b[pos-i])*(b[i]-b[pos-i]);  </span><br><span class="line">        if(res&gt;k)  </span><br><span class="line">            return false;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">void init(int l,int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    cnt=0;  </span><br><span class="line">    for(int i=l; i&lt;=r; i++)b[cnt++]=i;  </span><br><span class="line">    sort(b,b+cnt,cmp);  </span><br><span class="line">&#125;  </span><br><span class="line">bool judge2(int r)  </span><br><span class="line">&#123;  </span><br><span class="line">    int i,j,kk;  </span><br><span class="line">    ll res=0;  </span><br><span class="line">    for(i=0,j=cnt-1,kk=m; kk; i++,j--,kk--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[i]&gt;r)i++;  </span><br><span class="line">        while(i&lt;j&amp;&amp;b[j]&gt;r)j--;  </span><br><span class="line">        if(i&gt;=j)break;  </span><br><span class="line">        res+=(a[b[i]]-a[b[j]])*(a[b[i]]-a[b[j]]);  </span><br><span class="line">        if(res&gt;k)break;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return res&lt;=k;  </span><br><span class="line">&#125;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    int T;  </span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);  </span><br><span class="line">    while(T--)  </span><br><span class="line">    &#123;  </span><br><span class="line">        scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;k);  </span><br><span class="line">        for(int i=0; i&lt;n; i++)  </span><br><span class="line">            scanf(&quot;%lld&quot;,&amp;a[i]);  </span><br><span class="line">        int ans=0;  </span><br><span class="line">        int l=0;  </span><br><span class="line">        while(l&lt;n)  </span><br><span class="line">        &#123;  </span><br><span class="line">            int kk=1;  </span><br><span class="line">            while(kk+l&lt;n&amp;&amp;judge(l,l+kk))  </span><br><span class="line">                kk*=2;  </span><br><span class="line">            int first=l+kk/2,last=l+kk-1&lt;n?l+kk-1:n-1;  </span><br><span class="line">            init(l,last);  </span><br><span class="line">            int mid;  </span><br><span class="line">            int pos=l;  </span><br><span class="line">            while(first&lt;=last)  </span><br><span class="line">            &#123;  </span><br><span class="line">                if(judge2(mid=(first+last)/2))  </span><br><span class="line">                &#123;  </span><br><span class="line">                    first=mid+1;  </span><br><span class="line">                    pos=mid;  </span><br><span class="line">                &#125;  </span><br><span class="line">                else  </span><br><span class="line">                    last=mid-1;  </span><br><span class="line">            &#125;  </span><br><span class="line">            l=pos+1;  </span><br><span class="line">            ans++;  </span><br><span class="line">        &#125;  </span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/51189.html" rel="next" title="Codeforces 746G - New Roads">
+                <i class="fa fa-chevron-left"></i> Codeforces 746G - New Roads
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/31985.html" rel="prev" title="Codeforces 786A - Berzerk">
+                Codeforces 786A - Berzerk <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

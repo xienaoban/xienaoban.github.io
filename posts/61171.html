@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。  代码：（Accepted，0.100s）1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience">
+<meta property="og:url" content="http://yoursite.com/posts/61171.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。  代码：（Accepted，0.100s）1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience">
+<meta name="twitter:description" content="题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。  代码：（Accepted，0.100s）1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/61171.html">
+
+
+
+
+
+  <title>算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/61171.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-31T15:25:44+08:00">
+                2017-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。<br>注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。</p>
+<hr>
+<p>代码：（Accepted，0.100s）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">//UVa127 - &quot;Accordian&quot; Patience</span><br><span class="line">//Accepted 0.100s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#define NUM 52</span><br><span class="line">#define BIAS 1</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct card &#123;</span><br><span class="line">	char a, b;</span><br><span class="line">	bool operator ==(card&amp; that) &#123;</span><br><span class="line">		return a == that.a || b == that.b;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct stack &#123;</span><br><span class="line">	card st[NUM + 2], *p;</span><br><span class="line">	void ini() &#123;</span><br><span class="line">		p = st + 1;</span><br><span class="line">	&#125;</span><br><span class="line">	card&amp; pop() &#123;</span><br><span class="line">		if (p != st) return *(p--);</span><br><span class="line">		return *p;</span><br><span class="line">	&#125;</span><br><span class="line">	card&amp; top() &#123;</span><br><span class="line">		return *p;</span><br><span class="line">	&#125;</span><br><span class="line">	void push(card&amp; c) &#123;</span><br><span class="line">		*++p = c;</span><br><span class="line">	&#125;</span><br><span class="line">	int size() &#123;</span><br><span class="line">		return p - st;</span><br><span class="line">	&#125;</span><br><span class="line">	bool empty() &#123;</span><br><span class="line">		return p == st;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;cards[NUM + 3];</span><br><span class="line"></span><br><span class="line">struct list &#123;</span><br><span class="line">	stack *ls[NUM + 2];</span><br><span class="line">	list() &#123;</span><br><span class="line">		for (int i(0);i &lt; NUM + 1;++i)</span><br><span class="line">			ls[i] = cards + i;</span><br><span class="line">		ls[NUM + 1] = nullptr;</span><br><span class="line">	&#125;</span><br><span class="line">	void erease(int n) &#123;</span><br><span class="line">		while (ls[n] != nullptr) &#123;</span><br><span class="line">			ls[n] = ls[n + 1];</span><br><span class="line">			++n;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	stack&amp; operator [](int i) &#123;</span><br><span class="line">		if (i &gt;= 0) return *ls[i];</span><br><span class="line">		return *ls[0];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 129)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	cards[0].st[1].a = cards[0].st[1].b = &apos;X&apos;;			// 第0个stack的top里储存一个没用的card，使得没有一张卡片与之相等，以方便以后处理前两张左边没牌的牌；</span><br><span class="line">	while ((cards[1].st[1].a = getchar()) != &apos;#&apos;) &#123;</span><br><span class="line">		cards[1].st[1].b = getchar();</span><br><span class="line">		getchar();</span><br><span class="line">		for (int i(0);i &lt; NUM + 3;++i) cards[i].ini();	// 每个stack里将都只有一张卡片，这个ini就是把top的指针指向1</span><br><span class="line">		for (int i(2);i &lt; NUM + 1;++i) &#123;				// 数据全部直接作为top读取到stack里面</span><br><span class="line">			cards[i].top().a = getchar();</span><br><span class="line">			cards[i].top().b = getchar();</span><br><span class="line">			getchar();</span><br><span class="line">		&#125;</span><br><span class="line">		list pile;										//处理部分，直接模拟，懒得另写函数了</span><br><span class="line">		int num;</span><br><span class="line">		for (num = 2;&amp;pile[num];) &#123;						// num从2开始，毕竟第一个数据怎么样也移动不了（接下来num再跳回1就懒得管他了）</span><br><span class="line">			if (pile[num].top() == pile[num - 3].top()) &#123;</span><br><span class="line">				pile[num - 3].push(pile[num].pop());</span><br><span class="line">				if (pile[num].empty()) pile.erease(num);</span><br><span class="line">				num -= 3;</span><br><span class="line">			&#125;</span><br><span class="line">			else if (pile[num].top() == pile[num - 1].top()) &#123;</span><br><span class="line">				pile[num - 1].push(pile[num].pop());</span><br><span class="line">				if (pile[num].empty()) pile.erease(num);</span><br><span class="line">				--num;</span><br><span class="line">			&#125;</span><br><span class="line">			else ++num;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;%d pile&quot;, num - 1);</span><br><span class="line">		if (num != 2) printf(&quot;s&quot;);</span><br><span class="line">		printf(&quot; remaining:&quot;);</span><br><span class="line">		for (int i(1);i &lt; num;++i) printf(&quot; %d&quot;, pile[i].size());</span><br><span class="line">		puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>分析：差不多又是一遍过，而且只用了0.1s，竟然挤进了UVa本题Ranking的前20，虽然题目确实很简单就是了，还是开心的不行。<br>我的思路是安放52个栈，直接进行模拟操作。从第二张牌开始（毕竟第一张牌不可能向左移动）往下判断，直到到达末尾。<br>具体流程是，若当前牌可以左移，移之，并且下一个进行判断的牌还是它（因为左侧的都是已经完成的不可能再有可移动的牌了，所以无需重新从最左侧开始检索）；反之此牌没法动了，则判断下一张牌。<br>感觉这不能叫遍历，毕竟期间会向左移动牌，应该算是迭代吧。<br>要注意的是输出格式！如下图所示，</p>
+<blockquote>
+<p>6 piles remaining: 40 8 1 1 1 1<br>1 pile remaining: 52</p>
+</blockquote>
+<p>pile/piles的单复数问题。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/58091.html" rel="next" title="算法竞赛入门经典(第2版) 6-8UVa806 - Spatial Structures">
+                <i class="fa fa-chevron-left"></i> 算法竞赛入门经典(第2版) 6-8UVa806 - Spatial Structures
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/42661.html" rel="prev" title="NumPy基础操作">
+                NumPy基础操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

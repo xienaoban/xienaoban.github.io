@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC] 激活函数 Sigmoid不怎么用了.$a = g(z) = \sigma(z) = \frac{1}{1+e^{-z}} \ g’(z) = a(1-a)$  Tanh比Sigmoid好. 因为其值域为(-1, 1), 计算得a的平均值靠近0, 更好的centers the data(不知道怎么翻译比较好), 有利于下一层的计算.$a = g(z) = tanh(z) = \frac{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Deep Learning笔记 神经网络一些要点">
+<meta property="og:url" content="http://yoursite.com/posts/12524.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="[TOC] 激活函数 Sigmoid不怎么用了.$a = g(z) = \sigma(z) = \frac{1}{1+e^{-z}} \ g’(z) = a(1-a)$  Tanh比Sigmoid好. 因为其值域为(-1, 1), 计算得a的平均值靠近0, 更好的centers the data(不知道怎么翻译比较好), 有利于下一层的计算.$a = g(z) = tanh(z) = \frac{">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/posts/12524/1.png">
+<meta property="og:image" content="http://yoursite.com/posts/12524/2.png">
+<meta property="og:image" content="http://yoursite.com/posts/12524/3.png">
+<meta property="og:image" content="http://yoursite.com/posts/12524/4.png">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Deep Learning笔记 神经网络一些要点">
+<meta name="twitter:description" content="[TOC] 激活函数 Sigmoid不怎么用了.$a = g(z) = \sigma(z) = \frac{1}{1+e^{-z}} \ g’(z) = a(1-a)$  Tanh比Sigmoid好. 因为其值域为(-1, 1), 计算得a的平均值靠近0, 更好的centers the data(不知道怎么翻译比较好), 有利于下一层的计算.$a = g(z) = tanh(z) = \frac{">
+<meta name="twitter:image" content="http://yoursite.com/posts/12524/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/12524.html">
+
+
+
+
+
+  <title>Coursera Deep Learning笔记 神经网络一些要点 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/12524.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Deep Learning笔记 神经网络一些要点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-31T17:49:20+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h1 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h1><ol>
+<li><p>Sigmoid<br>不怎么用了.<br>$a = g(z) = \sigma(z) = \frac{1}{1+e^{-z}} \ g’(z) = a(1-a)$<br><img src="/posts/12524/1.png" alt="Sigmoid"></p>
+</li>
+<li><p>Tanh<br>比Sigmoid好. 因为其值域为(-1, 1), 计算得a的平均值靠近0, 更好的centers the data(不知道怎么翻译比较好), 有利于下一层的计算.<br>$a = g(z) = tanh(z) = \frac{e^{z}-e^{-z}}{e^{z}+e^{-z}} \ g’(z) = 1 - (tanh(z))^2$<br><img src="/posts/12524/2.png" alt="Tanh"></p>
+</li>
+<li><p>ReLU(Rectified Linear Unit)<br>收敛快.<br>$a = g(z) = max(0, z) \ g’(z) =<br>\begin{cases}<br>0         &amp;\text{if } z<0 1 \\ &\text{if } z>0 \<br>undefined &amp;\text{if } z=0<br>\end{cases}$<br><img src="/posts/12524/3.png" alt="ReLU"></0></p>
+</li>
+<li><p>Leaky ReLU<br>比ReLU更优, 但不怎么用?<br>$a = g(z) = max(0.01z, z) \ g’(z) =<br>\begin{cases}<br>0.01         &amp;\text{if } z<0 1 \\ &\text{if } z>0 \<br>undefined &amp;\text{if } z=0<br>\end{cases}$<br><img src="/posts/12524/4.png" alt="Leaky ReLU"></0></p>
+</li>
+</ol>
+<h1 id="为什么需要一个非线性的激活函数-Non-linear-Activation-Function"><a href="#为什么需要一个非线性的激活函数-Non-linear-Activation-Function" class="headerlink" title="为什么需要一个非线性的激活函数(Non-linear Activation Function)"></a>为什么需要一个非线性的激活函数(Non-linear Activation Function)</h1><p>因为如果是线性的, 即直接令 $A = g(Z) = Z$ 那么对于每一层，都有:<br>$$<br>a^{[i]} = z^{[i]} = w^{[i]}a^{[i-1]} + b^{[i]} \tag{*}<br>$$</p>
+<p>则对于第 $i+1$ 层, 将 $(*)$ 带入: </p>
+<p>$$<br>\begin{aligned}<br>a^{[i+1]} &amp; = z^{[i+1]} \<br>&amp; = w^{[i+1]}a^{[i]} + b^{[i+1]} \<br>&amp; = w^{[i+1]}(w^{[i]}a^{[i-1]} + b^{[i]} + b^{[i+1]} \<br>&amp; = (w^{[i+1]}w^{[i]})a^{[i-1]} + (w^{[i+1]}b^{[i]}+b^{[i+1]}) \<br>&amp; = w’a^{[i-1]} + b’<br>\end{aligned}<br>$$</p>
+<p>即最终的模型相当于一个标准的, 没有隐藏层的逻辑回归. 即无论你的模型有多少层，最终效果也相当于只有一层。</p>
+<p>如果要用线性激活函数, 一般也只用在回归问题的输出层(预测一些结果为实数的值), 隐藏层还是用 tanh, ReLU 等. </p>
+<h1 id="为什么神经网络要随机初始化参数-而逻辑回归不须要"><a href="#为什么神经网络要随机初始化参数-而逻辑回归不须要" class="headerlink" title="为什么神经网络要随机初始化参数(而逻辑回归不须要)"></a>为什么神经网络要随机初始化参数(而逻辑回归不须要)</h1><p>如果神经网络不随机初始化, 比如 w, b 都初始化为0, 则每次对隐藏层反向传播的时候计算得的导数 $dz^{[i]}_1$ , $dz^{[i]}_2$ , $dz^{[i]}_3$ 等相同, $dw$ 也是, 每个隐藏层单元都计算着一模一样的式子(不过b不受这种Symmetry Breaking Problem影响, 可以初始化为0). </p>
+<p>而对于逻辑回归, 它没有隐藏层, 其导数取决于x, 问题不大.</p>
+<p>随机初始化时参数范围可以设置在0~0.01(对于 sigmoid 和 tanh 而言), 如果参数过大(比如w=100) 在 sigmoid 或 tanh 的函数图像上可以看到参数十分靠右，导致导数趋于零, 梯度趋于零, 导致收敛很慢.</p>
+<h1 id="向前向后传播"><a href="#向前向后传播" class="headerlink" title="向前向后传播"></a>向前向后传播</h1><p>向前传播: </p>
+<p>$$<br>\begin{aligned}<br>&amp; \text{Input: } a^{[l-1]} \<br>&amp; \text{Output: } a^{[l]} , \text{Cache: } z^{[l]} \<br>&amp; z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]} &amp;&amp; Z^{[l]} = W^{[l]}A^{[l-1]} + b^{[l]} \<br>&amp; a^{[l]} = g^{[l]}(z^{[l]}) &amp;&amp; A^{[l]} = g^{[l]}(Z^{[l]}) \<br>\end{aligned}<br>$$</p>
+<p>向后传播: </p>
+<p>$$<br>\begin{aligned}<br>&amp; \text{Input: } da^{[l]} \<br>&amp; \text{Output: } da^{[l-1]} , dW^{[l]} , db^{[l]} \<br>&amp; dz^{[l]} = da^{[l]}<em>g^{[l]’}(z^{[l]}) &amp;&amp; dZ^{[l]} = dA^{[l]}</em>g^{[l]’}(Z^{[l]}) \<br>&amp; dW^{[l]} = dz^{[l]}a^{[l-1]} &amp;&amp; dW^{[l]} = \frac{1}{m} dZ^{[l]}A^{[l-1]^T} \<br>&amp; db^{[l]} = dz^{[l]} &amp;&amp; db^{[l]} = \frac{1}{m} np.sum(dZ^{[l]}, axis=1, keepdims=True) \<br>&amp; da^{[l-1]} = w^{[l]^T}dz^{[l]} &amp;&amp; dA^{[l-1]} = W^{[l]^T}dZ^{[l]}<br>\end{aligned}<br>$$</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/10178.html" rel="next" title="JavaScript几何星空连线(鼠标跟随)完善">
+                <i class="fa fa-chevron-left"></i> JavaScript几何星空连线(鼠标跟随)完善
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/41302.html" rel="prev" title="Coursera Deep Learning笔记 正则化与梯度相关">
+                Coursera Deep Learning笔记 正则化与梯度相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#激活函数"><span class="nav-number">1.</span> <span class="nav-text">激活函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要一个非线性的激活函数-Non-linear-Activation-Function"><span class="nav-number">2.</span> <span class="nav-text">为什么需要一个非线性的激活函数(Non-linear Activation Function)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么神经网络要随机初始化参数-而逻辑回归不须要"><span class="nav-number">3.</span> <span class="nav-text">为什么神经网络要随机初始化参数(而逻辑回归不须要)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#向前向后传播"><span class="nav-number">4.</span> <span class="nav-text">向前向后传播</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

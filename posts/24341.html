@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 题目：算法竞赛入门经典 3-4/UVa455：Periodic Strings 代码： 12345678910111213141516171819202122//UVa455#include&amp;lt;iostream&amp;gt;int main()&amp;#123;	char str[82];	int num;	std::cin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232">
+<meta property="og:url" content="http://yoursite.com/posts/24341.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 题目：算法竞赛入门经典 3-4/UVa455：Periodic Strings 代码： 12345678910111213141516171819202122//UVa455#include&amp;lt;iostream&amp;gt;int main()&amp;#123;	char str[82];	int num;	std::cin">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232">
+<meta name="twitter:description" content="书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 题目：算法竞赛入门经典 3-4/UVa455：Periodic Strings 代码： 12345678910111213141516171819202122//UVa455#include&amp;lt;iostream&amp;gt;int main()&amp;#123;	char str[82];	int num;	std::cin">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/24341.html">
+
+
+
+
+
+  <title>算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/24341.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典 3-4UVa455 3-5UVa227 3-6UVa232</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-18T12:17:17+08:00">
+                2016-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>书上具体所有题目：<a href="http://pan.baidu.com/s/1hssH0KO" target="_blank" rel="noopener">http://pan.baidu.com/s/1hssH0KO</a></p>
+<p>题目：算法竞赛入门经典 3-4/UVa455：Periodic Strings</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//UVa455</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char str[82];</span><br><span class="line">	int num;</span><br><span class="line">	std::cin &gt;&gt; num;</span><br><span class="line">	while (num--) &#123;</span><br><span class="line">		std::cin&gt;&gt;str;</span><br><span class="line">		char *ps = str;</span><br><span class="line">		while (*++ps != &apos;\0&apos;) &#123;</span><br><span class="line">			while (*ps != *str &amp;&amp; *ps != &apos;\0&apos;) ++ps;</span><br><span class="line">			if (*ps == &apos;\0&apos;) break;//循环长度即本身</span><br><span class="line">			char *begin = str, *end = ps;</span><br><span class="line">			while (*++begin == *++end);</span><br><span class="line">			if (*end == &apos;\0&apos;&amp;&amp;!((begin - str) % (ps - str))) break;//&amp;&amp;的后面的部分为了排除形如abcabcab的情况</span><br><span class="line">		&#125;</span><br><span class="line">		std::cout &lt;&lt; ps - str &lt;&lt; &apos;\n&apos;;</span><br><span class="line">		if (num) std::cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：首先找到与输入的字符串的第一个字符相等的字符，然后判断是否循环，不是循环则继续找下一个与的哥字符相等的字符，直到读入’\0’，则循环即本身</p>
+<p>而判断从第一个字符到此字符的前一个字符是否构成循环的办法是，此字符与首字符对应的下一个、下两个字符进行比较，直到遇到’\0’，则说明有可能是相等的</p>
+<p>如</p>
+<p>abcdabcdabcdabcdabcdabcd</p>
+<p>​    ↑向右一个个比较</p>
+<p>找到可能的循环点</p>
+<p>​    ↓向右一个个比较</p>
+<p>​    abcdabcdabcdabcdabcdabcd</p>
+<p>但此比较会漏掉如abcabcabcabcabcab的情况，最后一个ab导致整个字符串无循环，用!((begin - str) % (ps - str))来检查是不是循环了整数倍</p>
+<p>题目：算法竞赛入门经典 3-5/UVa227：Puzzle</p>
+<p>代码：（已更新为accept版本）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">//UVa227</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//freopen(&quot;test.in&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	//freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">	char puzzle[5][6];</span><br><span class="line">	int x, y, num = 0;</span><br><span class="line">	char step;</span><br><span class="line">	while (cin.getline(puzzle[0], 6) &amp;&amp; puzzle[0][0] != &apos;Z&apos;) &#123;</span><br><span class="line">		if (num) cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">		bool flag = 0;//操作失败</span><br><span class="line">		for (int i = 1;i &lt; 5;++i) cin.getline(puzzle[i], 6);</span><br><span class="line">		for (x = 0;x &lt; 5;++x) &#123;//找出空格位置</span><br><span class="line">			for (y = 0;y &lt; 5;++y)</span><br><span class="line">				if (puzzle[x][y] == &apos; &apos;) break;</span><br><span class="line">			if (y != 5) break;</span><br><span class="line">		&#125;</span><br><span class="line">		while ((cin &gt;&gt; step) &amp;&amp; step != &apos;0&apos;) &#123;</span><br><span class="line">			int cx = x, cy = y;//计算对应字母的坐标</span><br><span class="line">			switch (step) &#123;</span><br><span class="line">			case &apos;A&apos;:cx -= 1;break;</span><br><span class="line">			case &apos;B&apos;:cx += 1;break;</span><br><span class="line">			case &apos;L&apos;:cy -= 1;break;</span><br><span class="line">			case &apos;R&apos;:cy += 1;</span><br><span class="line">			&#125;</span><br><span class="line">			if (cx &gt;= 0 &amp;&amp; cx &lt;= 4 &amp;&amp; cy &gt;= 0 &amp;&amp; cy &lt;= 4) &#123;//替换字母和空格</span><br><span class="line">				puzzle[x][y] = puzzle[cx][cy];</span><br><span class="line">				puzzle[x = cx][y = cy] = &apos; &apos;;//同时x、y变化为新的地址</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;//操作失败的情况</span><br><span class="line">				while ((cin &gt;&gt; step) &amp;&amp; step != &apos;0&apos;);//吸收非法步骤后面的所有步骤</span><br><span class="line">				flag = 1;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; &quot;Puzzle #&quot; &lt;&lt; ++num &lt;&lt; &quot;:\n&quot;;</span><br><span class="line">		if (flag) cout &lt;&lt; &quot;This puzzle has no final configuration.\n&quot;;</span><br><span class="line">		else &#123;</span><br><span class="line">			for (int i = 0;i &lt; 5;++i) &#123;</span><br><span class="line">				cout &lt;&lt; puzzle[i][0];</span><br><span class="line">				for (int j = 1;j &lt; 5;++j)</span><br><span class="line">					cout &lt;&lt; &apos; &apos; &lt;&lt; puzzle[i][j];</span><br><span class="line">				cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cin.getline(puzzle[0], 3);//吸收&apos;\n&apos;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>抱怨：查了N次没找到错误是什么，看了网上和同学许多人的代码，思路都差不多，自己做了N组数据来检测我的答案都正确，而且貌似不是输出格式的原因。拿到了一份别人已经通过了的代码，输出重定向到文件，比较我的输出和他的输出，甚至做了个程序来比较两个输出文件内容是不是一样，但就是一样。那么应该是特殊数据导致失败，然而是在想不出有什么特殊数据会让它错误的。。。大神求告知。</p>
+<p>（更新：找同学给我看了一下，他也基本没改什么，但又上传了一遍，莫名其妙过了。。。虽然不知道之前哪里不对，但是上面的代码也更新为通过了的版本了）</p>
+<p>他似乎就仅仅是把本来的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">switch (step) &#123;</span><br><span class="line">			case &apos;A&apos;:cx -= 1;break;</span><br><span class="line">			case &apos;B&apos;:cx += 1;break;</span><br><span class="line">			case &apos;L&apos;:cy -= 1;break;</span><br><span class="line">			case &apos;R&apos;:cy += 1;break;</span><br><span class="line">                        default:cerr&lt;&lt;&quot;Error:1\n&quot;;exit(0);</span><br><span class="line">                     &#125;</span><br></pre></td></tr></table></figure>
+<p>改成了现在的代码。好像就改了这个（之前由于没有通过，我也自己改了一小些的，改的都是些貌似无关紧要的东西，所以至今不知道是什么原因导致了之前的WA。。。。不爽）</p>
+<p>分析：注意个吸收cin后末尾的’\n’就行。还有吸收错误步骤后的所有步骤。本来很简单的题目，第一天莫名死活wrong answer不过，第二天莫名其妙又过了。。</p>
+<p>题目：算法竞赛入门经典 3-6/UVa232：Crossword Answers</p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//UVa232</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;iomanip&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char puzzle[10][10];</span><br><span class="line">	int num = 0;</span><br><span class="line">	int px, py;//puzzle的长宽高</span><br><span class="line">	while ((cin &gt;&gt; px) &amp;&amp; px != 0) &#123;</span><br><span class="line">		if (num) cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">		cin &gt;&gt; py;</span><br><span class="line">		for (int i = 0;i &lt; px;++i)</span><br><span class="line">			for (int j = 0;j &lt; py;++j)</span><br><span class="line">				cin &gt;&gt; puzzle[i][j];</span><br><span class="line">		cout &lt;&lt; &quot;puzzle #&quot; &lt;&lt; ++num &lt;&lt; &quot;:\nAcross&quot;;</span><br><span class="line">		int number = 0;</span><br><span class="line">		for (int i = 0;i &lt; px;++i)</span><br><span class="line">			for (int j = 0;j &lt; py;++j)</span><br><span class="line">				if (puzzle[i][j] != &apos;*&apos; &amp;&amp; (i == 0 || j == 0 || puzzle[i - 1][j] == &apos;*&apos; || puzzle[i][j - 1] == &apos;*&apos;)) &#123;//找出起始格</span><br><span class="line">					++number;</span><br><span class="line">					if (j == 0 || puzzle[i][j - 1] == &apos;*&apos;) &#123;//输出</span><br><span class="line">						int jj = j;</span><br><span class="line">						cout &lt;&lt; &apos;\n&apos; &lt;&lt; setw(3) &lt;&lt; number &lt;&lt; &apos;.&apos; &lt;&lt; puzzle[i][jj++];</span><br><span class="line">						while (jj &lt; py&amp;&amp;puzzle[i][jj] != &apos;*&apos;) cout &lt;&lt; puzzle[i][jj++];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		number = 0;</span><br><span class="line">		cout &lt;&lt; &quot;\nDown&quot;;</span><br><span class="line">		//down与找across的步骤类似,由于分开输出，就分开循环,总感觉效率上、代码重复率上欠妥</span><br><span class="line">		for (int i = 0;i &lt; px;++i)</span><br><span class="line">			for (int j = 0;j &lt; py;++j)</span><br><span class="line">				if (puzzle[i][j] != &apos;*&apos; &amp;&amp; (i == 0 || j == 0 || puzzle[i - 1][j] == &apos;*&apos; || puzzle[i][j - 1] == &apos;*&apos;)) &#123;</span><br><span class="line">					++number;</span><br><span class="line">					if (i == 0 || puzzle[i - 1][j] == &apos;*&apos;) &#123;</span><br><span class="line">						int ii = i;</span><br><span class="line">						cout &lt;&lt; &apos;\n&apos; &lt;&lt; setw(3) &lt;&lt; number &lt;&lt; &apos;.&apos; &lt;&lt; puzzle[ii++][j];</span><br><span class="line">						while (ii &lt; px&amp;&amp;puzzle[ii][j] != &apos;*&apos;) cout &lt;&lt; puzzle[ii++][j];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">		cout &lt;&lt; &apos;\n&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分析：如中间注释所示，感觉我这样分开来算横里竖里的结果有点麻烦了，代码也重复性大。</p>
+<p>但是由于它要求Across与Down分开输入，所以就这样了。本来我还想①把across直接输出，down的先存到字符串里去，最后一口气输出来，还想着或者②定义一个[10][10]的int数组，第一遍across循环时找出所有eligible，第二遍输出down就快了。</p>
+<p>现在想想还是①比较快，但是当时比较懒，没有改。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/45638.html" rel="next" title="算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225">
+                <i class="fa fa-chevron-left"></i> 算法竞赛入门经典 3-1UVa1585 3-2UVa1586 3-3UVa1225
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/17402.html" rel="prev" title="贪吃蛇">
+                贪吃蛇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

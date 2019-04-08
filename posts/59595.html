@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Coursera Deep Learning笔记 逻辑回归典型的训练过程">
+<meta property="og:url" content="http://yoursite.com/posts/59595.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.942Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coursera Deep Learning笔记 逻辑回归典型的训练过程">
+<meta name="twitter:description" content="Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记. 1. 处理数据1.1. 向量化(Vectorization)将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) . 1.2. 特征归一化(Normalization)对于一般数据，使用标准化(Standardi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/59595.html">
+
+
+
+
+
+  <title>Coursera Deep Learning笔记 逻辑回归典型的训练过程 | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/59595.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Coursera Deep Learning笔记 逻辑回归典型的训练过程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T12:25:26+08:00">
+                2019-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记.</p>
+<h1 id="1-处理数据"><a href="#1-处理数据" class="headerlink" title="1. 处理数据"></a>1. 处理数据</h1><h2 id="1-1-向量化-Vectorization"><a href="#1-1-向量化-Vectorization" class="headerlink" title="1.1. 向量化(Vectorization)"></a>1.1. 向量化(Vectorization)</h2><p>将每张图片的高和宽和RGB展为向量, 最终X的shape为 <code>(height*width*3, m)</code> .</p>
+<h2 id="1-2-特征归一化-Normalization"><a href="#1-2-特征归一化-Normalization" class="headerlink" title="1.2. 特征归一化(Normalization)"></a>1.2. 特征归一化(Normalization)</h2><p>对于一般数据，使用标准化(Standardization), <code>z_i = (x_i - mean) / delta</code> , <code>mean</code> 与 <code>delta</code> 代表X的均值和标准差. 最终特征处于[-1, 1]区间.</p>
+<p>对于图片, 可直接使用Min-Max Scaling, 即将每个特征除以255(每个像素分为R, G, B, 范围在0~255)使得值处于[0, 1].</p>
+<h1 id="2-初始化参数"><a href="#2-初始化参数" class="headerlink" title="2. 初始化参数"></a>2. 初始化参数</h1><p>一般将 <code>w</code> 和 <code>b</code> 随机选择. 作业为了方便设为0了.</p>
+<h1 id="3-梯度下降-Gradient-descent"><a href="#3-梯度下降-Gradient-descent" class="headerlink" title="3. 梯度下降(Gradient descent)"></a>3. 梯度下降(Gradient descent)</h1><p>根据 <code>w</code> , <code>b</code> 和训练集，来训练数据. 需要设定迭代次数与学习率.</p>
+<p>以下为大循环(迭代次数)中内容:</p>
+<h2 id="3-1-计算代价函数"><a href="#3-1-计算代价函数" class="headerlink" title="3.1. 计算代价函数"></a>3.1. 计算代价函数</h2><p>对于$x^{(i)} \in X$, 有</p>
+<p>$$z^{(i)} = w^T x^{(i)} + b$$</p>
+<p>$$<br>a^{(i)} = \hat{y}^{(i)}<br>        = sigmoid(z^{(i)})<br>        = \sigma (z^{(i)})<br>        = \frac{1}{1 + e^{-z^{(i)}}}<br>$$ </p>
+<p>$$\mathcal{L}(a^{(i)}, y^{(i)}) =  - y^{(i)}  \log(a^{(i)}) - (1-y^{(i)} )  \log(1-a^{(i)})$$</p>
+<p>$$<br>A = (a^{(1)}, a^{(2)}, … , a^{(m-1)}, a^{(m)})<br>  = \sigma(w^TX+b)<br>  = \dfrac{1}{1+e^{-(w^TX+b)}}<br>$$</p>
+<p>$$<br>J = -\dfrac{1}{m} \sum^{m}<em>{i=1} \mathcal{L}(a^{(i)}, y^{(i)})<br>  = -\dfrac{1}{m} \sum^{m}</em>{i=1} (y^{(i)} log(a^{(i)}) + (1-y^{(i)}) log(1-a^{(i)}))<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 激活函数</span><br><span class="line">A = sigmoid(w.T.dot(X) + b)</span><br><span class="line"># 代价函数</span><br><span class="line">cost = -np.sum(Y * np.log(A) + (1-Y) * np.log(1 - A)) / m</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-计算反向传播的梯度"><a href="#3-2-计算反向传播的梯度" class="headerlink" title="3.2. 计算反向传播的梯度"></a>3.2. 计算反向传播的梯度</h2><p>即计算导数. </p>
+<blockquote>
+<p>注:<br>此处 $L(a, y)$ 即上面公式的 $\mathcal{L}(a^{(i)}, y^{(i)})$ .<br>即 $L(a, y) = -y \log (a) -(1-y) \log (1-a)$ .<br>以下公式都省略了上标.</p>
+</blockquote>
+<p>$$<br>  \dfrac{\partial L}{\partial a}<br>= \dfrac{\partial L(a, y)}{\partial a}<br>= -\frac{y}{a} + \frac{1-y}{1-a}<br>$$</p>
+<p>$$<br>  \dfrac{da}{dz}<br>= (\frac{1}{1 + e^{-z}})’<br>= \dfrac{e^{-z}}{(1+e^{-z})^2}<br>= \dfrac{1}{1+e^{-z}} - \dfrac{1}{(1+e^{-z})^2}<br>= a-a^2<br>= a · (1-a)<br>$$</p>
+<p>$$<br>  \dfrac{\partial L}{\partial z}<br>= \dfrac{\partial L}{\partial a} \dfrac{da}{dz}<br>= (-\dfrac{y}{a} + \dfrac{1-y}{1-a}) · a · (1-a)<br>= a - y<br>$$</p>
+<p>$$<br>  \dfrac{\partial L}{\partial w}<br>= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial w}<br>= (a-y) · x<br>$$</p>
+<p>$$<br>  \dfrac{\partial L}{\partial b}<br>= \dfrac{\partial L}{\partial z} \dfrac{\partial z}{\partial b}<br>= a-y<br>$$</p>
+<p>根据 $J = -\dfrac{1}{m} \sum L(a, y)$ 最终可得：</p>
+<p>$$<br>  \dfrac{\partial J}{\partial w}<br>= \dfrac{\partial J}{\partial a} \dfrac{\partial a}{\partial w}<br>= \dfrac{1}{m} X(A-Y)^T<br>$$</p>
+<p>$$\dfrac{\partial J}{\partial b} = \dfrac{1}{m} \sum^{m}_{i=1} (a^{(i)} - y^{(i)})$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dw = X.dot((A - Y).T) / m</span><br><span class="line">db = np.sum(A - Y) / m</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-更新-w-b"><a href="#3-3-更新-w-b" class="headerlink" title="3.3. 更新 w , b"></a>3.3. 更新 <code>w</code> , <code>b</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = w - learning_rate * dw</span><br><span class="line">b = b - learning_rate * db</span><br></pre></td></tr></table></figure>
+<h1 id="4-预测测试集"><a href="#4-预测测试集" class="headerlink" title="4. 预测测试集"></a>4. 预测测试集</h1><p>使用训练出来的 <code>w</code> , <code>b</code> , 对测试集使用 <code>y_pred = sigmoid(wx+b)</code> , 计算得预测的概率, 对其取整, 例如大于0.7则判定为’是’, 否则为’否’. Coursera作业是0.5就判定为’是’, 那么使用内建函数四舍五入即可.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/30914.html" rel="next" title="Ubuntu一些装机用到的指令">
+                <i class="fa fa-chevron-left"></i> Ubuntu一些装机用到的指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/10178.html" rel="prev" title="JavaScript几何星空连线(鼠标跟随)完善">
+                JavaScript几何星空连线(鼠标跟随)完善 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-处理数据"><span class="nav-number">1.</span> <span class="nav-text">1. 处理数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-向量化-Vectorization"><span class="nav-number">1.1.</span> <span class="nav-text">1.1. 向量化(Vectorization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-特征归一化-Normalization"><span class="nav-number">1.2.</span> <span class="nav-text">1.2. 特征归一化(Normalization)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-初始化参数"><span class="nav-number">2.</span> <span class="nav-text">2. 初始化参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-梯度下降-Gradient-descent"><span class="nav-number">3.</span> <span class="nav-text">3. 梯度下降(Gradient descent)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-计算代价函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1. 计算代价函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-计算反向传播的梯度"><span class="nav-number">3.2.</span> <span class="nav-text">3.2. 计算反向传播的梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-更新-w-b"><span class="nav-number">3.3.</span> <span class="nav-text">3.3. 更新 w , b</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-预测测试集"><span class="nav-number">4.</span> <span class="nav-text">4. 预测测试集</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

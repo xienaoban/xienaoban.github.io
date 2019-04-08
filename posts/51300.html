@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#DescriptionYou are the manager of a small soccer team. After seeing the shameless behavior of your team during the match, you are mad at all of the current players. Therefore, you have made a huge de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM ICPC 2016北京赛站网络赛 D - Pick Your Players">
+<meta property="og:url" content="http://yoursite.com/posts/51300.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="#DescriptionYou are the manager of a small soccer team. After seeing the shameless behavior of your team during the match, you are mad at all of the current players. Therefore, you have made a huge de">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ACM ICPC 2016北京赛站网络赛 D - Pick Your Players">
+<meta name="twitter:description" content="#DescriptionYou are the manager of a small soccer team. After seeing the shameless behavior of your team during the match, you are mad at all of the current players. Therefore, you have made a huge de">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/51300.html">
+
+
+
+
+
+  <title>ACM ICPC 2016北京赛站网络赛 D - Pick Your Players | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/51300.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ACM ICPC 2016北京赛站网络赛 D - Pick Your Players</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T20:06:06+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Description<br>You are the manager of a small soccer team. After seeing the shameless behavior of your team during the match, you are mad at all of the current players. Therefore, you have made a huge decision: put these players on the substitution bench, and buy the entire starting line-up from other teams.</p>
+<p>You have received a list of available players from your assistant manager. Each player has three properties: Position, Value, and Cost. The Position of a player is one of the four kinds: Goalkeeper, Defender, Midfielder and Forward. The Value shows the ability of the player (the higher, the better), and the Cost is the money you need to spend to buy him.</p>
+<p>You are going to pick some players to buy from the list, in order to form the starting line-up. Several rules should be followed:</p>
+<ol>
+<li><p>The starting line-up consists of exactly eleven players.</p>
+</li>
+<li><p>There should be exactly one Goalkeeper, at least three but at most five Defenders, at least two but at most five Midfielders, and at least one but at most three Forwards in the starting line-up.</p>
+</li>
+<li><p>There should be exactly one captain in the starting line-up.The captain must be chosen from the eleven players.</p>
+</li>
+<li><p>The total value of the starting line-up is the sum of the Values of picked players plus the Value of the captain. In another word, the Value of the captain is counted twice.</p>
+</li>
+<li><p>The total cost of the starting line-up is the sum of the Costs of picked players, which should not exceed the given cost limitation.</p>
+</li>
+</ol>
+<p>Now you have to give a plan to your boss before taking the actual actions. In the plan, you should report three numbers which your boss really interests in: Vt, Ct, N, where Vt is the maximum total value you can get; Ct is the minimum total cost when the total value is Vt; And N is the number of different ways to pick players when the total value is Vt and the total cost is Ct. Since your boss does not care the precise number of N if it is larger than 1,000,000,000, just report N = 1,000,000,000 when that happens.</p>
+<p>Note that if two or more ways that pick the same eleven players and are only different in captain chosen, they should be regarded as the same.</p>
+<p>#Input<br>There are several test cases in the input.</p>
+<p>The first line contains an integer T (1 &lt;= T &lt;= 10) – the number of test cases.</p>
+<p>For each case:</p>
+<p>The first line contains an integer M (11 &lt;= M &lt;= 500) – the number of players on the list.</p>
+<p>Then follows M lines, each line contains a string P and two integers V and C (0 &lt;= V &lt;= 1000, 0 &lt;= C &lt;= 1000), separated by a single space, describing the properties of a player. P is the position of the player, which is one of the strings “Goalkeeper”, “Defender”, “Midfielder”, and “Forward”; V is the Value of the player and C is the Cost of the player.</p>
+<p>The last line contains an integer L (0 &lt;= L &lt;= 1000) – the cost limitation.</p>
+<p>#Output<br>For each test case, output three integers Vt, Ct and N on a single line, separated by a single space. We assure that there is at least one possible way to pick your players.</p>
+<p>#Note<br>In the sample, you should pick all five Defenders, four Midfielders with Value 178, 20, 64 and 109, one Forward with Value 6, and one of two Goalkeepers with Value 57. The Midfielder with Value 178 should be the captain.</p>
+<p>#Sample<br>input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">15</span><br><span class="line">Defender 23 45</span><br><span class="line">Midfielder 178 85</span><br><span class="line">Goalkeeper 57 50</span><br><span class="line">Goalkeeper 57 50</span><br><span class="line">Defender 0 45</span><br><span class="line">Forward 6 60</span><br><span class="line">Midfielder 20 50</span><br><span class="line">Goalkeeper 0 50</span><br><span class="line">Midfielder 64 65</span><br><span class="line">Midfielder 109 70</span><br><span class="line">Forward 211 100</span><br><span class="line">Defender 0 40</span><br><span class="line">Defender 29 45</span><br><span class="line">Midfielder 57 60</span><br><span class="line">Defender 52 45</span><br><span class="line">600</span><br></pre></td></tr></table></figure></p>
+<p>output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">716 600 2</span><br></pre></td></tr></table></figure></p>
+<p>#Key<br>来自ICPCCamp.Post的题解：</p>
+<blockquote>
+<p>题意：你需要买一个足球队（11个球员），每个球员有位置、价值。花费，有以下限制：<br>位置分为前锋（1-3人）、中腰（2-5）、后卫（3-5）、守门员（1）<br>每个人有value，总的value 是每个人的value加起来 ，选一个队长，队长的加两次<br>每个人有个 cost，总花费不能超过给定值<br>求：最大的 value，相应的最小的 cost，相应的购买方案数（大于1e9输出1e9）<br>10组数据，500个候选人，value和cost：V and C (0 &lt;= V &lt;= 1000, 0 &lt;= C &lt;= 1000)，花费上界：1000<br>题解：考虑dp(i,cost,j,k,r,w)=(value,way)表示考虑前ii个球员，费用和为cost，选了j个前锋kk个中腰r个后卫w个守门员这个状态，价值和是value,方案数是way。然后按照dp字面意思转移就可以了。然后第一维的ii这里是为了看起来方便，其实是不用开的。<br>为了方便处理队长，把球员们按照价值从大到小排序，挑的第一个人当队长就可以了。</p>
+</blockquote>
+<p>不太清楚从如果按照题解大到小排序的话选队长为什么一定是对的（虽然它的确是这样），所以我选择从小到大排序，至少这样我会做一点。。。这样的话每个当前运动员都要考虑做一次队长，效率是差一点点。不过即便如此还是没做出来。。。。老是WA，甚至开始怀疑<a href="http://hihocoder.com/problemset/problem/1386" target="_blank" rel="noopener">hihocoder上的测试数据</a>是错的（这题有事没事debug了1个月了，老是WA，WA到怀疑人生）。<br>总这贴这里以后不管了。。。</p>
+<p>#Code（WA）<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dfor(i,l,r) for(int i=l;i&gt;=r;--i)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> lld;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxl = <span class="number">1000000000</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mg = <span class="number">1</span>, md = <span class="number">5</span>, mm = <span class="number">5</span>, mf = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">2</span>][<span class="number">6</span>][<span class="number">6</span>][<span class="number">4</span>][maxn][<span class="number">3</span>]; <span class="comment">// G, D, M, F , cost, value/num/captain's value</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">member</span> &#123;</span></span><br><span class="line">	<span class="keyword">char</span> P;</span><br><span class="line">	<span class="keyword">int</span> V, C;</span><br><span class="line">&#125;lst[maxn + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, M;</span><br><span class="line">lld L;</span><br><span class="line"><span class="keyword">char</span> ipt_tmp[<span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> member &amp;arg1, <span class="keyword">const</span> member &amp;arg2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (arg1.V == arg2.V) <span class="keyword">return</span> arg1.C &lt; arg2.C;</span><br><span class="line">	<span class="keyword">return</span> arg1.V &lt; arg2.V;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">memset</span>(arr, <span class="number">0</span>, <span class="keyword">sizeof</span>(arr));</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; M;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != M; ++i) &#123;</span><br><span class="line">			member &amp;now = lst[i];</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; ipt_tmp &gt;&gt; now.V &gt;&gt; now.C;</span><br><span class="line">			now.P = *ipt_tmp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; L;</span><br><span class="line">		sort(lst, lst + M, cmp);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != M; ++i) &#123;</span><br><span class="line">			<span class="keyword">const</span> member &amp;nowp = lst[i];</span><br><span class="line">			<span class="keyword">if</span> (nowp.P == <span class="string">'G'</span>) &#123; <span class="comment">// exactly one Goalkeeper</span></span><br><span class="line">				dfor(g, mg, <span class="number">1</span>)dfor(d, md, <span class="number">0</span>)dfor(m, mm, <span class="number">0</span>)dfor(f, mf, <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">int</span>(&amp;predp)[maxn][<span class="number">3</span>] = arr[g - <span class="number">1</span>][d][m][f];</span><br><span class="line">					<span class="keyword">int</span>(&amp;nowdp)[maxn][<span class="number">3</span>] = arr[g][d][m][f];</span><br><span class="line">					<span class="keyword">if</span> (g + d + m + f &gt; <span class="number">11</span>) <span class="keyword">continue</span>;</span><br><span class="line">					dfor(c, L, nowp.C) &#123;</span><br><span class="line">						<span class="keyword">int</span>(&amp;nowc)[<span class="number">3</span>] = nowdp[c];</span><br><span class="line">						<span class="keyword">int</span>(&amp;prec)[<span class="number">3</span>] = predp[c - nowp.C];</span><br><span class="line">						<span class="keyword">if</span> (prec[<span class="number">1</span>] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">						<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt;= prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">							<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt; prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">								nowc[<span class="number">0</span>] = prec[<span class="number">0</span>] + nowp.V;</span><br><span class="line">								nowc[<span class="number">1</span>] = prec[<span class="number">1</span>];</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="keyword">else</span> &#123;</span><br><span class="line">								<span class="keyword">if</span> ((nowc[<span class="number">1</span>] += prec[<span class="number">1</span>]) &gt; maxl) &#123;</span><br><span class="line">									nowc[<span class="number">1</span>] = maxl;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">							nowc[<span class="number">2</span>] = nowp.V;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (nowp.V + nowp.V &gt;= arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] &amp;&amp; nowp.C &lt; L) &#123;</span><br><span class="line">					<span class="keyword">if</span> (nowp.V + nowp.V &gt; arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>]) &#123;</span><br><span class="line">						arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] = nowp.V;</span><br><span class="line">						arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">						arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] = nowp.V;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> &#123;</span><br><span class="line">						++arr[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (nowp.P == <span class="string">'D'</span>) &#123; <span class="comment">// at least 3 but at most 5 Defenders</span></span><br><span class="line">				dfor(d, md, <span class="number">1</span>)dfor(g, mg, <span class="number">0</span>)dfor(m, mm, <span class="number">0</span>)dfor(f, mf, <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">int</span>(&amp;predp)[maxn][<span class="number">3</span>] = arr[g][d - <span class="number">1</span>][m][f];</span><br><span class="line">					<span class="keyword">int</span>(&amp;nowdp)[maxn][<span class="number">3</span>] = arr[g][d][m][f];</span><br><span class="line">					<span class="keyword">if</span> (g + d + m + f &gt; <span class="number">11</span>) <span class="keyword">continue</span>;</span><br><span class="line">					dfor(c, L, nowp.C) &#123;</span><br><span class="line">						<span class="keyword">int</span>(&amp;nowc)[<span class="number">3</span>] = nowdp[c];</span><br><span class="line">						<span class="keyword">int</span>(&amp;prec)[<span class="number">3</span>] = predp[c - nowp.C];</span><br><span class="line">						<span class="keyword">if</span> (prec[<span class="number">1</span>] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">						<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt;= prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">							<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt; prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">								nowc[<span class="number">0</span>] = prec[<span class="number">0</span>] + nowp.V;</span><br><span class="line">								nowc[<span class="number">1</span>] = prec[<span class="number">1</span>];</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="keyword">else</span> &#123;</span><br><span class="line">								<span class="keyword">if</span> ((nowc[<span class="number">1</span>] += prec[<span class="number">1</span>]) &gt; maxl) &#123;</span><br><span class="line">									nowc[<span class="number">1</span>] = maxl;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">							nowc[<span class="number">2</span>] = nowp.V;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (nowp.V + nowp.V &gt;= arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] &amp;&amp; nowp.C &lt; L) &#123;</span><br><span class="line">					<span class="keyword">if</span> (nowp.V + nowp.V &gt; arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>]) &#123;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] = nowp.V;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] = nowp.V;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> &#123;</span><br><span class="line">						++arr[<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (nowp.P == <span class="string">'M'</span>) &#123; <span class="comment">// at least 2 but at most 5 Midfielders</span></span><br><span class="line">				dfor(m, mm, <span class="number">1</span>)dfor(g, mg, <span class="number">0</span>)dfor(d, md, <span class="number">0</span>)dfor(f, mf, <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">int</span>(&amp;predp)[maxn][<span class="number">3</span>] = arr[g][d][m - <span class="number">1</span>][f];</span><br><span class="line">					<span class="keyword">int</span>(&amp;nowdp)[maxn][<span class="number">3</span>] = arr[g][d][m][f];</span><br><span class="line">					<span class="keyword">if</span> (g + d + m + f &gt; <span class="number">11</span>) <span class="keyword">continue</span>;</span><br><span class="line">					dfor(c, L, nowp.C) &#123;</span><br><span class="line">						<span class="keyword">int</span>(&amp;nowc)[<span class="number">3</span>] = nowdp[c];</span><br><span class="line">						<span class="keyword">int</span>(&amp;prec)[<span class="number">3</span>] = predp[c - nowp.C];</span><br><span class="line">						<span class="keyword">if</span> (prec[<span class="number">1</span>] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">						<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt;= prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">							<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt; prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">								nowc[<span class="number">0</span>] = prec[<span class="number">0</span>] + nowp.V;</span><br><span class="line">								nowc[<span class="number">1</span>] = prec[<span class="number">1</span>];</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="keyword">else</span> &#123;</span><br><span class="line">								<span class="keyword">if</span> ((nowc[<span class="number">1</span>] += prec[<span class="number">1</span>]) &gt; maxl) &#123;</span><br><span class="line">									nowc[<span class="number">1</span>] = maxl;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">							nowc[<span class="number">2</span>] = nowp.V;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (nowp.V + nowp.V &gt;= arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] &amp;&amp; nowp.C &lt; L) &#123;</span><br><span class="line">					<span class="keyword">if</span> (nowp.V + nowp.V &gt; arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>]) &#123;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">0</span>] = nowp.V;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">2</span>] = nowp.V;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> &#123;</span><br><span class="line">						++arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][<span class="number">0</span>][nowp.C][<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123; <span class="comment">// at least 1 but at most 3 Forwards</span></span><br><span class="line">				dfor(f, mf, <span class="number">1</span>)dfor(g, mg, <span class="number">0</span>)dfor(d, md, <span class="number">0</span>)dfor(m, mm, <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">int</span>(&amp;predp)[maxn][<span class="number">3</span>] = arr[g][d][m][f - <span class="number">1</span>];</span><br><span class="line">					<span class="keyword">int</span>(&amp;nowdp)[maxn][<span class="number">3</span>] = arr[g][d][m][f];</span><br><span class="line">					<span class="keyword">if</span> (g + d + m + f &gt; <span class="number">11</span>) <span class="keyword">continue</span>;</span><br><span class="line">					dfor(c, L, nowp.C) &#123;</span><br><span class="line">						<span class="keyword">int</span>(&amp;nowc)[<span class="number">3</span>] = nowdp[c];</span><br><span class="line">						<span class="keyword">int</span>(&amp;prec)[<span class="number">3</span>] = predp[c - nowp.C];</span><br><span class="line">						<span class="keyword">if</span> (prec[<span class="number">1</span>] == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">						<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt;= prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">							<span class="keyword">if</span> (nowc[<span class="number">0</span>] + nowc[<span class="number">2</span>] &lt; prec[<span class="number">0</span>] + nowp.V + nowp.V) &#123;</span><br><span class="line">								nowc[<span class="number">0</span>] = prec[<span class="number">0</span>] + nowp.V;</span><br><span class="line">								nowc[<span class="number">1</span>] = prec[<span class="number">1</span>];</span><br><span class="line">							&#125;</span><br><span class="line">							<span class="keyword">else</span> &#123;</span><br><span class="line">								<span class="keyword">if</span> ((nowc[<span class="number">1</span>] += prec[<span class="number">1</span>]) &gt; maxl) &#123;</span><br><span class="line">									nowc[<span class="number">1</span>] = maxl;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">							nowc[<span class="number">2</span>] = nowp.V;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (nowp.V + nowp.V &gt;= arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">2</span>] &amp;&amp; nowp.C &lt; L) &#123;</span><br><span class="line">					<span class="keyword">if</span> (nowp.V + nowp.V &gt; arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">0</span>] + arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">2</span>]) &#123;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">0</span>] = nowp.V;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">						arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">2</span>] = nowp.V;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> &#123;</span><br><span class="line">						++arr[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">1</span>][nowp.C][<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// DP finished</span></span><br><span class="line">		<span class="keyword">int</span> max_value = <span class="number">-1</span>, min_cost = maxn, sum_num = <span class="number">0</span>;</span><br><span class="line">		dfor(g, mg, <span class="number">1</span>)dfor(d, md, <span class="number">3</span>)dfor(m, mm, <span class="number">2</span>)dfor(f, mf, <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (g + d + m + f != <span class="number">11</span>) <span class="keyword">continue</span>;</span><br><span class="line">			dfor(c, L, <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span>(&amp;now)[<span class="number">3</span>] = arr[g][d][m][f][c];</span><br><span class="line">				<span class="comment">//if (now[0]) &#123;</span></span><br><span class="line">				<span class="comment">//	cerr &lt;&lt; "   val: " &lt;&lt; now[0] + now[2] &lt;&lt; "\tnum: " &lt;&lt; now[1] &lt;&lt; "\tcost: " &lt;&lt; c &lt;&lt; '\t';</span></span><br><span class="line">				<span class="comment">//	cerr &lt;&lt; "g: " &lt;&lt; g &lt;&lt; " d: " &lt;&lt; d &lt;&lt; " m: " &lt;&lt; m &lt;&lt; " f: " &lt;&lt; f &lt;&lt; endl;</span></span><br><span class="line">				<span class="comment">//&#125;</span></span><br><span class="line">				<span class="keyword">if</span> (now[<span class="number">0</span>] + now[<span class="number">2</span>] &gt; max_value) &#123;</span><br><span class="line">					max_value = now[<span class="number">0</span>] + now[<span class="number">2</span>];</span><br><span class="line">					min_cost = c;</span><br><span class="line">					sum_num = now[<span class="number">1</span>];</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (now[<span class="number">0</span>] + now[<span class="number">2</span>] == max_value) &#123;</span><br><span class="line">					<span class="keyword">if</span> (min_cost &gt; c) &#123;</span><br><span class="line">						min_cost = c;</span><br><span class="line">						sum_num = now[<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> <span class="keyword">if</span> (min_cost == c) &#123;</span><br><span class="line">						sum_num += now[<span class="number">1</span>];</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; max_value &lt;&lt; <span class="string">' '</span> &lt;&lt; min_cost &lt;&lt; <span class="string">' '</span> &lt;&lt; sum_num &lt;&lt; <span class="string">" \n"</span>[T];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/15668.html" rel="next" title="Codeforces 794C - Naming Company">
+                <i class="fa fa-chevron-left"></i> Codeforces 794C - Naming Company
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/645.html" rel="prev" title="Codeforces 758C - Unfair Poll">
+                Codeforces 758C - Unfair Poll <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

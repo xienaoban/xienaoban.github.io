@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#DescriptionUVA11082 - Matrix DecompressingSome RxC matrix of positive integers is encoded and represented by its R cumulative row sum and C column sum entries. Given, R, C and those R+C cumulative ro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA11082 - Matrix Decompressing (上下界网络流)">
+<meta property="og:url" content="http://yoursite.com/posts/55526.html">
+<meta property="og:site_name" content="XieNaoban">
+<meta property="og:description" content="#DescriptionUVA11082 - Matrix DecompressingSome RxC matrix of positive integers is encoded and represented by its R cumulative row sum and C column sum entries. Given, R, C and those R+C cumulative ro">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UVA11082 - Matrix Decompressing (上下界网络流)">
+<meta name="twitter:description" content="#DescriptionUVA11082 - Matrix DecompressingSome RxC matrix of positive integers is encoded and represented by its R cumulative row sum and C column sum entries. Given, R, C and those R+C cumulative ro">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/55526.html">
+
+
+
+
+
+  <title>UVA11082 - Matrix Decompressing (上下界网络流) | XieNaoban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/55526.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">UVA11082 - Matrix Decompressing (上下界网络流)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T20:29:33+08:00">
+                2017-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Description<br><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2023" target="_blank" rel="noopener">UVA11082 - Matrix Decompressing</a><br>Some RxC matrix of positive integers is encoded and represented by its R cumulative row sum and C column sum entries. Given, R, C and those R+C cumulative row sum and column sums, you want to decode the matrix (i.e., find all the individual R * C entries).</p>
+<p>In other words, the i-th row sum is the sum of all the entries in row i. And the cumulative i-th row sum is the sum of all the row sums from row 1 to row i (inclusive).</p>
+<p>#Input<br>There can be multiple test cases. The first line of input contains the number of test cases, T (1 ≤T ≤ 100). Each test case contains 3 lines of input. The first line of the test case gives the size of the matrix: the number of rows, R (1 ≤ R ≤ 20) and the number of columns C (1 ≤ C ≤20). The next line contains all the R cumulative row sums, and the last line of the test case contains the C cumulative column sums. Any two successive numbers in the same line is separated by a single space.</p>
+<p>#Output<br>For each test case print the label of the test case in the first line. The format of this label should be “Matrix x” where x would be replaced by the serial number of the test case starting at 1. In each of the following R lines print C integers giving all the individual entries of the matrix. You can assume that there is at least one solution for each of the given encodings. To simplify the problem further, we add the constraint that each entry in the matrix must be an integer between 1 and 20. In case of multiple solutions, you can output any one of them.</p>
+<p>#Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">3 4</span><br><span class="line">10 31 58</span><br><span class="line">10 20 37 58</span><br><span class="line">3 4</span><br><span class="line">10 31 58</span><br><span class="line">10 20 37 58</span><br></pre></td></tr></table></figure></p>
+<p>#Sample Output<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Matrix 1</span><br><span class="line">1 6 1 2</span><br><span class="line">1 2 2 16</span><br><span class="line">8 2 14 3</span><br><span class="line">Matrix 2</span><br><span class="line">1 1 1 7</span><br><span class="line">1 1 7 12</span><br><span class="line">8 8 9 2</span><br></pre></td></tr></table></figure></p>
+<p>#Key1<br>给一矩阵每一行每一列的和，求一个可行矩阵。行数列数在[1, 20]之间，每个元素大小在[1,20]之间。</p>
+<p>从输入可以得到没一行、每一列的和。以行、列建立二分图。以所有行、所有列为结点，建立源汇点s、t。s向所有行结点建边，上界为该行的和。所有列结点向t建边，上界为该列的和。所有行向所有列建边，上界为20。<br>由于矩阵每个元素都大于零，可以知道，每条行-列的边下界为1。</p>
+<p>使用有源汇有上下界的最大流的方法。s-&gt;每个行结点 的c减去m，每个行节点-&gt;每个列结点的c减去1（则都变成了19），每个列结点-&gt;t的c减去n。然后就是按照通用方法连接t-&gt;s，建立超级源汇点ss、st并建立附加边，运行maxflow(ss, st)，然后去除附加边与ss、st，再次运行maxflow(s, t)。行节点-&gt;列结点的flow+1即为矩阵元素值。</p>
+<p>#Code1<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7FFFFFFF</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> c, f;</span><br><span class="line">	<span class="keyword">unsigned</span> v, flip;</span><br><span class="line">	Edge(<span class="keyword">unsigned</span> v, <span class="keyword">int</span> c, <span class="keyword">int</span> f, <span class="keyword">unsigned</span> flip) :v(v), c(c), f(f), flip(flip) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dinic</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">bool</span> b[maxn];</span><br><span class="line">	<span class="keyword">int</span> a[maxn];</span><br><span class="line">	<span class="keyword">unsigned</span> p[maxn], cur[maxn], d[maxn];</span><br><span class="line">	<span class="built_in">vector</span>&lt;Edge&gt; G[maxn];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">unsigned</span> s, t;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(<span class="keyword">unsigned</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</span><br><span class="line">			G[i].clear();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">AddEdge</span><span class="params">(<span class="keyword">unsigned</span> u, <span class="keyword">unsigned</span> v, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">		G[u].push_back(Edge(v, c, <span class="number">0</span>, G[v].size()));</span><br><span class="line">		G[v].push_back(Edge(u, <span class="number">0</span>, <span class="number">0</span>, G[u].size() - <span class="number">1</span>));	<span class="comment">//使用无向图时将0改为c即可 </span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">BFS</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">unsigned</span> u, v;</span><br><span class="line">		<span class="built_in">queue</span>&lt;<span class="keyword">unsigned</span>&gt; q;</span><br><span class="line">		<span class="built_in">memset</span>(b, <span class="number">0</span>, <span class="keyword">sizeof</span>(b));</span><br><span class="line">		q.push(s);</span><br><span class="line">		d[s] = <span class="number">0</span>;</span><br><span class="line">		b[s] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">			u = q.front();</span><br><span class="line">			q.pop();</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">auto</span> it = G[u].begin(); it != G[u].end(); ++it) &#123;</span><br><span class="line">				Edge &amp;e = *it;</span><br><span class="line">				<span class="keyword">if</span> (!b[e.v] &amp;&amp; e.c&gt;e.f) &#123;</span><br><span class="line">					b[e.v] = <span class="number">1</span>;</span><br><span class="line">					d[e.v] = d[u] + <span class="number">1</span>;</span><br><span class="line">					q.push(e.v);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> b[t];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">DFS</span><span class="params">(<span class="keyword">unsigned</span> u, <span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (u == t || a == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> a;</span><br><span class="line">		<span class="keyword">int</span> flow = <span class="number">0</span>, f;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">unsigned</span> &amp;i = cur[u]; i&lt;G[u].size(); ++i) &#123;</span><br><span class="line">			Edge &amp;e = G[u][i];</span><br><span class="line">			<span class="keyword">if</span> (d[u] + <span class="number">1</span> == d[e.v] &amp;&amp; (f = DFS(e.v, min(a, e.c - e.f)))&gt;<span class="number">0</span>) &#123;</span><br><span class="line">				a -= f;</span><br><span class="line">				e.f += f;</span><br><span class="line">				G[e.v][e.flip].f -= f;</span><br><span class="line">				flow += f;</span><br><span class="line">				<span class="keyword">if</span> (!a) <span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> flow;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">MaxFlow</span><span class="params">(<span class="keyword">unsigned</span> s, <span class="keyword">unsigned</span> t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> flow = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">this</span>-&gt;s = s;</span><br><span class="line">		<span class="keyword">this</span>-&gt;t = t;</span><br><span class="line">		<span class="keyword">while</span> (BFS()) &#123;</span><br><span class="line">			<span class="built_in">memset</span>(cur, <span class="number">0</span>, <span class="keyword">sizeof</span>(cur));</span><br><span class="line">			flow += DFS(s, INF);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> flow;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Dif[maxn];</span><br><span class="line"><span class="keyword">int</span> T, R, C;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> Case = <span class="number">1</span>; Case &lt;= T; ++Case) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;R, &amp;C);</span><br><span class="line">		<span class="built_in">memset</span>(Dif, <span class="number">0</span>, <span class="keyword">sizeof</span>(Dif));</span><br><span class="line">		Dinic din;</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">int</span> s = R + C + <span class="number">1</span>, t = R + C + <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">int</span> ss = s+<span class="number">2</span>, st = t + <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">int</span> ipt, last_ipt;</span><br><span class="line">		last_ipt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;ipt);</span><br><span class="line">			din.AddEdge(s, i, ipt - last_ipt - C);</span><br><span class="line">			last_ipt = ipt;</span><br><span class="line">			Dif[s] -= C;</span><br><span class="line">			Dif[i] += C;</span><br><span class="line">		&#125;</span><br><span class="line">		last_ipt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= C; ++i) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;ipt);</span><br><span class="line">			din.AddEdge(R + i, t, ipt - last_ipt - R);</span><br><span class="line">			last_ipt = ipt;</span><br><span class="line">			Dif[R + i] -= R;</span><br><span class="line">			Dif[t] += R;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= C; ++j) &#123;</span><br><span class="line">			din.AddEdge(i, R + j, <span class="number">20</span> - <span class="number">1</span>);</span><br><span class="line">			Dif[i] -= <span class="number">1</span>;</span><br><span class="line">			Dif[R + j] += <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		din.AddEdge(t, s, INF);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R*C+<span class="number">2</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (Dif[i] &gt; <span class="number">0</span>) din.AddEdge(ss, i, Dif[i]);</span><br><span class="line">			<span class="keyword">if</span> (Dif[i] &lt; <span class="number">0</span>) din.AddEdge(i, st, -Dif[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		din.MaxFlow(ss, st);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : din.G[ss]) din.G[e.v][e.flip].f = din.G[e.v][e.flip].c = e.c = e.f = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;e : din.G[st]) din.G[e.v][e.flip].f = din.G[e.v][e.flip].c = e.c = e.f = <span class="number">0</span>;</span><br><span class="line">		din.MaxFlow(s, t);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Matrix %d\n"</span>, Case);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;e : din.G[i]) <span class="keyword">if</span> (e.c) &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d "</span>, e.f + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Key2<br>上述有源汇有上下界最大流的通用解法之所以通用，是因为“上界减去下界后图中的流量不一定平衡”。而本题的每条边的流量下界被减去后，流量依然是平衡的，所以可以优化。（即上述代码运行完后会发现，Dif[i]均为0，即ss和st没有边连接原图。）</p>
+<p>在把s-&gt;行的c减去m、行-&gt;列的c减去1、列-&gt;t的c减去n后，直接运行maxflow(s, t)，行-&gt;列的flow加上1即为答案。</p>
+<p>#Code2<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main函数之前内容一样</span></span><br><span class="line"><span class="keyword">int</span> T, R, C;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> Case = <span class="number">1</span>; Case &lt;= T; ++Case) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;R, &amp;C);</span><br><span class="line">		Dinic din;</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">int</span> s = R + C + <span class="number">1</span>, t = R + C + <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">int</span> ipt, last_ipt;</span><br><span class="line">		last_ipt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;ipt);</span><br><span class="line">			din.AddEdge(s, i, ipt - last_ipt-C);</span><br><span class="line">			last_ipt = ipt;</span><br><span class="line">		&#125;</span><br><span class="line">		last_ipt = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= C; ++i) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;ipt);</span><br><span class="line">			din.AddEdge(R + i, t, ipt - last_ipt-R);</span><br><span class="line">			last_ipt = ipt;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= C;++j) &#123;</span><br><span class="line">			din.AddEdge(i, R + j, <span class="number">20</span><span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		din.MaxFlow(s, t);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Matrix %d\n"</span>, Case);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= R; ++i) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;e : din.G[i]) <span class="keyword">if</span> (e.c) &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d "</span>, e.f+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/39930.html" rel="next" title="Codeforces Round">
+                <i class="fa fa-chevron-left"></i> Codeforces Round
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/30673.html" rel="prev" title="有上下界的网络流笔记">
+                有上下界的网络流笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">101</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

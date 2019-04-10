@@ -259,6 +259,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/4561.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/4561.html" itemprop="url">八皇后问题动态演示</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:31:17+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。
+八皇后问题
+简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。
+#解法与优化 首先肯定是遍历嘛，关键是要剪枝。
+##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰
+##2.回溯法 由于每个皇后不能在一行，那八个皇后就在八个不同行上面嘛，对于每个皇后/每一行，采用回溯法先第一行放一个，在第二行剩下7个位置中找第二个皇后可能的位置，以此类推，一共\(8^8 = 16777216\)种情况。
+##3.全排列 由于每个皇后不同行不同列，那么在每个皇后占一行的基础上，每个皇后在0-7个列只能占一个，就相当于一个全排列，要考虑\(A_8^8 = 8! = 40320\)种情况，较上述两个方法已经快了很多
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/4561.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/16776.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1369,135 +1501,6 @@ On the last lesson Anton learned about the regular simple bracket sequences (RSB
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/33431.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/42401.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/42401.html" itemprop="url">Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-12T20:10:38+08:00">
-                2017-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型：
-最基本的单变量线性回归： 形如h(x)=theta0+theta1*x1
-多变量线性回归： 形如h(x)=theta0+theta1x1+theta2x2+theta3*x3
-多项式回归（Polynomial Regression）： 形如h(x)=theta0+theta1x1+theta2(x2^2)+theta3*(x33) 或者h(x)=ttheta0+theta1x1+theta2sqr(x2) 但是我们可以令x2=x22，x3
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/42401.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

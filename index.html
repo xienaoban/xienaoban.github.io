@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -360,8 +360,7 @@
 一轮预习: 10 月初 ~ 11 月初
 使用材料: 徐涛强化视频 + 肖秀荣精讲精练 + 肖秀荣1000题.
 时间分配: 每天花的时间其实不多, 看视频画重点还是挺轻松的, 就是做题耗时比较长, 但也不是每天都做题.
-徐涛视频我直接看的强化视频, 没看基础视频. 涛哥讲课确实很好. 听说腿姐的授课也不错, 用的人也很多, 自行选择. 但是肖秀荣团队的视频口碑反而好像很差...
-徐涛视频
+徐涛视频我直
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -492,7 +491,7 @@
 
 平台安装
 
-安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C "username@host.com"# 按三次回车, 密码设为空# 最终在 C:\Users\Username 下生成 .ssh 文件夹并产生 id_rsa, id_rsa.pub 文件# 验证 SSH 代理运行:eval $(ssh-agent -s)# 若正常运行则输出 Agent pid xxxxx# 添加 SSH 私钥至代理:ssh-add ~/.ssh/id_rsa# 复制 SSH 公钥到 Github 账号:clip &lt; ~/.ssh/
+安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C "username@host.com"# 按三次回车, 密码设为空# 最终在 C:\Users\Username 下生成 .ssh 文件夹并产生 id_rsa, id_rsa.pub 文件# 验证 SSH 代理运行:eval $(ssh-agent -s)# 若正常运行则输出 Agent pid x
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -751,8 +750,7 @@
 
 找到设置位置: Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist.
 将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFGHIJKLMNOPQRSTUVWSYZ.  (若此时发现, 输入一个字符时依然没有弹出自动提示的框框, 则继续执行下一步)
-转到: Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist -&gt; Advanced.
-在上边那个大框中, 将 Java Proposals 与 Java Proposals (T
+转到: Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -885,8 +883,7 @@
 此处使用二进制编码法形成染色体.
 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群.
 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个体好坏. 并按照一定策略选择出部分适应度高的个体, 作为下一代的父代.
-交叉与变异: 对挑选出的父代, 每次随机选择两个染色体, 在一定概率下将两者的某些 DNA 进行交换, 形成两个新的个体, 即为染色体的交叉; 同时上述新产生的个体有一定概率发生染色体变异, 即对染色体的某些位取反. 最后形成新的子代. 遗传算法就是上述步骤的反复.
-非支配排序遗传算法(Non-Dominated Sort
+交叉与变异: 对挑选出的父代, 每次随机选择两个染色体, 在一定概率下将两者的某些 DNA 进行交换, 形成两个新的个体, 即为染色体的交叉; 同时上述新产生的个体有
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1014,8 +1011,7 @@
           
           调试(Tuning)
 深度学习要处理很多参数, 从学习速率 \(\alpha\) 到 Momentum 的参数 \(\beta\), 若使用 Adam 优化算法,还得处理 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\). 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减.
-其中学习速率 \(\alpha\) 是最优先调试的超参数. mini-batch 大小与隐藏单元次之. 而 Momentum 的参数 \(\beta\) 通常使用默认值 0.9, Adam 的参数 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\) 通常不进行调试, 使用默认的 0.9, 0.999 和 \(10^{-8}\).
-参数选择有以下一些方法: 1. 随机选择点. 例如现在有 \(\
+其中学习速率 \(\alpha\) 是最优先调试的超参数. mini-batch 大小与隐藏单元次之. 而 Momentum 的参数 \(\beta\) 通常使用默认值 0.9, Adam 的参数 \(\beta_1\), \(\beta_2\) 和 \(\varepsi
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1145,9 +1141,7 @@
 将 \(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\) 矩阵所有 \(m\) 个样本划分为 \(t\) 个子训练集, 每个子训练集称为 \(x^{\{i\}}\), 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 \(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(1000)}]\), 维度 \((n_x,1000)\)). 若m不能被子训练集样本数整除, 则最后一个子训练集样本可以小于其他子训练集样本数. \(Y\) 亦然.
 训练时, 每次迭代仅对一个子训练集进行梯度下降:
 \[
-\begin{aligned}
-&amp; \text{Repeat} :\\
-&amp; \qquad \text{For } i = 1, 2, ..., t: \
+\begin
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1278,10 +1272,7 @@
 确保验证集和测试集的数据来自同一分布.
 如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.
 偏差、方差(Bias, Variance)
-高偏差(high bias)称为"欠拟合"(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集误差很高. 解决方法是正则化或准备更多的数据.
-正则化(Regularization)
-逻辑回归中的L1正则化, L2正则化
-对于L1正则化, 为代价函数
+高偏差(high bias)称为"欠拟合"(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1412,7 +1403,7 @@
 
 Sigmoid 不怎么用了. \(a = g(z) = \sigma(z) = \frac{1}{1+e^{-z}} \\ g&#39;(z) = a(1-a)\) 
 Tanh 比Sigmoid好. 因为其值域为(-1, 1), 计算得a的平均值靠近0, 更好的centers the data(不知道怎么翻译比较好), 有利于下一层的计算. \(a = g(z) = tanh(z) = \frac{e^{z}-e^{-z}}{e^{z}+e^{-z}} \\ g&#39;(z) = 1 - (tanh(z))^2\) 
-ReLU(Rectified Linear Unit) 收敛快. \(a = g(z) = max(0, z) \\ g&#39;(z) = \begin{cases} 0 &amp;\text{if } z&lt;0 \\ 1 &amp;
+ReLU(Rectified Linear Unit) 收敛快. \(a = g
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1548,7 +1539,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g(z) = max(0, z) \\ g&#39;(z) = \be
 演示图片
 
 源码:
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061
+123456789101112131415161718192021
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1699,7 +1690,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g(z) = max(0, z) \\ g&#39;(z) = \be
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1798,13 +1789,6 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g(z) = max(0, z) \\ g&#39;(z) = \be
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

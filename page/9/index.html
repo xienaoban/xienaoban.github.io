@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -333,7 +333,7 @@
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
 代码：（Accepted，0 ms）
-12345678910111213141516171819202122//UVa10935 - Throwing cards away I#include&lt;iostream&gt;#include&lt;queue&gt;int N;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%d&quot;, &amp;N) != -1 &amp;&amp; N != 0) &#123;		std::queue&lt;int&gt; C;		for (int i = 1;i &lt;= N;++i) C.push(i);		printf(&
+12345678910111213141516171819202122//UVa10935 - Throwing cards away I#include&lt;iostream&gt;#include&lt;queue&gt;int N;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%d&quot;, &amp;N) != -1 &amp;&amp; N != 0) &#12
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -461,7 +461,7 @@
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
-代码：（Accepted，20 ms） 123456789101112131415161718192021222324252627282930313233//UVa1594 - Ducci Sequence#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;vector&gt;using namespace std;int T,N;bool is_zero(vector&lt;int&gt; &amp;d) &#123;	for (const auto &amp;i : d)		if (i) return false;	return true;&#125;int main()&#123;	//
+代码：（Accepted，20 ms） 123456789101112131415161718192021222324252627282930313233//UVa1594 - Ducci Sequence#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#include&lt;vector&gt;using namespace std;int T,N;bool is_zero(vector&lt;int&gt; &amp;d) &#123;	for (co
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -589,7 +589,7 @@
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
-代码：（Accepted，0 ms） 123456789101112131415161718192021222324252627282930313233343536//UVa1593 - Alignment of Code#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;#include&lt;string&gt;#include&lt;sstream&gt;#include&lt;iterator&gt;#include&lt;iomanip&gt;using namespace std;vector&lt;string&gt; text[1009];int num[100] = &#123; 0 &#125;
+代码：（Accepted，0 ms） 123456789101112131415161718192021222324252627282930313233343536//UVa1593 - Alignment of Code#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;#include&lt;string&gt;#include&lt;sstream&gt;#include&lt;iterator&gt;#include&lt;iomanip&gt;us
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -715,7 +715,7 @@
       
         
           
-          之前上传UVa227 puzzle时，好不容易AC了，但发现自己用时50(ms)，而在VJ上看到人家都是40ms、20ms，于是打开一个20ms的代码查看人家强在哪里。但结果研究了半天感觉差不多，于是想着应该不是算法的问题。然后又想到，网上提交的答案，大家都是用scanf和printf写的，而我用的cin cout，而这题的确需要大量的输入输出，于是就想着把所有cin cout改成scanf printf。结果 —。—  上面c++版，下面c版。 于是我很好奇C的输入输出方法和C++提倡的方法为什么差距那么大。经过一番研究和查询，结果如下： 首先是scanf和cin： cin之所以慢，主要是因为要与scanf同步的关系，即允许scanf与cin混用。但是如果你的代码里没用到scanf，那么想关闭同步也可以。 只要使用这行代码，就可关闭同步：std::ios::sync_with_stdio
+          之前上传UVa227 puzzle时，好不容易AC了，但发现自己用时50(ms)，而在VJ上看到人家都是40ms、20ms，于是打开一个20ms的代码查看人家强在哪里。但结果研究了半天感觉差不多，于是想着应该不是算法的问题。然后又想到，网上提交的答案，大家都是用scanf和printf写的，而我用的cin cout，而这题的确需要大量的输入输出，于是就想着把所有cin cout改成scanf printf。结果 —。—  上面c++版，下面c版。 于是我很好奇C的输入输出方法和C++提倡的方法为什么差距那么大。经过一番研究和查询，结果如下： 首先是scanf和cin： cin之所以慢，主要是因为要与scanf同步的关系，即允许sca
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -844,7 +844,7 @@
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
 代码：（Accepted，0 ms）
-123456789101112131415161718192021222324//UVa815 - Flooded!#include&lt;iostream&gt;#include&lt;algorithm&gt;int M, N, W, S[1000], T = 0;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%d%d&quot;, &amp;M, &amp;N) != -1 &amp;&amp; M != 0 &amp;&amp; N != 0) &#123;		for (int i = 0, *p = S;i &lt; M*N
+123456789101112131415161718192021222324//UVa815 - Flooded!#include&lt;iostream&gt;#include&lt;algorithm&gt;int M, N, W, S[1000], T = 0;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%d%d&quot;, &amp;M, &amp;N) != -
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -972,7 +972,7 @@
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO
 
-代码：（Accepted，0 ms） 1234567891011121314151617#include&lt;iostream&gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%u%u%u&quot;, &amp;N, &amp;Sp, &amp;Sq) != -1) &#123;		K = 0xffffffffffffffff;		for (A = 0;A &lt; 32;++A) for (B = 0;B &lt; 32;++
+代码：（Accepted，0 ms） 1234567891011121314151617#include&lt;iostream&gt;unsigned N, A, B, Sp, Sq, ansA, ansB;unsigned long long Pofs, K, nowK;int main()&#123;	//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);	while (scanf(&quot;%u%u%u&quot;, &amp;N, &amp;Sp, &amp;Sq) != -1) &#
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1099,7 +1099,7 @@
         
           
           ﻿书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
-1234567891011121314151617181920212223242526272829303132333435//UVa12108 - Extraordinarily Tired Students#include&lt;iostream&gt;struct how_cute_my_sleepy_boys_are &#123;	int a,//awaken period :		a&gt;=1;		b,//sleeping period :	b&lt;=5;		s,//state :				0醒着,1睡觉;		t;//time :				睡/醒到什么时候;&#125;g[12];int n, c, mi, cnt, T = 0;//cnt:统计睡着的人;mi:
+1234567891011121314151617181920212223242526272829303132333435//UVa12108 - Extraordinarily Tired Students#include&lt;iostream&gt;struct how_cute_my_sleepy_boys_are &#123;	int a,//awaken period :		a&gt;=1;		b,//sleeping period :	b&lt;=5;		s,//state :				0醒着,1睡
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1226,7 +1226,7 @@
         
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152//UVa509 - RAID!#include&lt;iostream&gt;int d, s, b, t, times = 0;char disk_data[7][6666], type;inline char* disk(int x, int y, int z) &#123;//二维数组当作三维数组使,方便运算	return *(disk_data + x - 1) + (y - 1)*s + z - 1;&#125;inline char* parity(int y, int
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152//UVa509 - RAID!#include&lt;iostream&gt;int d, s, b, t, times = 0;char disk_data[7][6666], type;inline char* disk(int x, int y, int z) &#123;//二维数组当作三维数组使,方便运算	retu
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1353,7 +1353,7 @@
         
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，10 ms）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445//UVa508 - Morse Mismatches#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;using namespace std;map&lt;char, string&gt; morse;map&lt;string, string&gt; word;string wo, tran, result;char c;int cmp(string a, string b) &#123;	if (a == b) return
+123456789101112131415161718192021222324252627282930313233343536373839404142434445//UVa508 - Morse Mismatches#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;map&gt;using namespace std;map&lt;char, string&gt; morse;map&lt;string, string&gt; word;stri
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1480,7 +1480,7 @@
         
           
           书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）
-12345678910111213141516171819202122232425262728293031323334353637383940//UVa1590 - IP Networks#include&lt;iostream&gt;unsigned i, m, num, ip[4], ipmax[4], ipmin[4], mask[4];int cmp(unsigned *a, unsigned *b) &#123;//compare	for (int i = 0;i &lt; 4;++i) &#123;		if (a[i] &lt; b[i]) return -1;		if (a[i] &gt; b[i]) return 1;	&#125;	return 0;&
+12345678910111213141516171819202122232425262728293031323334353637383940//UVa1590 - IP Networks#include&lt;iostream&gt;unsigned i, m, num, ip[4], ipmax[4], ipmin[4], mask[4];int cmp(unsigned *a, unsigned *b) &#123;//compare	for (int i = 0;i &lt; 4;++i) &#123;	
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1631,7 +1631,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1730,13 +1730,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

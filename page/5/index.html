@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -336,7 +336,7 @@
 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。
 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰
 ##2.回溯法 由于每个皇后不能在一行，那八个皇后就在八个不同行上面嘛，对于每个皇后/每一行，采用回溯法先第一行放一个，在第二行剩下7个位置中找第二个皇后可能的位置，以此类推，一共\(8^8 = 16777216\)种情况。
-##3.全排列 由于每个皇后不同行不同列，那么在每个皇后占一行的基础上，每个皇后在0-7个列只能占一个，就相当于一个全排列，要考虑\(A_8^8 = 8! = 40320\)种情况，较上述两个方法已经快了很多
+##3.全排列 由于每个皇后不同行不同列，那么在
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -465,7 +465,7 @@
           https://code.google.com/codejam/contest/3274486/dashboard
 #Problem
 The kitchen at the Infinite House of Pancakes has just received an order for a stack of K pancakes! The chef currently has N pancakes available, where N ≥ K. Each pancake is a cylinder, and different pancakes may have different radii and heights.
-As the sous-chef, you must choose K out of the N available pancakes, discard the ot
+As 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -595,9 +595,7 @@ As the sous-chef, you must choose K out of the N available pancakes, discard the
 给定向量：\(a=(a_0,a_1,...,a_{n-1})\)，\(b=(b_0,b_1,...,b_{n-1})\)
 向量和：\(a+b=(a_0+b_0,a_1+b_1,...,a_{n-1}+b_{n-1})\) 数量积（内积、点积）：\(a·b=a_0b_0+a_1b_1+...+a_{n-1}b_{n-1}\) 卷积：\(a \otimes b=(c_0,c_1,...,c_{2n-2})\)，其中\(c_k=\sum_{i+j=k}(a_ib_j)\)
 例如：\(c_{n-1}=a_0b_{n-1}+a_1b_{n-2}+...+a_{n-2}b_1+a_{n-1}b_0\)
-卷积的最典型的应用就是多项式乘法（多项式乘法就是求卷积）。以下就用多项式乘法来描述、举例卷积与DFT。
-关于多项式
-对于多项式\(A(x)\)，系数为\(a_i\),设最高非零系数为\
+卷积的最典型的应用就是多项式
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -725,7 +723,7 @@ As the sous-chef, you must choose K out of the N available pancakes, discard the
           
           http://codeforces.com/problemset/problem/786/A
 #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge space, so they play it with a computer.
-In this game there are n objects numbered from 1 to n arranged in a circle (in clockwise order). Object number 1 is a black hole and the others are planets. Th
+In this game there are n objects numbered from 1 to n arranged in a circle (in 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -852,7 +850,7 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in c
         
           
           #Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。
-例如一个数组\(\{1,3,6,5,2,4,1,9,0\}\)，一共9个数字，下标08。要求： 每次取一个区间，计算区间内\((最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+...\)的值。很容易想到对区间排个序，即可方便获得最大、次大值等。 对15排序：\(\{2,3,4,5,6\}\) 对16排序：\(\{1,2,3,4,5,6\}\) 对25排序：\(\{2,4,5,6\}\) 可以看出2、5、6始
+例如一个数组\(\{1,3,6,5,2,4,1,9,0\}\)，一共9个数字，下标08。要求： 每次取一个区间，计算区间内\((最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+...\)的值。很容易想到对区间排个序，即可方便获得最大、次大值等。 对1
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -979,8 +977,7 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in c
         
           
           #Description There are n cities in Berland, each of them has a unique id — an integer from 1 to n, the capital is the one with id 1. Now there is a serious problem in Berland with roads — there are no roads.
-That is why there was a decision to build n - 1 roads so that there will be exactly one simple path between each pair of cities.
-In the construction plan t integers a1, a2, ..., at were stat
+That is why there was a decision to build n - 1 roads so that there will be exactly one simple path between eac
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1111,7 +1108,7 @@ In the construction plan t integers a1, a2, ..., at were stat
 \(C_n^0+C_n^1+C_n^2+...+C_n^n = \sum_{i=0}^{n}{C_n^i} = 2^n\)
 \(C_n^0+C_n^2+C_n^4+... = C_n^1+C_n^3+C_n^5+... = 2^{n-1}\)
 \(C_n^m+C_{n+1}^m+C_{n+2}^m+...+C_{n+m}^m = \sum_{i=0}^{m}C_{n+i}^{m} = C_{n+m+1}^{m+1}\)
-\(k C_n^k = nC_{n-1}^{k-1}\)， \(\frac{C_n^k}{k+1} = \frac{C_{n+1}^{k+1}}{n+1}\) （好吧这个没学
+\(k C_n
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1238,7 +1235,7 @@ In the construction plan t integers a1, a2, ..., at were stat
         
           
           #Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consist of round brackets (characters "(" and ")" (without quotes)).
-On the last lesson Anton learned about the regular simple bracket sequences (RSBS). A bracket sequence s of length n is an RSBS if the
+On the last lesson Anton learned about the regular sim
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1365,10 +1362,7 @@ On the last lesson Anton learned about the regular simple bracket sequences (RSB
         
           
           欠拟合（Underfitting）与过拟合（Overfitting）
-  上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适当增加特征，比如加入x的多次方。通常这很少发生，发生的多的都是过拟合。那么如何处理过度拟合呢？ 1. 丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙（例如 PCA）。 2. 正则化。 保留所有的特征，但是减少参数的大小(magnitude)。
-加入正则化的代价函数
-假设上面的线性回归过拟合例子使用使用的模型是： 
-我们可以看出这些高次项（3次
+  上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适当增加特征，比如加入x的多次方。通常这很少发生，发生的多的都是过拟合。那么如何处理过度拟合呢？ 1. 丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙（例如 PCA）。 2. 正则化。 保留所
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1494,9 +1488,7 @@ On the last lesson Anton learned about the regular simple bracket sequences (RSB
       
         
           
-          逻辑回归算法是分类算法，虽然这个算法的名字中出现了“回归”，但逻辑回归算法实际上是一种分类算法，我们将它作为分类算法使用。。 分类问题：对于每个样本，判断它属于N个类中的那个类或哪几个类。通常我们判定一个样本，若我们预测它的确属于这个类的可能性大于50%，则认为它属于这个类。当然具体选择50%还是70%还是其他要看具体情况，这里先默认50%。 线性回归的局限性在分类问题的例子中变得不可靠：这是一个用来预测肿瘤是否呈阴性的模型，当一个肿瘤的尺寸大于一个数，我们就认为这个肿瘤呈阴性。我们现在新增了一个数据，结果导致整个模型的参数变化很大。如下图，在新加入最右侧数据后，50%的分水岭右移了不止一点点。而根据常识这个数据本应对我们的预测没有什么影响。 
-对此类问题引入新模型： 
-对于g(z)=1/(1+e^(-z))这个模型，对国内读过高中的学生都能看懂都想得出它的函数图像，当z&gt;0时g
+          逻辑回归算法是分类算法，虽然这个算法的名字中出现了“回归”，但逻辑回归算法实际上是一种分类算法，我们将它作为分类算法使用。。 分类问题：对于每个样本，判断它属于N个类中的那个类或哪几个类。通常我们判定一个样本，若我们预测它的确属于这个类的可能性大于50%，则认为它属于这个类。当然具体选择50%还是70%还是其他要看具体情况，这里先默认50%。 线性回归的局限性在分类问题的例子中变得不可靠：这是一个用来预测肿瘤是否呈阴性的模型，当一个肿瘤的尺寸大于一个数，我们就认为这个肿瘤呈阴性。我们现在新增了一个数据，结果导致整个模型的参数变化很大。如下图，在新加入最右侧数据后，50%的分水岭右移了不止一点点。而根据常识这个数据本应对我们的预测没有
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1647,7 +1639,7 @@ On the last lesson Anton learned about the regular simple bracket sequences (RSB
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1746,13 +1738,6 @@ On the last lesson Anton learned about the regular simple bracket sequences (RSB
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

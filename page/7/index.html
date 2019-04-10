@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -332,7 +332,7 @@
           
           最近学机器学习，感觉matlab/octave用的人不多，想改用python。于是开始学python，辛辛苦苦学会了自己装环境和装第三方库，结果发现scipy库竟然没有win版本！于是想着那我得装个linux了。于是乎...我本来只是想学学机器学习的。。。（教练：你怎么什么都想学）那么说干就干，顺便写个笔记，也不指望别人看到，也是以防以后我再需要安装linux时忘了自己曾经的步骤。
 #一、Linux版本选择与下载#
-因为是入门么，首先想到的自然是ubuntu。然后查了查，定下来就ubuntu比较适合我这种从windows过渡过去的。版本就默认他的最新就好，我目前最新版本是16.04。那么虽然选择ubuntu，还是不要选择其旗下的优麒麟吧。。。这个版本预装了些本地化软件，然而并没有什么用。（听说是win98一样打GUI，以及预装360?!360爸爸都管到linux啦） Ubuntu官网：
+因为是入门么，首先想到的自然是ubuntu。然后查了查，定下来就ubuntu比较适合我这种从windows过渡过去的。版本就默认他的最新就好，我目前最新版本是16.04。那么虽然选择ubuntu，还是不要选择其旗下的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -461,7 +461,7 @@
           题意：模拟Petri网的执行。虽然没听说过Petri网，但是题目描述的很清晰。
 
 代码：（Accepted，0.210s）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990//UVa804 - Petri Net Simulation//Accepted 0.210s//#define _XIENAOBAN_#include&lt;iostream&gt;#include&lt;map&gt;using namespace std;struct &#123;	map&lt;int, int&gt
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990//UVa804 - Petri Net Simulation//Accepted 0.210s//#define _XIENAOBAN_#include&lt;ios
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -590,7 +590,7 @@
           题意：二叉树代表使得平衡天平，修改最少值使之平衡。
 
 代码：（Accepted，0.030s）
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647//UVa12166 - Equilibrium Mobile//Accepted 0.030s//#define _XIENAOBAN_#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;map&gt;int T;int total;std::map&lt;long long, int&gt; leaf;void build(int dp) &#123;	char c(getchar());	if (c == &apos;[&apos;) &#123;		bu
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647//UVa12166 - Equilibrium Mobile//Accepted 0.030s//#define _XIENAOBAN_#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;map&gt;int T;int total;std::map&lt;long long, int&gt; leaf
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -724,7 +724,7 @@
 只能上下左右走，不支持斜着走；
 未考虑终点被包住而到达不了的情况，发生此类情况时，算法会遍历所有可到达点无果后才证明目标无法到达。
 
-虽然模拟的比较简单，但是足以学习、说明问题。为了使算法更形象可视化，我给算法的过程做了小动画。成品存在了我的Github里：https://github.com/XieNaoban/Pathfinding 这里代码就不贴了。使用的
+虽然模拟的比较简单，但是足以学习、说明问题。为了使算法更形象可视化，我
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -853,7 +853,7 @@
           比较忙比较累，只贴代码了。
 
 题目：6-4 UVa439 - Knight Moves
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.000s//#define _XIENAOBAN_#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;queue&gt;#define M(po) Map[po.x][po.y]using namespace std;struct poi &#123;	int x, y, weight;	poi operator +(const poi
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162//UVa439 - Knight Moves//Accepted 0.000s//#define _XIENAOBAN_#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;queue&gt;#define M(po) Map[po.x][po.y]
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -981,7 +981,7 @@
           
           这三题比较简单，只放代码了。
 
-题目：6-1 UVa673 - Parentheses Balance 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//UVa673 - Parentheses Balance//Accepted 0.000s//#define _XIENAOBAN_#include&lt;iostream&gt;using namespace std;int N;char line[130];bool st[130];bool cal() &#123;	if (*line == &apos;\0&apos;) return true;	auto *p = line;	auto *top = st;	do &#123;		switch (
+题目：6-1 UVa673 - Parentheses Balance 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849//UVa673 - Parentheses Balance//Accepted 0.000s//#define _XIENAOBAN_#include&lt;iostream&gt;using namespace std;int N;char line[130];bool st[130];bool cal() &#123;	if (*line == 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1109,7 +1109,7 @@
           
           题意：模拟患者做手术。 其条件为：医院有Nop个手术室、准备手术室要Mop分钟，另有Nre个恢复用的床、准备每张床要Mre分钟，早上Ts点整医院开张，从手术室手术完毕转移到回复床要Mtr分钟。现在医院早上开张了，给你一张患者的表，有Npa个患者等着做手术，每个患者的的信息有：名字、做手术需要的时间、恢复需要的时间。只要有空的手术室位就安排患者进去，优先安排门牌号低的。若多人同时竞争，输入列表靠前的先进。进入恢复室的优先顺序是，也是优先安排床号靠前的床，同时做完手术的人按照手术室的门牌号小的 （很奇葩的设定）优先。
 
-代码：（Accepted，0.000s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626
+代码：（Accepted，0.000s） 123456789101112131415161718192021222
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1237,7 +1237,7 @@
           
           题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。
 
-代码：（Accepted，0.250s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475//UVa12333 - Revenge of Fibonacci//Accepted 0.250s//#define _XIENAOBAN_#include&lt;iostream&gt;#include&lt;cstring&gt;#define MAXS 0xffffff#define CIN 50usin
+代码：（Accepted，0.250s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475//UVa12333 - Revenge of Fibonacci//Accepted 0.250s//#define _XIENAOBAN_#inclu
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1366,7 +1366,7 @@
           题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。
 
 代码：（Accepted，0.330s）
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102//UVa1598 - Exchange//Accepted 0.330s//#define _XIENAOBAN_#include&lt;functional&gt;#include&lt;algorithm&gt;#include&lt;iostream&gt;#include&lt;
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102//UVa1598 - Exchange//Accepted 0.330s//#define _XIENAOBAN_#includ
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1494,7 +1494,7 @@
           
           题意：模拟客服MM，一共有N种话题，每个客服MM支持处理其中的i个（i &lt; N），处理的话题还有优先级。为了简化流程方便出题，设每个话题都是每隔m分钟来咨询一次。现知道每个话题前来咨询的时间、间隔、处理此话题所需的时长与一共有多少次咨询。问多少时间后全部话题处理完成。
 
-代码：（Accepted，0.010s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081//UVa822 - Queue and A//Accepted 0.010s//#define _XIENAOBAN_#include&lt;algorithm&gt;
+代码：（Accepted，0.010s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081//UVa
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1645,7 +1645,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1744,13 +1744,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
 

@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,37 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces 786A - Berzerk">
-<meta property="og:url" content="http://yoursite.com/posts/31985.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-08T13:35:57.929Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces 786A - Berzerk">
-<meta name="twitter:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -118,12 +91,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/posts/31985.html">
-
+  
 
 
 
+
+  <meta name="description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 786A - Berzerk">
+<meta property="og:url" content="https://xienaoban.github.io/posts/31985.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Codeforces 786A - Berzerk">
+<meta name="twitter:description" content="http://codeforces.com/problemset/problem/786/A #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/31985">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Codeforces 786A - Berzerk | XieNaoban's Blog</title>
   
@@ -135,9 +134,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -149,7 +177,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -159,13 +187,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,65 +200,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -239,12 +307,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -257,12 +340,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/31985.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/31985.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -279,11 +364,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Codeforces 786A - Berzerk</h1>
+          <h1 class="post-title" itemprop="name headline">Codeforces 786A - Berzerk
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -291,19 +385,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T22:05:37+08:00">
-                2017-04-03
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-03 22:05:37" itemprop="dateCreated datePublished" datetime="2017-04-03T22:05:37+08:00">2017-04-03</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -340,13 +452,16 @@
 <p>1 ≤ ki ≤ n - 1 and 1 ≤ si, 1, si, 2, ..., si, ki ≤ n - 1 for 1 ≤ i ≤ 2.</p>
 <p>#Output In the first line print n - 1 words separated by spaces where i-th word is "Win" (without quotations) if in the scenario that Rick plays first and monster is initially in object number i + 1 he wins, "Lose" if he loses and "Loop" if the game will never end.</p>
 <p>Similarly, in the second line print n - 1 words separated by spaces where i-th word is "Win" (without quotations) if in the scenario that Morty plays first and monster is initially in object number i + 1 he wins, "Lose" if he loses and "Loop" if the game will never end.</p>
-<p>#Examples <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line">5</span><br><span class="line">2 3 2</span><br><span class="line">3 1 2 3</span><br><span class="line">output</span><br><span class="line">Lose Win Win Loop</span><br><span class="line">Loop Win Win Win</span><br><span class="line">input</span><br><span class="line">8</span><br><span class="line">4 6 2 3 4</span><br><span class="line">2 3 6</span><br><span class="line">output</span><br><span class="line">Win Win Win Win Win Win Win</span><br><span class="line">Lose Win Lose Lose Win Lose Lose</span><br></pre></td></tr></table></figure></p>
+<p>#Examples <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line">Lose Win Win Loop</span><br><span class="line">Loop Win Win Win</span><br><span class="line">input</span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">4</span> <span class="number">6</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">6</span></span><br><span class="line">output</span><br><span class="line">Win Win Win Win Win Win Win</span><br><span class="line">Lose Win Lose Lose Win Lose Lose</span><br></pre></td></tr></table></figure></p>
 <p>#Key <strong>题意</strong>：一个有n个结点的环，第一个结点上是黑洞，其他为行星。现在有一个怪物可能在任意的行星上。甲乙两人可以顺时针驱赶怪物。甲每次可驱赶<span class="math inline">\(s1_1, s1_2,s1_3...\)</span>个格子，共k1个可能。乙每次可驱赶<span class="math inline">\(s2_1, s2_2,s2_3...\)</span>个格子，共k2种可能。谁把怪物刚好驱逐到黑洞里就赢。现在求：当怪物在第i个行星，甲（或乙）第一个驱赶时，甲（或乙）一定赢、一定输还是平局？</p>
 <p><strong>思路</strong>：DFS+动态规划。（这里只考虑甲开局的情况，乙一样求）从黑洞开始反向逆推，即分别倒退<span class="math inline">\(s1_1, s1_2,s1_3...\)</span>个格子，只要从这些点驱逐，甲是必赢的；换句话说，乙如果把怪物驱逐到了这些点，乙就输了，所以当乙能驱赶的点都是必输点时，当前点也是乙的必输点。 那么对于当前点：若能够将怪物驱逐到对手的必输点，该点必赢，对当前点DFS；若能够将怪物驱逐到对手的必赢点，为当前点计数，当当前点到所有可驱逐的点都会导致失败时，当前点即为必输点。 使用sch数组保存点是否访问过，即DP的记忆化搜索的思想。</p>
-<p>#Code <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#define N 7008</span><br><span class="line">int n, k[2], s[2][N];</span><br><span class="line">int win[2][N], sch[2][N], cnt[2][N];</span><br><span class="line"></span><br><span class="line">void init(int who) &#123;</span><br><span class="line">	memset(win[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(sch[who], 0, sizeof(int)*n);</span><br><span class="line">	memset(cnt[who], 0, sizeof(int)*n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void dp(int now, int who) &#123;</span><br><span class="line">	sch[!who][now] = 1; // 能够允许dp递归下来的now都是已经确定输和赢的</span><br><span class="line">	/*</span><br><span class="line">	for (int i = 0;i != n;++i) &#123;</span><br><span class="line">		printf(&quot;win&#123;%d %d&#125; sch&#123;%d %d&#125; cnt&#123;%d %d&#125;\n&quot;,</span><br><span class="line">			win[0][i], win[1][i],</span><br><span class="line">			sch[0][i], sch[1][i],</span><br><span class="line">			cnt[0][i], cnt[1][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	puts(&quot;-----&quot;);</span><br><span class="line">	*/</span><br><span class="line">	for (int i = 0;i != k[who];++i) &#123;</span><br><span class="line">		int pre = (now - s[who][i] + n) % n; // who让怪物从pre跳到now</span><br><span class="line">		if (!pre) continue; // 不可能</span><br><span class="line">		if (sch[who][pre]) continue; // 记忆搜索</span><br><span class="line">		if (!win[!who][now]) &#123; // 若从pre到now对面必输. (输的条件是sch[who][i]==1且win[who][i]==0)</span><br><span class="line">			win[who][pre] = 1; // 这一步一定赢</span><br><span class="line">			dp(pre, !who);</span><br><span class="line">		&#125;</span><br><span class="line">		else if (win[!who][now]) &#123; // 若从pre到now对面必赢</span><br><span class="line">			if (++cnt[who][pre] == k[who]) &#123; // 当这一步怎么走都会导致对面赢</span><br><span class="line">				dp(pre, !who);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		scanf(&quot;%d&quot;, k + who);</span><br><span class="line">		for (int i = 0;i != k[who];++i)</span><br><span class="line">			scanf(&quot;%d&quot;, s[who] + i);</span><br><span class="line">	&#125;</span><br><span class="line">	init(0), init(1);</span><br><span class="line">	dp(0, 0),dp(0, 1);</span><br><span class="line">	for (int who = 0;who != 2;++who) &#123;</span><br><span class="line">		for (int i = 1;i != n;++i) &#123;</span><br><span class="line">			if (win[who][i]) printf(&quot;Win&quot;);</span><br><span class="line">			else if (sch[who][i]) printf(&quot;Lose&quot;);</span><br><span class="line">			else printf(&quot;Loop&quot;);</span><br><span class="line">			printf(&quot;%c&quot;, &quot; \n&quot;[i == n - 1]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>#Code <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 7008</span></span><br><span class="line"><span class="keyword">int</span> n, k[<span class="number">2</span>], s[<span class="number">2</span>][N];</span><br><span class="line"><span class="keyword">int</span> win[<span class="number">2</span>][N], sch[<span class="number">2</span>][N], cnt[<span class="number">2</span>][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> who)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(win[who], <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);</span><br><span class="line">	<span class="built_in">memset</span>(sch[who], <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);</span><br><span class="line">	<span class="built_in">memset</span>(cnt[who], <span class="number">0</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span> now, <span class="keyword">int</span> who)</span> </span>&#123;</span><br><span class="line">	sch[!who][now] = <span class="number">1</span>; <span class="comment">// 能够允许dp递归下来的now都是已经确定输和赢的</span></span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	for (int i = 0;i != n;++i) &#123;</span></span><br><span class="line"><span class="comment">		printf("win&#123;%d %d&#125; sch&#123;%d %d&#125; cnt&#123;%d %d&#125;\n",</span></span><br><span class="line"><span class="comment">			win[0][i], win[1][i],</span></span><br><span class="line"><span class="comment">			sch[0][i], sch[1][i],</span></span><br><span class="line"><span class="comment">			cnt[0][i], cnt[1][i]);</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	puts("-----");</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i != k[who];++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> pre = (now - s[who][i] + n) % n; <span class="comment">// who让怪物从pre跳到now</span></span><br><span class="line">		<span class="keyword">if</span> (!pre) <span class="keyword">continue</span>; <span class="comment">// 不可能</span></span><br><span class="line">		<span class="keyword">if</span> (sch[who][pre]) <span class="keyword">continue</span>; <span class="comment">// 记忆搜索</span></span><br><span class="line">		<span class="keyword">if</span> (!win[!who][now]) &#123; <span class="comment">// 若从pre到now对面必输. (输的条件是sch[who][i]==1且win[who][i]==0)</span></span><br><span class="line">			win[who][pre] = <span class="number">1</span>; <span class="comment">// 这一步一定赢</span></span><br><span class="line">			dp(pre, !who);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (win[!who][now]) &#123; <span class="comment">// 若从pre到now对面必赢</span></span><br><span class="line">			<span class="keyword">if</span> (++cnt[who][pre] == k[who]) &#123; <span class="comment">// 当这一步怎么走都会导致对面赢</span></span><br><span class="line">				dp(pre, !who);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> who = <span class="number">0</span>;who != <span class="number">2</span>;++who) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, k + who);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i != k[who];++i)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, s[who] + i);</span><br><span class="line">	&#125;</span><br><span class="line">	init(<span class="number">0</span>), init(<span class="number">1</span>);</span><br><span class="line">	dp(<span class="number">0</span>, <span class="number">0</span>),dp(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> who = <span class="number">0</span>;who != <span class="number">2</span>;++who) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i != n;++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (win[who][i]) <span class="built_in">printf</span>(<span class="string">"Win"</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (sch[who][i]) <span class="built_in">printf</span>(<span class="string">"Lose"</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Loop"</span>);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%c"</span>, <span class="string">" \n"</span>[i == n - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+
+    
+
     
     
     
@@ -354,7 +469,34 @@
     
 
     
+      
+    
+    
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/31985.html" title="Codeforces 786A - Berzerk">https://xienaoban.github.io/posts/31985.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -396,17 +538,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -426,54 +561,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -481,6 +691,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -490,16 +701,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -507,12 +720,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -533,11 +747,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -551,96 +768,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -654,7 +786,58 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -666,31 +849,22 @@
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

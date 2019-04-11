@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,44 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
-<meta property="og:type" content="article">
-<meta property="og:title" content="八皇后问题动态演示">
-<meta property="og:url" content="http://yoursite.com/posts/4561.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/posts/4561/1.jpg">
-<meta property="og:image" content="http://yoursite.com/posts/4561/2.jpg">
-<meta property="og:image" content="http://yoursite.com/posts/4561/3.jpg">
-<meta property="og:image" content="http://yoursite.com/posts/4561/4.png">
-<meta property="og:image" content="http://yoursite.com/posts/4561/5.png">
-<meta property="og:image" content="http://yoursite.com/posts/4561/6.png">
-<meta property="og:updated_time" content="2019-04-08T13:35:58.002Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八皇后问题动态演示">
-<meta name="twitter:description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
-<meta name="twitter:image" content="http://yoursite.com/posts/4561/1.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -125,12 +91,45 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/posts/4561.html">
-
+  
 
 
 
+
+  <meta name="description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="八皇后问题动态演示">
+<meta property="og:url" content="https://xienaoban.github.io/posts/4561.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/1.jpg">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/2.jpg">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/3.jpg">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/4.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/5.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/4561/6.png">
+<meta property="og:updated_time" content="2019-04-08T13:35:58.002Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="八皇后问题动态演示">
+<meta name="twitter:description" content="学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。 八皇后问题 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰 ##2.回溯法 由于每个皇后不能在一">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/4561/1.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/4561">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>八皇后问题动态演示 | XieNaoban's Blog</title>
   
@@ -142,9 +141,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -156,7 +184,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -166,13 +194,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -180,65 +207,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -246,12 +314,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -264,12 +347,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/4561.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/4561.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -286,11 +371,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">八皇后问题动态演示</h1>
+          <h1 class="post-title" itemprop="name headline">八皇后问题动态演示
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -298,19 +392,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:31:17+08:00">
-                2017-05-06
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-06 17:31:17" itemprop="dateCreated datePublished" datetime="2017-05-06T17:31:17+08:00">2017-05-06</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:58" itemprop="dateModified" datetime="2019-04-08T21:35:58+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -353,14 +465,17 @@
 <p>遍历到当前方案时的遍历次数统计与可行方案统计显示在下方；</p>
 <p>演示窗口自适应，修改窗口尺寸时始终保证棋盘最大化地显示在窗口中间；</p>
 <p>演示画布采用双缓冲，防止演示动画时的窗口动画闪屏。</p>
-<p>##代码 八皇后类EnumQueens.cs（实现查找下一排列、重置排列等）： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    class EnumQueens</span><br><span class="line">    &#123;</span><br><span class="line">        private int[] Board;</span><br><span class="line"></span><br><span class="line">        public EnumQueens()</span><br><span class="line">        &#123;</span><br><span class="line">            Board = new int[8];</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void Reset()</span><br><span class="line">        &#123;</span><br><span class="line">            for (int i = 0; i &lt; 8; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                Board[i] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public bool Next()</span><br><span class="line">        &#123;</span><br><span class="line">            for (int i = Board.Length - 1; i &gt; 0; --i)</span><br><span class="line">            &#123; </span><br><span class="line">                if (Board[i] &gt; Board[i - 1])</span><br><span class="line">                &#123;</span><br><span class="line">                    int val = Board[i - 1];</span><br><span class="line">                    int j = Board.Length - 1;</span><br><span class="line">                    for (; j &gt;= i; --j)</span><br><span class="line">                    &#123;</span><br><span class="line">                        if (Board[j] &gt; val)</span><br><span class="line">                            break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    SwapBoard(i - 1, j);</span><br><span class="line">                    int l = i;</span><br><span class="line">                    int r = Board.Length - 1;</span><br><span class="line">                    while (l &lt; r)</span><br><span class="line">                    &#123;</span><br><span class="line">                        SwapBoard(l, r);</span><br><span class="line">                        l++;</span><br><span class="line">                        r--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    return true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Reset();</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Point Check()</span><br><span class="line">        &#123;</span><br><span class="line">            Point ans = new Point();</span><br><span class="line">            for (int i = 0; i &lt; Board.Length; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                for (int j = i + 1; j &lt; Board.Length; ++j)</span><br><span class="line">                &#123;</span><br><span class="line">                    if (Math.Abs(i - j) == Math.Abs(Board[i] - Board[j]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ans.X = i;ans.Y = j;</span><br><span class="line">                        return ans;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ans.X = -1; ans.Y = -1;</span><br><span class="line">            return ans;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public int Get(int i)</span><br><span class="line">        &#123;</span><br><span class="line">            return Board[i];</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        private void SwapBoard(int i, int j)</span><br><span class="line">        &#123;</span><br><span class="line">            int t = Board[i];</span><br><span class="line">            Board[i] = Board[j];</span><br><span class="line">            Board[j] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>含棋盘的演示窗口：MainForm.cs： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.ComponentModel;</span><br><span class="line">using System.Data;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Runtime.InteropServices;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    public partial class MainForm : Form</span><br><span class="line">    &#123;</span><br><span class="line">        private int FrameLength = 30;</span><br><span class="line">        private int Fwidth, Fheight, Fleft, Fright, Ftop, Fbottom, Flength, Fdiameter;</span><br><span class="line"></span><br><span class="line">        private float Dif;</span><br><span class="line"></span><br><span class="line">        [DllImport(&quot;user32 &quot;)]</span><br><span class="line">        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);</span><br><span class="line">        [DllImport(&quot;user32 &quot;)]</span><br><span class="line">        private static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        public MainForm()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            Dif = 0.8f;</span><br><span class="line">            Width = 400;</span><br><span class="line">            Height = 600;</span><br><span class="line"></span><br><span class="line">            PannelForm pForm = new PannelForm();</span><br><span class="line">            pForm.Show();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void MainForm_SizeChanged(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            if (Program.Board.Get(0) == 0 &amp;&amp; Program.Board.Get(1) == 1) PaintQueens(Color.Orange);</span><br><span class="line">            else PaintQueens(Color.LightGreen);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void MainForm_Paint(object sender, PaintEventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            if (Program.Board.Get(0) == 0 &amp;&amp; Program.Board.Get(1) == 1) PaintQueens(Color.Orange);</span><br><span class="line">            else PaintQueens(Color.LightGreen);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void PaintQueens(Color c)</span><br><span class="line">        &#123;</span><br><span class="line">            Bitmap bmp = new Bitmap(Width, Height);</span><br><span class="line">            Graphics grp = Graphics.FromImage(bmp);</span><br><span class="line">            grp.Clear(Color.Azure);</span><br><span class="line">            Pen pen;</span><br><span class="line"></span><br><span class="line">            CalFrame();</span><br><span class="line"></span><br><span class="line">            pen = new Pen(Brushes.DeepSkyBlue, Flength / 160);</span><br><span class="line">            for (int i = 1; i &lt; 8; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                grp.DrawLine(pen, new Point(Fleft + i * Fdiameter, Ftop), new Point(Fleft + i * Fdiameter, Fbottom));</span><br><span class="line">                grp.DrawLine(pen, new Point(Fleft, Ftop + i * Fdiameter), new Point(Fright, Ftop + i * Fdiameter));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            pen = new Pen(Brushes.DodgerBlue, Flength / 100);</span><br><span class="line">            grp.DrawLine(pen, new Point(Fleft, Ftop), new Point(Fright, Ftop));</span><br><span class="line">            grp.DrawLine(pen, new Point(Fright, Ftop), new Point(Fright, Fbottom));</span><br><span class="line">            grp.DrawLine(pen, new Point(Fleft, Fbottom), new Point(Fright, Fbottom));</span><br><span class="line">            grp.DrawLine(pen, new Point(Fleft, Ftop), new Point(Fleft, Fbottom));</span><br><span class="line"></span><br><span class="line">            SolidBrush brush = new SolidBrush(c);</span><br><span class="line">            Rectangle rect;</span><br><span class="line">            int dif = (int)((1.0f - Dif) * Fdiameter/2);</span><br><span class="line"></span><br><span class="line">            for (int i = 0; i &lt; 8; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                rect = new Rectangle(Fleft + Program.Board.Get(i) * Fdiameter + dif, Ftop + i * Fdiameter + dif, Fdiameter - 2 * dif, Fdiameter - 2 * dif);</span><br><span class="line">                grp.FillEllipse(brush, rect);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            this.CreateGraphics().DrawImage(bmp, 0, 0);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void CalFrame()</span><br><span class="line">        &#123;</span><br><span class="line">            int width = this.Width - 17;</span><br><span class="line">            int height = this.Height - 40;</span><br><span class="line">            Fwidth = width - FrameLength * 2;</span><br><span class="line">            Fheight = height - FrameLength * 2;</span><br><span class="line">            Flength = (Math.Min(Fwidth, Fheight) / 8) * 8;</span><br><span class="line">            Fleft = (width - Flength) / 2;</span><br><span class="line">            Fright = Fleft + Flength;</span><br><span class="line">            Ftop = (height - Flength) / 2;</span><br><span class="line">            Fbottom = Ftop + Flength;</span><br><span class="line"></span><br><span class="line">            Fdiameter = Flength / 8;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>控制面板窗口PannelForm.cs： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    public partial class PannelForm : Form</span><br><span class="line">    &#123;</span><br><span class="line">        private Button button1;</span><br><span class="line">        private Button button2;</span><br><span class="line">        private Label label1;</span><br><span class="line">        private Label label2;</span><br><span class="line">        private Label label3;</span><br><span class="line">        private Label label4;</span><br><span class="line"></span><br><span class="line">        public int Ergodic, Solution;</span><br><span class="line">        private Button button3;</span><br><span class="line">        private Button button4;</span><br><span class="line">        private Button button5;</span><br><span class="line">        private CheckBox checkBox1;</span><br><span class="line"></span><br><span class="line">        public PannelForm()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void InitializeComponent()</span><br><span class="line">        &#123;</span><br><span class="line">            this.button1 = new System.Windows.Forms.Button();</span><br><span class="line">            this.button2 = new System.Windows.Forms.Button();</span><br><span class="line">            this.label1 = new System.Windows.Forms.Label();</span><br><span class="line">            this.label2 = new System.Windows.Forms.Label();</span><br><span class="line">            this.label3 = new System.Windows.Forms.Label();</span><br><span class="line">            this.label4 = new System.Windows.Forms.Label();</span><br><span class="line">            this.button3 = new System.Windows.Forms.Button();</span><br><span class="line">            this.button4 = new System.Windows.Forms.Button();</span><br><span class="line">            this.checkBox1 = new System.Windows.Forms.CheckBox();</span><br><span class="line">            this.button5 = new System.Windows.Forms.Button();</span><br><span class="line">            this.SuspendLayout();</span><br><span class="line">            // </span><br><span class="line">            // button1</span><br><span class="line">            // </span><br><span class="line">            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            this.button1.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F);</span><br><span class="line">            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.button1.Location = new System.Drawing.Point(12, 12);</span><br><span class="line">            this.button1.Name = &quot;button1&quot;;</span><br><span class="line">            this.button1.Size = new System.Drawing.Size(268, 51);</span><br><span class="line">            this.button1.TabIndex = 0;</span><br><span class="line">            this.button1.Text = &quot;重置&quot;;</span><br><span class="line">            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            this.button1.UseVisualStyleBackColor = true;</span><br><span class="line">            this.button1.Click += new System.EventHandler(this.button1_Click);</span><br><span class="line">            // </span><br><span class="line">            // button2</span><br><span class="line">            // </span><br><span class="line">            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            this.button2.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F);</span><br><span class="line">            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.button2.Location = new System.Drawing.Point(12, 69);</span><br><span class="line">            this.button2.Name = &quot;button2&quot;;</span><br><span class="line">            this.button2.Size = new System.Drawing.Size(268, 51);</span><br><span class="line">            this.button2.TabIndex = 1;</span><br><span class="line">            this.button2.Text = &quot;下一个&quot;;</span><br><span class="line">            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            this.button2.UseVisualStyleBackColor = true;</span><br><span class="line">            this.button2.Click += new System.EventHandler(this.button2_Click);</span><br><span class="line">            // </span><br><span class="line">            // label1</span><br><span class="line">            // </span><br><span class="line">            this.label1.AutoSize = true;</span><br><span class="line">            this.label1.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));</span><br><span class="line">            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.label1.Location = new System.Drawing.Point(17, 231);</span><br><span class="line">            this.label1.Name = &quot;label1&quot;;</span><br><span class="line">            this.label1.Size = new System.Drawing.Size(132, 27);</span><br><span class="line">            this.label1.TabIndex = 2;</span><br><span class="line">            this.label1.Text = &quot;遍历次数统计&quot;;</span><br><span class="line">            this.label1.Click += new System.EventHandler(this.label1_Click);</span><br><span class="line">            // </span><br><span class="line">            // label2</span><br><span class="line">            // </span><br><span class="line">            this.label2.AutoSize = true;</span><br><span class="line">            this.label2.Font = new System.Drawing.Font(&quot;华文彩云&quot;, 60F);</span><br><span class="line">            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.label2.Location = new System.Drawing.Point(23, 258);</span><br><span class="line">            this.label2.Name = &quot;label2&quot;;</span><br><span class="line">            this.label2.Size = new System.Drawing.Size(80, 83);</span><br><span class="line">            this.label2.TabIndex = 3;</span><br><span class="line">            this.label2.Text = &quot;0&quot;;</span><br><span class="line">            this.label2.Click += new System.EventHandler(this.label2_Click);</span><br><span class="line">            // </span><br><span class="line">            // label3</span><br><span class="line">            // </span><br><span class="line">            this.label3.AutoSize = true;</span><br><span class="line">            this.label3.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));</span><br><span class="line">            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.label3.Location = new System.Drawing.Point(17, 377);</span><br><span class="line">            this.label3.Name = &quot;label3&quot;;</span><br><span class="line">            this.label3.Size = new System.Drawing.Size(132, 27);</span><br><span class="line">            this.label3.TabIndex = 4;</span><br><span class="line">            this.label3.Text = &quot;可行方案统计&quot;;</span><br><span class="line">            // </span><br><span class="line">            // label4</span><br><span class="line">            // </span><br><span class="line">            this.label4.AutoSize = true;</span><br><span class="line">            this.label4.Font = new System.Drawing.Font(&quot;华文彩云&quot;, 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));</span><br><span class="line">            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.label4.Location = new System.Drawing.Point(23, 404);</span><br><span class="line">            this.label4.Name = &quot;label4&quot;;</span><br><span class="line">            this.label4.Size = new System.Drawing.Size(97, 100);</span><br><span class="line">            this.label4.TabIndex = 5;</span><br><span class="line">            this.label4.Text = &quot;0&quot;;</span><br><span class="line">            this.label4.Click += new System.EventHandler(this.label4_Click);</span><br><span class="line">            // </span><br><span class="line">            // button3</span><br><span class="line">            // </span><br><span class="line">            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            this.button3.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F);</span><br><span class="line">            this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.button3.Location = new System.Drawing.Point(12, 227);</span><br><span class="line">            this.button3.Name = &quot;button3&quot;;</span><br><span class="line">            this.button3.Size = new System.Drawing.Size(268, 140);</span><br><span class="line">            this.button3.TabIndex = 6;</span><br><span class="line">            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            this.button3.UseVisualStyleBackColor = true;</span><br><span class="line">            // </span><br><span class="line">            // button4</span><br><span class="line">            // </span><br><span class="line">            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            this.button4.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F);</span><br><span class="line">            this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.button4.Location = new System.Drawing.Point(12, 373);</span><br><span class="line">            this.button4.Name = &quot;button4&quot;;</span><br><span class="line">            this.button4.Size = new System.Drawing.Size(268, 140);</span><br><span class="line">            this.button4.TabIndex = 7;</span><br><span class="line">            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            this.button4.UseVisualStyleBackColor = true;</span><br><span class="line">            // </span><br><span class="line">            // checkBox1</span><br><span class="line">            // </span><br><span class="line">            this.checkBox1.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));</span><br><span class="line">            this.checkBox1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.checkBox1.Location = new System.Drawing.Point(17, 194);</span><br><span class="line">            this.checkBox1.Name = &quot;checkBox1&quot;;</span><br><span class="line">            this.checkBox1.Size = new System.Drawing.Size(123, 21);</span><br><span class="line">            this.checkBox1.TabIndex = 0;</span><br><span class="line">            this.checkBox1.Text = &quot;显示所有遍历情况&quot;;</span><br><span class="line">            this.checkBox1.UseVisualStyleBackColor = true;</span><br><span class="line">            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);</span><br><span class="line">            // </span><br><span class="line">            // button5</span><br><span class="line">            // </span><br><span class="line">            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            this.button5.Font = new System.Drawing.Font(&quot;微软雅黑&quot;, 15F);</span><br><span class="line">            this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            this.button5.Location = new System.Drawing.Point(12, 126);</span><br><span class="line">            this.button5.Name = &quot;button5&quot;;</span><br><span class="line">            this.button5.Size = new System.Drawing.Size(268, 51);</span><br><span class="line">            this.button5.TabIndex = 8;</span><br><span class="line">            this.button5.Text = &quot;直接得出结果&quot;;</span><br><span class="line">            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            this.button5.UseVisualStyleBackColor = true;</span><br><span class="line">            this.button5.Click += new System.EventHandler(this.button5_Click);</span><br><span class="line">            // </span><br><span class="line">            // PannelForm</span><br><span class="line">            // </span><br><span class="line">            this.BackColor = System.Drawing.Color.Azure;</span><br><span class="line">            this.ClientSize = new System.Drawing.Size(292, 535);</span><br><span class="line">            this.Controls.Add(this.button5);</span><br><span class="line">            this.Controls.Add(this.checkBox1);</span><br><span class="line">            this.Controls.Add(this.label4);</span><br><span class="line">            this.Controls.Add(this.label3);</span><br><span class="line">            this.Controls.Add(this.label2);</span><br><span class="line">            this.Controls.Add(this.label1);</span><br><span class="line">            this.Controls.Add(this.button2);</span><br><span class="line">            this.Controls.Add(this.button1);</span><br><span class="line">            this.Controls.Add(this.button3);</span><br><span class="line">            this.Controls.Add(this.button4);</span><br><span class="line">            this.DoubleBuffered = true;</span><br><span class="line">            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;</span><br><span class="line">            this.Name = &quot;PannelForm&quot;;</span><br><span class="line">            this.Text = &quot;控制面板&quot;;</span><br><span class="line">            this.Load += new System.EventHandler(this.PannelForm_Load);</span><br><span class="line">            this.ResumeLayout(false);</span><br><span class="line">            this.PerformLayout();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void button2_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            if (!Next())</span><br><span class="line">            &#123;</span><br><span class="line">                label4.Text = (Solution).ToString();</span><br><span class="line">                label2.Text = (Ergodic).ToString();</span><br><span class="line">                MessageBox.Show(&quot;所有情况已遍历！&quot;, &quot;Duang！！！&quot;);</span><br><span class="line">                Reset();</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                label4.Text = (Solution).ToString();</span><br><span class="line">                label2.Text = (Ergodic).ToString();</span><br><span class="line">                Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void button5_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            while (Next())</span><br><span class="line">            &#123;</span><br><span class="line">                if (checkBox1.Checked)</span><br><span class="line">                &#123;</span><br><span class="line">                    label4.Text = (Solution).ToString();</span><br><span class="line">                    label2.Text = (Ergodic).ToString();</span><br><span class="line">                    Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            label4.Text = (Solution).ToString();</span><br><span class="line">            label2.Text = (Ergodic).ToString();</span><br><span class="line">            Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">            MessageBox.Show(&quot;所有情况已遍历！&quot;, &quot;Duang！！！&quot;);</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void button1_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void label1_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void PannelForm_Load(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public bool Next()</span><br><span class="line">        &#123;</span><br><span class="line">            while (Program.Board.Next())</span><br><span class="line">            &#123;</span><br><span class="line">                ++Ergodic;</span><br><span class="line">                Point index = Program.Board.Check();</span><br><span class="line">                if (index.X != -1)</span><br><span class="line">                &#123;</span><br><span class="line">                    Point val = new Point();</span><br><span class="line">                    val.X = Program.Board.Get(index.X);</span><br><span class="line">                    val.Y = Program.Board.Get(index.Y);</span><br><span class="line">                    bool flg = true;</span><br><span class="line">                    while (flg = Program.Board.Next())</span><br><span class="line">                    &#123;</span><br><span class="line">                        if (Program.Board.Get(index.X) != val.X|| Program.Board.Get(index.Y) != val.Y)</span><br><span class="line">                        &#123;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    if (!flg) break;</span><br><span class="line">                    if(checkBox1.Checked) Program.mForm.PaintQueens(Color.Orange);</span><br><span class="line">                &#125;</span><br><span class="line">                if (index.X != -1)</span><br><span class="line">                &#123;</span><br><span class="line">                    index = Program.Board.Check();</span><br><span class="line">                &#125;</span><br><span class="line">                if (index.X == -1)</span><br><span class="line">                &#123;</span><br><span class="line">                    ++Solution;</span><br><span class="line">                    return true;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void label4_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void label2_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void checkBox1_CheckedChanged(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void Reset()</span><br><span class="line">        &#123;</span><br><span class="line">            label2.Text = (Ergodic = 0).ToString();</span><br><span class="line">            label4.Text = (Solution = 0).ToString();</span><br><span class="line">            Program.Board.Reset();</span><br><span class="line">            Program.mForm.PaintQueens(Color.Orange);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>程序入口Program.cs： <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    static class Program</span><br><span class="line">    &#123;</span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 应用程序的主入口点。</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        </span><br><span class="line">        static public EnumQueens Board;</span><br><span class="line">        static public MainForm mForm;</span><br><span class="line"></span><br><span class="line">        [STAThread]</span><br><span class="line">        static void Main()</span><br><span class="line">        &#123;</span><br><span class="line">            Board = new EnumQueens();</span><br><span class="line">            Application.EnableVisualStyles();</span><br><span class="line">            Application.SetCompatibleTextRenderingDefault(false);</span><br><span class="line">            Application.Run(mForm = new MainForm());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##代码 八皇后类EnumQueens.cs（实现查找下一排列、重置排列等）： <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    class EnumQueens</span><br><span class="line">    &#123;</span><br><span class="line">        private int[] Board;</span><br><span class="line"></span><br><span class="line">        public EnumQueens()</span><br><span class="line">        &#123;</span><br><span class="line">            Board = new int[<span class="number">8</span>];</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void Reset()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; <span class="number">8</span>; ++<span class="built_in">i</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Board[<span class="built_in">i</span>] = <span class="built_in">i</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public bool Next()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (int <span class="built_in">i</span> = Board.Length - <span class="number">1</span>; <span class="built_in">i</span> &gt; <span class="number">0</span>; --<span class="built_in">i</span>)</span><br><span class="line">            &#123; </span><br><span class="line">                <span class="keyword">if</span> (Board[<span class="built_in">i</span>] &gt; Board[<span class="built_in">i</span> - <span class="number">1</span>])</span><br><span class="line">                &#123;</span><br><span class="line">                    int val = Board[<span class="built_in">i</span> - <span class="number">1</span>];</span><br><span class="line">                    int <span class="built_in">j</span> = Board.Length - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">for</span> (; <span class="built_in">j</span> &gt;= <span class="built_in">i</span>; --<span class="built_in">j</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (Board[<span class="built_in">j</span>] &gt; val)</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    SwapBoard(<span class="built_in">i</span> - <span class="number">1</span>, <span class="built_in">j</span>);</span><br><span class="line">                    int l = <span class="built_in">i</span>;</span><br><span class="line">                    int r = Board.Length - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">                    &#123;</span><br><span class="line">                        SwapBoard(l, r);</span><br><span class="line">                        l++;</span><br><span class="line">                        r--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">return</span> <span class="built_in">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            Reset();</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public Point Check()</span><br><span class="line">        &#123;</span><br><span class="line">            Point <span class="built_in">ans</span> = new Point();</span><br><span class="line">            <span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; Board.Length; ++<span class="built_in">i</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="built_in">i</span> + <span class="number">1</span>; <span class="built_in">j</span> &lt; Board.Length; ++<span class="built_in">j</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (Math.Abs(<span class="built_in">i</span> - <span class="built_in">j</span>) == Math.Abs(Board[<span class="built_in">i</span>] - Board[<span class="built_in">j</span>]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="built_in">ans</span>.X = <span class="built_in">i</span>;<span class="built_in">ans</span>.Y = <span class="built_in">j</span>;</span><br><span class="line">                        <span class="keyword">return</span> <span class="built_in">ans</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">ans</span>.X = <span class="number">-1</span>; <span class="built_in">ans</span>.Y = <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">ans</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public int Get(int <span class="built_in">i</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> Board[<span class="built_in">i</span>];</span><br><span class="line">        &#125; </span><br><span class="line"></span><br><span class="line">        private void SwapBoard(int <span class="built_in">i</span>, int <span class="built_in">j</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            int t = Board[<span class="built_in">i</span>];</span><br><span class="line">            Board[<span class="built_in">i</span>] = Board[<span class="built_in">j</span>];</span><br><span class="line">            Board[<span class="built_in">j</span>] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>含棋盘的演示窗口：MainForm.cs： <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"><span class="keyword">using</span> System.Data;</span><br><span class="line"><span class="keyword">using</span> System.Drawing;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">EightQueen</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainForm</span> : <span class="title">Form</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> FrameLength = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> Fwidth, Fheight, Fleft, Fright, Ftop, Fbottom, Flength, Fdiameter;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">float</span> Dif;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32 "</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">FindWindow</span>(<span class="params"><span class="keyword">string</span> lpClassName, <span class="keyword">string</span> lpWindowName</span>)</span>;</span><br><span class="line">        [<span class="meta">DllImport(<span class="meta-string">"user32 "</span>)</span>]</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">SetParent</span>(<span class="params">IntPtr hWndChild, IntPtr hWndNewParent</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainForm</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            Dif = <span class="number">0.8f</span>;</span><br><span class="line">            Width = <span class="number">400</span>;</span><br><span class="line">            Height = <span class="number">600</span>;</span><br><span class="line"></span><br><span class="line">            PannelForm pForm = <span class="keyword">new</span> PannelForm();</span><br><span class="line">            pForm.Show();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainForm_SizeChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">if</span> (Program.Board.Get(<span class="number">0</span>) == <span class="number">0</span> &amp;&amp; Program.Board.Get(<span class="number">1</span>) == <span class="number">1</span>) PaintQueens(Color.Orange);</span><br><span class="line">            <span class="keyword">else</span> PaintQueens(Color.LightGreen);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainForm_Paint</span>(<span class="params"><span class="keyword">object</span> sender, PaintEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">if</span> (Program.Board.Get(<span class="number">0</span>) == <span class="number">0</span> &amp;&amp; Program.Board.Get(<span class="number">1</span>) == <span class="number">1</span>) PaintQueens(Color.Orange);</span><br><span class="line">            <span class="keyword">else</span> PaintQueens(Color.LightGreen);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PaintQueens</span>(<span class="params">Color c</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Bitmap bmp = <span class="keyword">new</span> Bitmap(Width, Height);</span><br><span class="line">            Graphics grp = Graphics.FromImage(bmp);</span><br><span class="line">            grp.Clear(Color.Azure);</span><br><span class="line">            Pen pen;</span><br><span class="line"></span><br><span class="line">            CalFrame();</span><br><span class="line"></span><br><span class="line">            pen = <span class="keyword">new</span> Pen(Brushes.DeepSkyBlue, Flength / <span class="number">160</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">8</span>; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                grp.DrawLine(pen, <span class="keyword">new</span> Point(Fleft + i * Fdiameter, Ftop), <span class="keyword">new</span> Point(Fleft + i * Fdiameter, Fbottom));</span><br><span class="line">                grp.DrawLine(pen, <span class="keyword">new</span> Point(Fleft, Ftop + i * Fdiameter), <span class="keyword">new</span> Point(Fright, Ftop + i * Fdiameter));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            pen = <span class="keyword">new</span> Pen(Brushes.DodgerBlue, Flength / <span class="number">100</span>);</span><br><span class="line">            grp.DrawLine(pen, <span class="keyword">new</span> Point(Fleft, Ftop), <span class="keyword">new</span> Point(Fright, Ftop));</span><br><span class="line">            grp.DrawLine(pen, <span class="keyword">new</span> Point(Fright, Ftop), <span class="keyword">new</span> Point(Fright, Fbottom));</span><br><span class="line">            grp.DrawLine(pen, <span class="keyword">new</span> Point(Fleft, Fbottom), <span class="keyword">new</span> Point(Fright, Fbottom));</span><br><span class="line">            grp.DrawLine(pen, <span class="keyword">new</span> Point(Fleft, Ftop), <span class="keyword">new</span> Point(Fleft, Fbottom));</span><br><span class="line"></span><br><span class="line">            SolidBrush brush = <span class="keyword">new</span> SolidBrush(c);</span><br><span class="line">            Rectangle rect;</span><br><span class="line">            <span class="keyword">int</span> dif = (<span class="keyword">int</span>)((<span class="number">1.0f</span> - Dif) * Fdiameter/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                rect = <span class="keyword">new</span> Rectangle(Fleft + Program.Board.Get(i) * Fdiameter + dif, Ftop + i * Fdiameter + dif, Fdiameter - <span class="number">2</span> * dif, Fdiameter - <span class="number">2</span> * dif);</span><br><span class="line">                grp.FillEllipse(brush, rect);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.CreateGraphics().DrawImage(bmp, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CalFrame</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="keyword">int</span> width = <span class="keyword">this</span>.Width - <span class="number">17</span>;</span><br><span class="line">            <span class="keyword">int</span> height = <span class="keyword">this</span>.Height - <span class="number">40</span>;</span><br><span class="line">            Fwidth = width - FrameLength * <span class="number">2</span>;</span><br><span class="line">            Fheight = height - FrameLength * <span class="number">2</span>;</span><br><span class="line">            Flength = (Math.Min(Fwidth, Fheight) / <span class="number">8</span>) * <span class="number">8</span>;</span><br><span class="line">            Fleft = (width - Flength) / <span class="number">2</span>;</span><br><span class="line">            Fright = Fleft + Flength;</span><br><span class="line">            Ftop = (height - Flength) / <span class="number">2</span>;</span><br><span class="line">            Fbottom = Ftop + Flength;</span><br><span class="line"></span><br><span class="line">            Fdiameter = Flength / <span class="number">8</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>控制面板窗口PannelForm.cs： <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line"></span><br><span class="line">namespace EightQueen</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> partial <span class="class"><span class="keyword">class</span> <span class="title">PannelForm</span> : <span class="type">Form</span></span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> Button button1;</span><br><span class="line">        <span class="keyword">private</span> Button button2;</span><br><span class="line">        <span class="keyword">private</span> Label label1;</span><br><span class="line">        <span class="keyword">private</span> Label label2;</span><br><span class="line">        <span class="keyword">private</span> Label label3;</span><br><span class="line">        <span class="keyword">private</span> Label label4;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> int Ergodic, Solution;</span><br><span class="line">        <span class="keyword">private</span> Button button3;</span><br><span class="line">        <span class="keyword">private</span> Button button4;</span><br><span class="line">        <span class="keyword">private</span> Button button5;</span><br><span class="line">        <span class="keyword">private</span> CheckBox checkBox1;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> PannelForm()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void InitializeComponent()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.button1 = new System.Windows.Forms.Button();</span><br><span class="line">            <span class="keyword">this</span>.button2 = new System.Windows.Forms.Button();</span><br><span class="line">            <span class="keyword">this</span>.label1 = new System.Windows.Forms.Label();</span><br><span class="line">            <span class="keyword">this</span>.label2 = new System.Windows.Forms.Label();</span><br><span class="line">            <span class="keyword">this</span>.label3 = new System.Windows.Forms.Label();</span><br><span class="line">            <span class="keyword">this</span>.label4 = new System.Windows.Forms.Label();</span><br><span class="line">            <span class="keyword">this</span>.button3 = new System.Windows.Forms.Button();</span><br><span class="line">            <span class="keyword">this</span>.button4 = new System.Windows.Forms.Button();</span><br><span class="line">            <span class="keyword">this</span>.checkBox1 = new System.Windows.Forms.CheckBox();</span><br><span class="line">            <span class="keyword">this</span>.button5 = new System.Windows.Forms.Button();</span><br><span class="line">            <span class="keyword">this</span>.SuspendLayout();</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// button1</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            <span class="keyword">this</span>.button1.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>);</span><br><span class="line">            <span class="keyword">this</span>.button1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.button1.Location = new System.Drawing.Point(<span class="number">12</span>, <span class="number">12</span>);</span><br><span class="line">            <span class="keyword">this</span>.button1.Name = <span class="string">"button1"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button1.Size = new System.Drawing.Size(<span class="number">268</span>, <span class="number">51</span>);</span><br><span class="line">            <span class="keyword">this</span>.button1.TabIndex = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">this</span>.button1.Text = <span class="string">"重置"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            <span class="keyword">this</span>.button1.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.button1.Click += new System.EventHandler(<span class="keyword">this</span>.button1_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// button2</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            <span class="keyword">this</span>.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            <span class="keyword">this</span>.button2.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>);</span><br><span class="line">            <span class="keyword">this</span>.button2.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.button2.Location = new System.Drawing.Point(<span class="number">12</span>, <span class="number">69</span>);</span><br><span class="line">            <span class="keyword">this</span>.button2.Name = <span class="string">"button2"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button2.Size = new System.Drawing.Size(<span class="number">268</span>, <span class="number">51</span>);</span><br><span class="line">            <span class="keyword">this</span>.button2.TabIndex = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">this</span>.button2.Text = <span class="string">"下一个"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            <span class="keyword">this</span>.button2.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.button2.Click += new System.EventHandler(<span class="keyword">this</span>.button2_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// label1</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.label1.AutoSize = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.label1.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(<span class="number">134</span>)));</span><br><span class="line">            <span class="keyword">this</span>.label1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.label1.Location = new System.Drawing.Point(<span class="number">17</span>, <span class="number">231</span>);</span><br><span class="line">            <span class="keyword">this</span>.label1.Name = <span class="string">"label1"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label1.Size = new System.Drawing.Size(<span class="number">132</span>, <span class="number">27</span>);</span><br><span class="line">            <span class="keyword">this</span>.label1.TabIndex = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">this</span>.label1.Text = <span class="string">"遍历次数统计"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label1.Click += new System.EventHandler(<span class="keyword">this</span>.label1_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// label2</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.label2.AutoSize = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.label2.Font = new System.Drawing.Font(<span class="string">"华文彩云"</span>, <span class="number">60F</span>);</span><br><span class="line">            <span class="keyword">this</span>.label2.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.label2.Location = new System.Drawing.Point(<span class="number">23</span>, <span class="number">258</span>);</span><br><span class="line">            <span class="keyword">this</span>.label2.Name = <span class="string">"label2"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label2.Size = new System.Drawing.Size(<span class="number">80</span>, <span class="number">83</span>);</span><br><span class="line">            <span class="keyword">this</span>.label2.TabIndex = <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">this</span>.label2.Text = <span class="string">"0"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label2.Click += new System.EventHandler(<span class="keyword">this</span>.label2_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// label3</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.label3.AutoSize = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.label3.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(<span class="number">134</span>)));</span><br><span class="line">            <span class="keyword">this</span>.label3.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.label3.Location = new System.Drawing.Point(<span class="number">17</span>, <span class="number">377</span>);</span><br><span class="line">            <span class="keyword">this</span>.label3.Name = <span class="string">"label3"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label3.Size = new System.Drawing.Size(<span class="number">132</span>, <span class="number">27</span>);</span><br><span class="line">            <span class="keyword">this</span>.label3.TabIndex = <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">this</span>.label3.Text = <span class="string">"可行方案统计"</span>;</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// label4</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.label4.AutoSize = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.label4.Font = new System.Drawing.Font(<span class="string">"华文彩云"</span>, <span class="number">71.99999F</span>, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(<span class="number">134</span>)));</span><br><span class="line">            <span class="keyword">this</span>.label4.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.label4.Location = new System.Drawing.Point(<span class="number">23</span>, <span class="number">404</span>);</span><br><span class="line">            <span class="keyword">this</span>.label4.Name = <span class="string">"label4"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label4.Size = new System.Drawing.Size(<span class="number">97</span>, <span class="number">100</span>);</span><br><span class="line">            <span class="keyword">this</span>.label4.TabIndex = <span class="number">5</span>;</span><br><span class="line">            <span class="keyword">this</span>.label4.Text = <span class="string">"0"</span>;</span><br><span class="line">            <span class="keyword">this</span>.label4.Click += new System.EventHandler(<span class="keyword">this</span>.label4_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// button3</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            <span class="keyword">this</span>.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            <span class="keyword">this</span>.button3.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>);</span><br><span class="line">            <span class="keyword">this</span>.button3.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.button3.Location = new System.Drawing.Point(<span class="number">12</span>, <span class="number">227</span>);</span><br><span class="line">            <span class="keyword">this</span>.button3.Name = <span class="string">"button3"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button3.Size = new System.Drawing.Size(<span class="number">268</span>, <span class="number">140</span>);</span><br><span class="line">            <span class="keyword">this</span>.button3.TabIndex = <span class="number">6</span>;</span><br><span class="line">            <span class="keyword">this</span>.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            <span class="keyword">this</span>.button3.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// button4</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            <span class="keyword">this</span>.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            <span class="keyword">this</span>.button4.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>);</span><br><span class="line">            <span class="keyword">this</span>.button4.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.button4.Location = new System.Drawing.Point(<span class="number">12</span>, <span class="number">373</span>);</span><br><span class="line">            <span class="keyword">this</span>.button4.Name = <span class="string">"button4"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button4.Size = new System.Drawing.Size(<span class="number">268</span>, <span class="number">140</span>);</span><br><span class="line">            <span class="keyword">this</span>.button4.TabIndex = <span class="number">7</span>;</span><br><span class="line">            <span class="keyword">this</span>.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            <span class="keyword">this</span>.button4.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// checkBox1</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.checkBox1.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">9F</span>, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(<span class="number">134</span>)));</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.Location = new System.Drawing.Point(<span class="number">17</span>, <span class="number">194</span>);</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.Name = <span class="string">"checkBox1"</span>;</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.Size = new System.Drawing.Size(<span class="number">123</span>, <span class="number">21</span>);</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.TabIndex = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.Text = <span class="string">"显示所有遍历情况"</span>;</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.checkBox1.CheckedChanged += new System.EventHandler(<span class="keyword">this</span>.checkBox1_CheckedChanged);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// button5</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;</span><br><span class="line">            <span class="keyword">this</span>.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;</span><br><span class="line">            <span class="keyword">this</span>.button5.Font = new System.Drawing.Font(<span class="string">"微软雅黑"</span>, <span class="number">15F</span>);</span><br><span class="line">            <span class="keyword">this</span>.button5.ForeColor = System.Drawing.SystemColors.HotTrack;</span><br><span class="line">            <span class="keyword">this</span>.button5.Location = new System.Drawing.Point(<span class="number">12</span>, <span class="number">126</span>);</span><br><span class="line">            <span class="keyword">this</span>.button5.Name = <span class="string">"button5"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button5.Size = new System.Drawing.Size(<span class="number">268</span>, <span class="number">51</span>);</span><br><span class="line">            <span class="keyword">this</span>.button5.TabIndex = <span class="number">8</span>;</span><br><span class="line">            <span class="keyword">this</span>.button5.Text = <span class="string">"直接得出结果"</span>;</span><br><span class="line">            <span class="keyword">this</span>.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;</span><br><span class="line">            <span class="keyword">this</span>.button5.UseVisualStyleBackColor = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.button5.Click += new System.EventHandler(<span class="keyword">this</span>.button5_Click);</span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="comment">// PannelForm</span></span><br><span class="line">            <span class="comment">// </span></span><br><span class="line">            <span class="keyword">this</span>.BackColor = System.Drawing.Color.Azure;</span><br><span class="line">            <span class="keyword">this</span>.ClientSize = new System.Drawing.Size(<span class="number">292</span>, <span class="number">535</span>);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.button5);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.checkBox1);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.label4);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.label3);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.label2);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.label1);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.button2);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.button1);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.button3);</span><br><span class="line">            <span class="keyword">this</span>.Controls.Add(<span class="keyword">this</span>.button4);</span><br><span class="line">            <span class="keyword">this</span>.DoubleBuffered = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">this</span>.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;</span><br><span class="line">            <span class="keyword">this</span>.Name = <span class="string">"PannelForm"</span>;</span><br><span class="line">            <span class="keyword">this</span>.Text = <span class="string">"控制面板"</span>;</span><br><span class="line">            <span class="keyword">this</span>.Load += new System.EventHandler(<span class="keyword">this</span>.PannelForm_Load);</span><br><span class="line">            <span class="keyword">this</span>.ResumeLayout(<span class="literal">false</span>);</span><br><span class="line">            <span class="keyword">this</span>.PerformLayout();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void button2_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!Next())</span><br><span class="line">            &#123;</span><br><span class="line">                label4.Text = (Solution).ToString();</span><br><span class="line">                label2.Text = (Ergodic).ToString();</span><br><span class="line">                MessageBox.Show(<span class="string">"所有情况已遍历！"</span>, <span class="string">"Duang！！！"</span>);</span><br><span class="line">                Reset();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                label4.Text = (Solution).ToString();</span><br><span class="line">                label2.Text = (Ergodic).ToString();</span><br><span class="line">                Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void button5_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (Next())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (checkBox1.Checked)</span><br><span class="line">                &#123;</span><br><span class="line">                    label4.Text = (Solution).ToString();</span><br><span class="line">                    label2.Text = (Ergodic).ToString();</span><br><span class="line">                    Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            label4.Text = (Solution).ToString();</span><br><span class="line">            label2.Text = (Ergodic).ToString();</span><br><span class="line">            Program.mForm.PaintQueens(Color.LightGreen);</span><br><span class="line">            MessageBox.Show(<span class="string">"所有情况已遍历！"</span>, <span class="string">"Duang！！！"</span>);</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void button1_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            Reset();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void label1_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void PannelForm_Load(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> bool Next()</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span> (Program.Board.Next())</span><br><span class="line">            &#123;</span><br><span class="line">                ++Ergodic;</span><br><span class="line">                Point index = Program.Board.Check();</span><br><span class="line">                <span class="keyword">if</span> (index.X != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    Point <span class="keyword">val</span> = new Point();</span><br><span class="line">                    <span class="keyword">val</span>.X = Program.Board.Get(index.X);</span><br><span class="line">                    <span class="keyword">val</span>.Y = Program.Board.Get(index.Y);</span><br><span class="line">                    bool flg = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">while</span> (flg = Program.Board.Next())</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span> (Program.Board.Get(index.X) != <span class="keyword">val</span>.X|| Program.Board.Get(index.Y) != <span class="keyword">val</span>.Y)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (!flg) <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">if</span>(checkBox1.Checked) Program.mForm.PaintQueens(Color.Orange);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (index.X != -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    index = Program.Board.Check();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (index.X == -<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    ++Solution;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void label4_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void label2_Click(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> void checkBox1_CheckedChanged(<span class="keyword">object</span> sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> void Reset()</span><br><span class="line">        &#123;</span><br><span class="line">            label2.Text = (Ergodic = <span class="number">0</span>).ToString();</span><br><span class="line">            label4.Text = (Solution = <span class="number">0</span>).ToString();</span><br><span class="line">            Program.Board.Reset();</span><br><span class="line">            Program.mForm.PaintQueens(Color.Orange);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>程序入口Program.cs： <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Forms;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">EightQueen</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 应用程序的主入口点。</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">public</span> EnumQueens Board;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">public</span> MainForm mForm;</span><br><span class="line"></span><br><span class="line">        [<span class="meta">STAThread</span>]</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            Board = <span class="keyword">new</span> EnumQueens();</span><br><span class="line">            Application.EnableVisualStyles();</span><br><span class="line">            Application.SetCompatibleTextRenderingDefault(<span class="literal">false</span>);</span><br><span class="line">            Application.Run(mForm = <span class="keyword">new</span> MainForm());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>其他系统自动产生的文件代码不贴了。</p>
 
       
     </div>
+
+    
+
     
     
     
@@ -368,7 +483,34 @@
     
 
     
+      
+    
+    
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/4561.html" title="八皇后问题动态演示">https://xienaoban.github.io/posts/4561.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -410,17 +552,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -440,7 +575,6 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
@@ -456,55 +590,132 @@
         </ul>
       
 
-      <section class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -512,7 +723,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -520,6 +731,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -529,16 +741,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -546,12 +760,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -572,11 +787,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -590,96 +808,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -693,7 +826,58 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -705,31 +889,22 @@
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

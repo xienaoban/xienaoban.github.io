@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,40 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
-<meta property="og:type" content="article">
-<meta property="og:title" content="我的整形大数类(支持正负)">
-<meta property="og:url" content="http://yoursite.com/posts/18423.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/posts/18423/1.png">
-<meta property="og:image" content="http://yoursite.com/posts/18423/2.png">
-<meta property="og:updated_time" content="2019-04-08T13:35:58.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的整形大数类(支持正负)">
-<meta name="twitter:description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
-<meta name="twitter:image" content="http://yoursite.com/posts/18423/1.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -121,12 +91,41 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/posts/18423.html">
-
+  
 
 
 
+
+  <meta name="description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的整形大数类(支持正负)">
+<meta property="og:url" content="https://xienaoban.github.io/posts/18423.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xienaoban.github.io/posts/18423/1.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/18423/2.png">
+<meta property="og:updated_time" content="2019-04-08T13:35:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的整形大数类(支持正负)">
+<meta name="twitter:description" content="好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&amp;lt; long long &amp;gt;存储，long long最大储">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/18423/1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/18423">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>我的整形大数类(支持正负) | XieNaoban's Blog</title>
   
@@ -138,9 +137,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -152,7 +180,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -162,13 +190,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -176,65 +203,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -242,12 +310,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -260,12 +343,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/18423.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/18423.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -282,11 +367,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的整形大数类(支持正负)</h1>
+          <h1 class="post-title" itemprop="name headline">我的整形大数类(支持正负)
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -294,19 +388,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-25T19:16:39+08:00">
-                2016-07-25
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2016-07-25 19:16:39" itemprop="dateCreated datePublished" datetime="2016-07-25T19:16:39+08:00">2016-07-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:58" itemprop="dateModified" datetime="2019-04-08T21:35:58+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -333,16 +445,19 @@
 
       
         <p>好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&lt; long long &gt;存储，long long最大储存9位数，也就是999999999，因为2个999999999相乘刚好不越界。不过后来发现好像没必要，用int就行了，但是写都写一半了，就没改。不过灵活性也蛮高的吧，可以很轻松地把数据类型从long long 改为int，同时只要把MAX改为int的最大值10000，把DIGIT改为4即可（没具体试过，应该没问题）。就是下面这几行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//longer类内定义</span><br><span class="line">typedef long long ll;</span><br><span class="line">static constexpr ll MAX = 1000000000;</span><br><span class="line">static constexpr int DIGIT = 9;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//longer类内定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">constexpr</span> ll MAX = <span class="number">1000000000</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> DIGIT = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
 <p>当然有储存，这应该不是最好的方法，不过就我目前的水平就这样吧。而且现在对于编程是“空间换时间”还是“时间换空间”一直很纠结。。。 然后单独定义一个sign表示正负号。那么当然啦，对于这种用单独一个符号标记来表示正负数字的，就会有+0和-0的问题，我也是基本解决了，就是把负的改成正的。当然不排除还有bug，没精力检测了。后续更新吧。 加法减乘除均使用小学教的竖式方法。。。因为网上也没学到更快的方法，最快的方法（尤其是除法）好像看到个，没会。。。所以这个东西在处理比如一千多位除以几百之类的数据时会很慢。。。不过毕竟我现在还算是新手嘛，以后可以还会再写一个更快的大数。使用竖式时，加法减法乘法使用的10^10进制，即统一算出一个ll（long long）的值，进位到下一个。 加法减法本质上由get_addition()与get_subtraction()实现，这两个函数无视正负号，全都看成是正的进行运算，只支持大的数加减小的数。因此对于有不同的正负符号的数字，比如负+正，可以看作-（正-负），所以只要调用get _subtraction()运算后添个负号即可；而对于正-负，可看作正+正，反而调用get _addition()。所以本质上还是正数之间的运算。 乘法与加法类似，甚至还少了符号的问题。 除法也是小学教的竖式法，一位位除，也就是一位位减，但是由于我得先乘以10的好多次，再循环减，再看下一位，速度还是慢，就比如3000位的数字除以50位的数字，那速度醉啦，要十几秒。 取余使用的"<em>this - (</em>this / n)*n"，所以比除号还慢。 比较符号没有很仔细地调试，但是应该没什么问题吧。 截图： <img src="/posts/18423/1.png" alt="这里写图片描述"></p>
 <figure>
 <img src="/posts/18423/2.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
 </figure>
 <p>代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br></pre></td><td class="code"><pre><span class="line">//我的大数类，定义为longer好了[笑哭]</span><br><span class="line">#ifndef _LONGER_H</span><br><span class="line">#define _LONGER_H</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;sstream&gt;</span><br><span class="line">#include&lt;iomanip&gt;</span><br><span class="line">//#pragma warning(disable:4996)	//对使用VS2015且开启了“安全开发生命周期(SDL)检测”的项目奏效(VS2013应该也有用)</span><br><span class="line">class longer</span><br><span class="line">&#123;</span><br><span class="line">	//必要定义	(-.-;)</span><br><span class="line">	typedef long long ll;</span><br><span class="line">	static constexpr ll MAX = 1000000000;	//每个ll的存储限制，999999999*999999999刚好不溢出(9个9)</span><br><span class="line">	static constexpr int DIGIT = 9;			//ll支持的最大位数</span><br><span class="line">	//数据储存	(-.-;)</span><br><span class="line">	bool sign;								//正负号：0正1负</span><br><span class="line">	std::vector&lt;ll&gt; number;					//大数存储区</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">	//构造函数	(-.-;)</span><br><span class="line">	longer();</span><br><span class="line">	longer(const ll&amp;);</span><br><span class="line">	longer(const longer&amp;);</span><br><span class="line">	longer(const char*);</span><br><span class="line">	longer(const std::string&amp;);</span><br><span class="line"></span><br><span class="line">	//运算符重载	(-.-;)</span><br><span class="line">	longer operator +()const;</span><br><span class="line">	longer operator +(const longer&amp;)const;</span><br><span class="line">	longer operator -()const;</span><br><span class="line">	longer operator -(const longer&amp;)const;</span><br><span class="line">	longer operator *(const longer&amp;)const;</span><br><span class="line">	longer operator /(const longer&amp;)const;</span><br><span class="line">	longer operator %(const longer&amp;)const;</span><br><span class="line"></span><br><span class="line">	longer&amp; operator ++();</span><br><span class="line">	longer operator ++(int);</span><br><span class="line">	longer&amp; operator --();</span><br><span class="line">	longer operator --(int);</span><br><span class="line"></span><br><span class="line">	longer&amp; operator =(const ll&amp;);</span><br><span class="line">	longer&amp; operator =(const longer&amp;);</span><br><span class="line">	longer&amp; operator =(const char*);</span><br><span class="line">	longer&amp; operator =(const std::string&amp;);</span><br><span class="line"></span><br><span class="line">	longer&amp; operator +=(const longer&amp;);</span><br><span class="line">	longer&amp; operator -=(const longer&amp;);</span><br><span class="line">	longer&amp; operator *=(const longer&amp;);</span><br><span class="line">	longer&amp; operator /=(const longer&amp;);</span><br><span class="line"></span><br><span class="line">	inline bool operator &lt;(const longer&amp;)const;</span><br><span class="line">	inline bool operator &gt;(const longer&amp;)const;</span><br><span class="line">	inline bool operator &lt;=(const longer&amp;)const;</span><br><span class="line">	inline bool operator &gt;=(const longer&amp;)const;</span><br><span class="line">	inline bool operator ==(const longer&amp;)const;</span><br><span class="line">	inline bool operator !=(const longer&amp;)const;</span><br><span class="line"></span><br><span class="line">	friend std::istream&amp; operator &gt;&gt;(std::istream&amp;, longer&amp;);</span><br><span class="line">	friend std::ostream&amp; operator &lt;&lt;(std::ostream&amp;, const longer&amp;);</span><br><span class="line"></span><br><span class="line">	//其他函数	(-.-;)</span><br><span class="line">	int digit()const;</span><br><span class="line">	static longer lrabs(const longer&amp;);		//求绝对值</span><br><span class="line">	static longer lrsqrt(const longer&amp;);	//求算数平方根,暂时没打算完成，先占个茅坑,不拉屎</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	//类内部调用	(-.-;)</span><br><span class="line">	longer(const int, const ll&amp;);									//分配多少个vector容量，每个数据均为第一个参数</span><br><span class="line">	static longer&amp; get_addition(longer&amp;, const longer&amp;, bool);		//获得加法结果,仅支持正整数以大加小,无视正负号</span><br><span class="line">	static longer&amp; get_subtraction(longer&amp;, const longer&amp;, bool);	//获得减法结果,仅支持正整数以大减小,无视正负号</span><br><span class="line">	int get_comparison(const longer&amp;)const;							//获得比较结果,仅支持正整数相互比较,无视正负号</span><br><span class="line">	inline ptrdiff_t get_ptrdiff()const;							//获得vector数组元素个数</span><br><span class="line">	inline longer&amp; get_zero();										//若结果为0,且若0的sign为负，则改为0</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//必要定义	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span><br><span class="line">constexpr longer::ll longer::MAX;</span><br><span class="line">constexpr int longer::DIGIT;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//构造函数	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span><br><span class="line">longer::longer() &#123; number.push_back(0); &#125;</span><br><span class="line">longer::longer(const ll&amp; n) &#123; *this = n; &#125;</span><br><span class="line">longer::longer(const longer&amp; n) &#123; *this = n; &#125;</span><br><span class="line">longer::longer(const char* s) &#123; *this = s; &#125;</span><br><span class="line">longer::longer(const std::string&amp; s) &#123; *this = s; &#125;</span><br><span class="line">longer::longer(const int i, const ll&amp; n) : number(i, n), sign(0) &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//运算符重载	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span><br><span class="line">//加减乘除取余次方</span><br><span class="line">longer longer::operator +()const &#123; return *this; &#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator +(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	bool judge = get_comparison(n) &gt;= 0;</span><br><span class="line">	longer aa(judge ? *this : n);</span><br><span class="line">	auto &amp;bb = (judge ? n : *this);</span><br><span class="line">	if ((!aa.sign) &amp;&amp; (!bb.sign)) return get_addition(aa, bb, 0);			//正+正</span><br><span class="line">	if ((!aa.sign) &amp;&amp; (bb.sign)) return get_subtraction(aa, bb, !judge);	//正+负</span><br><span class="line">	if ((aa.sign) &amp;&amp; (!bb.sign)) return get_subtraction(aa, bb, judge);		//负+正</span><br><span class="line">	return get_addition(aa, bb, 1);											//负+负</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator -()const &#123; longer t(*this);t.sign = (t.sign ? 0 : 1);return t; &#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator -(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	bool judge = get_comparison(n) &gt;= 0;</span><br><span class="line">	longer aa(judge ? *this : n);</span><br><span class="line">	auto &amp;bb = (judge ? n : *this);</span><br><span class="line">	if ((!aa.sign) &amp;&amp; (!bb.sign)) return get_subtraction(aa, bb, !judge);	//正-正</span><br><span class="line">	if ((!aa.sign) &amp;&amp; (bb.sign)) return get_addition(aa, bb, 0);			//正-负</span><br><span class="line">	if ((aa.sign) &amp;&amp; (!bb.sign)) return get_addition(aa, bb, 1);			//负-正</span><br><span class="line">	return get_subtraction(aa, bb, judge);									//负-负</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator *(const longer&amp; n)const</span><br><span class="line">&#123;//模拟小学老师教的方法</span><br><span class="line">	int leni = get_ptrdiff(), lenj = n.get_ptrdiff();</span><br><span class="line">	longer re(leni + lenj, 0);</span><br><span class="line">	ll flag;</span><br><span class="line">	sign == n.sign ? re.sign = 0 : re.sign = 1;</span><br><span class="line">	for (int i = 0;i &lt; leni;++i) &#123;</span><br><span class="line">		longer t(n);</span><br><span class="line">		int j;</span><br><span class="line">		flag = 0;</span><br><span class="line">		for (j = 0;j &lt; lenj;++j) &#123;</span><br><span class="line">			t.number[j] = t.number[j] * number[i] + flag;</span><br><span class="line">			flag = t.number[j] / MAX;</span><br><span class="line">			t.number[j] -= flag*MAX;</span><br><span class="line">		&#125;</span><br><span class="line">		if (flag) t.number.push_back(flag);</span><br><span class="line">		flag = 0;</span><br><span class="line">		for (j = 0;j &lt; t.get_ptrdiff();++j) &#123;</span><br><span class="line">			re.number[i + j] += t.number[j] + flag;</span><br><span class="line">			if (re.number[i + j] &gt;= MAX) re.number[i + j] -= MAX, flag = 1;</span><br><span class="line">			else flag = 0;</span><br><span class="line">		&#125;</span><br><span class="line">		if (flag) re.number[i + j] += flag;</span><br><span class="line">	&#125;</span><br><span class="line">	while (re.get_ptrdiff() &gt; 1 &amp;&amp; !*re.number.rbegin()) re.number.pop_back();</span><br><span class="line">	return re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator /(const longer&amp; n)const</span><br><span class="line">&#123;//模拟小学老师教的方法</span><br><span class="line">	if (n == longer((ll)0)) &#123; std::cerr &lt;&lt; &quot;除数为0!\n&quot;;exit(1); &#125;</span><br><span class="line">	longer th(*this), re((ll)0);</span><br><span class="line">	re.sign = th.sign = 0;</span><br><span class="line">	const int times = digit() - n.digit();</span><br><span class="line">	for (int i = times;i &gt;= 0;--i) &#123;</span><br><span class="line">		longer digi(i / DIGIT + 1, 0);</span><br><span class="line">		*digi.number.rbegin() = ((ll)pow(10, i % DIGIT));</span><br><span class="line">		longer t(n*digi); t.sign = 0;</span><br><span class="line">		while (th.get_comparison(t) == 1) th-=t, re += digi;</span><br><span class="line">		if (th.get_comparison(t) == 0) &#123; re += digi;break; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (sign != n.sign) re.sign = 1;</span><br><span class="line">	return re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::operator %(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	longer re(*this - (*this / n)*n);</span><br><span class="line">	return re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//自增自减</span><br><span class="line">longer&amp; longer::operator ++() &#123; return *this = *this + 1; &#125;</span><br><span class="line">longer longer::operator ++(int) &#123; longer t = *this;*this = *this + 1;return t; &#125;</span><br><span class="line">longer&amp; longer::operator --() &#123; return *this = *this - 1; &#125;</span><br><span class="line">longer longer::operator --(int) &#123; longer t = *this;*this = *this - 1;return t; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//赋值</span><br><span class="line">longer&amp; longer::operator =(const ll&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	if (n &lt; 0) sign = 1, number.push_back(-n);</span><br><span class="line">	else sign = 0, number.push_back(n);</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::operator =(const longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	number = n.number;</span><br><span class="line">	sign = n.sign;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::operator =(const char* s)</span><br><span class="line">&#123;</span><br><span class="line">	return *this = std::string(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::operator =(const std::string&amp; s)</span><br><span class="line">&#123;</span><br><span class="line">	auto ps = s.rbegin();</span><br><span class="line">	char c[DIGIT + 1], *pc;</span><br><span class="line">	ll temp;</span><br><span class="line">	sign = 0;</span><br><span class="line">	while (ps != s.rend()) &#123;</span><br><span class="line">		*(pc = &amp;c[DIGIT]) = &apos;\0&apos;;</span><br><span class="line">		int i;</span><br><span class="line">		for (i = 0;i &lt; DIGIT &amp;&amp; ps != s.rend();++i)</span><br><span class="line">			*--pc = *ps++;</span><br><span class="line">		if (*(ps - 1) == &apos;-&apos;) *pc = &apos;0&apos;, sign = 1;</span><br><span class="line">		while (i++ &lt; DIGIT) *--pc = &apos;0&apos;;</span><br><span class="line">		std::istringstream in(c);</span><br><span class="line">		in &gt;&gt; temp;</span><br><span class="line">		number.push_back(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	if (get_ptrdiff()&gt;1 &amp;&amp; !*number.rbegin()) number.pop_back();</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">longer&amp; longer::operator +=(const longer&amp; n) &#123; return *this = *this + n; &#125;</span><br><span class="line">longer&amp; longer::operator -=(const longer&amp; n) &#123; return *this = *this - n; &#125;</span><br><span class="line">longer&amp; longer::operator *=(const longer&amp; n) &#123; return *this = *this * n; &#125;</span><br><span class="line">longer&amp; longer::operator /=(const longer&amp; n) &#123; return *this = *this / n; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//比较</span><br><span class="line">inline bool longer::operator &lt;(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if ((!sign) &amp;&amp; (n.sign)) return 0;</span><br><span class="line">	if ((sign) &amp;&amp; (!n.sign)) return 1;</span><br><span class="line">	if ((!sign) &amp;&amp; (!n.sign)) return get_comparison(n) == -1;</span><br><span class="line">	return get_comparison(n) == 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool longer::operator &gt;(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if ((!sign) &amp;&amp; (n.sign)) return 1;</span><br><span class="line">	if ((sign) &amp;&amp; (!n.sign)) return 0;</span><br><span class="line">	if ((!sign) &amp;&amp; (!n.sign)) return get_comparison(n) == 1;</span><br><span class="line">	return get_comparison(n) == -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool longer::operator &lt;=(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if ((!sign) &amp;&amp; (n.sign)) return 0;</span><br><span class="line">	if ((sign) &amp;&amp; (!n.sign)) return 1;</span><br><span class="line">	if ((!sign) &amp;&amp; (!n.sign)) return get_comparison(n) &lt;= 0;</span><br><span class="line">	return get_comparison(n) &gt;= 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool longer::operator &gt;=(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if ((!sign) &amp;&amp; (n.sign)) return 1;</span><br><span class="line">	if ((sign) &amp;&amp; (!n.sign)) return 0;</span><br><span class="line">	if ((!sign) &amp;&amp; (!n.sign)) return get_comparison(n) &gt;= 0;</span><br><span class="line">	return get_comparison(n) &lt;= 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool longer::operator ==(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if (((!sign) &amp;&amp; (n.sign)) || ((sign) &amp;&amp; (!n.sign))) return 0;</span><br><span class="line">	return !get_comparison(n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline bool longer::operator !=(const longer&amp; n)const</span><br><span class="line">&#123;</span><br><span class="line">	if (((!sign) &amp;&amp; (n.sign)) || ((sign) &amp;&amp; (!n.sign))) return 1;</span><br><span class="line">	return get_comparison(n) != 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//输入输出</span><br><span class="line">std::istream&amp; operator &gt;&gt;(std::istream&amp; is, longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	std::string s;is &gt;&gt; s;</span><br><span class="line">	n = s;</span><br><span class="line">	return is;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::ostream&amp; operator &lt;&lt;(std::ostream&amp; os, const longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	auto p = n.number.rbegin();</span><br><span class="line">	if (n.sign) os &lt;&lt; &apos;-&apos;;</span><br><span class="line">	os &lt;&lt; *p;</span><br><span class="line">	for (++p;p != n.number.rend();++p) &#123;</span><br><span class="line">		int i = 0;auto n = *p;</span><br><span class="line">		while (n /= 10) ++i;</span><br><span class="line">		for (;++i &lt; longer::DIGIT;std::cout &lt;&lt; &apos;0&apos;);</span><br><span class="line">		os &lt;&lt; *p;</span><br><span class="line">	&#125;</span><br><span class="line">	return os;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//其他函数	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span><br><span class="line">int longer::digit()const</span><br><span class="line">&#123;</span><br><span class="line">	int a = (get_ptrdiff() - 1) * DIGIT;</span><br><span class="line">	ll b = *number.rbegin();</span><br><span class="line">	do ++a;while (b /= 10);</span><br><span class="line">	return a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::lrabs(const longer&amp; n) &#123; longer t(n);if (t.sign) t.sign = 0;return t; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//类内部调用	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span><br><span class="line">longer&amp; longer::get_addition(longer&amp; aa, const longer&amp; bb, bool si)</span><br><span class="line">&#123;</span><br><span class="line">	auto a = aa.number.begin(), &amp;aend = aa.number.end();</span><br><span class="line">	auto  b = bb.number.begin(), &amp;bend = bb.number.end();</span><br><span class="line">	bool flag = 0;</span><br><span class="line">	aa.sign = si;</span><br><span class="line">	do &#123;</span><br><span class="line">		*a += (b == bend ? 0 : *b++) + flag;</span><br><span class="line">		if (*a &gt;= MAX) *a -= MAX, flag = 1;</span><br><span class="line">		else if (flag) flag = 0;</span><br><span class="line">	&#125; while (++a != aend &amp;&amp; (b != bend || flag));</span><br><span class="line">	if (flag) aa.number.push_back(flag);</span><br><span class="line">	return aa.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::get_subtraction(longer&amp; aa, const longer&amp; bb, bool si)</span><br><span class="line">&#123;</span><br><span class="line">	auto a = aa.number.begin(), &amp;aend = aa.number.end();</span><br><span class="line">	auto  b = bb.number.begin(), &amp;bend = bb.number.end();</span><br><span class="line">	bool flag = 0;</span><br><span class="line">	aa.sign = si;</span><br><span class="line">	do &#123;</span><br><span class="line">		*a -= (b == bend ? 0 : *b++) + flag;</span><br><span class="line">		if (*a &lt; 0) *a += MAX, flag = 1;</span><br><span class="line">		else if (flag) flag = 0;</span><br><span class="line">	&#125; while (++a != aend &amp;&amp; (b != bend || flag));</span><br><span class="line">	while (aa.get_ptrdiff()&gt;1 &amp;&amp; !*aa.number.rbegin()) aa.number.pop_back();</span><br><span class="line">	return aa.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int longer::get_comparison(const longer&amp; n)const</span><br><span class="line">&#123;//返回1:左值大,0相等,-1右值大</span><br><span class="line">	if (get_ptrdiff() &lt; n.get_ptrdiff()) return -1;</span><br><span class="line">	if (get_ptrdiff() &gt; n.get_ptrdiff()) return 1;</span><br><span class="line">	auto a = number.rbegin(), b = n.number.rbegin();</span><br><span class="line">	while (a != number.rend()) &#123;</span><br><span class="line">		if (*a &lt; *b) return -1;</span><br><span class="line">		if (*a &gt; *b) return 1;</span><br><span class="line">		++a, ++b;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline ptrdiff_t longer::get_ptrdiff()const &#123; return number.end() - number.begin(); &#125;</span><br><span class="line"></span><br><span class="line">inline longer&amp; longer::get_zero()</span><br><span class="line">&#123;</span><br><span class="line">	if (get_ptrdiff() == 1 &amp;&amp; number[0] == 0 &amp;&amp; sign == 1) sign = 0;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我的大数类，定义为longer好了[笑哭]</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _LONGER_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _LONGER_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="comment">//#pragma warning(disable:4996)	//对使用VS2015且开启了“安全开发生命周期(SDL)检测”的项目奏效(VS2013应该也有用)</span></span><br><span class="line">class longer</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//必要定义	(-.-;)</span></span><br><span class="line">	<span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">constexpr</span> ll MAX = <span class="number">1000000000</span>;	<span class="comment">//每个ll的存储限制，999999999*999999999刚好不溢出(9个9)</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> DIGIT = <span class="number">9</span>;			<span class="comment">//ll支持的最大位数</span></span><br><span class="line">	<span class="comment">//数据储存	(-.-;)</span></span><br><span class="line">	<span class="keyword">bool</span> sign;								<span class="comment">//正负号：0正1负</span></span><br><span class="line">	std::vector&lt;ll&gt; number;					<span class="comment">//大数存储区</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//构造函数	(-.-;)</span></span><br><span class="line">	longer();</span><br><span class="line">	longer(<span class="keyword">const</span> ll&amp;);</span><br><span class="line">	longer(<span class="keyword">const</span> longer&amp;);</span><br><span class="line">	longer(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line">	longer(<span class="keyword">const</span> std::<span class="keyword">string</span>&amp;);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//运算符重载	(-.-;)</span></span><br><span class="line">	longer <span class="keyword">operator</span> +()<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> +(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> -()<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> -(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> *(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> /(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	longer <span class="keyword">operator</span> %(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">	longer&amp; <span class="keyword">operator</span> ++();</span><br><span class="line">	longer <span class="keyword">operator</span> ++(<span class="keyword">int</span>);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> --();</span><br><span class="line">	longer <span class="keyword">operator</span> --(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line">	longer&amp; <span class="keyword">operator</span> =(<span class="keyword">const</span> ll&amp;);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> =(<span class="keyword">const</span> longer&amp;);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> =(<span class="keyword">const</span> <span class="keyword">char</span>*);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> =(<span class="keyword">const</span> std::<span class="keyword">string</span>&amp;);</span><br><span class="line"></span><br><span class="line">	longer&amp; <span class="keyword">operator</span> +=(<span class="keyword">const</span> longer&amp;);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> -=(<span class="keyword">const</span> longer&amp;);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> *=(<span class="keyword">const</span> longer&amp;);</span><br><span class="line">	longer&amp; <span class="keyword">operator</span> /=(<span class="keyword">const</span> longer&amp;);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &gt;(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;=(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &gt;=(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> ==(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> !=(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> std::istream&amp; <span class="keyword">operator</span> &gt;&gt;(std::istream&amp;, longer&amp;);</span><br><span class="line">	<span class="keyword">friend</span> std::ostream&amp; <span class="keyword">operator</span> &lt;&lt;(std::ostream&amp;, <span class="keyword">const</span> longer&amp;);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//其他函数	(-.-;)</span></span><br><span class="line">	<span class="keyword">int</span> digit()<span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">static</span> longer lrabs(<span class="keyword">const</span> longer&amp;);		<span class="comment">//求绝对值</span></span><br><span class="line">	<span class="keyword">static</span> longer lrsqrt(<span class="keyword">const</span> longer&amp;);	<span class="comment">//求算数平方根,暂时没打算完成，先占个茅坑,不拉屎</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="comment">//类内部调用	(-.-;)</span></span><br><span class="line">	longer(<span class="keyword">const</span> <span class="keyword">int</span>, <span class="keyword">const</span> ll&amp;);									<span class="comment">//分配多少个vector容量，每个数据均为第一个参数</span></span><br><span class="line">	<span class="keyword">static</span> longer&amp; get_addition(longer&amp;, <span class="keyword">const</span> longer&amp;, <span class="keyword">bool</span>);		<span class="comment">//获得加法结果,仅支持正整数以大加小,无视正负号</span></span><br><span class="line">	<span class="keyword">static</span> longer&amp; get_subtraction(longer&amp;, <span class="keyword">const</span> longer&amp;, <span class="keyword">bool</span>);	<span class="comment">//获得减法结果,仅支持正整数以大减小,无视正负号</span></span><br><span class="line">	<span class="keyword">int</span> get_comparison(<span class="keyword">const</span> longer&amp;)<span class="keyword">const</span>;							<span class="comment">//获得比较结果,仅支持正整数相互比较,无视正负号</span></span><br><span class="line">	<span class="keyword">inline</span> ptrdiff_t get_ptrdiff()<span class="keyword">const</span>;							<span class="comment">//获得vector数组元素个数</span></span><br><span class="line">	<span class="keyword">inline</span> longer&amp; get_zero();										<span class="comment">//若结果为0,且若0的sign为负，则改为0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//必要定义	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span></span><br><span class="line"><span class="keyword">constexpr</span> longer::ll longer::MAX;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> longer::DIGIT;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span></span><br><span class="line">longer::longer() &#123; number.push_back(<span class="number">0</span>); &#125;</span><br><span class="line">longer::longer(<span class="keyword">const</span> ll&amp; n) &#123; *<span class="keyword">this</span> = n; &#125;</span><br><span class="line">longer::longer(<span class="keyword">const</span> longer&amp; n) &#123; *<span class="keyword">this</span> = n; &#125;</span><br><span class="line">longer::longer(<span class="keyword">const</span> <span class="keyword">char</span>* s) &#123; *<span class="keyword">this</span> = s; &#125;</span><br><span class="line">longer::longer(<span class="keyword">const</span> std::<span class="keyword">string</span>&amp; s) &#123; *<span class="keyword">this</span> = s; &#125;</span><br><span class="line">longer::longer(<span class="keyword">const</span> <span class="keyword">int</span> i, <span class="keyword">const</span> ll&amp; n) : number(i, n), sign(<span class="number">0</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运算符重载	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span></span><br><span class="line"><span class="comment">//加减乘除取余次方</span></span><br><span class="line">longer longer::<span class="keyword">operator</span> +()<span class="keyword">const</span> &#123; <span class="built_in">return</span> *<span class="keyword">this</span>; &#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> +(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">bool</span> judge = get_comparison(n) &gt;= <span class="number">0</span>;</span><br><span class="line">	longer aa(judge ? *<span class="keyword">this</span> : n);</span><br><span class="line">	<span class="keyword">auto</span> &amp;bb = (judge ? n : *<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">if</span> ((!aa.sign) &amp;&amp; (!bb.sign)) <span class="built_in">return</span> get_addition(aa, bb, <span class="number">0</span>);			<span class="comment">//正+正</span></span><br><span class="line">	<span class="built_in">if</span> ((!aa.sign) &amp;&amp; (bb.sign)) <span class="built_in">return</span> get_subtraction(aa, bb, !judge);	<span class="comment">//正+负</span></span><br><span class="line">	<span class="built_in">if</span> ((aa.sign) &amp;&amp; (!bb.sign)) <span class="built_in">return</span> get_subtraction(aa, bb, judge);		<span class="comment">//负+正</span></span><br><span class="line">	<span class="built_in">return</span> get_addition(aa, bb, <span class="number">1</span>);											<span class="comment">//负+负</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> -()<span class="keyword">const</span> &#123; longer t(*<span class="keyword">this</span>);t.sign = (t.sign ? <span class="number">0</span> : <span class="number">1</span>);<span class="built_in">return</span> t; &#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> -(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">bool</span> judge = get_comparison(n) &gt;= <span class="number">0</span>;</span><br><span class="line">	longer aa(judge ? *<span class="keyword">this</span> : n);</span><br><span class="line">	<span class="keyword">auto</span> &amp;bb = (judge ? n : *<span class="keyword">this</span>);</span><br><span class="line">	<span class="built_in">if</span> ((!aa.sign) &amp;&amp; (!bb.sign)) <span class="built_in">return</span> get_subtraction(aa, bb, !judge);	<span class="comment">//正-正</span></span><br><span class="line">	<span class="built_in">if</span> ((!aa.sign) &amp;&amp; (bb.sign)) <span class="built_in">return</span> get_addition(aa, bb, <span class="number">0</span>);			<span class="comment">//正-负</span></span><br><span class="line">	<span class="built_in">if</span> ((aa.sign) &amp;&amp; (!bb.sign)) <span class="built_in">return</span> get_addition(aa, bb, <span class="number">1</span>);			<span class="comment">//负-正</span></span><br><span class="line">	<span class="built_in">return</span> get_subtraction(aa, bb, judge);									<span class="comment">//负-负</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> *(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;<span class="comment">//模拟小学老师教的方法</span></span><br><span class="line">	<span class="keyword">int</span> leni = get_ptrdiff(), lenj = n.get_ptrdiff();</span><br><span class="line">	longer re(leni + lenj, <span class="number">0</span>);</span><br><span class="line">	ll flag;</span><br><span class="line">	sign == n.sign ? re.sign = <span class="number">0</span> : re.sign = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; leni;++i) &#123;</span><br><span class="line">		longer t(n);</span><br><span class="line">		<span class="keyword">int</span> j;</span><br><span class="line">		flag = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">for</span> (j = <span class="number">0</span>;j &lt; lenj;++j) &#123;</span><br><span class="line">			t.number[j] = t.number[j] * number[i] + flag;</span><br><span class="line">			flag = t.number[j] / MAX;</span><br><span class="line">			t.number[j] -= flag*MAX;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">if</span> (flag) t.number.push_back(flag);</span><br><span class="line">		flag = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">for</span> (j = <span class="number">0</span>;j &lt; t.get_ptrdiff();++j) &#123;</span><br><span class="line">			re.number[i + j] += t.number[j] + flag;</span><br><span class="line">			<span class="built_in">if</span> (re.number[i + j] &gt;= MAX) re.number[i + j] -= MAX, flag = <span class="number">1</span>;</span><br><span class="line">			<span class="built_in">else</span> flag = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">if</span> (flag) re.number[i + j] += flag;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">while</span> (re.get_ptrdiff() &gt; <span class="number">1</span> &amp;&amp; !*re.number.rbegin()) re.number.pop_back();</span><br><span class="line">	<span class="built_in">return</span> re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> /(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;<span class="comment">//模拟小学老师教的方法</span></span><br><span class="line">	<span class="built_in">if</span> (n == longer((ll)<span class="number">0</span>)) &#123; std::cerr &lt;&lt; <span class="string">"除数为0!\n"</span>;exit(<span class="number">1</span>); &#125;</span><br><span class="line">	longer th(*<span class="keyword">this</span>), re((ll)<span class="number">0</span>);</span><br><span class="line">	re.sign = th.sign = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> times = digit() - n.digit();</span><br><span class="line">	<span class="built_in">for</span> (<span class="keyword">int</span> i = times;i &gt;= <span class="number">0</span>;--i) &#123;</span><br><span class="line">		longer digi(i / DIGIT + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">		*digi.number.rbegin() = ((ll)<span class="built_in">pow</span>(<span class="number">10</span>, i % DIGIT));</span><br><span class="line">		longer t(n*digi); t.sign = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">while</span> (th.get_comparison(t) == <span class="number">1</span>) th-=t, re += digi;</span><br><span class="line">		<span class="built_in">if</span> (th.get_comparison(t) == <span class="number">0</span>) &#123; re += digi;<span class="built_in">break</span>; &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">if</span> (sign != n.sign) re.sign = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">return</span> re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::<span class="keyword">operator</span> %(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	longer re(*<span class="keyword">this</span> - (*<span class="keyword">this</span> / n)*n);</span><br><span class="line">	<span class="built_in">return</span> re.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//自增自减</span></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> ++() &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> + <span class="number">1</span>; &#125;</span><br><span class="line">longer longer::<span class="keyword">operator</span> ++(<span class="keyword">int</span>) &#123; longer t = *<span class="keyword">this</span>;*<span class="keyword">this</span> = *<span class="keyword">this</span> + <span class="number">1</span>;<span class="built_in">return</span> t; &#125;</span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> --() &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> - <span class="number">1</span>; &#125;</span><br><span class="line">longer longer::<span class="keyword">operator</span> --(<span class="keyword">int</span>) &#123; longer t = *<span class="keyword">this</span>;*<span class="keyword">this</span> = *<span class="keyword">this</span> - <span class="number">1</span>;<span class="built_in">return</span> t; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//赋值</span></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> =(<span class="keyword">const</span> ll&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> (n &lt; <span class="number">0</span>) sign = <span class="number">1</span>, number.push_back(-n);</span><br><span class="line">	<span class="built_in">else</span> sign = <span class="number">0</span>, number.push_back(n);</span><br><span class="line">	<span class="built_in">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> =(<span class="keyword">const</span> longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	number = n.number;</span><br><span class="line">	sign = n.sign;</span><br><span class="line">	<span class="built_in">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> =(<span class="keyword">const</span> <span class="keyword">char</span>* s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">return</span> *<span class="keyword">this</span> = std::<span class="keyword">string</span>(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> =(<span class="keyword">const</span> std::<span class="keyword">string</span>&amp; s)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">auto</span> ps = s.rbegin();</span><br><span class="line">	<span class="keyword">char</span> c[DIGIT + <span class="number">1</span>], *pc;</span><br><span class="line">	ll temp;</span><br><span class="line">	sign = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">while</span> (ps != s.rend()) &#123;</span><br><span class="line">		*(pc = &amp;c[DIGIT]) = <span class="string">'\0'</span>;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="built_in">for</span> (i = <span class="number">0</span>;i &lt; DIGIT &amp;&amp; ps != s.rend();++i)</span><br><span class="line">			*--pc = *ps++;</span><br><span class="line">		<span class="built_in">if</span> (*(ps - <span class="number">1</span>) == <span class="string">'-'</span>) *pc = <span class="string">'0'</span>, sign = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">while</span> (i++ &lt; DIGIT) *--pc = <span class="string">'0'</span>;</span><br><span class="line">		std::istringstream in(c);</span><br><span class="line">		in &gt;&gt; temp;</span><br><span class="line">		number.push_back(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">if</span> (get_ptrdiff()&gt;<span class="number">1</span> &amp;&amp; !*number.rbegin()) number.pop_back();</span><br><span class="line">	<span class="built_in">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> +=(<span class="keyword">const</span> longer&amp; n) &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> + n; &#125;</span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> -=(<span class="keyword">const</span> longer&amp; n) &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> - n; &#125;</span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> *=(<span class="keyword">const</span> longer&amp; n) &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> * n; &#125;</span><br><span class="line">longer&amp; longer::<span class="keyword">operator</span> /=(<span class="keyword">const</span> longer&amp; n) &#123; <span class="built_in">return</span> *<span class="keyword">this</span> = *<span class="keyword">this</span> / n; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//比较</span></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> &lt;(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (n.sign)) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">if</span> ((sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> get_comparison(n) == <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">return</span> get_comparison(n) == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> &gt;(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (n.sign)) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">if</span> ((sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> get_comparison(n) == <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">return</span> get_comparison(n) == <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> &lt;=(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (n.sign)) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">if</span> ((sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> get_comparison(n) &lt;= <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">return</span> get_comparison(n) &gt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> &gt;=(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (n.sign)) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">if</span> ((sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">if</span> ((!sign) &amp;&amp; (!n.sign)) <span class="built_in">return</span> get_comparison(n) &gt;= <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">return</span> get_comparison(n) &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> ==(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> (((!sign) &amp;&amp; (n.sign)) || ((sign) &amp;&amp; (!n.sign))) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">return</span> !get_comparison(n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> longer::<span class="keyword">operator</span> !=(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> (((!sign) &amp;&amp; (n.sign)) || ((sign) &amp;&amp; (!n.sign))) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">return</span> get_comparison(n) != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//输入输出</span></span><br><span class="line">std::istream&amp; <span class="keyword">operator</span> &gt;&gt;(std::istream&amp; is, longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	std::<span class="keyword">string</span> s;is &gt;&gt; s;</span><br><span class="line">	n = s;</span><br><span class="line">	<span class="built_in">return</span> is;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::ostream&amp; <span class="keyword">operator</span> &lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> longer&amp; n)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">auto</span> p = n.number.rbegin();</span><br><span class="line">	<span class="built_in">if</span> (n.sign) os &lt;&lt; <span class="string">'-'</span>;</span><br><span class="line">	os &lt;&lt; *p;</span><br><span class="line">	<span class="built_in">for</span> (++p;p != n.number.rend();++p) &#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>;<span class="keyword">auto</span> n = *p;</span><br><span class="line">		<span class="built_in">while</span> (n /= <span class="number">10</span>) ++i;</span><br><span class="line">		<span class="built_in">for</span> (;++i &lt; longer::DIGIT;std::cout &lt;&lt; <span class="string">'0'</span>);</span><br><span class="line">		os &lt;&lt; *p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> os;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//其他函数	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span></span><br><span class="line"><span class="keyword">int</span> longer::digit()<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> a = (get_ptrdiff() - <span class="number">1</span>) * DIGIT;</span><br><span class="line">	ll b = *number.rbegin();</span><br><span class="line">	<span class="built_in">do</span> ++a;<span class="built_in">while</span> (b /= <span class="number">10</span>);</span><br><span class="line">	<span class="built_in">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer longer::lrabs(<span class="keyword">const</span> longer&amp; n) &#123; longer t(n);<span class="built_in">if</span> (t.sign) t.sign = <span class="number">0</span>;<span class="built_in">return</span> t; &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//类内部调用	↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗↖(-(●●)-)↗</span></span><br><span class="line">longer&amp; longer::get_addition(longer&amp; aa, <span class="keyword">const</span> longer&amp; bb, <span class="keyword">bool</span> si)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">auto</span> a = aa.number.<span class="built_in">begin</span>(), &amp;aend = aa.number.<span class="built_in">end</span>();</span><br><span class="line">	<span class="keyword">auto</span>  b = bb.number.<span class="built_in">begin</span>(), &amp;bend = bb.number.<span class="built_in">end</span>();</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">	aa.sign = si;</span><br><span class="line">	<span class="built_in">do</span> &#123;</span><br><span class="line">		*a += (b == bend ? <span class="number">0</span> : *b++) + flag;</span><br><span class="line">		<span class="built_in">if</span> (*a &gt;= MAX) *a -= MAX, flag = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">else</span> <span class="built_in">if</span> (flag) flag = <span class="number">0</span>;</span><br><span class="line">	&#125; <span class="built_in">while</span> (++a != aend &amp;&amp; (b != bend || flag));</span><br><span class="line">	<span class="built_in">if</span> (flag) aa.number.push_back(flag);</span><br><span class="line">	<span class="built_in">return</span> aa.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">longer&amp; longer::get_subtraction(longer&amp; aa, <span class="keyword">const</span> longer&amp; bb, <span class="keyword">bool</span> si)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">auto</span> a = aa.number.<span class="built_in">begin</span>(), &amp;aend = aa.number.<span class="built_in">end</span>();</span><br><span class="line">	<span class="keyword">auto</span>  b = bb.number.<span class="built_in">begin</span>(), &amp;bend = bb.number.<span class="built_in">end</span>();</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">	aa.sign = si;</span><br><span class="line">	<span class="built_in">do</span> &#123;</span><br><span class="line">		*a -= (b == bend ? <span class="number">0</span> : *b++) + flag;</span><br><span class="line">		<span class="built_in">if</span> (*a &lt; <span class="number">0</span>) *a += MAX, flag = <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">else</span> <span class="built_in">if</span> (flag) flag = <span class="number">0</span>;</span><br><span class="line">	&#125; <span class="built_in">while</span> (++a != aend &amp;&amp; (b != bend || flag));</span><br><span class="line">	<span class="built_in">while</span> (aa.get_ptrdiff()&gt;<span class="number">1</span> &amp;&amp; !*aa.number.rbegin()) aa.number.pop_back();</span><br><span class="line">	<span class="built_in">return</span> aa.get_zero();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> longer::get_comparison(<span class="keyword">const</span> longer&amp; n)<span class="keyword">const</span></span><br><span class="line">&#123;<span class="comment">//返回1:左值大,0相等,-1右值大</span></span><br><span class="line">	<span class="built_in">if</span> (get_ptrdiff() &lt; n.get_ptrdiff()) <span class="built_in">return</span> <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">if</span> (get_ptrdiff() &gt; n.get_ptrdiff()) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">auto</span> a = number.rbegin(), b = n.number.rbegin();</span><br><span class="line">	<span class="built_in">while</span> (a != number.rend()) &#123;</span><br><span class="line">		<span class="built_in">if</span> (*a &lt; *b) <span class="built_in">return</span> <span class="number">-1</span>;</span><br><span class="line">		<span class="built_in">if</span> (*a &gt; *b) <span class="built_in">return</span> <span class="number">1</span>;</span><br><span class="line">		++a, ++b;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> ptrdiff_t longer::get_ptrdiff()<span class="keyword">const</span> &#123; <span class="built_in">return</span> number.<span class="built_in">end</span>() - number.<span class="built_in">begin</span>(); &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> longer&amp; longer::get_zero()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span> (get_ptrdiff() == <span class="number">1</span> &amp;&amp; number[<span class="number">0</span>] == <span class="number">0</span> &amp;&amp; sign == <span class="number">1</span>) sign = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
       
     </div>
+
+    
+
     
     
     
@@ -350,7 +465,34 @@
     
 
     
+      
+    
+    
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/18423.html" title="我的整形大数类(支持正负)">https://xienaoban.github.io/posts/18423.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -392,17 +534,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -422,54 +557,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -477,6 +687,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -486,16 +697,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -503,12 +716,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -529,11 +743,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -547,96 +764,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -650,7 +782,58 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -662,31 +845,22 @@
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

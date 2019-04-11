@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,33 +66,20 @@
 
 
 
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/5/index.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban&#39;s Blog">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,12 +91,34 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/page/5/">
-
+  
 
 
 
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
+<meta property="og:url" content="https://xienaoban.github.io/page/5/index.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/page/5/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>XieNaoban's Blog</title>
   
@@ -131,9 +130,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -146,7 +174,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -156,13 +184,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,65 +197,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -236,12 +304,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -254,12 +337,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/4561.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/4561.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -278,11 +363,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/4561.html" itemprop="url">八皇后问题动态演示</a></h1>
+                
+                <a href="/posts/4561.html" class="post-title-link" itemprop="url">八皇后问题动态演示</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -290,19 +384,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T17:31:17+08:00">
-                2017-05-06
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-06 17:31:17" itemprop="dateCreated datePublished" datetime="2017-05-06T17:31:17+08:00">2017-05-06</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:58" itemprop="dateModified" datetime="2019-04-08T21:35:58+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -330,30 +442,40 @@
       
         
           
-          学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。
+            <p>
+              学校组织的计算机技能大赛，题目解八皇后并做程序演示，顺便就贴博客上来。
 八皇后问题
 简述：8*8的棋盘，有八个皇后，每个皇后不能在同一行同一列同一斜线上，问有多少种可能的摆法。答案是92，这大家都知道。
 #解法与优化 首先肯定是遍历嘛，关键是要剪枝。
 ##1.暴力枚举 8个子所有点遍历一遍，8个嵌套for，一共\(C_{64}^{8}\)种情况。曰曰
 ##2.回溯法 由于每个皇后不能在一行，那八个皇后就在八个不同行上面嘛，对于每个皇后/每一行，采用回溯法先第一行放一个，在第二行剩下7个位置中找第二个皇后可能的位置，以此类推，一共\(8^8 = 16777216\)种情况。
 ##3.全排列 由于每个皇后不同行不同列，那么在
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/4561.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/4561.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -386,12 +508,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/16776.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/16776.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -410,11 +534,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/16776.html" itemprop="url">Google Code Jam 2017 - Round1 C Problem A. Ample Syrup</a></h1>
+                
+                <a href="/posts/16776.html" class="post-title-link" itemprop="url">Google Code Jam 2017 - Round1 C Problem A. Ample Syrup</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -422,19 +555,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-01T12:02:04+08:00">
-                2017-05-01
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-01 12:02:04" itemprop="dateCreated datePublished" datetime="2017-05-01T12:02:04+08:00">2017-05-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -462,27 +613,37 @@
       
         
           
-          https://code.google.com/codejam/contest/3274486/dashboard
+            <p>
+              https://code.google.com/codejam/contest/3274486/dashboard
 #Problem
 The kitchen at the Infinite House of Pancakes has just received an order for a stack of K pancakes! The chef currently has N pancakes available, where N ≥ K. Each pancake is a cylinder, and different pancakes may have different radii and heights.
 As 
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/16776.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/16776.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -515,12 +676,14 @@ As
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/32822.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/32822.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -539,11 +702,20 @@ As
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/32822.html" itemprop="url">ACM笔记 - 利用FFT求卷积(求多项式乘法)</a></h1>
+                
+                <a href="/posts/32822.html" class="post-title-link" itemprop="url">ACM笔记 - 利用FFT求卷积(求多项式乘法)</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -551,19 +723,37 @@ As
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T21:35:01+08:00">
-                2017-04-06
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-06 21:35:01" itemprop="dateCreated datePublished" datetime="2017-04-06T21:35:01+08:00">2017-04-06</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -591,28 +781,38 @@ As
       
         
           
-          卷积
+            <p>
+              卷积
 给定向量：\(a=(a_0,a_1,...,a_{n-1})\)，\(b=(b_0,b_1,...,b_{n-1})\)
 向量和：\(a+b=(a_0+b_0,a_1+b_1,...,a_{n-1}+b_{n-1})\) 数量积（内积、点积）：\(a·b=a_0b_0+a_1b_1+...+a_{n-1}b_{n-1}\) 卷积：\(a \otimes b=(c_0,c_1,...,c_{2n-2})\)，其中\(c_k=\sum_{i+j=k}(a_ib_j)\)
 例如：\(c_{n-1}=a_0b_{n-1}+a_1b_{n-2}+...+a_{n-2}b_1+a_{n-1}b_0\)
 卷积的最典型的应用就是多项式
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/32822.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/32822.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -645,12 +845,14 @@ As
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/31985.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/31985.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -669,11 +871,20 @@ As
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/31985.html" itemprop="url">Codeforces 786A - Berzerk</a></h1>
+                
+                <a href="/posts/31985.html" class="post-title-link" itemprop="url">Codeforces 786A - Berzerk</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -681,19 +892,37 @@ As
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-03T22:05:37+08:00">
-                2017-04-03
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-03 22:05:37" itemprop="dateCreated datePublished" datetime="2017-04-03T22:05:37+08:00">2017-04-03</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -721,26 +950,36 @@ As
       
         
           
-          http://codeforces.com/problemset/problem/786/A
+            <p>
+              http://codeforces.com/problemset/problem/786/A
 #Description Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge space, so they play it with a computer.
 In this game there are n objects numbered from 1 to n arranged in a circle (in 
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/31985.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/31985.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -773,12 +1012,14 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3607.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/3607.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -797,11 +1038,20 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/3607.html" itemprop="url">ACM笔记 - 排序小技巧</a></h1>
+                
+                <a href="/posts/3607.html" class="post-title-link" itemprop="url">ACM笔记 - 排序小技巧</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -809,19 +1059,37 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T16:33:02+08:00">
-                2017-03-27
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-27 16:33:02" itemprop="dateCreated datePublished" datetime="2017-03-27T16:33:02+08:00">2017-03-27</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -849,25 +1117,35 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
       
         
           
-          #Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。
+            <p>
+              #Description 一个数组，要求先对前n个数字排序（以方便后续操作）；又要求对前n+i个数字排序；又要求对前n+j ... 前n+k个数字排序（i、j、k的大小远小于n，且i、j、k间没有大小关系）。总之就是对一个不定的范围内数据要进行频繁的按大小顺序调用，但是这个范围边界变化不大，很多数据重叠，这样每次都对此次区间内数据排序，频繁排序的话很费时间。
 例如一个数组\(\{1,3,6,5,2,4,1,9,0\}\)，一共9个数字，下标08。要求： 每次取一个区间，计算区间内\((最大值-最小值)^2+(次大值-次小值)^2+(次次大值-次次小值)^2+...\)的值。很容易想到对区间排个序，即可方便获得最大、次大值等。 对1
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/3607.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/3607.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -900,12 +1178,14 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/51189.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/51189.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -924,11 +1204,20 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/51189.html" itemprop="url">Codeforces 746G - New Roads</a></h1>
+                
+                <a href="/posts/51189.html" class="post-title-link" itemprop="url">Codeforces 746G - New Roads</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -936,19 +1225,37 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T20:25:45+08:00">
-                2017-03-26
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-26 20:25:45" itemprop="dateCreated datePublished" datetime="2017-03-26T20:25:45+08:00">2017-03-26</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -976,25 +1283,35 @@ In this game there are n objects numbered from 1 to n arranged in a circle (in
       
         
           
-          #Description There are n cities in Berland, each of them has a unique id — an integer from 1 to n, the capital is the one with id 1. Now there is a serious problem in Berland with roads — there are no roads.
+            <p>
+              #Description There are n cities in Berland, each of them has a unique id — an integer from 1 to n, the capital is the one with id 1. Now there is a serious problem in Berland with roads — there are no roads.
 That is why there was a decision to build n - 1 roads so that there will be exactly one simple path between eac
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/51189.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/51189.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1027,12 +1344,14 @@ That is why there was a decision to build n - 1 roads so that there will be 
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/36480.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/36480.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1051,11 +1370,20 @@ That is why there was a decision to build n - 1 roads so that there will be 
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/36480.html" itemprop="url">ACM笔记 - 组合数</a></h1>
+                
+                <a href="/posts/36480.html" class="post-title-link" itemprop="url">ACM笔记 - 组合数</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1063,19 +1391,37 @@ That is why there was a decision to build n - 1 roads so that there will be 
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T20:14:13+08:00">
-                2017-03-23
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-23 20:14:13" itemprop="dateCreated datePublished" datetime="2017-03-23T20:14:13+08:00">2017-03-23</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1103,29 +1449,39 @@ That is why there was a decision to build n - 1 roads so that there will be 
       
         
           
-          #一、高中数学公式复习 \(C_n^m = \frac{n!}{m!(n-m)!}\)
+            <p>
+              #一、高中数学公式复习 \(C_n^m = \frac{n!}{m!(n-m)!}\)
 \(C_n^m = C_n^{n-m} = C^{m}_{n-1} + C^{m-1}_{n-1}\)
 \(C_n^0+C_n^1+C_n^2+...+C_n^n = \sum_{i=0}^{n}{C_n^i} = 2^n\)
 \(C_n^0+C_n^2+C_n^4+... = C_n^1+C_n^3+C_n^5+... = 2^{n-1}\)
 \(C_n^m+C_{n+1}^m+C_{n+2}^m+...+C_{n+m}^m = \sum_{i=0}^{m}C_{n+i}^{m} = C_{n+m+1}^{m+1}\)
 \(k C_n
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/36480.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/36480.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1158,12 +1514,14 @@ That is why there was a decision to build n - 1 roads so that there will be 
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/64.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/64.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1182,11 +1540,20 @@ That is why there was a decision to build n - 1 roads so that there will be 
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/64.html" itemprop="url">Codeforces 785D - Anton and School - 2</a></h1>
+                
+                <a href="/posts/64.html" class="post-title-link" itemprop="url">Codeforces 785D - Anton and School - 2</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1194,19 +1561,37 @@ That is why there was a decision to build n - 1 roads so that there will be 
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T22:19:30+08:00">
-                2017-03-21
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-03-21 22:19:30" itemprop="dateCreated datePublished" datetime="2017-03-21T22:19:30+08:00">2017-03-21</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1234,25 +1619,35 @@ That is why there was a decision to build n - 1 roads so that there will be 
       
         
           
-          #Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consist of round brackets (characters "(" and ")" (without quotes)).
+            <p>
+              #Description As you probably know, Anton goes to school. One of the school subjects that Anton studies is Bracketology. On the Bracketology lessons students usually learn different sequences that consist of round brackets (characters "(" and ")" (without quotes)).
 On the last lesson Anton learned about the regular sim
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/64.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/64.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1285,12 +1680,14 @@ On the last lesson Anton learned about the regular sim
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/13990.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/13990.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1309,11 +1706,20 @@ On the last lesson Anton learned about the regular sim
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/13990.html" itemprop="url">Coursera Machine Learning Week3 - 正则化(Regularization)</a></h1>
+                
+                <a href="/posts/13990.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week3 - 正则化(Regularization)</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1321,19 +1727,37 @@ On the last lesson Anton learned about the regular sim
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T16:06:43+08:00">
-                2017-02-17
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-17 16:06:43" itemprop="dateCreated datePublished" datetime="2017-02-17T16:06:43+08:00">2017-02-17</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1361,25 +1785,35 @@ On the last lesson Anton learned about the regular sim
       
         
           
-          欠拟合（Underfitting）与过拟合（Overfitting）
+            <p>
+              欠拟合（Underfitting）与过拟合（Overfitting）
   上面两张图分别是回归问题和分类问题的欠拟合和过度拟合的例子。可以看到，如果使用直线（两组图的第一张）来拟合训，并不能很好地适应我们的训练集，这就叫欠拟合（Underfitting），但是如果x的次数太高（两组图的第三张），拟合虽然很好，但是预测能力反而变差了，这就是过拟合（Overfitting）。 对于欠拟合，我们可以适当增加特征，比如加入x的多次方。通常这很少发生，发生的多的都是过拟合。那么如何处理过度拟合呢？ 1. 丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙（例如 PCA）。 2. 正则化。 保留所
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/13990.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/13990.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1412,12 +1846,14 @@ On the last lesson Anton learned about the regular sim
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/33431.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/33431.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1436,11 +1872,20 @@ On the last lesson Anton learned about the regular sim
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/33431.html" itemprop="url">Coursera Machine Learning Week3 - 逻辑回归(Logistic Regression)</a></h1>
+                
+                <a href="/posts/33431.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week3 - 逻辑回归(Logistic Regression)</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1448,19 +1893,37 @@ On the last lesson Anton learned about the regular sim
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-13T21:57:44+08:00">
-                2017-02-13
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-13 21:57:44" itemprop="dateCreated datePublished" datetime="2017-02-13T21:57:44+08:00">2017-02-13</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1488,24 +1951,34 @@ On the last lesson Anton learned about the regular sim
       
         
           
-          逻辑回归算法是分类算法，虽然这个算法的名字中出现了“回归”，但逻辑回归算法实际上是一种分类算法，我们将它作为分类算法使用。。 分类问题：对于每个样本，判断它属于N个类中的那个类或哪几个类。通常我们判定一个样本，若我们预测它的确属于这个类的可能性大于50%，则认为它属于这个类。当然具体选择50%还是70%还是其他要看具体情况，这里先默认50%。 线性回归的局限性在分类问题的例子中变得不可靠：这是一个用来预测肿瘤是否呈阴性的模型，当一个肿瘤的尺寸大于一个数，我们就认为这个肿瘤呈阴性。我们现在新增了一个数据，结果导致整个模型的参数变化很大。如下图，在新加入最右侧数据后，50%的分水岭右移了不止一点点。而根据常识这个数据本应对我们的预测没有
-          ...
+            <p>
+              逻辑回归算法是分类算法，虽然这个算法的名字中出现了“回归”，但逻辑回归算法实际上是一种分类算法，我们将它作为分类算法使用。。 分类问题：对于每个样本，判断它属于N个类中的那个类或哪几个类。通常我们判定一个样本，若我们预测它的确属于这个类的可能性大于50%，则认为它属于这个类。当然具体选择50%还是70%还是其他要看具体情况，这里先默认50%。 线性回归的局限性在分类问题的例子中变得不可靠：这是一个用来预测肿瘤是否呈阴性的模型，当一个肿瘤的尺寸大于一个数，我们就认为这个肿瘤呈阴性。我们现在新增了一个数据，结果导致整个模型的参数变化很大。如下图，在新加入最右侧数据后，50%的分水岭右移了不止一点点。而根据常识这个数据本应对我们的预测没有
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/33431.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/33431.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1534,15 +2007,12 @@ On the last lesson Anton learned about the regular sim
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1558,54 +2028,129 @@ On the last lesson Anton learned about the regular sim
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1613,6 +2158,7 @@ On the last lesson Anton learned about the regular sim
 
     </div>
   </aside>
+  
 
 
         
@@ -1622,16 +2168,18 @@ On the last lesson Anton learned about the regular sim
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -1639,12 +2187,13 @@ On the last lesson Anton learned about the regular sim
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -1665,11 +2214,14 @@ On the last lesson Anton learned about the regular sim
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1683,92 +2235,11 @@ On the last lesson Anton learned about the regular sim
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1782,7 +2253,52 @@ On the last lesson Anton learned about the regular sim
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -1794,31 +2310,22 @@ On the last lesson Anton learned about the regular sim
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

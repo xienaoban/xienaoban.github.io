@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,37 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
-<meta property="og:type" content="article">
-<meta property="og:title" content="算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci">
-<meta property="og:url" content="http://yoursite.com/posts/46172.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-08T13:35:57.975Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci">
-<meta name="twitter:description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -118,12 +91,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/posts/46172.html">
-
+  
 
 
 
+
+  <meta name="description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci">
+<meta property="og:url" content="https://xienaoban.github.io/posts/46172.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci">
+<meta name="twitter:description" content="题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。  代码：（Accepted，0.250s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/46172">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci | XieNaoban's Blog</title>
   
@@ -135,9 +134,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -149,7 +177,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -159,13 +187,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,65 +200,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -239,12 +307,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -257,12 +340,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/46172.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/46172.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -279,11 +364,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci</h1>
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -291,19 +385,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-20T22:18:53+08:00">
-                2016-10-20
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2016-10-20 22:18:53" itemprop="dateCreated datePublished" datetime="2016-10-20T22:18:53+08:00">2016-10-20</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -331,12 +443,15 @@
       
         <p>题意：在前100000个Fibonacci（以下简称F）数字里，能否在这100000个F里找出以某些数字作为开头的F。要求找出下标最小的。没找到输出-1。</p>
 <hr>
-<p>代码：（Accepted，0.250s） <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">//UVa12333 - Revenge of Fibonacci</span><br><span class="line">//Accepted 0.250s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#define MAXS 0xffffff</span><br><span class="line">#define CIN 50</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct EACH_DIGIT &#123;</span><br><span class="line">	int id;</span><br><span class="line">	bool flag;</span><br><span class="line">	EACH_DIGIT* next[10];//0~9</span><br><span class="line">&#125;nodes[MAXS];</span><br><span class="line">class DIC_TREE &#123;</span><br><span class="line">	int index;</span><br><span class="line">	EACH_DIGIT* ini;</span><br><span class="line">public:</span><br><span class="line">	DIC_TREE() :index(0), ini(nodes) &#123;&#125;</span><br><span class="line">	void insert(const int* F, int d, const int&amp; n) &#123;</span><br><span class="line">		EACH_DIGIT* p(ini);</span><br><span class="line">		int brk(d &gt; 41 ? d - 41 : 0);</span><br><span class="line">		while (d-- &gt; brk) &#123;</span><br><span class="line">			if (p-&gt;next[F[d]] == nullptr)</span><br><span class="line">				p-&gt;next[F[d]] = nodes + (++index);</span><br><span class="line">			if (!p-&gt;flag &amp;&amp; !p-&gt;id) p-&gt;id = n;</span><br><span class="line">			p = p-&gt;next[F[d]];</span><br><span class="line">		&#125;</span><br><span class="line">		if (!p-&gt;flag) p-&gt;flag = true, p-&gt;id = n;</span><br><span class="line">	&#125;</span><br><span class="line">	int search(const int* F) &#123;</span><br><span class="line">		EACH_DIGIT* p(ini);</span><br><span class="line">		for (int i(0);F[i] != -1;++i) &#123;</span><br><span class="line">			if (p-&gt;next[F[i]] == nullptr) return -1;</span><br><span class="line">			p = p-&gt;next[F[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		return p-&gt;id;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;dic;</span><br><span class="line">int Fnum[2][21000];//In average, Fibonacci numbers in each digit is about 5, 21000 &gt; (100000/5)</span><br><span class="line">int T, N, SN[CIN];</span><br><span class="line">char S[CIN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 66666)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	//freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	memset(Fnum, 0, sizeof(Fnum));</span><br><span class="line">	memset(nodes, 0, sizeof(nodes));</span><br><span class="line">	int dgt(1);</span><br><span class="line">	Fnum[0][0] = Fnum[1][0] = 1;</span><br><span class="line">	dic.insert(Fnum[0], dgt, 0);</span><br><span class="line">	for (int n(2);n &lt; 100000;++n) &#123;</span><br><span class="line">		int two(n % 2), one((two + 1) % 2);//two:F(n-2)(also means the place of F(n))	one:F(n-1)</span><br><span class="line">		for (int i(dgt &lt; 51 ? 0 : dgt - 51);i &lt; dgt;++i)</span><br><span class="line">			if ((Fnum[two][i] += Fnum[one][i])&gt;9)</span><br><span class="line">				Fnum[two][i] -= 10, Fnum[two][i + 1] += 1;</span><br><span class="line">		if (Fnum[two][dgt]) ++dgt;</span><br><span class="line">		dic.insert(Fnum[two], dgt, n);</span><br><span class="line">	&#125;</span><br><span class="line">	while (scanf(&quot;%d&quot;, &amp;T) != EOF)//Start to handle cases </span><br><span class="line">		for (N = 1;N &lt;= T;++N) &#123;</span><br><span class="line">			scanf(&quot;%s&quot;, S);</span><br><span class="line">			int i(0);</span><br><span class="line">			for (;S[i];++i) SN[i] = S[i] - 48;</span><br><span class="line">			SN[i] = -1;</span><br><span class="line">			printf(&quot;Case #%d: %d\n&quot;, N, dic.search(SN));</span><br><span class="line">		&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>代码：（Accepted，0.250s） <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UVa12333 - Revenge of Fibonacci</span></span><br><span class="line"><span class="comment">//Accepted 0.250s</span></span><br><span class="line"><span class="comment">//#define _XIENAOBAN_</span></span><br><span class="line"><span class="meta">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="meta">#include&lt;cstring&gt;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXS 0xffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CIN 50</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="title">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> EACH_DIGIT &#123;</span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">bool</span> flag;</span><br><span class="line">	EACH_DIGIT* next[<span class="number">10</span>];<span class="comment">//0~9</span></span><br><span class="line">&#125;nodes[MAXS];</span><br><span class="line"><span class="keyword">class</span> <span class="title">DIC_TREE</span> &#123;</span><br><span class="line">	<span class="keyword">int</span> index;</span><br><span class="line">	EACH_DIGIT* ini;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	DIC_TREE() :index(<span class="number">0</span>), ini(nodes) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">insert</span>(<span class="params"><span class="keyword">const</span> <span class="keyword">int</span>* F, <span class="keyword">int</span> d, <span class="keyword">const</span> <span class="keyword">int</span>&amp; n</span>)</span> &#123;</span><br><span class="line">		EACH_DIGIT* p(ini);</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">brk</span>(<span class="params">d &gt; <span class="number">41</span> ? d - <span class="number">41</span> : <span class="number">0</span></span>)</span>;</span><br><span class="line">		<span class="keyword">while</span> (d-- &gt; brk) &#123;</span><br><span class="line">			<span class="keyword">if</span> (p-&gt;next[F[d]] == nullptr)</span><br><span class="line">				p-&gt;next[F[d]] = nodes + (++index);</span><br><span class="line">			<span class="keyword">if</span> (!p-&gt;flag &amp;&amp; !p-&gt;id) p-&gt;id = n;</span><br><span class="line">			p = p-&gt;next[F[d]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (!p-&gt;flag) p-&gt;flag = <span class="literal">true</span>, p-&gt;id = n;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">search</span>(<span class="params"><span class="keyword">const</span> <span class="keyword">int</span>* F</span>)</span> &#123;</span><br><span class="line">		EACH_DIGIT* p(ini);</span><br><span class="line">		<span class="keyword">for</span> (<span class="function"><span class="keyword">int</span> <span class="title">i</span>(<span class="params"><span class="number">0</span></span>)</span>;F[i] != <span class="number">-1</span>;++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (p-&gt;next[F[i]] == nullptr) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">			p = p-&gt;next[F[i]];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> p-&gt;id;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;dic;</span><br><span class="line"><span class="keyword">int</span> Fnum[<span class="number">2</span>][<span class="number">21000</span>];<span class="comment">//In average, Fibonacci numbers in each digit is about 5, 21000 &gt; (100000/5)</span></span><br><span class="line"><span class="keyword">int</span> T, N, SN[CIN];</span><br><span class="line"><span class="keyword">char</span> S[CIN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#ifdef _XIENAOBAN_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gets(T) gets_s(T, 66666)</span></span><br><span class="line">	freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	<span class="comment">//freopen("out.txt", "w", stdout);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	memset(Fnum, <span class="number">0</span>, <span class="keyword">sizeof</span>(Fnum));</span><br><span class="line">	memset(nodes, <span class="number">0</span>, <span class="keyword">sizeof</span>(nodes));</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">dgt</span>(<span class="params"><span class="number">1</span></span>)</span>;</span><br><span class="line">	Fnum[<span class="number">0</span>][<span class="number">0</span>] = Fnum[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	dic.insert(Fnum[<span class="number">0</span>], dgt, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="function"><span class="keyword">int</span> <span class="title">n</span>(<span class="params"><span class="number">2</span></span>)</span>;n &lt; <span class="number">100000</span>;++n) &#123;</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">two</span>(<span class="params">n % <span class="number">2</span></span>), <span class="title">one</span>(<span class="params">(two + <span class="number">1</span></span>) % 2)</span>;<span class="comment">//two:F(n-2)(also means the place of F(n))	one:F(n-1)</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="function"><span class="keyword">int</span> <span class="title">i</span>(<span class="params">dgt &lt; <span class="number">51</span> ? <span class="number">0</span> : dgt - <span class="number">51</span></span>)</span>;i &lt; dgt;++i)</span><br><span class="line">			<span class="keyword">if</span> ((Fnum[two][i] += Fnum[one][i])&gt;<span class="number">9</span>)</span><br><span class="line">				Fnum[two][i] -= <span class="number">10</span>, Fnum[two][i + <span class="number">1</span>] += <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (Fnum[two][dgt]) ++dgt;</span><br><span class="line">		dic.insert(Fnum[two], dgt, n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (scanf(<span class="string">"%d"</span>, &amp;T) != EOF)<span class="comment">//Start to handle cases </span></span><br><span class="line">		<span class="keyword">for</span> (N = <span class="number">1</span>;N &lt;= T;++N) &#123;</span><br><span class="line">			scanf(<span class="string">"%s"</span>, S);</span><br><span class="line">			<span class="function"><span class="keyword">int</span> <span class="title">i</span>(<span class="params"><span class="number">0</span></span>)</span>;</span><br><span class="line">			<span class="keyword">for</span> (;S[i];++i) SN[i] = S[i] - <span class="number">48</span>;</span><br><span class="line">			SN[i] = <span class="number">-1</span>;</span><br><span class="line">			printf(<span class="string">"Case #%d: %d\n"</span>, N, dic.search(SN));</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>分析：暴力求出前100000个F数字的话妥妥地超时。我一开始也想只取前面多少位以减少计算，担心出现99999...999什么什么的情况，导致精度不对，但看网上取50位的都过了，那就不虚了。 思路是用树的结构，每一位数（next）为一个结点，每个结点还储存“遍历到当前位数时满足的最小的F下标（index）”。若某个F刚好遍历到当前结点时结束，则修改当前结点index为当下F下标，并将其置为不可修改状态（flag:=true;）。若F遍历到当前还未结束，则若当前下标小于已储存下标且flag=false，则修改当前index。其实很好理解，但我好像说的不太清楚。 这题并没用到STL，看网上也是这样。数据结构的组建参考了 http://blog.csdn.net/a197p/article/details/44170921 。真的只是大概的看两眼那两个结构体，看了两眼想自己思考实现出来，但最后自己实现出来发现结构体里的变量和他的一样，最好的实现方法也只能是这样。最神奇的是甚至insert函数和search（他的query）函数和我的都和他写的一样—。— 但是他的代码就是0.130s，而我的时间是他的两倍，明明差不多我却没找出多在哪里。但是大神的代码里有好多巧妙的地方，比如他的 <code>tnode dict[nodesize];//line 14</code> <code>tnode* newnode() { return &amp;dict[size++]; }//line 31</code> 这样就免去了每次都new，节约时间还免去了delete的烦恼，厉害了。于是毫不犹豫抄过来。再比如他的 <code>memset(dict,0,sizeof(dict));//line 28</code> 我一开始是在<code>struct EACH_DIGIT</code> 里面写了个构造函数 <code>EACH_DIGIT():flag(0),id(0){memset(next,NULL,sizeof(next));}</code> 但是发现他一个memset全设为0和我效果不是一样的嘛。刷过去还快。</p>
 
       
     </div>
+
+    
+
     
     
     
@@ -344,7 +459,34 @@
     
 
     
+      
+    
+    
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/46172.html" title="算法竞赛入门经典(第2版) 5-15UVa12333 - Revenge of Fibonacci">https://xienaoban.github.io/posts/46172.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -386,17 +528,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -416,54 +551,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -471,6 +681,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -480,16 +691,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -497,12 +710,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -523,11 +737,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -541,96 +758,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -644,7 +776,58 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -656,31 +839,22 @@
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

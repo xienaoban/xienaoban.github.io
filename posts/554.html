@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,37 +66,20 @@
 
 
 
-
-
-
-<meta name="description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
-<meta property="og:type" content="article">
-<meta property="og:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
-<meta property="og:url" content="http://yoursite.com/posts/554.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-08T13:35:57.975Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
-<meta name="twitter:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -118,12 +91,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/posts/554.html">
-
+  
 
 
 
+
+  <meta name="description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
+<meta property="og:url" content="https://xienaoban.github.io/posts/554.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-08T13:35:57.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">
+<meta name="twitter:description" content="题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。  代码：（Accepted，0.330s） 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/554">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange | XieNaoban's Blog</title>
   
@@ -135,9 +134,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -149,7 +177,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -159,13 +187,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -173,65 +200,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -239,12 +307,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -257,12 +340,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/554.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/554.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -279,11 +364,20 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange</h1>
+          <h1 class="post-title" itemprop="name headline">算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -291,19 +385,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-14T19:36:10+08:00">
-                2016-10-14
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2016-10-14 19:36:10" itemprop="dateCreated datePublished" datetime="2016-10-14T19:36:10+08:00">2016-10-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -332,15 +444,18 @@
         <p>题意：模拟买卖，当出售价bid等于或低于出售价ask，则交易。</p>
 <hr>
 <p>代码：（Accepted，0.330s）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">//UVa1598 - Exchange</span><br><span class="line">//Accepted 0.330s</span><br><span class="line">//#define _XIENAOBAN_</span><br><span class="line">#include&lt;functional&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;utility&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct INFO &#123; char type; int size, price; &#125;for_push_back;</span><br><span class="line">int N, T(0);</span><br><span class="line">char type[20];</span><br><span class="line">vector&lt;INFO&gt; LIST;						//key: buy/ask id,	value: type, size</span><br><span class="line">map&lt;int, set&lt;int&gt;, greater&lt;int&gt; &gt; BUY;	//key: bid price,	value: id</span><br><span class="line">map&lt;int, set&lt;int&gt;, less&lt;int&gt; &gt; SELL;	//key: ask price,	value: id</span><br><span class="line">map&lt;int, int&gt; BUY_VAL;					//key: bid price,	value: size</span><br><span class="line">map&lt;int, int&gt; SELL_VAL;					//key: ask price,	value: size</span><br><span class="line"></span><br><span class="line">inline int sum(set&lt;int&gt;&amp; now) &#123;</span><br><span class="line">	int re(0);</span><br><span class="line">	for (const auto&amp; r : now) re += LIST[r].size;</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void trade(bool flag) &#123;</span><br><span class="line">	int bid_size, bid_price, ask_size, ask_price;</span><br><span class="line">	while (true) &#123;</span><br><span class="line">		auto bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line">		if (bid == BUY.end()) bid_size = 0, bid_price = 0;</span><br><span class="line">		else bid_size = BUY_VAL[bid-&gt;first], bid_price = bid-&gt;first;</span><br><span class="line">		if (ask == SELL.end()) ask_size = 0, ask_price = 999999;</span><br><span class="line">		else ask_size = SELL_VAL[ask-&gt;first], ask_price = ask-&gt;first;</span><br><span class="line">		if (bid_price &lt; ask_price) &#123;</span><br><span class="line">			printf(&quot;QUOTE %d %d - %d %d\n&quot;, bid_size, bid_price, ask_size, (ask_price == 999999 ? 99999 : ask_price));</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		auto sizeb(LIST[*bid-&gt;second.begin()].size), sizea(LIST[*ask-&gt;second.begin()].size);</span><br><span class="line">		const auto mini(min(sizeb, sizea));</span><br><span class="line">		printf(&quot;TRADE %d %d\n&quot;, mini, flag ? ask_price : bid_price);</span><br><span class="line"></span><br><span class="line">		auto&amp; b(bid-&gt;second), &amp;a(ask-&gt;second);</span><br><span class="line">		BUY_VAL[bid-&gt;first] -= mini;</span><br><span class="line">		if (!b.empty() &amp;&amp; (LIST[*b.begin()].size -= mini) == 0)</span><br><span class="line">			b.erase(b.begin());</span><br><span class="line">		if (b.empty()) BUY.erase(bid);</span><br><span class="line">		SELL_VAL[ask-&gt;first] -= mini;</span><br><span class="line">		if (!a.empty() &amp;&amp; (LIST[*a.begin()].size -= mini) == 0)</span><br><span class="line">			a.erase(a.begin());</span><br><span class="line">		if (a.empty()) SELL.erase(ask);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">#ifdef _XIENAOBAN_</span><br><span class="line">#define gets(T) gets_s(T, 66666)</span><br><span class="line">	freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);</span><br><span class="line">	freopen(&quot;out.txt&quot;, &quot;w&quot;, stdout);</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">	while (scanf(&quot;%d&quot;, &amp;N) != EOF) &#123;</span><br><span class="line">		if (T++) puts(&quot;&quot;);</span><br><span class="line">		LIST.clear(), BUY.clear(), SELL.clear(), BUY_VAL.clear(), SELL_VAL.clear();</span><br><span class="line">		LIST.push_back(for_push_back);</span><br><span class="line">		for (int n(1);n &lt;= N;++n) &#123;</span><br><span class="line">			INFO tmp;</span><br><span class="line">			scanf(&quot;%s&quot;, type);</span><br><span class="line">			if (*type == &apos;C&apos;) &#123;</span><br><span class="line">				int id;</span><br><span class="line">				scanf(&quot;%d&quot;, &amp;id);</span><br><span class="line">				auto&amp; csl(LIST[id]);</span><br><span class="line">				if (csl.type == &apos;B&apos;) &#123;</span><br><span class="line">					BUY_VAL[csl.price] -= csl.size;</span><br><span class="line">					LIST[id].size = 0;</span><br><span class="line">					auto&amp; now(BUY[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					if (now.empty()) BUY.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">				else &#123;</span><br><span class="line">					SELL_VAL[csl.price] -= csl.size;</span><br><span class="line">					LIST[id].size = 0;</span><br><span class="line">					auto&amp; now(SELL[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					if (now.empty()) SELL.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else &#123;</span><br><span class="line">				tmp.type = *type;</span><br><span class="line">				scanf(&quot;%d%d&quot;, &amp;tmp.size, &amp;tmp.price);</span><br><span class="line">				if (*type == &apos;B&apos;) BUY[tmp.price].insert(n), BUY_VAL[tmp.price] += tmp.size;</span><br><span class="line">				else SELL[tmp.price].insert(n), SELL_VAL[tmp.price] += tmp.size;</span><br><span class="line">			&#125;</span><br><span class="line">			LIST.push_back(std::move(tmp));</span><br><span class="line">			trade(*type == &apos;B&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UVa1598 - Exchange</span></span><br><span class="line"><span class="comment">//Accepted 0.330s</span></span><br><span class="line"><span class="comment">//#define _XIENAOBAN_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">struct INFO &#123; <span class="keyword">char</span> type; <span class="keyword">int</span> <span class="built_in">size</span>, price; &#125;for_push_back;</span><br><span class="line"><span class="keyword">int</span> N, T(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">char</span> type[<span class="number">20</span>];</span><br><span class="line">vector&lt;INFO&gt; LIST;						<span class="comment">//key: buy/ask id,	value: type, size</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, set&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; BUY;	<span class="comment">//key: bid price,	value: id</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, set&lt;<span class="keyword">int</span>&gt;, less&lt;<span class="keyword">int</span>&gt; &gt; SELL;	<span class="comment">//key: ask price,	value: id</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; BUY_VAL;					<span class="comment">//key: bid price,	value: size</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; SELL_VAL;					<span class="comment">//key: ask price,	value: size</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">int</span> sum(set&lt;<span class="keyword">int</span>&gt;&amp; now) &#123;</span><br><span class="line">	<span class="keyword">int</span> re(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; r : now) re += LIST[r].<span class="built_in">size</span>;</span><br><span class="line">	<span class="built_in">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> trade(<span class="keyword">bool</span> flag) &#123;</span><br><span class="line">	<span class="keyword">int</span> bid_size, bid_price, ask_size, ask_price;</span><br><span class="line">	<span class="built_in">while</span> (true) &#123;</span><br><span class="line">		<span class="keyword">auto</span> bid(BUY.<span class="built_in">begin</span>()), ask(SELL.<span class="built_in">begin</span>());</span><br><span class="line">		<span class="built_in">if</span> (bid == BUY.<span class="built_in">end</span>()) bid_size = <span class="number">0</span>, bid_price = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">else</span> bid_size = BUY_VAL[bid-&gt;first], bid_price = bid-&gt;first;</span><br><span class="line">		<span class="built_in">if</span> (ask == SELL.<span class="built_in">end</span>()) ask_size = <span class="number">0</span>, ask_price = <span class="number">999999</span>;</span><br><span class="line">		<span class="built_in">else</span> ask_size = SELL_VAL[ask-&gt;first], ask_price = ask-&gt;first;</span><br><span class="line">		<span class="built_in">if</span> (bid_price &lt; ask_price) &#123;</span><br><span class="line">			printf(<span class="string">"QUOTE %d %d - %d %d\n"</span>, bid_size, bid_price, ask_size, (ask_price == <span class="number">999999</span> ? <span class="number">99999</span> : ask_price));</span><br><span class="line">			<span class="built_in">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">auto</span> sizeb(LIST[*bid-&gt;second.<span class="built_in">begin</span>()].<span class="built_in">size</span>), sizea(LIST[*ask-&gt;second.<span class="built_in">begin</span>()].<span class="built_in">size</span>);</span><br><span class="line">		<span class="keyword">const</span> <span class="keyword">auto</span> mini(<span class="built_in">min</span>(sizeb, sizea));</span><br><span class="line">		printf(<span class="string">"TRADE %d %d\n"</span>, mini, flag ? ask_price : bid_price);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">auto</span>&amp; b(bid-&gt;second), &amp;a(ask-&gt;second);</span><br><span class="line">		BUY_VAL[bid-&gt;first] -= mini;</span><br><span class="line">		<span class="built_in">if</span> (!b.empty() &amp;&amp; (LIST[*b.<span class="built_in">begin</span>()].<span class="built_in">size</span> -= mini) == <span class="number">0</span>)</span><br><span class="line">			b.erase(b.<span class="built_in">begin</span>());</span><br><span class="line">		<span class="built_in">if</span> (b.empty()) BUY.erase(bid);</span><br><span class="line">		SELL_VAL[ask-&gt;first] -= mini;</span><br><span class="line">		<span class="built_in">if</span> (!a.empty() &amp;&amp; (LIST[*a.<span class="built_in">begin</span>()].<span class="built_in">size</span> -= mini) == <span class="number">0</span>)</span><br><span class="line">			a.erase(a.<span class="built_in">begin</span>());</span><br><span class="line">		<span class="built_in">if</span> (a.empty()) SELL.erase(ask);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _XIENAOBAN_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> gets(T) gets_s(T, 66666)</span></span><br><span class="line">	freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">while</span> (scanf(<span class="string">"%d"</span>, &amp;N) != EOF) &#123;</span><br><span class="line">		<span class="built_in">if</span> (T++) puts(<span class="string">""</span>);</span><br><span class="line">		LIST.<span class="built_in">clear</span>(), BUY.<span class="built_in">clear</span>(), SELL.<span class="built_in">clear</span>(), BUY_VAL.<span class="built_in">clear</span>(), SELL_VAL.<span class="built_in">clear</span>();</span><br><span class="line">		LIST.push_back(for_push_back);</span><br><span class="line">		<span class="built_in">for</span> (<span class="keyword">int</span> n(<span class="number">1</span>);n &lt;= N;++n) &#123;</span><br><span class="line">			INFO tmp;</span><br><span class="line">			scanf(<span class="string">"%s"</span>, type);</span><br><span class="line">			<span class="built_in">if</span> (*type == <span class="string">'C'</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> id;</span><br><span class="line">				scanf(<span class="string">"%d"</span>, &amp;id);</span><br><span class="line">				<span class="keyword">auto</span>&amp; csl(LIST[id]);</span><br><span class="line">				<span class="built_in">if</span> (csl.type == <span class="string">'B'</span>) &#123;</span><br><span class="line">					BUY_VAL[csl.price] -= csl.<span class="built_in">size</span>;</span><br><span class="line">					LIST[id].<span class="built_in">size</span> = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">auto</span>&amp; now(BUY[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					<span class="built_in">if</span> (now.empty()) BUY.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">else</span> &#123;</span><br><span class="line">					SELL_VAL[csl.price] -= csl.<span class="built_in">size</span>;</span><br><span class="line">					LIST[id].<span class="built_in">size</span> = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">auto</span>&amp; now(SELL[csl.price]);</span><br><span class="line">					now.erase(id);</span><br><span class="line">					<span class="built_in">if</span> (now.empty()) SELL.erase(csl.price);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">else</span> &#123;</span><br><span class="line">				tmp.type = *type;</span><br><span class="line">				scanf(<span class="string">"%d%d"</span>, &amp;tmp.<span class="built_in">size</span>, &amp;tmp.price);</span><br><span class="line">				<span class="built_in">if</span> (*type == <span class="string">'B'</span>) BUY[tmp.price].insert(n), BUY_VAL[tmp.price] += tmp.<span class="built_in">size</span>;</span><br><span class="line">				<span class="built_in">else</span> SELL[tmp.price].insert(n), SELL_VAL[tmp.price] += tmp.<span class="built_in">size</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			LIST.push_back(std::<span class="built_in">move</span>(tmp));</span><br><span class="line">			trade(*type == <span class="string">'B'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>分析：书上推荐使用优先队列，然而并没有想出来怎么去用。想了想还是用了map，用它的begin()，效果一样的，还可以灵活差入数据。一开始老是在某组测试数据上出现Runtime error，搞得生无可恋。<em>（从一老司机学到的新技能：当提交OJ出现RE时（WA也行），在执行每组数据计算的代码末尾加一句“while(1);”再提交如果从RE变成TLE了则说明是某些特殊数据没照顾到。毕竟不是所有OJ都有udebug可以用，这招还是不错的）</em> 然后过了一天还是心里放不下，又回来想了想，是题目中一个细节“If there is no active order to sell, then it is assumed that ask size is zero and ask price is 99 999. Note, that zero is not a legal price, but 99 999 is a legal price. Recipient of quote messages distinguishes actual 99 999 ask price from the special case of absent orders to sell by looking at its ask size.”出了问题。于是把不可交易价格改成999999，与交易最大价格加以99999区分，果然似乎没问题了。然而接下来就有新问题，Time limit exceeded。。。 又过了一天，心里还是放不下，于是去网上查了查别人的代码，他们不仅用两个map存买卖信息，还再单独开辟两个map来存放sell与buy的总size（就相当于我上面那两个<code>BUY_VAL</code> 和 <code>SELL_VAL</code>），而当时我只用了两个map（<code>BUY</code>和<code>SELL</code>）存买卖的所有信息，所以每次查询循环总的size时要经历一个比较烦的循环，就是以下这个循环：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//求当前价格总的size函数</span><br><span class="line">int sum(set&lt;int&gt;&amp; now) &#123;</span><br><span class="line">	int re(0);</span><br><span class="line">	for (const auto&amp; r : now) re += LIST[r].size;</span><br><span class="line">	return re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//trade函数片段</span><br><span class="line">auto bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line">if (bid == BUY.end()) bid_size = 0, bid_price = 0;</span><br><span class="line">else bid_size = sum(bid-&gt;second), bid_price = bid-&gt;first;</span><br><span class="line">if (ask == SELL.end()) ask_size = 0, ask_price = 999999;</span><br><span class="line">else ask_size = sum(ask-&gt;second), ask_price = ask-&gt;first;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//求当前价格总的size函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;&amp; now)</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">re</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; r : now) re += LIST[r].size;</span><br><span class="line">	<span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//trade函数片段</span><br><span class="line"><span class="built_in">auto</span> bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line"><span class="keyword">if</span> (bid == BUY.<span class="keyword">end</span>()) bid_size = <span class="number">0</span>, bid_price = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> bid_size = <span class="built_in">sum</span>(bid-&gt;second), bid_price = bid-&gt;<span class="built_in">first</span>;</span><br><span class="line"><span class="keyword">if</span> (ask == SELL.<span class="keyword">end</span>()) ask_size = <span class="number">0</span>, ask_price = <span class="number">999999</span>;</span><br><span class="line"><span class="keyword">else</span> ask_size = <span class="built_in">sum</span>(ask-&gt;second), ask_price = ask-&gt;<span class="built_in">first</span>;</span><br></pre></td></tr></table></figure>
 <p>这就是超时的罪魁祸首。改进了下瞬间变成0.330s，还是有些出乎意料。</p>
 
       
     </div>
+
+    
+
     
     
     
@@ -348,7 +463,34 @@
     
 
     
+      
+    
+    
 
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/554.html" title="算法竞赛入门经典(第2版) 5-14UVa1598 - Exchange">https://xienaoban.github.io/posts/554.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -390,17 +532,10 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
-          
-
-
           
 
   
@@ -420,54 +555,129 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -475,6 +685,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -484,16 +695,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -501,12 +714,13 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -527,11 +741,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -545,96 +762,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -648,7 +780,58 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
 
 
 
@@ -660,31 +843,22 @@
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

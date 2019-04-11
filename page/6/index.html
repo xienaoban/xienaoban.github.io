@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,33 +66,20 @@
 
 
 
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="XieNaoban&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
-<meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XieNaoban&#39;s Blog">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,12 +91,34 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/page/6/">
-
+  
 
 
 
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="XieNaoban&#39;s Blog">
+<meta property="og:url" content="https://xienaoban.github.io/page/6/index.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XieNaoban&#39;s Blog">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/page/6/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>XieNaoban's Blog</title>
   
@@ -131,9 +130,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -146,7 +174,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -156,13 +184,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,65 +197,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分类
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -236,12 +304,27 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -254,12 +337,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/42401.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/42401.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -278,11 +363,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/42401.html" itemprop="url">Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression)</a></h1>
+                
+                <a href="/posts/42401.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week1,2 - 线性回归(Linear  Regression)</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -290,19 +384,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-12T20:10:38+08:00">
-                2017-02-12
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-12 20:10:38" itemprop="dateCreated datePublished" datetime="2017-02-12T20:10:38+08:00">2017-02-12</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -330,27 +442,37 @@
       
         
           
-          线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型：
+            <p>
+              线性回归属于回归问题。对于回归问题，解决流程为： 给定数据集中每个样本及其正确答案，选择一个模型函数h（hypothesis，假设），并为h找到适应数据的（未必是全局）最优解，即找出最优解下的h的参数。这里给定的数据集取名叫训练集（Training Set）。不能所有数据都拿来训练，要留一部分验证模型好不好使，这点以后说。先列举几个几个典型的模型：
 最基本的单变量线性回归： 形如h(x)=theta0+theta1*x1
 多变量线性回归： 形如h(x)=theta0+theta1x1+theta2x2+theta3*x3
 多项式回归（Polynomial Regression）： 形如h(x)=theta0+theta1x1+
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/42401.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/42401.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -383,12 +505,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/58377.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/58377.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -407,11 +531,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/58377.html" itemprop="url">Coursera Machine Learning Week0 - 目录大纲</a></h1>
+                
+                <a href="/posts/58377.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week0 - 目录大纲</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -419,19 +552,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-12T15:45:11+08:00">
-                2017-02-12
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-12 15:45:11" itemprop="dateCreated datePublished" datetime="2017-02-12T15:45:11+08:00">2017-02-12</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -459,29 +610,39 @@
       
         
           
-          目录会根据我的学习进度而更新，给自己列一个大纲以系统地看待整个学习过程。
+            <p>
+              目录会根据我的学习进度而更新，给自己列一个大纲以系统地看待整个学习过程。
 #学习资料来源
 学习的是Coursera上吴恩达（Andrew Ng）老师的机器学习视频（课程传送门，最近在“最强大脑”上看到他了好激动啊，原来他去做百度大脑了呀），笔记根据此系列视频整理。笔记顺序不一定与原教程一样，希望加入些自己的思考。
 同时使用了网上找到的黄海广博士的对于吴大大视频教程的笔记（传送门）。因为我一开始看视频没做笔记，现在忘得差不多啦，现在打算写个笔记，重新去看视频再整理太麻烦，网上竟然找到这一神器，视频内容全都用中文写在里面了，棒！（不过还是不太好意思发邮件给他自我介绍。。。先暂时做伸手党吧。。。）
 #机器学习分类
 ##1.监督学
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/58377.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/58377.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -514,12 +675,14 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/29569.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/29569.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -538,11 +701,20 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/29569.html" itemprop="url">SciPy、Matplotlib基础操作</a></h1>
+                
+                <a href="/posts/29569.html" class="post-title-link" itemprop="url">SciPy、Matplotlib基础操作</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -550,19 +722,37 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-02T20:45:29+08:00">
-                2017-02-02
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-02 20:45:29" itemprop="dateCreated datePublished" datetime="2017-02-02T20:45:29+08:00">2017-02-02</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -590,27 +780,37 @@
       
         
           
-          NumPy、SciPy、Matplotlib，Python下机器学习三大利器。上一篇讲了NumPy基础操作，这节讲讲SciPy和Matplotlib。目前接触到的东西不多，以后再遇到些比较常用的再更新。
+            <p>
+              NumPy、SciPy、Matplotlib，Python下机器学习三大利器。上一篇讲了NumPy基础操作，这节讲讲SciPy和Matplotlib。目前接触到的东西不多，以后再遇到些比较常用的再更新。
 scipy是基于numpy的扩充，所以安装时要先安装numpy再安装scipy。scipy的命名空间包含numpy，所以只需import scipy即可，numpy不用import。（所以以下有些东西可能是numpy里的我没分清楚，反正一并写了吧。）
-12import scipy as spimport matplotlib.pyplot as plt
-首先从文件导入数据，使用genfromtxt函数。文件是《Python语言
-          ...
+import scipy as spimport matplotlib.pyplot as plt
+首先从文件导入数据，使用genfromtxt函数。文件是《Python语言构建
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/29569.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/29569.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -643,12 +843,14 @@ scipy是基于numpy的扩充，所以安装时要先安装numpy再安装scipy。
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/42661.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/42661.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -667,11 +869,20 @@ scipy是基于numpy的扩充，所以安装时要先安装numpy再安装scipy。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/42661.html" itemprop="url">NumPy基础操作</a></h1>
+                
+                <a href="/posts/42661.html" class="post-title-link" itemprop="url">NumPy基础操作</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -679,19 +890,37 @@ scipy是基于numpy的扩充，所以安装时要先安装numpy再安装scipy。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-31T16:53:25+08:00">
-                2017-01-31
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-31 16:53:25" itemprop="dateCreated datePublished" datetime="2017-01-31T16:53:25+08:00">2017-01-31</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -719,27 +948,37 @@ scipy是基于numpy的扩充，所以安装时要先安装numpy再安装scipy。
       
         
           
-          学机器学习做点小笔记，都是Python的NumPy库的基本小操作，图书馆借的书看到的，怕自己还了书后忘了，就记下来。
+            <p>
+              学机器学习做点小笔记，都是Python的NumPy库的基本小操作，图书馆借的书看到的，怕自己还了书后忘了，就记下来。
 一般习惯导入numpy时使用 import numpy as np ，不要直接import，会有命名空间冲突。比如numpy的array和python自带的array。
 numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。matrix指定是二维矩阵，array任意维度，所以matrix是array的分支，但是这个matrix和matlab的矩阵很像，操作也很像：
-123456789101112131415161718&gt;&gt;&gt; import numpy as np&gt;&g
-          ...
+&gt;&gt;&gt; import numpy as np&gt;&gt;&gt; a=np.mat('4 3; 2 1')
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/42661.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/42661.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -772,12 +1011,14 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/61171.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/61171.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -796,11 +1037,20 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/61171.html" itemprop="url">算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience</a></h1>
+                
+                <a href="/posts/61171.html" class="post-title-link" itemprop="url">算法竞赛入门经典(第2版) 6-9UVa127 - Accordian Patience</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -808,19 +1058,37 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-31T15:25:44+08:00">
-                2017-01-31
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-31 15:25:44" itemprop="dateCreated datePublished" datetime="2017-01-31T15:25:44+08:00">2017-01-31</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -848,26 +1116,36 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
       
         
           
-          题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。 注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。
+            <p>
+              题意：52张牌排一行，一旦出现任何一张牌与它左边的第一张或第三张“匹配”，即花色或点数相同，则须立即将其移动到那张牌上面，将其覆盖。能执行以上移动的只有压在最上面的牌。直到最后没有牌能向左移动。 注意细则：如果同时有多张牌都可以移动，你应该采取的策略是移动最左边可移动的牌。当一张牌既可以移动到左边第一张，又可以移动到左边第三张时，应移动到左边第三张上面。
 
-代码：（Accepted，0.100s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263
-          ...
+代码：（Accepted，0.100s） //UVa127 - "Accordian" Patience//Accepted 0.100s//#define _XIENAOBAN_#include&lt;iostream&gt;#include&lt;cstdio&gt;#d
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/61171.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/61171.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -900,12 +1178,14 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/58091.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/58091.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -924,11 +1204,20 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/58091.html" itemprop="url">算法竞赛入门经典(第2版) 6-8UVa806 - Spatial Structures</a></h1>
+                
+                <a href="/posts/58091.html" class="post-title-link" itemprop="url">算法竞赛入门经典(第2版) 6-8UVa806 - Spatial Structures</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -936,19 +1225,37 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-30T12:58:59+08:00">
-                2017-01-30
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-30 12:58:59" itemprop="dateCreated datePublished" datetime="2017-01-30T12:58:59+08:00">2017-01-30</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -976,26 +1283,36 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
       
         
           
-          题意：黑白图像的路径表示法
+            <p>
+              题意：黑白图像的路径表示法
 
-代码：（Accepted，0.120s） 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130
-          ...
+代码：（Accepted，0.120s） //UVa806 - Spatial Structures//Accepted 0.120s//#define _XIENAOBAN_#include&lt;algorithm&gt;#include&lt;iostream&gt;#include&lt;string&gt;#include&lt;vector&gt;#include&lt;cmath&gt;using namespace std;int N, T(0);bool Img[66][66];vector&lt;string&gt; Sqns;const unsigned C5_10(const
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/58091.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/58091.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1028,12 +1345,14 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/42706.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/42706.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1052,11 +1371,20 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/42706.html" itemprop="url">我的Linux入门之路 - 05.Eclipse的Python开发环境搭建与Numpy、Scipy库安装</a></h1>
+                
+                <a href="/posts/42706.html" class="post-title-link" itemprop="url">我的Linux入门之路 - 05.Eclipse的Python开发环境搭建与Numpy、Scipy库安装</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1064,19 +1392,37 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T17:09:04+08:00">
-                2017-01-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-29 17:09:04" itemprop="dateCreated datePublished" datetime="2017-01-29T17:09:04+08:00">2017-01-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1104,32 +1450,42 @@ numpy下有两个可以做矩阵的东西，一个叫matrix，一个叫array。m
       
         
           
-          #一、Python环境
+            <p>
+              #一、Python环境
 直接终端查询下python安装没：python --version
-1Python 2.7.12
+Python 2.7.12
 Ubuntu竟然已经装了Python2.7，那就好说了。不然自己装和装jdk差不多。本来想着要不要再装个3.4的，但是发现2.7也很常用，那就偷个懒了。
 #二、安装PyDev
 ##1.在线安装
 Elipse可以在线安装，又方便还方便而且方便。从http://pydev.org/updates 可以获得在线安装地址。在Help菜单中，选择Install New Software，点击Add，如图输入： 
 得到如下图内容，只选择PyDev for Eclipse即可（听说装多了反而有问题） 
-然后Ne
-          ...
+然后Nex
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/42706.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/42706.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1162,12 +1518,14 @@ Elipse可以在线安装，又方便还方便而且方便。从http://pydev.org/
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/54802.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/54802.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1186,11 +1544,20 @@ Elipse可以在线安装，又方便还方便而且方便。从http://pydev.org/
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/54802.html" itemprop="url">我的Linux入门之路 - 04.Eclipse安装</a></h1>
+                
+                <a href="/posts/54802.html" class="post-title-link" itemprop="url">我的Linux入门之路 - 04.Eclipse安装</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1198,19 +1565,37 @@ Elipse可以在线安装，又方便还方便而且方便。从http://pydev.org/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T16:45:32+08:00">
-                2017-01-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-29 16:45:32" itemprop="dateCreated datePublished" datetime="2017-01-29T16:45:32+08:00">2017-01-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1238,30 +1623,40 @@ Elipse可以在线安装，又方便还方便而且方便。从http://pydev.org/
       
         
           
-          首先，要安装ecliose自然是先要有Java环境。在上一篇已经安装好了，不再赘述。
+            <p>
+              首先，要安装ecliose自然是先要有Java环境。在上一篇已经安装好了，不再赘述。
 #一、下载#
 Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
 #二、安装#
 这次和上次不同，jdk解压即用，而双击打开此压缩包，发现里面有eclipse-inst 文件，说明自带安装程序，那就像windows下装软件一样好办了，把整个包解压缩出来随便放个目录，并且终端cd到该目录。执行sudo ./eclipse-inst 打开安装文件，发现了熟悉的界面： 
 ##1）不好的安装方法一与其症状##
 使用sudo运行它，很大条的该选安装目录选安装目录，该点I agree点I agree，该点
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/54802.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/54802.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1294,12 +1689,14 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/58851.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/58851.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1318,11 +1715,20 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/58851.html" itemprop="url">我的Linux入门之路 - 03.Java环境搭建</a></h1>
+                
+                <a href="/posts/58851.html" class="post-title-link" itemprop="url">我的Linux入门之路 - 03.Java环境搭建</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1330,19 +1736,37 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T14:50:56+08:00">
-                2017-01-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-29 14:50:56" itemprop="dateCreated datePublished" datetime="2017-01-29T14:50:56+08:00">2017-01-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1370,24 +1794,35 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
       
         
           
-          其实ubuntu是自带一个叫openJDK的东西的，是谷歌看Oracle不爽而搞的。不过呢。。。总感觉不太习惯，况且我既然都来Linux了，总是想折腾一把的。 首先先检查下有没有安装java。终端输入java -version，若出现以下字段则说明未安装。 1234567The program ‘java’ can be found in the following packages:* default-jre* gcj-4.6-jre-headless* openjdk-6-jre-headless* gcj-4.5-jre-headless* openjdk-7-jre-headlessTry: sudo apt-get ins
-          ...
+            <p>
+              其实ubuntu是自带一个叫openJDK的东西的，是谷歌看Oracle不爽而搞的。不过呢。。。总感觉不太习惯，况且我既然都来Linux了，总是想折腾一把的。 首先先检查下有没有安装java。终端输入java -version，若出现以下字段则说明未安装。 The program ‘java’ can be found in the following packages:* default-jre* gcj-4.6-jre-headless* openjdk-6-jre-headless* gcj-4.5-jre-headless* openjdk-7-jre-headlessTry: sudo apt-get install
+#
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/58851.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/58851.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1420,12 +1855,14 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
   
   
 
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/41853.html">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/41853.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XieNaoban">
@@ -1444,11 +1881,20 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/41853.html" itemprop="url">我的Linux入门之路 - 02.Shadowsocks-Qt5配置</a></h1>
+                
+                <a href="/posts/41853.html" class="post-title-link" itemprop="url">我的Linux入门之路 - 02.Shadowsocks-Qt5配置</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -1456,19 +1902,37 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-29T11:44:45+08:00">
-                2017-01-29
-              </time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-01-29 11:44:45" itemprop="dateCreated datePublished" datetime="2017-01-29T11:44:45+08:00">2017-01-29</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
             
           </span>
 
           
 
           
+            
             
           
 
@@ -1496,28 +1960,38 @@ Eclipse官网 下载下来的文件“：eclipse-inst-linux64.tar.gz 。
       
         
           
-          作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。
+            <p>
+              作为一个学习中的程序员，查wiki等，科学上网肯定是刚需。况且没有它很多东西都下不下来。我在windows环境下使用的是shadowsocks，那么在linux下也使用它。
 #一、SS版本#
 SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个版本 - Github ，SSR各平台版本 - Github 。
 #二、安装#
 这里我使用的是Qt5版本（Github链接）。毕竟是从win过渡过来的，一开始还是倾向GUI。 安装方法也异常简单，简单到我一开始不相信。（官方github上有安装文档。幸运的是，github可以直接访问）。三行代码即可解决，无需自己从github下载客户端。 首先打开终端（Ctrl+Alt+T）
-          ...
+              ...
+            </p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/41853.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/41853.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
           <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -1546,15 +2020,12 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
 
           </div>
-          
-
-
           
 
         </div>
@@ -1570,54 +2041,129 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">XieNaoban</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives/">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">104</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -1625,6 +2171,7 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
     </div>
   </aside>
+  
 
 
         
@@ -1634,16 +2181,18 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
 
 
@@ -1651,12 +2200,13 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -1677,11 +2227,14 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1695,92 +2248,11 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1794,7 +2266,52 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -1806,31 +2323,22 @@ SS版本众多，而且自从你懂得之后又衍生出SSR。SS全平台各个�
   
 
   
+
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+  
+
+  
+
+  
+
+  
+
+  
 
   
 

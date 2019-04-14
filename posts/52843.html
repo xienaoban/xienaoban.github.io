@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-11T10:05:31.942Z">
+<meta property="og:updated_time" content="2019-04-14T12:17:34.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建Github博客">
 <meta name="twitter:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
@@ -294,6 +294,14 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
@@ -302,6 +310,27 @@
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -407,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-11 18:05:31" itemprop="dateModified" datetime="2019-04-11T18:05:31+08:00">2019-04-11</time>
+                <time title="修改时间：2019-04-14 20:17:34" itemprop="dateModified" datetime="2019-04-14T20:17:34+08:00">2019-04-14</time>
               
             
           </span>
@@ -463,14 +492,14 @@
 <p>执行完毕后打开 <code>http://localhost:4000</code> 即可查看主页. 针对 Markdown, 主题文件的任何修改, 保存后对网页按 F5 刷新立即可查看修改结果. 针对 Hexo 的修改似乎需要重启服务器.</p>
 <p>要发布至 Github 则: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <p>指令执行完毕即可前往 github.io 查看结果.</p>
-<h1 id="一些问题一些坑">一些问题一些坑</h1>
+<h1 id="踩坑">踩坑</h1>
 <h2 id="生成页面">生成页面</h2>
 <h3 id="生成新文章页">生成新文章页</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &lt;post_name&gt;</span><br></pre></td></tr></table></figure>
 <p>本质上就是在 <code>source/_posts/</code> 下生成一个 <code>&lt;post_name&gt;.md</code> 和一个 <code>&lt;post_name&gt;</code> 的文件夹. 其中 md 文件根据模板生成.</p>
-<h3 id="添加-标签-tags-和分类-categories-页面">添加 标签 (Tags) 和分类 (Categories) 页面</h3>
+<h3 id="生成标签-tags-和分类-categories-页面">生成标签 (Tags) 和分类 (Categories) 页面</h3>
 <p>默认是没有这些页面的, 当在主页点击标签, 分类页面时会显示 <code>Cannot GET /tags/</code> 或 <code>Cannot GET /categories/</code>.</p>
-<p>添加方法:</p>
+<p>生成方法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
 <p>然后进入 <code>source/tags/</code>, 修改 <code>index.html</code>:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-04-11 16:35:04</span><br><span class="line">type: "tags"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
@@ -495,7 +524,7 @@
 </ol>
 <h2 id="开启-latex-公式并修复默认公式渲染的-bug">开启 LaTeX 公式并修复默认公式渲染的 Bug</h2>
 <ol type="1">
-<li><p>默认 Next 主题不渲染公式. 开启渲染如下: 打开 Next 主题的配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">cdn:</span> <span class="string">//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>默认 Next 主题不渲染公式. 开启渲染如下: 打开 Next 主题的配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  engine:</span> <span class="string">mathjax</span></span><br></pre></td></tr></table></figure></p></li>
 <li><p>此时发现, 对于多行的公式, 如: <figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">$$</span></span><br><span class="line"><span class="xml">\begin</span><span class="template-variable">&#123;aligned&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">a^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml"> &amp; = z^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml"> \\</span></span><br><span class="line"><span class="xml">&amp; = w^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml">a^</span><span class="template-variable">&#123;[i]&#125;</span><span class="xml"> + b^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml"> \\</span></span><br><span class="line"><span class="xml">&amp; = w^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml">(w^</span><span class="template-variable">&#123;[i]&#125;</span><span class="xml">a^</span><span class="template-variable">&#123;[i-1]&#125;</span><span class="xml"> + b^</span><span class="template-variable">&#123;[i]&#125;</span><span class="xml"> + b^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml"> \\</span></span><br><span class="line"><span class="xml">&amp; = (w^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml">w^</span><span class="template-variable">&#123;[i]&#125;</span><span class="xml">)a^</span><span class="template-variable">&#123;[i-1]&#125;</span><span class="xml"> + (w^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml">b^</span><span class="template-variable">&#123;[i]&#125;</span><span class="xml">+b^</span><span class="template-variable">&#123;[i+1]&#125;</span><span class="xml">) \\</span></span><br><span class="line"><span class="xml">&amp; = w'a^</span><span class="template-variable">&#123;[i-1]&#125;</span><span class="xml"> + b'</span></span><br><span class="line"><span class="xml">\end</span><span class="template-variable">&#123;aligned&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">$$</span></span><br></pre></td></tr></table></figure></p>
 <p><span class="math display">\[
  \begin{aligned}
@@ -518,6 +547,16 @@
 <p>修改站点配置文件 <code>_config.yml</code>:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">demo/**</span></span><br></pre></td></tr></table></figure>
 <p>生成, 运行, Hexo 会将这些 html 直接复制到 <code>public</code> 文件夹下而不加以处理.</p>
+<h2 id="令-next-主题默认展开所有子目录">令 Next 主题默认展开所有子目录</h2>
+<p>打开 Next 主题下的 <code>source/css/_custom/custom.styl</code>, 添加一行</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.post-toc</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav-child</span> &#123; <span class="attribute">display</span>: block; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="hexo-本地搜索功能">Hexo 本地搜索功能</h2>
+<p>于站点目录安装插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>于站点配置文件添加如下几行:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>于 Next 主题配置文件 <code>_config.yml</code>, 修改:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -778,7 +817,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#平台安装"><span class="nav-number">1.</span> <span class="nav-text">平台安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站发布至-github.io"><span class="nav-number">2.</span> <span class="nav-text">网站发布至 github.io</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些问题一些坑"><span class="nav-number">3.</span> <span class="nav-text">一些问题一些坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成页面"><span class="nav-number">3.1.</span> <span class="nav-text">生成页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新文章页"><span class="nav-number">3.1.1.</span> <span class="nav-text">生成新文章页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-标签-tags-和分类-categories-页面"><span class="nav-number">3.1.2.</span> <span class="nav-text">添加 标签 (Tags) 和分类 (Categories) 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的标题-发布时间-与标签等设置与模板"><span class="nav-number">3.2.</span> <span class="nav-text">文章的标题, 发布时间, 与标签等设置与模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-与图片的问题"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 与图片的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章与网址的映射关系"><span class="nav-number">3.4.</span> <span class="nav-text">修改文章与网址的映射关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-latex-公式并修复默认公式渲染的-bug"><span class="nav-number">3.5.</span> <span class="nav-text">开启 LaTeX 公式并修复默认公式渲染的 Bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义非-hexo-页面"><span class="nav-number">3.6.</span> <span class="nav-text">自定义非 Hexo 页面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#平台安装"><span class="nav-number">1.</span> <span class="nav-text">平台安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站发布至-github.io"><span class="nav-number">2.</span> <span class="nav-text">网站发布至 github.io</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成页面"><span class="nav-number">3.1.</span> <span class="nav-text">生成页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新文章页"><span class="nav-number">3.1.1.</span> <span class="nav-text">生成新文章页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成标签-tags-和分类-categories-页面"><span class="nav-number">3.1.2.</span> <span class="nav-text">生成标签 (Tags) 和分类 (Categories) 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的标题-发布时间-与标签等设置与模板"><span class="nav-number">3.2.</span> <span class="nav-text">文章的标题, 发布时间, 与标签等设置与模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-与图片的问题"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 与图片的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章与网址的映射关系"><span class="nav-number">3.4.</span> <span class="nav-text">修改文章与网址的映射关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-latex-公式并修复默认公式渲染的-bug"><span class="nav-number">3.5.</span> <span class="nav-text">开启 LaTeX 公式并修复默认公式渲染的 Bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义非-hexo-页面"><span class="nav-number">3.6.</span> <span class="nav-text">自定义非 Hexo 页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#令-next-主题默认展开所有子目录"><span class="nav-number">3.7.</span> <span class="nav-text">令 Next 主题默认展开所有子目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-本地搜索功能"><span class="nav-number">3.8.</span> <span class="nav-text">Hexo 本地搜索功能</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -937,6 +976,326 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -946,6 +1305,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
 

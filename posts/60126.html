@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -70,11 +77,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '7.1.0',
-    sidebar: {"position":"left","display":"always","offset":12,"onmobile":true,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
     back2top: true,
-    back2top_sidebar: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -102,8 +109,8 @@
 <meta property="og:url" content="https://xienaoban.github.io/posts/60126.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/ [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-08T18:23:25.881Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-16T13:09:20.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="带精英策略的非支配排序的遗传算法NSGAII">
 <meta name="twitter:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/ [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
@@ -165,7 +172,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -192,7 +199,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -220,7 +227,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -237,7 +244,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
 
   </li>
         
@@ -254,7 +261,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
   </li>
         
@@ -271,7 +278,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
         
@@ -288,7 +295,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
 
@@ -299,14 +306,11 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
   
-
-  
-    
 
   
 
@@ -322,7 +326,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -356,6 +360,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -412,14 +419,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-03-10 22:53:00" itemprop="dateCreated datePublished" datetime="2019-03-10T22:53:00+08:00">2019-03-10</time>
+              <time title="Created: 2019-03-10 22:53:00" itemprop="dateCreated datePublished" datetime="2019-03-10T22:53:00+08:00">2019-03-10</time>
             
 
             
@@ -434,9 +441,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-09 02:23:25" itemprop="dateModified" datetime="2019-04-09T02:23:25+08:00">2019-04-09</time>
+                <time title="Modified: 2019-04-16 21:09:20" itemprop="dateModified" datetime="2019-04-16T21:09:20+08:00">2019-04-16</time>
               
             
           </span>
@@ -503,7 +510,10 @@
 <p>为了算法更快地收敛, 虚拟适应度越大(层数越低)的个体应该有更多机会进入下一代. 但同时, 我们期望的 Pareto 最优解集应该是均匀分布的(而不是都挤在一个或几个点附近), 因此还要保证当前非支配层上的个体具有多样性。NSGA 中引入了基于拥挤策略的小生境(NIChe)技术, 对每个个体计算共享适应度.</p>
 <h1 id="带精英策略的非支配排序遗传算法nsga-ii">带精英策略的非支配排序遗传算法(NSGA-II)</h1>
 <p>NSGA-II 是 NSGA 的改进. NSGA-II 相对于 NSGA, 1. 提出了快速非支配排序算子, 将非支配排序从 <span class="math inline">\(O(MN^3)\)</span> 优化到了 <span class="math inline">\(O(MN^2)\)</span> (M为目标数, N 为种群大小); 2. 提出了拥挤距离算子; 3. 提出了精英策略选择算子.</p>
-<p>NSGA-II 流程图 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">init=&gt;operation: 随机生成第一代种群</span><br><span class="line">eval=&gt;operation: 计算每个个体的所有目标</span><br><span class="line">gene=&gt;operation: 选择, 交叉, 变异</span><br><span class="line">merg=&gt;operation: 父代与子代合并</span><br><span class="line">fnds=&gt;operation: 快速非支配排序</span><br><span class="line">cong=&gt;operation: 拥挤距离计算</span><br><span class="line">selc=&gt;operation: 选择优秀个体组成新的父代</span><br><span class="line">iter=&gt;condition: 运行代数大于最大代数?</span><br><span class="line">e=&gt;end 结束</span><br><span class="line">st-&gt;init-&gt;eval-&gt;iter</span><br><span class="line">iter(yes)-&gt;e</span><br><span class="line">iter(no)-&gt;gene-&gt;merg-&gt;fnds-&gt;cong-&gt;selc-&gt;eval</span><br></pre></td></tr></table></figure></p>
+NSGA-II 流程图
+<div id="flowchart-0" class="flow-chart">
+
+</div>
 <h2 id="快速支配排序算子">快速支配排序算子</h2>
 <ul>
 <li>(1)对种群 <span class="math inline">\(P\)</span> 中的每个个体 <span class="math inline">\(p\)</span>, 计算 <span class="math inline">\(p\)</span> 在种群 <span class="math inline">\(P\)</span> 中支配的个体数 <span class="math inline">\(n_p\)</span>, 并将这些被 <span class="math inline">\(p\)</span> 支配的个体存入 <span class="math inline">\(S_p\)</span> 中(每个个体都要比较一次, 共比较 <span class="math inline">\(\frac{N(N-1))}{2}\)</span> 次, 每次比较要遍历 <span class="math inline">\(M\)</span> 个目标, 时间复杂度 <span class="math inline">\(O(MN^2)\)</span>);</li>
@@ -523,7 +533,23 @@
 </ul>
 <p>选择时优先选择拥挤距离 <span class="math inline">\(d\)</span> 大的.</p>
 <h2 id="精英策略选择算子">精英策略选择算子</h2>
-<p>即保留父代优良个体直接进入子代, 以防止 Pareto 前沿的解丢失. 具体操作就可以直接把父代子代合并到一起进行非支配排序.</p>
+即保留父代优良个体直接进入子代, 以防止 Pareto 前沿的解丢失. 具体操作就可以直接把父代子代合并到一起进行非支配排序.
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<textarea id="flowchart-0-code" style="display: none">st=>start: 开始
+init=>operation: 随机生成第一代种群
+eval=>operation: 计算每个个体的所有目标
+gene=>operation: 选择, 交叉, 变异
+merg=>operation: 父代与子代合并
+fnds=>operation: 快速非支配排序
+cong=>operation: 拥挤距离计算
+selc=>operation: 选择优秀个体组成新的父代
+iter=>condition: 运行代数大于最大代数?
+opt=>inputoutput: 输出 Pareto 前沿
+e=>end: 结束
+st->init->eval->fnds->cong->iter
+iter(no)->selc(right)->gene(right)->merg(right)->eval
+iter(yes)->opt->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
 
       
     </div>
@@ -554,14 +580,14 @@
 
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>XieNaoban</li>
+    <strong>Post author:  </strong>XieNaoban</li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
+    <strong>Post link: </strong>
     
     <a href="https://xienaoban.github.io/posts/60126.html" title="带精英策略的非支配排序的遗传算法NSGAII">https://xienaoban.github.io/posts/60126.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.</li>
 </ul>
 
       </div>
@@ -636,10 +662,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -660,7 +686,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">105</span>
-                    <span class="site-state-item-name">日志</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -679,7 +705,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
+                    <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
               
@@ -700,7 +726,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">标签</span>
+                    <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
               
@@ -793,11 +819,6 @@
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -822,7 +843,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -830,7 +851,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 
@@ -848,6 +869,13 @@
       </div>
     </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
     
 
     
@@ -877,6 +905,12 @@
 
 
 
+
+  
+    
+    
+  
+  <script color="88,88,88" opacity="0.6" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
 
 
 
@@ -913,7 +947,9 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
 
 
 

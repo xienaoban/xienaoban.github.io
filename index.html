@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -70,11 +77,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '7.1.0',
-    sidebar: {"position":"left","display":"always","offset":12,"onmobile":true,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
     back2top: true,
-    back2top_sidebar: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -100,7 +107,7 @@
 <meta property="og:title" content="XieNaoban&#39;s Blog">
 <meta property="og:url" content="https://xienaoban.github.io/index.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XieNaoban&#39;s Blog">
 
@@ -161,7 +168,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -189,7 +196,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -217,7 +224,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -234,7 +241,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
 
   </li>
         
@@ -251,7 +258,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
   </li>
         
@@ -268,7 +275,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
         
@@ -285,7 +292,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
 
@@ -296,14 +303,11 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
   
-
-  
-    
 
   
 
@@ -319,7 +323,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -353,6 +357,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -411,14 +418,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-04-09 21:41:51" itemprop="dateCreated datePublished" datetime="2019-04-09T21:41:51+08:00">2019-04-09</time>
+              <time title="Created: 2019-04-09 21:41:51" itemprop="dateCreated datePublished" datetime="2019-04-09T21:41:51+08:00">2019-04-09</time>
             
 
             
@@ -433,9 +440,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-12 12:20:02" itemprop="dateModified" datetime="2019-04-12T12:20:02+08:00">2019-04-12</time>
+                <time title="Modified: 2019-04-12 12:20:02" itemprop="dateModified" datetime="2019-04-12T12:20:02+08:00">2019-04-12</time>
               
             
           </span>
@@ -508,7 +515,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/30183.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -605,14 +612,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-04-09 01:56:47" itemprop="dateCreated datePublished" datetime="2019-04-09T01:56:47+08:00">2019-04-09</time>
+              <time title="Created: 2019-04-09 01:56:47" itemprop="dateCreated datePublished" datetime="2019-04-09T01:56:47+08:00">2019-04-09</time>
             
 
             
@@ -627,9 +634,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-14 20:17:34" itemprop="dateModified" datetime="2019-04-14T20:17:34+08:00">2019-04-14</time>
+                <time title="Modified: 2019-04-16 20:14:53" itemprop="dateModified" datetime="2019-04-16T20:14:53+08:00">2019-04-16</time>
               
             
           </span>
@@ -678,7 +685,7 @@
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/52843.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -775,14 +782,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-04-08 11:58:51 / 修改时间：21:35:57" itemprop="dateCreated datePublished" datetime="2019-04-08T11:58:51+08:00">2019-04-08</time>
+              <time title="Created: 2019-04-08 11:58:51 / Modified: 21:35:57" itemprop="dateCreated datePublished" datetime="2019-04-08T11:58:51+08:00">2019-04-08</time>
             
 
             
@@ -833,7 +840,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/46279.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -930,14 +937,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-03-28 19:16:34" itemprop="dateCreated datePublished" datetime="2019-03-28T19:16:34+08:00">2019-03-28</time>
+              <time title="Created: 2019-03-28 19:16:34" itemprop="dateCreated datePublished" datetime="2019-03-28T19:16:34+08:00">2019-03-28</time>
             
 
             
@@ -952,9 +959,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
               
             
           </span>
@@ -1003,7 +1010,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/32764.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1100,14 +1107,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-03-10 22:53:00" itemprop="dateCreated datePublished" datetime="2019-03-10T22:53:00+08:00">2019-03-10</time>
+              <time title="Created: 2019-03-10 22:53:00" itemprop="dateCreated datePublished" datetime="2019-03-10T22:53:00+08:00">2019-03-10</time>
             
 
             
@@ -1122,9 +1129,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-09 02:23:25" itemprop="dateModified" datetime="2019-04-09T02:23:25+08:00">2019-04-09</time>
+                <time title="Modified: 2019-04-16 21:09:20" itemprop="dateModified" datetime="2019-04-16T21:09:20+08:00">2019-04-16</time>
               
             
           </span>
@@ -1175,7 +1182,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/60126.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1272,14 +1279,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-02-23 18:41:54" itemprop="dateCreated datePublished" datetime="2019-02-23T18:41:54+08:00">2019-02-23</time>
+              <time title="Created: 2019-02-23 18:41:54" itemprop="dateCreated datePublished" datetime="2019-02-23T18:41:54+08:00">2019-02-23</time>
             
 
             
@@ -1294,9 +1301,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
               
             
           </span>
@@ -1342,7 +1349,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/2106.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1439,14 +1446,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-02-21 22:41:32" itemprop="dateCreated datePublished" datetime="2019-02-21T22:41:32+08:00">2019-02-21</time>
+              <time title="Created: 2019-02-21 22:41:32" itemprop="dateCreated datePublished" datetime="2019-02-21T22:41:32+08:00">2019-02-21</time>
             
 
             
@@ -1461,9 +1468,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 22:50:38" itemprop="dateModified" datetime="2019-04-08T22:50:38+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 22:50:38" itemprop="dateModified" datetime="2019-04-08T22:50:38+08:00">2019-04-08</time>
               
             
           </span>
@@ -1511,7 +1518,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/58457.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1608,14 +1615,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-02-19 22:43:06" itemprop="dateCreated datePublished" datetime="2019-02-19T22:43:06+08:00">2019-02-19</time>
+              <time title="Created: 2019-02-19 22:43:06" itemprop="dateCreated datePublished" datetime="2019-02-19T22:43:06+08:00">2019-02-19</time>
             
 
             
@@ -1630,9 +1637,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
               
             
           </span>
@@ -1681,7 +1688,7 @@ ipconfig /releaseipconfig /renew
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/41302.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1778,14 +1785,14 @@ ipconfig /releaseipconfig /renew
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-01-31 17:49:20" itemprop="dateCreated datePublished" datetime="2019-01-31T17:49:20+08:00">2019-01-31</time>
+              <time title="Created: 2019-01-31 17:49:20" itemprop="dateCreated datePublished" datetime="2019-01-31T17:49:20+08:00">2019-01-31</time>
             
 
             
@@ -1800,9 +1807,9 @@ ipconfig /releaseipconfig /renew
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
               
             
           </span>
@@ -1851,7 +1858,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/12524.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -1948,14 +1955,14 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-01-28 19:07:11" itemprop="dateCreated datePublished" datetime="2019-01-28T19:07:11+08:00">2019-01-28</time>
+              <time title="Created: 2019-01-28 19:07:11" itemprop="dateCreated datePublished" datetime="2019-01-28T19:07:11+08:00">2019-01-28</time>
             
 
             
@@ -1970,9 +1977,9 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
               
             
           </span>
@@ -2026,7 +2033,865 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
           
             <div class="post-button text-center">
               <a class="btn" href="/posts/10178.html#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/59595.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/59595.html" class="post-title-link" itemprop="url">Coursera Deep Learning笔记 逻辑回归典型的训练过程</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-24 12:25:26" itemprop="dateCreated datePublished" datetime="2019-01-24T12:25:26+08:00">2019-01-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Deep Learning 用逻辑回归训练图片的典型步骤. 学习Coursera上吴恩达老师Deep Learning第一课程前两周的笔记.
+1. 处理数据
+1.1. 向量化(Vectorization)
+将每张图片的高和宽和RGB展为向量, 最终X的shape为 (height*width*3, m) .
+1.2. 特征归一化(Normalization)
+对于一般数据，使用标准化(Standardization), z_i = (x_i - mean) / delta , mean 与 delta 代表X的均值和标准差. 最终特征处于[-1, 1]区间.
+对于图片, 可直接使用Min-Max Scaling, 即将每
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/59595.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/30914.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/30914.html" class="post-title-link" itemprop="url">Ubuntu一些装机用到的指令</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-02-21 20:40:11" itemprop="dateCreated datePublished" datetime="2018-02-21T20:40:11+08:00">2018-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Ubuntu一些装机用到的指令
+修改分辨率：
+sudo gedit /etc/default/grub
+找到以下行： # The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see them in real GRUB with the command 'vbeinfo' # GRUB_GFXMODE=640×480
+下面添加一行： GRUB_GFXMODE=1920×1080 #这里分辨率自行设置
+然后保存返回终端： su
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/30914.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/1115.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/1115.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week4,5 - 神经网络(Neural Networks)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-02 19:04:54" itemprop="dateCreated datePublished" datetime="2017-12-02T19:04:54+08:00">2017-12-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              概念与表述
+线性回归与逻辑回归的缺点：特征太多的时候计算负荷太大。
+神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下一层的输入变量。 
+直观理解
+神经网络的单层神经元的计算可以用来表示逻辑运算，比如AND、OR。
+  
+如果用多层的话就可以组成功能复杂的神经网络。
+
+多类分类
+ 
+代价函数
+逻辑回归的代价函数：
+
+神经网络代价函数：（\(h_{\theta}(x)\)为K维度的向量，因为神经网络中可以输出很多变量。训练集中的因变量也是K维度）
+
+反向传播算法
+预测结果时我们正向传播：从第一层正向一层层传播，直到最后一层\(h_{\theta}(x)\) 。
+
+
+计算代
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/1115.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/38878.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/38878.html" class="post-title-link" itemprop="url">JS实现几何星空</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-11-29 22:23:01" itemprop="dateCreated datePublished" datetime="2017-11-29T22:23:01+08:00">2017-11-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              ACM忙完啦，最近想给自己的xienaoban.github.io做个博客网页，刚好没学过html之类的东西，就从零开始一边学一边做。之前一直对html5做的各种特效很感兴趣，就从网页背景开始写起吧。
+曾经看到过别人的博客的背景有种特效，就是背景随机散布若干点不停移动，当两个点足够近的时候就会产生一条线连接两点，就像星座的连线一样；当点离鼠标很近的时候还会被吸引。于是自己也来实现个。
+感觉js真的是个很神奇的语言，没有类，就把函数“假装”为类，并作为类似构造函数而存在，然后用prototype添加成员函数。看上去还真像那么回事，哈哈。
+//==========================================//
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/38878.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/52996.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/52996.html" class="post-title-link" itemprop="url">HDU2242 - 考研路茫茫——空调教室 (双连通分量)</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-10-27 23:53:01" itemprop="dateCreated datePublished" datetime="2017-10-27T23:53:01+08:00">2017-10-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              #Problem Description 众所周知，HDU的考研教室是没有空调的，于是就苦了不少不去图书馆的考研仔们。Lele也是其中一个。而某教室旁边又摆着两个未装上的空调，更是引起人们无限YY。 一个炎热的下午，Lele照例在教室睡觉的时候，竟然做起了空调教室的美梦。 Lele梦到学校某天终于大发慈悲给某个教室安上了一个空调。而且建造了了M条通气管道，让整个教学楼的全部教室都直接或间接和空调教室连通上，构成了教室群，于是，全部教室都能吹到空调了。 不仅仅这样，学校发现教室人数越来越多，单单一个空调已经不能满足大家的需求。于是，学校决定封闭掉一条通气管道，把全部教室分成两个连通的教室群，再在那个没有空调的教室群里添置一个空调。 当
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/52996.html#more" rel="contents">
+                Read more &raquo;
               </a>
             </div>
           
@@ -2074,7 +2939,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2117,7 +2982,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">105</span>
-                    <span class="site-state-item-name">日志</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -2136,7 +3001,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
+                    <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
               
@@ -2157,7 +3022,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">标签</span>
+                    <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
               
@@ -2233,11 +3098,6 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
       
 
       
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
-      
 
     </div>
   </aside>
@@ -2262,7 +3122,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -2270,7 +3130,7 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 
@@ -2288,6 +3148,13 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
       </div>
     </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
     
 
     
@@ -2317,6 +3184,12 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
 
 
 
+
+  
+    
+    
+  
+  <script color="88,88,88" opacity="0.6" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
 
 
 
@@ -2353,7 +3226,9 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
 
 
 
@@ -2710,6 +3585,16 @@ ReLU(Rectified Linear Unit) 收敛快. \(a = g
 
   
   
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     

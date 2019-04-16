@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
@@ -70,11 +77,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '7.1.0',
-    sidebar: {"position":"left","display":"always","offset":12,"onmobile":true,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
     back2top: true,
-    back2top_sidebar: true,
+    back2top_sidebar: false,
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -102,8 +109,8 @@
 <meta property="og:url" content="https://xienaoban.github.io/posts/52843.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-14T12:17:34.697Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-16T12:14:53.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建Github博客">
 <meta name="twitter:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
@@ -165,7 +172,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -192,7 +199,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -220,7 +227,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -237,7 +244,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
 
   </li>
         
@@ -254,7 +261,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
   </li>
         
@@ -271,7 +278,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
         
@@ -288,7 +295,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
 
@@ -299,14 +306,11 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
   
-
-  
-    
 
   
 
@@ -322,7 +326,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -356,6 +360,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
+            
+
           
           <div id="content" class="content">
             
@@ -412,14 +419,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="创建时间：2019-04-09 01:56:47" itemprop="dateCreated datePublished" datetime="2019-04-09T01:56:47+08:00">2019-04-09</time>
+              <time title="Created: 2019-04-09 01:56:47" itemprop="dateCreated datePublished" datetime="2019-04-09T01:56:47+08:00">2019-04-09</time>
             
 
             
@@ -434,9 +441,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="修改时间：2019-04-14 20:17:34" itemprop="dateModified" datetime="2019-04-14T20:17:34+08:00">2019-04-14</time>
+                <time title="Modified: 2019-04-16 20:14:53" itemprop="dateModified" datetime="2019-04-16T20:14:53+08:00">2019-04-16</time>
               
             
           </span>
@@ -539,6 +546,8 @@
 <p>首先安装 Pandoc (<a href="https://pandoc.org/installing.html" target="_blank" rel="noopener">Pandoc 官网</a>), 然后执行下述指令以替换自带的 Renderer. <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></p>
 <p>目前来看还不错.</p></li>
 </ol>
+<h2 id="开启-markdown-的流程图支持">开启 Markdown 的流程图支持</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-flowchart --save</span><br></pre></td></tr></table></figure>
 <h2 id="自定义非-hexo-页面">自定义非 Hexo 页面</h2>
 <p>例如我想在 <code>xienaoban.github.io/demo/</code> 下新建自定义一些网页, 希望 <code>demo</code> 文件夹下的所有网页不受 Hexo 框架影响.</p>
 <p>在 Hexo 站点目录打开 Git Bash, 在 <code>source</code> 文件夹下新建 <code>demo</code> 文件夹:</p>
@@ -587,14 +596,14 @@
 
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>XieNaoban</li>
+    <strong>Post author:  </strong>XieNaoban</li>
   <li class="post-copyright-link">
-    <strong>本文链接：</strong>
+    <strong>Post link: </strong>
     
     <a href="https://xienaoban.github.io/posts/52843.html" title="使用Hexo搭建Github博客">https://xienaoban.github.io/posts/52843.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.</li>
 </ul>
 
       </div>
@@ -669,10 +678,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -693,7 +702,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">105</span>
-                    <span class="site-state-item-name">日志</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -712,7 +721,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">分类</span>
+                    <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
               
@@ -733,7 +742,7 @@
                       
                     
                     <span class="site-state-item-count">2</span>
-                    <span class="site-state-item-name">标签</span>
+                    <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
               
@@ -817,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#平台安装"><span class="nav-number">1.</span> <span class="nav-text">平台安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站发布至-github.io"><span class="nav-number">2.</span> <span class="nav-text">网站发布至 github.io</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成页面"><span class="nav-number">3.1.</span> <span class="nav-text">生成页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新文章页"><span class="nav-number">3.1.1.</span> <span class="nav-text">生成新文章页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成标签-tags-和分类-categories-页面"><span class="nav-number">3.1.2.</span> <span class="nav-text">生成标签 (Tags) 和分类 (Categories) 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的标题-发布时间-与标签等设置与模板"><span class="nav-number">3.2.</span> <span class="nav-text">文章的标题, 发布时间, 与标签等设置与模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-与图片的问题"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 与图片的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章与网址的映射关系"><span class="nav-number">3.4.</span> <span class="nav-text">修改文章与网址的映射关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-latex-公式并修复默认公式渲染的-bug"><span class="nav-number">3.5.</span> <span class="nav-text">开启 LaTeX 公式并修复默认公式渲染的 Bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义非-hexo-页面"><span class="nav-number">3.6.</span> <span class="nav-text">自定义非 Hexo 页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#令-next-主题默认展开所有子目录"><span class="nav-number">3.7.</span> <span class="nav-text">令 Next 主题默认展开所有子目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-本地搜索功能"><span class="nav-number">3.8.</span> <span class="nav-text">Hexo 本地搜索功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#平台安装"><span class="nav-number">1.</span> <span class="nav-text">平台安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站发布至-github.io"><span class="nav-number">2.</span> <span class="nav-text">网站发布至 github.io</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成页面"><span class="nav-number">3.1.</span> <span class="nav-text">生成页面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新文章页"><span class="nav-number">3.1.1.</span> <span class="nav-text">生成新文章页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成标签-tags-和分类-categories-页面"><span class="nav-number">3.1.2.</span> <span class="nav-text">生成标签 (Tags) 和分类 (Categories) 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的标题-发布时间-与标签等设置与模板"><span class="nav-number">3.2.</span> <span class="nav-text">文章的标题, 发布时间, 与标签等设置与模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown-与图片的问题"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 与图片的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章与网址的映射关系"><span class="nav-number">3.4.</span> <span class="nav-text">修改文章与网址的映射关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-latex-公式并修复默认公式渲染的-bug"><span class="nav-number">3.5.</span> <span class="nav-text">开启 LaTeX 公式并修复默认公式渲染的 Bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启-markdown-的流程图支持"><span class="nav-number">3.6.</span> <span class="nav-text">开启 Markdown 的流程图支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义非-hexo-页面"><span class="nav-number">3.7.</span> <span class="nav-text">自定义非 Hexo 页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#令-next-主题默认展开所有子目录"><span class="nav-number">3.8.</span> <span class="nav-text">令 Next 主题默认展开所有子目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-本地搜索功能"><span class="nav-number">3.9.</span> <span class="nav-text">Hexo 本地搜索功能</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -825,11 +834,6 @@
       <!--/noindex-->
       
 
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-        </div>
       
 
     </div>
@@ -855,7 +859,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -863,7 +867,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
 
 
 
@@ -881,6 +885,13 @@
       </div>
     </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
     
 
     
@@ -910,6 +921,12 @@
 
 
 
+
+  
+    
+    
+  
+  <script color="88,88,88" opacity="0.6" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
 
 
 
@@ -946,7 +963,9 @@
   
 
 
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
 
 
 

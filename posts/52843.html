@@ -79,7 +79,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '7.1.0',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    sidebar: {"position":"left","width":280,"display":"post","offset":12,"onmobile":true,"dimmer":false},
     back2top: true,
     back2top_sidebar: false,
     fancybox: false,
@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-16T12:14:53.149Z">
+<meta property="og:updated_time" content="2019-04-23T10:20:53.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo搭建Github博客">
 <meta name="twitter:description" content="平台: Windows 10 使用的 Hexo 主题: Next  平台安装  安装 Git (Git 官网) 并如下配置: 打开Git Bash: 1234567891011121314151617181920# 针对你的 Github 账户生成一个 SSH key:ssh-keygen -t rsa -b 4096 -C &quot;username@host.com&quot;# 按三次回车, 密码">
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-16 20:14:53" itemprop="dateModified" datetime="2019-04-16T20:14:53+08:00">2019-04-16</time>
+                <time title="Modified: 2019-04-23 18:20:53" itemprop="dateModified" datetime="2019-04-23T18:20:53+08:00">2019-04-23</time>
               
             
           </span>
@@ -520,14 +520,16 @@
 <li><p>在 Hexo 站点文件夹下打开 Git Bash, 输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p></li>
 <li><p>打开站点配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <p>以后再使用 <code>hexo n &lt;post_name&gt;</code> 命令新建 Markdown 文件时, 会对应生成同名文件夹, 存放该文件的图片等资源.</p>
-<p>但问题没有被完全解决, 此时在 Markdown 文件引用图片时, 必须以 <code>![图片](&lt;post_name&gt;/123.png)</code> 的方式引用, 而不能直接 <code>![图片](123.png)</code>. 下面的"更改网址的组织步骤" 可同时解决该问题.</p></li>
+<p>但问题没有被完全解决, 此时在 Markdown 文件引用图片时, 必须以 <code>![图片](&lt;post_name&gt;/123.png)</code> 的方式引用, 而不能直接 <code>![图片](123.png)</code>.</p>
+<blockquote>
+<p>PS: Hexo 好像更新了方案! 现在可以直接 <code>![图片](123.png)</code> 了!</p>
+</blockquote></li>
 </ol>
 <h2 id="修改文章与网址的映射关系">修改文章与网址的映射关系</h2>
 <p>默认情况每篇文章的链接为: "xxx.github.io/2019/01/01/标题", 这种以标题为组织方式的链接有时候不太好, 以下改为以 CRC 码为组织方式.</p>
 <ol type="1">
 <li><p>在 Hexo 站点文件夹下打开 Git Bash, 输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p></li>
-<li><p>打开站点配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc16</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">dec</span></span><br></pre></td></tr></table></figure></p>
-<p>此后每篇文章链接为: "xxx.github.io/posts/12345.html". 同时, 也可以直接用 <code>![图片](123.png)</code> 来引用图片了.</p></li>
+<li><p>打开站点配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc16</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">dec</span></span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h2 id="开启-latex-公式并修复默认公式渲染的-bug">开启 LaTeX 公式并修复默认公式渲染的 Bug</h2>
 <ol type="1">

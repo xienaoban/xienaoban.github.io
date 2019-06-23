@@ -479,7 +479,7 @@
       
         <p>#Problem Description 众所周知，HDU的考研教室是没有空调的，于是就苦了不少不去图书馆的考研仔们。Lele也是其中一个。而某教室旁边又摆着两个未装上的空调，更是引起人们无限YY。 一个炎热的下午，Lele照例在教室睡觉的时候，竟然做起了空调教室的美梦。 Lele梦到学校某天终于大发慈悲给某个教室安上了一个空调。而且建造了了M条通气管道，让整个教学楼的全部教室都直接或间接和空调教室连通上，构成了教室群，于是，全部教室都能吹到空调了。 不仅仅这样，学校发现教室人数越来越多，单单一个空调已经不能满足大家的需求。于是，学校决定封闭掉一条通气管道，把全部教室分成两个连通的教室群，再在那个没有空调的教室群里添置一个空调。 当然，为了让效果更好，学校想让这两个教室群里的学生人数尽量平衡。于是学校找到了你，问你封闭哪条通气管道，使得两个教室群的人数尽量平衡，并且输出人数差值的绝对值。</p>
 <p>#Input 本题目包含多组数据，请处理到文件结束。 每组测试第一行包含两个整数N和M(0&lt;N&lt;=10000,0&lt;M&lt;20000)。其中N表示教室的数目(教室编号从0到N-1)，M表示通气管道的数目。 第二行有N个整数Vi(0&lt;=Vi&lt;=1000)，分别代表每个教室的人数。 接下来有M行，每行两个整数Ai，Bi(0&lt;=Ai,Bi&lt;N)，表示教室Ai和教室Bi之间建了一个通气管道。</p>
-<p>#Output 对于每组数据，请在一行里面输出所求的差值。 如果不管封闭哪条管道都不能把教室分成两个教室群，就输出"impossible"。</p>
+<p>#Output 对于每组数据，请在一行里面输出所求的差值。 如果不管封闭哪条管道都不能把教室分成两个教室群，就输出&quot;impossible&quot;。</p>
 <p>#Sample Input <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">4 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">1</span> <span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="symbol">0 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">4 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">3</span> <span class="number">5</span></span><br><span class="line"><span class="symbol">0 </span><span class="number">1</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
 <p>#Sample Output <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <p>#Key1 边的双连通分量。首先是求分量，然后缩点。然后简单的树形DP即可。</p>
@@ -615,7 +615,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-count">107</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

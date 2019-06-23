@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/32764/9.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/32764/10.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/32764/11.png">
-<meta property="og:updated_time" content="2019-04-19T13:15:08.168Z">
+<meta property="og:updated_time" content="2019-06-14T08:40:12.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse开启代码提示与关闭变量命名补全">
 <meta name="twitter:description" content="[TOC] 增强代码提示功能  找到设置位置: Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Editor -&amp;gt; Content Assist. 将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFG">
@@ -455,7 +455,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-19 21:15:08" itemprop="dateModified" datetime="2019-04-19T21:15:08+08:00">2019-04-19</time>
+                <time title="Modified: 2019-06-14 16:40:12" itemprop="dateModified" datetime="2019-06-14T16:40:12+08:00">2019-06-14</time>
               
             
           </span>
@@ -532,15 +532,15 @@
 <p><strong>解决方案</strong>:</p>
 <p>这个 bug 产生于 Eclipse 自带的 <code>org.eclipse.jface.text</code> 插件. 我们可以在 <code>Window -&gt; Show View -&gt; Other... -&gt; Plug-in Development -&gt; Plug-ins</code> 视图下找到这个插件. <img src="/posts/32764/5.png"></p>
 <p>网上有的教程的做法是, 在 <code>Plug-ins</code> 视图下右键该插件然后 <code>Import As -&gt; Source Project</code>. 但该方法已经无法使用, 因为导入的工程现在没有源码只有 <code>.jar</code> 文件.</p>
-<h5 id="获取工程">1. 获取工程</h5>
+<h2 id="获取工程">1. 获取工程</h2>
 <p>所以我们要去官网下载插件源码. <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/tree/org.eclipse.jface.text" target="_blank" rel="noopener">插件官网</a>, <a href="https://git.eclipse.org/c/platform/eclipse.platform.text.git/snapshot/eclipse.platform.text-I20190325-1800.zip" target="_blank" rel="noopener">插件下载(eclipse.platform.text-I20190325-1800.zip)</a>.</p>
 <p>在下载的压缩包中找到 <code>org.eclipse.jface.text</code> 工程文件夹, 解压到工作区并打开.</p>
-<h5 id="修改代码">2. 修改代码</h5>
+<h2 id="修改代码">2. 修改代码</h2>
 <p>在 <code>src</code> 下找到 <code>CompletionProposalPopup.java</code> (如图)并打开. <img src="/posts/32764/6.png"></p>
 <p><code>Ctrl+F</code> 搜索 <code>if (contains(triggers, key)) {</code>, 并将其修改: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将</span><br><span class="line"><span class="keyword">if</span> (contains(triggers, key)) &#123;</span><br><span class="line">修改为</span><br><span class="line"><span class="keyword">if</span> (key != <span class="string">'='</span> &amp;&amp; key != <span class="string">' '</span> &amp;&amp; key != <span class="string">';'</span> &amp;&amp; contains(triggers, key)) &#123;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/posts/32764/7.png"></p>
 <p>目的很明显, 当我们输入 <code>=</code> <code></code> <code>;</code> 时不再自动补全. 以此曲线救国达到命名变量时不补全的目的...</p>
-<h5 id="导出插件">4. 导出插件</h5>
+<h2 id="导出插件">3. 导出插件</h2>
 <p><code>File -&gt; Export -&gt; Deployable plug-ins and fragments</code></p>
 <p><img src="/posts/32764/8.png"></p>
 <p><img src="/posts/32764/9.png"></p>
@@ -549,6 +549,9 @@
 <p>打开 Eclipse 安装目录下的 <code>plugins</code> 文件夹. 搜索 <code>org.eclipse.jface.text</code>, 把搜索得的老插件删了, 把刚导出的修改版插件放进去.</p>
 <p><img src="/posts/32764/11.png"></p>
 <p>重启 Eclipse 即可.</p>
+<h1 id="法二更方便">法二（更方便）</h1>
+<p>打开<code>window -&gt; Preference -&gt;Java -&gt; Editor -&gt; Content Assist</code>.</p>
+<p>勾选 <code>Disable insertion triggers except 'Enter'</code>.</p>
 
       
     </div>
@@ -686,7 +689,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-count">107</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -813,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#增强代码提示功能"><span class="nav-number">1.</span> <span class="nav-text">增强代码提示功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决自动变量命名问题"><span class="nav-number">2.</span> <span class="nav-text">解决自动变量命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#获取工程"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">1. 获取工程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改代码"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">2. 修改代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导出插件"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">4. 导出插件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#增强代码提示功能"><span class="nav-number">1.</span> <span class="nav-text">增强代码提示功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决自动变量命名问题"><span class="nav-number">2.</span> <span class="nav-text">解决自动变量命名问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取工程"><span class="nav-number">2.1.</span> <span class="nav-text">1. 获取工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改代码"><span class="nav-number">2.2.</span> <span class="nav-text">2. 修改代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出插件"><span class="nav-number">2.3.</span> <span class="nav-text">3. 导出插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#法二更方便"><span class="nav-number">3.</span> <span class="nav-text">法二（更方便）</span></a></li></ol></div>
             
 
           </div>

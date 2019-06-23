@@ -487,7 +487,7 @@
 <li><p>在 Github 上创建 <code>username.github.io</code> 仓库.</p></li>
 <li><p>安装并配置 Hexo: 安装: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
 <p>(该指令表明 Hexo 为全局安装).</p>
-<p>确定一个空文件夹(必须是空的)作为 Hexo 站点, 在文件夹内右键菜单,选择 "Git Bash Here" 打开 Git Bash, 输入:</p>
+<p>确定一个空文件夹(必须是空的)作为 Hexo 站点, 在文件夹内右键菜单,选择 &quot;Git Bash Here&quot; 打开 Git Bash, 输入:</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
 <p>在该文件夹下产生一些 Hexo 文件. 然后打开刚生成的站点配置文件 <code>_config.yml</code>, 必要的修改如下:</p>
 <p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">XXX's</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">XXX</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CH</span>           <span class="comment"># 或 language: en 等等</span></span><br><span class="line"></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p></li>
@@ -526,7 +526,7 @@
 </blockquote></li>
 </ol>
 <h2 id="修改文章与网址的映射关系">修改文章与网址的映射关系</h2>
-<p>默认情况每篇文章的链接为: "xxx.github.io/2019/01/01/标题", 这种以标题为组织方式的链接有时候不太好, 以下改为以 CRC 码为组织方式.</p>
+<p>默认情况每篇文章的链接为: &quot;xxx.github.io/2019/01/01/标题&quot;, 这种以标题为组织方式的链接有时候不太好, 以下改为以 CRC 码为组织方式.</p>
 <ol type="1">
 <li><p>在 Hexo 站点文件夹下打开 Git Bash, 输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p></li>
 <li><p>打开站点配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc16</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">dec</span></span><br></pre></td></tr></table></figure></p></li>
@@ -705,7 +705,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-count">107</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

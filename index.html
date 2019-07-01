@@ -380,6 +380,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/10606.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/10606.html" class="post-title-link" itemprop="url">Git使用笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-24 17:10:44" itemprop="dateCreated datePublished" datetime="2019-06-24T17:10:44+08:00">2019-06-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-01 17:53:06" itemprop="dateModified" datetime="2019-07-01T17:53:06+08:00">2019-07-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Git 提交三部曲
+直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.
+# 获取当前时间作为 "提交说明"readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m "$&#123;date&#125;" # 提交到本地仓库, 以时间作为 "提交说明"git push origin master  # origin 表示远程主机, master 为分支名称
+找不同
+git status  # 找出不同的文件、
+              ...
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/39659.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,12 +588,24 @@
                 
               
 
-              <time title="Created: 2019-06-23 14:57:53 / Modified: 16:41:42" itemprop="dateCreated datePublished" datetime="2019-06-23T14:57:53+08:00">2019-06-23</time>
+              <time title="Created: 2019-06-23 14:57:53" itemprop="dateCreated datePublished" datetime="2019-06-23T14:57:53+08:00">2019-06-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-01 15:40:25" itemprop="dateModified" datetime="2019-07-01T15:40:25+08:00">2019-07-01</time>
               
             
           </span>
@@ -471,12 +646,12 @@
 操作系统: Windows 10
 
 安装
-我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:3), 要管理员权限. 安装会自动在 &quot;系统变量&quot; 添加Path:
+我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &quot;系统变量&quot; 添加Path:
 D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\binD:\Anaconda3\Library\binD:\Anaconda3\Scripts
 下次重装系统了把 Path 添加回去兴许还能用.
 选择镜像
 选择清华的镜像以加速下载.
-conda config --add channels https://mirrors.tuna.t
+conda config --add channels ht
               ...
             </p>
           <!--noindex-->
@@ -1418,7 +1593,7 @@ ipconfig /releaseipconfig /renew
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-16 21:09:20" itemprop="dateModified" datetime="2019-04-16T21:09:20+08:00">2019-04-16</time>
+                <time title="Modified: 2019-07-01 15:45:08" itemprop="dateModified" datetime="2019-07-01T15:45:08+08:00">2019-07-01</time>
               
             
           </span>
@@ -2657,184 +2832,6 @@ sudo gedit /etc/default/grub
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/1115.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/1115.html" class="post-title-link" itemprop="url">Coursera Machine Learning Week4,5 - 神经网络(Neural Networks)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-12-02 19:04:54" itemprop="dateCreated datePublished" datetime="2017-12-02T19:04:54+08:00">2017-12-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              概念与表述
-线性回归与逻辑回归的缺点：特征太多的时候计算负荷太大。
-神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下一层的输入变量。 
-直观理解
-神经网络的单层神经元的计算可以用来表示逻辑运算，比如AND、OR。
-  
-如果用多层的话就可以组成功能复杂的神经网络。
-
-多类分类
- 
-代价函数
-逻辑回归的代价函数：
-
-神经网络代价函数：（\(h_{\theta}(x)\)为K维度的向量，因为神经网络中可以输出很多变量。训练集中的因变量也是K维度）
-
-反向传播算法
-预测结果时我们正向传播：从第一层正向一层层传播，直到最后一层\(h_{\theta}(x)\) 。
-
-
-计算代
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2883,7 +2880,7 @@ sudo gedit /etc/default/grub
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">108</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2906,7 +2903,9 @@ sudo gedit /etc/default/grub
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2943,7 +2942,13 @@ sudo gedit /etc/default/grub
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

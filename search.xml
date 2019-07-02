@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[travis-ci test]]></title>
-    <url>%2Fposts%2F11921.html</url>
-    <content type="text"><![CDATA[aa aaa aaaa aaaaa asfdasdfsadfsdfsdfasdfsadfsadfsdfsadfasdf 0000 aaaa]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Git使用笔记]]></title>
     <url>%2Fposts%2F10606.html</url>
     <content type="text"><![CDATA[Git 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了. 123456# 获取当前时间作为 "提交说明"readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add . # 添加当前目录所有文件到暂存区git commit -m "$&#123;date&#125;" # 提交到本地仓库, 以时间作为 "提交说明"git push origin master # origin 表示远程主机, master 为分支名称 找不同 12git status # 找出不同的文件、文件夹git diff # 找出不同的每一行 Git Bash 中文乱码 例如对于 git status 指令, 中文文件 &quot;新建文本文档.txt&quot; 会被显示为 1\346\226\260\345\273\272\346\226\207\346\234\254\346\226\207\346\241\243.txt 解决方法如下: 1git config --global core.quotepath false Git Bash 命令提示符的 $ 总是另起一行 命令前的那一串叫 &quot;系统终端命令提示符 (Prompt Sign)&quot; (就是那一串包含用户名, 工作目录和 $ 符号的东西). Windows 下的 Git Bash 的命令提示符的 $ 总是另起一行. 这玩意由 $PS1 控制. 输入 echo &quot;$PS1&quot;, 可得: 12345# 我的PS1被 conda 修改过, 所以前面有个 "(base)"(base)xie@DESKTOP-BAD47V8 MINGW64 ~$ echo "$PS1"(base) \[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ 修改它就能修改提示符样式. 而 Ubuntu 下的 $PS1 为: 12xie@xie-vm:~$ echo "$PS1"\[\e]0;\u@\h: \w\a\]$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ 那么依葫芦画瓢改一改. 用 vim 或 code (vscode) 命令打开 ~/.bash_profile, 添加一行: 1export PS1="\[\e]0;\u@\h: \w\a\]$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[32m\]\u@\h\[\033[00m\]:\[\033[33m\]\w\[\033[00m\]\$ " 保存重启 Git Bash即可.]]></content>

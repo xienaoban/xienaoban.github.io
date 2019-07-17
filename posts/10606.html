@@ -103,20 +103,21 @@
 
 
 
-  <meta name="description" content="Git 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
-<meta name="keywords" content="快乐背指令,Git,Windows">
+  <meta name="description" content="指令 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
+<meta name="keywords" content="Windows,快乐背指令,Linux,Git,Git Bash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下Git使用笔记">
+<meta property="og:title" content="Git安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/10606.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="Git 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
+<meta property="og:description" content="指令 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/2.png">
-<meta property="og:updated_time" content="2019-07-04T01:55:59.494Z">
+<meta property="og:image" content="https://xienaoban.github.io/posts/10606/3.png">
+<meta property="og:updated_time" content="2019-07-16T12:23:16.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下Git使用笔记">
-<meta name="twitter:description" content="Git 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
+<meta name="twitter:title" content="Git安装使用">
+<meta name="twitter:description" content="指令 提交三部曲 直接偷懒把当前时间作为本次提交版本的 &amp;quot;提交说明&amp;quot;, 每次都要思考 &amp;quot;提交说明&amp;quot; 怎么写真是太累了. 123456# 获取当前时间作为 &quot;提交说明&quot;readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m">
 <meta name="twitter:image" content="https://xienaoban.github.io/posts/10606/1.png">
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>Windows下Git使用笔记 | XieNaoban's Blog</title>
+  <title>Git安装使用 | XieNaoban's Blog</title>
   
 
 
@@ -404,7 +405,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows下Git使用笔记
+          <h1 class="post-title" itemprop="name headline">Git安装使用
 
               
             
@@ -447,29 +448,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:55:59" itemprop="dateModified" datetime="2019-07-04T09:55:59+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-16 20:23:16" itemprop="dateModified" datetime="2019-07-16T20:23:16+08:00">2019-07-16</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -499,16 +482,19 @@
       
 
       
-        <h1 id="git-提交三部曲">Git 提交三部曲</h1>
+        <h1 id="指令">指令</h1>
+<h2 id="提交三部曲">提交三部曲</h2>
 <p>直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取当前时间作为 "提交说明"</span></span><br><span class="line"><span class="built_in">readonly</span> date=$(date +%Y-%m-%d\ %H:%M:%S)</span><br><span class="line"></span><br><span class="line">git add .               <span class="comment"># 添加当前目录所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">"<span class="variable">$&#123;date&#125;</span>"</span> <span class="comment"># 提交到本地仓库, 以时间作为 "提交说明"</span></span><br><span class="line">git push origin master  <span class="comment"># origin 表示远程主机, master 为分支名称</span></span><br></pre></td></tr></table></figure>
-<h1 id="找不同">找不同</h1>
+<h2 id="取消-add">取消 Add</h2>
+<h2 id="找不同">找不同</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status  <span class="comment"># 找出不同的文件、文件夹</span></span><br><span class="line">git diff    <span class="comment"># 找出不同的每一行</span></span><br></pre></td></tr></table></figure>
-<h1 id="git-bash-中文乱码">Git Bash 中文乱码</h1>
+<h1 id="踩坑">踩坑</h1>
+<h2 id="git-bash-中文乱码">Git Bash 中文乱码</h2>
 <p>例如对于 <code>git status</code> 指令, 中文文件 &quot;新建文本文档.txt&quot; 会被显示为 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="number">346</span>\<span class="number">226</span>\<span class="number">260</span>\<span class="number">345</span>\<span class="number">273</span>\<span class="number">272</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">234</span>\<span class="number">254</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">241</span>\<span class="number">243.</span>txt</span><br></pre></td></tr></table></figure></p>
 <p>解决方法如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h1 id="git-bash-命令提示符的-总是另起一行">Git Bash 命令提示符的 <code>$</code> 总是另起一行</h1>
+<h2 id="git-bash-命令提示符的-总是另起一行">Git Bash 命令提示符的 <code>$</code> 总是另起一行</h2>
 <p>命令前的那一串叫 &quot;系统终端命令提示符 (Prompt Sign)&quot; (就是那一串包含用户名, 工作目录和 <code>$</code> 符号的东西). Windows 下的 Git Bash 的命令提示符的 <code>$</code> 总是另起一行.</p>
 <p><img src="/posts/10606/1.png"></p>
 <p>这玩意由 <code>$PS1</code> 控制. 输入 <code>echo &quot;$PS1&quot;</code>, 可得:</p>
@@ -520,6 +506,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PS1=<span class="string">"\[\e]0;\u@\h: \w\a\]<span class="variable">$&#123;debian_chroot:+($debian_chroot)&#125;</span>\[\033[32m\]\u@\h\[\033[00m\]:\[\033[33m\]\w\[\033[00m\]\$ "</span></span><br></pre></td></tr></table></figure>
 <p>保存重启 Git Bash即可.</p>
 <p><img src="/posts/10606/2.png"></p>
+<h2 id="git-bash-中文乱码-1">Git Bash 中文乱码</h2>
+<p><img src="/posts/10606/3.png"></p>
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br><span class="line"><span class="comment"># 解决 Windows Git Bash、Linux 下的中文转码问题</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -554,7 +544,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="https://xienaoban.github.io/posts/10606.html" title="Windows下Git使用笔记">https://xienaoban.github.io/posts/10606.html</a>
+    <a href="https://xienaoban.github.io/posts/10606.html" title="Git安装使用">https://xienaoban.github.io/posts/10606.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.</li>
@@ -567,11 +557,15 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
             <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
             <a href="/tags/Git/" rel="tag"># Git</a>
           
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
+            <a href="/tags/Git-Bash/" rel="tag"># Git Bash</a>
           
         </div>
       
@@ -584,8 +578,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/39659.html" rel="next" title="Windows下Anaconda安装使用">
-                <i class="fa fa-chevron-left"></i> Windows下Anaconda安装使用
+              <a href="/posts/39659.html" rel="next" title="Anaconda安装使用">
+                <i class="fa fa-chevron-left"></i> Anaconda安装使用
               </a>
             
           </div>
@@ -594,8 +588,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/11689.html" rel="prev" title="Ubuntu下CMake安装使用">
-                Ubuntu下CMake安装使用 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/11689.html" rel="prev" title="CMake安装使用">
+                CMake安装使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -667,7 +661,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-count">116</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -799,7 +793,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -884,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git-提交三部曲"><span class="nav-number">1.</span> <span class="nav-text">Git 提交三部曲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#找不同"><span class="nav-number">2.</span> <span class="nav-text">找不同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">3.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">4.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#提交三部曲"><span class="nav-number">1.1.</span> <span class="nav-text">提交三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消-add"><span class="nav-number">1.2.</span> <span class="nav-text">取消 Add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不同"><span class="nav-number">1.3.</span> <span class="nav-text">找不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">2.1.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">2.2.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码-1"><span class="nav-number">2.3.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li></ol></li></ol></div>
             
 
           </div>

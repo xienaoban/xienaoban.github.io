@@ -103,18 +103,20 @@
 
 
 
-  <meta name="description" content="安装 CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 安装到后面会索要 sudo. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo mak">
-<meta name="keywords" content="CMake,Ubuntu,Linux,日常配环境,快乐背指令">
+  <meta name="description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
+<meta name="keywords" content="日常配环境,快乐背指令,CMake,Ubuntu,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下CMake安装使用">
+<meta property="og:title" content="CMake安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/11689.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="安装 CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 安装到后面会索要 sudo. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo mak">
+<meta property="og:description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-04T01:54:13.116Z">
+<meta property="og:image" content="https://xienaoban.github.io/posts/11689/cmake-3.14.5-graph.png">
+<meta property="og:updated_time" content="2019-07-17T10:29:51.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下CMake安装使用">
-<meta name="twitter:description" content="安装 CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 安装到后面会索要 sudo. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo mak">
+<meta name="twitter:title" content="CMake安装使用">
+<meta name="twitter:description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/11689/cmake-3.14.5-graph.png">
 
 
 
@@ -132,7 +134,7 @@
   };
 </script>
 
-  <title>Ubuntu下CMake安装使用 | XieNaoban's Blog</title>
+  <title>CMake安装使用 | XieNaoban's Blog</title>
   
 
 
@@ -401,7 +403,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu下CMake安装使用
+          <h1 class="post-title" itemprop="name headline">CMake安装使用
 
               
             
@@ -444,29 +446,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:54:13" itemprop="dateModified" datetime="2019-07-04T09:54:13+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-17 18:29:51" itemprop="dateModified" datetime="2019-07-17T18:29:51+08:00">2019-07-17</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,21 +480,140 @@
       
 
       
-        <h1 id="安装">安装</h1>
+        <p><a href="https://cmake.org/documentation" target="_blank" rel="noopener">官方在线文档</a></p>
+<h1 id="安装与新建工程-ubuntu">安装与新建工程 (Ubuntu)</h1>
 <p>CMake 官网下载: <a href="https://cmake.org/download/" class="uri" target="_blank" rel="noopener">https://cmake.org/download/</a> .</p>
 <p>找个地方解压并进入.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cmake-3.14.5.tar.gz</span><br><span class="line"><span class="built_in">cd</span> cmake-3.14.5/</span><br></pre></td></tr></table></figure>
-<p>根据目录下的 <code>README</code> 文件, 执行以下命令安装. 安装到后面会索要 <code>sudo</code>.</p>
+<p>根据目录下的 <code>README</code> 文件, 执行以下命令安装.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bootstrap &amp;&amp; make &amp;&amp; sudo make install</span><br></pre></td></tr></table></figure>
 <p>编译好慢啊...</p>
 <p>CMake 会默认安装在 /usr/local/bin 下面.</p>
-<h1 id="构建-cmake-项目">构建 CMake 项目</h1>
+<h2 id="用-cmake-编译安装-cmake">用 CMake 编译安装 CMake</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h2 id="构建一个简单的-cmake-项目">构建一个简单的 CMake 项目</h2>
 <p>新建一个文件夹作为项目文件夹, 新建文件 <code>CMakeLists.txt</code>. 以下为一个典型的配置:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line">PROJECT(CMakeTest CXX)</span><br><span class="line"></span><br><span class="line"><span class="comment"># CMake最低版本需求，不加入此行会受到警告信息</span></span><br><span class="line">CMAKE_MINIMUM_REQUIRED(VERSION 3.14)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把目录src下所有源代码文件和头文件加入变量SRC_LIST</span></span><br><span class="line">AUX_SOURCE_DIRECTORY(src SRC_LIST)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成应用程序 hello</span></span><br><span class="line">ADD_EXECUTABLE(hello <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
 <p>在 <code>src</code> 文件夹写好源码后 (比如写个 <code>hello_world.cpp</code>), 在项目目录新建文件夹 <code>build</code>.</p>
 <p>然后执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
 <p>在 <code>build</code> 文件夹下就会生成编译文件和最终的可执行文件 <code>hello</code>.</p>
+<h2 id="github-优秀-cmake-项目参考">GitHub 优秀 CMake 项目参考</h2>
+<p><a href="https://github.com/Kitware/CMake" target="_blank" rel="noopener">CMake</a> | <a href="https://doc.qt.io/qt-5/cmake-manual.html" target="_blank" rel="noopener">Qt</a> | <a href="https://github.com/opencv/opencv" target="_blank" rel="noopener">OpenCV</a></p>
+<h1 id="cmake-常用变量">CMake 常用变量</h1>
+<h2 id="source_dir"><strong><code>&lt;?&gt;_SOURCE_DIR</code></strong></h2>
+<ul>
+<li><strong><code>CMAKE_SOURCE_DIR</code></strong></li>
+<li><strong><code>PROJECT_SOURCE_DIR</code></strong></li>
+<li><strong><code>CMAKE_CURRENT_SOURCE_DIR</code></strong></li>
+<li><strong><code>&lt;PROJECT_NAME&gt;_SOURCE_DIR</code></strong></li>
+</ul>
+<p>都指向项目的源目录的绝对路径 (<code>CMakeLists.txt</code> 所在的绝对路径).</p>
+<p><strong><code>CMAKE_SOURCE_DIR</code></strong> 指向当前最顶层项目 (父项目) <code>CMakeLists.txt</code> 的路径.</p>
+<p><strong><code>PROJECT_SOURCE_DIR</code></strong> 指向当前项目 (子项目) <code>CMakeLists.txt</code> 的路径.</p>
+<p><strong><code>CMAKE_CURRENT_SOURCE_DIR</code></strong> 指向当前正在处理的 <code>CMakeLists.txt</code> 的路径 (感觉和 <code>PROJECT_SOURCE_DIR</code> 没啥区别啊???).</p>
+<p><strong><code>&lt;PROJECT_NAME&gt;_SOURCE_DIR</code></strong> 就是指定某项目的 <code>CMakeLists.txt</code> 的路径. 但是当该项目还未被调用过之前, 该变量未定义.</p>
+<p>所以当没有子项目时这几个都相同.</p>
+<hr>
+<p>例如对于父项目 <code>Outer</code> 与子项目 <code>Inner</code>:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Outer/CMakeLists.txt</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">project</span>(Outer)</span><br><span class="line"><span class="keyword">add_subdirectory</span>(Inner)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># Outer/Inner/CMakeLists.txt</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">project</span>(Inner)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>在 <code>Outer/CMakeLists.txt</code> 中的变量值为:</p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">编译次数</th>
+<th style="text-align: center;"><strong><code>CMAKE_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>PROJECT_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>CMAKE_CURRENT_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>Outer_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>Inner_SOURCE_DIR</code></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">头一次跑</td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;">未定义</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">第二次跑</td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer/Inner</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>可见在编译一次后 <code>Inner_SOURCE_DIR</code> 被记在了 <code>CMakeCache.txt</code> 里.</em></p>
+<p>在 <code>Outer/CMakeLists.txt</code> 中的变量值为:</p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">编译次数</th>
+<th style="text-align: center;"><strong><code>CMAKE_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>PROJECT_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>CMAKE_CURRENT_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>Outer_SOURCE_DIR</code></strong></th>
+<th style="text-align: center;"><strong><code>Inner_SOURCE_DIR</code></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">每次</td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer/Inner</code></td>
+<td style="text-align: center;"><code>/.../Outer/Inner</code></td>
+<td style="text-align: center;"><code>/.../Outer</code></td>
+<td style="text-align: center;"><code>/.../Outer/Inner</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>TODO:</strong> <code>PROJECT_SOURCE_DIR</code> 与 <code>CMAKE_CURRENT_SOURCE_DIR</code> 区别.</p>
+<h2 id="binary_dir"><strong><code>&lt;?&gt;_BINARY_DIR</code></strong></h2>
+<ul>
+<li><strong><code>CMAKE_BINARY_DIR</code></strong></li>
+<li><strong><code>PROJECT_BINARY_DIR</code></strong></li>
+<li><strong><code>CMAKE_CURRENT_BINARY_DIR</code></strong></li>
+<li><strong><code>&lt;PROJECT_NAME&gt;_BINARY_DIR</code></strong></li>
+</ul>
+<p>指向工程编译发生的绝对路径. 区别同上.</p>
+<p>如果是 in source 编译, 指的就是工程顶层目录. 而如果是:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>这种, 则其路径为 <code>/.../CMake_Project/build</code> .</p>
+<h1 id="踩坑">踩坑</h1>
+<h2 id="项目依赖作图">项目依赖作图</h2>
+<p>生成依赖图的文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/ <span class="comment"># 转到 BINARY_DIR, 事先已经 cmake 过了</span></span><br><span class="line">cmake .. --graphviz=&lt;graph&gt;.dot</span><br></pre></td></tr></table></figure>
+<p>在 <code>build/</code> 下生成 <code>&lt;graph&gt;.dot</code> 文件, <code>&lt;graph&gt;.dot.&lt;target&gt;</code> 文件和<code>&lt;graph&gt;.dot.&lt;target&gt;.dependers</code> 文件.</p>
+<p>安装 graphviz 以生成 png:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install graphviz</span><br></pre></td></tr></table></figure>
+<p>导出依赖为图片:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dot &lt;graph&gt;.dot -T png -o &lt;figure&gt;.png</span><br></pre></td></tr></table></figure>
+<p>例如对于 <code>cmake-3.14.5</code> 项目:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">mkdir Build</span><br><span class="line"><span class="built_in">cd</span> Build</span><br><span class="line">cmake ..</span><br><span class="line">cmake .. --graphviz=graph.dot</span><br><span class="line">ls | grep graph</span><br><span class="line"><span class="comment"># graph.dot</span></span><br><span class="line"><span class="comment"># graph.dot.cmake</span></span><br><span class="line"><span class="comment"># graph.dot.cmake.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLibTests</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLibTests.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLib</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLibTests</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLibTests.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmbzip2</span></span><br><span class="line"><span class="comment"># graph.dot.cmbzip2.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmcompress</span></span><br><span class="line"><span class="comment"># graph.dot.cmcompress.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmcurl</span></span><br><span class="line"><span class="comment"># graph.dot.cmcurl.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmexpat</span></span><br><span class="line"><span class="comment"># graph.dot.cmexpat.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmjsoncpp</span></span><br><span class="line"><span class="comment"># graph.dot.cmjsoncpp.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibarchive</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibarchive.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmliblzma</span></span><br><span class="line"><span class="comment"># graph.dot.cmliblzma.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibrhash</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibrhash.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibuv</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibuv.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys_c</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys_c.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestDynload</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestDynload.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestProcess</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestProcess.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsC</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsCxx</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsCxx.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestSharedForward</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestSharedForward.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmzlib</span></span><br><span class="line"><span class="comment"># graph.dot.cmzlib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cpack</span></span><br><span class="line"><span class="comment"># graph.dot.cpack.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CPackLib</span></span><br><span class="line"><span class="comment"># graph.dot.CPackLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.ctest</span></span><br><span class="line"><span class="comment"># graph.dot.ctest.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CTestLib</span></span><br><span class="line"><span class="comment"># graph.dot.CTestLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.curltest</span></span><br><span class="line"><span class="comment"># graph.dot.curltest.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.exit_code</span></span><br><span class="line"><span class="comment"># graph.dot.exit_code.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.kwiml_test</span></span><br><span class="line"><span class="comment"># graph.dot.kwiml_test.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.memcheck_fail</span></span><br><span class="line"><span class="comment"># graph.dot.memcheck_fail.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.print_stdin</span></span><br><span class="line"><span class="comment"># graph.dot.print_stdin.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_BC</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_BC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cppcheck</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cppcheck.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cpplint</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cpplint.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator_custom_command</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator_custom_command.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_iwyu</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_iwyu.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_BC</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_BC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_purify</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_purify.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_valgrind</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_valgrind.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_purify</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_purify.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_tidy</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_tidy.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_valgrind</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_valgrind.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.runcompilecommands</span></span><br><span class="line"><span class="comment"># graph.dot.runcompilecommands.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testAffinity</span></span><br><span class="line"><span class="comment"># graph.dot.testAffinity.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild</span></span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding.dependers</span></span><br><span class="line"></span><br><span class="line">dot graph.dot -T png -o graph.png</span><br></pre></td></tr></table></figure>
+<p>打开 <code>graph.png</code>:</p>
+<p><img src="/posts/11689/cmake-3.14.5-graph.png"></p>
+<p>emmmm, 好丑的图.</p>
 
       
     </div>
@@ -545,7 +648,7 @@
   <li class="post-copyright-link">
     <strong>Post link: </strong>
     
-    <a href="https://xienaoban.github.io/posts/11689.html" title="Ubuntu下CMake安装使用">https://xienaoban.github.io/posts/11689.html</a>
+    <a href="https://xienaoban.github.io/posts/11689.html" title="CMake安装使用">https://xienaoban.github.io/posts/11689.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.</li>
@@ -558,15 +661,15 @@
       
         <div class="post-tags">
           
+            <a href="/tags/日常配环境/" rel="tag"># 日常配环境</a>
+          
+            <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
+          
             <a href="/tags/CMake/" rel="tag"># CMake</a>
           
             <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/日常配环境/" rel="tag"># 日常配环境</a>
-          
-            <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
           
         </div>
       
@@ -579,8 +682,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/10606.html" rel="next" title="Windows下Git使用笔记">
-                <i class="fa fa-chevron-left"></i> Windows下Git使用笔记
+              <a href="/posts/10606.html" rel="next" title="Git安装使用">
+                <i class="fa fa-chevron-left"></i> Git安装使用
               </a>
             
           </div>
@@ -589,8 +692,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/63135.html" rel="prev" title="Ubuntu下Docker安装使用">
-                Ubuntu下Docker安装使用 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/63135.html" rel="prev" title="Docker安装使用">
+                Docker安装使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,7 +765,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-count">116</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -794,7 +897,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -879,7 +996,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构建-cmake-项目"><span class="nav-number">2.</span> <span class="nav-text">构建 CMake 项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装与新建工程-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装与新建工程 (Ubuntu)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用-cmake-编译安装-cmake"><span class="nav-number">1.1.</span> <span class="nav-text">用 CMake 编译安装 CMake</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建一个简单的-cmake-项目"><span class="nav-number">1.2.</span> <span class="nav-text">构建一个简单的 CMake 项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github-优秀-cmake-项目参考"><span class="nav-number">1.3.</span> <span class="nav-text">GitHub 优秀 CMake 项目参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmake-常用变量"><span class="nav-number">2.</span> <span class="nav-text">CMake 常用变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#source_dir"><span class="nav-number">2.1.</span> <span class="nav-text">&lt;?&gt;_SOURCE_DIR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binary_dir"><span class="nav-number">2.2.</span> <span class="nav-text">&lt;?&gt;_BINARY_DIR</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目依赖作图"><span class="nav-number">3.1.</span> <span class="nav-text">项目依赖作图</span></a></li></ol></li></ol></div>
             
 
           </div>

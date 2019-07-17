@@ -380,6 +380,842 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/52363.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/52363.html" class="post-title-link" itemprop="url">Python安装使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 19:33:27" itemprop="dateCreated datePublished" datetime="2019-07-16T19:33:27+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-17 09:09:02" itemprop="dateModified" datetime="2019-07-17T09:09:02+08:00">2019-07-17</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Pip 指令
+pip list    # 查看已安装的包
+踩坑
+Ubuntu 下安装 pip3
+sudo apt-get install python3-pip# `sudo apt-get install python-pip` 安装的是 pip2
+安装完可用 pip3 指令, 如果想将 pip3 映射到 pip, 则
+sudo ln -s /usr/bin/pip3 /usr/bin/pip
+然后就能用 pip 指令了. 刚安装完是 8.1.1 版本... 有够旧的. 目前都 19.1.1 了. 所以要更新:
+pip install --upgrade pip
+结果更新完之后 pip 就坏了... 总是提示:
+              ...
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/62476.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/62476.html" class="post-title-link" itemprop="url">Go安装使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-11 12:46:11" itemprop="dateCreated datePublished" datetime="2019-07-11T12:46:11+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-16 20:11:15" itemprop="dateModified" datetime="2019-07-16T20:11:15+08:00">2019-07-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              官网 | 官方文档
+安装 (Ubuntu)
+# cd 到压缩包目录sudo tar -C /usr/local/lib/go -xzf go1.12.7.linux-amd64.tar.gzcd /usr/local/lib/gosudo mv go go1.12.7.linux-amd64code ~/.profile# export PATH=$PATH:/usr/local/lib/go/go1.12.7.linux-amd64/bin
+
+              
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/4723.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/4723.html" class="post-title-link" itemprop="url">Node.js安装使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-11 12:23:09" itemprop="dateCreated datePublished" datetime="2019-07-11T12:23:09+08:00">2019-07-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-16 20:11:37" itemprop="dateModified" datetime="2019-07-16T20:11:37+08:00">2019-07-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              官网下载地址 | 官网安装教程
+安装 (Ubuntu)
+# cd 到下载的压缩包目录sudo mkdir -p /usr/local/lib/nodejssudo tar -xJvf node-v10.16.0-linux-x64.tar.xz -C /usr/local/lib/nodejs# 编辑 ~/.profilecode ~/.profile# 添加: # export PATH=/usr/local/lib/nodejs/node-v10.16.0-linux-x64/bin:$PATH# 刷新. ~/.profile# 测试一下node -vnpm versionnpx -v
+
+              
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/21894.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/21894.html" class="post-title-link" itemprop="url">Linux常用指令</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-08 10:55:13" itemprop="dateCreated datePublished" datetime="2019-07-08T10:55:13+08:00">2019-07-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-16 20:11:01" itemprop="dateModified" datetime="2019-07-16T20:11:01+08:00">2019-07-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              tar -zxvf &lt;name&gt;.tar.gz         # 解压tar -zcvf &lt;name&gt;.tar.gz &lt;dir&gt;   # 压缩 dir 下文件
+
+              
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/36502.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/36502.html" class="post-title-link" itemprop="url">Maven安装使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-05 13:24:31" itemprop="dateCreated datePublished" datetime="2019-07-05T13:24:31+08:00">2019-07-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-16 20:10:51" itemprop="dateModified" datetime="2019-07-16T20:10:51+08:00">2019-07-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              安装 (Ubuntu)
+用 apt-get 会比较方便, 但安装出来版本可能不是最新的.
+sudo apt-get install maven
+安装完的目录为, Maven home: /usr/share/maven; Config file: /etc/maven.
+settings.xml 位置: /etc/maven/settings.xml .
+指令
+mvn clean install
+mvn clean install -DskipTests   # 跳过单元测试# -pl: 仅构建选中的项目 (而不是目录下所有项目)# -am: 同时处理选定模块所依赖的模块mvn clean install -pl :&
+              ...
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/38422.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,7 +1261,7 @@
                 
               
 
-              <time title="Created: 2019-07-04 09:30:04 / Modified: 09:47:00" itemprop="dateCreated datePublished" datetime="2019-07-04T09:30:04+08:00">2019-07-04</time>
+              <time title="Created: 2019-07-04 09:30:04 / Modified: 10:01:52" itemprop="dateCreated datePublished" datetime="2019-07-04T09:30:04+08:00">2019-07-04</time>
             
 
             
@@ -574,7 +1410,7 @@ sudo add-apt-repository ppa:numix/ppasudo apt-get updatesudo apt-get install num
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/posts/34765.html" class="post-title-link" itemprop="url">Ubuntu下Eclipse Che安装使用</a>
+                <a href="/posts/34765.html" class="post-title-link" itemprop="url">Eclipse Che安装使用</a>
               
             
           </h1>
@@ -616,29 +1452,11 @@ sudo add-apt-repository ppa:numix/ppasudo apt-get updatesudo apt-get install num
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:54:23" itemprop="dateModified" datetime="2019-07-04T09:54:23+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-16 20:09:05" itemprop="dateModified" datetime="2019-07-16T20:09:05+08:00">2019-07-16</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -671,13 +1489,13 @@ sudo add-apt-repository ppa:numix/ppasudo apt-get updatesudo apt-get install num
         
           
             <p>
-              安装使用
+              安装使用 (Ubuntu)
 环境: Ubuntu 16.04
-Eclipse Che GitHub: https://github.com/eclipse/che/releases/
-官方文档: https://www.eclipse.org/che/docs/che-6/index.html
-官方安装文档: https://www.eclipse.org/che/docs/che-6/docker-single-user.html
+Eclipse Che GitHub | 官方文档 | 官方安装文档
 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令.
-docker run -it --rm -v /var/run/docker.sock:/var/run/docker.s
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v &lt;path&gt;:/data eclipse/che start
+由于 Docker 进程使用 Unix Socket 而不是 TCP 端口, 需要 sudo. cd 到一个目录, 输入:
+# 指定了版本 6.16.0, 最新版总是提示 not found.sudo
               ...
             </p>
           <!--noindex-->
@@ -757,7 +1575,7 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.s
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/posts/63135.html" class="post-title-link" itemprop="url">Ubuntu下Docker安装使用</a>
+                <a href="/posts/63135.html" class="post-title-link" itemprop="url">Docker安装使用</a>
               
             
           </h1>
@@ -799,29 +1617,11 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.s
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:54:11" itemprop="dateModified" datetime="2019-07-04T09:54:11+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-16 20:09:19" itemprop="dateModified" datetime="2019-07-16T20:09:19+08:00">2019-07-16</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -855,7 +1655,7 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.s
           
             <p>
               环境: Ubuntu
-安装
+安装 (Ubuntu)
 使用的官网安装教程: https://docs.docker.com/install/linux/docker-ee/ubuntu/ .
 检查系统环境
 安装的 CE, EE 要钱.
@@ -863,7 +1663,7 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.s
 
 To install Docker CE, you need the 64-bit version of one of these Ubuntu versions: - Cosmic 18.10 - Bionic 18.04 (LTS) - Xenial 16.04 (LTS)
 
-uname -r   # 要求内核版本大于 3.10# 4.4.0-21-genericcat /et
+uname -r   # 要求内核版本大于 3.10# 4.4.0-21-gener
               ...
             </p>
           <!--noindex-->
@@ -943,7 +1743,7 @@ uname -r   # 要求内核版本大于 3.10# 4.4.0-21-genericcat /et
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/posts/11689.html" class="post-title-link" itemprop="url">Ubuntu下CMake安装使用</a>
+                <a href="/posts/11689.html" class="post-title-link" itemprop="url">CMake安装使用</a>
               
             
           </h1>
@@ -985,29 +1785,11 @@ uname -r   # 要求内核版本大于 3.10# 4.4.0-21-genericcat /et
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:54:13" itemprop="dateModified" datetime="2019-07-04T09:54:13+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-17 18:29:51" itemprop="dateModified" datetime="2019-07-17T18:29:51+08:00">2019-07-17</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1040,17 +1822,18 @@ uname -r   # 要求内核版本大于 3.10# 4.4.0-21-genericcat /et
         
           
             <p>
-              安装
+              官方在线文档
+安装与新建工程 (Ubuntu)
 CMake 官网下载: https://cmake.org/download/ .
 找个地方解压并进入.
 tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/
-根据目录下的 README 文件, 执行以下命令安装. 安装到后面会索要 sudo.
+根据目录下的 README 文件, 执行以下命令安装.
 ./bootstrap &amp;&amp; make &amp;&amp; sudo make install
 编译好慢啊...
 CMake 会默认安装在 /usr/local/bin 下面.
-构建 CMake 项目
-新建一个文件夹作为项目文件夹, 新建文件 CMakeLists.txt. 以下为一个典型的配置:
-# 项目名称
+用 CMake 编译安装 CMake
+cd build/cmake ..makesudo make install
+构建
               ...
             </p>
           <!--noindex-->
@@ -1130,7 +1913,7 @@ CMake 会默认安装在 /usr/local/bin 下面.
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/posts/10606.html" class="post-title-link" itemprop="url">Windows下Git使用笔记</a>
+                <a href="/posts/10606.html" class="post-title-link" itemprop="url">Git安装使用</a>
               
             
           </h1>
@@ -1172,29 +1955,11 @@ CMake 会默认安装在 /usr/local/bin 下面.
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:55:59" itemprop="dateModified" datetime="2019-07-04T09:55:59+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-16 20:23:16" itemprop="dateModified" datetime="2019-07-16T20:23:16+08:00">2019-07-16</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1227,11 +1992,13 @@ CMake 会默认安装在 /usr/local/bin 下面.
         
           
             <p>
-              Git 提交三部曲
+              指令
+提交三部曲
 直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.
 # 获取当前时间作为 "提交说明"readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m "$&#123;date&#125;" # 提交到本地仓库, 以时间作为 "提交说明"git push origin master  # origin 表示远程主机, master 为分支名称
+取消 Add
 找不同
-git status  # 找出不同的文件、
+git status  # 
               ...
             </p>
           <!--noindex-->
@@ -1311,7 +2078,7 @@ git status  # 找出不同的文件、
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/posts/39659.html" class="post-title-link" itemprop="url">Windows下Anaconda安装使用</a>
+                <a href="/posts/39659.html" class="post-title-link" itemprop="url">Anaconda安装使用</a>
               
             
           </h1>
@@ -1353,29 +2120,11 @@ git status  # 找出不同的文件、
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-04 09:55:23" itemprop="dateModified" datetime="2019-07-04T09:55:23+08:00">2019-07-04</time>
+                <time title="Modified: 2019-07-16 20:10:08" itemprop="dateModified" datetime="2019-07-16T20:10:08+08:00">2019-07-16</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -2148,824 +2897,6 @@ ipconfig /releaseipconfig /renew
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/32764.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/32764.html" class="post-title-link" itemprop="url">Eclipse开启代码提示与关闭变量命名补全</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-28 19:16:34" itemprop="dateCreated datePublished" datetime="2019-03-28T19:16:34+08:00">2019-03-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-14 16:40:12" itemprop="dateModified" datetime="2019-06-14T16:40:12+08:00">2019-06-14</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              [TOC]
-增强代码提示功能
-
-找到设置位置: Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist.
-将 Auto Activation 下的 Auto activation triggers for Java (默认为 .) 改为 ._abcdefghijklmnopqrstuvwsyzABCDEFGHIJKLMNOPQRSTUVWSYZ.  (若此时发现, 输入一个字符时依然没有弹出自动提示的框框, 则继续执行下一步)
-转到: Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/60126.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/60126.html" class="post-title-link" itemprop="url">带精英策略的非支配排序的遗传算法NSGAII</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-10 22:53:00" itemprop="dateCreated datePublished" datetime="2019-03-10T22:53:00+08:00">2019-03-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-01 15:45:08" itemprop="dateModified" datetime="2019-07-01T15:45:08+08:00">2019-07-01</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_
-竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/
-[TOC]
-遗传算法(Genetic Algorithm)
-此处使用二进制编码法形成染色体.
-种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群.
-适应度评价: 对每个个体运行适应度评价函数, 区分群体中个体好坏. 并按照一定策略选择出部分适应度高的个体, 作为下一代的父代.
-交叉与变异: 对挑选出的父代, 每次随机选择两个染色体, 在一定概率下将两者的某些 DNA 进行交换, 形成两个新的个体, 即为染色体的交叉; 同时上述新产生的个体有
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/2106.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/2106.html" class="post-title-link" itemprop="url">Coursera Deep Learning笔记 超参数调试 Batch归一化 Softmax</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-23 18:41:54" itemprop="dateCreated datePublished" datetime="2019-02-23T18:41:54+08:00">2019-02-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              调试(Tuning)
-深度学习要处理很多参数, 从学习速率 \(\alpha\) 到 Momentum 的参数 \(\beta\), 若使用 Adam 优化算法,还得处理 \(\beta_1\), \(\beta_2\) 和 \(\varepsilon\). 同时还得选择层数, 每一层隐藏单元的数量, mini-batch 大小, 甚至如果还要使用学习率衰减.
-其中学习速率 \(\alpha\) 是最优先调试的超参数. mini-batch 大小与隐藏单元次之. 而 Momentum 的参数 \(\beta\) 通常使用默认值 0.9, Adam 的参数 \(\beta_1\), \(\beta_2\) 和 \(\varepsi
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/58457.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/58457.html" class="post-title-link" itemprop="url">Coursera Deep Learning笔记 优化算法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-21 22:41:32" itemprop="dateCreated datePublished" datetime="2019-02-21T22:41:32+08:00">2019-02-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-08 22:50:38" itemprop="dateModified" datetime="2019-04-08T22:50:38+08:00">2019-04-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Mini-batch 梯度下降
-将 \(X = [x^{(1)}, x^{(2)}, x^{(3)}, ..., x^{(m)}]\) 矩阵所有 \(m\) 个样本划分为 \(t\) 个子训练集, 每个子训练集称为 \(x^{\{i\}}\), 每个子训练集内样本个数均相同(若每个子训练集有1000个样本, 则 \(x^{\{1\}} = [x^{(1)}, x^{(2)}, ..., x^{(1000)}]\), 维度 \((n_x,1000)\)). 若m不能被子训练集样本数整除, 则最后一个子训练集样本可以小于其他子训练集样本数. \(Y\) 亦然.
-训练时, 每次迭代仅对一个子训练集进行梯度下降:
-\[
-\begin
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/41302.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/41302.html" class="post-title-link" itemprop="url">Coursera Deep Learning笔记 正则化与梯度相关</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-19 22:43:06" itemprop="dateCreated datePublished" datetime="2019-02-19T22:43:06+08:00">2019-02-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-08 21:35:57" itemprop="dateModified" datetime="2019-04-08T21:35:57+08:00">2019-04-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              训练集、验证集、测试集(Train, Dev, Test Sets)
-当数据量小的时候, 70% 训练, 30% 测试；或 60% 训练、20% 验证、20%测试. 当我们有大于100万条数据时, 测试集验证集各取1万条即可, 足以评估单个分类器.
-确保验证集和测试集的数据来自同一分布.
-如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.
-偏差、方差(Bias, Variance)
-高偏差(high bias)称为&quot;欠拟合&quot;(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训
-              ...
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -3014,7 +2945,7 @@ ipconfig /releaseipconfig /renew
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">111</span>
+                    <span class="site-state-item-count">116</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3146,7 +3077,21 @@ ipconfig /releaseipconfig /renew
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

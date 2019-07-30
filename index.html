@@ -384,6 +384,160 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/6286.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/posts/6286.html" class="post-title-link" itemprop="url">Tomcat9安装使用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-23 14:51:14 / 修改时间：15:13:26" itemprop="dateCreated datePublished" datetime="2019-07-23T14:51:14+08:00">2019-07-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              安装 (Ubuntu)
+传统的方法
+Tomcat官网下载地址
+解压到 /usr/local/bin , 重命名为 tomcat9 . cd进去.
+cd /usr/local/bin/tomcat9
+网上有教程说要编辑 bin/catalina.sh, 结果我打开该文件一看:
+...#   Do not set the variables in this script. Instead put them into a script#   setenv.sh in CATALINA_BASE/bin to keep your customizations separate....
+人家明确要求不要改本文件... 那么根据 
+              ...
+            </p>
+          <!--noindex-->
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/52363.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -938,7 +1092,7 @@ pip install --upgrade pip
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-17 18:32:04" itemprop="dateModified" datetime="2019-07-17T18:32:04+08:00">2019-07-17</time>
+                <time title="修改时间：2019-07-24 16:15:19" itemprop="dateModified" datetime="2019-07-24T16:15:19+08:00">2019-07-24</time>
               
             
           </span>
@@ -994,6 +1148,12 @@ pip install --upgrade pip
           
             <p>
               tar -zxvf &lt;name&gt;.tar.gz         # 解压tar -zcvf &lt;name&gt;.tar.gz &lt;dir&gt;   # 压缩 dir 下文件
+查看端口占用
+lsof -i:8080netstat -tunlp | grep 8000
+杀进程
+kill -9 &lt;pid&gt;
+Chrome 开机第一次启动后总是需要输入密码 (登陆密钥环)
+打开 seahorse, 左侧第一行有个 &quot;login&quot; (或 &quot;登陆&quot;), 右键更改密码, 改为空的.
 
               
             </p>
@@ -1456,7 +1616,7 @@ sudo add-apt-repository ppa:numix/ppasudo apt-get updatesudo apt-get install num
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 20:09:05" itemprop="dateModified" datetime="2019-07-16T20:09:05+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-24 16:15:25" itemprop="dateModified" datetime="2019-07-24T16:15:25+08:00">2019-07-24</time>
               
             
           </span>
@@ -1959,7 +2119,7 @@ cd build/cmake ..makesudo make install
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 20:23:16" itemprop="dateModified" datetime="2019-07-16T20:23:16+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-24 16:55:15" itemprop="dateModified" datetime="2019-07-24T16:55:15+08:00">2019-07-24</time>
               
             
           </span>
@@ -2000,9 +2160,8 @@ cd build/cmake ..makesudo make install
 提交三部曲
 直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.
 # 获取当前时间作为 "提交说明"readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m "$&#123;date&#125;" # 提交到本地仓库, 以时间作为 "提交说明"git push origin master  # origin 表示远程主机, master 为分支名称
-取消 Add
-找不同
-git status  # 
+创建新分支
+git checkout -b &lt;
               ...
             </p>
           <!--noindex-->
@@ -2734,155 +2893,6 @@ udp://tracker.tiny-vps.com:6969/announcehttps://1337.abcvg.info/announceudp://tr
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/46279.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XieNaoban">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XieNaoban's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/posts/46279.html" class="post-title-link" itemprop="url">深澜校园网无法打开(弹出)登陆网页解决方案</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-08 11:58:51 / 修改时间：21:35:57" itemprop="dateCreated datePublished" datetime="2019-04-08T11:58:51+08:00">2019-04-08</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              (适用于Windows) 打开CMD, 两行指令:
-ipconfig /releaseipconfig /renew
-
-              
-            </p>
-          <!--noindex-->
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2931,7 +2941,7 @@ ipconfig /releaseipconfig /renew
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3075,7 +3085,9 @@ ipconfig /releaseipconfig /renew
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

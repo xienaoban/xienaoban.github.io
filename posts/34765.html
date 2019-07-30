@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/3.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/4.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/5.png">
-<meta property="og:updated_time" content="2019-07-16T12:09:05.984Z">
+<meta property="og:updated_time" content="2019-07-24T08:15:25.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse Che安装使用">
 <meta name="twitter:description" content="安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v &amp;lt;path&amp;gt;:/data">
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 20:09:05" itemprop="dateModified" datetime="2019-07-16T20:09:05+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-24 16:15:25" itemprop="dateModified" datetime="2019-07-24T16:15:25+08:00">2019-07-24</time>
               
             
           </span>
@@ -527,9 +527,9 @@
 <p><img src="/posts/34765/4.png"> <img src="/posts/34765/5.png"></p>
 <h2 id="目前用的一些指令">目前用的一些指令</h2>
 <p>Docker:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无插件 IDE</span></span><br><span class="line">sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v ~/.m2:/home/user/.m2 eclipse/che:6.16.0 start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 Plugin</span></span><br><span class="line">sudo docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v $(<span class="built_in">pwd</span>)/assembly/assembly-main/target/eclipse-che-6.16.0/eclipse-che-6.16.0:/assembly eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试本地 IDE</span></span><br><span class="line">sudo docker run -ti --rm -v ~/Workspace/Eclipse/Maven/che-6.16.0:/repo -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.16.0 start --fast</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无插件 IDE</span></span><br><span class="line">sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v ~/.m2:/home/user/.m2 eclipse/che:6.16.0 start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 Plugin</span></span><br><span class="line">sudo docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v $(<span class="built_in">pwd</span>)/assembly/assembly-main/target/eclipse-che-6.16.0/eclipse-che-6.16.0:/assembly eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试本地 IDE</span></span><br><span class="line">sudo docker run -ti --rm -v ~/Workspace/Eclipse/Maven/che-6.16.0:/repo -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除所有容器</span></span><br><span class="line">sudo docker rm -f $(sudo docker ps -a -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tomcat</span></span><br><span class="line">sudo docker run -d -v /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war:/usr/<span class="built_in">local</span>/tomcat/webapps/CLDIFF-WEB.war -p 8080:8080 --name cldiff-server tomcat</span><br><span class="line"></span><br><span class="line">sudo docker cp /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war cldiff-server:/usr/<span class="built_in">local</span>/tomcat/webapps</span><br><span class="line"></span><br><span class="line">sudo docker <span class="built_in">exec</span> -it cldiff-server /bin/bash</span><br><span class="line"></span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/startup.sh </span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
 <p>Maven:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建 che 整体</span></span><br><span class="line">mvn -DskipTests=<span class="literal">true</span>  -Dfindbugs.skip=<span class="literal">true</span> -Dmdep.analyze.skip=<span class="literal">true</span> -Dlicense.skip=<span class="literal">true</span> -Dgwt.compiler.localWorkers=2 -T 1C -Pnative -pl <span class="string">'!dashboard'</span> fmt:format clean install -e</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建 plugin-git</span></span><br><span class="line"><span class="built_in">cd</span> ~/Workspace/Eclipse/Maven/che-6.16.0/plugins/plugin-git</span><br><span class="line">mvn fmt:format clean install -e -Dlicense.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建 che 整体</span></span><br><span class="line">mvn -DskipTests=<span class="literal">true</span> -Dfindbugs.skip=<span class="literal">true</span> -Dmdep.analyze.skip=<span class="literal">true</span> -Dlicense.skip=<span class="literal">true</span> -Dgwt.compiler.localWorkers=2 -T 1C -Pnative -pl <span class="string">'!dashboard'</span> fmt:format clean install -e | tee ~/Desktop/che.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建 plugin-git</span></span><br><span class="line"><span class="built_in">cd</span> ~/Workspace/Eclipse/Maven/che-6.16.0/plugins/plugin-git</span><br><span class="line">mvn fmt:format clean install -e -Dlicense.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -679,7 +679,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -823,7 +823,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

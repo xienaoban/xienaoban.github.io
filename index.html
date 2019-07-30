@@ -429,12 +429,24 @@
                 
               
 
-              <time title="创建时间：2019-07-23 14:51:14 / 修改时间：15:13:26" itemprop="dateCreated datePublished" datetime="2019-07-23T14:51:14+08:00">2019-07-23</time>
+              <time title="创建时间：2019-07-23 14:51:14" itemprop="dateCreated datePublished" datetime="2019-07-23T14:51:14+08:00">2019-07-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-30 13:56:54" itemprop="dateModified" datetime="2019-07-30T13:56:54+08:00">2019-07-30</time>
               
             
           </span>
@@ -2119,7 +2131,7 @@ cd build/cmake ..makesudo make install
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-24 16:55:15" itemprop="dateModified" datetime="2019-07-24T16:55:15+08:00">2019-07-24</time>
+                <time title="修改时间：2019-07-30 14:33:08" itemprop="dateModified" datetime="2019-07-30T14:33:08+08:00">2019-07-30</time>
               
             
           </span>
@@ -2157,11 +2169,11 @@ cd build/cmake ..makesudo make install
           
             <p>
               指令
-提交三部曲
-直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.
-# 获取当前时间作为 "提交说明"readonly date=$(date +%Y-%m-%d\ %H:%M:%S)git add .               # 添加当前目录所有文件到暂存区git commit -m "$&#123;date&#125;" # 提交到本地仓库, 以时间作为 "提交说明"git push origin master  # origin 表示远程主机, master 为分支名称
-创建新分支
-git checkout -b &lt;
+Git Bash 使用 ssh 登陆
+配置 Git Bash:
+git config --global user.name &lt;name&gt;git config --global user.email &lt;email&gt;# 如果开了 Github 的 `Keep my email addresses private` 功能,# 设置 email 时 要填 Github 生成的 email, 而不是注册 email.# 还有一些其他可选设置
+以下是我的一些配置:
+$ git config --listcore.symlinks=falsecore.autocrlf=truecore.fscache=tr
               ...
             </p>
           <!--noindex-->

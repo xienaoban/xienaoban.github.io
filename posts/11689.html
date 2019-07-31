@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
-<meta name="keywords" content="日常配环境,快乐背指令,Ubuntu,Linux,CMake">
+<meta name="keywords" content="日常配环境,快乐背指令,CMake,Ubuntu,Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CMake安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/11689.html">
@@ -116,7 +116,7 @@
 <meta property="og:description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xienaoban.github.io/posts/11689/cmake-3.14.5-graph.png">
-<meta property="og:updated_time" content="2019-07-30T10:33:39.010Z">
+<meta property="og:updated_time" content="2019-07-31T05:34:13.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CMake安装使用">
 <meta name="twitter:description" content="官方在线文档 安装与新建工程 (Ubuntu) CMake 官网下载: https://cmake.org/download/ . 找个地方解压并进入. 12tar -zxvf cmake-3.14.5.tar.gzcd cmake-3.14.5/ 根据目录下的 README 文件, 执行以下命令安装. 1./bootstrap &amp;amp;&amp;amp; make &amp;amp;&amp;amp; s">
@@ -450,7 +450,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-30 18:33:39" itemprop="dateModified" datetime="2019-07-30T18:33:39+08:00">2019-07-30</time>
+                <time title="修改时间：2019-07-31 13:34:13" itemprop="dateModified" datetime="2019-07-31T13:34:13+08:00">2019-07-31</time>
               
             
           </span>
@@ -602,7 +602,7 @@
 <p>导出依赖为图片:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dot &lt;graph&gt;.dot -T png -o &lt;figure&gt;.png</span><br></pre></td></tr></table></figure>
 <p>例如对于 <code>cmake-3.14.5</code> 项目:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">mkdir Build</span><br><span class="line"><span class="built_in">cd</span> Build</span><br><span class="line">cmake .. --graphviz=graph.dot</span><br><span class="line">ls | grep graph</span><br><span class="line"><span class="comment"># graph.dot</span></span><br><span class="line"><span class="comment"># graph.dot.cmake</span></span><br><span class="line"><span class="comment"># graph.dot.cmake.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLibTests</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLibTests.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLib</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLibTests</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeServerLibTests.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmbzip2</span></span><br><span class="line"><span class="comment"># graph.dot.cmbzip2.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmcompress</span></span><br><span class="line"><span class="comment"># graph.dot.cmcompress.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmcurl</span></span><br><span class="line"><span class="comment"># graph.dot.cmcurl.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmexpat</span></span><br><span class="line"><span class="comment"># graph.dot.cmexpat.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmjsoncpp</span></span><br><span class="line"><span class="comment"># graph.dot.cmjsoncpp.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibarchive</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibarchive.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmliblzma</span></span><br><span class="line"><span class="comment"># graph.dot.cmliblzma.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibrhash</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibrhash.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibuv</span></span><br><span class="line"><span class="comment"># graph.dot.cmlibuv.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys_c</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys_c.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsys.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestDynload</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestDynload.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestProcess</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestProcess.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsC</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsCxx</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestsCxx.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestSharedForward</span></span><br><span class="line"><span class="comment"># graph.dot.cmsysTestSharedForward.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cmzlib</span></span><br><span class="line"><span class="comment"># graph.dot.cmzlib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.cpack</span></span><br><span class="line"><span class="comment"># graph.dot.cpack.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CPackLib</span></span><br><span class="line"><span class="comment"># graph.dot.CPackLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.ctest</span></span><br><span class="line"><span class="comment"># graph.dot.ctest.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CTestLib</span></span><br><span class="line"><span class="comment"># graph.dot.CTestLib.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.curltest</span></span><br><span class="line"><span class="comment"># graph.dot.curltest.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.exit_code</span></span><br><span class="line"><span class="comment"># graph.dot.exit_code.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.kwiml_test</span></span><br><span class="line"><span class="comment"># graph.dot.kwiml_test.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.memcheck_fail</span></span><br><span class="line"><span class="comment"># graph.dot.memcheck_fail.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.print_stdin</span></span><br><span class="line"><span class="comment"># graph.dot.print_stdin.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_BC</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_BC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cppcheck</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cppcheck.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cpplint</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_cpplint.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator_custom_command</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator_custom_command.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_emulator.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_iwyu</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_iwyu.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_BC</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_BC.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_purify</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_purify.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_valgrind</span></span><br><span class="line"><span class="comment"># graph.dot.pseudonl_valgrind.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_purify</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_purify.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_tidy</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_tidy.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_valgrind</span></span><br><span class="line"><span class="comment"># graph.dot.pseudo_valgrind.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.runcompilecommands</span></span><br><span class="line"><span class="comment"># graph.dot.runcompilecommands.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testAffinity</span></span><br><span class="line"><span class="comment"># graph.dot.testAffinity.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild</span></span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding.dependers</span></span><br><span class="line"></span><br><span class="line">dot graph.dot -T png -o graph.png</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mkdir Build</span><br><span class="line"><span class="built_in">cd</span> Build</span><br><span class="line">cmake .. --graphviz=graph.dot</span><br><span class="line">ls | grep graph</span><br><span class="line"><span class="comment"># graph.dot</span></span><br><span class="line"><span class="comment"># graph.dot.cmake</span></span><br><span class="line"><span class="comment"># graph.dot.cmake.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib</span></span><br><span class="line"><span class="comment"># graph.dot.CMakeLib.dependers</span></span><br><span class="line">...</span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild</span></span><br><span class="line"><span class="comment"># graph.dot.testConsoleBufChild.dependers</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding</span></span><br><span class="line"><span class="comment"># graph.dot.testEncoding.dependers</span></span><br><span class="line"></span><br><span class="line">dot graph.dot -T png -o graph.png</span><br></pre></td></tr></table></figure>
 <p>打开 <code>graph.png</code>:</p>
 <p><img src="/posts/11689/cmake-3.14.5-graph.png"></p>
 <p>emmmm, 好丑的图.</p>
@@ -657,11 +657,11 @@
           
             <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
           
+            <a href="/tags/CMake/" rel="tag"># CMake</a>
+          
             <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/CMake/" rel="tag"># CMake</a>
           
         </div>
       
@@ -788,7 +788,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -903,7 +909,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -107,12 +107,13 @@
 
 
 
-  <meta name="description" content="#Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
+  <meta name="description" content="Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
+<meta name="keywords" content="Codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round 425(Div. 2) - D. Misha, Grisha and Underground">
 <meta property="og:url" content="https://xienaoban.github.io/posts/39929.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="#Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
+<meta property="og:description" content="Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png">
 <meta property="og:image" content="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png">
@@ -124,10 +125,10 @@
 <meta property="og:image" content="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/39929/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/39929/2.png">
-<meta property="og:updated_time" content="2019-07-16T13:16:22.945Z">
+<meta property="og:updated_time" content="2019-07-31T07:21:34.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round 425(Div. 2) - D. Misha, Grisha and Underground">
-<meta name="twitter:description" content="#Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
+<meta name="twitter:description" content="Description Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possib">
 <meta name="twitter:image" content="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png">
 
 
@@ -458,11 +459,36 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 21:16:22" itemprop="dateModified" datetime="2019-07-16T21:16:22+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-31 15:21:34" itemprop="dateModified" datetime="2019-07-31T15:21:34+08:00">2019-07-31</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/" itemprop="url" rel="index"><span itemprop="name">算法竞赛</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -492,22 +518,29 @@
       
 
       
-        <p>#Description Misha and Grisha are funny boys, so they like to use new underground. The underground has <em>n</em> stations connected with <em>n</em> - 1 routes so that each route connects two stations, and it is possible to reach every station from any other.</p>
+        <h1 id="description">Description</h1>
+<p>Misha and Grisha are funny boys, so they like to use new underground. The underground has <em>n</em> stations connected with <em>n</em> - 1 routes so that each route connects two stations, and it is possible to reach every station from any other.</p>
 <p>The boys decided to have fun and came up with a plan. Namely, in some day in the morning Misha will ride the underground from station <em>s</em>to station <em>f</em> by the shortest path, and will draw with aerosol an ugly text &quot;Misha was here&quot; on every station he will pass through (including <em>s</em>and <em>f</em>). After that on the same day at evening Grisha will ride from station <em>t</em> to station <em>f</em> by the shortest path and will count stations with Misha's text. After that at night the underground workers will wash the texts out, because the underground should be clean.</p>
 <p>The boys have already chosen three stations <em>a</em>, <em>b</em> and <em>c</em> for each of several following days, one of them should be station <em>s</em> on that day, another should be station <em>f</em>, and the remaining should be station <em>t</em>. They became interested how they should choose these stations <em>s</em>, <em>f</em>, <em>t</em> so that the number Grisha will count is as large as possible. They asked you for help.</p>
-<p>#Input The first line contains two integers <em>n</em> and <em>q</em> (2 ≤ <em>n</em> ≤ 105, 1 ≤ <em>q</em> ≤ 105) — the number of stations and the number of days.</p>
+<h1 id="input">Input</h1>
+<p>The first line contains two integers <em>n</em> and <em>q</em> (2 ≤ <em>n</em> ≤ 105, 1 ≤ <em>q</em> ≤ 105) — the number of stations and the number of days.</p>
 <p>The second line contains <em>n</em> - 1 integers <em>p</em>2, <em>p</em>3, ..., <em>p</em> <em>n</em> (1 ≤ <em>p</em> <em>i</em> ≤ <em>n</em>). The integer <em>p</em> <em>i</em> means that there is a route between stations <em>p</em> <em>i</em> and <em>i</em>. It is guaranteed that it's possible to reach every station from any other.</p>
 <p>The next <em>q</em> lines contains three integers <em>a</em>, <em>b</em> and <em>c</em> each (1 ≤ <em>a</em>, <em>b</em>, <em>c</em> ≤ <em>n</em>) — the ids of stations chosen by boys for some day. Note that some of these ids could be same.</p>
-<p>#Output Print <em>q</em> lines. In the <em>i</em>-th of these lines print the maximum possible number Grisha can get counting when the stations <em>s</em>, <em>t</em> and <em>f</em> are chosen optimally from the three stations on the <em>i</em>-th day.</p>
-<p>#Examples <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<p>#Note In the first example on the first day if <em>s</em> = 1, <em>f</em> = 2, <em>t</em> = 3, Misha would go on the route 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2, and Grisha would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. He would see the text at the stations 1 and 2. On the second day, if <em>s</em> = 3, <em>f</em> = 2, <em>t</em> = 3, both boys would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. Grisha would see the text at 3 stations.</p>
+<h1 id="output">Output</h1>
+<p>Print <em>q</em> lines. In the <em>i</em>-th of these lines print the maximum possible number Grisha can get counting when the stations <em>s</em>, <em>t</em> and <em>f</em> are chosen optimally from the three stations on the <em>i</em>-th day.</p>
+<h1 id="examples">Examples</h1>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h1 id="note">Note</h1>
+<p>In the first example on the first day if <em>s</em> = 1, <em>f</em> = 2, <em>t</em> = 3, Misha would go on the route 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2, and Grisha would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. He would see the text at the stations 1 and 2. On the second day, if <em>s</em> = 3, <em>f</em> = 2, <em>t</em> = 3, both boys would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. Grisha would see the text at 3 stations.</p>
 <p>In the second examle if <em>s</em> = 1, <em>f</em> = 3, <em>t</em> = 2, Misha would go on the route 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 3, and Grisha would go on the route 2 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 3 and would see the text at both stations.</p>
-<p>#Key 给一棵树，从中取三点<span class="math inline">\(a\)</span>、<span class="math inline">\(b\)</span>、<span class="math inline">\(c\)</span>，任取其中两点作为起点<span class="math inline">\(s\)</span>、<span class="math inline">\(t\)</span>，剩余一点作为终点<span class="math inline">\(f\)</span>。问“s到f的最短路径”与“t到f的最短路径”重叠部分最大有多少。</p>
+<h1 id="key">Key</h1>
+<p>给一棵树，从中取三点<span class="math inline">\(a\)</span>、<span class="math inline">\(b\)</span>、<span class="math inline">\(c\)</span>，任取其中两点作为起点<span class="math inline">\(s\)</span>、<span class="math inline">\(t\)</span>，剩余一点作为终点<span class="math inline">\(f\)</span>。问“s到f的最短路径”与“t到f的最短路径”重叠部分最大有多少。</p>
 <p>使用了LCA与倍增。可以看到，三个点两两搭配的最近公共祖先中，必至少有两对是同一个祖先。</p>
 <p>三个点只有以下两种情况：（令<span class="math inline">\(dep[lca(b,c)]&gt;=dep[lca(a,b)]\)</span>，这样就可以把b、c看作一个整体了（b、c是不是处于一条链、是不是重叠也不影响bc整体与a的判断），此时<span class="math inline">\(dep[lca(a,b)]\)</span>必等于<span class="math inline">\(dep[lca(a,c)]\)</span>。） 第一种情况： <img src="/posts/39929/1.png" alt="这里写图片描述"> a与bc不在一条链上。·可以看到答案要么是a到<span class="math inline">\(lca(b,c)\)</span>的距离，要么是b、c分别到<span class="math inline">\(lca(b,c)\)</span>的距离。</p>
 <p>第二种情况： <img src="/posts/39929/2.png" alt="这里写图片描述"> a与bc处于一条链。答案与上面类似，也是三种情况，但是没有经过分叉，计算上略微不同。</p>
 <p>然而输入的abc位置随机，直接判断很麻烦。可以像上图一样，把lca深度大的设为b、c，就很方便了。</p>
-<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mset(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = (<span class="keyword">int</span>)<span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, q;</span><br><span class="line"><span class="keyword">int</span> a, b, c;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T[maxn];</span><br><span class="line"><span class="keyword">int</span> d[maxn];</span><br><span class="line"><span class="keyword">int</span> p[maxn][<span class="number">28</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i:T[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i == p[u][<span class="number">0</span>]) <span class="keyword">continue</span>;</span><br><span class="line">		d[i] = d[u] + <span class="number">1</span>;</span><br><span class="line">		p[i][<span class="number">0</span>] = u;</span><br><span class="line">		dfs(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (<span class="number">1</span> &lt;&lt; j) &lt;= n; j++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			p[i][j] = p[p[i][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (d[a]&gt;d[b])swap(a, b);</span><br><span class="line">	<span class="keyword">int</span> f = d[b] - d[a];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; (<span class="number">1</span> &lt;&lt; i) &lt;= f; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; i)&amp;f)b = p[b][i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (<span class="keyword">int</span>)log2(n); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (p[a][i] != p[b][i]) &#123;</span><br><span class="line">				a = p[a][i]; b = p[b][i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		a = p[a][<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mset(d, <span class="number">0</span>); mset(p, <span class="number">0</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> p;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		T[i].push_back(p);</span><br><span class="line">		T[p].push_back(i);</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">while</span> (q--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		<span class="keyword">int</span> f1 = lca(a, b);</span><br><span class="line">		<span class="keyword">int</span> f2 = lca(a, c);</span><br><span class="line">		<span class="keyword">int</span> f3 = lca(b, c);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (d[f1] &gt; d[f2]) &#123;</span><br><span class="line">			swap(b, c);</span><br><span class="line">			swap(f1, f2);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (d[f2] &gt; d[f3]) &#123;</span><br><span class="line">			swap(a, b);</span><br><span class="line">			swap(f2, f3);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> res1 = (f1 == a ? (d[f3] - d[f1]) : (d[a] - d[f1]) + (d[f3] - d[f1]));</span><br><span class="line">		<span class="keyword">int</span> res2 = max(d[b] - d[f3], d[c] - d[f3]);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; max(res1, res2) + <span class="number">1</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="code">Code</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mset(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = (<span class="keyword">int</span>)<span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n, q;</span><br><span class="line"><span class="keyword">int</span> a, b, c;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; T[maxn];</span><br><span class="line"><span class="keyword">int</span> d[maxn];</span><br><span class="line"><span class="keyword">int</span> p[maxn][<span class="number">28</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i:T[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i == p[u][<span class="number">0</span>]) <span class="keyword">continue</span>;</span><br><span class="line">		d[i] = d[u] + <span class="number">1</span>;</span><br><span class="line">		p[i][<span class="number">0</span>] = u;</span><br><span class="line">		dfs(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; (<span class="number">1</span> &lt;&lt; j) &lt;= n; j++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">			p[i][j] = p[p[i][j - <span class="number">1</span>]][j - <span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (d[a]&gt;d[b])swap(a, b);</span><br><span class="line">	<span class="keyword">int</span> f = d[b] - d[a];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; (<span class="number">1</span> &lt;&lt; i) &lt;= f; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> ((<span class="number">1</span> &lt;&lt; i)&amp;f)b = p[b][i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = (<span class="keyword">int</span>)log2(n); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">			<span class="keyword">if</span> (p[a][i] != p[b][i]) &#123;</span><br><span class="line">				a = p[a][i]; b = p[b][i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		a = p[a][<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	mset(d, <span class="number">0</span>); mset(p, <span class="number">0</span>);</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; q;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> p;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		T[i].push_back(p);</span><br><span class="line">		T[p].push_back(i);</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">while</span> (q--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">		<span class="keyword">int</span> f1 = lca(a, b);</span><br><span class="line">		<span class="keyword">int</span> f2 = lca(a, c);</span><br><span class="line">		<span class="keyword">int</span> f3 = lca(b, c);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (d[f1] &gt; d[f2]) &#123;</span><br><span class="line">			swap(b, c);</span><br><span class="line">			swap(f1, f2);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (d[f2] &gt; d[f3]) &#123;</span><br><span class="line">			swap(a, b);</span><br><span class="line">			swap(f2, f3);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> res1 = (f1 == a ? (d[f3] - d[f1]) : (d[a] - d[f1]) + (d[f3] - d[f1]));</span><br><span class="line">		<span class="keyword">int</span> res2 = max(d[b] - d[f3], d[c] - d[f3]);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; max(res1, res2) + <span class="number">1</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -552,6 +585,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
+          
+        </div>
       
 
       
@@ -618,8 +657,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -667,7 +715,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -782,7 +836,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -856,6 +942,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#note"><span class="nav-number">5.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#key"><span class="nav-number">6.</span> <span class="nav-text">Key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

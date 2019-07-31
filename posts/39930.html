@@ -107,17 +107,18 @@
 
 
 
-  <meta name="description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
+  <meta name="description" content="Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
+<meta name="keywords" content="Codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round 441(Div. 2) - D. Sorting the Coins">
 <meta property="og:url" content="https://xienaoban.github.io/posts/39930.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
+<meta property="og:description" content="Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T13:16:57.526Z">
+<meta property="og:updated_time" content="2019-07-31T06:50:36.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round 441(Div. 2) - D. Sorting the Coins">
-<meta name="twitter:description" content="#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
+<meta name="twitter:description" content="Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having thing">
 
 
 
@@ -447,11 +448,36 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 21:16:57" itemprop="dateModified" datetime="2019-07-16T21:16:57+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-31 14:50:36" itemprop="dateModified" datetime="2019-07-31T14:50:36+08:00">2019-07-31</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/" itemprop="url" rel="index"><span itemprop="name">算法竞赛</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -481,16 +507,21 @@
       
 
       
-        <p>#Description Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things in order, that is why he wants his coins to be arranged in a row in such a way that firstly come coins out of circulation, and then come coins still in circulation.</p>
+        <h1 id="description">Description</h1>
+<p>Recently, Dima met with Sasha in a philatelic store, and since then they are collecting coins together. Their favorite occupation is to sort collections of coins. Sasha likes having things in order, that is why he wants his coins to be arranged in a row in such a way that firstly come coins out of circulation, and then come coins still in circulation.</p>
 <p>For arranging coins Dima uses the following algorithm. One step of his algorithm looks like the following:</p>
 <p>He looks through all the coins from left to right; If he sees that the i-th coin is still in circulation, and (i + 1)-th coin is already out of circulation, he exchanges these two coins and continues watching coins from (i + 1)-th. Dima repeats the procedure above until it happens that no two coins were exchanged during this procedure. Dima calls hardness of ordering the number of steps required for him according to the algorithm above to sort the sequence, e.g. the number of times he looks through the coins from the very beginning. For example, for the ordered sequence hardness of ordering equals one.</p>
 <p>Today Sasha invited Dima and proposed him a game. First he puts n coins in a row, all of them are out of circulation. Then Sasha chooses one of the coins out of circulation and replaces it with a coin in circulation for n times. During this process Sasha constantly asks Dima what is the hardness of ordering of the sequence.</p>
 <p>The task is more complicated because Dima should not touch the coins and he should determine hardness of ordering in his mind. Help Dima with this task.</p>
-<p>#Input The first line contains single integer n (1 ≤ n ≤ 300 000) — number of coins that Sasha puts behind Dima.</p>
+<h1 id="input">Input</h1>
+<p>The first line contains single integer n (1 ≤ n ≤ 300 000) — number of coins that Sasha puts behind Dima.</p>
 <p>Second line contains n distinct integers p1, p2, ..., pn (1 ≤ pi ≤ n) — positions that Sasha puts coins in circulation to. At first Sasha replaces coin located at position p1, then coin located at position p2 and so on. Coins are numbered from left to right.</p>
-<p>#Output Print n + 1 numbers a0, a1, ..., an, where a0 is a hardness of ordering at the beginning, a1 is a hardness of ordering after the first replacement and so on.</p>
-<p>#Examples <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">6</span> <span class="number">8</span> <span class="number">3</span> <span class="number">4</span> <span class="number">7</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line">output</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<p>#Note Let's denote as O coin out of circulation, and as X — coin is circulation.</p>
+<h1 id="output">Output</h1>
+<p>Print n + 1 numbers a0, a1, ..., an, where a0 is a hardness of ordering at the beginning, a1 is a hardness of ordering after the first replacement and so on.</p>
+<h1 id="examples">Examples</h1>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">6</span> <span class="number">8</span> <span class="number">3</span> <span class="number">4</span> <span class="number">7</span> <span class="number">2</span> <span class="number">1</span> <span class="number">5</span></span><br><span class="line">output</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="note">Note</h1>
+<p>Let's denote as O coin out of circulation, and as X — coin is circulation.</p>
 <p>At the first sample, initially in row there are coins that are not in circulation, so Dima will look through them from left to right and won't make any exchanges.</p>
 <p>After replacement of the first coin with a coin in circulation, Dima will exchange this coin with next three times and after that he will finally look through the coins and finish the process.</p>
 <p>XOOO  →  OOOX</p>
@@ -499,9 +530,11 @@
 <p>After replacement of the fourth coin, Dima's actions look this way:</p>
 <p>XOXX  →  OXXX</p>
 <p>Finally, after replacement of the second coin, row becomes consisting of coins that are in circulation and Dima will look through coins from left to right without any exchanges.</p>
-<p>#Key 读题读了半天才懂。n个硬币O面朝上排成一个序列。游戏一共n轮，在每一轮的一开始，所有硬币O面朝上，然后把第p[1]~p[i]个硬币（共i个硬币）翻转为X面。然后进行如下操作： 从左往右遍历整个序列，如果第j个硬币为X且第j+1个硬币为O，交换两者，然后从j+1个硬币继续进行。 持续进行上述遍历，直至最后一遍遍历没有交换任何硬币。把第i轮进行的遍历次数记为a[i]。要求求出每一轮游戏的a[i]（以及初始状态下的遍历次数a[0]）。</p>
+<h1 id="key">Key</h1>
+<p>读题读了半天才懂。n个硬币O面朝上排成一个序列。游戏一共n轮，在每一轮的一开始，所有硬币O面朝上，然后把第p[1]~p[i]个硬币（共i个硬币）翻转为X面。然后进行如下操作： 从左往右遍历整个序列，如果第j个硬币为X且第j+1个硬币为O，交换两者，然后从j+1个硬币继续进行。 持续进行上述遍历，直至最后一遍遍历没有交换任何硬币。把第i轮进行的遍历次数记为a[i]。要求求出每一轮游戏的a[i]（以及初始状态下的遍历次数a[0]）。</p>
 <p>规律是，找出序列最右的O的下标idx（则其右侧为一个连续的X序列或为空），每一轮维护之。计算idx左边有多少X即可。实际计算时，只需判断当前轮翻转的硬币是否使得idx向左移动，若是，a[i]=a[i-1]+1-(new_idx-idx)。否则，a[i]=a[i-1]+1。</p>
-<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300000</span> + <span class="number">17</span>;</span><br><span class="line"><span class="keyword">int</span> n, p;</span><br><span class="line"><span class="keyword">bool</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> idx = n + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		s[p] = <span class="literal">true</span>;</span><br><span class="line">		++res;</span><br><span class="line">		<span class="keyword">if</span> (idx == p + <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> pre_idx = idx;</span><br><span class="line">			<span class="keyword">while</span> (s[--pre_idx]);</span><br><span class="line">			++pre_idx;</span><br><span class="line">			res -= idx - pre_idx;</span><br><span class="line">			idx = pre_idx;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="code">Code</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">300000</span> + <span class="number">17</span>;</span><br><span class="line"><span class="keyword">int</span> n, p;</span><br><span class="line"><span class="keyword">bool</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> idx = n + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"1"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; p;</span><br><span class="line">		s[p] = <span class="literal">true</span>;</span><br><span class="line">		++res;</span><br><span class="line">		<span class="keyword">if</span> (idx == p + <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> pre_idx = idx;</span><br><span class="line">			<span class="keyword">while</span> (s[--pre_idx]);</span><br><span class="line">			++pre_idx;</span><br><span class="line">			res -= idx - pre_idx;</span><br><span class="line">			idx = pre_idx;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -546,6 +579,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
+          
+        </div>
       
 
       
@@ -612,8 +651,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,7 +709,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -776,7 +830,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -850,6 +936,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#note"><span class="nav-number">5.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#key"><span class="nav-number">6.</span> <span class="nav-text">Key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

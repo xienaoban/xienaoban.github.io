@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="http://codeforces.com/contest/794/problem/C #Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
+  <meta name="description" content="http://codeforces.com/contest/794/problem/C Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
 <meta name="keywords" content="Codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces 794C - Naming Company">
 <meta property="og:url" content="https://xienaoban.github.io/posts/15668.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="http://codeforces.com/contest/794/problem/C #Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
+<meta property="og:description" content="http://codeforces.com/contest/794/problem/C Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-02T08:17:40.175Z">
+<meta property="og:updated_time" content="2019-07-31T07:25:41.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces 794C - Naming Company">
-<meta name="twitter:description" content="http://codeforces.com/contest/794/problem/C #Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
+<meta name="twitter:description" content="http://codeforces.com/contest/794/problem/C Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company,">
 
 
 
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-02 16:17:40" itemprop="dateModified" datetime="2019-07-02T16:17:40+08:00">2019-07-02</time>
+                <time title="修改时间：2019-07-31 15:25:41" itemprop="dateModified" datetime="2019-07-31T15:25:41+08:00">2019-07-31</time>
               
             
           </span>
@@ -507,7 +507,9 @@
       
 
       
-        <p>http://codeforces.com/contest/794/problem/C #Description Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company, but they are having trouble finding a name for the company.</p>
+        <p>http://codeforces.com/contest/794/problem/C</p>
+<h1 id="description">Description</h1>
+<p>Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company, but they are having trouble finding a name for the company.</p>
 <p>To settle this problem, they've decided to play a game. The company name will consist of n letters. Oleg and Igor each have a set of n letters (which might contain multiple copies of the same letter, the sets can be different). Initially, the company name is denoted by n question marks. Oleg and Igor takes turns to play the game, Oleg moves first. In each turn, a player can choose one of the letters c in his set and replace any of the question marks with c. Then, a copy of the letter c is removed from his set. The game ends when all the question marks has been replaced by some letter.</p>
 <p>For example, suppose Oleg has the set of letters {i, o, i} and Igor has the set of letters {i, m, o}. One possible game is as follows :</p>
 <p>Initially, the company name is ???.</p>
@@ -517,17 +519,24 @@
 <p>In the end, the company name is oio.</p>
 <p>Oleg wants the company name to be as lexicographically small as possible while Igor wants the company name to be as lexicographically large as possible. What will be the company name if Oleg and Igor always play optimally?</p>
 <p>A string <span class="math inline">\(s = s_1s_2...s_m\)</span> is called lexicographically smaller than a string <span class="math inline">\(t = t_1t_2...t_m\)</span> (where <span class="math inline">\(s ≠ t\)</span>) if <span class="math inline">\(si &lt; ti\)</span> where <span class="math inline">\(i\)</span> is the smallest index such that <span class="math inline">\(s_i ≠ t_i\)</span>. (so <span class="math inline">\(s_j = t_j\)</span> for all <span class="math inline">\(j &lt; i\)</span>)</p>
-<p>#Input The first line of input contains a string <span class="math inline">\(s\)</span> of length <span class="math inline">\(n\)</span> (<span class="math inline">\(1 ≤ n ≤ 3·10^5\)</span>). All characters of the string are lowercase English letters. This string denotes the set of letters Oleg has initially.</p>
+<h1 id="input">Input</h1>
+<p>The first line of input contains a string <span class="math inline">\(s\)</span> of length <span class="math inline">\(n\)</span> (<span class="math inline">\(1 ≤ n ≤ 3·10^5\)</span>). All characters of the string are lowercase English letters. This string denotes the set of letters Oleg has initially.</p>
 <p>The second line of input contains a string <span class="math inline">\(t\)</span> of length <span class="math inline">\(n\)</span>. All characters of the string are lowercase English letters. This string denotes the set of letters Igor has initially.</p>
-<p>#Output The output should contain a string of <span class="math inline">\(n\)</span> lowercase English letters, denoting the company name if Oleg and Igor plays optimally.</p>
-<p>#Examples <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span></span><br><span class="line">tinkoff</span><br><span class="line">zscoder</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">fzfsirk</span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span></span><br><span class="line">xxxxxx</span><br><span class="line">xxxxxx</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">xxxxxx</span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span></span><br><span class="line">ioi</span><br><span class="line">imo</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">ioi</span><br></pre></td></tr></table></figure></p>
-<p>#Note One way to play optimally in the first sample is as follows :</p>
+<h1 id="output">Output</h1>
+<p>The output should contain a string of <span class="math inline">\(n\)</span> lowercase English letters, denoting the company name if Oleg and Igor plays optimally.</p>
+<h1 id="examples">Examples</h1>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">input</span></span><br><span class="line">tinkoff</span><br><span class="line">zscoder</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">fzfsirk</span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span></span><br><span class="line">xxxxxx</span><br><span class="line">xxxxxx</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">xxxxxx</span><br><span class="line"></span><br><span class="line"><span class="built_in">input</span></span><br><span class="line">ioi</span><br><span class="line">imo</span><br><span class="line"></span><br><span class="line"><span class="built_in">output</span></span><br><span class="line">ioi</span><br></pre></td></tr></table></figure>
+<h1 id="note">Note</h1>
+<p>One way to play optimally in the first sample is as follows :</p>
 <p>Initially, the company name is ???????. Oleg replaces the first question mark with 'f'. The company name becomes f??????. Igor replaces the second question mark with 'z'. The company name becomes fz?????. Oleg replaces the third question mark with 'f'. The company name becomes fzf????. Igor replaces the fourth question mark with 's'. The company name becomes fzfs???. Oleg replaces the fifth question mark with 'i'. The company name becomes fzfsi??. Igor replaces the sixth question mark with 'r'. The company name becomes fzfsir?. Oleg replaces the seventh question mark with 'k'. The company name becomes fzfsirk. For the second sample, no matter how they play, the company name will always be xxxxxx.</p>
-<p>#Announcement Problem C. Naming Company <span class="math inline">\(*****\)</span> The two players know the letters in both sets.</p>
-<p>#Key <strong>题意：</strong>甲乙两人各持有一个长度均为n的字符串，轮着向一个新的长也为n的字符串里放字符，甲先行。甲每一步都试图让字符串按字典序最小化，乙每一步都试图让字符串按字典序最大化。问最后这新字符串是什么。</p>
+<h1 id="announcement">Announcement</h1>
+<p>Problem C. Naming Company <span class="math inline">\(*****\)</span> The two players know the letters in both sets.</p>
+<h1 id="key">Key</h1>
+<p><strong>题意：</strong>甲乙两人各持有一个长度均为n的字符串，轮着向一个新的长也为n的字符串里放字符，甲先行。甲每一步都试图让字符串按字典序最小化，乙每一步都试图让字符串按字典序最大化。问最后这新字符串是什么。</p>
 <p><strong>思路：</strong>做题做到一半时出题人推送了一个Announcement（如上面所示）：甲乙均知道对面的情况。这是个很重要的提示。 显然的是，先排个序，甲从小到大，乙从大到小。然后两个字符串的后一半肯定是用不上了，砍掉。最后甲字符串长度<span class="math inline">\((len + 1) / 2\)</span>，乙字符串长度<span class="math inline">\((len) / 2\)</span>。 甲乙试图让自己走的每一步最优，那就是贪心无误了。 1.当<span class="math inline">\(甲最小的字符&lt;乙最大的字符\)</span>时，两者均靠左放置最小/大字符。 2.当<span class="math inline">\(甲最小的字符&gt;=乙最大的字符\)</span>时，两者均靠右放置最大/小字符。</p>
 <p>如何找当前最优情况想了很久，一开始想的情况很复杂，如何换个角度思考问题很不容易啊。要注意的是第2种情况的等于号，一开始我放在第1种情况上了（“&lt;=”），这是不对的，找了好久最后才发现竟然错在了一个小小的等于号。“=”号一删，瞬间AC。</p>
-<p>#Code <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s1[maxn], s2[maxn], ans[maxn];</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> &amp;a, <span class="keyword">const</span> <span class="keyword">char</span> &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a &lt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> &amp;a, <span class="keyword">const</span> <span class="keyword">char</span> &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">	len = <span class="built_in">strlen</span>(s1);</span><br><span class="line">	sort(s1, s1 + len, cmp1);</span><br><span class="line">	sort(s2, s2 + len, cmp2);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> *pl[<span class="number">2</span>] = &#123; s1, s2 &#125;;</span><br><span class="line">	<span class="keyword">for</span> (; (i &lt; len) &amp;&amp; (*pl[<span class="number">0</span>] &lt; *pl[<span class="number">1</span>]); ++i) &#123;</span><br><span class="line">		ans[i] = *(pl[i &amp; <span class="number">1</span>]++);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> j = len - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> *pr[<span class="number">2</span>] = &#123; s1 + (len + <span class="number">1</span>) / <span class="number">2</span> - <span class="number">1</span>, s2 + (len) / <span class="number">2</span> - <span class="number">1</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; ++i, --j) &#123;</span><br><span class="line">		ans[j] = *(pr[i &amp; <span class="number">1</span>]--);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ans[len] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="code">Code</h1>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">3e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s1[maxn], s2[maxn], ans[maxn];</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> &amp;a, <span class="keyword">const</span> <span class="keyword">char</span> &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a &lt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> &amp;a, <span class="keyword">const</span> <span class="keyword">char</span> &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">	len = <span class="built_in">strlen</span>(s1);</span><br><span class="line">	sort(s1, s1 + len, cmp1);</span><br><span class="line">	sort(s2, s2 + len, cmp2);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> *pl[<span class="number">2</span>] = &#123; s1, s2 &#125;;</span><br><span class="line">	<span class="keyword">for</span> (; (i &lt; len) &amp;&amp; (*pl[<span class="number">0</span>] &lt; *pl[<span class="number">1</span>]); ++i) &#123;</span><br><span class="line">		ans[i] = *(pl[i &amp; <span class="number">1</span>]++);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> j = len - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> *pr[<span class="number">2</span>] = &#123; s1 + (len + <span class="number">1</span>) / <span class="number">2</span> - <span class="number">1</span>, s2 + (len) / <span class="number">2</span> - <span class="number">1</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (; i &lt; len; ++i, --j) &#123;</span><br><span class="line">		ans[j] = *(pr[i &amp; <span class="number">1</span>]--);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ans[len] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -644,8 +653,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -693,7 +711,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -808,7 +832,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -882,6 +938,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#note"><span class="nav-number">5.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#announcement"><span class="nav-number">6.</span> <span class="nav-text">Announcement</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#key"><span class="nav-number">7.</span> <span class="nav-text">Key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">8.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

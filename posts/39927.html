@@ -107,20 +107,21 @@
 
 
 
-  <meta name="description" content="#Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
+  <meta name="description" content="Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
+<meta name="keywords" content="Codeforces">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round 420(Div. 2) - D. Okabe and City">
 <meta property="og:url" content="https://xienaoban.github.io/posts/39927.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="#Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
+<meta property="og:description" content="Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://codeforces.com/predownloaded/7b/fa/7bfa6afb81a3a341171b4d6ff9c74cc77ee5e932.png">
 <meta property="og:image" content="http://codeforces.com/predownloaded/f0/06/f0069b44dd98505eb3b837a9423d0939c0e929cd.png">
 <meta property="og:image" content="http://codeforces.com/predownloaded/c7/e0/c7e0941eb95208913c1b351808feff9e47375f58.png">
-<meta property="og:updated_time" content="2019-07-16T13:16:04.474Z">
+<meta property="og:updated_time" content="2019-07-31T07:21:54.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces Round 420(Div. 2) - D. Okabe and City">
-<meta name="twitter:description" content="#Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
+<meta name="twitter:description" content="Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn&apos;t get beaten up by schoolchildren. Okabe&apos;s city is represented by a 2D grid of cells. Ro">
 <meta name="twitter:image" content="http://codeforces.com/predownloaded/7b/fa/7bfa6afb81a3a341171b4d6ff9c74cc77ee5e932.png">
 
 
@@ -451,11 +452,36 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 21:16:04" itemprop="dateModified" datetime="2019-07-16T21:16:04+08:00">2019-07-16</time>
+                <time title="修改时间：2019-07-31 15:21:54" itemprop="dateModified" datetime="2019-07-31T15:21:54+08:00">2019-07-31</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/" itemprop="url" rel="index"><span itemprop="name">算法竞赛</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛/Codeforces/" itemprop="url" rel="index"><span itemprop="name">Codeforces</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -485,24 +511,30 @@
       
 
       
-        <p>#Description Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn't get beaten up by schoolchildren.</p>
+        <h1 id="description">Description</h1>
+<p>Okabe likes to be able to walk through his city on a path lit by street lamps. That way, he doesn't get beaten up by schoolchildren.</p>
 <p>Okabe's city is represented by a 2D grid of cells. Rows are numbered from 1 to <em>n</em> from top to bottom, and columns are numbered 1 to <em>m</em>from left to right. Exactly <em>k</em> cells in the city are lit by a street lamp. It's guaranteed that the top-left cell is lit.</p>
 <p>Okabe starts his walk from the top-left cell, and wants to reach the bottom-right cell. Of course, Okabe will only walk on lit cells, and he can only move to adjacent cells in the up, down, left, and right directions. However, Okabe can also temporarily light all the cells in any single row or column at a time if he pays 1 coin, allowing him to walk through some cells not lit initially.</p>
 <p>Note that Okabe can only light a single row or column at a time, and has to pay a coin every time he lights a new row or column. To change the row or column that is temporarily lit, he must stand at a cell that is lit initially. Also, once he removes his temporary light from a row or column, all cells in that row/column not initially lit are now not lit.</p>
 <p>Help Okabe find the minimum number of coins he needs to pay to complete his walk!</p>
-<p>#Input The first line of input contains three space-separated integers <em>n</em>, <em>m</em>, and <em>k</em> (2 ≤ <em>n</em>, <em>m</em>, <em>k</em> ≤ 104).</p>
+<h1 id="input">Input</h1>
+<p>The first line of input contains three space-separated integers <em>n</em>, <em>m</em>, and <em>k</em> (2 ≤ <em>n</em>, <em>m</em>, <em>k</em> ≤ 104).</p>
 <p>Each of the next <em>k</em> lines contains two space-separated integers <em>r</em> <em>i</em> and <em>c</em> <em>i</em> (1 ≤ <em>r</em> <em>i</em> ≤ <em>n</em>, 1 ≤ <em>c</em> <em>i</em> ≤ <em>m</em>) — the row and the column of the <em>i</em>-th lit cell.</p>
 <p>It is guaranteed that all <em>k</em> lit cells are distinct. It is guaranteed that the top-left cell is lit.</p>
-<p>#Output Print the minimum number of coins Okabe needs to pay to complete his walk, or -1 if it's not possible.</p>
-<p>#Examples <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">-1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<p>#Note In the first sample test, Okabe can take the path <img src="http://codeforces.com/predownloaded/7b/fa/7bfa6afb81a3a341171b4d6ff9c74cc77ee5e932.png" alt="img">, paying only when moving to (2, 3) and (4, 4).</p>
+<h1 id="output">Output</h1>
+<p>Print the minimum number of coins Okabe needs to pay to complete his walk, or -1 if it's not possible.</p>
+<h1 id="examples">Examples</h1>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">-1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h1 id="note">Note</h1>
+<p>In the first sample test, Okabe can take the path <img src="http://codeforces.com/predownloaded/7b/fa/7bfa6afb81a3a341171b4d6ff9c74cc77ee5e932.png" alt="img">, paying only when moving to (2, 3) and (4, 4).</p>
 <p>In the fourth sample, Okabe can take the path <img src="http://codeforces.com/predownloaded/f0/06/f0069b44dd98505eb3b837a9423d0939c0e929cd.png" alt="img"> <img src="http://codeforces.com/predownloaded/c7/e0/c7e0941eb95208913c1b351808feff9e47375f58.png" alt="img">, paying when moving to (1, 2), (3, 4), and (5, 4).</p>
-<p>#Key 看了好多题解终于写了出来。。。 题意：<span class="math inline">\(n \times m\)</span>的图中有<span class="math inline">\(k\)</span>个点，若某每个点周围四个方向有点，则可耗费0代价到达，若某点的周围的上下五行（向上两行，向下两行，当前行）、左右五列也有点，则可耗费1代价到达。求从左上角到右下角的最短路径。</p>
+<h1 id="key">Key</h1>
+<p>看了好多题解终于写了出来。。。 题意：<span class="math inline">\(n \times m\)</span>的图中有<span class="math inline">\(k\)</span>个点，若某每个点周围四个方向有点，则可耗费0代价到达，若某点的周围的上下五行（向上两行，向下两行，当前行）、左右五列也有点，则可耗费1代价到达。求从左上角到右下角的最短路径。</p>
 <p>以<span class="math inline">\(k\)</span>个点建图，可以看见由于和周围5行5列的点均有边，边非常多，所以不能直接连边。在运行时枚举所有周围的点即可。本质上就是一张无负权边的图，用Dijkstra跑即可。</p>
 <p>右下角的点<span class="math inline">\((n,m)\)</span>可能不在<span class="math inline">\(k\)</span>个结点里，有点难处理，但思路是赋予它一个结点。一开始我跟着一个题解的思路做，他是把右下角的点赋值一个1。还是挺烦的。后来看到一个高级的：若<span class="math inline">\((n,m)\)</span>不是<span class="math inline">\(k\)</span>点中之一，则<span class="math inline">\(++n\)</span>，<span class="math inline">\(++m\)</span>，再把<span class="math inline">\((n,m)\)</span>加入为<span class="math inline">\(k+1\)</span>个点。很巧妙啊。</p>
 <p>不要试图开二维数组，哪怕是开了个<span class="math inline">\(bool vis[10000][10000]\)</span>，也会在第36个案例MLE。一开始不懂，感觉应该不要紧，因为在本地没什么问题。。。结果为此疯狂WA。</p>
 <p>既然不能开二维数组，就只能给每个点编号了，于是一共开了三个类，越写越乱。。。也想过用哈希，但对此不是很熟练，不敢写。</p>
-<p>#Code</p>
+<h1 id="code">Code</h1>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mset(a, b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> abs(a) ((a)&gt;0?(a):-(a))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = (<span class="keyword">unsigned</span>)<span class="number">1e4</span> + <span class="number">10</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> r, c, d;</span><br><span class="line">	<span class="keyword">bool</span> v;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> Point &amp;p) <span class="keyword">const</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (r == p.r) <span class="keyword">return</span> c &lt; p.c;</span><br><span class="line">		<span class="keyword">return</span> r &lt; p.r;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;P[maxn];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> rc, id;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> d, id;</span><br><span class="line">	QNode(<span class="keyword">int</span> _d, <span class="keyword">int</span> _id) :d(_d), id(_id) &#123;&#125;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> QNode &amp; p) <span class="keyword">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> d &gt; p.d;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> n, m, k;</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt; R[maxn], C[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">	<span class="keyword">bool</span> flg = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</span><br><span class="line">		<span class="keyword">auto</span> &amp;now = P[i];</span><br><span class="line">		now.d = INF; now.v = <span class="literal">false</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; now.r &gt;&gt; now.c;</span><br><span class="line">		<span class="keyword">if</span> (now.r == n&amp;&amp;now.c == m) &#123;</span><br><span class="line">			flg = <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (flg) &#123;</span><br><span class="line">		<span class="keyword">auto</span> &amp;now = P[k];</span><br><span class="line">		now.r = ++n;</span><br><span class="line">		now.c = ++m;</span><br><span class="line">		now.d = INF;</span><br><span class="line">		now.v = <span class="literal">false</span>;</span><br><span class="line">		++k;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(P, P + k);</span><br><span class="line">	Node nod;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</span><br><span class="line">		<span class="keyword">auto</span> &amp;now = P[i];</span><br><span class="line">		nod.id = i;</span><br><span class="line">		nod.rc = now.c;</span><br><span class="line">		R[now.r].push_back(nod);</span><br><span class="line">		nod.rc = now.r;</span><br><span class="line">		C[now.c].push_back(nod);</span><br><span class="line">	&#125;</span><br><span class="line">	priority_queue&lt;QNode&gt; que;</span><br><span class="line">	P[<span class="number">0</span>].d = <span class="number">0</span>;</span><br><span class="line">	que.push(QNode(<span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">	<span class="keyword">while</span> (!que.empty()) &#123;</span><br><span class="line">		<span class="keyword">auto</span> &amp;now = P[que.top().id];</span><br><span class="line">		que.pop();</span><br><span class="line">		<span class="keyword">if</span> (now.v) <span class="keyword">continue</span>;</span><br><span class="line">		now.v = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span> (now.r == n&amp;&amp;now.c == m) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; now.d;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">-2</span>; i &lt;= <span class="number">2</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">int</span> r = now.r + i;</span><br><span class="line">			<span class="keyword">if</span> (r &gt;= <span class="number">1</span> &amp;&amp; r &lt;= n) <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; c : R[r]) &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="built_in">abs</span>(i) == <span class="number">1</span> &amp;&amp; c.rc == now.c) &#123;</span><br><span class="line">					<span class="keyword">if</span> (now.d &lt; P[c.id].d) &#123;</span><br><span class="line">						P[c.id].d = now.d;</span><br><span class="line">						que.push(QNode(P[c.id].d, c.id));</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (now.d + <span class="number">1</span> &lt; P[c.id].d) &#123;</span><br><span class="line">					P[c.id].d = now.d + <span class="number">1</span>;</span><br><span class="line">					que.push(QNode(P[c.id].d, c.id));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">int</span> c = now.c + i;</span><br><span class="line">			<span class="keyword">if</span> (c &gt;= <span class="number">1</span> &amp;&amp; c &lt;= m) <span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; r : C[c]) &#123;</span><br><span class="line">				<span class="keyword">if</span> (<span class="built_in">abs</span>(i) == <span class="number">1</span> &amp;&amp; r.rc == now.r) &#123;</span><br><span class="line">					<span class="keyword">if</span> (now.d &lt; P[r.id].d) &#123;</span><br><span class="line">						P[r.id].d = now.d;</span><br><span class="line">						que.push(QNode(P[r.id].d, r.id));</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (now.d + <span class="number">1</span> &lt; P[r.id].d) &#123;</span><br><span class="line">					P[r.id].d = now.d + <span class="number">1</span>;</span><br><span class="line">					que.push(QNode(P[r.id].d, r.id));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -548,6 +580,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
+          
+        </div>
       
 
       
@@ -614,8 +652,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -663,7 +710,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -778,7 +831,39 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -852,6 +937,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#note"><span class="nav-number">5.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#key"><span class="nav-number">6.</span> <span class="nav-text">Key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

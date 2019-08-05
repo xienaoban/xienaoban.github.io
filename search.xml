@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[各类项目依赖可视化工具]]></title>
+    <url>%2Fposts%2F49962.html</url>
+    <content type="text"><![CDATA[Maven Maven 工具: mvn dependency:tree 在项目目录执行 mvn dependency:tree : https://github.com/che-samples/che-ide-server-extension 项目的子项目 plugins/plugin-serverservice/plugin-serverservice-ide 的依赖如下: 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657[INFO] Scanning for projects...[INFO] [INFO] ----------&lt; org.eclipse.che.sample:plugin-serverservice-ide &gt;-----------[INFO] Building Plugin ServerService :: Plugin :: IDE 6.16.0[INFO] ------------------------------[ gwt-lib ]-------------------------------[INFO] [INFO] --- maven-dependency-plugin:3.0.1:tree (default-cli) @ plugin-serverservice-ide ---[INFO] org.eclipse.che.sample:plugin-serverservice-ide:gwt-lib:6.16.0[INFO] +- com.google.inject:guice:jar:4.2.2:compile[INFO] | \- aopalliance:aopalliance:jar:1.0:compile[INFO] +- javax.inject:javax.inject:jar:1:compile[INFO] +- org.eclipse.che.core:che-core-commons-gwt:jar:6.16.0:compile[INFO] | +- com.google.code.findbugs:jsr305:jar:3.0.1:compile... ...[INFO] | +- org.eclipse.che.core:che-core-api-core:jar:6.16.0:compile[INFO] | | +- com.google.code.gson:gson:jar:2.8.5:compile[INFO] | | +- javax.annotation:javax.annotation-api:jar:1.2:compile[INFO] | | +- javax.ws.rs:javax.ws.rs-api:jar:2.0:compile[INFO] | | +- net.java.dev.jna:jna:jar:4.1.0:compile[INFO] | | +- org.eclipse.che.core:che-core-commons-json:jar:6.16.0:compile[INFO] | | +- org.eclipse.che.core:che-core-commons-lang:jar:6.16.0:compile[INFO] | | | \- org.apache.commons:commons-compress:jar:1.18:compile[INFO] | | +- org.eclipse.che.core:che-core-commons-schedule:jar:6.16.0:compile[INFO] | | | \- org.eclipse.che.core:che-core-commons-inject:jar:6.16.0:compile[INFO] | | | +- com.google.inject.extensions:guice-servlet:jar:4.2.2:compile[INFO] | | | \- org.everrest:everrest-integration-guice:jar:1.13.5:compile[INFO] | | +- org.everrest:everrest-core:jar:1.13.5:compile[INFO] | | | +- commons-fileupload:commons-fileupload:jar:1.3.3:compile[INFO] | | | +- javax.mail:mail:jar:1.4.4:compile[INFO] | | | \- commons-io:commons-io:jar:2.6:compile[INFO] | | \- org.slf4j:slf4j-api:jar:1.7.24:compile[INFO] | +- org.eclipse.che.core:che-core-commons-annotations:jar:6.16.0:compile[INFO] | +- org.vectomatic:lib-gwt-svg:jar:0.5.12:compile[INFO] | \- org.webjars:requirejs:jar:2.1.15:runtime[INFO] +- org.eclipse.che.core:che-core-ide-api:jar:6.16.0:compile[INFO] | +- com.google.inject.extensions:guice-assistedinject:jar:4.2.2:compile[INFO] | +- javax.validation:validation-api:jar:1.1.0.Final:compile[INFO] | +- org.eclipse.che:che-exec-agent-shared:jar:6.16.0:compile... ...[INFO] | +- org.eclipse.che.core:che-core-api-user-shared:jar:sources:6.16.0:compile[INFO] | +- org.eclipse.che.core:che-core-api-workspace-shared:jar:6.16.0:compile[INFO] | \- org.eclipse.che.core:che-core-api-workspace-shared:jar:sources:6.16.0:compile[INFO] \- com.google.gwt:gwt-user:jar:2.8.2:provided[INFO] +- com.google.jsinterop:jsinterop-annotations:jar:1.0.2:provided[INFO] +- com.google.jsinterop:jsinterop-annotations:jar:sources:1.0.2:provided[INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:provided[INFO] \- org.w3c.css:sac:jar:1.3:provided[INFO] ------------------------------------------------------------------------[INFO] BUILD SUCCESS[INFO] ------------------------------------------------------------------------[INFO] Total time: 2.313 s[INFO] Finished at: 2019-08-01T10:40:52+08:00[INFO] ------------------------------------------------------------------------ Eclipse 可视化界面 打开 pom.xml, Eclipse 提供多个视图, 点击下面的 Dependency Hierarchy 视图: Maven-Eclipse1.png 点击左栏中的包时会在右栏高亮对应包, 在右栏点击包会在左栏高亮所有依赖与该包的包. Maven-Eclipse2.gif Apache Maven Dependency Plugin 在项目的 pom.xml 下添加如下 plugin: 123456789&lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt; &lt;version&gt;2.2&lt;/version&gt; &lt;/plugin&gt; &lt;/plugins&gt;&lt;/build&gt; 然后 1mvn dependency:tree -DoutputType=graphml -DoutputFile=dependency.graphml 目录下生成 dependency.graphml . 然后下载 yEd , 或者使用 yEd 的在线版本 以生成查看导出依赖图. 同样是 plugin-serverservice-ide 的依赖↓: yEd-Dependency.png C / C++ GCC 工具: gcc -M &lt;file&gt;.cpp 对于 C++ 文件: 1234#include &lt;iostream&gt;#include "lib1.h"... ... gcc -M &lt;file&gt;.cpp : 显示该文件的所有依赖. 123456789101112main.o: main.cpp /usr/include/stdc-predef.h /usr/include/c++/5/iostream \ /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \ /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \ /usr/include/x86_64-linux-gnu/bits/wordsize.h \... ... /usr/include/c++/5/bits/locale_facets.tcc \ /usr/include/c++/5/bits/basic_ios.tcc \ /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \ /usr/include/c++/5/bits/istream.tcc lib1.h gcc -MM &lt;file&gt;.cpp : 显示该文件的所有依赖 (不包括系统依赖的头文件). 1main.o: main.cpp lib1.h CMake: Graphviz 需要 Graphviz 工具: sudo apt-get install graphviz . 1234# 当前在项目 (CMakeLists.txt) 目录cd build/cmake .. --graphviz=&lt;graph&gt;.dotdot &lt;graph&gt;.dot -T png -o &lt;figure&gt;.png 项目 CMake 本身的依赖图: CMake-Dependency.png 项目 OpenCV 的依赖图: dot 布局: OpenCV-Dependency-dot.png circo 布局: OpenCV-Dependency-circo.png]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Tomcat9安装使用]]></title>
     <url>%2Fposts%2F6286.html</url>
     <content type="text"><![CDATA[安装 (Ubuntu) 传统的方法 Tomcat官网下载地址 解压到 /usr/local/bin , 重命名为 tomcat9 . cd进去. 1cd /usr/local/bin/tomcat9 网上有教程说要编辑 bin/catalina.sh, 结果我打开该文件一看: 1234...# Do not set the variables in this script. Instead put them into a script# setenv.sh in CATALINA_BASE/bin to keep your customizations separate.... 人家明确要求不要改本文件... 那么根据 bin/catalina.sh 下的说法, 要新建一个 setenv.sh : 1code bin/setenv.sh 添加如下变量 (可添加的变量在 bin/catalina.sh 开头的注释里都写明了, 以下三个是必须写的) : 123export JAVA_HOME=/usr/lib/jdk/jdk1.8.0_161export JRE_HOME=$JAVA_HOME/jreexport CATALINA_HOME=/usr/local/bin/tomcat9 然后往 /etc/profile 里添加个 Tomcat 的环境变量: 1export CATALINA_HOME=/usr/local/bin/tomcat9 然后 sudo ./bin/startup.sh : 123456Using CATALINA_BASE: /usr/local/bin/tomcat9Using CATALINA_HOME: /usr/local/bin/tomcat9Using CATALINA_TMPDIR: /usr/local/bin/tomcat9/tempUsing JRE_HOME: /usr/lib/jdk/jdk1.8.0_161/jreUsing CLASSPATH: /usr/local/bin/tomcat9/bin/bootstrap.jar:/usr/local/bin/tomcat9/bin/tomcat-juli.jarTomcat started. 打开 http://localhost:8080/ 就有了. 然后 sudo ./bin/shutdown.sh 一下就关了. Docker 大法 1sudo docker pull tomcat Tomcat 镜像就下载完了. 1sudo docker run -d -p 8080:8080 --name tomcat tomcat Tomcat 容器就跑起来了.]]></content>
@@ -243,8 +248,8 @@
         <tag>Deep Learning</tag>
         <tag>Machine Learning</tag>
         <tag>Coursera</tag>
-        <tag>Gradient Descent</tag>
         <tag>Regularization</tag>
+        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -668,8 +673,8 @@
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>排序</tag>
         <tag>笔记</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -692,8 +697,8 @@
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>组合数</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>

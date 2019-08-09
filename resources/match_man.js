@@ -1,7 +1,12 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+// 作者:        蟹恼板                                                                      //
+// 日期:        2019-08-09                                                                  //
+// GayHub:      https://github.com/XieNaoban                                                //
+// Demo 链接:   https://xienaoban.github.io/resources/DEMO_%E7%81%AB%E6%9F%B4%E4%BA%BA.html //
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 var BACKGROUND_COLOR = "rgba(244,244,244,1)";   // 背景色
-var POINT_NUM = 99;                             // 屏幕上点的数目
 var FOREGROUND_COLOR = "rgba(16,16,16,1)";      // 点的颜色
-var LINE_LENGTH = 6400;                         // 点之间连线长度(的平方)
 var GRAVITY = 5000;
 
 // init
@@ -26,7 +31,11 @@ function drawBackground() {
     ctx.fillRect(0, 0, cvs.width, cvs.height);
 }
 
-//随机数函数
+function debugInfo(str) {
+    document.getElementById("debug").innerHTML = str;
+}
+
+
 function randomInt(min, max) {
     return Math.floor((max - min + 1) * Math.random() + min);
 }
@@ -148,7 +157,6 @@ Gun.prototype.set = function (_x, _y, _dx, _dy) {
     this.y = _y;
 
     var dis = Math.sqrt(_dx*_dx + _dy*_dy);
-    //document.getElementById("debug").innerHTML = Math.floor(_dx) + "\t" + Math.floor(_dy) + "\t" + Math.floor(dis);
     var gunLength = 4;
     this.dx = _dx * gunLength / dis;
     this.dy = _dy * gunLength / dis;
@@ -187,7 +195,6 @@ Bullet.prototype.move = function (lag) {
 } 
 Bullet.prototype.draw = function () {
     this.head.drawLineTo(this.tail);
-    //document.getElementById("debug").innerHTML = Math.floor(this.x) + "\t" + Math.floor(this.y);
 } 
 
 
@@ -266,7 +273,7 @@ Person.prototype.move = function (lag) {
         if (this.ph.y < window.innerHeight - 38) {
             var walkSpeed = 400;
             var step = 30;
-            //this.pc.vx = this.walkx * walkSpeed * 0.6;
+            // Author: XieNaoban | this.pc.vx = this.walkx * walkSpeed * 0.6;
             this.pn.vx = this.walkx * walkSpeed * 0.6;
             if (this.foot) {
                 this.prk.vx = this.walkx * walkSpeed;
@@ -274,7 +281,7 @@ Person.prototype.move = function (lag) {
 
                 this.plk.vx = this.walkx * walkSpeed * 0.2;
                 this.plf.x = oldlfx;
-                if ((this.prf.x - this.plf.x) * this.walkx > step) this.foot = false;
+                if (Math.abs(this.prf.x - this.plf.x) > step) this.foot = false;
             }
             else {
                 this.plk.vx = this.walkx * walkSpeed;
@@ -282,7 +289,7 @@ Person.prototype.move = function (lag) {
 
                 this.prk.vx = this.walkx * walkSpeed * 0.2;
                 this.prf.x = oldrfx;
-                if ((this.plf.x - this.prf.x) * this.walkx > step) this.foot = true;
+                if (Math.abs(this.plf.x - this.prf.x) > step) this.foot = true;
             }
         }
         else {
@@ -311,8 +318,9 @@ Person.prototype.move = function (lag) {
     this.gun.set(this.prh.x, this.prh.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y);
 }
 Person.prototype.aim = function (x, y, degree) {
-    var dx = x - player.prh.x;
-    var dy = y - player.prh.y;
+    if (x == undefined || y == undefined) return;
+    var dx = x - this.prh.x;
+    var dy = y - this.prh.y;
     var dis = Math.sqrt(dx * dx + dy * dy);
     this.prh.vx = dx / dis * 100 * degree;
     this.prh.vy = dy / dis * 100 * degree;
@@ -321,25 +329,31 @@ Person.prototype.shoot = function (list) {
     list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y))
 }
 
+
+
 var player = new Person();
+var npcs = [];
+npcs.push(new Person());
 var bullets = []
 var isMouseDown = false;
+var mouseX, mouseY;
 var shootCnt = 0;
 var shootMaxCnt = 15;
+function buttonNPCNumberClick() {
+    var npc_num = document.getElementById("npc_number").value;
+    npcs = [];
+    for (var i = 0; i < npc_num; ++i) npcs.push(new Person());
+}
 function buttonBulletIntervalClick() {
     shootMaxCnt = document.getElementById("bullet_interval").value;
-    document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
+    // Author: XieNaoban | document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
 }
 document.onmousemove = function (event) {
-    player.aim(event.clientX, event.clientY, 1);
-    if (isMouseDown && shootCnt >= shootMaxCnt) {
-        player.aim(event.clientX, event.clientY, 20);
-    }
+    mouseX = event.clientX, mouseY = event.clientY;
 }
 document.onmousedown = function (event) {
     isMouseDown = true;
-    //player.aim(event.clientX, event.clientY, 20);
-    //player.shoot(bullets);
+    shootCnt = shootMaxCnt;
 }
 document.onmouseup = function (event) {
     isMouseDown = false;
@@ -371,16 +385,37 @@ function drawFrame() {
         player.draw();
 
         var tmpList = [];
-        for(var i = 0; i<bullets.length; ++i) {
+        for(var i = 0; i < bullets.length; ++i) {
             bullets[i].move(lag);
             bullets[i].draw();
             if (!bullets[i].tail.isOutOfWindow()) tmpList.push(bullets[i]);
+            for (var j = 0; j < npcs.length; ++j) {
+                for (var k = 0; k < npcs[j].pArray.length; ++k) {
+                    if (npcs[j].pArray[k].distance2To(bullets[i].head) < 128) {
+                        npcs[j].pArray[k].vx = bullets[i].dx;
+                        npcs[j].pArray[k].vy = bullets[i].dy;
+                    }
+                }
+            }
         }
+
+        for (var j = 0; j < npcs.length; ++j) {
+            if (npcs[j].ph.y < window.innerHeight - 38) {
+                npcs[j].walkx = numberSign(player.pc.x - npcs[j].pc.x) * 0.1;
+            }
+            else npcs[j].walkx = 0;
+            // Author: XieNaoban | npcs[j].walky = 1;
+            npcs[j].move(lag);
+            npcs[j].draw();
+        }
+
         bullets = tmpList;
         if (isMouseDown && shootCnt++ >= shootMaxCnt) {
             shootCnt = 0;
             player.shoot(bullets);
+            player.aim(mouseX, mouseY - 400, 20);
         }
+        else player.aim(mouseX, mouseY, 4);
     }
     window.requestAnimationFrame(drawFrame);
 }

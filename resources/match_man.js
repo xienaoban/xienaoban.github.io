@@ -129,6 +129,9 @@ Point.prototype.correctDistanceTo = function (point, realDistance) {
     this.x = point.x + cos * realDistance;
     this.y = point.y + sin * realDistance;
 }
+Point.prototype.isOutOfWindow = function () {
+    return this.x < 0 || this.y < 0 || this.x > window.innerWidth || this.y > window.innerHeight;
+}
 
 
 function Gun(_x, _y) {
@@ -165,6 +168,27 @@ Gun.prototype.draw = function () {
     this.p0.drawLineTo(this.p1);
     this.p1.drawLineTo(this.p2);
 }
+
+function Bullet(_x, _y, _dx, _dy) {
+    this.x = _x;
+    this.y = _y;
+    var dis = Math.sqrt(_dx*_dx + _dy*_dy);
+    this.dx = _dx/dis*600;
+    this.dy = _dy/dis*600;
+
+    this.head = new Point(this.x, this.y);
+    this.tail = new Point(this.x - this.dx/100, this.y - this.dy/100);
+}
+Bullet.prototype.move = function (lag) {
+    this.x += this.dx * lag;
+    this.y += this.dy * lag;
+    this.head.setXY(this.x, this.y);
+    this.tail.setXY(this.x - this.dx/100, this.y - this.dy/100);
+} 
+Bullet.prototype.draw = function () {
+    this.head.drawLineTo(this.tail);
+    //document.getElementById("debug").innerHTML = Math.floor(this.x) + "\t" + Math.floor(this.y);
+} 
 
 
 function Person() {
@@ -286,22 +310,39 @@ Person.prototype.move = function (lag) {
 
     this.gun.set(this.prh.x, this.prh.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y);
 }
-Person.prototype.aim = function (x, y) {
-    this.prh.vx = (x - player.prh.x);
-    this.prh.vy = (y - player.prh.y);
+Person.prototype.aim = function (x, y, degree) {
+    var dx = x - player.prh.x;
+    var dy = y - player.prh.y;
+    var dis = Math.sqrt(dx * dx + dy * dy);
+    this.prh.vx = dx / dis * 100 * degree;
+    this.prh.vy = dy / dis * 100 * degree;
+}
+Person.prototype.shoot = function (list) {
+    list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y))
 }
 
-player = new Person();
+var player = new Person();
+var bullets = []
+var isMouseDown = false;
+var shootCnt = 0;
+var shootMaxCnt = 15;
+function buttonBulletIntervalClick() {
+    shootMaxCnt = document.getElementById("bullet_interval").value;
+    document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
+}
 document.onmousemove = function (event) {
-    player.aim(event.clientX, event.clientY);
+    player.aim(event.clientX, event.clientY, 1);
+    if (isMouseDown && shootCnt >= shootMaxCnt) {
+        player.aim(event.clientX, event.clientY, 20);
+    }
 }
 document.onmousedown = function (event) {
-    player.aim(event.clientX, event.clientY);
-    //player.walkx = 1;
+    isMouseDown = true;
+    //player.aim(event.clientX, event.clientY, 20);
+    //player.shoot(bullets);
 }
 document.onmouseup = function (event) {
-    //player.walkx = 0;
-    //player.pn.vy = -700;
+    isMouseDown = false;
 }
 document.onkeydown = function (event) {
     switch (event.keyCode) {
@@ -327,7 +368,19 @@ function drawFrame() {
     if (lag < 0.02) {
         drawBackground();
         player.move(lag);
-        player.draw();        
+        player.draw();
+
+        var tmpList = [];
+        for(var i = 0; i<bullets.length; ++i) {
+            bullets[i].move(lag);
+            bullets[i].draw();
+            if (!bullets[i].tail.isOutOfWindow()) tmpList.push(bullets[i]);
+        }
+        bullets = tmpList;
+        if (isMouseDown && shootCnt++ >= shootMaxCnt) {
+            shootCnt = 0;
+            player.shoot(bullets);
+        }
     }
     window.requestAnimationFrame(drawFrame);
 }

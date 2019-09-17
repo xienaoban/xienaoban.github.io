@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8000 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
+  <meta name="description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8080 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
 <meta name="keywords" content="快乐背指令,linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用指令">
 <meta property="og:url" content="https://xienaoban.github.io/posts/21894.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8000 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
+<meta property="og:description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8080 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T08:15:19.022Z">
+<meta property="og:updated_time" content="2019-09-03T11:39:00.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用指令">
-<meta name="twitter:description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8000 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
+<meta name="twitter:description" content="12tar -zxvf &amp;lt;name&amp;gt;.tar.gz         # 解压tar -zcvf &amp;lt;name&amp;gt;.tar.gz &amp;lt;dir&amp;gt;   # 压缩 dir 下文件 查看端口占用 12lsof -i:8080netstat -tunlp | grep 8080 杀进程 1kill -9 &amp;lt;pid&amp;gt; Chrome 开机第一次启动后总是需要输入">
 
 
 
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-24 16:15:19" itemprop="dateModified" datetime="2019-07-24T16:15:19+08:00">2019-07-24</time>
+                <time title="修改时间：2019-09-03 19:39:00" itemprop="dateModified" datetime="2019-09-03T19:39:00+08:00">2019-09-03</time>
               
             
           </span>
@@ -519,11 +519,16 @@
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf &lt;name&gt;.tar.gz         <span class="comment"># 解压</span></span><br><span class="line">tar -zcvf &lt;name&gt;.tar.gz &lt;dir&gt;   <span class="comment"># 压缩 dir 下文件</span></span><br></pre></td></tr></table></figure>
 <h1 id="查看端口占用">查看端口占用</h1>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080</span><br><span class="line">netstat -tunlp | grep 8000</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:8080</span><br><span class="line">netstat -tunlp | grep 8080</span><br></pre></td></tr></table></figure>
 <h1 id="杀进程">杀进程</h1>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 &lt;pid&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="chrome-开机第一次启动后总是需要输入密码-登陆密钥环">Chrome 开机第一次启动后总是需要输入密码 (登陆密钥环)</h1>
 <p>打开 <code>seahorse</code>, 左侧第一行有个 &quot;<code>login</code>&quot; (或 &quot;<code>登陆</code>&quot;), 右键更改密码, 改为空的.</p>
+<h1 id="磁盘-装系统相关">磁盘, 装系统相关</h1>
+<h2 id="删除-bios-中-boot-manger-多余的启动项">删除 BIOS 中 Boot Manger 多余的启动项</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo efibootmgr             <span class="comment"># 查看</span></span><br><span class="line">sudo efibootmgr -b 000C -B  <span class="comment"># 删除名为 000C 的启动项</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看磁盘-分区信息">查看磁盘, 分区信息</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk -l</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -669,7 +674,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-count">121</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -851,7 +856,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -936,7 +943,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看端口占用"><span class="nav-number">1.</span> <span class="nav-text">查看端口占用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杀进程"><span class="nav-number">2.</span> <span class="nav-text">杀进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chrome-开机第一次启动后总是需要输入密码-登陆密钥环"><span class="nav-number">3.</span> <span class="nav-text">Chrome 开机第一次启动后总是需要输入密码 (登陆密钥环)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看端口占用"><span class="nav-number">1.</span> <span class="nav-text">查看端口占用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杀进程"><span class="nav-number">2.</span> <span class="nav-text">杀进程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chrome-开机第一次启动后总是需要输入密码-登陆密钥环"><span class="nav-number">3.</span> <span class="nav-text">Chrome 开机第一次启动后总是需要输入密码 (登陆密钥环)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘-装系统相关"><span class="nav-number">4.</span> <span class="nav-text">磁盘, 装系统相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#删除-bios-中-boot-manger-多余的启动项"><span class="nav-number">4.1.</span> <span class="nav-text">删除 BIOS 中 Boot Manger 多余的启动项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看磁盘-分区信息"><span class="nav-number">4.2.</span> <span class="nav-text">查看磁盘, 分区信息</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\b">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-16T12:10:08.910Z">
+<meta property="og:updated_time" content="2019-08-03T08:24:30.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda安装使用">
 <meta name="twitter:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\b">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-16 20:10:08" itemprop="dateModified" datetime="2019-07-16T20:10:08+08:00">2019-07-16</time>
+                <time title="修改时间：2019-08-03 16:24:30" itemprop="dateModified" datetime="2019-08-03T16:24:30+08:00">2019-08-03</time>
               
             
           </span>
@@ -525,7 +525,7 @@
 </ol>
 <p>安装时会自动安装依赖包, 强无敌.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">conda search numpy*                         <span class="comment"># 搜索 "numpy" 打头的包</span></span><br><span class="line">conda install numpy                         <span class="comment"># 安装 numpy 在当前环境</span></span><br><span class="line">conda install -n py37 numpy                 <span class="comment"># "-n py37" 以指定环境</span></span><br><span class="line">conda install -n py37 numpy=1.10            <span class="comment"># 指定 numpy 安装版本</span></span><br><span class="line">conda install -n py37 numpy scipy pandas    <span class="comment"># 支持同时安装多个包</span></span><br><span class="line">conda update -n py37 numpy                  <span class="comment"># 更新包</span></span><br><span class="line">conda remove -n py37 numpy                  <span class="comment"># 删除包</span></span><br><span class="line">conda list -n py37                          <span class="comment"># 查看安装的包</span></span><br></pre></td></tr></table></figure>
-<h1 id="乱七八糟的问题">乱七八糟的问题</h1>
+<h1 id="踩坑">踩坑</h1>
 <h2 id="git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda.">Git Bash (Windows) 输入 <code>source activate py37</code> 时报错: CommandNotFoundError: No command 'conda conda'.</h2>
 <p>原因是版本太高. 我的是 <code>4.6.11</code>. 搞个低版本即可.</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install conda=<span class="number">4.6</span><span class="number">.8</span></span><br></pre></td></tr></table></figure>
@@ -686,7 +686,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-count">121</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -868,7 +868,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -953,7 +955,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择镜像"><span class="nav-number">2.</span> <span class="nav-text">选择镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">3.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乱七八糟的问题"><span class="nav-number">4.</span> <span class="nav-text">乱七八糟的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda."><span class="nav-number">4.1.</span> <span class="nav-text">Git Bash (Windows) 输入 source activate py37 时报错: CommandNotFoundError: No command &#39;conda conda&#39;.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-powershell-cmd-git-bash-均使用-conda-activate-指令"><span class="nav-number">4.2.</span> <span class="nav-text">在 PowerShell / CMD / Git Bash 均使用 conda activate 指令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择镜像"><span class="nav-number">2.</span> <span class="nav-text">选择镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">3.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">4.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda."><span class="nav-number">4.1.</span> <span class="nav-text">Git Bash (Windows) 输入 source activate py37 时报错: CommandNotFoundError: No command &#39;conda conda&#39;.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-powershell-cmd-git-bash-均使用-conda-activate-指令"><span class="nav-number">4.2.</span> <span class="nav-text">在 PowerShell / CMD / Git Bash 均使用 conda activate 指令</span></a></li></ol></li></ol></div>
             
 
           </div>

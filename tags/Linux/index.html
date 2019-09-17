@@ -497,7 +497,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-count">121</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -679,7 +679,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                    <span class="site-state-item-count">65</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1321,7 +1323,18 @@
 
 </body>
 </html>
-= position + word.length;
+         function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
 
                       // move to next position of hit
 

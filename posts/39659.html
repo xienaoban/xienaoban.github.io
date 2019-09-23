@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\b">
+  <meta name="description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘. 全局安装不要装C盘, 以后会各种需要权限) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\A">
 <meta name="keywords" content="Anaconda,Windows,日常配环境,快乐背指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Anaconda安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/39659.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\b">
+<meta property="og:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘. 全局安装不要装C盘, 以后会各种需要权限) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\A">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-03T08:24:30.338Z">
+<meta property="og:updated_time" content="2019-09-23T14:05:38.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda安装使用">
-<meta name="twitter:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\Anaconda3\Library\usr\b">
+<meta name="twitter:description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘. 全局安装不要装C盘, 以后会各种需要权限) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\A">
 
 
 
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-03 16:24:30" itemprop="dateModified" datetime="2019-08-03T16:24:30+08:00">2019-08-03</time>
+                <time title="修改时间：2019-09-23 22:05:38" itemprop="dateModified" datetime="2019-09-23T22:05:38+08:00">2019-09-23</time>
               
             
           </span>
@@ -503,7 +503,7 @@
 <p>操作系统: Windows 10</p>
 </blockquote>
 <h1 id="安装">安装</h1>
-<p>我选的全局安装 (装在了D盘) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &quot;系统变量&quot; 添加Path:</p>
+<p>我选的全局安装 (装在了D盘. 全局安装不要装C盘, 以后会各种需要权限) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &quot;系统变量&quot; 添加Path:</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D:\<span class="title">Anaconda3</span></span></span><br><span class="line"><span class="function"><span class="title">D</span>:\<span class="title">Anaconda3</span>\<span class="title">Library</span>\<span class="title">mingw</span>-<span class="title">w64</span>\<span class="title">bin</span></span></span><br><span class="line"><span class="function"><span class="title">D</span>:\<span class="title">Anaconda3</span>\<span class="title">Library</span>\<span class="title">usr</span>\<span class="title">bin</span></span></span><br><span class="line"><span class="function"><span class="title">D</span>:\<span class="title">Anaconda3</span>\<span class="title">Library</span>\<span class="title">bin</span></span></span><br><span class="line"><span class="function"><span class="title">D</span>:\<span class="title">Anaconda3</span>\<span class="title">Scripts</span></span></span><br></pre></td></tr></table></figure>
 <p>下次重装系统了把 Path 添加回去兴许还能用.</p>
 <h1 id="选择镜像">选择镜像</h1>
@@ -537,6 +537,8 @@
 <p>不过需要事先初始化一下. 在 Git Bash, PowerShell 分别输入一次</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda init</span><br></pre></td></tr></table></figure>
 <p>然后重启该终端, 就能使用 <code>conda activate</code> 或 <code>source activate</code> 了.</p>
+<h2 id="每次打开-terminal-都会自动进入-base-环境">每次打开 Terminal 都会自动进入 base 环境</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -723,7 +725,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -870,7 +876,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">65</span>
+                      
+                    
+                    <span class="site-state-item-count">66</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -955,7 +963,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择镜像"><span class="nav-number">2.</span> <span class="nav-text">选择镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">3.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">4.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda."><span class="nav-number">4.1.</span> <span class="nav-text">Git Bash (Windows) 输入 source activate py37 时报错: CommandNotFoundError: No command &#39;conda conda&#39;.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-powershell-cmd-git-bash-均使用-conda-activate-指令"><span class="nav-number">4.2.</span> <span class="nav-text">在 PowerShell / CMD / Git Bash 均使用 conda activate 指令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择镜像"><span class="nav-number">2.</span> <span class="nav-text">选择镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境搭建"><span class="nav-number">3.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">4.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda."><span class="nav-number">4.1.</span> <span class="nav-text">Git Bash (Windows) 输入 source activate py37 时报错: CommandNotFoundError: No command &#39;conda conda&#39;.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-powershell-cmd-git-bash-均使用-conda-activate-指令"><span class="nav-number">4.2.</span> <span class="nav-text">在 PowerShell / CMD / Git Bash 均使用 conda activate 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#每次打开-terminal-都会自动进入-base-环境"><span class="nav-number">4.3.</span> <span class="nav-text">每次打开 Terminal 都会自动进入 base 环境</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/2.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/3.png">
-<meta property="og:updated_time" content="2019-07-30T11:05:38.187Z">
+<meta property="og:updated_time" content="2019-09-23T14:09:11.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git安装使用">
 <meta name="twitter:description" content="指令 Git Bash 使用 ssh 登陆 配置 Git Bash: 12345git config --global user.name &amp;lt;name&amp;gt;git config --global user.email &amp;lt;email&amp;gt;# 如果开了 Github 的 `Keep my email addresses private` 功能,# 设置 email 时 要填 Gi">
@@ -469,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-30 19:05:38" itemprop="dateModified" datetime="2019-07-30T19:05:38+08:00">2019-07-30</time>
+                <time title="修改时间：2019-09-23 22:09:11" itemprop="dateModified" datetime="2019-09-23T22:09:11+08:00">2019-09-23</time>
               
             
           </span>
@@ -514,6 +514,8 @@
 <p>然后登陆 Github, 复制公钥:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>登陆后 <code>https://github.com/settings/keys</code> -&gt; <code>New SSH Key</code>, 'Title' 随意, 在 'Key' 粘贴.</p>
+<p>然后测试一下连接 (初次使用以下指令会多一段对话(如下), 输入 &quot;yes&quot;):</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity <span class="keyword">of</span> host <span class="symbol">'github</span>.com (<span class="number">13.250</span>.<span class="number">177.223</span>)' can<span class="symbol">'t</span> be established.</span><br><span class="line">RSA key fingerprint <span class="keyword">is</span> SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</span><br><span class="line">Are you sure you want <span class="keyword">to</span> continue connecting (yes/no/[fingerprint])? yes</span><br><span class="line"><span class="literal">Warning</span>: Permanently added <span class="symbol">'github</span>.com,<span class="number">13.250</span>.<span class="number">177.223</span>' (RSA) <span class="keyword">to</span> the list <span class="keyword">of</span> known hosts.</span><br><span class="line">Hi XieNaoban! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
 <h2 id="提交三部曲">提交三部曲</h2>
 <p>直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取当前时间作为 "提交说明"</span></span><br><span class="line"><span class="built_in">readonly</span> date=$(date +%Y-%m-%d\ %H:%M:%S)</span><br><span class="line"></span><br><span class="line">git add .               <span class="comment"># 添加当前目录所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">"<span class="variable">$&#123;date&#125;</span>"</span> <span class="comment"># 提交到本地仓库, 以时间作为 "提交说明"</span></span><br><span class="line">git push origin master  <span class="comment"># origin 表示远程主机, master 为分支名称</span></span><br></pre></td></tr></table></figure>
@@ -752,7 +754,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -899,7 +905,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">65</span>
+                      
+                    
+                    <span class="site-state-item-count">66</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

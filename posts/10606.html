@@ -60,16 +60,16 @@
 <link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg?v=7.1.0" color="#222">
 
 
 
@@ -115,14 +115,15 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="指令 Git Bash 使用 ssh 登陆 配置 Git Bash: 12345git config --global user.name &amp;lt;name&amp;gt;git config --global user.email &amp;lt;email&amp;gt;# 如果开了 Github 的 `Keep my email addresses private` 功能,# 设置 email 时 要填 Gi">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xienaoban.github.io/posts/10606/3.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/10606/4.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/2.png">
-<meta property="og:image" content="https://xienaoban.github.io/posts/10606/3.png">
-<meta property="og:updated_time" content="2019-09-23T14:09:11.562Z">
+<meta property="og:updated_time" content="2019-12-04T16:26:24.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git安装使用">
 <meta name="twitter:description" content="指令 Git Bash 使用 ssh 登陆 配置 Git Bash: 12345git config --global user.name &amp;lt;name&amp;gt;git config --global user.email &amp;lt;email&amp;gt;# 如果开了 Github 的 `Keep my email addresses private` 功能,# 设置 email 时 要填 Gi">
-<meta name="twitter:image" content="https://xienaoban.github.io/posts/10606/1.png">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/10606/3.png">
 
 
 
@@ -469,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-23 22:09:11" itemprop="dateModified" datetime="2019-09-23T22:09:11+08:00">2019-09-23</time>
+                <time title="修改时间：2019-12-05 00:26:24" itemprop="dateModified" datetime="2019-12-05T00:26:24+08:00">2019-12-05</time>
               
             
           </span>
@@ -523,11 +524,23 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git branch                  <span class="comment"># 查看分支</span></span><br><span class="line"></span><br><span class="line">git branch &lt;branch&gt;         <span class="comment"># 创建分支</span></span><br><span class="line">git checkout &lt;branch&gt;       <span class="comment"># 切换分支</span></span><br><span class="line"></span><br><span class="line">git checkout -b &lt;branch&gt;    <span class="comment"># 创建并切换分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到远程分支: 远程还没有该分支</span></span><br><span class="line">git push origin &lt;local_branch&gt;:&lt;remote_branch&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="找不同">找不同</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status      <span class="comment"># 找出不同的文件、文件夹</span></span><br><span class="line">git status -s   <span class="comment"># 找不同, 显示很精简规整, 就很舒服</span></span><br><span class="line">git diff        <span class="comment"># 找出不同的每一行</span></span><br></pre></td></tr></table></figure>
+<h2 id="分支合并">分支合并</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch_1&gt;     <span class="comment"># 转到分支1</span></span><br><span class="line">git merge &lt;branch_2&gt;        <span class="comment"># 合并分支2</span></span><br><span class="line">git push origin &lt;branch_1&gt;  <span class="comment"># 推送到远程分支</span></span><br></pre></td></tr></table></figure>
+<h2 id="从远程更新到本地">从远程更新到本地</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;host&gt; &lt;remote_branch&gt;:&lt;local_branch&gt;</span><br><span class="line">git pull &lt;host&gt; &lt;remote_branch&gt;                 <span class="comment"># 与当前本地分支合并</span></span><br><span class="line">git pull                                        <span class="comment"># 简写, 合并本分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># git pull origin tmp 相当于:</span></span><br><span class="line">git fetch origin</span><br><span class="line">git merge origin/tmp</span><br><span class="line"></span><br><span class="line"><span class="comment"># git pull 更快, 但 fetch 再 merge 可以方便查看 diff</span></span><br><span class="line">git fetch origin master:tmp</span><br><span class="line">git diff tmp</span><br><span class="line">git merge tmp</span><br></pre></td></tr></table></figure>
 <h1 id="踩坑">踩坑</h1>
 <h2 id="git-bash-中文乱码">Git Bash 中文乱码</h2>
 <p>例如对于 <code>git status</code> 指令, 中文文件 &quot;新建文本文档.txt&quot; 会被显示为 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="number">346</span>\<span class="number">226</span>\<span class="number">260</span>\<span class="number">345</span>\<span class="number">273</span>\<span class="number">272</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">234</span>\<span class="number">254</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">241</span>\<span class="number">243.</span>txt</span><br></pre></td></tr></table></figure></p>
 <p>解决方法如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><img src="/posts/10606/3.png"></p>
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解决 Windows Git Bash、Linux 下的中文转码问题</span></span><br><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="powershell-中文乱码">Powershell 中文乱码</h2>
+<p>例如对于 <code>git log</code> 指令, 中文的 Commit Message 会被显示为: <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;E8&gt;</span><span class="section">&lt;BF&gt;</span><span class="section">&lt;87&gt;</span><span class="section">&lt;E6&gt;</span><span class="section">&lt;BB&gt;</span><span class="section">&lt;A4&gt;</span><span class="section">&lt;E5&gt;</span><span class="section">&lt;8A&gt;</span><span class="section">&lt;9F&gt;</span><span class="section">&lt;E8&gt;</span><span class="section">&lt;83&gt;</span><span class="section">&lt;BD&gt;</span><span class="section">&lt;E5&gt;</span><span class="section">&lt;9F&gt;</span><span class="section">&lt;BA&gt;</span><span class="section">&lt;E6&gt;</span><span class="section">&lt;9C&gt;</span><span class="section">&lt;AC&gt;</span><span class="section">&lt;E5&gt;</span><span class="section">&lt;AE&gt;</span><span class="section">&lt;8C&gt;</span><span class="section">&lt;E6&gt;</span><span class="section">&lt;88&gt;</span><span class="section">&lt;90&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>解决方法如下, 在 Powershell 输入:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global gui.encoding utf-<span class="number">8</span></span><br><span class="line">git config --global i18n.commit.encoding utf-<span class="number">8</span></span><br><span class="line">git config --global i18n.logoutputencoding utf-<span class="number">8</span></span><br><span class="line"><span class="variable">$env:LESSCHARSET</span>=<span class="string">'utf-8'</span>      <span class="comment">#该行可以不输入, 但可能之后要重启 Powershell</span></span><br></pre></td></tr></table></figure>
+<p>然后设置系统环境变量, 设置 <code>LESSCHARSET</code> 为 <code>utf-8</code>.</p>
+<p><img src="/posts/10606/4.png"></p>
 <h2 id="git-bash-命令提示符的-总是另起一行">Git Bash 命令提示符的 <code>$</code> 总是另起一行</h2>
 <p>命令前的那一串叫 &quot;系统终端命令提示符 (Prompt Sign)&quot; (就是那一串包含用户名, 工作目录和 <code>$</code> 符号的东西). Windows 下的 Git Bash 的命令提示符的 <code>$</code> 总是另起一行.</p>
 <p><img src="/posts/10606/1.png"></p>
@@ -540,10 +553,6 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PS1=<span class="string">"\[\e]0;\u@\h: \w\a\]<span class="variable">$&#123;debian_chroot:+($debian_chroot)&#125;</span>\[\033[32m\]\u@\h\[\033[00m\]:\[\033[33m\]\w\[\033[00m\]\$ "</span></span><br></pre></td></tr></table></figure>
 <p>保存重启 Git Bash即可.</p>
 <p><img src="/posts/10606/2.png"></p>
-<h2 id="git-bash-中文乱码-1">Git Bash 中文乱码</h2>
-<p><img src="/posts/10606/3.png"></p>
-<p>然后</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br><span class="line"><span class="comment"># 解决 Windows Git Bash、Linux 下的中文转码问题</span></span><br></pre></td></tr></table></figure>
 <h2 id="使用-ssh-执行-git-clone-报错">使用 ssh 执行 <code>git clone</code> 报错</h2>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:xxx/xxx.git</span><br><span class="line">Cloning into <span class="string">'xxx'</span>...</span><br><span class="line">git@github.com: Permission denied (publickey).</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
 <p>此时如果测试连接, 却显示正常:</p>
@@ -566,6 +575,9 @@
 <p>Windows 以 CRLF 为换行符, Linux 以 LF 为换行符, Git 仓库以 LF 为换行符. 从 Win 上 <code>git clone</code> 时, Git 会自动把仓库里所有的文件从 LF 转为 CRLF. 当提交时, 又会把 CRLF 转回 LF. 如果提交文件是纯 LF 文件, 会显示一个警告: <code>warning: LF will be replaced by CRLF in xxx.</code>.</p>
 <p>直接关了这个 warning:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">false</span> <span class="comment"># 默认是 'warn'</span></span><br></pre></td></tr></table></figure>
+<h2 id="git-reset-与-git-revert-区别"><code>git reset</code> 与 <code>git revert</code> 区别</h2>
+<p><code>git reset</code> 回滚到某 commit, 后面的 commmit 都抛弃了. 而 <code>git revert</code> 创建一个新 commit, 中和之前的提交.</p>
+<p>用 <code>git reset</code> 后 <code>git push</code> 会报错, 提示你当前本地版本落后于远程版本. 需要强制推送 (<code>git push -f</code>).</p>
 
       
     </div>
@@ -717,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">121</span>
+                    <span class="site-state-item-count">122</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -907,7 +919,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">66</span>
+                      
+                    
+                    <span class="site-state-item-count">67</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -992,7 +1006,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-使用-ssh-登陆"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash 使用 ssh 登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交三部曲"><span class="nav-number">1.2.</span> <span class="nav-text">提交三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不同"><span class="nav-number">1.4.</span> <span class="nav-text">找不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">2.1.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">2.2.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码-1"><span class="nav-number">2.3.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-ssh-执行-git-clone-报错"><span class="nav-number">2.4.</span> <span class="nav-text">使用 ssh 执行 git clone 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-时报错-push-declined-due-to-email-privacy-restrictions"><span class="nav-number">2.5.</span> <span class="nav-text">Push 时报错 push declined due to email privacy restrictions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-下-clone-的文件以-lf-为换行符而非-crlf"><span class="nav-number">2.6.</span> <span class="nav-text">Windows 下 Clone 的文件以 LF 为换行符而非 CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-下-warning-lf-will-be-replaced-by-crlf"><span class="nav-number">2.7.</span> <span class="nav-text">Win 下 warning: LF will be replaced by CRLF</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-使用-ssh-登陆"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash 使用 ssh 登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交三部曲"><span class="nav-number">1.2.</span> <span class="nav-text">提交三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不同"><span class="nav-number">1.4.</span> <span class="nav-text">找不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支合并"><span class="nav-number">1.5.</span> <span class="nav-text">分支合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程更新到本地"><span class="nav-number">1.6.</span> <span class="nav-text">从远程更新到本地</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">2.1.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell-中文乱码"><span class="nav-number">2.2.</span> <span class="nav-text">Powershell 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">2.3.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-ssh-执行-git-clone-报错"><span class="nav-number">2.4.</span> <span class="nav-text">使用 ssh 执行 git clone 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-时报错-push-declined-due-to-email-privacy-restrictions"><span class="nav-number">2.5.</span> <span class="nav-text">Push 时报错 push declined due to email privacy restrictions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-下-clone-的文件以-lf-为换行符而非-crlf"><span class="nav-number">2.6.</span> <span class="nav-text">Windows 下 Clone 的文件以 LF 为换行符而非 CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-下-warning-lf-will-be-replaced-by-crlf"><span class="nav-number">2.7.</span> <span class="nav-text">Win 下 warning: LF will be replaced by CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert-区别"><span class="nav-number">2.8.</span> <span class="nav-text">git reset 与 git revert 区别</span></a></li></ol></li></ol></div>
             
 
           </div>

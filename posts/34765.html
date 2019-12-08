@@ -107,23 +107,23 @@
 
 
 
-  <meta name="description" content="安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v &amp;lt;path&amp;gt;:/data">
+  <meta name="description" content="安装使用的版本是 6.16.0, 已经过时, 7 版本已经出了. 安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run">
 <meta name="keywords" content="日常配环境,Ubuntu,Linux,Eclipse Che">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eclipse Che安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/34765.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v &amp;lt;path&amp;gt;:/data">
+<meta property="og:description" content="安装使用的版本是 6.16.0, 已经过时, 7 版本已经出了. 安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/2.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/3.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/4.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/34765/5.png">
-<meta property="og:updated_time" content="2019-08-01T02:39:26.300Z">
+<meta property="og:updated_time" content="2019-12-08T11:07:14.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse Che安装使用">
-<meta name="twitter:description" content="安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v &amp;lt;path&amp;gt;:/data">
+<meta name="twitter:description" content="安装使用的版本是 6.16.0, 已经过时, 7 版本已经出了. 安装使用 (Ubuntu) 环境: Ubuntu 16.04 Eclipse Che GitHub | 官方文档 | 官方安装文档 文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令. 1docker run -it --rm -v /var/run/docker.sock:/var/run">
 <meta name="twitter:image" content="https://xienaoban.github.io/posts/34765/1.png">
 
 
@@ -471,7 +471,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-01 10:39:26" itemprop="dateModified" datetime="2019-08-01T10:39:26+08:00">2019-08-01</time>
+                <time title="修改时间：2019-12-08 19:07:14" itemprop="dateModified" datetime="2019-12-08T19:07:14+08:00">2019-12-08</time>
               
             
           </span>
@@ -505,7 +505,8 @@
       
 
       
-        <h1 id="安装使用-ubuntu">安装使用 (Ubuntu)</h1>
+        <p>安装使用的版本是 6.16.0, 已经过时, 7 版本已经出了.</p>
+<h1 id="安装使用-ubuntu">安装使用 (Ubuntu)</h1>
 <p>环境: Ubuntu 16.04</p>
 <p><a href="https://github.com/eclipse/che/releases/" target="_blank" rel="noopener">Eclipse Che GitHub</a> | <a href="https://www.eclipse.org/che/docs/che-6/index.html" target="_blank" rel="noopener">官方文档</a> | <a href="https://www.eclipse.org/che/docs/che-6/docker-single-user.html" target="_blank" rel="noopener">官方安装文档</a></p>
 <p>文档指出运行一个默认的 Eclipse Che, 在 Docker 下仅需如下命令.</p>
@@ -542,9 +543,11 @@
 <p>官网的双开ide的教程复现不了 (第二个 ide 也是显示不了工作区项目的问题), 作罢. 以下是 GitHub 上找到的方法.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/che-samples/che-ide-server-extension</span><br><span class="line"><span class="built_in">cd</span> che-ide-server-extension</span><br><span class="line">git checkout 6.16.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用 Maven 前先换阿里云的源, 不然大概率失败</span></span><br><span class="line">mvn clean install -DskipTests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动带插件的 Eclipse Che</span></span><br><span class="line">sudo docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/Check:/data -v $(<span class="built_in">pwd</span>)/assembly/assembly-main/target/eclipse-che-6.16.0/eclipse-che-6.16.0:/assembly eclipse/che:6.16.0 start --fast</span><br></pre></td></tr></table></figure>
 <p><img src="/posts/34765/4.png"> <img src="/posts/34765/5.png"></p>
-<h2 id="目前用的一些指令">目前用的一些指令</h2>
+<h2 id="目前用的一些指令">(目前用的一些指令)</h2>
 <p>Docker:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无插件 IDE</span></span><br><span class="line">sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v ~/.m2:/home/user/.m2 eclipse/che:6.16.0 start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 Plugin</span></span><br><span class="line">sudo docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v $(<span class="built_in">pwd</span>)/assembly/assembly-main/target/eclipse-che-6.16.0/eclipse-che-6.16.0:/assembly eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试本地 IDE</span></span><br><span class="line">sudo docker run -ti --rm -v ~/Workspace/Eclipse/Maven/che-6.16.0:/repo -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除所有容器</span></span><br><span class="line">sudo docker rm -f $(sudo docker ps -a -q)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tomcat</span></span><br><span class="line">sudo docker run -d -v /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war:/usr/<span class="built_in">local</span>/tomcat/webapps/CLDIFF-WEB.war -p 8080:8080 --name cldiff-server tomcat</span><br><span class="line"></span><br><span class="line">sudo docker cp /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war cldiff-server:/usr/<span class="built_in">local</span>/tomcat/webapps</span><br><span class="line"></span><br><span class="line">sudo docker <span class="built_in">exec</span> -it cldiff-server /bin/bash</span><br><span class="line"></span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/startup.sh </span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无插件 IDE</span></span><br><span class="line">sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v ~/.m2:/home/user/.m2 eclipse/che:6.16.0 start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试 Plugin</span></span><br><span class="line">sudo docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v $(<span class="built_in">pwd</span>)/assembly/assembly-main/target/eclipse-che-6.16.0/eclipse-che-6.16.0:/assembly eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试本地 IDE</span></span><br><span class="line">sudo docker run -ti --rm -v ~/Workspace/Eclipse/Maven/che-6.16.0:/repo -v ~/Workspace/Eclipse-Che/Eclipse-Che-6.16.0:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.16.0 start --fast</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除所有容器</span></span><br><span class="line">sudo docker rm -f $(sudo docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p>Tomcat:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -v /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war:/usr/<span class="built_in">local</span>/tomcat/webapps/CLDIFF-WEB.war -p 8080:8080 --name cldiff-server tomcat</span><br><span class="line"></span><br><span class="line">sudo docker cp /home/xie/Workspace/Eclipse/Maven/CLDIFF-WEB/target/CLDIFF-WEB.war cldiff-server:/usr/<span class="built_in">local</span>/tomcat/webapps</span><br><span class="line"></span><br><span class="line">sudo docker <span class="built_in">exec</span> -it cldiff-server /bin/bash</span><br><span class="line"></span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/startup.sh </span><br><span class="line">sudo /usr/<span class="built_in">local</span>/bin/tomcat9/bin/shutdown.sh</span><br></pre></td></tr></table></figure>
 <p>Maven:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构建 che 整体</span></span><br><span class="line">mvn -DskipTests=<span class="literal">true</span> -Dfindbugs.skip=<span class="literal">true</span> -Dmdep.analyze.skip=<span class="literal">true</span> -Dlicense.skip=<span class="literal">true</span> -Dgwt.compiler.localWorkers=2 -T 1C -Pnative -pl <span class="string">'!dashboard'</span> fmt:format clean install -e | tee ~/Desktop/che.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建 plugin-git</span></span><br><span class="line"><span class="built_in">cd</span> ~/Workspace/Eclipse/Maven/che-6.16.0/plugins/plugin-git</span><br><span class="line">mvn fmt:format clean install -e -Dlicense.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
@@ -973,7 +976,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装使用-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装使用 (Ubuntu)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#workspace-中不显示且无法新建项目"><span class="nav-number">2.1.</span> <span class="nav-text">Workspace 中不显示且无法新建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码补全快捷键-ctrl-space-不起作用"><span class="nav-number">2.2.</span> <span class="nav-text">代码补全快捷键 (Ctrl + Space) 不起作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven-install-报错-found-1-non-complying-files"><span class="nav-number">2.3.</span> <span class="nav-text">Maven install 报错: Found 1 non-complying files</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件开发"><span class="nav-number">3.</span> <span class="nav-text">插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网的-demo-安装"><span class="nav-number">3.1.</span> <span class="nav-text">官网的 Demo 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前用的一些指令"><span class="nav-number">3.2.</span> <span class="nav-text">目前用的一些指令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装使用-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装使用 (Ubuntu)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#workspace-中不显示且无法新建项目"><span class="nav-number">2.1.</span> <span class="nav-text">Workspace 中不显示且无法新建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码补全快捷键-ctrl-space-不起作用"><span class="nav-number">2.2.</span> <span class="nav-text">代码补全快捷键 (Ctrl + Space) 不起作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven-install-报错-found-1-non-complying-files"><span class="nav-number">2.3.</span> <span class="nav-text">Maven install 报错: Found 1 non-complying files</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件开发"><span class="nav-number">3.</span> <span class="nav-text">插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网的-demo-安装"><span class="nav-number">3.1.</span> <span class="nav-text">官网的 Demo 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目前用的一些指令"><span class="nav-number">3.2.</span> <span class="nav-text">(目前用的一些指令)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1072,12 +1075,6 @@
   
 
 
-
-  
-    
-    
-  
-  <script color="88,88,88" opacity="0.6" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
 
 
 

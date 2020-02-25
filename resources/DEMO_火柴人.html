@@ -4,11 +4,17 @@
     <title>火柴人DEMO</title>
 </head>
 <body>
-    <table border="0"><tr>
-        <td><label>NPC数量: </label></td><td><input id="npc_number" value="1" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCNumberClick();" value="修改" style="border:0;height:22px;"/></td>
-    </tr><tr>
-        <td><label>子弹间隔: </label></td><td><input id="bullet_interval" value="10" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonBulletIntervalClick();" value="修改" style="border:0;height:22px;"/></td>
-    </tr></table>
+    <table border="0">
+        <tr>
+            <td><label>NPC数量: </label></td><td><input id="npc_number" value="3" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCNumberClick();" value="修改" style="border:0;height:22px;"/></td>
+        </tr><tr>
+            <td><label>NPC射击频率: </label></td><td><input id="npc_shoot_frequency" value="0.01" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCShootFrequencyClick();" value="修改" style="border:0;height:22px;"/></td>
+        </tr><tr>
+            <td><label>玩家子弹间隔: </label></td><td><input id="bullet_interval" value="15" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonBulletIntervalClick();" value="修改" style="border:0;height:22px;"/></td>
+        </tr><tr>
+            <td><label>后坐力: </label></td><td><input id="recoil" value="400" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonRecoilClick();" value="修改" style="border:0;height:22px;"/></td>
+        </tr>
+    </table>
     <label id="debug"></label>
     <script type="text/javascript" src="match_man.js"></script>
 </body>

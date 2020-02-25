@@ -326,19 +326,22 @@ Person.prototype.aim = function (x, y, degree) {
     this.prh.vy = dy / dis * 100 * degree;
 }
 Person.prototype.shoot = function (list) {
-    list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y))
+    list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y));
+    this.aim(mouseX, mouseY - recoil, 4 + recoil / 20);
 }
 
 
 
 var player = new Person();
 var npcs = [];
-npcs.push(new Person());
+npcs.push(new Person()); npcs.push(new Person()); npcs.push(new Person());
 var bullets = []
 var isMouseDown = false;
 var mouseX, mouseY;
 var shootCnt = 0;
 var shootMaxCnt = 15;
+var shootFrequency = 0.01;
+var recoil = 400;
 function buttonNPCNumberClick() {
     var npc_num = document.getElementById("npc_number").value;
     npcs = [];
@@ -347,6 +350,12 @@ function buttonNPCNumberClick() {
 function buttonBulletIntervalClick() {
     shootMaxCnt = document.getElementById("bullet_interval").value;
     // Author: XieNaoban | document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
+}
+function buttonRecoilClick() {
+    recoil = document.getElementById("recoil").value;
+}
+function buttonNPCShootFrequencyClick() {
+    shootFrequency = document.getElementById("npc_shoot_frequency").value;
 }
 document.onmousemove = function (event) {
     mouseX = event.clientX, mouseY = event.clientY;
@@ -389,6 +398,7 @@ function drawFrame() {
             bullets[i].move(lag);
             bullets[i].draw();
             if (!bullets[i].tail.isOutOfWindow()) tmpList.push(bullets[i]);
+            npcs.push(player);
             for (var j = 0; j < npcs.length; ++j) {
                 for (var k = 0; k < npcs[j].pArray.length; ++k) {
                     if (npcs[j].pArray[k].distance2To(bullets[i].head) < 128) {
@@ -397,8 +407,10 @@ function drawFrame() {
                     }
                 }
             }
+            npcs.pop();
         }
 
+        bullets = tmpList;
         for (var j = 0; j < npcs.length; ++j) {
             if (npcs[j].ph.y < window.innerHeight - 38) {
                 npcs[j].walkx = numberSign(player.pc.x - npcs[j].pc.x) * 0.1;
@@ -406,16 +418,16 @@ function drawFrame() {
             else npcs[j].walkx = 0;
             // Author: XieNaoban | npcs[j].walky = 1;
             npcs[j].move(lag);
+            npcs[j].aim(player.ph.x, player.ph.y, 1);
+            if (Math.random() < shootFrequency) npcs[j].shoot(bullets);
             npcs[j].draw();
         }
 
-        bullets = tmpList;
+        player.aim(mouseX, mouseY, 4);
         if (isMouseDown && shootCnt++ >= shootMaxCnt) {
             shootCnt = 0;
             player.shoot(bullets);
-            player.aim(mouseX, mouseY - 400, 20);
         }
-        else player.aim(mouseX, mouseY, 4);
     }
     window.requestAnimationFrame(drawFrame);
 }

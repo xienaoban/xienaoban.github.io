@@ -512,6 +512,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">20k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">19 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -541,7 +569,7 @@
 <h1 id="output">Output</h1>
 <p>Print the minimum number of coins Okabe needs to pay to complete his walk, or -1 if it's not possible.</p>
 <h1 id="examples">Examples</h1>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">-1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">-1</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br><span class="line">input</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
 <h1 id="note">Note</h1>
 <p>In the first sample test, Okabe can take the path <img src="http://codeforces.com/predownloaded/7b/fa/7bfa6afb81a3a341171b4d6ff9c74cc77ee5e932.png" alt="img">, paying only when moving to (2, 3) and (4, 4).</p>
 <p>In the fourth sample, Okabe can take the path <img src="http://codeforces.com/predownloaded/f0/06/f0069b44dd98505eb3b837a9423d0939c0e929cd.png" alt="img"> <img src="http://codeforces.com/predownloaded/c7/e0/c7e0941eb95208913c1b351808feff9e47375f58.png" alt="img">, paying when moving to (1, 2), (3, 4), and (5, 4).</p>
@@ -1001,7 +1029,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

@@ -500,6 +500,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">10k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -526,7 +554,7 @@
 <h1 id="sample-input">Sample Input</h1>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">7 </span><span class="number">10</span></span><br><span class="line"><span class="symbol">6 </span><span class="number">8</span></span><br><span class="line"><span class="symbol">1 </span><span class="number">2</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">7</span></span><br><span class="line"><span class="symbol">8 </span><span class="number">6</span></span><br></pre></td></tr></table></figure>
 <h1 id="sample-output">Sample Output</h1>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">18</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">18</span></span><br></pre></td></tr></table></figure>
 <h1 id="key">Key</h1>
 <p>完全背包DP。防御力最高就10，则枚举每个防御力的情况。</p>
 <p>在每个防御力b下，枚举所有技能，对于第c个攻击： 令<code>atk=p[c]-b</code>，DP血量a从1到1000， 若血量小于等于atk（一刀秒杀），则<code>dp[a] = min(dp[a], k[c])</code>； 若血量大于atk，则<code>dp[a] = min(dp[a], dp[a-atk] + k[c])</code>； 统计b防御力的所有怪物血量与其对应所需最小晶石。</p>
@@ -975,7 +1003,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

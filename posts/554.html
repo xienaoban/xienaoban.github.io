@@ -508,6 +508,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">18k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">17 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -531,7 +559,7 @@
 <hr>
 <p>分析：书上推荐使用优先队列，然而并没有想出来怎么去用。想了想还是用了map，用它的begin()，效果一样的，还可以灵活差入数据。一开始老是在某组测试数据上出现Runtime error，搞得生无可恋。<em>（从一老司机学到的新技能：当提交OJ出现RE时（WA也行），在执行每组数据计算的代码末尾加一句“while(1);”再提交如果从RE变成TLE了则说明是某些特殊数据没照顾到。毕竟不是所有OJ都有udebug可以用，这招还是不错的）</em> 然后过了一天还是心里放不下，又回来想了想，是题目中一个细节“If there is no active order to sell, then it is assumed that ask size is zero and ask price is 99 999. Note, that zero is not a legal price, but 99 999 is a legal price. Recipient of quote messages distinguishes actual 99 999 ask price from the special case of absent orders to sell by looking at its ask size.”出了问题。于是把不可交易价格改成999999，与交易最大价格加以99999区分，果然似乎没问题了。然而接下来就有新问题，Time limit exceeded。。。 又过了一天，心里还是放不下，于是去网上查了查别人的代码，他们不仅用两个map存买卖信息，还再单独开辟两个map来存放sell与buy的总size（就相当于我上面那两个<code>BUY_VAL</code> 和 <code>SELL_VAL</code>），而当时我只用了两个map（<code>BUY</code>和<code>SELL</code>）存买卖的所有信息，所以每次查询循环总的size时要经历一个比较烦的循环，就是以下这个循环：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//求当前价格总的size函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;&amp; now)</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">re</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; r : now) re += LIST[r].size;</span><br><span class="line">	<span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//trade函数片段</span><br><span class="line"><span class="built_in">auto</span> bid(BUY.begin()), ask(SELL.begin());</span><br><span class="line"><span class="keyword">if</span> (bid == BUY.<span class="keyword">end</span>()) bid_size = <span class="number">0</span>, bid_price = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> bid_size = <span class="built_in">sum</span>(bid-&gt;second), bid_price = bid-&gt;<span class="built_in">first</span>;</span><br><span class="line"><span class="keyword">if</span> (ask == SELL.<span class="keyword">end</span>()) ask_size = <span class="number">0</span>, ask_price = <span class="number">999999</span>;</span><br><span class="line"><span class="keyword">else</span> ask_size = <span class="built_in">sum</span>(ask-&gt;second), ask_price = ask-&gt;<span class="built_in">first</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//trade函数片段</span></span><br><span class="line">auto bid(<span class="module-access"><span class="module"><span class="identifier">BUY</span>.</span></span><span class="keyword">begin</span><span class="literal">()</span>), ask(<span class="module-access"><span class="module"><span class="identifier">SELL</span>.</span></span><span class="keyword">begin</span><span class="literal">()</span>);</span><br><span class="line"><span class="keyword">if</span> (bid<span class="operator"> == </span><span class="module-access"><span class="module"><span class="identifier">BUY</span>.</span></span><span class="keyword">end</span><span class="literal">()</span>) bid_size = <span class="number">0</span>, bid_price = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> bid_size = sum(bid-&gt;second), bid_price = bid-&gt;first;</span><br><span class="line"><span class="keyword">if</span> (ask<span class="operator"> == </span><span class="module-access"><span class="module"><span class="identifier">SELL</span>.</span></span><span class="keyword">end</span><span class="literal">()</span>) ask_size = <span class="number">0</span>, ask_price = <span class="number">999999</span>;</span><br><span class="line"><span class="keyword">else</span> ask_size = sum(ask-&gt;second), ask_price = ask-&gt;first;</span><br></pre></td></tr></table></figure>
 <p>这就是超时的罪魁祸首。改进了下瞬间变成0.330s，还是有些出乎意料。</p>
 
       
@@ -957,7 +985,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

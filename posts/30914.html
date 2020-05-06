@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="Ubuntu一些装机用到的指令 修改分辨率 1sudo gedit /etc/default/grub 找到以下行： 1234# The resolution used on graphical terminal # note that you can use only modes which your graphic card supports via VBE # you can see">
-<meta name="keywords" content="日常配环境,快乐背指令,Ubuntu,Linux">
+<meta name="keywords" content="日常配环境,Ubuntu,Linux,快乐背指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu一些装机用到的指令">
 <meta property="og:url" content="https://xienaoban.github.io/posts/30914.html">
@@ -501,6 +501,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -537,7 +565,7 @@
 <h2 id="安装ssrpython">安装SSR(Python)</h2>
 <p>打开一键安装脚本，按照里面的步骤来。在<code>ssr start</code>的时候会缺少chacha20的库，使用root安装即可。（提前把它指定的vi改为gedit） <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp ssr /usr/<span class="built_in">local</span>/bin</span><br><span class="line">sudo chmod a=rwx /usr/<span class="built_in">local</span>/bin/ssr</span><br></pre></td></tr></table></figure></p>
 <p>安装git： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure></p>
-<p>安装tsocks： <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install tsocks</span><br><span class="line">sudo gedit /etc/tsocks.conf</span><br></pre></td></tr></table></figure></p>
+<p>安装tsocks： <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sudo</span> <span class="string">apt-get install tsocks</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">gedit /etc/tsocks.conf</span></span><br></pre></td></tr></table></figure></p>
 <p>添加: <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server</span> = <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line"><span class="attr">server_type</span> = <span class="number">5</span></span><br><span class="line"><span class="attr">server_port</span> = <span class="number">1080</span></span><br></pre></td></tr></table></figure></p>
 <p>安装libsodium获得chacha20： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用root运行</span></span><br><span class="line"><span class="comment"># 先cd到一个临时目录</span></span><br><span class="line">sudo apt-get install build-essential</span><br><span class="line">wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz</span><br><span class="line">tar xf libsodium-1.0.16.tar.gz &amp;&amp; <span class="built_in">cd</span> libsodium-1.0.16</span><br><span class="line">./configure &amp;&amp; make -j4 &amp;&amp; make install</span><br><span class="line">ldconfig</span><br></pre></td></tr></table></figure></p>
 <p>然后<code>sudo ssr install</code>。 然后<code>ssr config</code>编辑配置文件。 最后<code>ssr start</code>。</p>
@@ -607,11 +635,11 @@
           
             <a href="/tags/日常配环境/" rel="tag"># 日常配环境</a>
           
-            <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
-          
             <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
           
         </div>
       
@@ -1012,7 +1040,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

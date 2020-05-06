@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="操作系统: Windows 10  安装 我选的全局安装 (装在了D盘. 全局安装不要装C盘, 以后会各种需要权限) 而不是为用户安装 (会被装在C:\Users\name\Anaconda3), 要管理员权限. 安装会自动在 &amp;quot;系统变量&amp;quot; 添加Path: 12345D:\Anaconda3D:\Anaconda3\Library\mingw-w64\binD:\A">
-<meta name="keywords" content="Anaconda,Windows,日常配环境,快乐背指令">
+<meta name="keywords" content="日常配环境,快乐背指令,Anaconda,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Anaconda安装使用">
 <meta property="og:url" content="https://xienaoban.github.io/posts/39659.html">
@@ -483,6 +483,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -528,7 +556,7 @@
 <h1 id="踩坑">踩坑</h1>
 <h2 id="git-bash-windows-输入-source-activate-py37-时报错-commandnotfounderror-no-command-conda-conda.">Git Bash (Windows) 输入 <code>source activate py37</code> 时报错: CommandNotFoundError: No command 'conda conda'.</h2>
 <p>原因是版本太高. 我的是 <code>4.6.11</code>. 搞个低版本即可.</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install conda=<span class="number">4.6</span><span class="number">.8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install conda=<span class="number">4.6</span><span class="number">.8</span></span><br></pre></td></tr></table></figure>
 <p>或者使用如下替换指令 (高版本里移除了 <code>source activate</code>) 指令.</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">activate</span> py37</span><br><span class="line">conda <span class="built_in">deactivate</span>      # 该指令还是报错 <span class="string">"CommandNotFoundError: No command 'conda conda'."</span> 还是等新版本把吧</span><br></pre></td></tr></table></figure>
 <p><strong>更新:</strong> 把 conda 更新到了 <code>4.7.5</code>, 没问题了. <code>conda activate</code> 和 <code>source activate</code> 均可, 只不过后者不再被推荐.</p>
@@ -586,13 +614,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
-          
-            <a href="/tags/Windows/" rel="tag"># Windows</a>
-          
             <a href="/tags/日常配环境/" rel="tag"># 日常配环境</a>
           
             <a href="/tags/快乐背指令/" rel="tag"># 快乐背指令</a>
+          
+            <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
           
         </div>
       
@@ -993,7 +1021,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

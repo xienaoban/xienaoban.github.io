@@ -508,6 +508,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">27k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">24 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -534,7 +562,7 @@
 <h1 id="sample-input">Sample Input</h1>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">31</span> <span class="number">58</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">20</span> <span class="number">37</span> <span class="number">58</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">4</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">31</span> <span class="number">58</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">20</span> <span class="number">37</span> <span class="number">58</span></span><br></pre></td></tr></table></figure>
 <h1 id="sample-output">Sample Output</h1>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Matrix <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">6</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">16</span></span><br><span class="line"><span class="number">8</span> <span class="number">2</span> <span class="number">14</span> <span class="number">3</span></span><br><span class="line">Matrix <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">7</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">7</span> <span class="number">12</span></span><br><span class="line"><span class="number">8</span> <span class="number">8</span> <span class="number">9</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Matrix <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">6</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="number">16</span></span><br><span class="line"><span class="number">8</span> <span class="number">2</span> <span class="number">14</span> <span class="number">3</span></span><br><span class="line">Matrix <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">7</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">7</span> <span class="number">12</span></span><br><span class="line"><span class="number">8</span> <span class="number">8</span> <span class="number">9</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h1 id="key1">Key1</h1>
 <p>给一矩阵每一行每一列的和，求一个可行矩阵。行数列数在[1, 20]之间，每个元素大小在[1,20]之间。</p>
 <p>从输入可以得到没一行、每一列的和。以行、列建立二分图。以所有行、所有列为结点，建立源汇点s、t。s向所有行结点建边，上界为该行的和。所有列结点向t建边，上界为该列的和。所有行向所有列建边，上界为20。 由于矩阵每个元素都大于零，可以知道，每条行-列的边下界为1。</p>
@@ -994,7 +1022,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

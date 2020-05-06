@@ -508,6 +508,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -525,7 +553,7 @@
 
       
         <p>﻿书上具体所有题目：http://pan.baidu.com/s/1hssH0KO 代码：（Accepted，0 ms）</p>
-<figure class="highlight julia"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//UVa12108 - Extraordinarily Tired Students</span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="keyword">struct</span> how_cute_my_sleepy_boys_are &#123;</span><br><span class="line">	int a,//awaken period :		a&gt;=<span class="number">1</span>;</span><br><span class="line">		b,//sleeping period :	b&lt;=<span class="number">5</span>;</span><br><span class="line">		s,//state :				<span class="number">0</span>醒着,<span class="number">1</span>睡觉;</span><br><span class="line">		t;//time :				睡/醒到什么时候;</span><br><span class="line">&#125;g[<span class="number">12</span>];</span><br><span class="line">int n, c, mi, cnt, T = <span class="number">0</span>;//cnt:统计睡着的人;mi:minute</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	//freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, stdin);</span><br><span class="line">	<span class="keyword">while</span> (scanf(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span> (int <span class="literal">I</span> = <span class="number">0</span>;<span class="literal">I</span> &lt; n;++<span class="literal">I</span>) &#123;//读入数据</span><br><span class="line">			scanf(<span class="string">"%d%d%d"</span>, &amp;g[<span class="literal">I</span>].a, &amp;g[<span class="literal">I</span>].b, &amp;c);</span><br><span class="line">			g[<span class="literal">I</span>].s = (c &gt; g[<span class="literal">I</span>].a ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">			g[<span class="literal">I</span>].t = (g[<span class="literal">I</span>].s ? g[<span class="literal">I</span>].a + g[<span class="literal">I</span>].b - c + <span class="number">1</span> : g[<span class="literal">I</span>].a - c + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (mi = <span class="number">1</span>;mi &lt; <span class="number">400</span>;++mi) &#123;//直接循环<span class="number">400</span>分钟，不高兴做-<span class="number">1</span>这一情况的循环检查了</span><br><span class="line">			cnt = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (int <span class="literal">I</span> = <span class="number">0</span>;<span class="literal">I</span> &lt; n;++<span class="literal">I</span>)//计算本分钟的睡觉人数</span><br><span class="line">				<span class="keyword">if</span> (g[<span class="literal">I</span>].s == <span class="number">1</span>) ++cnt;</span><br><span class="line">			<span class="keyword">if</span> (!cnt) <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">for</span> (int <span class="literal">I</span> = <span class="number">0</span>;<span class="literal">I</span> &lt; n;++<span class="literal">I</span>) &#123;//睡或醒状态转换</span><br><span class="line">				<span class="keyword">if</span> (g[<span class="literal">I</span>].t != mi) <span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">if</span> (g[<span class="literal">I</span>].s == <span class="number">1</span>) g[<span class="literal">I</span>].s = <span class="number">0</span>, g[<span class="literal">I</span>].t += g[<span class="literal">I</span>].a;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (cnt &gt; n / <span class="number">2</span>) g[<span class="literal">I</span>].s = <span class="number">1</span>, g[<span class="literal">I</span>].t += g[<span class="literal">I</span>].b;</span><br><span class="line">				<span class="keyword">else</span> g[<span class="literal">I</span>].t += g[<span class="literal">I</span>].a;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">"Case %d: %d\n"</span>, ++T, !cnt ? mi : -<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//UVa12108 - Extraordinarily Tired Students</span></span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">struct how_cute_my_sleepy_boys_are &#123;</span><br><span class="line">	<span class="built_in">int</span> a,<span class="comment">//awaken period :		a&gt;=1;</span></span><br><span class="line">		b,<span class="comment">//sleeping period :	b&lt;=5;</span></span><br><span class="line">		s,<span class="comment">//state :				0醒着,1睡觉;</span></span><br><span class="line">		t;<span class="comment">//time :				睡/醒到什么时候;</span></span><br><span class="line">&#125;g[<span class="number">12</span>];</span><br><span class="line"><span class="built_in">int</span> n, c, mi, cnt, T = <span class="number">0</span>;<span class="comment">//cnt:统计睡着的人;mi:minute</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	<span class="keyword">while</span> (scanf(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">int</span> I = <span class="number">0</span>;I &lt; n;++I) &#123;<span class="comment">//读入数据</span></span><br><span class="line">			scanf(<span class="string">"%d%d%d"</span>, &amp;g[I].a, &amp;g[I].b, &amp;c);</span><br><span class="line">			g[I].s = (c &gt; g[I].a ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">			g[I].t = (g[I].s ? g[I].a + g[I].b - c + <span class="number">1</span> : g[I].a - c + <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (mi = <span class="number">1</span>;mi &lt; <span class="number">400</span>;++mi) &#123;<span class="comment">//直接循环400分钟，不高兴做-1这一情况的循环检查了</span></span><br><span class="line">			cnt = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="built_in">int</span> I = <span class="number">0</span>;I &lt; n;++I)<span class="comment">//计算本分钟的睡觉人数</span></span><br><span class="line">				<span class="keyword">if</span> (g[I].s == <span class="number">1</span>) ++cnt;</span><br><span class="line">			<span class="keyword">if</span> (!cnt) <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="built_in">int</span> I = <span class="number">0</span>;I &lt; n;++I) &#123;<span class="comment">//睡或醒状态转换</span></span><br><span class="line">				<span class="keyword">if</span> (g[I].t != mi) <span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">if</span> (g[I].s == <span class="number">1</span>) g[I].s = <span class="number">0</span>, g[I].t += g[I].a;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (cnt &gt; n / <span class="number">2</span>) g[I].s = <span class="number">1</span>, g[I].t += g[I].b;</span><br><span class="line">				<span class="keyword">else</span> g[I].t += g[I].a;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">"Case %d: %d\n"</span>, ++T, !cnt ? mi : <span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>题意：一个班级所有学生个个是特“困”生。每个人睡着和醒着有一定规律，那就是：醒着a分钟，然后想睡觉了，环顾四周，如果睡着的人比醒着的多，那我也睡，睡b分钟后再坚挺a分钟，否则直接再坚挺a分钟。简言之，也就是每醒a分钟就检查接下来是继续醒a分钟还是睡b分钟后再醒a分钟。（这“醒a分钟-睡b分钟”的a+b分钟被题目称为一个周期。）然后每个学生一上课就有个初始状态，是在各自醒-睡周期的第几分钟。求何时第一次全班醒着，还是说全班永远有人在睡觉。</p>
 <p>分析：直接模拟每一分钟即可。struct一个结构体储存每个学生的状态，存放内容代码注释里已经很详细。本来t想存放的是还有几分钟到达目前状态的最后一分钟，但转念一想这样的话每分钟都要自减一次，直接存到哪一分钟更为便捷。具体模拟没用问题，很简单。 最大的问题是，就是老师上课永无天日的情况，永远没人醒着。本来我想做个数组存放每分钟的状态检查其是否构成循环，想想略麻烦，但是我看网上大家好多人都没检查，直接从一分钟检测到1000分钟（或其他很大的数字），1000分钟后还是没有全醒的情况就直接判定为“it'll never happen”。的确不够严谨但是很方便。最后昨晚睡觉前想了下，决定使用这个不严谨的方案。理由如下：</p>
 <ol type="1">
@@ -959,7 +987,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

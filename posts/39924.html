@@ -508,6 +508,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">14k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">12 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -535,13 +563,13 @@
 <h1 id="output">Output</h1>
 <p>In the only line print the required maximum possible beauty.</p>
 <h1 id="examples">Examples</h1>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">7</span> <span class="number">3</span></span><br><span class="line">abb <span class="number">2</span></span><br><span class="line">aaa <span class="number">-3</span></span><br><span class="line">bba <span class="number">-1</span></span><br><span class="line">zyz <span class="number">-4</span></span><br><span class="line">abb <span class="number">5</span></span><br><span class="line">aaa <span class="number">7</span></span><br><span class="line">xyx <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">12</span></span><br><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line">a <span class="number">1</span></span><br><span class="line">a <span class="number">2</span></span><br><span class="line">a <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">6</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">5</span></span><br><span class="line">abcde <span class="number">10000</span></span><br><span class="line">abcde <span class="number">10000</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">7</span> <span class="number">3</span></span><br><span class="line">abb <span class="number">2</span></span><br><span class="line">aaa <span class="number">-3</span></span><br><span class="line">bba <span class="number">-1</span></span><br><span class="line">zyz <span class="number">-4</span></span><br><span class="line">abb <span class="number">5</span></span><br><span class="line">aaa <span class="number">7</span></span><br><span class="line">xyx <span class="number">4</span></span><br><span class="line">output</span><br><span class="line"><span class="number">12</span></span><br><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">1</span></span><br><span class="line">a <span class="number">1</span></span><br><span class="line">a <span class="number">2</span></span><br><span class="line">a <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">6</span></span><br><span class="line">input</span><br><span class="line"><span class="number">2</span> <span class="number">5</span></span><br><span class="line">abcde <span class="number">10000</span></span><br><span class="line">abcde <span class="number">10000</span></span><br><span class="line">output</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h1 id="note">Note</h1>
 <p>In the first example Santa can obtain abbaaaxyxaaabba by concatenating strings 5, 2, 7, 6 and 3 (in this order).</p>
 <h1 id="key">Key</h1>
 <p>给出若干等长字符串与其对应价值（可重复，重复的字符串价值可不同），从字符串中选出若干字符串，组成一个回文串，问最大价值多少。</p>
 <p>一个字符串要被使用，就必须有对应的逆序字符串，比如要使用abb，就必须有对应的bba。先预处理将重复字符串的价值们放在数组里从大到小排列。对于abb、bba式的自身非回文的串很简单，只要两两价值相加大于零就选中（贪心）。</p>
-<p>对于aba式的自身就是回文的，可以选择如上的成对出现，也可以选择放在正中间（然而最多只能有一个放在目标回文串的正中间，为了方便描述称其为“中间串”）。首先成对的处理，两两价值相加大于零就选中（贪心）。若该串重复的个数为奇数，可能有唯一落单的正价值，将其成为“中间串”候补。但还有个有问题，比如输入： <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line">aba <span class="number">5</span></span><br><span class="line">aba <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
+<p>对于aba式的自身就是回文的，可以选择如上的成对出现，也可以选择放在正中间（然而最多只能有一个放在目标回文串的正中间，为了方便描述称其为“中间串”）。首先成对的处理，两两价值相加大于零就选中（贪心）。若该串重复的个数为奇数，可能有唯一落单的正价值，将其成为“中间串”候补。但还有个有问题，比如输入： <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">3</span></span><br><span class="line">aba <span class="number">5</span></span><br><span class="line">aba <span class="number">-1</span></span><br></pre></td></tr></table></figure></p>
 <p>两者结合结果为4，大于0。但是此处只选择第一个更优。因而当成对串的第二个串为负时，第一个串也成为“中间串”候补。</p>
 <p>以上两种成为“中间串”候补的情况，对于第一种情况：若选中，则总价值+=该串价值。 对于第二种情况：若选中，则<span class="math inline">\(V_{总}-=V_{该串对应的负价值串}\)</span>，即<span class="math inline">\(V_{总}+=-V_{该串对应的负价值串}\)</span>。 则找出最大的<span class="math inline">\(|V_{候补串}|\)</span>或<span class="math inline">\(|V_{候补串对应的负价值串}|\)</span>即可。若没有候补串就不要中间串了。</p>
 <h1 id="code">Code</h1>
@@ -994,7 +1022,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

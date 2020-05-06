@@ -519,6 +519,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">17k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">15 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -546,7 +574,7 @@
 <h1 id="output">Output</h1>
 <p>Print <em>q</em> lines. In the <em>i</em>-th of these lines print the maximum possible number Grisha can get counting when the stations <em>s</em>, <em>t</em> and <em>f</em> are chosen optimally from the three stations on the <em>i</em>-th day.</p>
 <h1 id="examples">Examples</h1>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">input</span><br><span class="line"><span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line">input</span><br><span class="line"><span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">output</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h1 id="note">Note</h1>
 <p>In the first example on the first day if <em>s</em> = 1, <em>f</em> = 2, <em>t</em> = 3, Misha would go on the route 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2, and Grisha would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. He would see the text at the stations 1 and 2. On the second day, if <em>s</em> = 3, <em>f</em> = 2, <em>t</em> = 3, both boys would go on the route 3 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2. Grisha would see the text at 3 stations.</p>
 <p>In the second examle if <em>s</em> = 1, <em>f</em> = 3, <em>t</em> = 2, Misha would go on the route 1 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 2 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 3, and Grisha would go on the route 2 <img src="http://codeforces.com/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" alt="img"> 3 and would see the text at both stations.</p>
@@ -1006,7 +1034,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

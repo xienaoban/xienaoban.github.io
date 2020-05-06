@@ -501,6 +501,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -527,7 +555,7 @@
 <p>定位到jdk下载的目录。“～”相当于“/home/xienaoban”；</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf eclipse-inst-linux64.tar.gz -C /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">java</span></span></span><br></pre></td></tr></table></figure>
 <p>意思是使用管理员权限，使用tar命令的zxvf操作将jdk安装包解压到安装路径。-zxvf中，-z是配合解压.GZ的 ，-x是解开一个包文件，-v显示详细信息，-f是必须的，表示使用归档文件，合并起来意思也很明显了。-C dir参数的作用在于改变工作目录，即改变了解压的路径。</p>
-<p>于是就解压好了。可以用<code>ls -l /usr/local/lib/java</code> 查看目录下是否有jdk1.8.0_121目录。（ls：list，列出目录内的文件夹与子目录，-l：显示详细信息），没错的话会找到以下这条（当然时间什么的信息会不同）： <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">drwxr-xr-x</span> 8 <span class="selector-tag">uucp</span> 143 4096 12月 13 08<span class="selector-pseudo">:50</span> <span class="selector-tag">jdk1</span><span class="selector-class">.8</span><span class="selector-class">.0_121</span></span><br></pre></td></tr></table></figure></p>
+<p>于是就解压好了。可以用<code>ls -l /usr/local/lib/java</code> 查看目录下是否有jdk1.8.0_121目录。（ls：list，列出目录内的文件夹与子目录，-l：显示详细信息），没错的话会找到以下这条（当然时间什么的信息会不同）： <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drwxr-xr-x <span class="number">8</span> uucp <span class="number">143</span> <span class="number">4096</span> <span class="number">12</span>月 <span class="number">13</span> <span class="number">08</span>:<span class="number">50</span> jdk1<span class="number">.8</span><span class="number">.0</span>_121</span><br></pre></td></tr></table></figure></p>
 <p>#三、配置环境变量#</p>
 <p>##1.修改bashrc或profile文件##</p>
 <p>方法有两个，一个是编辑<code>~/.bashrc</code>文件，一个是编辑<code>/etc/profile</code>文件。两者效果一样！网上针对两者的教程都有，任选其一即可！所以一开始搞得我一脸懵逼。我选择了编辑profile文件。 <code>sudo gedit /etc/profile</code> ， 用gedit打开profile文件并编辑（用其他文本编辑器如vim也随意），在文末添加如下代码： <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/local/lib/java/jdk1.8.0_121</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JRE_HOME</span>=<span class="variable">$JAVA_HOME</span>/jre</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:$JAVA_HOME/lib:$JRE_HOME/lib</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$JAVA_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure></p>
@@ -973,7 +1001,21 @@
   <span class="author" itemprop="copyrightHolder">XieNaoban</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">409k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:12</span>
   
 </div>
 

@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/ [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T06:53:57.118Z">
+<meta property="og:updated_time" content="2020-05-13T10:15:26.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="带精英策略的非支配排序的遗传算法NSGAII">
 <meta name="twitter:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/ [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-31 14:53:57" itemprop="dateModified" datetime="2019-07-31T14:53:57+08:00">2019-07-31</time>
+                <time title="修改时间：2020-05-13 18:15:26" itemprop="dateModified" datetime="2020-05-13T18:15:26+08:00">2020-05-13</time>
               
             
           </span>
@@ -539,13 +539,13 @@
 <p>有时候我们的优化目标不止一个, 比如买菜时同时要求菜越新鲜越好, 且单价越便宜越好. 这便是多目标优化问题. 面对此类问题时, 无法用 1 个指标衡量染色体的好坏, 在判断两个染色体孰优孰劣时将会产生困难. NSGA 解决多目标问题和普通 GA 的主要区别就是在选择算子执行之前对个体关系的分层, 而选择算子, 交叉算子, 变异算子没有区别.</p>
 <h2 id="pareto-支配关系">Pareto 支配关系</h2>
 <p>Pareto 最优解给出了多目标问题的判别的方法.</p>
-<p>对于最小化多目标问题, n 个目标分量 <span class="math inline">\(f_i\)</span> <span class="math inline">\((i=1,...,n)\)</span> 组成的向量 <span class="math inline">\(\overline{f}(\overline{X})=(f_1(\overline{X}), f_2(\overline{X}), ..., f_n(\overline{X}))\)</span>, 给定两个决策变量 <span class="math inline">\(\overline{X}_u, \overline{X}_v \isin U\)</span>:</p>
+<p>对于最小化多目标问题, n 个目标分量 <span class="math inline">\(f_i\)</span> <span class="math inline">\((i=1,...,n)\)</span> 组成的向量 <span class="math inline">\(\overline{f}(\overline{X})=(f_1(\overline{X}), f_2(\overline{X}), ..., f_n(\overline{X}))\)</span>, 给定两个决策变量 <span class="math inline">\(\overline{X}_u, \overline{X}_v \ U\)</span>:</p>
 <ul>
-<li>当且仅当 <span class="math inline">\(\forall i \isin \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
-<li>当且仅当 <span class="math inline">\(\forall i \isin \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) \leqslant f_i(\overline{X}_v)\)</span>, 且至少存在一个 <span class="math inline">\(j \isin \{1, ..., n\}\)</span> 则 <span class="math inline">\(\overline{X}_u\)</span> 弱支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
-<li>当且仅当 <span class="math inline">\(\exists i \isin \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 且 <span class="math inline">\(\exists j \isin \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_j(\overline{X}_u) &gt; f_j(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 和 <span class="math inline">\(\overline{X}_v\)</span> 互不支配.</li>
+<li>当且仅当 <span class="math inline">\(\forall i \in \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
+<li>当且仅当 <span class="math inline">\(\forall i \in \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) \leqslant f_i(\overline{X}_v)\)</span>, 且至少存在一个 <span class="math inline">\(j \in \{1, ..., n\}\)</span> 则 <span class="math inline">\(\overline{X}_u\)</span> 弱支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
+<li>当且仅当 <span class="math inline">\(\exists i \in \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 且 <span class="math inline">\(\exists j \in \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_j(\overline{X}_u) &gt; f_j(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 和 <span class="math inline">\(\overline{X}_v\)</span> 互不支配.</li>
 </ul>
-<p>若 <span class="math inline">\(\overline{X}_u\)</span> 为 Pareto 最优解, 则不存在 <span class="math inline">\(\overline{X}_v \isin U\)</span> 支配 <span class="math inline">\(\overline{X}_u\)</span>.</p>
+<p>若 <span class="math inline">\(\overline{X}_u\)</span> 为 Pareto 最优解, 则不存在 <span class="math inline">\(\overline{X}_v \in U\)</span> 支配 <span class="math inline">\(\overline{X}_u\)</span>.</p>
 <h2 id="非支配排序">非支配排序</h2>
 <p>对于互不支配的染色体, 我们称这些染色体处于同一层. 则所有的染色体可以被划分到若干层. 非支配排序就是将染色体分层的排序算法, 分得的层称为第一级非支配层, 第二级非支配层...... 其中第一级非支配层处于 Pareto 前沿(Pareto Front).</p>
 <p>非支配排序步骤如下:</p>

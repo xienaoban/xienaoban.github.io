@@ -119,7 +119,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/4.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/10606/2.png">
-<meta property="og:updated_time" content="2020-05-20T12:22:27.276Z">
+<meta property="og:updated_time" content="2020-08-04T08:52:44.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 安装使用">
 <meta name="twitter:description" content="指令 Git Bash 使用 ssh 登陆 配置 Git Bash: 12345git config --global user.name &amp;lt;name&amp;gt;git config --global user.email &amp;lt;email&amp;gt;# 如果开了 Github 的 `Keep my email addresses private` 功能,# 设置 email 时 要填 Gi">
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-20 20:22:27" itemprop="dateModified" datetime="2020-05-20T20:22:27+08:00">2020-05-20</time>
+                <time title="修改时间：2020-08-04 16:52:44" itemprop="dateModified" datetime="2020-08-04T16:52:44+08:00">2020-08-04</time>
               
             
           </span>
@@ -498,7 +498,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">43k</span>
+                <span title="本文字数">46k</span>
               
 
               
@@ -512,7 +512,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">39 分钟</span>
+                <span title="阅读时长">42 分钟</span>
               
             </div>
           
@@ -630,9 +630,27 @@
 <p>有些教程到这就结束了, 有些还有后续 (清理、压缩 <code>.git</code> 等), 后续各不相同, 我综合整理了个自己的版本:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git/refs/original/</span><br><span class="line"><span class="comment"># 虽然物理上文件被删了, 但逻辑上可能还有没更新的引用, 删了以下的文件让 git 重新生成</span></span><br><span class="line"></span><br><span class="line">git reflog expire --expire=now --all</span><br><span class="line"><span class="comment"># 管理所有的 reflog 信息, expire 表示修剪旧的 reflog 条目.</span></span><br><span class="line"><span class="comment"># --expire=now 表示修剪早于当前时间的条目;</span></span><br><span class="line"><span class="comment"># --all 表示处理所有引用的 reflog.</span></span><br><span class="line"><span class="comment"># 刚刚删掉的内容貌似就是在此重新生成 (应该吧).</span></span><br><span class="line"></span><br><span class="line">git fsck --full --unreachable</span><br><span class="line"><span class="comment"># 验证数据库中对象的连接性和有效性.</span></span><br><span class="line"><span class="comment"># --full 啥都检查;</span></span><br><span class="line"><span class="comment"># --unreachable 如果有节点存在但不可达, 则输出.</span></span><br><span class="line"><span class="comment"># 这条指令貌似只是检测, 不修改什么东西.</span></span><br><span class="line"></span><br><span class="line">git repack -A -d</span><br><span class="line"><span class="comment"># 把没打包的对象打包并删除冗余对象.</span></span><br><span class="line"><span class="comment"># -A 把引用的所有内容打到一个包里, -a 和 -A 好像是一个意思;</span></span><br><span class="line"><span class="comment"># -d 删除冗余包.</span></span><br><span class="line"></span><br><span class="line">git gc --aggressive --prune=now</span><br><span class="line"><span class="comment"># 清理不必要的文件, 优化本地存储.</span></span><br><span class="line"><span class="comment"># --aggressive 更好地优化存储, 但会花费更多时间;</span></span><br><span class="line"><span class="comment"># --prune=now 修剪比当前时间更早的松散物体</span></span><br></pre></td></tr></table></figure>
 <p>其中 <code>git repack -A -d</code> 和 <code>git gc --aggressive --prune=now</code> 输出的 log 几乎一样, 可能只执行其中一个就行？</p>
-<p>整理了个自动删除大文件的脚本 (事先找好要删的文件):</p>
+<p>整理了个自动删除大文件的脚本 (事先找好要删的文件放在 <code>rm_list</code> 里):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">rm_list=(<span class="string">'path/file1'</span>, <span class="string">'path/file2'</span>, <span class="string">'path/file3'</span>)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> <span class="variable">$&#123;rm_list[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'---'</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"removing '<span class="variable">$&#123;f&#125;</span>'..."</span></span><br><span class="line">	git filter-branch --force --index-filter <span class="string">"git rm --cached --ignore-unmatch <span class="variable">$&#123;f&#125;</span>"</span> --prune-empty --tag-name-filter cat -- --all</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clean up and reclaim space</span></span><br><span class="line">rm -rf .git/refs/original/</span><br><span class="line">git reflog expire --expire=now --all</span><br><span class="line">git fsck --full --unreachable</span><br><span class="line">git repack -A -d</span><br><span class="line">git gc --aggressive --prune=now</span><br><span class="line"></span><br><span class="line"><span class="comment"># force-push changes to overwrite remote repository</span></span><br><span class="line">git push origin --force --all</span><br></pre></td></tr></table></figure>
 <p>删了 30 多个 json, 最后把 100MB 的 <code>.git</code> 清理到了 10MB (捂脸). 删除过程贼慢, 最后 push 时 &quot;Writing objects&quot; 也贼慢.</p>
+<h2 id="gitignore-对已-track-文件不起作用"><code>.gitignore</code> 对已 track 文件不起作用</h2>
+<p>当一个文件已经被 commit 后才被发现这个文件是应该 ignore 的, 此时再把它添加入 <code>.gitignore</code> 的话, git 依然会追踪它. 修改该文件, 然后你会发现 git 仍然记录了这个文件的修改. 原因是 <code>.gitignore</code> 仅对新文件生效, 已被 track 的文件不受影响. 解决方法:</p>
+<ol type="1">
+<li><p>强制清除对所有文件的追踪 (只清除不想追踪的文件应该也行, 没试) <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r -f --cache .</span><br></pre></td></tr></table></figure></p></li>
+<li>更新你的 .gitignore (或者在上述指令之前更新也没关系)</li>
+<li><p>重新 <code>add</code>、<code>commit</code>.</p></li>
+</ol>
+<h2 id="给-git-ssh-上-socks5-代理">给 Git SSH 上 Socks5 代理</h2>
+<p>如果是使用 http/https 给 git 上代理, 那方法很多, 比如给终端上代理或者直接给 git 设置代理:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy socks5://127.0.0.1:10808</span><br><span class="line">git config --global https.proxy socks5://127.0.0.1:10808</span><br><span class="line">使用完后:</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+<p>但是我现在想用 ssh 进行 git clone (<code>git clone git@github.com:xxx/xxx.git</code>), 针对 http/https 的代理对 ssh 是无效的. 所以要通过配置 ssh 自身来实现代理.</p>
+<p>方法是打开 <code>~/.ssh/config</code> (Win下就是 <code>个人文件夹\.ssh\config</code>), 如果没有就新建这个文件.</p>
+<p>然后写入一行代理指令, Win 和 Linux 指令不同:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Linux (如果无 nc 请先安装. 但是 Win 下压根没有 nc)</span><br><span class="line"># -X: 指定协议, 5 就是 Socks5 (不写该参数默认也是 Socks5); -x 指定 address:port</span><br><span class="line">ProxyCommand nc -X 5 -x 127.0.0.1:10808 %h %p</span><br><span class="line"></span><br><span class="line"># Win (使用 Git 在 Win 下自己实现的工具)</span><br><span class="line">ProxyCommand &quot;C:\Program Files\Git\mingw64\bin\connect.exe&quot; -S 127.0.0.1:10808 %h %p</span><br></pre></td></tr></table></figure>
+<p>以上指令效果是全局的, 局部的稍微麻烦一点, 要在指令里指定主机和用户, 懒得弄了.</p>
+<p>当然, 直接在控制台像这样设置也行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -o 即 option 的意思</span></span><br><span class="line"><span class="comment"># 格式有两种, 语法略有不同而已, 本质一样的</span></span><br><span class="line">ssh -o ProxyCommand=<span class="string">"nc -X 5 -x 127.0.0.1:10808 %h %p"</span></span><br><span class="line">ssh -o <span class="string">"ProxyCommand nc -X 5 -x 127.0.0.1:10808 %h %p"</span></span><br><span class="line"><span class="comment"># 以上是 Linux 的指令, Win 还是改成上面对应的指令</span></span><br></pre></td></tr></table></figure>
+<p>不过我对ssh 不太熟, 也没去试, 暂不知道 <code>-o</code> 是永久的还是仅限当前会话.</p>
 
       
     </div>
@@ -784,7 +802,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">124</span>
+                    <span class="site-state-item-count">125</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -978,7 +996,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">68</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">72</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1063,7 +1089,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-使用-ssh-登陆"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash 使用 ssh 登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交三部曲"><span class="nav-number">1.2.</span> <span class="nav-text">提交三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不同"><span class="nav-number">1.4.</span> <span class="nav-text">找不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支合并"><span class="nav-number">1.5.</span> <span class="nav-text">分支合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程更新到本地"><span class="nav-number">1.6.</span> <span class="nav-text">从远程更新到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销修改"><span class="nav-number">1.7.</span> <span class="nav-text">撤销修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">2.1.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell-中文乱码"><span class="nav-number">2.2.</span> <span class="nav-text">Powershell 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">2.3.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-ssh-执行-git-clone-报错"><span class="nav-number">2.4.</span> <span class="nav-text">使用 ssh 执行 git clone 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-时报错-push-declined-due-to-email-privacy-restrictions"><span class="nav-number">2.5.</span> <span class="nav-text">Push 时报错 push declined due to email privacy restrictions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-下-clone-的文件以-lf-为换行符而非-crlf"><span class="nav-number">2.6.</span> <span class="nav-text">Windows 下 Clone 的文件以 LF 为换行符而非 CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-下-warning-lf-will-be-replaced-by-crlf"><span class="nav-number">2.7.</span> <span class="nav-text">Win 下 warning: LF will be replaced by CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert-区别"><span class="nav-number">2.8.</span> <span class="nav-text">git reset 与 git revert 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保留空文件夹"><span class="nav-number">2.9.</span> <span class="nav-text">保留空文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除历史中的所有大文件"><span class="nav-number">2.10.</span> <span class="nav-text">删除历史中的所有大文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-使用-ssh-登陆"><span class="nav-number">1.1.</span> <span class="nav-text">Git Bash 使用 ssh 登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交三部曲"><span class="nav-number">1.2.</span> <span class="nav-text">提交三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">1.3.</span> <span class="nav-text">分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找不同"><span class="nav-number">1.4.</span> <span class="nav-text">找不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支合并"><span class="nav-number">1.5.</span> <span class="nav-text">分支合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从远程更新到本地"><span class="nav-number">1.6.</span> <span class="nav-text">从远程更新到本地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销修改"><span class="nav-number">1.7.</span> <span class="nav-text">撤销修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">2.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-中文乱码"><span class="nav-number">2.1.</span> <span class="nav-text">Git Bash 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#powershell-中文乱码"><span class="nav-number">2.2.</span> <span class="nav-text">Powershell 中文乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-bash-命令提示符的-总是另起一行"><span class="nav-number">2.3.</span> <span class="nav-text">Git Bash 命令提示符的 $ 总是另起一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-ssh-执行-git-clone-报错"><span class="nav-number">2.4.</span> <span class="nav-text">使用 ssh 执行 git clone 报错</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#push-时报错-push-declined-due-to-email-privacy-restrictions"><span class="nav-number">2.5.</span> <span class="nav-text">Push 时报错 push declined due to email privacy restrictions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-下-clone-的文件以-lf-为换行符而非-crlf"><span class="nav-number">2.6.</span> <span class="nav-text">Windows 下 Clone 的文件以 LF 为换行符而非 CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#win-下-warning-lf-will-be-replaced-by-crlf"><span class="nav-number">2.7.</span> <span class="nav-text">Win 下 warning: LF will be replaced by CRLF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-与-git-revert-区别"><span class="nav-number">2.8.</span> <span class="nav-text">git reset 与 git revert 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保留空文件夹"><span class="nav-number">2.9.</span> <span class="nav-text">保留空文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除历史中的所有大文件"><span class="nav-number">2.10.</span> <span class="nav-text">删除历史中的所有大文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore-对已-track-文件不起作用"><span class="nav-number">2.11.</span> <span class="nav-text">.gitignore 对已 track 文件不起作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给-git-ssh-上-socks5-代理"><span class="nav-number">2.12.</span> <span class="nav-text">给 Git SSH 上 Socks5 代理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1096,7 +1122,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">414k</span>
+    <span title="站点总字数">423k</span>
   
 
   
@@ -1105,7 +1131,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:16</span>
+    <span title="站点阅读时长">6:25</span>
   
 </div>
 

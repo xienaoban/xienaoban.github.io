@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
 <meta property="og:description" content="一阵子没打了, 竟然四题都做出来了. 5539. 按照频率将数组升序排序 题解 很暴力地构建 {数值: 频率} 字典, 再很暴力地根据频率构建 {频率: 降序数值列表}. 最后根据频率升序输出. 垃圾代码 1234567891011121314class Solution:    def frequencySort(self, nums: List[int]) -&amp;gt; List[in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-10-31T17:14:13.010Z">
+<meta property="og:updated_time" content="2020-10-31T17:36:49.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 第 38 场双周赛">
 <meta name="twitter:description" content="一阵子没打了, 竟然四题都做出来了. 5539. 按照频率将数组升序排序 题解 很暴力地构建 {数值: 频率} 字典, 再很暴力地根据频率构建 {频率: 降序数值列表}. 最后根据频率升序输出. 垃圾代码 1234567891011121314class Solution:    def frequencySort(self, nums: List[int]) -&amp;gt; List[in">
@@ -448,7 +448,7 @@
                 
               
 
-              <time title="创建时间：2020-11-01 00:12:42 / 修改时间：01:14:13" itemprop="dateCreated datePublished" datetime="2020-11-01T00:12:42+08:00">2020-11-01</time>
+              <time title="创建时间：2020-11-01 00:12:42 / 修改时间：01:36:49" itemprop="dateCreated datePublished" datetime="2020-11-01T00:12:42+08:00">2020-11-01</time>
             
 
             
@@ -560,9 +560,9 @@
 <h2 id="题解-3">题解</h2>
 <p>动态规划. 设 <span class="math inline">\(Words\)</span> 每个 <span class="math inline">\(Word\)</span> 长度为 <span class="math inline">\(L_w\)</span>, <span class="math inline">\(Target\)</span> 长度为 <span class="math inline">\(L_t\)</span>, <span class="math inline">\(N(i, j)\)</span> 为 <span class="math inline">\(Target\)</span> 第 <span class="math inline">\(i\)</span> 个字符在 <span class="math inline">\(Words\)</span> 第 <span class="math inline">\(j\)</span> 列出现次数. <span class="math inline">\(Words\)</span> 用前 <span class="math inline">\(j\)</span> 个字符成功匹配 <span class="math inline">\(Target\)</span> 前 <span class="math inline">\(i\)</span> 个字符的可能情况数 <span class="math inline">\(DP(i, j)\)</span> 为</p>
 <p><span class="math display">\[
-DP(i, j) = \sum_{k=i}^{j - 1}{DP(i - 1, k) \times N(i, k)}
+DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 \]</span></p>
-<p>遍历的 <span class="math inline">\(k\)</span> 从 <span class="math inline">\(i\)</span> 而不是 <span class="math inline">\(0\)</span> 开始, 是因为大于等于 <span class="math inline">\(i\)</span> 个字符才可能匹配上 <span class="math inline">\(i\)</span> 个字. 同理 <span class="math inline">\(j\)</span> 大于 <span class="math inline">\(L_w - L_t + i\)</span> 时剩下的字符也不可能匹配得完, 即 <span class="math inline">\(j \in [i, L_w - L_t + i]\)</span>.</p>
+<p>遍历时 <span class="math inline">\(j\)</span> 从 <span class="math inline">\(i\)</span> 而不是 <span class="math inline">\(0\)</span> 开始, 因为大于等于 <span class="math inline">\(i\)</span> 个字符才可能匹配上 <span class="math inline">\(i\)</span> 个字. 同理 <span class="math inline">\(j\)</span> 大于 <span class="math inline">\(L_w - L_t + i\)</span> 时剩下的字符也不可能匹配得完, 即 <span class="math inline">\(j \in [i, L_w - L_t + i]\)</span>.</p>
 <p>可以看到状态转移方程只跟 <span class="math inline">\(i\)</span> 和 <span class="math inline">\(i - 1\)</span> 有关, 所以可以将 DP 空间从 <span class="math inline">\(L_w \times L_t\)</span> 降为 <span class="math inline">\(L_w\)</span>, 遍历 <span class="math inline">\(j\)</span> 时从后往前遍历以免覆盖 <span class="math inline">\(i - 1\)</span> 的状态.</p>
 <p>其实还能进一步降 DP 空间降到 <span class="math inline">\(L_w - L_t + 1\)</span>, 因为 <span class="math inline">\(j\)</span> 每次遍历的范围就是 <span class="math inline">\([i, L_w - L_t + i]\)</span>. 但是我懒.</p>
 <h2 id="不是很垃圾的代码">不是很垃圾的代码</h2>

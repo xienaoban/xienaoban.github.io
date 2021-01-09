@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https://github.githubassets.com/favicon.ico?v=7.1.0">
+
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","width":280,"display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: true,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
+<meta name="keywords" content="笔记,造轮子,扫雷,自动扫雷 AI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
+<meta property="og:url" content="https://xienaoban.github.io/posts/62679.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/figure-trans.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/round-start-xp.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/round-start-7.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/subtraction-formula.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/subtraction-formula-example.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/subtraction-formula-example-edge.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-example.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-without-flag.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-with-flag.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/fuck-ai-file.png">
+<meta property="og:updated_time" content="2021-01-09T18:19:50.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
+<meta name="twitter:description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/62679/figure-trans.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://xienaoban.github.io/posts/62679">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java 实现扫雷与高胜率低耗时自动扫雷 AI (下) | XieNaoban's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XieNaoban's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-resources">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/resources/" rel="section"><i class="menu-item-icon fa fa-fw fa-folder-open"></i> <br>资源</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/62679.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-01-05 23:07:09" itemprop="dateCreated datePublished" datetime="2021-01-05T23:07:09+08:00">2021-01-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-10 02:19:50" itemprop="dateModified" datetime="2021-01-10T02:19:50+08:00">2021-01-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">19k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">17 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure>
+<img src="/posts/62679/figure-trans.png" alt="渐变头图"><figcaption>渐变头图</figcaption>
+</figure>
+<p>上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 <code>(ˉ▽￣～)</code>), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度.</p>
+<p>这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入个门. 项目已经开源, 代码也写了注释, 链接放在文章最后.</p>
+<p>先再次把最终成品的 AI 胜率等指标罗列一下:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">指标</th>
+<th style="text-align: center;">Win XP 规则测试结果</th>
+<th style="text-align: center;">Win 7 规则测试结果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">测试版本</td>
+<td style="text-align: center;">Win XP 规则, 专家难度</td>
+<td style="text-align: center;">Win 7 规则, 专家难度</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">测试局数</td>
+<td style="text-align: center;">50,0000 局</td>
+<td style="text-align: center;">50,0000 局</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">胜率</td>
+<td style="text-align: center;">39.68%</td>
+<td style="text-align: center;">52.45%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">运行总耗时</td>
+<td style="text-align: center;">21275 秒</td>
+<td style="text-align: center;">33136 秒</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">每局平均耗时</td>
+<td style="text-align: center;">42 毫秒</td>
+<td style="text-align: center;">66 毫秒</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">胜局的每局平均耗时</td>
+<td style="text-align: center;">57 毫秒</td>
+<td style="text-align: center;">68 毫秒</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>注1:</strong> 测试 Win XP 规则是在半夜运行的, 电脑除了扫雷没有在运行其他进程; 而测试 Win 7 规则时我同时还在拿电脑办公, 导致 Win 7 规则下耗时比 XP 多. 而实际上 Win XP 与 Win 7 应该运行时间差不多. <strong>注2:</strong> 测试使用的扫雷程序是自己复现的 Win XP 与 Win 7 规则, 而非模拟鼠标点击原版扫雷窗口. 因为那样太慢了. 网上有大佬已经测试过, Win XP, Win 7 原版扫雷并无影响地雷分布的隐藏规则. 所以若真要在原版上测试, 结果应该不会有较大偏差.</p>
+</blockquote>
+<p>我在网上找到的胜率最高的扫雷 AI 是 <strong><a href="https://github.com/ztxz16/Mine" target="_blank" rel="noopener">ztxz16</a></strong> 大佬写的, <strong>Win XP 版本胜率 40.07%, Win 7 版本胜率 52.98%</strong>. 我的做法也是参考了 ztxz16 大佬的算法 (<a href="https://zhuanlan.zhihu.com/p/136791369" target="_blank" rel="noopener">最强扫雷 AI 算法详解 + 源码分享 - ztxz16</a>). B 站的 <a href="https://space.bilibili.com/434011092" target="_blank" rel="noopener">_黄歪歪</a> 应该也是他, 也发了些关于扫雷 AI 的视频. 膜一波.</p>
+<p>不过 ztxz16 大佬的这个项目偏试验性, 我顶着没有注释的压力把大佬开源的源码看了一遍, 看得出来有些地方他应该是懒得优化, 最终 AI 速度不是很快. 我本来想自己测试一遍他的 AI, 但跑了一晚上也只跑出来了几千局还是几万局 (捂脸).</p>
+<p>该交代的差不多都交代完了, 下面开始讲我的做法.</p>
+<h2 id="高胜率低耗时自动扫雷-ai-算法">高胜率低耗时自动扫雷 AI 算法</h2>
+<h3 id="术语与定义">术语与定义</h3>
+<p>统一一下一些操作的术语方便后续描述. 我不是扫雷圈的, 很多术语可能不知道, 所以如果以下操作本来就有自己的中文名称, 提醒我我会改过来的!</p>
+<table>
+<thead>
+<tr class="header">
+<th>操作</th>
+<th>术语</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>鼠标左键, 那个点开格子的操作</td>
+<td>挖掘</td>
+</tr>
+<tr class="even">
+<td>鼠标右键, 那个放置小红旗的操作</td>
+<td>插旗</td>
+</tr>
+<tr class="odd">
+<td>鼠标双键或中键, 那个自动检测周围八格是否可挖掘的操作</td>
+<td>检查周围</td>
+</tr>
+<tr class="even">
+<td>空白的, 没点过的格子</td>
+<td>未知格</td>
+</tr>
+<tr class="odd">
+<td>已知的有数字 (包括 0) 的格子 (已挖开且不是雷的格子)</td>
+<td>数字格</td>
+</tr>
+</tbody>
+</table>
+<p>另外, 1. 格子坐标 <span class="math inline">\((x, y)\)</span> 表示 <span class="math inline">\(x\)</span> 行 <span class="math inline">\(y\)</span> 列, 下标从 <span class="math inline">\(0\)</span> 开始. 2. <span class="math inline">\(N\)</span> 和 <span class="math inline">\(M\)</span> 为棋盘行数与列数, <span class="math inline">\(S = N \times M\)</span> 表示格子总数. 3. 以下所涉及的 &quot;胜率&quot;, 除非另外注明, 均为 Win XP 规则专家难度下的胜率.</p>
+<h3 id="第一步-开局挖哪">第一步: 开局挖哪</h3>
+<p>开局第一步点击不同的地方也是会影响胜率的. 根据 ztxz16 大佬的测试 (<a href="https://www.bilibili.com/video/BV1Si4y1t7n1" target="_blank" rel="noopener">地表最强扫雷AI • 编程探索扫雷极限胜率 - _黄歪歪</a>), <strong>开局 Win XP 挖掘 <span class="math inline">\((0, 0)\)</span>, Win 7 挖掘 <span class="math inline">\((2, 2)\)</span> (或对称的另外三个角落) 胜率最高</strong>.</p>
+<p>我自己也对 Win XP 与 Win7 大致测了一下 <span class="math inline">\((0, 1)\)</span>, <span class="math inline">\((1, 0)\)</span>, <span class="math inline">\((1, 1)\)</span> 等几个位置, 确实如此, 胜率会下降 1% ~ 2% 左右.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="/posts/62679/round-start-xp.png" alt="Win XP 开局"></th>
+<th style="text-align: center;"><img src="/posts/62679/round-start-7.png" alt="Win 7 开局"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Win XP 开局 <span class="math inline">\((0, 0)\)</span></td>
+<td style="text-align: center;">Win 7 开局 <span class="math inline">\((2, 2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>不过至于为什么是角落胜率比中心高, 我猜可能是角落有更多可套用减法公式的场景 (减法公式在下一节有讲). 减法公式本质就是根据相邻两个数字格的一侧去推断另一侧. 而边缘的格子天然已知靠边的一侧无雷, 因而可以更容易地推断出另一侧雷的个数.</p>
+<h3 id="第二步-基于定义与定式">第二步: 基于定义与定式</h3>
+<p>用到了两个基本公式或定式:</p>
+<p>第一, 仅基于一格判断: 即根据目标数字格的数字与其周围八格 (角落的话不满八格) 的状态, 判断该数字格周围八格的未知格是不是全为雷或全不为雷. 这是扫雷最基本的公式. 其逻辑其实就是鼠标左右双键检查周围的逻辑.</p>
+<p>第二, 基于相邻两格: 即使用减法公式.</p>
+<figure>
+<img src="/posts/62679/subtraction-formula.png" alt="减法公式"><figcaption>减法公式</figcaption>
+</figure>
+<p>如图, <span class="math inline">\(M\)</span>, <span class="math inline">\(N\)</span> 为两个相邻数字格, 两者上下各有一块互相影响的公共区域 <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>, 左右则分别有互不影响的两翼 <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>. 记地雷数量为 <span class="math inline">\(C\)</span>, 显然地雷数量 <span class="math inline">\(C\)</span> 符合如下等式:</p>
+<p><span class="math display">\[
+\begin{cases}
+C_{AroundM} = C_A + C_P + C_Q \\
+C_{AroundN} = C_B + C_P + C_Q
+\end{cases}
+\]</span></p>
+<p>两式相减即得减法公式:</p>
+<p><span class="math display">\[
+C_{AroundM} - C_{AroundN} = C_A - C_B
+\]</span></p>
+<p>即 <span class="math inline">\(M\)</span> 与 <span class="math inline">\(N\)</span> 的数字之差就是 <span class="math inline">\(A\)</span> 与 <span class="math inline">\(B\)</span> 雷数量之差.</p>
+<p>举个简单的例子: 如下方案例图 1 两个数字格 <span class="math inline">\(2 - 1 = 1\)</span>, 即蓝色区域比绿色区域多一个雷, 而蓝色区域三个格子有两个已知不是雷, 故而可推得蓝色区域有且只有一个雷, 这个雷只能在 <code>*</code> 处. 既然蓝区有一个雷, 绿区就有 <span class="math inline">\(1 - 1 = 0\)</span> 个雷, 故而 <code>N</code> 处必为一个数字格.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="/posts/62679/subtraction-formula-example.png" alt="减法公式最简单 &quot;2-1&quot; 案例"></th>
+<th style="text-align: center;"><img src="/posts/62679/subtraction-formula-example-edge.png" alt="减法公式边缘案例"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">案例图 1</td>
+<td style="text-align: center;">案例图 2</td>
+</tr>
+</tbody>
+</table>
+<p>而如果相邻两格的一侧在棋盘边缘, 如案例图 2 所示, 蓝区在棋盘外, 即蓝区无雷, 而 <span class="math inline">\(M - N = 0\)</span>, 故绿区均不为雷.</p>
+<p>可见减法公式在边缘有更多的使用场景, 这可能也是开局要挖角落的原因之一.</p>
+<blockquote>
+<p>关于减法公式更详细的内容可以参考这篇专栏: <a href="https://zhuanlan.zhihu.com/p/27439584" target="_blank" rel="noopener">扫雷新手判雷上路（一）——初步认识减法公式及其衍生的最简单定式 - MsPVZ.ZSW</a>.</p>
+</blockquote>
+<h4 id="截至这一步的胜率与耗时">截至这一步的胜率与耗时</h4>
+<p>如果仅仅使用基本定式, 遇到定式无法解决的就投降判负, 胜率在 5% 左右 (毕竟如果开局就点了个 '1', 那就直接无了).</p>
+<p>而如果仅使用基本定式, 遇到定式无法解决的就瞎猜, 胜率就已经有 23% 了.</p>
+<p>平均每局耗时在 4ms 以下, 没精确测过. 基于定式的算法虽然使用场景较为受限, 但效率非常高, 扫完一整局的时间复杂度也就 <span class="math inline">\(O(S)\)</span>.</p>
+<h3 id="第三步-基于每个格子可能有雷的概率">第三步: 基于每个格子可能有雷的概率</h3>
+<p>针对某一棋局局面, 每个未知格有雷的概率当然是可以计算出来的, 即</p>
+<p><span class="math display">\[
+目标未知格含雷概率 = \frac{目标未知格含雷的方案数量}{局面所有可行方案数量}
+\]</span></p>
+<p>扫的时候谁有雷的概率最低就扫谁.</p>
+<p>局面所有可行方案的计算方法用回溯法即可. 当然直接就对所有未知格进行回溯的话复杂度有 <span class="math inline">\(O(2^S)\)</span> 自然受不了, 所以这一步的算法主要难点是剪枝.</p>
+<p>如何剪枝, 可以用下面这张图很直观地展现出来:</p>
+<p><img src="/posts/62679/prob-example.png"></p>
+<p>在上图中, 每个未知格上都被打上了该格子的非雷概率 (注意, 这张图上展示的是 &quot;非雷概率&quot;, 也就是 <span class="math inline">\(1 - P_{有雷}\)</span>), 且与数字格相邻的未知格均被用彩色高亮了出来; 而不与数字格相邻的未知格则均用灰色标识.</p>
+<p>不知道怎么取名, 这里我姑且将所有相近的 (不一定紧挨)、相同颜色的未知格集合称作一个 &quot;<strong>连通分量</strong>&quot;, 而剩下所有灰色格子姑且称之为 &quot;<strong>孤立格</strong>&quot;. 而本小节最重要的两个步骤就是①计算出所有连通分量, ②基于连通分量计算出每个未知格的有雷概率.</p>
+<h4 id="计算连通分量">计算连通分量</h4>
+<p>回溯法剪枝其实就是要分隔出尽可能短的连通分量, 然后在每个连通分量上回溯出所有可能方案, 最后合并所有连通分量的方案.</p>
+<p>首先不太严谨地定义一下 &quot;连通分量&quot;. 在<strong>不考虑剩余雷数制约</strong>的前提下, 如果一个未知格 A 最终挖开的不同状态 (数字或雷) 会影响另一个未知格 B 不同状态的概率分布 (反过来 B 的状态也会影响 A), 则认为 A、B 同属一个连通分量. 且若 A、B 同属一个连通分量, B、C 同属一个连通分量, 则 A、B、C 同属一个连通分量.</p>
+<p>放到实际计算中, 其实就很简单:</p>
+<ol type="1">
+<li>从任意数字格开始, 找出其周围八格中所有未知格, 并加入队列;</li>
+<li>取队列中一未知格, 找出其周围八格中所有数字格, 再分别找出这些数字格周围八格的未知格入队列 (不重复入队).</li>
+<li>重复 2 直到队列为空. 在队列里存在过的所有未知格均属同一连通分量.</li>
+</ol>
+<p>用上述方法计算得的连通分量内部其实依然可能存在互不影响的部分, 可以进一步优化, 将一个连通分量拆成多个更短的连通分量.</p>
+<p>优化方法也很简单, 如果已经能确定某个未知格是雷, 请把他插上小红旗 (网上看了很多 AI 不喜欢插旗). 如下两张图所示.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="/posts/62679/prob-without-flag.png" alt="连通分量 - 不插旗"></th>
+<th style="text-align: center;"><img src="/posts/62679/prob-with-flag.png" alt="连通分量 - 插了旗"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">不插旗时找出的连通分量 (深红)</td>
+<td style="text-align: center;">插了旗后找出的连通分量 (青色、深红)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="计算有雷概率">计算有雷概率</h4>
+<p>(公式敲的我头昏脑胀, 如有错误请指正)</p>
+<p>回溯枚举所有 <span class="math inline">\(K\)</span> 个连通分量, 可以得到如下结果:</p>
+<p>对于 <span class="math inline">\(\forall c \ge 0\)</span>, <span class="math inline">\(\forall i \in [1, K]\)</span>, <span class="math inline">\(\forall j \in [1, Len(CC_i)]\)</span>,</p>
+<ul>
+<li><span class="math inline">\(TotalCnt_{(i, c)}\)</span> - 当连通分量 <span class="math inline">\(CC_i\)</span> 中一共有 <span class="math inline">\(c\)</span> 个雷时的所有可行方案个数.</li>
+<li><span class="math inline">\(MineCnt_{(i, j, c)}\)</span> - 当连通分量 <span class="math inline">\(CC_i\)</span> 中一共有 <span class="math inline">\(c\)</span> 个雷时, 属于 <span class="math inline">\(CC_i\)</span> 的格子 <span class="math inline">\(Cell_{(i, j)}\)</span> 在所有 <span class="math inline">\(TotalCnt_{(i, c)}\)</span> 个可行方案中有雷的次数.</li>
+</ul>
+<p>由上述信息可以计算, 前 <span class="math inline">\(k\)</span> 个连通分量 <span class="math inline">\(CC_1 \sim CC_k\)</span> 作为一个整体一共有 <span class="math inline">\(c\)</span> 个雷时的方案数:</p>
+<p><span class="math display">\[
+\begin{aligned}
+MultiCnt_{(1 \sim k, c)}
+&amp; = \sum_{s = 0}^c MultiCnt_{(1 \sim k - 1, s)} \times TotalCnt_{(k, c - s)} &amp; (1) \\
+&amp; = \sum_{s = 0}^c MultiCnt_{(1 \sim i - 1, s)} \times MultiCnt_{(i \sim k, c - s)}, i \in [2, k] &amp; (2)
+\end{aligned}
+\]</span></p>
+<blockquote>
+<p>在实际编程中, 会涉及大量计算 <span class="math inline">\(MultiCnt_{(\text{except }i, c)}\)</span>. 使用上面 <span class="math inline">\((1)\)</span> 动态规划, 使用 <span class="math inline">\((2)\)</span> 从左右双向记忆化, 能节约点计算.</p>
+</blockquote>
+<p>然后对于所有不属于任何连通分量的孤立格, 我们也要计算它们的可行方案数. 若 <span class="math inline">\(b\)</span> 个孤立格中有 <span class="math inline">\(c\)</span> 个雷, 则这些孤立格的可行方案数为:</p>
+<p><span class="math display">\[
+IsolCnt_{(b, c)} = IsolCnt_{(b - 1, c)} + IsolCnt_{(b - 1, c - 1)}
+\]</span></p>
+<blockquote>
+<p>实际实现中我直接打了个 <span class="math inline">\(16 \times 30 \times 99\)</span> 的表.</p>
+</blockquote>
+<p>于是可以计算, 所有 <span class="math inline">\(b\)</span> 个孤立格与指定连通分量集合 <span class="math inline">\(T\)</span> 在有 <span class="math inline">\(c\)</span> 个雷的情况下的可行方案数为:</p>
+<p><span class="math display">\[
+Cnt_{(T, c)} = \sum_{s = 0}^c MultiCnt_{(T, s)} \times IsolCnt_{(b, c - s)}
+\]</span></p>
+<p>于是, 对于任意连通分量的任意格子 <span class="math inline">\(Cell_{(i, j)}\)</span>, 一共 <span class="math inline">\(c\)</span> 个雷, <span class="math inline">\(K\)</span> 个连通分量, 其有雷概率为:</p>
+<p><span class="math display">\[
+MineProb_{(i, j)} = \frac{\sum_{s = 0}^c Cnt_{(\text{except }i, s)} \times MineCnt_{(i, j, c - s)}}{Cnt_{(1 \sim K, c)}}
+\]</span></p>
+<p>有了每个连通分量的格子的概率, 孤立格子的概率就很好算了:</p>
+<p><span class="math display">\[
+MineProb_{\text{isol}} = \frac{c - \sum_{i}\sum_{j}MineProb_{(i, j)}}{b}
+\]</span></p>
+<p>由此我们就计算出了所有未知格的有雷概率.</p>
+<h4 id="附加小策略小技巧">附加小策略小技巧</h4>
+<p>当有雷概率最低的未知格有不止一个时, 也有些小策略可以增加胜率. 经过实际测试, 目前我采用了以下策略, 能提升 2% 左右:</p>
+<ol type="1">
+<li>优先选择在四个角落的格子;</li>
+<li>当两者都在 (或都不在) 角落时, 选择周围 24 格中数字格最多的.</li>
+</ol>
+<h4 id="截至这一步的胜率与耗时-1">截至这一步的胜率与耗时</h4>
+<p>这一步的算法的使用场景是覆盖了基本定式那一步的, 即定式能做的概率也能做. 但定式速度快, 所以仍有存在意义. 测了十来万盘, &quot;定式 + 概率&quot; 策略的胜率在 36% ~ 37% 左右, 平均每局耗时 6ms.</p>
+<p><del>(一开始我没有将连通分量的不同雷数分开考虑, 而是根据连通分量的平均雷数来计算, 导致胜率只有 32%, 可见近似算法差距还是很大的.)</del></p>
+<p>而加上了那些小策略后, 胜率提升到了 38.5%.</p>
+<p><strong>极端情况</strong>:</p>
+<p>到这里你可能有疑问, 剪枝确实很高效, 但如果遇到极端情况不是依然得爆炸?</p>
+<p>答案是肯定的. 但是经过我这么多次的测试, 基本上 1,0000 局里也很难遇上极端情况.</p>
+<p>但如果您真的很迫切地想看我的 AI 出丑也没关系, 我亲自在项目根目录放了一个难以剪枝的残局案例, 保证让您风扇起飞.</p>
+<figure>
+<img src="/posts/62679/fuck-ai-file.png" alt="残局_给我卡死那个AI.txt"><figcaption>残局_给我卡死那个AI.txt</figcaption>
+</figure>
+<h3 id="第四步-基于对下一局面的有限预测">第四步: 基于对下一局面的有限预测</h3>
+<p>这一步是我瞎想的, 没想到真的有用. 想到这一步的主要原因是, 无雷概率高不完全等于获胜概率高; 而计算胜率又绝大部分情况下不可行. 于是就想着整个折中方案.</p>
+<p>这一步是针对上一步有雷概率计算出现多个格子有最低有雷概率的情况. 本策略会覆盖上面说的小策略小技巧, 但又由于本策略复杂度不低, 所以当判断发现计算量过大时还是采用之前的小策略小技巧.</p>
+<p>原理是, 对于每个有雷概率最低的格子, 计算: 选择该格子后, 可被百分百确定的其他未知格的期望数量. 方法是, 枚举格子的所有可能性 (0 ~ 8, 雷), 使用上一步的概率计算这一假设的新局面中所有格子的非雷概率. 最后统计每个新局面必然非雷的格子个数, 计算一下它们的平均值.</p>
+<p>最后我们选择期望值最高的格子.</p>
+<h4 id="截至这一步的胜率与耗时-2">截至这一步的胜率与耗时</h4>
+<p>测了万把盘, 胜率达到 39.3%, 平均每局耗 8ms 多.</p>
+<p>这一步我做的比较保守, 因为我不知道有没有可能出现 &quot;非雷概率 A &gt; B&quot; 但 &quot;胜率 A &lt; B&quot; 的情况.</p>
+<h3 id="第五步-基于胜率-最终杀招">第五步: 基于胜率 (最终杀招)</h3>
+<p>直接把每个未知格的胜率算出来. 这里区分一下 &quot;获胜概率&quot; 与第三步的 &quot;有雷概率&quot;. 胜率是指挖掘某个未知格的最终获胜概率; 有雷概率是指当前局面下未知格是雷的概率. 显然, 当前局面所有未知格中最高的胜率代表了这个残局的整体胜率.</p>
+<p>这世上没有什么策略比直接算胜率更准了, 但可惜它的复杂度过于恐怖, 所以我只在当残余未知格少于等于 12 时才会启用这个策略.</p>
+<p>算法原理还是动态规划. 设 <span class="math inline">\(b\)</span> 为当前局面, <span class="math inline">\(b_{(x, y)}\)</span> 为将未知格 <span class="math inline">\(x\)</span> 设为数字 <span class="math inline">\(y\)</span> 的下一局面. 另设 <span class="math inline">\(CellWinRate()\)</span> 为某格子的胜率, <span class="math inline">\(BoardWinRate()\)</span> 为某局面的胜率, <span class="math inline">\(Cnt()\)</span> 为某局面的所有可行方案个数.</p>
+<p><span class="math display">\[
+\begin{aligned}
+BoardWinRate(b) &amp; = \underset{x}{\text{Max}}(CellWinRate(b, x)) \\
+CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cnt(b_{(x, y)})}{Cnt(b)} 
+\end{aligned}
+\]</span></p>
+<p>每个局面 <span class="math inline">\(b\)</span> 可以状态压缩, 用一个 <code>String</code> 表示, 方便记忆化搜索.</p>
+<p>胜率算法计算完后就很简单了, 胜率最高的格子随便挑一个挖. 同时, 所有后续局面的胜率也在之前算过并保存了下来, 从缓存里掏出来一路扫到结束即可.</p>
+<p><strong>衍生</strong></p>
+<p>最后我稍微衍生了一下使用场景. 如果某个区域只可能有 <span class="math inline">\(c\)</span> 个雷 (雷数可确定), 比如幸福三选一, 那这片区域也能套用胜率算法, 姑且叫之局部胜率.</p>
+<h4 id="最终胜率与概率">最终胜率与概率</h4>
+<p>已经写在博文最上面了. 50 万局测试, 胜率 39.68%, 平均每局 42ms.</p>
+<h3 id="附-探索百分比">附: 探索百分比</h3>
+<p>测试 50 万盘的时候顺便记录了一下每一局不论输赢都探索到了什么程度 (游戏结束前被扫开的格子占所有格子的百分比). 虽然不知道有什么用但也列一下 (柱状图是我在命令行里画的, 有点写意):</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Win XP 规则专家难度 <span class="number">50</span>,<span class="number">0000</span> 局:</span><br><span class="line">A 占比</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|  M                                       M</span><br><span class="line">|  M                                   M   M</span><br><span class="line">|  M                                   M   M</span><br><span class="line">|  M   M   M   M   M   M   M   M   M   M   M</span><br><span class="line">+---------------------------------------------&gt; 探索程度</span><br><span class="line">   <span class="number">0</span>% <span class="number">10</span>% <span class="number">20</span>% <span class="number">30</span>% <span class="number">40</span>% <span class="number">50</span>% <span class="number">60</span>% <span class="number">70</span>% <span class="number">80</span>% <span class="number">90</span>% <span class="number">100</span>%</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Win <span class="number">7</span> 规则专家难度 <span class="number">50</span>,<span class="number">0000</span> 局:</span><br><span class="line">A 占比</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|                                          M</span><br><span class="line">|                                          M</span><br><span class="line">|                                          M</span><br><span class="line">|                                      M   M</span><br><span class="line">|                                      M   M</span><br><span class="line">|  M   M   M   M   M   M   M   M   M   M   M</span><br><span class="line">+---------------------------------------------&gt; 探索程度</span><br><span class="line">   <span class="number">0</span>% <span class="number">10</span>% <span class="number">20</span>% <span class="number">30</span>% <span class="number">40</span>% <span class="number">50</span>% <span class="number">60</span>% <span class="number">70</span>% <span class="number">80</span>% <span class="number">90</span>% <span class="number">100</span>%</span><br></pre></td></tr></table></figure>
+<p>这么看确实 Win XP 下开局劝退得有点离谱.</p>
+<h2 id="源码">源码</h2>
+<p>项目源码 Github: https://github.com/XieNaoban/Minesweeper (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
+<p>主要有以下几个文件:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AutoSweeper.java    <span class="comment">// 自动扫雷 AI</span></span><br><span class="line">Gui.java            <span class="comment">// 扫雷 GUI 界面</span></span><br><span class="line">Main.java           <span class="comment">// 执行入口</span></span><br><span class="line">MineSweeper.java    <span class="comment">// 扫雷游戏规则的实现</span></span><br><span class="line">WinXpSweeper.java   <span class="comment">// 通过监视 Win XP 原版扫雷完成的规则实现</span></span><br></pre></td></tr></table></figure>
+<p>其中 <code>AutoSweeper.java</code> 和 <code>MineSweeper.java</code> 写的比较上心, 有较为详细的注释, 代码结构也相对清晰. 别的几个文件就写的比较写意, 酌情观看.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://xienaoban.github.io/posts/62679.html" title="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">https://xienaoban.github.io/posts/62679.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/造轮子/" rel="tag"># 造轮子</a>
+          
+            <a href="/tags/扫雷/" rel="tag"># 扫雷</a>
+          
+            <a href="/tags/自动扫雷-AI/" rel="tag"># 自动扫雷 AI</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/25814.html" rel="next" title="Java 实现扫雷与高胜率低耗时自动扫雷 AI (上)">
+                <i class="fa fa-chevron-left"></i> Java 实现扫雷与高胜率低耗时自动扫雷 AI (上)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars3.githubusercontent.com/u/22251525?s=460&v=4" alt="XieNaoban">
+            
+              <p class="site-author-name" itemprop="name">XieNaoban</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">130</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/XieNaoban" title="GitHub &rarr; https://github.com/XieNaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://blog.csdn.net/xienaoban" title="CSDN &rarr; https://blog.csdn.net/xienaoban" rel="noopener" target="_blank"><i class="fa fa-fw fa-contao"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:xjf19970000@live.com" title="E-Mail &rarr; mailto:xjf19970000@live.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#高胜率低耗时自动扫雷-ai-算法"><span class="nav-number">1.</span> <span class="nav-text">高胜率低耗时自动扫雷 AI 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#术语与定义"><span class="nav-number">1.1.</span> <span class="nav-text">术语与定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-开局挖哪"><span class="nav-number">1.2.</span> <span class="nav-text">第一步: 开局挖哪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步-基于定义与定式"><span class="nav-number">1.3.</span> <span class="nav-text">第二步: 基于定义与定式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#截至这一步的胜率与耗时"><span class="nav-number">1.3.1.</span> <span class="nav-text">截至这一步的胜率与耗时</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步-基于每个格子可能有雷的概率"><span class="nav-number">1.4.</span> <span class="nav-text">第三步: 基于每个格子可能有雷的概率</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算连通分量"><span class="nav-number">1.4.1.</span> <span class="nav-text">计算连通分量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算有雷概率"><span class="nav-number">1.4.2.</span> <span class="nav-text">计算有雷概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附加小策略小技巧"><span class="nav-number">1.4.3.</span> <span class="nav-text">附加小策略小技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#截至这一步的胜率与耗时-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">截至这一步的胜率与耗时</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步-基于对下一局面的有限预测"><span class="nav-number">1.5.</span> <span class="nav-text">第四步: 基于对下一局面的有限预测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#截至这一步的胜率与耗时-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">截至这一步的胜率与耗时</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步-基于胜率-最终杀招"><span class="nav-number">1.6.</span> <span class="nav-text">第五步: 基于胜率 (最终杀招)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#最终胜率与概率"><span class="nav-number">1.6.1.</span> <span class="nav-text">最终胜率与概率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附-探索百分比"><span class="nav-number">1.7.</span> <span class="nav-text">附: 探索百分比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">2.</span> <span class="nav-text">源码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">440k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">6:40</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

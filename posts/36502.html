@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/36502/1.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/36502/2.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/36502/3.png">
-<meta property="og:updated_time" content="2020-05-20T12:20:52.436Z">
+<meta property="og:updated_time" content="2021-01-03T09:45:38.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 安装使用">
 <meta name="twitter:description" content="安装 (Ubuntu) apt-get 方式 用 apt-get 会比较方便, 但安装出来版本可能不是最新的. 1sudo apt-get install maven 安装完的目录为, Maven home: /usr/share/maven; Config file: /etc/maven. settings.xml 位置: /etc/maven/settings.xml . 官网安">
@@ -469,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-05-20 20:20:52" itemprop="dateModified" datetime="2020-05-20T20:20:52+08:00">2020-05-20</time>
+                <time title="修改时间：2021-01-03 17:45:38" itemprop="dateModified" datetime="2021-01-03T17:45:38+08:00">2021-01-03</time>
               
             
           </span>
@@ -497,7 +497,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">21k</span>
+                <span title="本文字数">29k</span>
               
 
               
@@ -511,7 +511,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">19 分钟</span>
+                <span title="阅读时长">27 分钟</span>
               
             </div>
           
@@ -574,6 +574,22 @@
 <p>在给 java 源文件导入包时如图报错:</p>
 <p><img src="/posts/36502/3.png"></p>
 <p>解决方法: 未解决.</p>
+<h2 id="不支持-lambda-等语法">不支持 Lambda 等语法</h2>
+<p>Maven 默认使用语言版本比较低, 要在 POM 的 <code>build - plugins</code> 添加以下内容以支持 Java 8 的语法:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">source</span>&gt;</span>8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">target</span>&gt;</span>8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="打包-jar-时也将依赖打包入同一文件">打包 Jar 时也将依赖打包入同一文件</h2>
+<p>在 POM 的 <code>build - plugins</code> 添加:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-assembly-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appendAssemblyId</span>&gt;</span>false<span class="tag">&lt;/<span class="name">appendAssemblyId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">descriptorRefs</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">descriptorRef</span>&gt;</span>jar-with-dependencies<span class="tag">&lt;/<span class="name">descriptorRef</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">descriptorRefs</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">manifest</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">mainClass</span>&gt;</span>xjf.Main<span class="tag">&lt;/<span class="name">mainClass</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>make-assembly<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">phase</span>&gt;</span>package<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">goal</span>&gt;</span>assembly<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="openjdk-8-不包含-javafx.util-包">OpenJDK 8 不包含 <code>javafx.util</code> 包</h2>
+<p>打包后的 Jar 包在本机上运行的好好的, 跑服务器上报错:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java<span class="selector-class">.lang</span><span class="selector-class">.NoClassDefFoundError</span>: javafx/util/Pair</span><br></pre></td></tr></table></figure>
+<p>一看原来是本机用的 Oracle JDK 8, 服务器用的 OpenJDK 8. OpenJDK 8 内不包括 <code>javafx.util</code> 这个商用包. 不过听说 OpenJDK 10+ 之后就拥有了这些商用功能.</p>
+<p>在不动源码, 不改服务器 JDK 的情况下, 解决方法是把 <code>javafx.util</code> 手动添加为 Maven 依赖, 打 Jar 包时一起打进去.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.openjfx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javafx-base<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>15.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后放到服务器上又报错:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java.lang.UnsupportedClassVersionError: javafx/util/Pair has been compiled <span class="keyword">by</span> <span class="keyword">a</span> more recent <span class="built_in">version</span> <span class="keyword">of</span> <span class="keyword">the</span> Java Runtime (class <span class="built_in">file</span> <span class="built_in">version</span> <span class="number">55.0</span>), this <span class="built_in">version</span> <span class="keyword">of</span> <span class="keyword">the</span> Java Runtime only recognizes class <span class="built_in">file</span> versions up <span class="built_in">to</span> <span class="number">52.0</span></span><br></pre></td></tr></table></figure>
+<p>原因是 15 版本的 javafx 编译版本太高 (55.0), 服务器上的老旧 JVM 不支持. 要改用 52.0 编译的旧版本. 但问题在于, Maven 中央仓库上 javafx 旧版本已经被删除了, 还在仓库的最老的版本是 11, 11 是 54.0 编译的, 依然不行.</p>
+<p>最终解决方案是自己重写了一个 Pair 类... 因为好在我的项目只使用了 <code>javafx.util.Pair</code> 这一个类...</p>
 
       
     </div>
@@ -727,7 +743,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">128</span>
+                    <span class="site-state-item-count">130</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -933,7 +949,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">73</span>
+                      
+                    
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1018,7 +1036,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装 (Ubuntu)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apt-get-方式"><span class="nav-number">1.1.</span> <span class="nav-text">apt-get 方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官网安装"><span class="nav-number">1.2.</span> <span class="nav-text">官网安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mvn-clean-install"><span class="nav-number">2.1.</span> <span class="nav-text">mvn clean install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前生效的-settings."><span class="nav-number">2.2.</span> <span class="nav-text">查看当前生效的 settings.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载慢"><span class="nav-number">3.1.</span> <span class="nav-text">下载慢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-配置-maven"><span class="nav-number">3.2.</span> <span class="nav-text">Eclipse 配置 Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this-compilation-unit-is-not-on-the-build-path-of-a-java-project."><span class="nav-number">3.2.1.</span> <span class="nav-text">This compilation unit is not on the build path of a java project.</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-ubuntu"><span class="nav-number">1.</span> <span class="nav-text">安装 (Ubuntu)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#apt-get-方式"><span class="nav-number">1.1.</span> <span class="nav-text">apt-get 方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#官网安装"><span class="nav-number">1.2.</span> <span class="nav-text">官网安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令"><span class="nav-number">2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mvn-clean-install"><span class="nav-number">2.1.</span> <span class="nav-text">mvn clean install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前生效的-settings."><span class="nav-number">2.2.</span> <span class="nav-text">查看当前生效的 settings.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑"><span class="nav-number">3.</span> <span class="nav-text">踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载慢"><span class="nav-number">3.1.</span> <span class="nav-text">下载慢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eclipse-配置-maven"><span class="nav-number">3.2.</span> <span class="nav-text">Eclipse 配置 Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this-compilation-unit-is-not-on-the-build-path-of-a-java-project."><span class="nav-number">3.2.1.</span> <span class="nav-text">This compilation unit is not on the build path of a java project.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不支持-lambda-等语法"><span class="nav-number">3.3.</span> <span class="nav-text">不支持 Lambda 等语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包-jar-时也将依赖打包入同一文件"><span class="nav-number">3.4.</span> <span class="nav-text">打包 Jar 时也将依赖打包入同一文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openjdk-8-不包含-javafx.util-包"><span class="nav-number">3.5.</span> <span class="nav-text">OpenJDK 8 不包含 javafx.util 包</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1039,7 +1057,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1051,7 +1069,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">429k</span>
+    <span title="站点总字数">440k</span>
   
 
   
@@ -1060,7 +1078,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">6:30</span>
+    <span title="站点阅读时长">6:40</span>
   
 </div>
 

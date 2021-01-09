@@ -125,7 +125,7 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-without-flag.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-with-flag.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/fuck-ai-file.png">
-<meta property="og:updated_time" content="2021-01-09T18:19:50.302Z">
+<meta property="og:updated_time" content="2021-01-09T18:58:54.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
 <meta name="twitter:description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-01-10 02:19:50" itemprop="dateModified" datetime="2021-01-10T02:19:50+08:00">2021-01-10</time>
+                <time title="修改时间：2021-01-10 02:58:54" itemprop="dateModified" datetime="2021-01-10T02:58:54+08:00">2021-01-10</time>
               
             
           </span>
@@ -504,7 +504,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">19k</span>
+                <span title="本文字数">20k</span>
               
 
               
@@ -518,7 +518,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">17 分钟</span>
+                <span title="阅读时长">18 分钟</span>
               
             </div>
           
@@ -808,7 +808,11 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Win <span class="number">7</span> 规则专家难度 <span class="number">50</span>,<span class="number">0000</span> 局:</span><br><span class="line">A 占比</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|</span><br><span class="line">|                                          M</span><br><span class="line">|                                          M</span><br><span class="line">|                                          M</span><br><span class="line">|                                      M   M</span><br><span class="line">|                                      M   M</span><br><span class="line">|  M   M   M   M   M   M   M   M   M   M   M</span><br><span class="line">+---------------------------------------------&gt; 探索程度</span><br><span class="line">   <span class="number">0</span>% <span class="number">10</span>% <span class="number">20</span>% <span class="number">30</span>% <span class="number">40</span>% <span class="number">50</span>% <span class="number">60</span>% <span class="number">70</span>% <span class="number">80</span>% <span class="number">90</span>% <span class="number">100</span>%</span><br></pre></td></tr></table></figure>
 <p>这么看确实 Win XP 下开局劝退得有点离谱.</p>
 <h2 id="源码">源码</h2>
-<p>项目源码 Github: https://github.com/XieNaoban/Minesweeper (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
+<blockquote>
+<p>本博客仅发布于 Github IO: <a href="https://xienaoban.github.io/posts/62679.html" class="uri">https://xienaoban.github.io/posts/62679.html</a> 和 CSDN: <a href="https://blog.csdn.net/XieNaoban/article/details/112424039" class="uri" target="_blank" rel="noopener">https://blog.csdn.net/XieNaoban/article/details/112424039</a> 其他都是盗的.</p>
+</blockquote>
+<p>项目源码 Github: <a href="https://github.com/XieNaoban/Minesweeper" class="uri" target="_blank" rel="noopener">https://github.com/XieNaoban/Minesweeper</a> (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
+<p>不会用 Github 的萌新也可以在这里下载: <a href="https://download.csdn.net/download/XieNaoban/14090898" class="uri" target="_blank" rel="noopener">https://download.csdn.net/download/XieNaoban/14090898</a></p>
 <p>主要有以下几个文件:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AutoSweeper.java    <span class="comment">// 自动扫雷 AI</span></span><br><span class="line">Gui.java            <span class="comment">// 扫雷 GUI 界面</span></span><br><span class="line">Main.java           <span class="comment">// 执行入口</span></span><br><span class="line">MineSweeper.java    <span class="comment">// 扫雷游戏规则的实现</span></span><br><span class="line">WinXpSweeper.java   <span class="comment">// 通过监视 Win XP 原版扫雷完成的规则实现</span></span><br></pre></td></tr></table></figure>
 <p>其中 <code>AutoSweeper.java</code> 和 <code>MineSweeper.java</code> 写的比较上心, 有较为详细的注释, 代码结构也相对清晰. 别的几个文件就写的比较写意, 酌情观看.</p>

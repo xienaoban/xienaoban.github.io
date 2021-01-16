@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
-<meta name="keywords" content="笔记,造轮子,扫雷,自动扫雷 AI">
+<meta name="keywords" content="笔记,扫雷,造轮子,自动扫雷 AI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
 <meta property="og:url" content="https://xienaoban.github.io/posts/62679.html">
@@ -125,7 +125,13 @@
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-without-flag.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/prob-with-flag.png">
 <meta property="og:image" content="https://xienaoban.github.io/posts/62679/fuck-ai-file.png">
-<meta property="og:updated_time" content="2021-01-10T01:55:33.956Z">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/3-2-mine.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/3-2-win.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/6-3-mine.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/6-3-win.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/6-4-mine.png">
+<meta property="og:image" content="https://xienaoban.github.io/posts/62679/6-4-win.png">
+<meta property="og:updated_time" content="2021-01-16T18:45:39.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
 <meta name="twitter:description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
@@ -476,7 +482,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-01-10 09:55:33" itemprop="dateModified" datetime="2021-01-10T09:55:33+08:00">2021-01-10</time>
+                <time title="修改时间：2021-01-17 02:45:39" itemprop="dateModified" datetime="2021-01-17T02:45:39+08:00">2021-01-17</time>
               
             
           </span>
@@ -504,7 +510,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">20k</span>
+                <span title="本文字数">21k</span>
               
 
               
@@ -518,7 +524,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">18 分钟</span>
+                <span title="阅读时长">19 分钟</span>
               
             </div>
           
@@ -787,7 +793,8 @@ MineProb_{\text{isol}} = \frac{c - \sum_{i}\sum_{j}MineProb_{(i, j)}}{b}
 <p>测了万把盘, 胜率达到 39.3%, 平均每局耗 8ms 多.</p>
 <p>这一步我做的比较保守, 因为我不知道有没有可能出现 &quot;非雷概率 A &gt; B&quot; 但 &quot;胜率 A &lt; B&quot; 的情况.</p>
 <h3 id="第五步-基于胜率-最终杀招">第五步: 基于胜率 (最终杀招)</h3>
-<p>直接把每个未知格的胜率算出来. 这里区分一下 &quot;获胜概率&quot; 与第三步的 &quot;有雷概率&quot;. 胜率是指挖掘某个未知格的最终获胜概率; 有雷概率是指当前局面下未知格是雷的概率. 显然, 当前局面所有未知格中最高的胜率代表了这个残局的整体胜率.</p>
+<p>最后一招, 直接把每个未知格的胜率算出来.</p>
+<p>这里区分一下 &quot;获胜概率&quot; 与第三步的 &quot;有雷概率&quot;. 胜率是指挖掘某个未知格的最终获胜概率; 有雷概率是指当前局面下未知格是雷的概率. 显然, 当前局面所有未知格中最高的胜率代表了这个残局的整体胜率.</p>
 <p>这世上没有什么策略比直接算胜率更准了, 但可惜它的复杂度过于恐怖, 所以我只在当残余未知格少于等于 12 时才会启用这个策略.</p>
 <p>算法原理还是动态规划. 设 <span class="math inline">\(b\)</span> 为当前局面, <span class="math inline">\(b_{(x, y)}\)</span> 为将未知格 <span class="math inline">\(x\)</span> 设为数字 <span class="math inline">\(y\)</span> 的下一局面. 另设 <span class="math inline">\(CellWinRate()\)</span> 为某格子的胜率, <span class="math inline">\(BoardWinRate()\)</span> 为某局面的胜率, <span class="math inline">\(Cnt()\)</span> 为某局面的所有可行方案个数.</p>
 <p><span class="math display">\[
@@ -797,9 +804,33 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
 \end{aligned}
 \]</span></p>
 <p>每个局面 <span class="math inline">\(b\)</span> 可以状态压缩, 用一个 <code>String</code> 表示, 方便记忆化搜索.</p>
-<p>胜率算法计算完后就很简单了, 胜率最高的格子随便挑一个挖. 同时, 所有后续局面的胜率也在之前算过并保存了下来, 从缓存里掏出来一路扫到结束即可.</p>
+<p>胜率算法计算完后就很简单了, 胜率最高的格子随便挑一个挖. 而且所有后续局面的胜率也在之前的计算中缓存过了, 从缓存里掏出来一路扫到结束即可.</p>
+<p>我自己整理了几个 &quot;无雷概率&quot; 与 &quot;获胜概率&quot; 区别的例子 (这里是无雷概率, 为了方便与胜率对比), 可以帮助理解一下:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">无雷概率</th>
+<th style="text-align: center;">获胜概率</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="/posts/62679/3-2-mine.png" alt="无雷概率 3-2"></td>
+<td style="text-align: center;"><img src="/posts/62679/3-2-win.png" alt="获胜概率 3-2"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><img src="/posts/62679/6-3-mine.png" alt="无雷概率 6-3"></td>
+<td style="text-align: center;"><img src="/posts/62679/6-3-win.png" alt="获胜概率 6-3"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><img src="/posts/62679/6-4-mine.png" alt="无雷概率 6-4"></td>
+<td style="text-align: center;"><img src="/posts/62679/6-4-win.png" alt="获胜概率 6-4"></td>
+</tr>
+</tbody>
+</table>
+<p>更多对比案例可以在我的 Github 项目根目录找到.</p>
 <p><strong>衍生</strong></p>
-<p>最后我稍微衍生了一下使用场景. 如果某个区域只可能有 <span class="math inline">\(c\)</span> 个雷 (雷数可确定), 比如幸福三选一, 那这片区域也能套用胜率算法, 姑且叫之局部胜率.</p>
+<p>最后我稍微衍生了一下使用场景. 如果某个区域只可能有 <span class="math inline">\(c\)</span> 个雷 (雷数可确定, 比如幸福三选一), 那这片区域也能套用胜率算法直接扫掉, 姑且叫之局部胜率. 这个操作不会影响总体胜率, 但能稍微提一丢丢速 (指爆雷重开的速度... 早发现早治疗, 早暴毙早投胎).</p>
 <h4 id="最终胜率与概率">最终胜率与概率</h4>
 <p>已经写在博文最上面了. 50 万局测试, 胜率 39.68%, 平均每局 42ms.</p>
 <h3 id="附-探索百分比">附: 探索百分比</h3>
@@ -867,9 +898,9 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
           
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
-            <a href="/tags/造轮子/" rel="tag"># 造轮子</a>
-          
             <a href="/tags/扫雷/" rel="tag"># 扫雷</a>
+          
+            <a href="/tags/造轮子/" rel="tag"># 造轮子</a>
           
             <a href="/tags/自动扫雷-AI/" rel="tag"># 自动扫雷 AI</a>
           

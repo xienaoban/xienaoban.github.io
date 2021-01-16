@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="渐变头图  上一篇博客介绍了本项目总体情况, 这一篇来介绍一下我实现的自动扫雷 AI 算法. 本 AI 胜率比网上最高胜率的 AI 差 0.5% 左右. 不过本 AI 也不是没有优势, 它运算速度很快 (强行有优势 (ˉ▽￣～)), 平均 42 毫秒可以扫完一局 Win XP 规则下的专家难度. 这篇博客会介绍一下我的思路和踩过的坑, 也会列出一些关于胜率的数据. 希望能够帮助其他萌新入">
-<meta name="keywords" content="笔记,扫雷,造轮子,自动扫雷 AI">
+<meta name="keywords" content="笔记,造轮子,扫雷,自动扫雷 AI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
 <meta property="og:url" content="https://xienaoban.github.io/posts/62679.html">
@@ -492,9 +492,33 @@
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/posts/62679.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/62679.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
+          
+            <span id="/posts/62679.html" class="leancloud_visitors" data-flag-title="Java 实现扫雷与高胜率低耗时自动扫雷 AI (下)">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
           
 
           
@@ -898,9 +922,9 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
           
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
-            <a href="/tags/扫雷/" rel="tag"># 扫雷</a>
-          
             <a href="/tags/造轮子/" rel="tag"># 造轮子</a>
+          
+            <a href="/tags/扫雷/" rel="tag"># 扫雷</a>
           
             <a href="/tags/自动扫雷-AI/" rel="tag"># 自动扫雷 AI</a>
           
@@ -948,6 +972,10 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
 
   
 
@@ -1472,6 +1500,36 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
   
 
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'hW2OCX4awMmBhdNzSQbLfRQm-gzGzoHsz',
+    appKey: 'kCc9pc7qCsDOAE0q3GoesYfu',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
   

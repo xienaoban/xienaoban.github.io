@@ -5,8 +5,10 @@
 // Demo 链接:   https://xienaoban.github.io/resources/DEMO_%E7%81%AB%E6%9F%B4%E4%BA%BA.html //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-var BACKGROUND_COLOR = "rgba(244,244,244,1)";   // 背景色
-var FOREGROUND_COLOR = "rgba(16,16,16,1)";      // 点的颜色
+// var BACKGROUND_COLOR = "rgba(244,244,244,1)";   // 背景色
+// var FOREGROUND_COLOR = "rgba(16,16,16,1)";      // 点的颜色
+var BACKGROUND_COLOR = "rgb(23, 23, 23)";       // 背景色
+var FOREGROUND_COLOR = "rgb(233, 233, 233)";    // 点的颜色
 var GRAVITY = 5000;
 
 // init
@@ -54,7 +56,7 @@ function Point(_x, _y) {
     this.ax = 0.0;     // acceleration x
     this.ay = 0.0;     // acceleration y
 
-    this.color = "rgba(16,16,16,1)";
+    this.color = FOREGROUND_COLOR;
     this.r = 1.2;
 }
 Point.prototype.setXY = function (_x, _y) {
@@ -69,7 +71,7 @@ Point.prototype.setA = function (_ax, _ay) {
     this.ax = _ax;
     this.ay = _ay;
 }
-Point.prototype.move = function (lag) {
+Point.prototype.move = function (lag, sink = 0) {
     this.vx += this.ax * lag;
     this.vy += this.ay * lag;
     this.x += this.vx * lag;
@@ -87,8 +89,8 @@ Point.prototype.move = function (lag) {
         this.y = 0;
         this.vy *= vback;
     }
-    else if (this.y > window.innerHeight) {
-        this.y = window.innerHeight;
+    else if (this.y > window.innerHeight + sink) {
+        this.y = window.innerHeight + sink;
         this.vy *= vback;
     }
 }
@@ -178,6 +180,8 @@ Gun.prototype.draw = function () {
 }
 
 function Bullet(_x, _y, _dx, _dy) {
+    this.penetrationLeft = randomInt(8, 24);
+
     this.x = _x;
     this.y = _y;
     var dis = Math.sqrt(_dx*_dx + _dy*_dy);
@@ -198,12 +202,15 @@ Bullet.prototype.draw = function () {
 } 
 
 
-function Person() {
+function Person(hx = -1, hy = -1) {
+    this.health = 100;
+    this.sink = 0;
+
     this.neckLength = 6;
     this.armLength = 16;
     this.bodyLength = 22;
     this.legLength = 18;
-    this.ph = new Point(-1,-1);   // head
+    this.ph = new Point(hx, hy);   // head
     this.ph.r = this.neckLength;
     this.ph.ay = -GRAVITY * 0.2;
     this.pn = new Point (this.ph.x, this.ph.y + this.neckLength);   // neck
@@ -242,6 +249,7 @@ Person.prototype.draw = function () {
     this.prk.drawLineTo(this.prf);
     this.gun.draw();
 }
+Person.prototype.isDisappeared = function () { return this.ph.y > window.innerHeight + 24; }
 Person.prototype.move = function (lag) {
     oldlfx = this.plf.x;
     oldrfx = this.prf.x;
@@ -329,7 +337,40 @@ Person.prototype.shoot = function (list) {
     list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y));
     this.aim(mouseX, mouseY - recoil, 4 + recoil / 20);
 }
+Person.prototype.ragDoll = function (lag) {
+    for (let p of this.pArray) p.move(lag, this.sink);
+    if (this.sink < 32) this.sink += lag * 0.2 * (1 + this.sink);
 
+    if (this.ph.ay < 0) {
+        this.walkx = this.walky = 0;
+        for (let p of this.pArray) p.ay = randomFloat(0.10, 0.30) * GRAVITY;
+        this.plh.ay = this.prh.ay = GRAVITY * 0.05;
+        this.ple.ay = this.pre.ay = 0.4;
+        this.pc.ay = 0.5 * GRAVITY;
+    }
+
+    if (this.ph.y >= window.innerHeight - 38) {
+        for (let p of this.pArray) p.vx *= 0.95;
+    }
+
+    this.ple.correctDistanceTo(this.pn, this.armLength);
+    this.pre.correctDistanceTo(this.pn, this.armLength);
+    this.plh.correctDistanceWith(this.ple, this.armLength);
+    this.prh.correctDistanceWith(this.pre, this.armLength);
+
+    this.plk.correctDistanceWith(this.pc, this.legLength);
+    this.prk.correctDistanceWith(this.pc, this.legLength);
+    this.plf.correctDistanceWith(this.plk, this.legLength);
+    this.prf.correctDistanceWith(this.prk, this.legLength);
+
+    this.pn.correctDistanceWith(this.pc, this.bodyLength);
+    this.ph.correctDistanceWith(this.pn, this.neckLength);
+
+    this.ple.vx = this.pre.vx = 0;
+    this.plh.vx = this.prh.vx = 0;
+
+    this.gun.set(this.prh.x, this.prh.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y);
+}
 
 
 var player = new Person();
@@ -397,21 +438,32 @@ function drawFrame() {
         for(var i = 0; i < bullets.length; ++i) {
             bullets[i].move(lag);
             bullets[i].draw();
-            if (!bullets[i].tail.isOutOfWindow()) tmpList.push(bullets[i]);
+            if (bullets[i].tail.isOutOfWindow()) continue;
             npcs.push(player);
             for (var j = 0; j < npcs.length; ++j) {
+                let range = 25;
                 for (var k = 0; k < npcs[j].pArray.length; ++k) {
-                    if (npcs[j].pArray[k].distance2To(bullets[i].head) < 128) {
+                    if (npcs[j].pArray[k].distance2To(bullets[i].tail) < range) {
+                        --bullets[i].penetrationLeft;
                         npcs[j].pArray[k].vx = bullets[i].dx;
                         npcs[j].pArray[k].vy = bullets[i].dy;
+                        npcs[j].health -= randomFloat(0.3, 3);
                     }
+                    range = 128;
                 }
             }
             npcs.pop();
+            if (bullets[i].penetrationLeft > 0) tmpList.push(bullets[i]);
         }
 
         bullets = tmpList;
         for (var j = 0; j < npcs.length; ++j) {
+            if (npcs[j].isDisappeared()) npcs[j] = new Person(window.innerWidth + 10, window.innerHeight - randomInt(0, 400));
+            if (npcs[j].health <= 0) {
+                npcs[j].ragDoll(lag);
+                npcs[j].draw();
+                continue;
+            }
             if (npcs[j].ph.y < window.innerHeight - 38) {
                 npcs[j].walkx = numberSign(player.pc.x - npcs[j].pc.x) * 0.1;
             }

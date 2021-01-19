@@ -13,21 +13,42 @@
             user-select: none;
             color: ghostwhite;
         }
-      </style>
+    </style>
 </head>
 <body>
     <table border="0">
         <tr>
-            <td><label>NPC数量: </label></td><td><input id="npc_number" value="3" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCNumberClick();" value="修改" style="border:0;height:22px;"/></td>
+            <td><label>NPC数量: </label></td><td><input id="npc_number" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCNumberClick();" value="修改" style="border:0;height:22px;"/></td>
         </tr><tr>
-            <td><label>NPC射击频率: </label></td><td><input id="npc_shoot_frequency" value="0.01" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCShootFrequencyClick();" value="修改" style="border:0;height:22px;"/></td>
+            <td><label>NPC射击频率: </label></td><td><input id="npc_shoot_frequency" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonNPCShootFrequencyClick();" value="修改" style="border:0;height:22px;"/></td>
         </tr><tr>
-            <td><label>玩家子弹间隔: </label></td><td><input id="bullet_interval" value="15" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonBulletIntervalClick();" value="修改" style="border:0;height:22px;"/></td>
+            <td><label>玩家子弹间隔: </label></td><td><input id="bullet_interval" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonBulletIntervalClick();" value="修改" style="border:0;height:22px;"/></td>
         </tr><tr>
-            <td><label>后坐力: </label></td><td><input id="recoil" value="400" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonRecoilClick();" value="修改" style="border:0;height:22px;"/></td>
+            <td><label>后坐力: </label></td><td><input id="recoil" style="border:0;height:20px;"></input></td><td><input type="button" onclick="buttonRecoilClick();" value="修改" style="border:0;height:22px;"/></td>
         </tr>
     </table>
     <label id="debug"></label>
     <script type="text/javascript" src="match_man.js"></script>
+    <script>
+function buttonNPCNumberClick() {
+    let npc_num = Number(document.getElementById("npc_number").value);
+    npcs = [];
+    for (var i = 0; i < npc_num; ++i) npcs.push(new Person());
+}
+function buttonBulletIntervalClick() {
+    shootMaxCnt = Number(document.getElementById("bullet_interval").value);
+    // Author: XieNaoban | document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
+}
+function buttonRecoilClick() {
+    recoil = Number(document.getElementById("recoil").value);
+}
+function buttonNPCShootFrequencyClick() {
+    shootFrequency = Number(document.getElementById("npc_shoot_frequency").value) / 100.0;
+}
+document.getElementById("npc_number").value = npcs.length;
+document.getElementById("bullet_interval").value = shootMaxCnt;
+document.getElementById("recoil").value = recoil;
+document.getElementById("npc_shoot_frequency").value = shootFrequency * 100;
+    </script>
 </body>
 </html>

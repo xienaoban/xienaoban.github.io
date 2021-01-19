@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html><head><title>Match Man (By XieNaoban)</title>
+    <style type="text/css">
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fi { animation: fade-in 1.5s ease; }
+
+#killed {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    pointer-events: none;
+    
+    position: fixed;
+    left: 0;
+    top: -12vh;
+    width: 100vw;
+
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 90vh;
+    color: rgba(233, 233, 233, 0.25);
+    text-align: center;
+}
+
+#health-container {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    position: fixed;
+    left: max(1vw, 1vh);
+    top: max(1vw, 1vh);
+    height: max(30px, 5vh);
+    width: 28vw;
+    background-color: rgba(233, 233, 233, 0.16);
+}
+
+#health-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: max(21px, 3.5vh);
+    color: rgba(233, 233, 233, 0.66);
+    text-align: center;
+
+}
+
+#health-bar {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    height: 100%;
+    background-color: rgba(233, 233, 233, 0.5);
+}
+
+#restart {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    cursor: pointer;
+
+    position: fixed;
+    left: 50vw;
+    top: 70vh;
+    transform: translate(-50%, -50%);
+    width: max(84px, 32vh);
+    height: max(42px, 16vh);
+    background-color: rgba(233, 233, 233, 0.3);
+
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: max(15.75px, 6vh);
+    color: rgba(233, 233, 233, 0.5);
+    line-height: max(42px, 16vh);
+    text-align: center;
+}
+#restart:hover {
+    color: rgba(34, 34, 34, 0.5);
+    background-color: rgba(233, 233, 233, 0.96);
+}
+    </style>
+</head>
+<body>
+    <label id="debug"></label>
+    <div id="killed">O</div>
+    <div id="health-container">
+        <div id="health-text"></div>
+        <div id="health-bar"></div>
+    </div>
+    <div id="restart" onclick="restart()">RESTART</div>
+    <script type="text/javascript" src="match_man.js"></script>
+    <script>
+const PLAYER_MAX_HEALTH = 233;
+const PLAYER_MAX_HEALTH_100 = 1 / 2.33;
+var lastKilled = 0;
+var lastHealth = 0;
+function afterEachFrame() {
+    if (player.isDead()) {
+        if (player.isFirstDeath()) {
+            document.getElementById('killed').style.fontSize = '60vh';
+            let restartDiv = document.getElementById('restart');
+            if (restartDiv != undefined) {
+                restartDiv.style.display = 'inline';
+                restartDiv.classList.remove('fi');
+                void restartDiv.offsetWidth;
+                restartDiv.offsetWidth = restartDiv.offsetWidth;
+                restartDiv.classList.add('fi');
+            }
+        }
+        return;
+    }
+    else player.health = Math.min(player.health + lag * 10, PLAYER_MAX_HEALTH);
+    if (killed != lastKilled) {
+        lastKilled = killed;
+        let killedDiv = document.getElementById('killed');
+        if (killedDiv != undefined) {
+            killedDiv.classList.remove('fi');
+            killedDiv.offsetWidth = killedDiv.offsetWidth;
+            killedDiv.textContent = killed;
+            killedDiv.classList.add('fi');
+        }
+    }
+    let realHealth = Math.max(0, parseInt(player.health));
+    if (lastHealth != realHealth) {
+        lastHealth = realHealth;
+        let healthBar = document.getElementById('health-bar');
+        if (healthBar != undefined) {
+            healthBar.style.width = lastHealth * PLAYER_MAX_HEALTH_100 + '%';
+        }
+        let healthText = document.getElementById('health-text');
+        if (healthText != undefined) {
+            healthText.textContent = lastHealth;
+        }
+    }
+}
+function restart() {
+    player = new Person(window.innerWidth / 2, window.innerHeight / 2);
+    player.health = PLAYER_MAX_HEALTH;
+    killed = 0;
+    npcs = [];
+    for (let i = 0; i < 3; ++i) npcs.push(new Person());
+    let killedDiv = document.getElementById('killed');
+    if (killedDiv != undefined) {
+        killedDiv.classList.remove('fi');
+        killedDiv.offsetWidth = killedDiv.offsetWidth;
+        killedDiv.textContent = killed;
+        killedDiv.classList.add('fi');
+        killedDiv.style.fontSize = '90vh';
+    }
+    let restartDiv = document.getElementById('restart')
+    if (restartDiv != undefined) restartDiv.style.display = 'none';
+    
+}
+restart();
+    </script>
+</body></html>

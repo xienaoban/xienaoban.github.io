@@ -25,7 +25,6 @@ cvs.style.cssText = "\
 document.body.appendChild(cvs);
 var ctx = cvs.getContext("2d");
 
-
 function drawBackground() {
     cvs.width = window.innerWidth;
     cvs.height = window.innerHeight;
@@ -36,7 +35,6 @@ function drawBackground() {
 function debugInfo(str) {
     document.getElementById("debug").innerHTML = str;
 }
-
 
 function randomInt(min, max) {
     return Math.floor((max - min + 1) * Math.random() + min);
@@ -49,8 +47,8 @@ function numberSign(num) {
 }
 
 function Point(_x, _y) {
-    this.x = _x < 0 ? randomFloat(0, cvs.width) : _x;
-    this.y = _y < 0 ? randomFloat(0, cvs.height) : _y;
+    this.x = _x != _x ? randomFloat(0, cvs.width) : _x;
+    this.y = _y != _y ? randomFloat(0, cvs.height) : _y;
     this.vx = 0.0;     // speed x
     this.vy = 0.0;     // speed y
     this.ax = 0.0;     // acceleration x
@@ -202,7 +200,7 @@ Bullet.prototype.draw = function () {
 } 
 
 
-function Person(hx = -1, hy = -1) {
+function Person(hx = NaN, hy = NaN) {
     this.health = 100;
     this.sink = 0;
 
@@ -228,7 +226,7 @@ function Person(hx = -1, hy = -1) {
     this.prf = new Point(this.prk.x, this.prk.y + this.legLength);  // right foot
     this.prf.ay = GRAVITY * 1;
     this.pArray = [this.ph, this.pn, this.pc, this.ple, this.pre, this.plk, this.prk, this.plh, this.prh, this.plf, this.prf];
-
+    // Author: XieNaoban | Github: https://github.com/XieNaoban
     this.gun = new Gun(this.prh.x, this.prh.y);
 
     this.walkx = 0;
@@ -249,7 +247,20 @@ Person.prototype.draw = function () {
     this.prk.drawLineTo(this.prf);
     this.gun.draw();
 }
-Person.prototype.isDisappeared = function () { return this.ph.y > window.innerHeight + 24; }
+Person.prototype.isBugged = function () {
+    return this.ph.x != this.ph.x && this.ph.y != this.ph.y;
+}
+Person.prototype.isDead = function () {
+    return this.health <= 0;
+}
+Person.prototype.isFirstDeath = function () {
+    let res = this._firstDeath == undefined;
+    this._firstDeath = false;
+    return res;
+}
+Person.prototype.isDisappeared = function () {
+    return this.health <= 0 && this.ph.y > window.innerHeight + 20;
+}
 Person.prototype.move = function (lag) {
     oldlfx = this.plf.x;
     oldrfx = this.prf.x;
@@ -335,11 +346,11 @@ Person.prototype.aim = function (x, y, degree) {
 }
 Person.prototype.shoot = function (list) {
     list.push(new Bullet(this.gun.p2.x, this.gun.p2.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y));
-    this.aim(mouseX, mouseY - recoil, 4 + recoil / 20);
+    this.aim(mouseX, mouseY - recoil * randomFloat(-20, 20), 4 + recoil);
 }
 Person.prototype.ragDoll = function (lag) {
     for (let p of this.pArray) p.move(lag, this.sink);
-    if (this.sink < 32) this.sink += lag * 0.2 * (1 + this.sink);
+    if (this.sink < 50) this.sink += lag * 0.08 * Math.pow((1 + this.sink), 4);
 
     if (this.ph.ay < 0) {
         this.walkx = this.walky = 0;
@@ -372,32 +383,22 @@ Person.prototype.ragDoll = function (lag) {
     this.gun.set(this.prh.x, this.prh.y, this.prh.x - this.pre.x, this.prh.y - this.pre.y);
 }
 
+//////////////////////////////
+// 游戏相关全局变量与执行函数 //
+//////////////////////////////
 
-var player = new Person();
+var player = new Person(window.innerWidth / 2, window.innerHeight / 2);
 var npcs = [];
 npcs.push(new Person()); npcs.push(new Person()); npcs.push(new Person());
-var bullets = []
+var bullets = [];
+var killed = 0;
 var isMouseDown = false;
 var mouseX, mouseY;
 var shootCnt = 0;
 var shootMaxCnt = 15;
 var shootFrequency = 0.01;
-var recoil = 400;
-function buttonNPCNumberClick() {
-    var npc_num = document.getElementById("npc_number").value;
-    npcs = [];
-    for (var i = 0; i < npc_num; ++i) npcs.push(new Person());
-}
-function buttonBulletIntervalClick() {
-    shootMaxCnt = document.getElementById("bullet_interval").value;
-    // Author: XieNaoban | document.getElementById("debug").innerHTML = "[" + shootMaxCnt + "]";
-}
-function buttonRecoilClick() {
-    recoil = document.getElementById("recoil").value;
-}
-function buttonNPCShootFrequencyClick() {
-    shootFrequency = document.getElementById("npc_shoot_frequency").value;
-}
+var recoil = 20;
+
 document.onmousemove = function (event) {
     mouseX = event.clientX, mouseY = event.clientY;
 }
@@ -423,49 +424,64 @@ document.onkeyup = function (event) {
         case 38: case 87: case 40: case 83: player.walky = 0; break;
     }
 }
+function afterEachFrame() {
+    player.health = 9999999;
+}
 
 var startTime = new Date().getTime();
+var endTime = new Date().getTime();
+var lag = (endTime - startTime) / 1000;
 function drawFrame() {
-    var endTime = new Date().getTime();
-    var lag = (endTime - startTime) / 1000;
+    endTime = new Date().getTime();
+    lag = (endTime - startTime) / 1000;
     startTime = endTime;
-    if (lag < 0.02) {
+    if (lag < 0.02) {   // 搞那么长一个 if, 主要还是怕尾递归优化失败
         drawBackground();
-        player.move(lag);
-        player.draw();
 
         var tmpList = [];
+        const baseDamage = lag * 24;
         for(var i = 0; i < bullets.length; ++i) {
             bullets[i].move(lag);
             bullets[i].draw();
             if (bullets[i].tail.isOutOfWindow()) continue;
             npcs.push(player);
             for (var j = 0; j < npcs.length; ++j) {
-                let range = 25;
+                let range = 25, dmgL = 64, dmgR = 128;
                 for (var k = 0; k < npcs[j].pArray.length; ++k) {
                     if (npcs[j].pArray[k].distance2To(bullets[i].tail) < range) {
                         --bullets[i].penetrationLeft;
                         npcs[j].pArray[k].vx = bullets[i].dx;
                         npcs[j].pArray[k].vy = bullets[i].dy;
-                        npcs[j].health -= randomFloat(0.3, 3);
+                        npcs[j].health -= randomFloat(dmgL, dmgR) * baseDamage;
+                        if (bullets[i].penetrationLeft <= 0) break;
                     }
                     range = 128;
+                    dmgL = 2, dmgR = 8;
+                    if (bullets[i].penetrationLeft <= 0) break;
                 }
             }
             npcs.pop();
             if (bullets[i].penetrationLeft > 0) tmpList.push(bullets[i]);
         }
-
         bullets = tmpList;
+
         for (var j = 0; j < npcs.length; ++j) {
-            if (npcs[j].isDisappeared()) npcs[j] = new Person(window.innerWidth + 10, window.innerHeight - randomInt(0, 400));
-            if (npcs[j].health <= 0) {
+            if (npcs[j].isDisappeared() || npcs[j].isBugged()) {
+                let lr = randomInt(0, 1) == 0 ? -20 : window.innerWidth + 20;
+                npcs[j] = new Person(lr, window.innerHeight - randomInt(-16, 320));
+            }
+            if (npcs[j].isDead()) {
                 npcs[j].ragDoll(lag);
                 npcs[j].draw();
+                if (npcs[j].isFirstDeath() && !player.isDead()) ++killed;
                 continue;
             }
             if (npcs[j].ph.y < window.innerHeight - 38) {
-                npcs[j].walkx = numberSign(player.pc.x - npcs[j].pc.x) * 0.1;
+                let dis = Math.abs(player.pc.x - npcs[j].pc.x);
+                let sign = numberSign(player.pc.x - npcs[j].pc.x);
+                if (dis > 256) npcs[j].walkx = sign * 0.1;
+                else if (dis > 196) npcs[j].walkx = 0;
+                else npcs[j].walkx = -sign / (dis + 32) * 64;
             }
             else npcs[j].walkx = 0;
             // Author: XieNaoban | npcs[j].walky = 1;
@@ -475,11 +491,22 @@ function drawFrame() {
             npcs[j].draw();
         }
 
-        player.aim(mouseX, mouseY, 4);
-        if (isMouseDown && shootCnt++ >= shootMaxCnt) {
-            shootCnt = 0;
-            player.shoot(bullets);
+        if (player.isDead()) {
+            player.ragDoll(lag);
+            player.sink = -1;
+            player.draw();
         }
+        else {
+            player.aim(mouseX, mouseY, 4);
+            if (isMouseDown && shootCnt++ >= shootMaxCnt) {
+                shootCnt = 0;
+                player.shoot(bullets);
+            }
+            player.move(lag);
+            player.draw();
+        }
+
+        afterEachFrame();
     }
     window.requestAnimationFrame(drawFrame);
 }

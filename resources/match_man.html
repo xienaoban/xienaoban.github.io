@@ -147,7 +147,6 @@ function afterEachFrame() {
                 restartDiv.classList.add('fi');
             }
         }
-        return;
     }
     else player.health = Math.min(player.health + lag * 10, PLAYER_MAX_HEALTH);
     if (killed != lastKilled) {
@@ -183,7 +182,7 @@ function restart() {
     if (killedDiv != undefined) {
         killedDiv.classList.remove('fi');
         killedDiv.offsetWidth = killedDiv.offsetWidth;
-        killedDiv.textContent = killed;
+        killedDiv.textContent = 'O';
         killedDiv.classList.add('fi');
         killedDiv.style.fontSize = '90vh';
     }

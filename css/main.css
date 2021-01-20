@@ -1845,7 +1845,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fcf;
+  background: #adff62;
 }
 .feed-link,
 .chat {
@@ -2563,7 +2563,7 @@ ul.breadcrumb li+li:last-child {
   position: relative;
 }
 .site-meta {
-  padding: 20px 0;
+  padding: 11px 0;
   color: #fff;
   background: #222;
 }
@@ -2629,6 +2629,8 @@ ul.breadcrumb li+li:last-child {
 .menu .menu-item {
   display: block;
   margin: 0;
+  width: 49%;
+  display: inline-block;
 }
 .menu .menu-item a,
 .menu .menu-item span.exturl {

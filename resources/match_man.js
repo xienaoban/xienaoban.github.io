@@ -424,6 +424,7 @@ document.onkeyup = function (event) {
         case 38: case 87: case 40: case 83: player.walky = 0; break;
     }
 }
+function beforeEachFrame() {}
 function afterEachFrame() {
     player.health = 9999999;
 }
@@ -436,6 +437,7 @@ function drawFrame() {
     lag = (endTime - startTime) / 1000;
     startTime = endTime;
     if (lag < 0.02) {   // 搞那么长一个 if, 主要还是怕尾递归优化失败
+        beforeEachFrame();
         drawBackground();
 
         var tmpList = [];
@@ -446,8 +448,9 @@ function drawFrame() {
             if (bullets[i].tail.isOutOfWindow()) continue;
             npcs.push(player);
             for (var j = 0; j < npcs.length; ++j) {
-                let range = 25, dmgL = 64, dmgR = 128;
+                let range = 25, dmgL = 64, dmgR = 84;
                 for (var k = 0; k < npcs[j].pArray.length; ++k) {
+                    if (k == 8) continue;
                     if (npcs[j].pArray[k].distance2To(bullets[i].tail) < range) {
                         --bullets[i].penetrationLeft;
                         npcs[j].pArray[k].vx = bullets[i].dx;
@@ -467,8 +470,18 @@ function drawFrame() {
 
         for (var j = 0; j < npcs.length; ++j) {
             if (npcs[j].isDisappeared() || npcs[j].isBugged()) {
-                let lr = randomInt(0, 1) == 0 ? -20 : window.innerWidth + 20;
-                npcs[j] = new Person(lr, window.innerHeight - randomInt(-16, 320));
+                switch (randomInt(0, 2)) {
+                    case 0:
+                        npcs[j] = new Person(randomInt(0, window.innerWidth), window.innerHeight);
+                        break;
+                    case 1:
+                        npcs[j] = new Person(randomInt(0, window.innerWidth), -5);
+                        break;
+                    default:
+                        let lr = randomInt(0, 1) == 0 ? -12 : window.innerWidth + 12;
+                        npcs[j] = new Person(lr, window.innerHeight - randomInt(-16, 200));
+                        break;
+                }
             }
             if (npcs[j].isDead()) {
                 npcs[j].ragDoll(lag);

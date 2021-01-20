@@ -53,12 +53,18 @@
     position: fixed;
     left: max(1vw, 1vh);
     top: max(1vw, 1vh);
-    height: max(30px, 5vh);
+    height: max(16px, 5vh);
     width: 28vw;
-    background-color: rgba(233, 233, 233, 0.16);
+    background-color: rgba(233, 233, 233, 0.12);
 }
 
 #health-text {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -66,7 +72,7 @@
     width: 100%;
     font-family: sans-serif;
     font-weight: 1000;
-    font-size: max(21px, 3.5vh);
+    font-size: max(11.2px, 3.5vh);
     color: rgba(233, 233, 233, 0.66);
     text-align: center;
 
@@ -81,6 +87,30 @@
 
     height: 100%;
     background-color: rgba(233, 233, 233, 0.5);
+}
+
+#level {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    position: fixed;
+    right: max(1vw, 1vh);
+    top: max(1vw, 1vh);
+    
+    font-family: sans-serif;
+    font-weight: 1000;
+    font-size: max(11.2px, 3.5vh);
+    color: rgba(233, 233, 233, 0.5);
 }
 
 #restart {
@@ -118,6 +148,28 @@
     color: rgba(34, 34, 34, 0.5);
     background-color: rgba(233, 233, 233, 0.96);
 }
+
+#xienaoban {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    position: fixed;
+    left: 50vw;
+    top: 92vh;
+    transform: translate(-50%, -50%);
+
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: max(10.5px, 4vh);
+    color: rgb(233, 233, 233);
+    text-align: center;
+    opacity: 0.4;
+}
+a:visited { color: rgb(233, 233, 233); }
+a:visited { color: white; }
     </style>
 </head>
 <body>
@@ -127,13 +179,34 @@
         <div id="health-text"></div>
         <div id="health-bar"></div>
     </div>
+    <div id="level">
+        LEVEL: 0
+        <br/>
+        NPC: 2
+    </div>
     <div id="restart" onclick="restart()">RESTART</div>
+    <div id="xienaoban">&lt; <a href="https://xienaoban.github.io/" target="_blank">xienaoban.github.io</a> &gt;</div>
     <script type="text/javascript" src="match_man.js"></script>
     <script>
 const PLAYER_MAX_HEALTH = 233;
 const PLAYER_MAX_HEALTH_100 = 1 / 2.33;
+const PLAYER_BASE_SHOOT_CNT = 15;
+const ALL_BASE_RECOIL = 20;
+const LEVEL = [4, 8, 14, 24, 40, 56, 70, 100, 164, 256, 512, 1024, 4096, 114514, 0x7ffffffe];
+var level = 0;
 var lastKilled = 0;
 var lastHealth = 0;
+var deathTime = undefined;
+function beforeEachFrame() {
+    if (deathTime != undefined) {
+        let curTime = new Date().getTime();
+        let diff = curTime - deathTime;
+        if (diff < 3000) lag *= 0.1;
+        else if (diff < 6000) lag *= (diff - 2000) / 10000;
+        else deathTime = undefined;
+    }
+
+}
 function afterEachFrame() {
     if (player.isDead()) {
         if (player.isFirstDeath()) {
@@ -146,6 +219,11 @@ function afterEachFrame() {
                 restartDiv.offsetWidth = restartDiv.offsetWidth;
                 restartDiv.classList.add('fi');
             }
+            let xienaobanDiv = document.getElementById('xienaoban');
+            if (xienaobanDiv != undefined) {
+                xienaobanDiv.style.display = 'inline';
+            }
+            deathTime = new Date().getTime();
         }
     }
     else player.health = Math.min(player.health + lag * 10, PLAYER_MAX_HEALTH);
@@ -157,6 +235,15 @@ function afterEachFrame() {
             killedDiv.offsetWidth = killedDiv.offsetWidth;
             killedDiv.textContent = killed;
             killedDiv.classList.add('fi');
+        }
+        while (killed >= LEVEL[level]) {
+            ++level;
+            recoil *= 0.9;
+            shootMaxCnt *= 0.7;
+            let lr = randomInt(0, 1) == 0 ? -12 : window.innerWidth + 12;
+            npcs.push(new Person(lr, window.innerHeight - randomInt(-16, 200)));
+            let levelDiv = document.getElementById('level');
+            if (levelDiv != undefined) levelDiv.innerHTML = 'LEVEL: ' + level + '<br/>NPC: ' + npcs.length;
         }
     }
     let realHealth = Math.max(0, parseInt(player.health));
@@ -176,8 +263,12 @@ function restart() {
     player = new Person(window.innerWidth / 2, window.innerHeight / 2);
     player.health = PLAYER_MAX_HEALTH;
     killed = 0;
+    level = 0;
+    recoil = ALL_BASE_RECOIL;
+    shootMaxCnt = PLAYER_BASE_SHOOT_CNT;
+    deathTime = undefined;
     npcs = [];
-    for (let i = 0; i < 3; ++i) npcs.push(new Person());
+    for (let i = 0; i < 2; ++i) npcs.push(new Person());
     let killedDiv = document.getElementById('killed');
     if (killedDiv != undefined) {
         killedDiv.classList.remove('fi');
@@ -188,6 +279,10 @@ function restart() {
     }
     let restartDiv = document.getElementById('restart')
     if (restartDiv != undefined) restartDiv.style.display = 'none';
+    let xienaobanDiv = document.getElementById('xienaoban')
+    if (xienaobanDiv != undefined) xienaobanDiv.style.display = 'none';
+    let levelDiv = document.getElementById('level');
+    if (levelDiv != undefined) levelDiv.innerHTML = 'LEVEL: ' + level + '<br/>NPC: ' + npcs.length;
     
 }
 restart();

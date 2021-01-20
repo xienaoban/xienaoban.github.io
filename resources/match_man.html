@@ -5,8 +5,29 @@
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
-
 .fi { animation: fade-in 1.5s ease; }
+
+#fullscreen {
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+    transition: all 1.5s;
+
+    cursor: pointer;
+    
+    position: fixed;
+    left: 50%;
+    top: max(1vw, 1vh);
+    height: max(16px, 5vh);
+    width: max(16px, 5vh);
+    transform: translate(-50%, 0);
+    background-color: rgba(233, 233, 233, 0.12);
+}
+#fullscreen:hover {
+    color: rgba(34, 34, 34, 0.5);
+    background-color: rgba(233, 233, 233, 0.96);
+}
 
 #killed {
     -webkit-transition: all 1.5s;
@@ -26,12 +47,12 @@
     
     position: fixed;
     left: 0;
-    top: -12vh;
+    top: -6vh;
     width: 100vw;
 
     font-family: sans-serif;
     font-weight: 600;
-    font-size: 90vh;
+    font-size: 80vh;
     color: rgba(233, 233, 233, 0.25);
     text-align: center;
 }
@@ -174,6 +195,7 @@ a:visited { color: white; }
 </head>
 <body>
     <label id="debug"></label>
+    <div id="fullscreen" onclick="document.fullscreenElement ? document.exitFullscreen() : document.body.requestFullscreen();"></div>
     <div id="killed">O</div>
     <div id="health-container">
         <div id="health-text"></div>
@@ -190,8 +212,8 @@ a:visited { color: white; }
     <script>
 const PLAYER_MAX_HEALTH = 233;
 const PLAYER_MAX_HEALTH_100 = 1 / 2.33;
-const PLAYER_BASE_SHOOT_CNT = 15;
-const ALL_BASE_RECOIL = 20;
+const PLAYER_BASE_SHOOT_CNT = 24;
+const ALL_BASE_RECOIL = 32;
 const LEVEL = [4, 8, 14, 24, 40, 56, 70, 100, 164, 256, 512, 1024, 4096, 114514, 0x7ffffffe];
 var level = 0;
 var lastKilled = 0;
@@ -238,8 +260,8 @@ function afterEachFrame() {
         }
         while (killed >= LEVEL[level]) {
             ++level;
-            recoil *= 0.9;
-            shootMaxCnt *= 0.7;
+            recoil *= 0.92;
+            shootMaxCnt *= 0.76;
             let lr = randomInt(0, 1) == 0 ? -12 : window.innerWidth + 12;
             npcs.push(new Person(lr, window.innerHeight - randomInt(-16, 200)));
             let levelDiv = document.getElementById('level');
@@ -275,7 +297,7 @@ function restart() {
         killedDiv.offsetWidth = killedDiv.offsetWidth;
         killedDiv.textContent = 'O';
         killedDiv.classList.add('fi');
-        killedDiv.style.fontSize = '90vh';
+        killedDiv.style.fontSize = '80vh';
     }
     let restartDiv = document.getElementById('restart')
     if (restartDiv != undefined) restartDiv.style.display = 'none';

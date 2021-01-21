@@ -468,6 +468,12 @@ function drawFrame() {
         }
         bullets = tmpList;
 
+        if (player.isBugged()) {
+            let h = player.health;
+            player = new Person(window.innerWidth - 5, window.innerHeight - 70);
+            player.health = h;
+        }
+
         for (var j = 0; j < npcs.length; ++j) {
             if (npcs[j].isDisappeared() || npcs[j].isBugged()) {
                 switch (randomInt(0, 2)) {
@@ -519,6 +525,18 @@ function drawFrame() {
             player.draw();
         }
 
+        // DEBUG
+        // if (true) {
+        //     ht = 'PLAYER:<br/>' + parseInt(player.health) + ' ' 
+        //     for (let p of player.pArray) ht += '(' + parseInt(p.x) + ', ' + parseInt(p.y) + ') '
+        //     ht += '<br/>NPC:<br/>'
+        //     for (let npc of npcs) {
+        //         ht += parseInt(npc.health) + ' '
+        //         for (let p of npc.pArray) ht += '(' + parseInt(p.x) + ', ' + parseInt(p.y) + ') '
+        //         ht += '<br/>'
+        //     }
+        //     document.getElementById('debug').innerHTML = ht;
+        // }
         afterEachFrame();
     }
     window.requestAnimationFrame(drawFrame);

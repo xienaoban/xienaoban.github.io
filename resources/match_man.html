@@ -7,6 +7,18 @@
 }
 .fi { animation: fade-in 1.5s ease; }
 
+#debug {
+    transition: all 1.5s;
+    position: fixed;
+    left: max(1vw, 1vh);
+    top: calc(max(1.4vw, 1.4vh) + max(16px, 5vh));
+    
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: max(7.5px, 1.2vw);
+    color: rgba(233, 233, 233, 0.66);
+}
+
 #fullscreen {
     -webkit-transition: all 1.5s;
     -moz-transition: all 1.5s;
@@ -17,16 +29,16 @@
     cursor: pointer;
     
     position: fixed;
-    left: 50%;
     top: max(1vw, 1vh);
-    height: max(16px, 5vh);
-    width: max(16px, 5vh);
-    transform: translate(-50%, 0);
-    background-color: rgba(233, 233, 233, 0.12);
+    right: max(1vw, 1vh);
+    height: max(32px, 10vh);
+    width: max(32px, 10vh);
+    fill: rgba(233, 233, 233, 0.5);
+    background-color: rgba(233, 233, 233, 0.16);
 }
 #fullscreen:hover {
-    color: rgba(34, 34, 34, 0.5);
-    background-color: rgba(233, 233, 233, 0.96);
+    fill: rgba(23, 23, 23, 0.8);
+    background-color: rgba(233, 233, 233, 0.8);
 }
 
 #killed {
@@ -63,13 +75,6 @@
     -ms-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
-
-    -moz-user-select: none;
-    -o-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     
     position: fixed;
     left: max(1vw, 1vh);
@@ -85,6 +90,13 @@
     -ms-transition: all 1.5s;
     -o-transition: all 1.5s;
     transition: all 1.5s;
+
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     
     position: absolute;
     top: 0;
@@ -100,11 +112,11 @@
 }
 
 #health-bar {
-    -webkit-transition: all 1.5s;
-    -moz-transition: all 1.5s;
-    -ms-transition: all 1.5s;
-    -o-transition: all 1.5s;
-    transition: all 1.5s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
 
     height: 100%;
     background-color: rgba(233, 233, 233, 0.5);
@@ -125,12 +137,13 @@
     user-select: none;
 
     position: fixed;
-    right: max(1vw, 1vh);
+    right: calc(max(2vw, 2vh) + max(32px, 10vh));
     top: max(1vw, 1vh);
     
     font-family: sans-serif;
     font-weight: 1000;
     font-size: max(11.2px, 3.5vh);
+    text-align: right;
     color: rgba(233, 233, 233, 0.5);
 }
 
@@ -195,7 +208,13 @@ a:visited { color: white; }
 </head>
 <body>
     <label id="debug"></label>
-    <div id="fullscreen" onclick="document.fullscreenElement ? document.exitFullscreen() : document.body.requestFullscreen();"></div>
+    <svg id="fullscreen" onclick="document.fullscreenElement ? document.exitFullscreen() : document.body.requestFullscreen();" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="fullscreen" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+        <path d="M9 23h14V9H9V23zM11 11h10v10H11V11z"/>
+        <polygon points="7,21 5,21 5,27 11,27 11,25 7,25 "/>
+        <polygon points="7,7 11,7 11,5 5,5 5,11 7,11 "/>
+        <polygon points="25,25 21,25 21,27 27,27 27,21 25,21 "/>
+        <polygon points="21,5 21,7 25,7 25,11 27,11 27,5 "/>
+    </svg>
     <div id="killed">O</div>
     <div id="health-container">
         <div id="health-text"></div>

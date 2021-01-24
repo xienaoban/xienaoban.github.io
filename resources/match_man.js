@@ -469,9 +469,10 @@ function drawFrame() {
         bullets = tmpList;
 
         if (player.isBugged()) {
-            let h = player.health;
+            let old = player;
             player = new Person(window.innerWidth - 5, window.innerHeight - 70);
-            player.health = h;
+            player.health = old.health;
+            player._firstDeath = old._firstDeath;
         }
 
         for (var j = 0; j < npcs.length; ++j) {

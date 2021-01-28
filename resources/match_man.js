@@ -355,9 +355,8 @@ Person.prototype.ragDoll = function (lag) {
     if (this.ph.ay < 0) {
         this.walkx = this.walky = 0;
         for (let p of this.pArray) p.ay = randomFloat(0.10, 0.30) * GRAVITY;
-        this.plh.ay = this.prh.ay = GRAVITY * 0.05;
-        this.ple.ay = this.pre.ay = 0.4;
-        this.pc.ay = 0.5 * GRAVITY;
+        this.plh.ay = this.prh.ay = 0.05 * GRAVITY;
+        this.ple.ay = this.pre.ay = 0.02 * GRAVITY;
     }
 
     if (this.ph.y >= window.innerHeight - 38) {
@@ -441,14 +440,14 @@ function drawFrame() {
         drawBackground();
 
         var tmpList = [];
-        const baseDamage = lag * 24;
+        const baseDamage = 0.1 + lag * 10;
         for(var i = 0; i < bullets.length; ++i) {
             bullets[i].move(lag);
             bullets[i].draw();
             if (bullets[i].tail.isOutOfWindow()) continue;
             npcs.push(player);
             for (var j = 0; j < npcs.length; ++j) {
-                let range = 25, dmgL = 64, dmgR = 84;
+                let range = 30, dmgL = 64, dmgR = 84;
                 for (var k = 0; k < npcs[j].pArray.length; ++k) {
                     if (k == 8) continue;
                     if (npcs[j].pArray[k].distance2To(bullets[i].tail) < range) {
@@ -459,7 +458,7 @@ function drawFrame() {
                         if (bullets[i].penetrationLeft <= 0) break;
                     }
                     range = 128;
-                    dmgL = 2, dmgR = 8;
+                    dmgL = 4, dmgR = 10;
                     if (bullets[i].penetrationLeft <= 0) break;
                 }
             }

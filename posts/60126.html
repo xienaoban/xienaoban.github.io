@@ -30,15 +30,15 @@
     var CONFIG = {"hostname":"xienaoban.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (&#x2F;ﾟДﾟ)&#x2F; [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
+  <meta name="description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (&#x2F;ﾟДﾟ)&#x2F; 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个体好坏. 并按">
 <meta property="og:type" content="article">
 <meta property="og:title" content="带精英策略的非支配排序的遗传算法 NSGAII">
 <meta property="og:url" content="https://xienaoban.github.io/posts/60126.html">
 <meta property="og:site_name" content="XieNaoban&#39;s Blog">
-<meta property="og:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (&#x2F;ﾟДﾟ)&#x2F; [TOC] 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个">
+<meta property="og:description" content="啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_ 竟然写了大半天, 全都忘光了, 怕不是要凉 (&#x2F;ﾟДﾟ)&#x2F; 遗传算法(Genetic Algorithm) 此处使用二进制编码法形成染色体. 种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群. 适应度评价: 对每个个体运行适应度评价函数, 区分群体中个体好坏. 并按">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-03-10T14:53:00.000Z">
-<meta property="article:modified_time" content="2021-01-28T13:00:29.257Z">
+<meta property="article:modified_time" content="2021-01-30T15:02:35.941Z">
 <meta property="article:author" content="XieNaoban">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="NSGA-II">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-28 21:00:29" itemprop="dateModified" datetime="2021-01-28T21:00:29+08:00">2021-01-28</time>
+                <time title="修改时间：2021-01-30 23:02:35" itemprop="dateModified" datetime="2021-01-30T23:02:35+08:00">2021-01-30</time>
               </span>
 
           
@@ -279,7 +279,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -300,7 +300,6 @@
       
         <p>啊要出分数线了好紧张. 赶紧复习复习以前学的东西_(:з」∠)_</p>
 <p>竟然写了大半天, 全都忘光了, 怕不是要凉 (/ﾟДﾟ)/</p>
-<p>[TOC]</p>
 <h1 id="遗传算法genetic-algorithm">遗传算法(Genetic Algorithm)</h1>
 <p>此处使用二进制编码法形成染色体.</p>
 <p>种群初始化: 随机将染色体的某些 DNA 置 1, 进行 M 次, 形成 M 个不重复的个体组成第一代种群.</p>
@@ -313,7 +312,7 @@
 <p>对于最小化多目标问题, n 个目标分量 <span class="math inline">\(f_i\)</span> <span class="math inline">\((i=1,...,n)\)</span> 组成的向量 <span class="math inline">\(\overline{f}(\overline{X})=(f_1(\overline{X}), f_2(\overline{X}), ..., f_n(\overline{X}))\)</span>, 给定两个决策变量 <span class="math inline">\(\overline{X}_u, \overline{X}_v \ U\)</span>:</p>
 <ul>
 <li>当且仅当 <span class="math inline">\(\forall i \in \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
-<li>当且仅当 <span class="math inline">\(\forall i \in \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) \leqslant f_i(\overline{X}_v)\)</span>, 且至少存在一个 <span class="math inline">\(j \in \{1, ..., n\}\)</span> 则 <span class="math inline">\(\overline{X}_u\)</span> 弱支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
+<li>当且仅当 <span class="math inline">\(\forall i \in \{1, ..., n\}\)</span> 时, 都有 <span class="math inline">\(f_i(\overline{X}_u) \leqslant f_i(\overline{X}_v)\)</span>, 且至少存在一个 <span class="math inline">\(j \in \{1, ..., n\}\)</span> 使得 <span class="math inline">\(f_j(\overline{X}_u) = f_j(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 弱支配 <span class="math inline">\(\overline{X}_v\)</span>.</li>
 <li>当且仅当 <span class="math inline">\(\exists i \in \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_i(\overline{X}_u) &lt; f_i(\overline{X}_v)\)</span>, 且 <span class="math inline">\(\exists j \in \{1, ..., n\}\)</span>, 使 <span class="math inline">\(f_j(\overline{X}_u) &gt; f_j(\overline{X}_v)\)</span>, 则 <span class="math inline">\(\overline{X}_u\)</span> 和 <span class="math inline">\(\overline{X}_v\)</span> 互不支配.</li>
 </ul>
 <p>若 <span class="math inline">\(\overline{X}_u\)</span> 为 Pareto 最优解, 则不存在 <span class="math inline">\(\overline{X}_v \in U\)</span> 支配 <span class="math inline">\(\overline{X}_u\)</span>.</p>
@@ -321,23 +320,24 @@
 <p>对于互不支配的染色体, 我们称这些染色体处于同一层. 则所有的染色体可以被划分到若干层. 非支配排序就是将染色体分层的排序算法, 分得的层称为第一级非支配层, 第二级非支配层...... 其中第一级非支配层处于 Pareto 前沿(Pareto Front).</p>
 <p>非支配排序步骤如下:</p>
 <ul>
-<li>(1)设 i = 1;</li>
-<li>(2)对所有的 j = 1, 2, ..., N(i != j), 基于适应度函数比较个体 xi, xj 之间的支配关系;</li>
-<li>(3)若不存在任何一个个体 xj 优于 xi, 则标记 xi 为非支配个体;</li>
-<li>(4)令 j = j + 1, 转到(1), 重复直至找到所有非支配个体.</li>
+<li>(1)设 <span class="math inline">\(i = 1\)</span>;</li>
+<li>(2)对所有的 <span class="math inline">\(j = 1, 2, ..., N (j \ne i)\)</span>, 基于适应度函数比较个体 <span class="math inline">\(x_i\)</span>, <span class="math inline">\(x_j\)</span> 之间的支配关系;</li>
+<li>(3)若不存在任何一个个体 <span class="math inline">\(x_j\)</span> 优于 <span class="math inline">\(x_i\)</span>, 则标记 <span class="math inline">\(x_i\)</span> 为非支配个体;</li>
+<li>(4)令 <span class="math inline">\(i = i + 1\)</span>, 转到 (1), 重复直至找到所有非支配个体.</li>
 </ul>
 <p>上述步骤将得到第一级非支配层, 过滤第一层所有个体后再次运行非支配排序, 即可得到第二级非支配层.</p>
+<p>可以看到每找一层的时间复杂度是 <span class="math inline">\(O(MN^2)\)</span> (<span class="math inline">\(M\)</span> 为目标数, <span class="math inline">\(N\)</span> 为种群大小), 最多要找 <span class="math inline">\(N\)</span> 次, 所以一共的时间复杂度到了 <span class="math inline">\(O(MN^3)\)</span>.</p>
 <h2 id="虚拟适应度略">虚拟适应度(略)</h2>
 <p>为了算法更快地收敛, 虚拟适应度越大(层数越低)的个体应该有更多机会进入下一代. 但同时, 我们期望的 Pareto 最优解集应该是均匀分布的(而不是都挤在一个或几个点附近), 因此还要保证当前非支配层上的个体具有多样性。NSGA 中引入了基于拥挤策略的小生境(NIChe)技术, 对每个个体计算共享适应度.</p>
 <h1 id="带精英策略的非支配排序遗传算法nsga-ii">带精英策略的非支配排序遗传算法(NSGA-II)</h1>
-<p>NSGA-II 是 NSGA 的改进. NSGA-II 相对于 NSGA, 1. 提出了快速非支配排序算子, 将非支配排序从 <span class="math inline">\(O(MN^3)\)</span> 优化到了 <span class="math inline">\(O(MN^2)\)</span> (M为目标数, N 为种群大小); 2. 提出了拥挤距离算子; 3. 提出了精英策略选择算子.</p>
+<p>NSGA-II 是 NSGA 的改进. NSGA-II 相对于 NSGA, 1. 提出了快速非支配排序算子, 将非支配排序从 <span class="math inline">\(O(MN^3)\)</span> 优化到了 <span class="math inline">\(O(MN^2)\)</span> (<span class="math inline">\(M\)</span> 为目标数, <span class="math inline">\(N\)</span> 为种群大小); 2. 提出了拥挤距离算子; 3. 提出了精英策略选择算子.</p>
 NSGA-II 流程图
 <div id="flowchart-0" class="flow-chart">
 
 </div>
 <h2 id="快速支配排序算子">快速支配排序算子</h2>
 <ul>
-<li>(1)对种群 <span class="math inline">\(P\)</span> 中的每个个体 <span class="math inline">\(p\)</span>, 计算 <span class="math inline">\(p\)</span> 在种群 <span class="math inline">\(P\)</span> 中支配的个体数 <span class="math inline">\(n_p\)</span>, 并将这些被 <span class="math inline">\(p\)</span> 支配的个体存入 <span class="math inline">\(S_p\)</span> 中(每个个体都要比较一次, 共比较 <span class="math inline">\(\frac{N(N-1))}{2}\)</span> 次, 每次比较要遍历 <span class="math inline">\(M\)</span> 个目标, 时间复杂度 <span class="math inline">\(O(MN^2)\)</span>);</li>
+<li>(1)对种群 <span class="math inline">\(P\)</span> 中的每个个体 <span class="math inline">\(p\)</span>, 计算 <span class="math inline">\(p\)</span> 在种群 <span class="math inline">\(P\)</span> 中支配的个体数 <span class="math inline">\(n_p\)</span>, 并将这些被 <span class="math inline">\(p\)</span> 支配的个体存入 <span class="math inline">\(S_p\)</span> 中(即每个个体都要两两比较一次, 共比较 <span class="math inline">\(\frac{N(N-1))}{2}\)</span> 次, 每次比较要遍历 <span class="math inline">\(M\)</span> 个目标, 时间复杂度 <span class="math inline">\(O(MN^2)\)</span>);</li>
 <li>(2)<span class="math inline">\(layer = 1\)</span>;</li>
 <li>(3)找出所有 <span class="math inline">\(n_p = 0\)</span> 的个体, 保存在数组 <span class="math inline">\(F_{layer}\)</span> 中;</li>
 <li>(4)对于 <span class="math inline">\(F_{layer}\)</span> 中的每个个体 <span class="math inline">\(p\)</span> 的支配集 <span class="math inline">\(S_p\)</span>: 遍历 <span class="math inline">\(S_p\)</span>, 对 <span class="math inline">\(S_p\)</span> 中每个个体 <span class="math inline">\(l\)</span>, 执行 <span class="math inline">\(n_l = n_l - 1\)</span>;</li>

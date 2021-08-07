@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+  <script>
+    if (window.location.pathname.search(/\.html$/) == -1) {
+        window.location.pathname += '.html';
+    }
+  </script>
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xienaoban.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="啊... 又要写毕业论文了... 担心 Overleaf 须要联网有一定风险, 还是打算 本地 TeX Live + Github 版本管理与备份. 安装 TeX Live 2021 用国内镜像下载, 速度快: 清华源 | 华为云源 | 阿里云源. 双击下载的 ISO, 打开 (不用管理员) install-tl-windows.bat, 会有 GUI 安装界面. 我直接便携安装在 D 盘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LATEX 安装使用">
+<meta property="og:url" content="https://xienaoban.github.io/posts/60405.html">
+<meta property="og:site_name" content="XieNaoban&#39;s Blog">
+<meta property="og:description" content="啊... 又要写毕业论文了... 担心 Overleaf 须要联网有一定风险, 还是打算 本地 TeX Live + Github 版本管理与备份. 安装 TeX Live 2021 用国内镜像下载, 速度快: 清华源 | 华为云源 | 阿里云源. 双击下载的 ISO, 打开 (不用管理员) install-tl-windows.bat, 会有 GUI 安装界面. 我直接便携安装在 D 盘">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xienaoban.github.io/posts/60405/vscode-latex-preview.png">
+<meta property="article:published_time" content="2021-08-07T14:31:36.000Z">
+<meta property="article:modified_time" content="2021-08-07T16:49:53.641Z">
+<meta property="article:author" content="XieNaoban">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xienaoban.github.io/posts/60405/vscode-latex-preview.png">
+
+<link rel="canonical" href="https://xienaoban.github.io/posts/60405.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LATEX 安装使用 | XieNaoban's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">XieNaoban's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="fa fa-folder-open fa-fw"></i>资源</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/XieNaoban" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xienaoban.github.io/posts/60405.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/resources/images/avatar.jpg">
+      <meta itemprop="name" content="XieNaoban">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XieNaoban's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LATEX 安装使用
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-07 22:31:36" itemprop="dateCreated datePublished" datetime="2021-08-07T22:31:36+08:00">2021-08-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-08 00:49:53" itemprop="dateModified" datetime="2021-08-08T00:49:53+08:00">2021-08-08</time>
+              </span>
+
+          
+            <span id="/posts/60405.html" class="post-meta-item leancloud_visitors" data-flag-title="LATEX 安装使用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论次数：</span>
+    
+    <a title="valine" href="/posts/60405.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/60405.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>啊... 又要写毕业论文了... 担心 Overleaf 须要联网有一定风险, 还是打算 本地 TeX Live + Github 版本管理与备份.</p>
+<h1 id="安装">安装</h1>
+<h2 id="tex-live-2021">TeX Live 2021</h2>
+<p>用国内镜像下载, 速度快: <a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">清华源</a> | <a href="https://mirrors.huaweicloud.com/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">华为云源</a> | <a href="https://link.zhihu.com/?target=https%3A//mirrors.aliyun.com/CTAN/systems/texlive/Images/">阿里云源</a>.</p>
+<p>双击下载的 ISO, 打开 (不用管理员) <code>install-tl-windows.bat</code>, 会有 GUI 安装界面. 我直接便携安装在 D 盘了, 安装出来有 7 个多 G, 语言少选几个可以少安装一个 G, 不过也就一个 G, 干脆全装了.</p>
+<blockquote>
+<p>好家伙装了半个多小时了, 怎么还没装完, 我这硬盘还是 SSD.</p>
+</blockquote>
+<blockquote>
+<p>妈耶一看全是几 k 到几百 k 的小文件... 又让我想起了被 NPM 的依赖包支配的恐惧...</p>
+</blockquote>
+<blockquote>
+<p>尼玛快 50 分钟了吧? 早知道直接上 Overleaf 了... 感觉现在 Overleaf 访问也挺稳定的.</p>
+</blockquote>
+<blockquote>
+<p>终于装完了...</p>
+</blockquote>
+<p>由于我选了便携安装, 所以为了识别出那几个指令, 要自己把安装路径的 bin <code>D:\texlive\2021\bin\win32</code> 加入系统环境变量的 Path 里.</p>
+<h2 id="vscode-插件配置">VSCode 插件配置</h2>
+<ol type="1">
+<li><p>安装 SumatraPDF 可以实时预览: <a href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener">官网</a> | <a href="https://github.com/sumatrapdfreader/sumatrapdf" target="_blank" rel="noopener">Github</a>. 这是可选项, 但是确实方便. 由于只是给 LaTeX 用, 就下了个便携版, 下下来只有一个 exe, 直接扔 TeX Live 目录里得了.</p></li>
+<li><p>在 VSCode 插件商店安装 LaTeX Workshop, 用来语法高亮, 自动补全, 编译什么的.</p></li>
+<li><p>在 VSCode 按 <code>F1</code>, 输入 <code>setjson</code>, 选择 <code>首选项: 打开设置 (json)</code>, 在最外层花括号内追加如下内容: <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line">// ======================== LaTeX 设置 BEGIN  ========================</span><br><span class="line">// bibtex 格式</span><br><span class="line">"latex-workshop.bibtex-format.tab": "tab",</span><br><span class="line"></span><br><span class="line">// 自动编译，全部关闭，当且仅当你认为有需要的时候才会去做编译</span><br><span class="line">"latex-workshop.latex.autoBuild.run": "never",</span><br><span class="line">"latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,</span><br><span class="line"></span><br><span class="line">// 设置 latex-workshop 的 PDF　预览程序，external　指的是外部程序</span><br><span class="line">"latex-workshop.view.pdf.viewer": "external",</span><br><span class="line">"latex-workshop.view.pdf.ref.viewer": "external",</span><br><span class="line">"latex-workshop.view.pdf.external.viewer.command": "D:\\texlive\\SumatraPDF-3.3.3-64.exe", // 注意修改路径</span><br><span class="line">"latex-workshop.view.pdf.external.viewer.args": [</span><br><span class="line">    <span class="string">"%PDF%"</span></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 配置正向、反向搜索：.tex -&gt; .pdf</span><br><span class="line">"latex-workshop.view.pdf.external.synctex.command": "D:\\texlive\\SumatraPDF-3.3.3-64.exe", // 注意修改路径</span><br><span class="line">"latex-workshop.view.pdf.external.synctex.args": [</span><br><span class="line">    // 正向搜索</span><br><span class="line">    "-forward-search",</span><br><span class="line">    "%TEX%",</span><br><span class="line">    "%LINE%",</span><br><span class="line">    "-reuse-instance",</span><br><span class="line">    // 反向搜索</span><br><span class="line">    "-inverse-search",</span><br><span class="line">    "\"C:\\Users\\xie\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"C:\\Users\\xie\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\out\\cli.js\" -gr %f:%l",</span><br><span class="line">    <span class="string">"%PDF%"</span></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 这是一些独立的编译选项，可以作为工具被编译方案调用</span><br><span class="line">"latex-workshop.latex.tools": [&#123;</span><br><span class="line">        // Windows 原生安装 TeX Live 2020 的编译选项</span><br><span class="line">        "name": "Windows XeLaTeX",</span><br><span class="line">        "command": "xelatex",</span><br><span class="line">        "args": [</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // Windows BibTeX 编译</span><br><span class="line">        "name": "Windows BibTeX",</span><br><span class="line">        "command": "bibtex",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // Windows Biber 编译</span><br><span class="line">        "name": "Windows Biber",</span><br><span class="line">        "command": "biber",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // WSL XeLaTeX 编译一般的含有中文字符的文档</span><br><span class="line">        "name": "WSL XeLaTeX",</span><br><span class="line">        "command": "wsl",</span><br><span class="line">        "args": [</span><br><span class="line">            "/usr/local/texlive/2020/bin/x86_64-linux/xelatex",</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            //"-output-directory=%OUTDIR%",</span><br><span class="line">            //"-aux-directory=%OUTDIR%",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // WSL biber / bibtex 编译带有 citation 标记项目的文档</span><br><span class="line">        "name": "WSL Biber",</span><br><span class="line">        "command": "wsl",</span><br><span class="line">        "args": [</span><br><span class="line">            "/usr/local/texlive/2020/bin/x86_64-linux/biber",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // macOS 或者 Linux 的简单编译</span><br><span class="line">        // 两种操作系统的操作方式相同</span><br><span class="line">        "name": "macOS / Linux XeLaTeX",</span><br><span class="line">        "command": "xelatex",</span><br><span class="line">        "args": [</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // macOS 或者 Linux 的索引编译</span><br><span class="line">        // 两种操作系统的操作方式相同</span><br><span class="line">        "name": "macOS / Linux Biber",</span><br><span class="line">        "command": "biber",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 这是一些编译方案，会出现在 GUI 菜单里</span><br><span class="line">"latex-workshop.latex.recipes": [&#123;</span><br><span class="line">        // 1.1 Windows 编译简单的小文档，这个选项不太常用，因为绝大多数文章都需要有参考文献索引</span><br><span class="line">        "name": "Windows XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"Windows XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 1.2 Windows 编译带有索引的论文，需要进行四次编译；-&gt; 符号只是一种标记而已，没有程序上的意义</span><br><span class="line">        "name": "Windows xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "Windows XeLaTeX",</span><br><span class="line">            "Windows BibTeX",</span><br><span class="line">            "Windows XeLaTeX",</span><br><span class="line">            <span class="string">"Windows XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 2.1  WSL 编译简单的小文档，这个选项不太常用，因为我绝大多数文章都需要有引用。</span><br><span class="line">        "name": "XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"WSL XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 2.2 带有 citation 索引的文档，需要进行四次编译；-&gt; 符号只是一种标记而已，没有程序上的意义</span><br><span class="line">        "name": "xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "WSL XeLaTeX",</span><br><span class="line">            "WSL Biber",</span><br><span class="line">            "WSL XeLaTeX",</span><br><span class="line">            <span class="string">"WSL XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 3.1 macOS 简单 小文档</span><br><span class="line">        "name": "macOS XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"macOS XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 3.2 macOS 四次编译</span><br><span class="line">        "name": "macOS xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "macOS / Linux XeLaTeX",</span><br><span class="line">            "macOS / Linux Biber",</span><br><span class="line">            "macOS / Linux XeLaTeX",</span><br><span class="line">            <span class="string">"macOS / Linux XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 清空中间文件</span><br><span class="line">"latex-workshop.latex.clean.fileTypes": [</span><br><span class="line">    "*.aux",</span><br><span class="line">    "*.bbl",</span><br><span class="line">    "*.blg",</span><br><span class="line">    "*.idx",</span><br><span class="line">    "*.ind",</span><br><span class="line">    "*.lof",</span><br><span class="line">    "*.lot",</span><br><span class="line">    "*.out",</span><br><span class="line">    "*.toc",</span><br><span class="line">    "*.acn",</span><br><span class="line">    "*.acr",</span><br><span class="line">    "*.alg",</span><br><span class="line">    "*.glg",</span><br><span class="line">    "*.glo",</span><br><span class="line">    "*.gls",</span><br><span class="line">    "*.ist",</span><br><span class="line">    "*.fls",</span><br><span class="line">    "*.log",</span><br><span class="line">    "*.fdb_latexmk",</span><br><span class="line">    "*.bcf",</span><br><span class="line">    "*.run.xml",</span><br><span class="line">    //"*.synctex.gz"</span><br><span class="line">]</span><br><span class="line">// ======================== LaTeX 设置 END ========================</span><br></pre></td></tr></table></figure> 上面这串设置是网上找的 (文章都是抄来抄去, 也不知道到底是谁整理的...), 不过看着很靠谱. 但也是自己改动了一些. 首先是网上找的原版有错别字, 有个 <code>command</code> 打成了 <code>commmand</code>... 其次由于我用的是 BibTeX 而不是 Biber, 所以依葫芦画瓢加了个 Windows BibTeX 的配置, 复杂编译改成了 BibTeX (其他 Linux, Mac 的没改, 还是 Biber). 里面要注意修改的有两个, 一个是 VSCode 的路径要替换, 一个是 SumatraPDF 的路径.</p></li>
+<li><p>搞腚! <img src="/posts/60405/vscode-latex-preview.png" alt="vscode-latex-preview.png"> 点上面那个绿色的播放键 <span style="color:green;font-weight: bold">▷</span> 就会编译并更新预览. 当然你也可以把 VSCode 设置里的 <code>latex-workshop.latex.autoBuild.run</code> 改成 <code>onSave</code> 甚至 <code>onFileChange</code>, 可以做到实时刷新. 但是 LaTeX 毕竟不是 Markdown, 编译还是挺慢的, 想想还是手动更新好了.</p></li>
+</ol>
+<h2 id="安装问题踩坑">安装问题踩坑</h2>
+<h3 id="vscode-报错-recipe-terminated-with-fatal-error-spawn-xelatex-enoent.">VSCode 报错: <code>Recipe terminated with fatal error: spawn xelatex ENOENT.</code></h3>
+<p>这是忘记把安装路径的 bin 加入 Path 了.</p>
+<h3 id="编译报错-cannot-find-xxx.bcf">编译报错: <code>Cannot find 'xxx.bcf'!</code></h3>
+<p>将默认文献工具改为 BibTeX, 于是找的不是 <code>.bcf</code> 而是 <code>.bib</code> 了.</p>
+<h1 id="搞论文">搞论文</h1>
+<p>复旦毕业论文模板: <a href="https://github.com/stone-zeng/fduthesis" target="_blank" rel="noopener">曾祥东大佬的模板 Github</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XieNaoban
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xienaoban.github.io/posts/60405.html" title="LATEX 安装使用">https://xienaoban.github.io/posts/60405.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/45902.html" rel="prev" title="LeetCode 第 223 场周赛">
+      <i class="fa fa-chevron-left"></i> LeetCode 第 223 场周赛
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tex-live-2021"><span class="nav-number">1.1.</span> <span class="nav-text">TeX Live 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-插件配置"><span class="nav-number">1.2.</span> <span class="nav-text">VSCode 插件配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装问题踩坑"><span class="nav-number">1.3.</span> <span class="nav-text">安装问题踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-报错-recipe-terminated-with-fatal-error-spawn-xelatex-enoent."><span class="nav-number">1.3.1.</span> <span class="nav-text">VSCode 报错: Recipe terminated with fatal error: spawn xelatex ENOENT.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译报错-cannot-find-xxx.bcf"><span class="nav-number">1.3.2.</span> <span class="nav-text">编译报错: Cannot find &#39;xxx.bcf&#39;!</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搞论文"><span class="nav-number">2.</span> <span class="nav-text">搞论文</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="XieNaoban"
+      src="/resources/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">XieNaoban</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">127</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/XieNaoban" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;XieNaoban" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/xienaoban" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;xienaoban" rel="noopener" target="_blank"><i class="fab fa-contao fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiejf2020@outlook.com" title="E-Mail → mailto:xiejf2020@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XieNaoban</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">449k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6:48</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'hW2OCX4awMmBhdNzSQbLfRQm-gzGzoHsz',
+      appKey     : 'kCc9pc7qCsDOAE0q3GoesYfu',
+      placeholder: "在此评论 (但我不一定看得到), 或可前往 https://blog.csdn.net/xienaoban 评论.",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

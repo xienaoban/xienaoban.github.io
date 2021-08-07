@@ -472,75 +472,6 @@ iter(yes)->opt->e</textarea><textarea id="flowchart-0-options" style="display: n
       </tags>
   </entry>
   <entry>
-    <title>A星寻路算法初探</title>
-    <url>/posts/56919.html</url>
-    <content><![CDATA[<h2 id="写在开始之前">写在开始之前</h2>
-<p>最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的 <code>A*</code> 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是 <code>A*</code> 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。 我本次的模拟比较简单，下面简述一下模拟环境：</p>
-<ol type="1">
-<li>地图是棋盘式的格子地图；</li>
-<li>各个点没有权值，或者说权值为1；</li>
-<li>只能上下左右走，不支持斜着走；</li>
-<li>未考虑终点被包住而到达不了的情况，发生此类情况时，算法会遍历所有可到达点无果后才证明目标无法到达。</li>
-</ol>
-<p>虽然模拟的比较简单，但是足以学习、说明问题。为了使算法更形象可视化，我给算法的过程做了小动画。成品存在了我的Github里：https://github.com/XieNaoban/Pathfinding 这里代码就不贴了。使用的java编写。当时是初学java，所以代码写的比较屎，我现在回头都有点看不下去。</p>
-<h2 id="寻路的基本思路">寻路的基本思路</h2>
-<p>首先总结一下寻路的最常见的两个思路， <strong>遍历</strong> 与 <strong>贪心算法</strong> 。</p>
-<h3 id="遍历只考虑起点">遍历：只考虑起点</h3>
-<p>这里说的遍历其实用的是Dijkstra算法或BFS，也就从起点开始一扩散出去寻找最短路径。也就是遍历距离起点最短距离为1、2、3……n-1、n的点。对于地形复杂比如有山有沼泽（即有权值）的地图（图），使用Dijkstra算法，用优先队列存储遍历到地图的每一个点时的权值和。对于一张平滑的也就是无权值（权值相同）的地图，Dijkstra的表现与BFS相同，即只需退化使用队列进行BFS遍历即可，无需使用Dijkstra算法。这里我的模拟的地图没有权值，直接使用了BFS。</p>
-<figure>
-<img src="/posts/56919/1.png" alt="图1. BFS无障碍寻路演示"><figcaption>图1. BFS无障碍寻路演示</figcaption>
-</figure>
-<figure>
-<img src="/posts/56919/2.png" alt="图1. BFS小障碍寻路演示"><figcaption>图1. BFS小障碍寻路演示</figcaption>
-</figure>
-<figure>
-<img src="/posts/56919/3.png" alt="图3. BFS略复杂障碍寻路演示"><figcaption>图3. BFS略复杂障碍寻路演示</figcaption>
-</figure>
-<p>黄色代表被搜索过，蓝色代表搜索完成后找到的路径（在这里显然也是最短路径）。格子中的值为从起点到本格子的最短距离。由图可知算法从起点向周围扩散，直到扩散到终点。 结论是，BFS（或带权图中用的Dijkstra）肯定找到最短路径，但是问题在于，它太耗时了，访问的点（黄色格子）太多了。想想就知道很多点完全没有必要遍历。 造成这一现象的原因是，这个算法只考虑了起点，一直找距离起点最短的路直到遇到终点。</p>
-<h3 id="贪心只想着终点">贪心：只想着终点</h3>
-<p>试图不遍历，直接找到终点去，那基本就是使用贪心算法了吧。 以上的启发式函数仅仅考虑了起点，因而导致算法无目的地向四周扩散寻找。那既然是使用贪心算法，每次寻找目前为之的最优解，那么这次只要考虑终点在哪里就行了，一路向终点走，起点不用考虑。这使得算法疯狂试图向终点靠近。 <img src="/posts/56919/4.png" alt="图4. 贪心算法无复杂障碍寻路演示"> 结果发现无障碍情况下效果杠杠的，没有一块多余的白色。但是如果有障碍呢？ <img src="/posts/56919/5.png" alt="图5. 贪心算法略复杂障碍寻路演示"> 虽然一格都没有多搜索，但是游戏里AI要是这样走路那玩家肯定吃不消。而且还有一个问题，万一走到了死胡同里，算法就会判定无法到达终点，而事实却是是算法自己钻了牛角尖。所以必须允许算法倒退，从死胡同里后退一步或多步，换条路子走。可以使用栈即可实现。有时会发现换了路之后反而更快地到达了之前到过的一个点，于是有些点重复搜索了，重复搜索的话很有可能比无脑遍历都不划算。于是我关闭了重复搜索，效果好多了。 <img src="/posts/56919/6.png" alt="图4. 贪心算法复杂障碍寻路演示"> 可以看到算法产生了很多失败的搜索（黄格子）（都是被自己走过的路堵死的。。。创战记既视感）但是搜索的路比遍历少多了，但是说起来，允许倒退重新寻路，说到底这也还算是是进行遍历了。。。有时候还不及遍历。（其实我搜索完后画的路径不是完全根据算法来的，算法找的路还要更绕，我很多地方已经根据黄格子的梯度抄近路了。） 同时贪心算法只考虑了终点，永远只向着终点方向走，不考虑目前离起点已经走了多少格了。</p>
-<h2 id="a星算法">A星算法</h2>
-<p>A星（<code>*</code> 在 Markdown 里打起来有点麻烦，下面直接用‘星’代替了）用的也是Dijkstra。每次找出当前期望值最高的点（即最可能最快速度通往终点的点），一步步搜索过去。Wiki上也说了，这是对Dijkstra's Algorithm 的扩展，因为它使用了性能更好的<strong>启发</strong>式引导其搜索。</p>
-<h3 id="最短路径还是最合理路径">“最短”路径还是“最合理”路径</h3>
-<p>我刚开始了解A星的时候, 看了好几篇博客、文章，竟然众说纷纭。有人说“不是。因为‘启发’是不精确的。”。也有人说“尽管A星基于无法保证最佳解的启发式方法，A星却能保证找到一条最短路径。”这就很尴尬了。 看了这么多资料以及加上我以往的玩游戏经验，我认为A星只是个比较宽的概念，它可以找到最佳路径，也可以找的只是合理路径。既然用了启发，那么它很可能找的不是“最短”而只是说根据这个启发找到的最“合理”路径。但是也可能你的启发式函数做的很好，找到的最合理路径就是最佳路径（就比如文章开头的说的遍历）。关键就在于你给他的“启发”是怎么样的。 小时候玩红警还是什么游戏时就遇到过单位走的路不是最短路径。</p>
-<h3 id="核心寻找启发式函数hn">核心：寻找启发式函数h(n)</h3>
-<p>A星既然用了Dijkstra，那它的基本过程就是：从优先队列里拉出期望最高的n点（在我的算法里表示为h(n)值最低），标记，并把它周围的未知点放进优先队列。所以关键就是这个h(n)。 h(n)怎么找？其实最简单的，上面讲的遍历说起来也是h(n)的一种。从起点进行遍历的 <code>h(n) = n.t</code> （t为距离起点的距离），也就是说而对距离近的优先搜索。而这个算法其实就是最短路径的算法，这里“最合理路径”就是“最短路径”。 而对于上面讲的贪心算法，他的引导函数可以看作是</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</span><br></pre></td></tr></table></figure>
-<p>哪边离终点近就走哪里。之前这是用贪心实现的，但如果用做A星的h(n)实现呢？</p>
-<figure>
-<img src="/posts/56919/7.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
-</figure>
-<p>效果很好，不过这只能用在仅支持上下左右行走的场景，找的路也比较“合理”（虽然明显不是最短路径）。现在只考虑还有什么可以试试呢？想到起点终点都要考虑进去，首先想到了这个：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = sqrt((n.x - end.x) ^ <span class="number">2</span> + (n.y - end.y) ^ <span class="number">2</span>) + sqrt((n.x - start.x) ^ <span class="number">2</span> + (n.y - end.y) ^ <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>即点n到起始点的距离加上n到终点的距离。也就是说，距离起点终点所在的直线越近，h(n)就越低。</p>
-<figure>
-<img src="/posts/56919/8.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
-</figure>
-<p>效果还不错。但是问题在于sqrt计算成本太高。即时策略类游戏的话这不好。而且对于这次只有直着走的模拟有些大材小用了。而且还是有些部分是不需要搜索的。</p>
-<figure>
-<img src="/posts/56919/9.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
-</figure>
-<p>还有几个可用的函数，一个和之前的<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 比较像：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = abs(x - end.x) + abs(y-end.y)</span><br></pre></td></tr></table></figure>
-<p>找出x、y轴方向哪边离终点远，哪边远倾向于走哪边。还有一个和sqrt那个比较像：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y))</span><br></pre></td></tr></table></figure>
-<p>倾向与走与起点终点所在直线方向的平行线，这个个人觉得不错，比sqrt那个计算少，而且在棋盘式地图里效果也好。但是它也有一个问题：</p>
-<figure>
-<img src="/posts/56919/10.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
-</figure>
-<p>他会搜索反向于终点的方向。所以可以考虑用多个函数组合：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y)) + (abs(x - end.x) + abs(y-end.y))*<span class="number">500</span>;</span><br></pre></td></tr></table></figure>
-<p>效果比单一使用好很多。虽然实际效果其实不比<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 强，但也给我们提供一个寻找h(n)的思路，将来可以运用到任意方向的地图上。其中里面不同函数还有权重，比如第二个函数乘以了500。权重可以按照实战效果来定。 <img src="/posts/56919/11.png" alt="这里写图片描述"> 不过你可能也根据我放的截图发现了，这些算法都倾向于走起点与终点所在直线之上。即每当越过一个障碍物，就试图重新靠近起点终点所在连线上。尽管连线上或许还有障碍物。这也是我应该改进的地方。</p>
-<h2 id="总结精度还是速度">总结：“精度”还是“速度”</h2>
-<p>显然，复杂些的启发式函数或是会造成更多搜索的方法往往能取得更好的效果，但是同时速度也更慢。因此如何选择将是本算法的一道难题。对于本次模拟的图，BFS 的表现无疑是最佳，但对于很大的地图、有很多NPC的游戏，就得权衡运行速度与寻路精度了。只要运行速度快、结果合理，A星算法的目的也算是达到了。</p>
-]]></content>
-      <tags>
-        <tag>笔记</tag>
-        <tag>A*寻路算法</tag>
-        <tag>造轮子</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ACM笔记 - 组合数</title>
     <url>/posts/36480.html</url>
     <content><![CDATA[<h1 id="一高中数学公式复习">一、高中数学公式复习</h1>
@@ -591,9 +522,46 @@ iter(yes)->opt->e</textarea><textarea id="flowchart-0-options" style="display: n
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>组合数</tag>
+        <tag>笔记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>LATEX 安装使用</title>
+    <url>/posts/60405.html</url>
+    <content><![CDATA[<p>啊... 又要写毕业论文了... 担心 Overleaf 须要联网有一定风险, 还是打算 本地 TeX Live + Github 版本管理与备份.</p>
+<h1 id="安装">安装</h1>
+<h2 id="tex-live-2021">TeX Live 2021</h2>
+<p>用国内镜像下载, 速度快: <a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">清华源</a> | <a href="https://mirrors.huaweicloud.com/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">华为云源</a> | <a href="https://link.zhihu.com/?target=https%3A//mirrors.aliyun.com/CTAN/systems/texlive/Images/">阿里云源</a>.</p>
+<p>双击下载的 ISO, 打开 (不用管理员) <code>install-tl-windows.bat</code>, 会有 GUI 安装界面. 我直接便携安装在 D 盘了, 安装出来有 7 个多 G, 语言少选几个可以少安装一个 G, 不过也就一个 G, 干脆全装了.</p>
+<blockquote>
+<p>好家伙装了半个多小时了, 怎么还没装完, 我这硬盘还是 SSD.</p>
+</blockquote>
+<blockquote>
+<p>妈耶一看全是几 k 到几百 k 的小文件... 又让我想起了被 NPM 的依赖包支配的恐惧...</p>
+</blockquote>
+<blockquote>
+<p>尼玛快 50 分钟了吧? 早知道直接上 Overleaf 了... 感觉现在 Overleaf 访问也挺稳定的.</p>
+</blockquote>
+<blockquote>
+<p>终于装完了...</p>
+</blockquote>
+<p>由于我选了便携安装, 所以为了识别出那几个指令, 要自己把安装路径的 bin <code>D:\texlive\2021\bin\win32</code> 加入系统环境变量的 Path 里.</p>
+<h2 id="vscode-插件配置">VSCode 插件配置</h2>
+<ol type="1">
+<li><p>安装 SumatraPDF 可以实时预览: <a href="https://www.sumatrapdfreader.org" target="_blank" rel="noopener">官网</a> | <a href="https://github.com/sumatrapdfreader/sumatrapdf" target="_blank" rel="noopener">Github</a>. 这是可选项, 但是确实方便. 由于只是给 LaTeX 用, 就下了个便携版, 下下来只有一个 exe, 直接扔 TeX Live 目录里得了.</p></li>
+<li><p>在 VSCode 插件商店安装 LaTeX Workshop, 用来语法高亮, 自动补全, 编译什么的.</p></li>
+<li><p>在 VSCode 按 <code>F1</code>, 输入 <code>setjson</code>, 选择 <code>首选项: 打开设置 (json)</code>, 在最外层花括号内追加如下内容: <figure class="highlight"><table><tr><td class="code"><pre><span class="line">// ======================== LaTeX 设置 BEGIN  ========================</span><br><span class="line">// bibtex 格式</span><br><span class="line">"latex-workshop.bibtex-format.tab": "tab",</span><br><span class="line"></span><br><span class="line">// 自动编译，全部关闭，当且仅当你认为有需要的时候才会去做编译</span><br><span class="line">"latex-workshop.latex.autoBuild.run": "never",</span><br><span class="line">"latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,</span><br><span class="line"></span><br><span class="line">// 设置 latex-workshop 的 PDF　预览程序，external　指的是外部程序</span><br><span class="line">"latex-workshop.view.pdf.viewer": "external",</span><br><span class="line">"latex-workshop.view.pdf.ref.viewer": "external",</span><br><span class="line">"latex-workshop.view.pdf.external.viewer.command": "D:\\texlive\\SumatraPDF-3.3.3-64.exe", // 注意修改路径</span><br><span class="line">"latex-workshop.view.pdf.external.viewer.args": [</span><br><span class="line">    <span class="string">"%PDF%"</span></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 配置正向、反向搜索：.tex -&gt; .pdf</span><br><span class="line">"latex-workshop.view.pdf.external.synctex.command": "D:\\texlive\\SumatraPDF-3.3.3-64.exe", // 注意修改路径</span><br><span class="line">"latex-workshop.view.pdf.external.synctex.args": [</span><br><span class="line">    // 正向搜索</span><br><span class="line">    "-forward-search",</span><br><span class="line">    "%TEX%",</span><br><span class="line">    "%LINE%",</span><br><span class="line">    "-reuse-instance",</span><br><span class="line">    // 反向搜索</span><br><span class="line">    "-inverse-search",</span><br><span class="line">    "\"C:\\Users\\xie\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\" \"C:\\Users\\xie\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\out\\cli.js\" -gr %f:%l",</span><br><span class="line">    <span class="string">"%PDF%"</span></span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 这是一些独立的编译选项，可以作为工具被编译方案调用</span><br><span class="line">"latex-workshop.latex.tools": [&#123;</span><br><span class="line">        // Windows 原生安装 TeX Live 2020 的编译选项</span><br><span class="line">        "name": "Windows XeLaTeX",</span><br><span class="line">        "command": "xelatex",</span><br><span class="line">        "args": [</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // Windows BibTeX 编译</span><br><span class="line">        "name": "Windows BibTeX",</span><br><span class="line">        "command": "bibtex",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // Windows Biber 编译</span><br><span class="line">        "name": "Windows Biber",</span><br><span class="line">        "command": "biber",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // WSL XeLaTeX 编译一般的含有中文字符的文档</span><br><span class="line">        "name": "WSL XeLaTeX",</span><br><span class="line">        "command": "wsl",</span><br><span class="line">        "args": [</span><br><span class="line">            "/usr/local/texlive/2020/bin/x86_64-linux/xelatex",</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            //"-output-directory=%OUTDIR%",</span><br><span class="line">            //"-aux-directory=%OUTDIR%",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // WSL biber / bibtex 编译带有 citation 标记项目的文档</span><br><span class="line">        "name": "WSL Biber",</span><br><span class="line">        "command": "wsl",</span><br><span class="line">        "args": [</span><br><span class="line">            "/usr/local/texlive/2020/bin/x86_64-linux/biber",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // macOS 或者 Linux 的简单编译</span><br><span class="line">        // 两种操作系统的操作方式相同</span><br><span class="line">        "name": "macOS / Linux XeLaTeX",</span><br><span class="line">        "command": "xelatex",</span><br><span class="line">        "args": [</span><br><span class="line">            "-synctex=1",</span><br><span class="line">            "-interaction=nonstopmode",</span><br><span class="line">            "-file-line-error",</span><br><span class="line">            "-pdf",</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // macOS 或者 Linux 的索引编译</span><br><span class="line">        // 两种操作系统的操作方式相同</span><br><span class="line">        "name": "macOS / Linux Biber",</span><br><span class="line">        "command": "biber",</span><br><span class="line">        "args": [</span><br><span class="line">            <span class="string">"%DOCFILE%"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 这是一些编译方案，会出现在 GUI 菜单里</span><br><span class="line">"latex-workshop.latex.recipes": [&#123;</span><br><span class="line">        // 1.1 Windows 编译简单的小文档，这个选项不太常用，因为绝大多数文章都需要有参考文献索引</span><br><span class="line">        "name": "Windows XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"Windows XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 1.2 Windows 编译带有索引的论文，需要进行四次编译；-&gt; 符号只是一种标记而已，没有程序上的意义</span><br><span class="line">        "name": "Windows xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "Windows XeLaTeX",</span><br><span class="line">            "Windows BibTeX",</span><br><span class="line">            "Windows XeLaTeX",</span><br><span class="line">            <span class="string">"Windows XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 2.1  WSL 编译简单的小文档，这个选项不太常用，因为我绝大多数文章都需要有引用。</span><br><span class="line">        "name": "XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"WSL XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 2.2 带有 citation 索引的文档，需要进行四次编译；-&gt; 符号只是一种标记而已，没有程序上的意义</span><br><span class="line">        "name": "xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "WSL XeLaTeX",</span><br><span class="line">            "WSL Biber",</span><br><span class="line">            "WSL XeLaTeX",</span><br><span class="line">            <span class="string">"WSL XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 3.1 macOS 简单 小文档</span><br><span class="line">        "name": "macOS XeLaTeX 简单编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            <span class="string">"macOS XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        // 3.2 macOS 四次编译</span><br><span class="line">        "name": "macOS xe-&gt;bib-&gt;xe-&gt;xe 复杂编译",</span><br><span class="line">        "tools": [</span><br><span class="line">            "macOS / Linux XeLaTeX",</span><br><span class="line">            "macOS / Linux Biber",</span><br><span class="line">            "macOS / Linux XeLaTeX",</span><br><span class="line">            <span class="string">"macOS / Linux XeLaTeX"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">// 清空中间文件</span><br><span class="line">"latex-workshop.latex.clean.fileTypes": [</span><br><span class="line">    "*.aux",</span><br><span class="line">    "*.bbl",</span><br><span class="line">    "*.blg",</span><br><span class="line">    "*.idx",</span><br><span class="line">    "*.ind",</span><br><span class="line">    "*.lof",</span><br><span class="line">    "*.lot",</span><br><span class="line">    "*.out",</span><br><span class="line">    "*.toc",</span><br><span class="line">    "*.acn",</span><br><span class="line">    "*.acr",</span><br><span class="line">    "*.alg",</span><br><span class="line">    "*.glg",</span><br><span class="line">    "*.glo",</span><br><span class="line">    "*.gls",</span><br><span class="line">    "*.ist",</span><br><span class="line">    "*.fls",</span><br><span class="line">    "*.log",</span><br><span class="line">    "*.fdb_latexmk",</span><br><span class="line">    "*.bcf",</span><br><span class="line">    "*.run.xml",</span><br><span class="line">    //"*.synctex.gz"</span><br><span class="line">]</span><br><span class="line">// ======================== LaTeX 设置 END ========================</span><br></pre></td></tr></table></figure> 上面这串设置是网上找的 (文章都是抄来抄去, 也不知道到底是谁整理的...), 不过看着很靠谱. 但也是自己改动了一些. 首先是网上找的原版有错别字, 有个 <code>command</code> 打成了 <code>commmand</code>... 其次由于我用的是 BibTeX 而不是 Biber, 所以依葫芦画瓢加了个 Windows BibTeX 的配置, 复杂编译改成了 BibTeX (其他 Linux, Mac 的没改, 还是 Biber). 里面要注意修改的有两个, 一个是 VSCode 的路径要替换, 一个是 SumatraPDF 的路径.</p></li>
+<li><p>搞腚! <img src="/posts/60405/vscode-latex-preview.png" alt="vscode-latex-preview.png"> 点上面那个绿色的播放键 <span style="color:green;font-weight: bold">▷</span> 就会编译并更新预览. 当然你也可以把 VSCode 设置里的 <code>latex-workshop.latex.autoBuild.run</code> 改成 <code>onSave</code> 甚至 <code>onFileChange</code>, 可以做到实时刷新. 但是 LaTeX 毕竟不是 Markdown, 编译还是挺慢的, 想想还是手动更新好了.</p></li>
+</ol>
+<h2 id="安装问题踩坑">安装问题踩坑</h2>
+<h3 id="vscode-报错-recipe-terminated-with-fatal-error-spawn-xelatex-enoent.">VSCode 报错: <code>Recipe terminated with fatal error: spawn xelatex ENOENT.</code></h3>
+<p>这是忘记把安装路径的 bin 加入 Path 了.</p>
+<h3 id="编译报错-cannot-find-xxx.bcf">编译报错: <code>Cannot find 'xxx.bcf'!</code></h3>
+<p>将默认文献工具改为 BibTeX, 于是找的不是 <code>.bcf</code> 而是 <code>.bib</code> 了.</p>
+<h1 id="搞论文">搞论文</h1>
+<p>复旦毕业论文模板: <a href="https://github.com/stone-zeng/fduthesis" target="_blank" rel="noopener">曾祥东大佬的模板 Github</a></p>
+]]></content>
   </entry>
   <entry>
     <title>LeetCode 第 223 场周赛</title>
@@ -963,8 +931,8 @@ DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">cnpm install</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>Angular</tag>
         <tag>日常配环境</tag>
+        <tag>Angular</tag>
       </tags>
   </entry>
   <entry>
@@ -1662,9 +1630,9 @@ DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --<span class="built_in">set</span> auto_activate_base <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>日常配环境</tag>
         <tag>Anaconda</tag>
         <tag>Windows</tag>
+        <tag>日常配环境</tag>
         <tag>快乐背指令</tag>
       </tags>
   </entry>
@@ -1688,8 +1656,8 @@ DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 <p>勾选 &quot;总是向同级的所有 Tracker 汇报&quot;.</p>
 ]]></content>
       <tags>
-        <tag>日常配环境</tag>
         <tag>Windows</tag>
+        <tag>日常配环境</tag>
         <tag>qBittorrent</tag>
         <tag>Torrent</tag>
       </tags>
@@ -1828,8 +1796,8 @@ DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 <p>一个有趣的现象, 考试前群里很活跃的人和考试后群里活跃的人往往是不同的一拨人; 出成绩前很活跃的人和出成绩后很活跃的人又不是一批人.</p>
 ]]></content>
       <tags>
-        <tag>考研</tag>
         <tag>笔记</tag>
+        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -1933,8 +1901,8 @@ DP(i, j) = DP(i - 1, j - 1) \times N(i, j) + DP(i, j - 1)
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">        <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>日常配环境</tag>
         <tag>Windows</tag>
+        <tag>日常配环境</tag>
         <tag>快乐背指令</tag>
         <tag>Hexo</tag>
         <tag>Next</tag>
@@ -2258,8 +2226,8 @@ d\theta_{approx}[i] = \frac{J(\theta_1, \theta_2, ..., \theta_i + \varepsilon, .
         <tag>Deep Learning</tag>
         <tag>Machine Learning</tag>
         <tag>Coursera</tag>
-        <tag>Gradient Descent</tag>
         <tag>Regularization</tag>
+        <tag>Gradient Descent</tag>
       </tags>
   </entry>
   <entry>
@@ -3841,9 +3809,9 @@ C^{1}_{a_i}*C^{0}_{b_i} + C^{2}_{a_i}*C^{1}_{b_i} + C^{3}_{a_i}*C^{2}_{b_i} + ..
 </figure>
 ]]></content>
       <tags>
+        <tag>Python</tag>
         <tag>Scipy</tag>
         <tag>Matplotlib</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3865,8 +3833,8 @@ C^{1}_{a_i}*C^{0}_{b_i} + C^{2}_{a_i}*C^{1}_{b_i} + C^{3}_{a_i}*C^{2}_{b_i} + ..
 <p>###运行时间 对array和np.array进行按元素平方并求和的运算，运算3000次统计时间。 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; timeit.timeit(<span class="string">'sum(x*x for x in range(1000))'</span>,number=<span class="number">3000</span>)</span><br><span class="line"><span class="number">0</span>.<span class="number">31559807779291305</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; timeit.timeit(<span class="string">'sum(na*na)'</span>, setup=<span class="string">'import numpy as np; na=np.arange(1000)'</span>,number=<span class="number">3000</span>)</span><br><span class="line"><span class="number">0</span>.<span class="number">37785958035067324</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; timeit.timeit(<span class="string">'na.dot(na)'</span>, setup=<span class="string">'import numpy as np; na=np.arange(1000)'</span>,number=<span class="number">3000</span>)</span><br><span class="line"><span class="number">0</span>.<span class="number">006</span>9067372806728144</span><br></pre></td></tr></table></figure> 惊奇的发现系统级的array求和比np.array还快，说明np.array单个数据的访问还是比array较慢。但是用了矩阵乘法后，虽然效果一样，但这个速度就飞起来了。</p>
 ]]></content>
       <tags>
-        <tag>Python</tag>
         <tag>Numpy</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -4137,6 +4105,75 @@ C^{1}_{a_i}*C^{0}_{b_i} + C^{2}_{a_i}*C^{1}_{b_i} + C^{3}_{a_i}*C^{2}_{b_i} + ..
       <tags>
         <tag>UVa</tag>
         <tag>算法竞赛入门经典</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>A星寻路算法初探</title>
+    <url>/posts/56919.html</url>
+    <content><![CDATA[<h2 id="写在开始之前">写在开始之前</h2>
+<p>最近突然对各路游戏的寻路算法很感兴趣，于是去学习了下游戏里的AI们是如何寻路的。网上相关内容很多，但同时有些说法也不一，制作自己的 <code>A*</code> 算法时也有因不同的说法而困惑。整理多方资料并自己实践之后，以下是我对寻路算法，尤其是 <code>A*</code> 算法的一些自己的总结。以下为自己的思考与想法，可能不准确之处，请指正。 我本次的模拟比较简单，下面简述一下模拟环境：</p>
+<ol type="1">
+<li>地图是棋盘式的格子地图；</li>
+<li>各个点没有权值，或者说权值为1；</li>
+<li>只能上下左右走，不支持斜着走；</li>
+<li>未考虑终点被包住而到达不了的情况，发生此类情况时，算法会遍历所有可到达点无果后才证明目标无法到达。</li>
+</ol>
+<p>虽然模拟的比较简单，但是足以学习、说明问题。为了使算法更形象可视化，我给算法的过程做了小动画。成品存在了我的Github里：https://github.com/XieNaoban/Pathfinding 这里代码就不贴了。使用的java编写。当时是初学java，所以代码写的比较屎，我现在回头都有点看不下去。</p>
+<h2 id="寻路的基本思路">寻路的基本思路</h2>
+<p>首先总结一下寻路的最常见的两个思路， <strong>遍历</strong> 与 <strong>贪心算法</strong> 。</p>
+<h3 id="遍历只考虑起点">遍历：只考虑起点</h3>
+<p>这里说的遍历其实用的是Dijkstra算法或BFS，也就从起点开始一扩散出去寻找最短路径。也就是遍历距离起点最短距离为1、2、3……n-1、n的点。对于地形复杂比如有山有沼泽（即有权值）的地图（图），使用Dijkstra算法，用优先队列存储遍历到地图的每一个点时的权值和。对于一张平滑的也就是无权值（权值相同）的地图，Dijkstra的表现与BFS相同，即只需退化使用队列进行BFS遍历即可，无需使用Dijkstra算法。这里我的模拟的地图没有权值，直接使用了BFS。</p>
+<figure>
+<img src="/posts/56919/1.png" alt="图1. BFS无障碍寻路演示"><figcaption>图1. BFS无障碍寻路演示</figcaption>
+</figure>
+<figure>
+<img src="/posts/56919/2.png" alt="图1. BFS小障碍寻路演示"><figcaption>图1. BFS小障碍寻路演示</figcaption>
+</figure>
+<figure>
+<img src="/posts/56919/3.png" alt="图3. BFS略复杂障碍寻路演示"><figcaption>图3. BFS略复杂障碍寻路演示</figcaption>
+</figure>
+<p>黄色代表被搜索过，蓝色代表搜索完成后找到的路径（在这里显然也是最短路径）。格子中的值为从起点到本格子的最短距离。由图可知算法从起点向周围扩散，直到扩散到终点。 结论是，BFS（或带权图中用的Dijkstra）肯定找到最短路径，但是问题在于，它太耗时了，访问的点（黄色格子）太多了。想想就知道很多点完全没有必要遍历。 造成这一现象的原因是，这个算法只考虑了起点，一直找距离起点最短的路直到遇到终点。</p>
+<h3 id="贪心只想着终点">贪心：只想着终点</h3>
+<p>试图不遍历，直接找到终点去，那基本就是使用贪心算法了吧。 以上的启发式函数仅仅考虑了起点，因而导致算法无目的地向四周扩散寻找。那既然是使用贪心算法，每次寻找目前为之的最优解，那么这次只要考虑终点在哪里就行了，一路向终点走，起点不用考虑。这使得算法疯狂试图向终点靠近。 <img src="/posts/56919/4.png" alt="图4. 贪心算法无复杂障碍寻路演示"> 结果发现无障碍情况下效果杠杠的，没有一块多余的白色。但是如果有障碍呢？ <img src="/posts/56919/5.png" alt="图5. 贪心算法略复杂障碍寻路演示"> 虽然一格都没有多搜索，但是游戏里AI要是这样走路那玩家肯定吃不消。而且还有一个问题，万一走到了死胡同里，算法就会判定无法到达终点，而事实却是是算法自己钻了牛角尖。所以必须允许算法倒退，从死胡同里后退一步或多步，换条路子走。可以使用栈即可实现。有时会发现换了路之后反而更快地到达了之前到过的一个点，于是有些点重复搜索了，重复搜索的话很有可能比无脑遍历都不划算。于是我关闭了重复搜索，效果好多了。 <img src="/posts/56919/6.png" alt="图4. 贪心算法复杂障碍寻路演示"> 可以看到算法产生了很多失败的搜索（黄格子）（都是被自己走过的路堵死的。。。创战记既视感）但是搜索的路比遍历少多了，但是说起来，允许倒退重新寻路，说到底这也还算是是进行遍历了。。。有时候还不及遍历。（其实我搜索完后画的路径不是完全根据算法来的，算法找的路还要更绕，我很多地方已经根据黄格子的梯度抄近路了。） 同时贪心算法只考虑了终点，永远只向着终点方向走，不考虑目前离起点已经走了多少格了。</p>
+<h2 id="a星算法">A星算法</h2>
+<p>A星（<code>*</code> 在 Markdown 里打起来有点麻烦，下面直接用‘星’代替了）用的也是Dijkstra。每次找出当前期望值最高的点（即最可能最快速度通往终点的点），一步步搜索过去。Wiki上也说了，这是对Dijkstra's Algorithm 的扩展，因为它使用了性能更好的<strong>启发</strong>式引导其搜索。</p>
+<h3 id="最短路径还是最合理路径">“最短”路径还是“最合理”路径</h3>
+<p>我刚开始了解A星的时候, 看了好几篇博客、文章，竟然众说纷纭。有人说“不是。因为‘启发’是不精确的。”。也有人说“尽管A星基于无法保证最佳解的启发式方法，A星却能保证找到一条最短路径。”这就很尴尬了。 看了这么多资料以及加上我以往的玩游戏经验，我认为A星只是个比较宽的概念，它可以找到最佳路径，也可以找的只是合理路径。既然用了启发，那么它很可能找的不是“最短”而只是说根据这个启发找到的最“合理”路径。但是也可能你的启发式函数做的很好，找到的最合理路径就是最佳路径（就比如文章开头的说的遍历）。关键就在于你给他的“启发”是怎么样的。 小时候玩红警还是什么游戏时就遇到过单位走的路不是最短路径。</p>
+<h3 id="核心寻找启发式函数hn">核心：寻找启发式函数h(n)</h3>
+<p>A星既然用了Dijkstra，那它的基本过程就是：从优先队列里拉出期望最高的n点（在我的算法里表示为h(n)值最低），标记，并把它周围的未知点放进优先队列。所以关键就是这个h(n)。 h(n)怎么找？其实最简单的，上面讲的遍历说起来也是h(n)的一种。从起点进行遍历的 <code>h(n) = n.t</code> （t为距离起点的距离），也就是说而对距离近的优先搜索。而这个算法其实就是最短路径的算法，这里“最合理路径”就是“最短路径”。 而对于上面讲的贪心算法，他的引导函数可以看作是</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</span><br></pre></td></tr></table></figure>
+<p>哪边离终点近就走哪里。之前这是用贪心实现的，但如果用做A星的h(n)实现呢？</p>
+<figure>
+<img src="/posts/56919/7.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
+</figure>
+<p>效果很好，不过这只能用在仅支持上下左右行走的场景，找的路也比较“合理”（虽然明显不是最短路径）。现在只考虑还有什么可以试试呢？想到起点终点都要考虑进去，首先想到了这个：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = sqrt((n.x - end.x) ^ <span class="number">2</span> + (n.y - end.y) ^ <span class="number">2</span>) + sqrt((n.x - start.x) ^ <span class="number">2</span> + (n.y - end.y) ^ <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>即点n到起始点的距离加上n到终点的距离。也就是说，距离起点终点所在的直线越近，h(n)就越低。</p>
+<figure>
+<img src="/posts/56919/8.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
+</figure>
+<p>效果还不错。但是问题在于sqrt计算成本太高。即时策略类游戏的话这不好。而且对于这次只有直着走的模拟有些大材小用了。而且还是有些部分是不需要搜索的。</p>
+<figure>
+<img src="/posts/56919/9.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
+</figure>
+<p>还有几个可用的函数，一个和之前的<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 比较像：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h(n) = abs(x - end.x) + abs(y-end.y)</span><br></pre></td></tr></table></figure>
+<p>找出x、y轴方向哪边离终点远，哪边远倾向于走哪边。还有一个和sqrt那个比较像：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y))</span><br></pre></td></tr></table></figure>
+<p>倾向与走与起点终点所在直线方向的平行线，这个个人觉得不错，比sqrt那个计算少，而且在棋盘式地图里效果也好。但是它也有一个问题：</p>
+<figure>
+<img src="/posts/56919/10.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
+</figure>
+<p>他会搜索反向于终点的方向。所以可以考虑用多个函数组合：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">h = abs((x - end.x) * (start.y-end.y) - (start.x-end.x) * (y-end.y)) + (abs(x - end.x) + abs(y-end.y))*<span class="number">500</span>;</span><br></pre></td></tr></table></figure>
+<p>效果比单一使用好很多。虽然实际效果其实不比<code>h(n) = max(abs(n.x - end.x), abs(n.y - end.y))</code> 强，但也给我们提供一个寻找h(n)的思路，将来可以运用到任意方向的地图上。其中里面不同函数还有权重，比如第二个函数乘以了500。权重可以按照实战效果来定。 <img src="/posts/56919/11.png" alt="这里写图片描述"> 不过你可能也根据我放的截图发现了，这些算法都倾向于走起点与终点所在直线之上。即每当越过一个障碍物，就试图重新靠近起点终点所在连线上。尽管连线上或许还有障碍物。这也是我应该改进的地方。</p>
+<h2 id="总结精度还是速度">总结：“精度”还是“速度”</h2>
+<p>显然，复杂些的启发式函数或是会造成更多搜索的方法往往能取得更好的效果，但是同时速度也更慢。因此如何选择将是本算法的一道难题。对于本次模拟的图，BFS 的表现无疑是最佳，但对于很大的地图、有很多NPC的游戏，就得权衡运行速度与寻路精度了。只要运行速度快、结果合理，A星算法的目的也算是达到了。</p>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+        <tag>A*寻路算法</tag>
+        <tag>造轮子</tag>
       </tags>
   </entry>
   <entry>

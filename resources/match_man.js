@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 // 作者:        蟹恼板                                                                      //
 // 日期:        2019-08-09                                                                  //
-// GayHub:      https://github.com/XieNaoban                                                //
+// GayHub:      https://github.com/xienaoban                                                //
 // Demo 链接:   https://xienaoban.github.io/resources/DEMO_%E7%81%AB%E6%9F%B4%E4%BA%BA.html //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -226,7 +226,7 @@ function Person(hx = NaN, hy = NaN) {
     this.prf = new Point(this.prk.x, this.prk.y + this.legLength);  // right foot
     this.prf.ay = GRAVITY * 1;
     this.pArray = [this.ph, this.pn, this.pc, this.ple, this.pre, this.plk, this.prk, this.plh, this.prh, this.plf, this.prf];
-    // Author: XieNaoban | Github: https://github.com/XieNaoban
+    // Author: XieNaoban | Github: https://github.com/xienaoban
     this.gun = new Gun(this.prh.x, this.prh.y);
 
     this.walkx = 0;

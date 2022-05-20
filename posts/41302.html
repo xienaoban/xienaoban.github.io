@@ -313,7 +313,7 @@
 <p>确保验证集和测试集的数据来自同一分布.</p>
 <p>如果不需要无偏估计, 可以不设置测试集. 当没设立测试集的时候, 验证集通常被人们称为测试集.</p>
 <h1 id="偏差方差bias-variance">偏差、方差(Bias, Variance)</h1>
-<p>高偏差(high bias)称为&quot;欠拟合&quot;(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集误差很高. 解决方法是正则化或准备更多的数据.</p>
+<p>高偏差(high bias)称为"欠拟合"(underfitting), 练集误差与验证集误差都高. 高方差(high variance)称为过拟合(overfitting), 训练集误差很低而验证集误差很高. 解决方法是正则化或准备更多的数据.</p>
 <h1 id="正则化regularization">正则化(Regularization)</h1>
 <h2 id="逻辑回归中的l1正则化-l2正则化">逻辑回归中的L1正则化, L2正则化</h2>
 <p>对于L1正则化, 为代价函数添加L1范数: <span class="math display">\[
@@ -349,7 +349,7 @@ w^{[l]} &amp; = w^{[l]} -\alpha dw^{[l]} \\
 <p>对每一轮的训练, Dropout 遍历网络的每一层, 设置神经网络中每一层每个节点的失活概率, 被随机选中失活的节点临时被消除, 不参与本轮的训练, 于是得到一个更小的网络.</p>
 <p>最常用的为反向随机失活(Inverted Dropout).</p>
 <p>该方法在向前传播时, 根据随机失活的概率 (例如0.2), 将每一层(例如 <span class="math inline">\(l\)</span> 层)的 <span class="math inline">\(a^{[l]}\)</span> 矩阵(a=g(z))中被选中失活的元素置为0. 则该层的 <span class="math inline">\(a^{[l]}\)</span> 相当于少了 20% 的元素. 为了不影响下一层 <span class="math inline">\(z^{[l+1]}\)</span> 的期望值, 我们需要 <span class="math inline">\(a^{[l]}\)</span> /= 0.8 以修正权重.</p>
-<p>由于训练时的 &quot;<span class="math inline">\(a^{[l]}\)</span> /= 0.8&quot; 修复了权重, 在测试阶段无需使用 Dropout.</p>
+<p>由于训练时的 "<span class="math inline">\(a^{[l]}\)</span> /= 0.8" 修复了权重, 在测试阶段无需使用 Dropout.</p>
 <p>Dropout 不能与梯度检验同时使用, 因为 Dropout 在梯度下降上的代价函数J难以计算.</p>
 <h2 id="其他正则化">其他正则化</h2>
 <p>数据扩增: 比如训练分类猫咪的图片, 将图片左右翻转、旋转一个小角度、稍微变形处理等, 可以人工合成数据.</p>
@@ -559,12 +559,12 @@ d\theta_{approx}[i] = \frac{J(\theta_1, \theta_2, ..., \theta_i + \varepsilon, .
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

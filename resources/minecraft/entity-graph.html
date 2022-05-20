@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minecraft Entity Dependency Graph - 1.16.5</title>
+    <script src="/resources/lib/d3@7.js"></script>
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+</head>
+
+<body style="margin: 0;">
+    <table style="position: fixed; z-index: 999">
+        <tbody>
+            <tr>
+                <td>
+                    <span style="font-size: small; color: white;">选择版本：</span>
+                </td>
+                <td>
+                    <select id="entity-graph-selector" onchange="choose()">
+                        <option value ="entity-graph-1-19-pre1">1.19-pre1</option>
+                        <option value="entity-graph-1-18-2">1.18.2</option>
+                        <option value="entity-graph-1-16-5">1.16.5</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function choose() {
+            chosen = document.getElementById("entity-graph-selector");
+            d3.xml(chosen.options[chosen.selectedIndex].value + ".svg", function (error, xml) {console.error(error);}).then((ele) => {
+                svg = document.getElementById("entity-graph");
+                if (svg != null) svg.remove();
+                svg = ele.firstChild;
+                svg.setAttribute("id", "entity-graph");
+                document.body.appendChild(svg);
+                width = svg.clientWidth;
+                height = svg.clientHeight;
+                zoom = d3.zoom().scaleExtent([0.8, 10]).on("zoom", ({transform}) => g.attr("transform", transform))
+                svg = d3.select("svg").attr("viewBox", [0, 0, width, height])
+                    .style("width", "100vw").style("height", "100vh").style("background", "#2b2b2b")
+                    .style("position", "absolute").style("left", "0").style("top", "0");
+                g = svg.select("g");
+                svg.call(zoom);
+            });
+        }
+        choose();
+    </script>
+</body>
+
+</html>

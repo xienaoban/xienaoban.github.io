@@ -40,8 +40,8 @@
 <meta property="article:published_time" content="2019-12-04T05:47:20.000Z">
 <meta property="article:modified_time" content="2020-05-20T16:05:09.107Z">
 <meta property="article:author" content="XieNaoban">
-<meta property="article:tag" content="日常配环境">
 <meta property="article:tag" content="Angular">
+<meta property="article:tag" content="日常配环境">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://xienaoban.github.io/posts/48194.html">
@@ -273,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -353,9 +353,9 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ng-container</span> *<span class="attr">ngIf</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngFor</span>=<span class="string">"..."</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ng-container</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="ngif-注意事项"><code>*ngIf</code> 注意事项</h4>
 <p>我还以为它支持 js/ts 的所有语法, 结果它好像是自己实现了部分语法 (或者支持的语法版本老旧).</p>
-<p>我想使用 <code>*ngIf=&quot;key in obj&quot;</code> 来判断元素是否在 Object 内, 但它并不能识别, 报错了.</p>
-<p>只能使用 <code>*ngIf=&quot;obj.hasOwnProperty(key)&quot;</code> 来判断.</p>
-<p>同时它也不支持 <code>async</code> 异步语法. <code>*ngIf=&quot;func1(); func2();&quot;</code> 没问题, <code>*ngIf=&quot;func1(); async func3();&quot;</code> 会报错. 只能想别的办法.</p>
+<p>我想使用 <code>*ngIf="key in obj"</code> 来判断元素是否在 Object 内, 但它并不能识别, 报错了.</p>
+<p>只能使用 <code>*ngIf="obj.hasOwnProperty(key)"</code> 来判断.</p>
+<p>同时它也不支持 <code>async</code> 异步语法. <code>*ngIf="func1(); func2();"</code> 没问题, <code>*ngIf="func1(); async func3();"</code> 会报错. 只能想别的办法.</p>
 <h4 id="ngfor-注意事项"><code>*ngFor</code> 注意事项</h4>
 <ol type="1">
 <li><p>如果我们希望重复多个同级标签, 却又不想用一个多余的标签包裹它们 , 要用 ng-container.</p>
@@ -363,7 +363,7 @@
 <p>被渲染为:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>ooooo<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>aa<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>xxxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>ooooo<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>bb<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>xxxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>ooooo<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>cc<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>xxxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>ooooo<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>dd<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span>xxxxx<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 <li><p>引号内末尾的封号可加可不加.</p>
-<p><code>*ngFor=&quot;let e of arr&quot;</code> 与 <code>*ngFor=&quot;let e of arr;&quot;</code>, 以及 <code>*ngFor=&quot;let e of arr; let i = index&quot;</code> 与 <code>*ngFor=&quot;let e of arr; let i = index;&quot;</code> 都可以, 只要中间的封号加了就行.</p></li>
+<p><code>*ngFor="let e of arr"</code> 与 <code>*ngFor="let e of arr;"</code>, 以及 <code>*ngFor="let e of arr; let i = index"</code> 与 <code>*ngFor="let e of arr; let i = index;"</code> 都可以, 只要中间的封号加了就行.</p></li>
 <li><p>遍历的不同语法:</p>
 <p>遍历 Array: <code>let e of arr</code>.</p>
 <p>遍历 Array 同时需要知道元素的数组下标: <code>let e of arr; let i = index</code>.</p>
@@ -425,8 +425,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%8E%AF%E5%A2%83/" rel="tag"># 日常配环境</a>
               <a href="/tags/Angular/" rel="tag"># Angular</a>
+              <a href="/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%8E%AF%E5%A2%83/" rel="tag"># 日常配环境</a>
           </div>
 
         
@@ -580,12 +580,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

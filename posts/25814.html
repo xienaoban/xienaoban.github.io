@@ -345,28 +345,28 @@
 <p>乍一看是不是感觉很无厘头 <code>&lt;(*￣▽￣*)/</code>, 但此时再配合我的 AI 的概率预测与自动清扫功能, 事情就变得有意思了起来~ <img src="/posts/25814/control-xp-prob.png" alt="套娃扫雷 - 概率"></p>
 <p>没错, 可以拿来分析棋局! 帮助初学者快速入门 (好吧, 确实有种透视外挂的感觉了...</p>
 <p>当然硬要用 AI 去扫原版 XP 扫雷游戏也不是不可以~ <img src="/posts/25814/control-xp-ai-trans.gif" alt="套娃扫雷 - 自动"></p></li>
-<li>规则切换: 众所周知, 扫雷有两套经典的规则, 分别使用在 Win XP 版与 Win 7 版上. Win XP 版的规则是, 挖的第一个格子必不为雷; Win 7 版的规则是, 挖的第一个格子与其周围 8 格均必不为雷.</li>
-<li><p>作弊: 不开启作弊则下面的选项都是灰的. 开启作弊后不会计时 (永远 9999). &gt; <strong>注:</strong> 这里区分一下本游戏中的 &quot;作弊&quot; 与 &quot;AI&quot;. 作弊是指直接告诉你所有雷在哪, AI 则是在游戏规则内帮你推断雷在哪.</p></li>
-<li>撤销操作: 字面意思, 但是只能撤销一步, 毕竟不会真的有人在除了炸雷以外的时候去用这个功能吧?</li>
-<li>透视: 直接把雷显示在棋盘上.</li>
-<li>导入, 保存棋盘: 从文件导入残局, 以及把当前残局导出到文件. 为什么使用这个功能也需要先开启作弊呢? 因为文件里需要储存雷的位置...</li>
-<li>提示一格: 使用最简单的扫雷规则找出一个必为雷或必不为雷的格子并予以高亮, 旨在辅助星际玩家找出遗漏的地方 (类似于连连看里的提示).</li>
+<li><p>规则切换: 众所周知, 扫雷有两套经典的规则, 分别使用在 Win XP 版与 Win 7 版上. Win XP 版的规则是, 挖的第一个格子必不为雷; Win 7 版的规则是, 挖的第一个格子与其周围 8 格均必不为雷.</p></li>
+<li><p>作弊: 不开启作弊则下面的选项都是灰的. 开启作弊后不会计时 (永远 9999). &gt; <strong>注:</strong> 这里区分一下本游戏中的 "作弊" 与 "AI". 作弊是指直接告诉你所有雷在哪, AI 则是在游戏规则内帮你推断雷在哪.</p></li>
+<li><p>撤销操作: 字面意思, 但是只能撤销一步, 毕竟不会真的有人在除了炸雷以外的时候去用这个功能吧?</p></li>
+<li><p>透视: 直接把雷显示在棋盘上.</p></li>
+<li><p>导入, 保存棋盘: 从文件导入残局, 以及把当前残局导出到文件. 为什么使用这个功能也需要先开启作弊呢? 因为文件里需要储存雷的位置...</p></li>
+<li><p>提示一格: 使用最简单的扫雷规则找出一个必为雷或必不为雷的格子并予以高亮, 旨在辅助星际玩家找出遗漏的地方 (类似于连连看里的提示).</p></li>
 <li><p>显示概率: 对整个棋盘精准地计算每个格子不是雷的概率 (通过展示出来的不同颜色, 相信你也猜出来大概用的什么算法去计算的了). <img src="/posts/25814/ai-prob.png" alt="AI - 概率"></p></li>
 <li><p>显示胜率: 对整个棋盘精准地计算每个格子作为下一步挖掘目标时的全局胜率. 计算胜率的算法复杂度爆炸, 所以只在残局未知格子少于等于 12 时才计算. 胜率和上面的概率是两个概念. 具体在算法原理部分会解释. <img src="/posts/25814/ai-prob-vs-win-rate.png" alt="AI - 概率 VS 胜率"></p></li>
-<li>安全清扫 (很快): 用简单的规则帮你清扫棋局. 所以运行速度极快. 所谓 &quot;安全&quot; 就是指只清扫必为雷或必不为雷的格子.</li>
-<li>安全清扫 (较慢): 在上面规则的基础上, 计算概率再清扫一遍必为雷或必不为雷的格子. 尽管已经充分剪枝, 计算概率的复杂度依然较高. 绝大部分情况下还是能很快出结果, 但是在极端环境下可能会耗时很久.</li>
+<li><p>安全清扫 (很快): 用简单的规则帮你清扫棋局. 所以运行速度极快. 所谓 "安全" 就是指只清扫必为雷或必不为雷的格子.</p></li>
+<li><p>安全清扫 (较慢): 在上面规则的基础上, 计算概率再清扫一遍必为雷或必不为雷的格子. 尽管已经充分剪枝, 计算概率的复杂度依然较高. 绝大部分情况下还是能很快出结果, 但是在极端环境下可能会耗时很久.</p></li>
 <li><p>扫到结束: 所有算法一起上, 遇到不一定是不是雷的格子则根据概率与胜率猜雷, 直到胜利或失败.</p></li>
 </ol>
 <p>以上基本就是游戏的全部功能了. 下面介绍 AI 算法.</p>
 <p>但是又看了一下, 本文长度够<del>水</del>一篇了 <code>(～￣▽￣)～</code>, 所以决定拆开来, 下一篇再讲 AI, 这篇就算是项目介绍~</p>
 <h2 id="项目开源地址">项目开源地址</h2>
 <blockquote>
-<p>本博客仅发布于 Github IO: <a href="https://xienaoban.github.io/posts/25814.html" class="uri">https://xienaoban.github.io/posts/25814.html</a></p>
-<p>和 CSDN: <a href="https://blog.csdn.net/xienaoban/article/details/112424609" target="_blank" rel="noopener" class="uri">https://blog.csdn.net/xienaoban/article/details/112424609</a></p>
+<p>本博客仅发布于 Github IO: <a href="https://xienaoban.github.io/posts/25814.html">https://xienaoban.github.io/posts/25814.html</a></p>
+<p>和 CSDN: <a href="https://blog.csdn.net/xienaoban/article/details/112424609" target="_blank" rel="noopener">https://blog.csdn.net/xienaoban/article/details/112424609</a></p>
 <p>其他都是盗的.</p>
 </blockquote>
-<p>Github 发布页: <a href="https://github.com/xienaoban/minesweeper/releases" target="_blank" rel="noopener" class="uri">https://github.com/xienaoban/minesweeper/releases</a> (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
-<p>不会用 Github 的萌新也可以在这里下载: <a href="https://download.csdn.net/download/XieNaoban/14090898" target="_blank" rel="noopener" class="uri">https://download.csdn.net/download/XieNaoban/14090898</a></p>
+<p>Github 发布页: <a href="https://github.com/xienaoban/minesweeper/releases" target="_blank" rel="noopener">https://github.com/xienaoban/minesweeper/releases</a> (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
+<p>不会用 Github 的萌新也可以在这里下载: <a href="https://download.csdn.net/download/XieNaoban/14090898" target="_blank" rel="noopener">https://download.csdn.net/download/XieNaoban/14090898</a></p>
 
     </div>
 
@@ -550,12 +550,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

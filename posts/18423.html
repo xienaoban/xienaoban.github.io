@@ -306,7 +306,7 @@
       
         <p>好几天没刷题没看书没写博客了，一直在闭关修炼写大数，现在终于写出来啦！我也终于有了属于我自己的大数~~~~并且以头文件的形式写出的，可以算是一个完整的成品了，拿过来就可以用。 本大数类：longer实现的功能：加减乘除、取余、取绝对值，开根号什么的没精力弄了，只是声明了一下没定义，以后会更新的。同时支持正负号。数据用的vector&lt; long long &gt;存储，long long最大储存9位数，也就是999999999，因为2个999999999相乘刚好不越界。不过后来发现好像没必要，用int就行了，但是写都写一半了，就没改。不过灵活性也蛮高的吧，可以很轻松地把数据类型从long long 改为int，同时只要把MAX改为int的最大值10000，把DIGIT改为4即可（没具体试过，应该没问题）。就是下面这几行：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//longer类内定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">constexpr</span> ll MAX = <span class="number">1000000000</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">int</span> DIGIT = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
-<p>当然有储存，这应该不是最好的方法，不过就我目前的水平就这样吧。而且现在对于编程是“空间换时间”还是“时间换空间”一直很纠结。。。 然后单独定义一个sign表示正负号。那么当然啦，对于这种用单独一个符号标记来表示正负数字的，就会有+0和-0的问题，我也是基本解决了，就是把负的改成正的。当然不排除还有bug，没精力检测了。后续更新吧。 加法减乘除均使用小学教的竖式方法。。。因为网上也没学到更快的方法，最快的方法（尤其是除法）好像看到个，没会。。。所以这个东西在处理比如一千多位除以几百之类的数据时会很慢。。。不过毕竟我现在还算是新手嘛，以后可以还会再写一个更快的大数。使用竖式时，加法减法乘法使用的10^10进制，即统一算出一个ll（long long）的值，进位到下一个。 加法减法本质上由get_addition()与get_subtraction()实现，这两个函数无视正负号，全都看成是正的进行运算，只支持大的数加减小的数。因此对于有不同的正负符号的数字，比如负+正，可以看作-（正-负），所以只要调用get _subtraction()运算后添个负号即可；而对于正-负，可看作正+正，反而调用get _addition()。所以本质上还是正数之间的运算。 乘法与加法类似，甚至还少了符号的问题。 除法也是小学教的竖式法，一位位除，也就是一位位减，但是由于我得先乘以10的好多次，再循环减，再看下一位，速度还是慢，就比如3000位的数字除以50位的数字，那速度醉啦，要十几秒。 取余使用的&quot;<em>this - (</em>this / n)*n&quot;，所以比除号还慢。 比较符号没有很仔细地调试，但是应该没什么问题吧。 截图： <img src="/posts/18423/1.png" alt="这里写图片描述"></p>
+<p>当然有储存，这应该不是最好的方法，不过就我目前的水平就这样吧。而且现在对于编程是“空间换时间”还是“时间换空间”一直很纠结。。。 然后单独定义一个sign表示正负号。那么当然啦，对于这种用单独一个符号标记来表示正负数字的，就会有+0和-0的问题，我也是基本解决了，就是把负的改成正的。当然不排除还有bug，没精力检测了。后续更新吧。 加法减乘除均使用小学教的竖式方法。。。因为网上也没学到更快的方法，最快的方法（尤其是除法）好像看到个，没会。。。所以这个东西在处理比如一千多位除以几百之类的数据时会很慢。。。不过毕竟我现在还算是新手嘛，以后可以还会再写一个更快的大数。使用竖式时，加法减法乘法使用的10^10进制，即统一算出一个ll（long long）的值，进位到下一个。 加法减法本质上由get_addition()与get_subtraction()实现，这两个函数无视正负号，全都看成是正的进行运算，只支持大的数加减小的数。因此对于有不同的正负符号的数字，比如负+正，可以看作-（正-负），所以只要调用get _subtraction()运算后添个负号即可；而对于正-负，可看作正+正，反而调用get _addition()。所以本质上还是正数之间的运算。 乘法与加法类似，甚至还少了符号的问题。 除法也是小学教的竖式法，一位位除，也就是一位位减，但是由于我得先乘以10的好多次，再循环减，再看下一位，速度还是慢，就比如3000位的数字除以50位的数字，那速度醉啦，要十几秒。 取余使用的"<em>this - (</em>this / n)*n"，所以比除号还慢。 比较符号没有很仔细地调试，但是应该没什么问题吧。 截图： <img src="/posts/18423/1.png" alt="这里写图片描述"></p>
 <figure>
 <img src="/posts/18423/2.png" alt="这里写图片描述"><figcaption>这里写图片描述</figcaption>
 </figure>
@@ -492,12 +492,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

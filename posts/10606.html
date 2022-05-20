@@ -311,10 +311,10 @@
 <p>然后登陆 Github, 复制公钥:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>登陆后 <code>https://github.com/settings/keys</code> -&gt; <code>New SSH Key</code>, 'Title' 随意, 在 'Key' 粘贴.</p>
-<p>然后测试一下连接 (初次使用以下指令会多一段对话(如下), 输入 &quot;yes&quot;):</p>
+<p>然后测试一下连接 (初次使用以下指令会多一段对话(如下), 输入 "yes"):</p>
 <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity <span class="keyword">of</span> host <span class="symbol">'github</span>.com (<span class="number">13.250</span>.<span class="number">177.223</span>)' can<span class="symbol">'t</span> be established.</span><br><span class="line">RSA key fingerprint <span class="keyword">is</span> SHA256:aF9zXis7VUy4CsdfSltbl6ZCksa34ChdVfA54S3xcA2.</span><br><span class="line">Are you sure you want <span class="keyword">to</span> continue connecting (yes/no/[fingerprint])? yes</span><br><span class="line"><span class="literal">Warning</span>: Permanently added <span class="symbol">'github</span>.com,<span class="number">13.250</span>.<span class="number">177.223</span>' (RSA) <span class="keyword">to</span> the list <span class="keyword">of</span> known hosts.</span><br><span class="line">Hi XieNaoban! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
 <h2 id="提交三部曲">提交三部曲</h2>
-<p>直接偷懒把当前时间作为本次提交版本的 &quot;提交说明&quot;, 每次都要思考 &quot;提交说明&quot; 怎么写真是太累了 (真实项目别这么干).</p>
+<p>直接偷懒把当前时间作为本次提交版本的 "提交说明", 每次都要思考 "提交说明" 怎么写真是太累了 (真实项目别这么干).</p>
 <p>Bash:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取当前时间作为 "提交说明"</span></span><br><span class="line"><span class="built_in">readonly</span> date=$(date +%Y-%m-%d\ %H:%M:%S)</span><br><span class="line"></span><br><span class="line">git add .               <span class="comment"># 添加当前目录所有文件到暂存区</span></span><br><span class="line">git commit -m <span class="string">"<span class="variable">$&#123;date&#125;</span>"</span> <span class="comment"># 提交到本地仓库, 以时间作为 "提交说明"</span></span><br><span class="line">git push origin master  <span class="comment"># origin 表示远程主机, master 为分支名称</span></span><br></pre></td></tr></table></figure>
 <p>PowerShell:</p>
@@ -331,7 +331,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 撤销未 git add 的文件的修改</span></span><br><span class="line">git checkout .        <span class="comment"># 全部撤销修改</span></span><br><span class="line">git checkout &lt;file&gt;   <span class="comment"># 撤销文件修改</span></span><br><span class="line">git reset --hard      <span class="comment"># 效果与 checkout 一样</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 撤销 git add 操作 (不修改文件本身)</span></span><br><span class="line">git reset HEAD</span><br></pre></td></tr></table></figure>
 <h1 id="踩坑">踩坑</h1>
 <h2 id="git-bash-中文乱码">Git Bash 中文乱码</h2>
-<p>例如对于 <code>git status</code> 指令, 中文文件 &quot;新建文本文档.txt&quot; 会被显示为 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="number">346</span>\<span class="number">226</span>\<span class="number">260</span>\<span class="number">345</span>\<span class="number">273</span>\<span class="number">272</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">234</span>\<span class="number">254</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">241</span>\<span class="number">243.</span>txt</span><br></pre></td></tr></table></figure></p>
+<p>例如对于 <code>git status</code> 指令, 中文文件 "新建文本文档.txt" 会被显示为 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="number">346</span>\<span class="number">226</span>\<span class="number">260</span>\<span class="number">345</span>\<span class="number">273</span>\<span class="number">272</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">234</span>\<span class="number">254</span>\<span class="number">346</span>\<span class="number">226</span>\<span class="number">207</span>\<span class="number">346</span>\<span class="number">241</span>\<span class="number">243.</span>txt</span><br></pre></td></tr></table></figure></p>
 <p>解决方法如下:</p>
 <p><img src="/posts/10606/3.png"></p>
 <p>然后</p>
@@ -343,9 +343,9 @@
 <p>然后设置系统环境变量, 设置 <code>LESSCHARSET</code> 为 <code>utf-8</code>.</p>
 <p><img src="/posts/10606/4.png"></p>
 <h2 id="git-bash-命令提示符的-总是另起一行">Git Bash 命令提示符的 <code>$</code> 总是另起一行</h2>
-<p>命令前的那一串叫 &quot;系统终端命令提示符 (Prompt Sign)&quot; (就是那一串包含用户名, 工作目录和 <code>$</code> 符号的东西). Windows 下的 Git Bash 的命令提示符的 <code>$</code> 总是另起一行.</p>
+<p>命令前的那一串叫 "系统终端命令提示符 (Prompt Sign)" (就是那一串包含用户名, 工作目录和 <code>$</code> 符号的东西). Windows 下的 Git Bash 的命令提示符的 <code>$</code> 总是另起一行.</p>
 <p><img src="/posts/10606/1.png"></p>
-<p>这玩意由 <code>$PS1</code> 控制. 输入 <code>echo &quot;$PS1&quot;</code>, 可得:</p>
+<p>这玩意由 <code>$PS1</code> 控制. 输入 <code>echo "$PS1"</code>, 可得:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 我的PS1被 conda 修改过, 所以前面有个 "(base)"</span></span><br><span class="line">(base)</span><br><span class="line">xie@DESKTOP-BAD47V8 MINGW64 ~</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"<span class="variable">$PS1</span>"</span></span><br><span class="line">(base) \[\033]0;<span class="variable">$TITLEPREFIX</span>:<span class="variable">$PWD</span>\007\]\n\[\033[32m\]\u@\h \[\033[35m\]<span class="variable">$MSYSTEM</span> \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$</span><br></pre></td></tr></table></figure>
 <p>修改它就能修改提示符样式.</p>
 <p>而 Ubuntu 下的 <code>$PS1</code> 为:</p>
@@ -403,7 +403,7 @@
 <p>其中 <code>git repack -A -d</code> 和 <code>git gc --aggressive --prune=now</code> 输出的 log 几乎一样, 可能只执行其中一个就行？</p>
 <p>整理了个自动删除大文件的脚本 (事先找好要删的文件放在 <code>rm_list</code> 里):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">rm_list=(<span class="string">'path/file1'</span>, <span class="string">'path/file2'</span>, <span class="string">'path/file3'</span>)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> <span class="variable">$&#123;rm_list[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'---'</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"removing '<span class="variable">$&#123;f&#125;</span>'..."</span></span><br><span class="line">	git filter-branch --force --index-filter <span class="string">"git rm --cached --ignore-unmatch <span class="variable">$&#123;f&#125;</span>"</span> --prune-empty --tag-name-filter cat -- --all</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clean up and reclaim space</span></span><br><span class="line">rm -rf .git/refs/original/</span><br><span class="line">git reflog expire --expire=now --all</span><br><span class="line">git fsck --full --unreachable</span><br><span class="line">git repack -A -d</span><br><span class="line">git gc --aggressive --prune=now</span><br><span class="line"></span><br><span class="line"><span class="comment"># force-push changes to overwrite remote repository</span></span><br><span class="line">git push origin --force --all</span><br></pre></td></tr></table></figure>
-<p>删了 30 多个 json, 最后把 100MB 的 <code>.git</code> 清理到了 10MB (捂脸). 删除过程贼慢, 最后 push 时 &quot;Writing objects&quot; 也贼慢.</p>
+<p>删了 30 多个 json, 最后把 100MB 的 <code>.git</code> 清理到了 10MB (捂脸). 删除过程贼慢, 最后 push 时 "Writing objects" 也贼慢.</p>
 <h2 id="gitignore-对已-track-文件不起作用"><code>.gitignore</code> 对已 track 文件不起作用</h2>
 <p>当一个文件已经被 commit 后才被发现这个文件是应该 ignore 的, 此时再把它添加入 <code>.gitignore</code> 的话, git 依然会追踪它. 修改该文件, 然后你会发现 git 仍然记录了这个文件的修改. 原因是 <code>.gitignore</code> 仅对新文件生效, 已被 track 的文件不受影响. 解决方法:</p>
 <ol type="1">
@@ -606,12 +606,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

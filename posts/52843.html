@@ -40,8 +40,8 @@
 <meta property="article:published_time" content="2019-04-08T17:56:47.000Z">
 <meta property="article:modified_time" content="2021-01-28T07:11:33.374Z">
 <meta property="article:author" content="XieNaoban">
-<meta property="article:tag" content="Windows">
 <meta property="article:tag" content="日常配环境">
+<meta property="article:tag" content="Windows">
 <meta property="article:tag" content="快乐背指令">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Next">
@@ -276,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -305,7 +305,7 @@
 <li><p>在 Github 上创建 <code>username.github.io</code> 仓库.</p></li>
 <li><p>安装并配置 Hexo: 安装: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
 <p>(该指令表明 Hexo 为全局安装).</p>
-<p>确定一个空文件夹(必须是空的)作为 Hexo 站点, 在文件夹内右键菜单,选择 &quot;Git Bash Here&quot; 打开 Git Bash, 输入:</p>
+<p>确定一个空文件夹(必须是空的)作为 Hexo 站点, 在文件夹内右键菜单,选择 "Git Bash Here" 打开 Git Bash, 输入:</p>
 <p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
 <p>在该文件夹下产生一些 Hexo 文件. 然后打开刚生成的站点配置文件 <code>_config.yml</code>, 必要的修改如下:</p>
 <p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">XXX's</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">XXX</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CH</span>           <span class="comment"># 或 language: en 等等</span></span><br><span class="line"></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">repo:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span></span><br><span class="line"><span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p></li>
@@ -344,7 +344,7 @@
 </blockquote></li>
 </ol>
 <h2 id="修改文章与网址的映射关系">修改文章与网址的映射关系</h2>
-<p>默认情况每篇文章的链接为: &quot;xxx.github.io/2019/01/01/标题&quot;, 这种以标题为组织方式的链接有时候不太好, 以下改为以 CRC 码为组织方式.</p>
+<p>默认情况每篇文章的链接为: "xxx.github.io/2019/01/01/标题", 这种以标题为组织方式的链接有时候不太好, 以下改为以 CRC 码为组织方式.</p>
 <ol type="1">
 <li><p>在 Hexo 站点文件夹下打开 Git Bash, 输入: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></p></li>
 <li><p>打开站点配置文件 <code>_config.yml</code>, 修改: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc16</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">dec</span></span><br></pre></td></tr></table></figure></p></li>
@@ -417,8 +417,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Windows/" rel="tag"># Windows</a>
               <a href="/tags/%E6%97%A5%E5%B8%B8%E9%85%8D%E7%8E%AF%E5%A2%83/" rel="tag"># 日常配环境</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
               <a href="/tags/%E5%BF%AB%E4%B9%90%E8%83%8C%E6%8C%87%E4%BB%A4/" rel="tag"># 快乐背指令</a>
               <a href="/tags/Hexo/" rel="tag"># Hexo</a>
               <a href="/tags/Next/" rel="tag"># Next</a>
@@ -575,12 +575,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -296,14 +296,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.3k</span>
+              <span>7.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -401,7 +401,7 @@
 </tr>
 </tbody>
 </table>
-<p>另外, 1. 格子坐标 <span class="math inline">\((x, y)\)</span> 表示 <span class="math inline">\(x\)</span> 行 <span class="math inline">\(y\)</span> 列, 下标从 <span class="math inline">\(0\)</span> 开始. 2. <span class="math inline">\(N\)</span> 和 <span class="math inline">\(M\)</span> 为棋盘行数与列数, <span class="math inline">\(S = N \times M\)</span> 表示格子总数. 3. 以下所涉及的 &quot;胜率&quot;, 除非另外注明, 均为 Win XP 规则专家难度下的胜率.</p>
+<p>另外, 1. 格子坐标 <span class="math inline">\((x, y)\)</span> 表示 <span class="math inline">\(x\)</span> 行 <span class="math inline">\(y\)</span> 列, 下标从 <span class="math inline">\(0\)</span> 开始. 2. <span class="math inline">\(N\)</span> 和 <span class="math inline">\(M\)</span> 为棋盘行数与列数, <span class="math inline">\(S = N \times M\)</span> 表示格子总数. 3. 以下所涉及的 "胜率", 除非另外注明, 均为 Win XP 规则专家难度下的胜率.</p>
 <h3 id="第一步-开局挖哪">第一步: 开局挖哪</h3>
 <p>开局第一步点击不同的地方也是会影响胜率的. 根据 ztxz16 大佬的测试 (<a href="https://www.bilibili.com/video/BV1Si4y1t7n1" target="_blank" rel="noopener">地表最强扫雷AI • 编程探索扫雷极限胜率 - _黄歪歪</a>), <strong>开局 Win XP 挖掘 <span class="math inline">\((0, 0)\)</span>, Win 7 挖掘 <span class="math inline">\((2, 2)\)</span> (或对称的另外三个角落) 胜率最高</strong>.</p>
 <p>我自己也对 Win XP 与 Win7 大致测了一下 <span class="math inline">\((0, 1)\)</span>, <span class="math inline">\((1, 0)\)</span>, <span class="math inline">\((1, 1)\)</span> 等几个位置, 确实如此, 胜率会下降 1% ~ 2% 左右.</p>
@@ -472,11 +472,11 @@ C_{AroundM} - C_{AroundN} = C_A - C_B
 <p>局面所有可行方案的计算方法用回溯法即可. 当然直接就对所有未知格进行回溯的话复杂度有 <span class="math inline">\(O(2^S)\)</span> 自然受不了, 所以这一步的算法主要难点是剪枝.</p>
 <p>如何剪枝, 可以用下面这张图很直观地展现出来:</p>
 <p><img src="/posts/62679/prob-example.png"></p>
-<p>在上图中, 每个未知格上都被打上了该格子的非雷概率 (注意, 这张图上展示的是 &quot;非雷概率&quot;, 也就是 <span class="math inline">\(1 - P_{有雷}\)</span>), 且与数字格相邻的未知格均被用彩色高亮了出来; 而不与数字格相邻的未知格则均用灰色标识.</p>
-<p>不知道怎么取名, 这里我姑且将所有相近的 (不一定紧挨)、相同颜色的未知格集合称作一个 &quot;<strong>连通分量</strong>&quot;, 而剩下所有灰色格子姑且称之为 &quot;<strong>孤立格</strong>&quot;. 而本小节最重要的两个步骤就是①计算出所有连通分量, ②基于连通分量计算出每个未知格的有雷概率.</p>
+<p>在上图中, 每个未知格上都被打上了该格子的非雷概率 (注意, 这张图上展示的是 "非雷概率", 也就是 <span class="math inline">\(1 - P_{有雷}\)</span>), 且与数字格相邻的未知格均被用彩色高亮了出来; 而不与数字格相邻的未知格则均用灰色标识.</p>
+<p>不知道怎么取名, 这里我姑且将所有相近的 (不一定紧挨)、相同颜色的未知格集合称作一个 "<strong>连通分量</strong>", 而剩下所有灰色格子姑且称之为 "<strong>孤立格</strong>". 而本小节最重要的两个步骤就是①计算出所有连通分量, ②基于连通分量计算出每个未知格的有雷概率.</p>
 <h4 id="计算连通分量">计算连通分量</h4>
 <p>回溯法剪枝其实就是要分隔出尽可能短的连通分量, 然后在每个连通分量上回溯出所有可能方案, 最后合并所有连通分量的方案.</p>
-<p>首先不太严谨地定义一下 &quot;连通分量&quot;. 在<strong>不考虑剩余雷数制约</strong>的前提下, 如果一个未知格 A 最终挖开的不同状态 (数字或雷) 会影响另一个未知格 B 不同状态的概率分布 (反过来 B 的状态也会影响 A), 则认为 A、B 同属一个连通分量. 且若 A、B 同属一个连通分量, B、C 同属一个连通分量, 则 A、B、C 同属一个连通分量.</p>
+<p>首先不太严谨地定义一下 "连通分量". 在<strong>不考虑剩余雷数制约</strong>的前提下, 如果一个未知格 A 最终挖开的不同状态 (数字或雷) 会影响另一个未知格 B 不同状态的概率分布 (反过来 B 的状态也会影响 A), 则认为 A、B 同属一个连通分量. 且若 A、B 同属一个连通分量, B、C 同属一个连通分量, 则 A、B、C 同属一个连通分量.</p>
 <p>放到实际计算中, 其实就很简单:</p>
 <ol type="1">
 <li>从任意数字格开始, 找出其周围八格中所有未知格, 并加入队列;</li>
@@ -545,7 +545,7 @@ MineProb_{\text{isol}} = \frac{c - \sum_{i}\sum_{j}MineProb_{(i, j)}}{b}
 <li>当两者都在 (或都不在) 角落时, 选择周围 24 格中数字格最多的.</li>
 </ol>
 <h4 id="截至这一步的胜率与耗时-1">截至这一步的胜率与耗时</h4>
-<p>这一步的算法的使用场景是覆盖了基本定式那一步的, 即定式能做的概率也能做. 但定式速度快, 所以仍有存在意义. 测了十来万盘, &quot;定式 + 概率&quot; 策略的胜率在 36% ~ 37% 左右, 平均每局耗时 6ms.</p>
+<p>这一步的算法的使用场景是覆盖了基本定式那一步的, 即定式能做的概率也能做. 但定式速度快, 所以仍有存在意义. 测了十来万盘, "定式 + 概率" 策略的胜率在 36% ~ 37% 左右, 平均每局耗时 6ms.</p>
 <p><del>(一开始我没有将连通分量的不同雷数分开考虑, 而是根据连通分量的平均雷数来计算, 导致胜率只有 32%, 可见近似算法差距还是很大的.)</del></p>
 <p>而加上了那些小策略后, 胜率提升到了 38.5%.</p>
 <p><strong>极端情况</strong>:</p>
@@ -562,10 +562,10 @@ MineProb_{\text{isol}} = \frac{c - \sum_{i}\sum_{j}MineProb_{(i, j)}}{b}
 <p>最后我们选择期望值最高的格子.</p>
 <h4 id="截至这一步的胜率与耗时-2">截至这一步的胜率与耗时</h4>
 <p>测了万把盘, 胜率达到 39.3%, 平均每局耗 8ms 多.</p>
-<p>这一步我做的比较保守, 因为我不知道有没有可能出现 &quot;非雷概率 A &gt; B&quot; 但 &quot;胜率 A &lt; B&quot; 的情况.</p>
+<p>这一步我做的比较保守, 因为我不知道有没有可能出现 "非雷概率 A &gt; B" 但 "胜率 A &lt; B" 的情况.</p>
 <h3 id="第五步-基于胜率-最终杀招">第五步: 基于胜率 (最终杀招)</h3>
 <p>最后一招, 直接把每个未知格的胜率算出来.</p>
-<p>这里区分一下 &quot;获胜概率&quot; 与第三步的 &quot;有雷概率&quot;. 胜率是指挖掘某个未知格的最终获胜概率; 有雷概率是指当前局面下未知格是雷的概率. 显然, 当前局面所有未知格中最高的胜率代表了这个残局的整体胜率.</p>
+<p>这里区分一下 "获胜概率" 与第三步的 "有雷概率". 胜率是指挖掘某个未知格的最终获胜概率; 有雷概率是指当前局面下未知格是雷的概率. 显然, 当前局面所有未知格中最高的胜率代表了这个残局的整体胜率.</p>
 <p>这世上没有什么策略比直接算胜率更准了, 但可惜它的复杂度过于恐怖, 所以我只在当残余未知格少于等于 12 时才会启用这个策略.</p>
 <p>算法原理还是动态规划. 设 <span class="math inline">\(b\)</span> 为当前局面, <span class="math inline">\(b_{(x, y)}\)</span> 为将未知格 <span class="math inline">\(x\)</span> 设为数字 <span class="math inline">\(y\)</span> 的下一局面. 另设 <span class="math inline">\(CellWinRate()\)</span> 为某格子的胜率, <span class="math inline">\(BoardWinRate()\)</span> 为某局面的胜率, <span class="math inline">\(Cnt()\)</span> 为某局面的所有可行方案个数.</p>
 <p><span class="math display">\[
@@ -576,7 +576,7 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
 \]</span></p>
 <p>每个局面 <span class="math inline">\(b\)</span> 可以状态压缩, 用一个 <code>String</code> 表示, 方便记忆化搜索.</p>
 <p>胜率算法计算完后就很简单了, 胜率最高的格子随便挑一个挖. 而且所有后续局面的胜率也在之前的计算中缓存过了, 从缓存里掏出来一路扫到结束即可.</p>
-<p>我自己整理了几个 &quot;无雷概率&quot; 与 &quot;获胜概率&quot; 区别的例子 (这里是无雷概率, 为了方便与胜率对比), 可以帮助理解一下:</p>
+<p>我自己整理了几个 "无雷概率" 与 "获胜概率" 区别的例子 (这里是无雷概率, 为了方便与胜率对比), 可以帮助理解一下:</p>
 <table>
 <thead>
 <tr class="header">
@@ -611,12 +611,12 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
 <p>这么看确实 Win XP 下开局劝退得有点离谱.</p>
 <h2 id="源码">源码</h2>
 <blockquote>
-<p>本博客仅发布于 Github IO: <a href="https://xienaoban.github.io/posts/62679.html" class="uri">https://xienaoban.github.io/posts/62679.html</a></p>
-<p>和 CSDN: <a href="https://blog.csdn.net/xienaoban/article/details/112424633" target="_blank" rel="noopener" class="uri">https://blog.csdn.net/xienaoban/article/details/112424633</a></p>
+<p>本博客仅发布于 Github IO: <a href="https://xienaoban.github.io/posts/62679.html">https://xienaoban.github.io/posts/62679.html</a></p>
+<p>和 CSDN: <a href="https://blog.csdn.net/xienaoban/article/details/112424633" target="_blank" rel="noopener">https://blog.csdn.net/xienaoban/article/details/112424633</a></p>
 <p>其他都是盗的.</p>
 </blockquote>
-<p>项目源码 Github: <a href="https://github.com/xienaoban/minesweeper" target="_blank" rel="noopener" class="uri">https://github.com/xienaoban/minesweeper</a> (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
-<p>不会用 Github 的萌新也可以在这里下载: <a href="https://download.csdn.net/download/XieNaoban/14090898" target="_blank" rel="noopener" class="uri">https://download.csdn.net/download/XieNaoban/14090898</a></p>
+<p>项目源码 Github: <a href="https://github.com/xienaoban/minesweeper" target="_blank" rel="noopener">https://github.com/xienaoban/minesweeper</a> (喜欢的话 Star 一下呀 <code>（づ￣3￣）づ╭❤～</code>)</p>
+<p>不会用 Github 的萌新也可以在这里下载: <a href="https://download.csdn.net/download/XieNaoban/14090898" target="_blank" rel="noopener">https://download.csdn.net/download/XieNaoban/14090898</a></p>
 <p>主要有以下几个文件:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AutoSweeper.java    <span class="comment">// 自动扫雷 AI</span></span><br><span class="line">Gui.java            <span class="comment">// 扫雷 GUI 界面</span></span><br><span class="line">Main.java           <span class="comment">// 执行入口</span></span><br><span class="line">MineSweeper.java    <span class="comment">// 扫雷游戏规则的实现</span></span><br><span class="line">WinXpSweeper.java   <span class="comment">// 通过监视 Win XP 原版扫雷完成的规则实现</span></span><br></pre></td></tr></table></figure>
 <p>其中 <code>AutoSweeper.java</code> 和 <code>MineSweeper.java</code> 写的比较上心, 有较为详细的注释, 代码结构也相对清晰. 别的几个文件就写的比较写意, 酌情观看.</p>
@@ -803,12 +803,12 @@ CellWinRate(b, x) &amp; = \sum_{y=0}^{8}BoardWinRate(b_{(x, y)}) \times \frac{Cn
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

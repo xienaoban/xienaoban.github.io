@@ -276,7 +276,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -316,10 +316,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt]</span><br><span class="line">@&#x3D;&quot;Windows Terminal here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;&lt;path-to-your-ico&gt;&quot;</span><br><span class="line">&quot;Extended&quot;&#x3D;&quot;&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command]</span><br><span class="line">@&#x3D;&quot;C:\\Users\\&lt;user&gt;\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe&quot;</span><br></pre></td></tr></table></figure>
 <p>其中,</p>
 <ul>
-<li><p>第 5 行 &quot;Icon&quot; 是图标的路径, 图标随意, 放的路径也随意. 如果不需要图标就删掉这行.</p>
-<p>如果要 Windows Terminal 官方图标, 在他们的 Github 上有: <a href="https://github.com/microsoft/terminal/blob/master/res/terminal.ico" target="_blank" rel="noopener" class="uri">https://github.com/microsoft/terminal/blob/master/res/terminal.ico</a>.</p>
-<p>当然, 上面这个链接只是 Github 上该文件的页面, 转换成源文件链接就是 <a href="https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico" target="_blank" rel="noopener" class="uri">https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico</a>, 点击即下.</p></li>
-<li><p>第 6 行 &quot;Extended&quot; 代表需要按住 Shift 才能显示, 就像 Powershell 一样, 删掉该行则不需要按 Shift 也能显示.</p></li>
+<li><p>第 5 行 "Icon" 是图标的路径, 图标随意, 放的路径也随意. 如果不需要图标就删掉这行.</p>
+<p>如果要 Windows Terminal 官方图标, 在他们的 Github 上有: <a href="https://github.com/microsoft/terminal/blob/master/res/terminal.ico" target="_blank" rel="noopener">https://github.com/microsoft/terminal/blob/master/res/terminal.ico</a>.</p>
+<p>当然, 上面这个链接只是 Github 上该文件的页面, 转换成源文件链接就是 <a href="https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico" target="_blank" rel="noopener">https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico</a>, 点击即下.</p></li>
+<li><p>第 6 行 "Extended" 代表需要按住 Shift 才能显示, 就像 Powershell 一样, 删掉该行则不需要按 Shift 也能显示.</p></li>
 <li><p>第 9 行是 Windows Terminal 的绝对路径 (记得改 <code>&lt;user&gt;</code>), 必须是完全的绝对路径, 不可以是</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">%USERPROFILE%</span><span class="symbol">\\</span>AppData<span class="symbol">\\</span>Local<span class="symbol">\\</span>Microsoft<span class="symbol">\\</span>WindowsApps<span class="symbol">\\</span>wt.exe</span><br></pre></td></tr></table></figure>
 <p>或</p>
@@ -332,7 +332,7 @@
 <p>注册后右键的效果上面已经展示了.</p>
 <p>然后还有问题, 右键打开后 Windows Terminal 路径总是为 <code>C:\Users\&lt;user&gt;</code>. 解决方法有两种:</p>
 <ol type="1">
-<li><p>Windows Terminal 默认启动路径一直是 user profile. 所以打开其 <code>settings.json</code> 把 <code>&quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;</code> 改为 <code>&quot;startingDirectory&quot;: &quot;.&quot;</code>.</p>
+<li><p>Windows Terminal 默认启动路径一直是 user profile. 所以打开其 <code>settings.json</code> 把 <code>"startingDirectory": "%USERPROFILE%"</code> 改为 <code>"startingDirectory": "."</code>.</p>
 <p>这个方法比较推荐, 但也有缺点: 改了 <code>startingDirectory</code> 之后, 从开始菜单直接打开 Windows Terminal 会显示路径为 <code>C:\WINDOWS\system32</code>.</p></li>
 <li><p>不改 <code>startingDirectory</code> 其实也可以. wt.exe 有个参数 <code>-d</code> 用于设定目录. 所以可以把 <code>.reg</code> 最后一行的 command 改为:</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@=<span class="string">"C:<span class="subst">\\</span>Users<span class="subst">\\</span>xie<span class="subst">\\</span>AppData<span class="subst">\\</span>Local<span class="subst">\\</span>Microsoft<span class="subst">\\</span>WindowsApps<span class="subst">\\</span>wt.exe -d ."</span></span><br></pre></td></tr></table></figure>
@@ -519,12 +519,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">449k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:48</span>
+    <span title="站点阅读时长">6:47</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
